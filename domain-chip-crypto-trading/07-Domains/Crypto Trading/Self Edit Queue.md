@@ -19,10 +19,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay
+## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb-holdout_decay
 
-- parent_candidate_id: `auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter`
-- child_candidate_id: `auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay`
+- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb`
+- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb-probe-holdout_decay`
 - priority: `0.99`
 - allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -43,10 +43,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0f444bd87a-sparse_signal
+## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-df8ec1ec2a-sparse_signal
 
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0f444bd87a`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0f444bd87a-probe-sparse_signal`
+- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-df8ec1ec2a`
+- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-df8ec1ec2a-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
