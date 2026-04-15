@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `15`
-- pending_family_count: `15`
+- family_count: `16`
+- pending_family_count: `16`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
