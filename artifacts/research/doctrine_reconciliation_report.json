@@ -1,11 +1,13 @@
 {
-  "card_count": 110,
+  "card_count": 114,
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
-  "packet_count": 110,
+  "packet_count": 114,
   "repair_mode": true,
-  "repaired_cards": [],
-  "repaired_count": 0,
+  "repaired_cards": [
+    "dc-auto-baseline-sparse_signal.json"
+  ],
+  "repaired_count": 1,
   "required_source_count_per_mutation": 2,
   "state_consistent": true
 }

@@ -6,8 +6,8 @@
       "mode": "heavy_backtest",
       "walk_forward_splits": 6
     },
-    "benchmark_priority": "high",
-    "proposal_id": "auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stabilit-a4fec90483-holdout_decay",
+    "benchmark_priority": "medium",
+    "proposal_id": "auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-sta-debb7d4d61-sparse_signal",
     "required_metrics": {
       "max_drawdown_max": null,
       "paper_trade_readiness_min": null,
@@ -15,11 +15,11 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
-    "title": "Auto-generated: holdout_decay fix for auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stabilit-a4fec90483",
-    "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
-    "variety_child_label": "late_sample_guard=on, paper_gate=balanced",
+    "title": "Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-sta-debb7d4d61",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
   },
   {
@@ -29,8 +29,8 @@
       "mode": "heavy_backtest",
       "walk_forward_splits": 6
     },
-    "benchmark_priority": "medium",
-    "proposal_id": "auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-fil-29c82499e3-sparse_signal",
+    "benchmark_priority": "high",
+    "proposal_id": "auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stabilit-a4fec90483-holdout_decay",
     "required_metrics": {
       "max_drawdown_max": null,
       "paper_trade_readiness_min": null,
@@ -38,11 +38,11 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
-    "title": "Auto-generated: sparse_signal fix for auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-fil-29c82499e3",
-    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
-    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "title": "Auto-generated: holdout_decay fix for auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stabilit-a4fec90483",
+    "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "late_sample_guard=on, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
   },
   {
@@ -61,7 +61,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: sparse_signal fix for auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
@@ -84,7 +84,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
@@ -107,7 +107,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
@@ -130,7 +130,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: holdout_decay fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
     "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
@@ -153,7 +153,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.81,
     "target_contract_family": "btc_up_down_15m",
     "title": "Volatility compression breakout",
     "variety_child_id": "{\"paper_gate\": \"strict\"}",
@@ -176,7 +176,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.81,
     "target_contract_family": "btc_up_down_15m",
     "title": "Trend continuation with pullback confirmation",
     "variety_child_id": "{\"paper_gate\": \"strict\"}",
@@ -199,7 +199,7 @@
       "sharpe_ratio_min": null
     },
     "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
+    "surprise_score": 0.81,
     "target_contract_family": "btc_up_down_15m",
     "title": "Exhaustion mean reversion after impulse",
     "variety_child_id": "{\"paper_gate\": \"balanced\"}",

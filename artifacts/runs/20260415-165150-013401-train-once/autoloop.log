@@ -1,0 +1,697 @@
+[master 0a6e1bb] Tri-loop cycle 19: commit leftover artifacts
+ 1 file changed, 82 insertions(+), 742 deletions(-)
+[master c399693] Tri-loop cycle 19: ingest 1 cards
+ 577 files changed, 1343293 insertions(+), 11350 deletions(-)
+ create mode 100644 SPARK_RESEARCHER_PRESET.md
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-3e9a666a63.json => heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-ae271e012f.json} (96%)
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-moderate-squeez-9cd8e8f1c8.json => heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-96e2787baa.json} (81%)
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-btc-15m-momentum-breakout-structure-psychology-no-chase-3547ad5b22.json => heavy-backtest-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-brea-c5d1d81d38.json} (86%)
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-moderate-squeez-0739e931a1.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-moderate-squeez-0ed7cbd800.json
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-moderate-squeez-110168fac8.json => heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-tight-squeeze-l-335a2a2903.json} (94%)
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-moderate-squeez-fe52d53ca4.json => heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-tight-squeeze-l-a03a38cd29.json} (91%)
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-trend-volume-filtered-activation-profile-wider-no-trade-wind-7948cef1aa.json => heavy-backtest-auto-trend-volume-filtered-activation-profile-wider-no-trade-wind-0b2853b3e3.json} (94%)
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-trend-volume-filtered-activation-profile-wider-no-trade-wind-d035376d55.json => heavy-backtest-auto-trend-volume-filtered-activation-profile-wider-no-trade-wind-db0391fea7.json} (76%)
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-auto-trend-volume-filtered-no-trade-window-avoid-dead-zone-volume-53b71c90fc.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-auto-trend-volume-filtered-no-trade-window-avoid-dead-zone-volume-f4fafb7ddf.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-auto-trend-volume-filtered-no-trade-window-avoid-post-open-drift-3a2458d615.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-auto-trend-volume-filtered-no-trade-window-avoid-post-open-drift-f4f5a9e189.json
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-breakout-impulse-squeeze-compression-profile-tight-squeeze-v-ef61bdeec3.json => heavy-backtest-baseline-b41a053779.json} (76%)
+ rename artifacts/promotion/benchmark_grounded/{heavy-backtest-btc-15m-volatility-compression-breakout-psychology-no-chase-varie-0ce5c55a84.json => heavy-backtest-btc-15m-volatility-compression-breakout-psychology-no-chase-varie-7477be6239.json} (97%)
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-btc-15m-volatility-compression-breakout-psychology-no-chase-varie-8c20a71b5e.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-0fb6a59fdb.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-29a5a3d485.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-1db709b065.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-4439253b19.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-range-session-wick-reversal-confirm-8e6a0c-e9f56dcd86.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-range-session-wick-reversal-confirm-bb0fec-4e683a2f0a.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-activation-pr-089893-4b852d666b.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-activation-pr-8776bc-991d320cd1.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-activation-pr-de5c86-2ba1cb3869.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-activation-pr-f32eba-bc3f07fde3.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-no-trade-wind-1617c8-a082a912d7.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-no-trade-wind-3af36f-93052a0d36.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-no-trade-wind-b8ceda-bf9da684ee.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-trend-volume-filtered-no-trade-wind-e072b8-0c475d9c7e.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-wedge-guarded-drawdown-guard-high-r-150280-7062f75150.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-wedge-guarded-drawdown-guard-high-r-25bcde-7efbd589dd.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-wedge-guarded-drawdown-guard-high-r-88dae7-a453976613.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-wedge-guarded-drawdown-guard-high-r-ad4069-856f1d56fa.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-wedge-guarded-reversal-confirmation-138fcb-fd8e90e2d6.json
+ delete mode 100644 artifacts/promotion/benchmark_grounded/heavy-backtest-mut-ablate-auto-wedge-guarded-reversal-confirmation-d6abad-e12a44098b.json
+ create mode 100644 artifacts/runs/20260415-165126-822580-train-once/autoloop.log
+ create mode 100644 artifacts/runs/20260415-165127-448268-train-once/autoloop.log
+ create mode 100644 artifacts/runs/20260415-165128-052436-train-once/autoloop.log
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/.gitignore
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/CLAUDE.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/README.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/SPARK_RESEARCHER_PRESET.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/control-plane.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/backtest.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/learning.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/paper-trade.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/supervisor.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/runbooks/daily-ops.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/runbooks/first-cycle.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/btc_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/btc_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/btc_up_down_1h_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/eth_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/eth_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/eth_up_down_1h_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_btc_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_btc_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_btc_up_down_1h_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_eth_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_eth_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_eth_up_down_1h_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_sol_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_sol_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_sol_up_down_1h_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-02/BTCUSDT-1m-2026-04-02.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-03/BTCUSDT-1m-2026-04-03.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-04/BTCUSDT-1m-2026-04-04.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-05/BTCUSDT-1m-2026-04-05.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-06/BTCUSDT-1m-2026-04-06.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-07/BTCUSDT-1m-2026-04-07.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-08/BTCUSDT-1m-2026-04-08.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-09/BTCUSDT-1m-2026-04-09.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-10/BTCUSDT-1m-2026-04-10.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-11/BTCUSDT-1m-2026-04-11.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-12/BTCUSDT-1m-2026-04-12.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-13/BTCUSDT-1m-2026-04-13.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-14/BTCUSDT-1m-2026-04-14.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-02/ETHUSDT-1m-2026-04-02.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-03/ETHUSDT-1m-2026-04-03.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-04/ETHUSDT-1m-2026-04-04.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-05/ETHUSDT-1m-2026-04-05.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-06/ETHUSDT-1m-2026-04-06.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-07/ETHUSDT-1m-2026-04-07.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-08/ETHUSDT-1m-2026-04-08.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-09/ETHUSDT-1m-2026-04-09.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-10/ETHUSDT-1m-2026-04-10.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-11/ETHUSDT-1m-2026-04-11.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-12/ETHUSDT-1m-2026-04-12.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-13/ETHUSDT-1m-2026-04-13.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-14/ETHUSDT-1m-2026-04-14.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-02/SOLUSDT-1m-2026-04-02.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-03/SOLUSDT-1m-2026-04-03.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-04/SOLUSDT-1m-2026-04-04.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-05/SOLUSDT-1m-2026-04-05.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-06/SOLUSDT-1m-2026-04-06.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-07/SOLUSDT-1m-2026-04-07.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-08/SOLUSDT-1m-2026-04-08.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-09/SOLUSDT-1m-2026-04-09.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-10/SOLUSDT-1m-2026-04-10.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-11/SOLUSDT-1m-2026-04-11.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-12/SOLUSDT-1m-2026-04-12.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-13/SOLUSDT-1m-2026-04-13.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-14/SOLUSDT-1m-2026-04-14.csv
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-02.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-03.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-04.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-05.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-06.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-07.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-08.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-09.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-10.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-11.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-12.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-13.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/BTCUSDT-1m-2026-04-14.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-02.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-03.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-04.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-05.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-06.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-07.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-08.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-09.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-10.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-11.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-12.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-13.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/ETHUSDT-1m-2026-04-14.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-02.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-03.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-04.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-05.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-06.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-07.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-08.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-09.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-10.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-11.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-12.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-13.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/zips/SOLUSDT-1m-2026-04-14.zip
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/sample_btc_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/sample_btc_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/sol_1m_candles.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/sol_up_down_15m_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/data/sol_up_down_1h_contracts.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-14ae19a7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-a92f2886-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentu-a0c31589-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-bre-f351cfd3-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-95f85476-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-2409f99c-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-t-868858aa-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-8ba026ce-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-a9807f2d-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade--39e00bc5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-42ffb9b5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-48a7a320-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filte-1ec8bfe5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-brea-dfb1955f-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-a85cc5d5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-da6e1b96-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psy-6e12c0f7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout--c2f54dc7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholog-d55683ce-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psycholo-eac6eb15-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psych-c6d346cb-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_-b080df8b-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wa-8c86e7ba-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology-c72b6b38-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-197be20a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7a32d6e2-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7c0afa17-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-8fae7747-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-9b50727d-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-fdf15e8e-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-1890f889-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-89039839-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a11a4748-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a20bc9e9-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a34e9da3-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-d0e6bd8d-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-b0b8fe36-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_fo-97d9451a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-range-session-wick-reversal_confirmation=reclaim_close--910ca77a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-range-session-wick-reversal_confirmation=reclaim_close--df8dec19-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-range-session-wick-reversal_confirmation=wick_reclaim_c-925c9cb3-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-range-session-wick-reversal_confirmation=wick_reclaim_c-c0c6119f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-08497885-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-17544b7b-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-1d40b657-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-1e4e793e-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-2879e426-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-4bd7f345-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-7a6c788e-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-f6e09589-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-39e57366-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-4eb79e0d-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-81f1bf20-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_d-59a01e9e-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_d-948c28df-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-4a75dff4-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-90369ef1-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-ad7cf0f0-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-c6e6068f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-f5541c29-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-fd29dc82-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--011ef902-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--0d7e041b-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--18cc924a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--1d92d3f5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--215e8b6f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--2d58d047-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--61d39b41-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--65190e0c-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--6f87d819-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--8f066372-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c3e66e90-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c87228d7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c9c2d1bc-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d55e7cd6-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--da3efb95-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--df0c0e51-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--dfe73aa6-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ea41ba41-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ecc095b4-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-cards/dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-14ae19a7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-a92f2886-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentu-a0c31589-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-bre-f351cfd3-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-95f85476-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-2409f99c-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-t-868858aa-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-8ba026ce-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-a9807f2d-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade--39e00bc5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-42ffb9b5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-48a7a320-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filte-1ec8bfe5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-brea-dfb1955f-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-a85cc5d5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-da6e1b96-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psy-6e12c0f7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout--c2f54dc7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholog-d55683ce-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psycholo-eac6eb15-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psych-c6d346cb-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_-b080df8b-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wa-8c86e7ba-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology-c72b6b38-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-197be20a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7a32d6e2-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7c0afa17-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-8fae7747-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-9b50727d-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-fdf15e8e-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-1890f889-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-89039839-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a11a4748-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a20bc9e9-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a34e9da3-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-d0e6bd8d-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-b0b8fe36-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_fo-97d9451a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-range-session-wick-reversal_confirmation=reclaim_close--910ca77a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-range-session-wick-reversal_confirmation=reclaim_close--df8dec19-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-range-session-wick-reversal_confirmation=wick_reclaim_c-925c9cb3-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-range-session-wick-reversal_confirmation=wick_reclaim_c-c0c6119f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-08497885-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-17544b7b-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-1d40b657-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-1e4e793e-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-2879e426-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-4bd7f345-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-7a6c788e-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-f6e09589-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-39e57366-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-4eb79e0d-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-81f1bf20-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_d-59a01e9e-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_d-948c28df-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-4a75dff4-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-90369ef1-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-ad7cf0f0-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-c6e6068f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-f5541c29-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-fd29dc82-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--011ef902-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--0d7e041b-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--18cc924a-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--1d92d3f5-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--215e8b6f-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--2d58d047-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--61d39b41-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--65190e0c-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--6f87d819-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--8f066372-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c3e66e90-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c87228d7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c9c2d1bc-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d55e7cd6-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--da3efb95-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--df0c0e51-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--dfe73aa6-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ea41ba41-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ecc095b4-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/doctrine-packets/dp-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/recursion/autoloop-manifest.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/recursion/autoloop-policy.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/docs/research-ingest/approved-sources.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/00-Home.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Backtest Leaderboard.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Backtest Loop.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Benchmark Bridge.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Contradictions.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Data and Intelligence Layers.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Doctrine Cards.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Doctrine Packets.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Doctrine Registry.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Event Regime Classification Rubric.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Event Window Candidates.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Event Window Review.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Flywheel.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Heavy Backtest Queue.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Home.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Intelligence Benchmark.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Intelligence System Audit.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Learning Loop.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Loop Progression.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Market Psychology Cases.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Market Psychology Overlays.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Market Regime Intelligence.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Mutation Backlog.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Next Probes.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Next to Research.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Operator Guide.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Paper Trade Loop.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Paper Trade Outcomes.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Paper Trade Queue.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Pattern Regime Pairing.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Recursion Audit.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Recursive Flywheel.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Regime Match Review.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Regime Taxonomy and Confidence.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Research Backlog.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Research Scout Queue.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Research Sources.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Segment Regime Review.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Self Edit Queue.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Strategy Catalog.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/System State.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Timeline Pack Validation.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Timeline Packs.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/domain-chip-crypto-trading/07-Domains/Crypto Trading/Variety Backlog.md
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/.env
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/.spark-swarm/collective-sync.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/gen_0000.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/gen_0004.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/gen_0005.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/gen_0006.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/gen_0007.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/gen_0008.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0001.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0002.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0003.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0004.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0005.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0006.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0007.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/generations/report_0008.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/live_pt_state.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/meta_agent_state.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/meta_improvements/performance_log.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/meta_improvements/strategy_effectiveness.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/meta_improvements/synthesized_insights.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/spark_local.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/archive/transfer_log/transfer_results.jsonl
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/dashboard.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/dashboard_app.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/.cache/130a7d7d3624bebd788cc09aa2a5d477.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/.cache/2a14d31aa52f329c5135be19c940f48e.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/.cache/f15c31d4347656125ef6aa126ae5d695.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/guard_99fb8b4ce0.meta.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/guard_99fb8b4ce0.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/guard_e823d1c7d7.meta.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/guard_e823d1c7d7.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/guard_eaf0994d5e.meta.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/generated_guards/guard_eaf0994d5e.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/__init__.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/chip_hooks.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/evaluator.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/evolution_engine.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/llm_code_gen.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/meta_agent.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/performance_tracker.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/population.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/risk_manager.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/self_diagnosis.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/self_referential.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/spark_bridge.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/transfer.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/live_paper_trader.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/run_evolution.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/live/run_paper_trade.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/pyproject.toml
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_bridge_packets.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_contradiction_probes.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_doctrine_cards.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_doctrine_from_contradictions.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_mutation_trials.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_paper_trade_queue.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_pattern_regime_map.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_recursion_packets.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_regime_match_review.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_research_backlog.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_research_scout_queue.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_segment_regime_review.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_self_edit_queue.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_signal_mutations.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_timeline_pack_validation.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_timeline_packs.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_watchtower.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/crypto_autoloop.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/describe_autoloop.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/evaluate_self_edits.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/fetch_binance_1m_range.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/generate_crossover_candidates.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/generate_indicator_mutations.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/generate_targeted_mutations.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/live_signal_engine.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/paper_trade_monitor.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/prepare_btc_dataset.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/prepare_paper_trade_dataset.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/prepare_timeline_pack_dataset.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/reconcile_doctrine_state.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/refresh_market_data.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_autoloop_supervisor.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_backtest_loop.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_doctrine_ingest_cycle.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_heavy_backtest_benchmark.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_learning_loop.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_paper_trade_cycle.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_strategy_forge.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/safe_write.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/sol_regime_monitor.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/sol_signal.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/track_paper_trade_history.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/variety_model.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/spark-researcher.project.json
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/spark-researcher.project.json.bak
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/PKG-INFO
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/SOURCES.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/dependency_links.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/entry_points.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/requires.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/top_level.txt
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/__init__.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/autoloop.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/backtest.py
+ create mode 100644 artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/cli.py
+ create mode 100644 artifacts/traces/228c03f28492bc3ef9f64a5ea21fe89a.jsonl
+ create mode 100644 artifacts/traces/684813f61951ca97f76109de19883d8a.jsonl
+ create mode 100644 artifacts/traces/e280d9f6cd28363e3a383c6319a78833.jsonl
+ create mode 100644 artifacts/traces/faacc92d119de2bdcded11de143d6954.jsonl
+ create mode 100644 artifacts/traces/index.jsonl
+ create mode 100644 docs/doctrine-cards/dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-76203b10-sparse_signal.json
+ create mode 100644 docs/doctrine-packets/dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-76203b10-sparse_signal.json
+ create mode 100644 spark-researcher.project.json.bak
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\research\doctrine_ingest_report.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\backtests\heavy_backtest_summary.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\contradiction_probes.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\mutation_trials.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\mutation_trial_dedupe_report.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\backtests\heavy_backtest_summary.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\contradiction_probes.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\self_edit_queue.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\self_edit_evaluations.json
+C:\Users\USER\Desktop\domain-chip-crypto-trading\artifacts\recursion\self_edit_audit.json
+{
+  "backtest": {
+    "material_change": true,
+    "material_reasons": [
+      "candidate_count"
+    ],
+    "ran": true,
+    "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+    "top_recommended_next_step": "run_contradiction_probe"
+  },
+  "commit_message": "Tri-loop cycle 19: ingest 1 cards",
+  "cycle_number": 19,
+  "finished_at": "2026-04-15T16:53:13.996698Z",
+  "git_head_after": "c399693",
+  "git_head_before": "0a6e1bb",
+  "learning": {
+    "added_count": 1,
+    "material_change": true,
+    "material_reasons": [
+      "card_count",
+      "pending_packet_count",
+      "added_count"
+    ],
+    "pending_packet_count": 0,
+    "ran": true
+  },
+  "loops_run": [
+    "data_refresh",
+    "learning",
+    "backtest"
+  ],
+  "material_change": true,
+  "paper_trade": {
+    "ran": false
+  },
+  "paper_trade_monitor": null,
+  "paper_trade_queue_count": 0,
+  "pending_packet_count": 0,
+  "pending_variety_count": 47,
+  "started_at": "2026-04-15T16:53:13.913926Z"
+}
+
+[stderr]
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/control-plane.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/backtest.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/learning.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/paper-trade.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/supervisor.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/runbooks/daily-ops.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/runbooks/first-cycle.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/btc_1m_candles.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_btc_1m_candles.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_btc_up_down_15m_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_btc_up_down_1h_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_eth_1m_candles.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_eth_up_down_15m_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_eth_up_down_1h_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_sol_1m_candles.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_sol_up_down_15m_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/paper_trade_sol_up_down_1h_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-02/BTCUSDT-1m-2026-04-02.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-03/BTCUSDT-1m-2026-04-03.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-04/BTCUSDT-1m-2026-04-04.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-05/BTCUSDT-1m-2026-04-05.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-06/BTCUSDT-1m-2026-04-06.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-07/BTCUSDT-1m-2026-04-07.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-08/BTCUSDT-1m-2026-04-08.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-09/BTCUSDT-1m-2026-04-09.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-10/BTCUSDT-1m-2026-04-10.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-11/BTCUSDT-1m-2026-04-11.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-12/BTCUSDT-1m-2026-04-12.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-13/BTCUSDT-1m-2026-04-13.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/BTCUSDT-1m-2026-04-14/BTCUSDT-1m-2026-04-14.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-02/ETHUSDT-1m-2026-04-02.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-03/ETHUSDT-1m-2026-04-03.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-04/ETHUSDT-1m-2026-04-04.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-05/ETHUSDT-1m-2026-04-05.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-06/ETHUSDT-1m-2026-04-06.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-07/ETHUSDT-1m-2026-04-07.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-08/ETHUSDT-1m-2026-04-08.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-09/ETHUSDT-1m-2026-04-09.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-10/ETHUSDT-1m-2026-04-10.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-11/ETHUSDT-1m-2026-04-11.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-12/ETHUSDT-1m-2026-04-12.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-13/ETHUSDT-1m-2026-04-13.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/ETHUSDT-1m-2026-04-14/ETHUSDT-1m-2026-04-14.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-02/SOLUSDT-1m-2026-04-02.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-03/SOLUSDT-1m-2026-04-03.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-04/SOLUSDT-1m-2026-04-04.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-05/SOLUSDT-1m-2026-04-05.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-06/SOLUSDT-1m-2026-04-06.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-07/SOLUSDT-1m-2026-04-07.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-08/SOLUSDT-1m-2026-04-08.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-09/SOLUSDT-1m-2026-04-09.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-10/SOLUSDT-1m-2026-04-10.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-11/SOLUSDT-1m-2026-04-11.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-12/SOLUSDT-1m-2026-04-12.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-13/SOLUSDT-1m-2026-04-13.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/raw/binance/extracted/SOLUSDT-1m-2026-04-14/SOLUSDT-1m-2026-04-14.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/sample_btc_1m_candles.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/data/sample_btc_up_down_15m_contracts.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/docs/recursion/autoloop-manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/docs/recursion/autoloop-policy.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/docs/research-ingest/approved-sources.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/chip_hooks.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/evaluator.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/evolution_engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/self_referential.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/hyperagent/spark_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/live_paper_trader.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/run_evolution.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/live/run_paper_trade.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_bridge_packets.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_contradiction_probes.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_doctrine_cards.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_mutation_trials.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_paper_trade_queue.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_pattern_regime_map.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_recursion_packets.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_regime_match_review.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_research_backlog.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_research_scout_queue.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_segment_regime_review.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_self_edit_queue.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_timeline_pack_validation.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_timeline_packs.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/build_watchtower.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/crypto_autoloop.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/describe_autoloop.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/evaluate_self_edits.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/fetch_binance_1m_range.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/live_signal_engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/prepare_btc_dataset.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/prepare_paper_trade_dataset.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/prepare_timeline_pack_dataset.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/reconcile_doctrine_state.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_autoloop_supervisor.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_backtest_loop.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_doctrine_ingest_cycle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_heavy_backtest_benchmark.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_learning_loop.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_paper_trade_cycle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/run_strategy_forge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/sol_regime_monitor.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/sol_signal.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/track_paper_trade_history.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/scripts/variety_model.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/SOURCES.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/dependency_links.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/entry_points.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/requires.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading.egg-info/top_level.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/autoloop.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/backtest.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/src/domain_chip_crypto_trading/cli.py', LF will be replaced by CRLF the next time Git touches it
