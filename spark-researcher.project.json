@@ -10,8 +10,8 @@
   "commands": {
     "autoloop": {
       "args": [
-        "crypto-autoloop",
-        "run-once"
+        "python",
+        "scripts/researcher_run.py"
       ],
       "cwd": ".",
       "kind": "train-once",
