@@ -1,7 +1,7 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
@@ -15,7 +15,7 @@
   "minimum_trade_count": 25,
   "mutations": {
     "asset_universe": "BTC",
-    "compression_profile": "tight_squeeze",
+    "compression_profile": "moderate_squeeze",
     "doctrine_id": "breakout_volatility_expansion",
     "late_sample_guard": "off",
     "market_regime": "high_vol",
@@ -41,7 +41,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze",
   "sharpe_ratio": -1.301,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "bollinger_squeeze_breakout",

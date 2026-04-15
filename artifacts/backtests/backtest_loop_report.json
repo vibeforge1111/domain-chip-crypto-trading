@@ -1,7 +1,7 @@
 {
   "after": {
     "benchmark": {
-      "candidate_count": 25,
+      "candidate_count": 33,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
       "top_holdout_profitability_score": 0.48,
       "top_max_drawdown": 0.99,
@@ -21,7 +21,7 @@
   },
   "before": {
     "benchmark": {
-      "candidate_count": 33,
+      "candidate_count": 25,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
       "top_holdout_profitability_score": 0.48,
       "top_max_drawdown": 0.99,
@@ -32,23 +32,20 @@
       "top_walk_forward_consistency": 0.4
     },
     "self_edit_audit": {
-      "approved_count": 1,
+      "approved_count": 0,
       "deferred_count": 0,
-      "evaluation_count": 1,
+      "evaluation_count": 0,
       "rejected_count": 0,
-      "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
+      "top_approved_edit_id": null
     }
   },
   "commit_message": null,
-  "duration_seconds": 55.555,
-  "finished_at": "2026-04-15T17:17:25.272590Z",
+  "duration_seconds": 103.293,
+  "finished_at": "2026-04-15T17:30:23.988424Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
-    "candidate_count",
-    "evaluation_count",
-    "approved_count",
-    "top_approved_edit_id"
+    "candidate_count"
   ],
-  "started_at": "2026-04-15T17:16:29.717899Z"
+  "started_at": "2026-04-15T17:28:40.695091Z"
 }
