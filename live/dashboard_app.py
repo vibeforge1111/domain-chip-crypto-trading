@@ -951,41 +951,12 @@ tailwind.config = {
   .badge-muted { background: #14161E; color: #6A7080; border-color: #222430; }
   .pulse { animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite; }
   @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:.5 } }
-  .progress-bar { height: 6px; border-radius: 3px; background: #222430; overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
-  .feed-item { border-left: 2px solid transparent; transition: all 0.3s; }
-  .feed-item:hover { background: #1E2230; }
-  .stat-label { font-size: 0.8rem; color: #8890B0; font-weight: 500; letter-spacing: 0.05em; font-family: 'DM Mono', monospace; }
-  .stat-value { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; font-family: 'DM Mono', monospace; }
   .section-title { font-size: 0.6875rem; font-weight: 600; color: #6A7080; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-  canvas { max-height: 200px; }
   .tab-btn { padding: 4px 12px; border-radius: 5px; font-size: 0.75rem; font-weight: 500; background: transparent; color: #6A7080; border: 1px solid transparent; cursor: pointer; transition: all 0.2s; }
   .tab-btn:hover { color: #F0F0F4; background: #1E2230; }
   .tab-active { background: #222430 !important; color: #F0F0F4 !important; border-color: #2A2E3C !important; }
-  #agents-table th { user-select: none; white-space: nowrap; }
-  #agents-table th.sortable:hover { color: #F0F0F4; }
-  #agents-table td { padding: 6px 12px 6px 0; white-space: nowrap; border-bottom: 1px solid #1E2230; }
   table tbody tr { transition: transform 0.15s, background 0.15s; }
   table tbody tr:hover { background: #1E2230; transform: translateX(3px); }
-  .filter-select {
-  background: #141820;
-  border: 1px solid #222430;
-  color: #8890B0;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 5px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  cursor: pointer;
-}
-.filter-select:focus { outline: 1px solid #2A2E3C; }
-.guard-tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 0.65rem; background: #14161E; color: #6A7080; margin: 1px 2px; border: 1px solid #222430; font-family: 'DM Mono', monospace; }
-.act-entry { padding: 6px 8px 6px 12px; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; transition: background 0.15s; }
-.act-entry:hover { background: #1E2230; }
-.act-mono { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: -0.02em; }
-.strat-bar-seg { height: 100%; display: inline-block; transition: width 0.6s; position: relative; }
-.strat-bar-seg:hover::after { content: attr(data-tip); position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: #181C26; color: #F0F0F4; font-size: 0.65rem; padding: 2px 6px; border-radius: 3px; white-space: nowrap; pointer-events: none; z-index: 10; border: 1px solid #222430; }
-.mut-bar { height: 10px; border-radius: 3px; background: #1a3d2e; transition: width 0.4s; }
-.mut-bar-rm { background: #3d1a1a; }
 
 /* Dark scrollbars matching theme */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
