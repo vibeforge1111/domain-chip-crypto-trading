@@ -1,0 +1,108 @@
+{
+  "metrics": {
+    "max_drawdown": 0.0,
+    "paper_trade_readiness": 0.17,
+    "profitability_score": 0.0,
+    "sharpe_ratio": 0.0,
+    "verdict_confidence": 0.6,
+    "win_rate": 0.0
+  },
+  "result": {
+    "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
+    "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
+    "contract_count": 21696,
+    "covered_contract_count": 21695,
+    "data_fallback_reason": "",
+    "data_mode": "contract_window_backtest",
+    "evaluated_asset": "BTC",
+    "evaluated_timeframe": "15m",
+    "evidence_lane": "backtest_benchmark",
+    "holdout_profitability_score": 0.0,
+    "mechanism": "Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.",
+    "minimum_trade_count": 433,
+    "recommended_next_step": "run_contradiction_probe",
+    "regime_stats": {},
+    "requested_asset_universe": "BTC",
+    "requested_timeframe": "15m",
+    "stress_resilience": 0.0,
+    "stress_stats": {
+      "base": {
+        "avg_return": 0.0,
+        "profitability_score": 0.0,
+        "trade_count": 0,
+        "trade_count_gate_pass": false
+      },
+      "elevated_fees": {
+        "avg_return": 0.0,
+        "profitability_score": 0.0,
+        "trade_count": 0,
+        "trade_count_gate_pass": false
+      },
+      "fee_and_slippage": {
+        "avg_return": 0.0,
+        "profitability_score": 0.0,
+        "trade_count": 0,
+        "trade_count_gate_pass": false
+      }
+    },
+    "trade_count": 0,
+    "trade_count_gate_pass": false,
+    "verdict": "reject",
+    "walk_forward_consistency": 0.0,
+    "walk_forward_stats": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20251016-0430",
+        "profitability_score": 0.0,
+        "segment_id": "wf-1",
+        "start_contract_id": "kxbtc15m-20250901-0000",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20251130-0915",
+        "profitability_score": 0.0,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc15m-20251016-0445",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260114-1400",
+        "profitability_score": 0.0,
+        "segment_id": "wf-3",
+        "start_contract_id": "kxbtc15m-20251130-0930",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260228-1845",
+        "profitability_score": 0.0,
+        "segment_id": "wf-4",
+        "start_contract_id": "kxbtc15m-20260114-1415",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260414-2345",
+        "profitability_score": 0.0,
+        "segment_id": "wf-5",
+        "start_contract_id": "kxbtc15m-20260228-1900",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "profitability_score: 0.0\nsharpe_ratio: 0.0\nmax_drawdown: 0.0\nwin_rate: 0.0\npaper_trade_readiness: 0.17\nverdict_confidence: 0.6"
+}

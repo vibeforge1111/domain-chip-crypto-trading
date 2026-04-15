@@ -1,0 +1,52 @@
+{
+  "baseline_metric": null,
+  "reasons": [
+    "Expand from doctrine and strategy combinations, not isolated indicator churn.",
+    "Expand from doctrine and strategy combinations, not isolated indicator churn.",
+    "Expand from doctrine and strategy combinations, not isolated indicator churn."
+  ],
+  "suggestions": [
+    {
+      "candidate_id": "bollinger-highvol-hyperliquid-1h",
+      "candidate_summary": "Rotate into a higher-volatility breakout lane that actually improves the benchmark frontier.",
+      "hypothesis": "The current trend/EMA baseline is too flat on this scenario, so a volatility-expansion doctrine with a squeeze breakout should lift profitability without relying on the stalled 4h continuation template.",
+      "mutations": {
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "breakout_volatility_expansion",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "1h",
+        "venue": "hyperliquid"
+      }
+    },
+    {
+      "candidate_id": "range-funding-ethsol-1h",
+      "candidate_summary": "Probe whether funding dislocations work better under a range doctrine.",
+      "hypothesis": "If the baseline is overfit to trend continuation, a range/funding lane should improve trade density and reduce flat benchmark outcomes.",
+      "mutations": {
+        "asset_universe": "ETH,SOL",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "strategy_id": "funding_mean_revert",
+        "timeframe": "1h",
+        "venue": "bybit"
+      }
+    },
+    {
+      "candidate_id": "breakout-highvol-hyperliquid-15m",
+      "candidate_summary": "Force a faster high-volatility breakout expression to test whether the edge is event-driven rather than trend-following.",
+      "hypothesis": "If the benchmark responds to volatility-expansion more than slow continuation, a shorter breakout lane should outperform the current baseline even with stricter execution noise.",
+      "mutations": {
+        "asset_universe": "BTC,ETH,SOL",
+        "doctrine_id": "breakout_volatility_expansion",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "strategy_id": "breakout_open_interest_confirmation",
+        "timeframe": "15m",
+        "venue": "hyperliquid"
+      }
+    }
+  ]
+}

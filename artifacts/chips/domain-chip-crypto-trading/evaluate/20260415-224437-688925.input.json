@@ -1,0 +1,48 @@
+{
+  "candidate": {
+    "candidate_id": "baseline",
+    "candidate_summary": "",
+    "hypothesis": "",
+    "mutations": {}
+  },
+  "chip_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "command_args": [],
+  "command_kind": "chip-evaluate",
+  "command_name": "autoloop",
+  "eval_goal": "maximize",
+  "eval_metric": "win_rate",
+  "hook": "evaluate",
+  "intent": {
+    "active": false,
+    "frontier_mode": "relaxed",
+    "goal": "",
+    "notes": "",
+    "outcome": "",
+    "resource_modes": [
+      "packets",
+      "memory",
+      "web"
+    ],
+    "search_queries": [],
+    "success_criteria": []
+  },
+  "manifest_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\spark-chip.json",
+  "metrics": {
+    "trades": {
+      "kind": "int",
+      "pattern": "trades[\"']?:\\s*([0-9]+)"
+    },
+    "walk_forward": {
+      "kind": "float",
+      "pattern": "walk_forward[\"']?:\\s*([0-9.]+)"
+    },
+    "win_rate": {
+      "kind": "float",
+      "pattern": "win_rate[\"']?:\\s*([0-9.]+)"
+    }
+  },
+  "project_name": "domain-chip-crypto-trading",
+  "repo_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "runtime_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "workspace_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224437-048326-chip-evaluate\\workspace"
+}

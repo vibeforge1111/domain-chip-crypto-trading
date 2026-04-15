@@ -1,0 +1,155 @@
+{
+  "belief_manifest": {
+    "belief_count": 0,
+    "beliefs": [],
+    "contradiction_count": 0,
+    "durable_belief_count": 0,
+    "promotion_policy": [
+      "Promote repeated improvements for the same mutation signature as durable only when no active contradiction remains.",
+      "Allow a single-run promotion only when it is the current best observed candidate with no regressions for that signature, and keep it provisional by default.",
+      "If two promoted lessons for the same command disagree on a shared mutation value, mark both as provisional until more evidence resolves the contradiction."
+    ],
+    "provisional_belief_count": 0,
+    "skipped_improved_runs": 0
+  },
+  "chip_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "config_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\spark-researcher.project.json",
+  "hook": "watchtower",
+  "ledger_rows": [
+    {
+      "applied_mutations": [],
+      "baseline_value": null,
+      "candidate_id": "baseline",
+      "candidate_summary": "Run the current experiment config.",
+      "command": [
+        "crypto-autoloop",
+        "run-once"
+      ],
+      "command_name": "autoloop",
+      "created_at": "2026-04-15T16:53:14+00:00",
+      "cwd": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once\\workspace",
+      "hypothesis": "The current experiment config defines the local floor.",
+      "log_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once\\autoloop.log",
+      "metric_name": "win_rate",
+      "metric_value": null,
+      "metrics": {
+        "trades": null,
+        "walk_forward": null,
+        "win_rate": null
+      },
+      "project_name": "domain-chip-crypto-trading",
+      "returncode": 0,
+      "run_dir": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once",
+      "run_id": "20260415-165150-013401-train-once",
+      "status": "ok",
+      "stderr_excerpt": "warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/control-plane.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/backtest.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/learning.md', LF will be replaced by",
+      "stdout_excerpt": "[master 0a6e1bb] Tri-loop cycle 19: commit leftover artifacts\n 1 file changed, 82 insertions(+), 742 deletions(-)\n[master c399693] Tri-loop cycle 19: ingest 1 cards\n 577 files changed, 1343293 insertions(+), 11350 deletions(-)\n create mode 100644 SPARK_RESEARCHER_PRESET.md\n rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-3e9a666a63.json => heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-",
+      "trace_id": "e280d9f6cd28363e3a383c6319a78833",
+      "trace_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\traces\\e280d9f6cd28363e3a383c6319a78833.jsonl",
+      "verdict": "unknown",
+      "workspace_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once\\workspace"
+    }
+  ],
+  "manifest_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\spark-chip.json",
+  "memory_manifest": {
+    "backend": "local",
+    "chip_documents": [
+      {
+        "kind": "benchmark_evidence",
+        "memory_tier": "raw_run",
+        "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\benchmark_evidence-crypto-backtest-global-baseline.md",
+        "title": "global-baseline Backtest Evidence"
+      },
+      {
+        "kind": "grounded_boundary",
+        "memory_tier": "raw_run",
+        "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\grounded_boundary-crypto-boundary-global-baseline.md",
+        "title": "global-baseline Boundary Candidate"
+      },
+      {
+        "kind": "benchmark_win_packet",
+        "memory_tier": "raw_run",
+        "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\benchmark_win_packet-crypto-swarm-publication-global-baseline.md",
+        "title": "global-baseline Swarm Publication Packet"
+      }
+    ],
+    "document_count": 6,
+    "documents_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents",
+    "episode_count": 0,
+    "kinds": {
+      "belief": 1,
+      "benchmark_evidence": 1,
+      "benchmark_win_packet": 1,
+      "grounded_boundary": 1,
+      "outcome": 1,
+      "run": 1
+    },
+    "memory_tiers": {
+      "belief": 1,
+      "raw_outcome": 1,
+      "raw_run": 4
+    },
+    "outcomes": [
+      {
+        "best_metric": null,
+        "candidate_id": "baseline",
+        "command_name": "autoloop",
+        "improved_runs": 0,
+        "latest_metric": null,
+        "latest_verdict": "unknown",
+        "outcome_id": "outcome-autoloop-baseline",
+        "run_count": 1,
+        "run_ids": [
+          "20260415-165150-013401-train-once"
+        ],
+        "title": "autoloop / baseline"
+      }
+    ],
+    "self_edit_documents": [],
+    "source_runs": 1,
+    "working_memory": {}
+  },
+  "project_name": "domain-chip-crypto-trading",
+  "repo_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "runtime_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "summary": {
+    "best_by_metric": {},
+    "recent": [
+      {
+        "applied_mutations": [],
+        "baseline_value": null,
+        "candidate_id": "baseline",
+        "candidate_summary": "Run the current experiment config.",
+        "command": [
+          "crypto-autoloop",
+          "run-once"
+        ],
+        "command_name": "autoloop",
+        "created_at": "2026-04-15T16:53:14+00:00",
+        "cwd": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once\\workspace",
+        "hypothesis": "The current experiment config defines the local floor.",
+        "log_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once\\autoloop.log",
+        "metric_name": "win_rate",
+        "metric_value": null,
+        "metrics": {
+          "trades": null,
+          "walk_forward": null,
+          "win_rate": null
+        },
+        "project_name": "domain-chip-crypto-trading",
+        "returncode": 0,
+        "run_dir": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once",
+        "run_id": "20260415-165150-013401-train-once",
+        "status": "ok",
+        "stderr_excerpt": "warning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/control-plane.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/backtest.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'artifacts/runs/20260415-165150-013401-train-once/workspace/autoloop/lanes/learning.md', LF will be replaced by",
+        "stdout_excerpt": "[master 0a6e1bb] Tri-loop cycle 19: commit leftover artifacts\n 1 file changed, 82 insertions(+), 742 deletions(-)\n[master c399693] Tri-loop cycle 19: ingest 1 cards\n 577 files changed, 1343293 insertions(+), 11350 deletions(-)\n create mode 100644 SPARK_RESEARCHER_PRESET.md\n rename artifacts/promotion/benchmark_grounded/{heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-3e9a666a63.json => heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-",
+        "trace_id": "e280d9f6cd28363e3a383c6319a78833",
+        "trace_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\traces\\e280d9f6cd28363e3a383c6319a78833.jsonl",
+        "verdict": "unknown",
+        "workspace_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165150-013401-train-once\\workspace"
+      }
+    ],
+    "run_count": 1
+  },
+  "vault_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\obsidian-vault"
+}
