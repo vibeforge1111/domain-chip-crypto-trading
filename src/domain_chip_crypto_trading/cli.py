@@ -120,6 +120,77 @@ def _sort_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     )
 
 
+def _autoloop_state(payload: dict[str, Any]) -> dict[str, Any]:
+    data = _json_artifact(payload, "artifacts", "recursion", "autoloop_state.json", fallback={})
+    return data if isinstance(data, dict) else {}
+
+
+def _benchmark_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    summary = _heavy_benchmark_summary(payload)
+    rows = summary.get("rows", []) if isinstance(summary.get("rows"), list) else []
+    return [row for row in rows if isinstance(row, dict)]
+
+
+def _benchmark_mutations(row: dict[str, Any]) -> dict[str, str]:
+    raw = row.get("mutations", {})
+    if isinstance(raw, dict):
+        return {str(key): str(value) for key, value in raw.items() if value not in {None, ""}}
+    return _row_mutations(row)
+
+
+def _benchmark_metrics(row: dict[str, Any]) -> dict[str, Any]:
+    metrics = row.get("metrics", {})
+    return metrics if isinstance(metrics, dict) else _row_metrics(row)
+
+
+def _benchmark_result(row: dict[str, Any]) -> dict[str, Any]:
+    result = row.get("result", {})
+    return result if isinstance(result, dict) else _row_chip_result(row)
+
+
+def _rank_benchmark_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return sorted(
+        rows,
+        key=lambda row: (
+            float(_benchmark_metrics(row).get("win_rate", 0.0) or 0.0),
+            float(_benchmark_result(row).get("walk_forward_consistency", 0.0) or 0.0),
+            float(_benchmark_metrics(row).get("sharpe_ratio", 0.0) or 0.0),
+            float(_benchmark_metrics(row).get("profitability_score", 0.0) or 0.0),
+        ),
+        reverse=True,
+    )
+
+
+def _safe_proposed_mutations(payload: dict[str, Any], proposed: dict[str, Any]) -> dict[str, str]:
+    # This project still runs through the wrapper/train-once path with no mutable parameter
+    # contract, so hook suggestions must stay informational until the runtime can apply them safely.
+    return {}
+
+
+def _suggestion_entry(
+    payload: dict[str, Any],
+    *,
+    candidate_id: str,
+    candidate_summary: str,
+    hypothesis: str,
+    proposed_mutations: dict[str, Any],
+    metadata: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    entry: dict[str, Any] = {
+        "candidate_id": candidate_id,
+        "candidate_summary": candidate_summary,
+        "hypothesis": hypothesis,
+        "mutations": _safe_proposed_mutations(payload, proposed_mutations),
+    }
+    combined_metadata = {
+        "proposed_mutations": {str(key): str(value) for key, value in proposed_mutations.items() if value not in {None, ""}},
+    }
+    if isinstance(metadata, dict):
+        combined_metadata.update(metadata)
+    entry["metadata"] = combined_metadata
+    return entry
+
+
 def _line(value: Any) -> str:
     return "n/a" if value in {None, ""} else str(value)
 
@@ -537,85 +608,360 @@ def evaluate(payload: dict) -> dict:
 
 
 def suggest(payload: dict) -> dict:
-    frontier = [
-        {
-            "candidate_id": "bollinger-highvol-hyperliquid-1h",
-            "candidate_summary": "Rotate into a higher-volatility breakout lane that actually improves the benchmark frontier.",
-            "hypothesis": "The current trend/EMA baseline is too flat on this scenario, so a volatility-expansion doctrine with a squeeze breakout should lift profitability without relying on the stalled 4h continuation template.",
-            "mutations": {
-                "doctrine_id": "breakout_volatility_expansion",
-                "strategy_id": "bollinger_squeeze_breakout",
-                "market_regime": "high_vol",
-                "timeframe": "1h",
-                "venue": "hyperliquid",
-                "asset_universe": "BTC,ETH",
-                "paper_gate": "balanced"
-            }
-        },
-        {
-            "candidate_id": "range-funding-ethsol-1h",
-            "candidate_summary": "Probe whether funding dislocations work better under a range doctrine.",
-            "hypothesis": "If the baseline is overfit to trend continuation, a range/funding lane should improve trade density and reduce flat benchmark outcomes.",
-            "mutations": {
-                "doctrine_id": "mean_reversion_liquidity_reclaim",
-                "strategy_id": "funding_mean_revert",
-                "market_regime": "range",
-                "timeframe": "1h",
-                "venue": "bybit",
-                "asset_universe": "ETH,SOL",
-                "paper_gate": "balanced"
-            }
-        },
-        {
-            "candidate_id": "breakout-highvol-hyperliquid-15m",
-            "candidate_summary": "Force a faster high-volatility breakout expression to test whether the edge is event-driven rather than trend-following.",
-            "hypothesis": "If the benchmark responds to volatility-expansion more than slow continuation, a shorter breakout lane should outperform the current baseline even with stricter execution noise.",
-            "mutations": {
-                "doctrine_id": "breakout_volatility_expansion",
-                "strategy_id": "breakout_open_interest_confirmation",
-                "market_regime": "high_vol",
-                "timeframe": "15m",
-                "venue": "hyperliquid",
-                "asset_universe": "BTC,ETH,SOL",
-                "paper_gate": "balanced"
-            }
-        },
-        {
-            "candidate_id": "riskfirst-ema-btc-4h",
-            "candidate_summary": "Transfer the strongest risk doctrine onto a slower continuation expression.",
-            "hypothesis": "Cross-pollination should raise paper-trade readiness if risk doctrine is genuinely portable, even if profitability only improves modestly.",
-            "mutations": {
-                "doctrine_id": "risk_first_asymmetric_capture",
-                "strategy_id": "ema_pullback_long",
-                "market_regime": "trend",
-                "timeframe": "4h",
-                "venue": "binance",
-                "asset_universe": "BTC",
-                "paper_gate": "strict"
-            }
-        },
-    ]
+    rows = _benchmark_rows(payload)
+    variety = _variety_backlog(payload)
+    probes = _contradiction_probes(payload)
+    ranked = _rank_benchmark_rows(rows)
+    top = ranked[0] if ranked else {}
+    top_metrics = _benchmark_metrics(top) if top else {}
+    top_result = _benchmark_result(top) if top else {}
+    top_mutations = _benchmark_mutations(top) if top else {}
+
+    suggestions: list[dict[str, Any]] = []
+
+    if len(ranked) >= 2:
+        runner_up = ranked[1]
+        runner_mutations = _benchmark_mutations(runner_up)
+        proposed = dict(top_mutations)
+        for key in ("doctrine_id", "strategy_id", "market_regime", "timeframe", "venue", "asset_universe", "paper_gate"):
+            if runner_mutations.get(key) and proposed.get(key) != runner_mutations.get(key):
+                proposed[key] = runner_mutations[key]
+                break
+        suggestions.append(
+            _suggestion_entry(
+                payload,
+                candidate_id=f"cross-{top.get('candidate_id', 'leader')}-{runner_up.get('candidate_id', 'runner-up')}",
+                candidate_summary=(
+                    f"Cross the current leader `{top.get('candidate_id', 'unknown')}` with one mutation from "
+                    f"`{runner_up.get('candidate_id', 'unknown')}` instead of adding a fresh doctrine blindly."
+                ),
+                hypothesis=(
+                    "The benchmark already has a better frontier than the baseline-only loop. "
+                    "Use the runner-up's strongest differing mutation as the next bounded probe."
+                ),
+                proposed_mutations=proposed,
+                metadata={
+                    "source": "top_cross_pollination",
+                    "leader_candidate_id": top.get("candidate_id"),
+                    "runner_up_candidate_id": runner_up.get("candidate_id"),
+                },
+            )
+        )
+
+    for item in variety:
+        if len(suggestions) >= 3:
+            break
+        if not isinstance(item, dict):
+            continue
+        child_targets = item.get("suggested_child_targets", [])
+        proposed = {}
+        label = "variety child"
+        if isinstance(child_targets, list) and child_targets:
+            first_target = child_targets[0]
+            if isinstance(first_target, dict):
+                maybe_mutations = first_target.get("mutations", {})
+                if isinstance(maybe_mutations, dict):
+                    proposed = maybe_mutations
+                label = str(first_target.get("label") or first_target.get("variety_child_label") or label)
+        if not proposed:
+            pending_labels = item.get("pending_child_labels", [])
+            if isinstance(pending_labels, list) and pending_labels:
+                label = str(pending_labels[0])
+        suggestions.append(
+            _suggestion_entry(
+                payload,
+                candidate_id=f"variety-{_line(item.get('strategy_family')).replace(' ', '-').lower()}-{_line(item.get('doctrine_family')).replace(' ', '-').lower()}",
+                candidate_summary=(
+                    f"Explore the uncovered variety backlog for `{_line(item.get('strategy_family'))}` under "
+                    f"`{_line(item.get('doctrine_family'))}`."
+                ),
+                hypothesis=(
+                    f"Variety backlog is still open on `{label}`. Closing those uncovered child combinations is "
+                    "higher-signal than generic indicator churn."
+                ),
+                proposed_mutations=proposed,
+                metadata={
+                    "source": "variety_backlog",
+                    "status": item.get("status"),
+                    "target_contract_family": item.get("target_contract_family"),
+                    "variety_family_id": item.get("variety_family_id"),
+                },
+            )
+        )
+
+    for probe in probes:
+        if len(suggestions) >= 3:
+            break
+        if not isinstance(probe, dict):
+            continue
+        failure_modes = probe.get("failure_modes", [])
+        top_mode = failure_modes[0] if isinstance(failure_modes, list) and failure_modes and isinstance(failure_modes[0], dict) else {}
+        proposed = {
+            "doctrine_id": probe.get("doctrine_id"),
+            "strategy_id": probe.get("strategy_id"),
+            "market_regime": probe.get("market_regime"),
+        }
+        suggestions.append(
+            _suggestion_entry(
+                payload,
+                candidate_id=f"probe-{_line(probe.get('probe_id')).replace(' ', '-').lower()}",
+                candidate_summary=(
+                    f"Treat `{_line(probe.get('candidate_id'))}` as an explicit contradiction lane, "
+                    "not a candidate to promote prematurely."
+                ),
+                hypothesis=(
+                    f"Current failure surface is `{_line(top_mode.get('mode'))}`. "
+                    f"{_line(top_mode.get('probe') or probe.get('probe_thesis'))}"
+                ),
+                proposed_mutations=proposed,
+                metadata={
+                    "source": "contradiction_probe",
+                    "priority": probe.get("priority"),
+                    "recommended_next_step": probe.get("recommended_next_step"),
+                },
+            )
+        )
+
+    if not suggestions:
+        fallback = [
+            _suggestion_entry(
+                payload,
+                candidate_id="bollinger-highvol-hyperliquid-1h",
+                candidate_summary="Rotate into a higher-volatility breakout lane that actually improves the benchmark frontier.",
+                hypothesis="The current trend/EMA baseline is too flat on this scenario, so a volatility-expansion doctrine with a squeeze breakout should lift profitability without relying on the stalled continuation template.",
+                proposed_mutations={
+                    "doctrine_id": "breakout_volatility_expansion",
+                    "strategy_id": "bollinger_squeeze_breakout",
+                    "market_regime": "high_vol",
+                    "timeframe": "1h",
+                    "venue": "hyperliquid",
+                    "asset_universe": "BTC,ETH",
+                    "paper_gate": "balanced",
+                },
+                metadata={"source": "static_fallback"},
+            ),
+            _suggestion_entry(
+                payload,
+                candidate_id="range-funding-ethsol-1h",
+                candidate_summary="Probe whether funding dislocations work better under a range doctrine.",
+                hypothesis="If the baseline is overfit to trend continuation, a range/funding lane should improve trade density and reduce flat benchmark outcomes.",
+                proposed_mutations={
+                    "doctrine_id": "mean_reversion_liquidity_reclaim",
+                    "strategy_id": "funding_mean_revert",
+                    "market_regime": "range",
+                    "timeframe": "1h",
+                    "venue": "bybit",
+                    "asset_universe": "ETH,SOL",
+                    "paper_gate": "balanced",
+                },
+                metadata={"source": "static_fallback"},
+            ),
+            _suggestion_entry(
+                payload,
+                candidate_id="riskfirst-ema-btc-4h",
+                candidate_summary="Transfer the strongest risk doctrine onto a slower continuation expression.",
+                hypothesis="Cross-pollination should raise paper-trade readiness if risk doctrine is genuinely portable, even if profitability only improves modestly.",
+                proposed_mutations={
+                    "doctrine_id": "risk_first_asymmetric_capture",
+                    "strategy_id": "ema_pullback_long",
+                    "market_regime": "trend",
+                    "timeframe": "4h",
+                    "venue": "binance",
+                    "asset_universe": "BTC",
+                    "paper_gate": "strict",
+                },
+                metadata={"source": "static_fallback"},
+            ),
+        ]
+        suggestions.extend(fallback)
+
     limit = max(1, int(payload.get("limit", 3) or 3))
-    return {"baseline_metric": None, "reasons": ["Expand from doctrine and strategy combinations, not isolated indicator churn."] * min(limit, len(frontier)), "suggestions": frontier[:limit]}
+    cycle_count = int(_autoloop_state(payload).get("cycle_count", 0) or 0)
+    variety_open = sum(1 for item in variety if isinstance(item, dict) and str(item.get("status", "")).endswith("pending"))
+    reasons = [
+        (
+            f"Top benchmark candidate `{_line(top.get('candidate_id'))}` is at "
+            f"WR `{float(top_metrics.get('win_rate', 0.0) or 0.0):.1%}` with "
+            f"WF `{float(top_result.get('walk_forward_consistency', 0.0) or 0.0):.0%}` after `{cycle_count}` cycles."
+        ),
+        (
+            f"`{variety_open}` variety families are still uncovered, so the next useful probes should come from "
+            "known doctrine x strategy gaps rather than arbitrary indicator churn."
+        ),
+        (
+            f"`{len(probes)}` contradiction probes are active; the next loop should mutate around failure surfaces, "
+            "not promote on backtest residue alone."
+        ),
+    ]
+
+    return {
+        "baseline_metric": round(float(top_metrics.get("win_rate", 0.0) or 0.0), 4) if top else None,
+        "reasons": reasons[:limit],
+        "suggestions": suggestions[:limit],
+    }
 
 
 def packets(payload: dict) -> dict:
+    state = _autoloop_state(payload)
+    rows = _benchmark_rows(payload)
+    cards = _doctrine_cards(payload)
+    probes = _contradiction_probes(payload)
+    summary = _heavy_benchmark_summary(payload)
+    ranked = _rank_benchmark_rows(rows)
+    cycle_count = int(state.get("cycle_count", 0) or 0)
+    docs: list[dict[str, Any]] = []
+
+    if ranked:
+        top = ranked[0]
+        top_metrics = _benchmark_metrics(top)
+        top_result = _benchmark_result(top)
+        contract_family = _line(summary.get("contract_family"))
+        top_lines = [
+            "# Autoloop Benchmark Evidence",
+            "",
+            f"- cycle_count: {cycle_count}",
+            f"- candidate_count: {len(rows)}",
+            f"- contract_family: {contract_family}",
+            f"- top_candidate: {top.get('candidate_id', 'unknown')}",
+            f"- win_rate: {float(top_metrics.get('win_rate', 0.0) or 0.0):.1%}",
+            f"- sharpe_ratio: {float(top_metrics.get('sharpe_ratio', 0.0) or 0.0):.4f}",
+            f"- max_drawdown: {float(top_metrics.get('max_drawdown', 1.0) or 1.0):.2%}",
+            f"- walk_forward_consistency: {float(top_result.get('walk_forward_consistency', 0.0) or 0.0):.1%}",
+            f"- trade_count: {int(top_result.get('trade_count', 0) or 0)}",
+            f"- verdict: {top_result.get('verdict', 'unknown')}",
+            "",
+            "## Top 5 Candidates",
+            "",
+            "| Candidate | WR | Sharpe | WF | Verdict |",
+            "|-----------|----|--------|----|---------|",
+        ]
+        for row in ranked[:5]:
+            metrics = _benchmark_metrics(row)
+            result = _benchmark_result(row)
+            candidate_id = str(row.get("candidate_id", "?"))
+            if len(candidate_id) > 44:
+                candidate_id = candidate_id[:41] + "..."
+            top_lines.append(
+                f"| {candidate_id} | "
+                f"{float(metrics.get('win_rate', 0.0) or 0.0):.1%} | "
+                f"{float(metrics.get('sharpe_ratio', 0.0) or 0.0):.2f} | "
+                f"{float(result.get('walk_forward_consistency', 0.0) or 0.0):.0%} | "
+                f"{_line(result.get('verdict'))} |"
+            )
+        docs.append(
+            {
+                "kind": "benchmark_evidence",
+                "slug": "crypto-autoloop-benchmark",
+                "title": "Autoloop Benchmark Evidence",
+                "content": "\n".join(top_lines),
+                "memory_tier": "durable",
+            }
+        )
+
+    strategy_stats: dict[str, list[float]] = {}
+    doctrine_stats: dict[str, list[float]] = {}
+    for row in rows:
+        mutations = _benchmark_mutations(row)
+        metrics = _benchmark_metrics(row)
+        strategy_stats.setdefault(mutations.get("strategy_id", "unknown"), []).append(float(metrics.get("win_rate", 0.0) or 0.0))
+        doctrine_stats.setdefault(mutations.get("doctrine_id", "unknown"), []).append(float(metrics.get("win_rate", 0.0) or 0.0))
+    doctrine_lines = [
+        "# Grounded Doctrine",
+        "",
+        f"Based on {len(rows)} heavy-backtest candidates across {cycle_count} autoloop cycles.",
+        "",
+        "## Strategy Family Performance",
+        "",
+        "| Strategy | Candidates | Best WR | Avg WR |",
+        "|----------|------------|---------|--------|",
+    ]
+    for strategy_id, win_rates in sorted(strategy_stats.items(), key=lambda item: max(item[1]) if item[1] else 0.0, reverse=True)[:8]:
+        doctrine_lines.append(
+            f"| {strategy_id} | {len(win_rates)} | {max(win_rates):.1%} | {sum(win_rates)/len(win_rates):.1%} |"
+        )
+    doctrine_lines.extend([
+        "",
+        "## Doctrine Family Performance",
+        "",
+        "| Doctrine | Candidates | Best WR | Avg WR |",
+        "|----------|------------|---------|--------|",
+    ])
+    for doctrine_id, win_rates in sorted(doctrine_stats.items(), key=lambda item: max(item[1]) if item[1] else 0.0, reverse=True)[:8]:
+        doctrine_lines.append(
+            f"| {doctrine_id} | {len(win_rates)} | {max(win_rates):.1%} | {sum(win_rates)/len(win_rates):.1%} |"
+        )
+    if cards:
+        doctrine_lines.extend([
+            "",
+            f"## Doctrine Cards ({len(cards)} total)",
+            "",
+        ])
+        for card in cards[:10]:
+            doctrine_lines.append(
+                f"- **{_line(card.get('card_id'))}**: {_line(card.get('title') or card.get('root_lesson') or card.get('mechanism'))}"
+            )
+    docs.append(
+        {
+            "kind": "grounded_doctrine",
+            "slug": "crypto-autoloop-doctrine",
+            "title": "Autoloop Grounded Doctrine",
+            "content": "\n".join(doctrine_lines),
+            "memory_tier": "durable",
+        }
+    )
+
+    dead_ends = [row for row in rows if str(_benchmark_result(row).get("verdict", "")) == "reject"]
+    reject_strategies: dict[str, int] = {}
+    for row in dead_ends:
+        strategy_id = _benchmark_mutations(row).get("strategy_id", "unknown")
+        reject_strategies[strategy_id] = reject_strategies.get(strategy_id, 0) + 1
+    boundary_lines = [
+        "# Grounded Boundary (Dead Ends)",
+        "",
+        f"{len(dead_ends)} of {len(rows)} heavy-backtest candidates are currently rejected.",
+        "",
+        "## Common Rejection Patterns",
+        "",
+    ]
+    for strategy_id, count in sorted(reject_strategies.items(), key=lambda item: item[1], reverse=True)[:5]:
+        boundary_lines.append(f"- {strategy_id}: {count} rejections")
+    if probes:
+        boundary_lines.extend([
+            "",
+            f"## Active Contradictions ({len(probes)})",
+            "",
+        ])
+        for probe in probes[:5]:
+            if not isinstance(probe, dict):
+                continue
+            failure_modes = probe.get("failure_modes", [])
+            top_mode = failure_modes[0] if isinstance(failure_modes, list) and failure_modes and isinstance(failure_modes[0], dict) else {}
+            boundary_lines.append(
+                f"- {_line(probe.get('probe_id'))}: {_line(top_mode.get('mode') or probe.get('recommended_next_step'))} "
+                f"(priority {float(probe.get('priority', 0.0) or 0.0):.2f})"
+            )
+    docs.append(
+        {
+            "kind": "grounded_boundary",
+            "slug": "crypto-autoloop-dead-ends",
+            "title": "Autoloop Dead-End Patterns",
+            "content": "\n".join(boundary_lines),
+            "memory_tier": "durable",
+        }
+    )
+
     candidate = payload.get("candidate", {}) if isinstance(payload.get("candidate"), dict) else {}
     candidate_id = str(candidate.get("candidate_id", "global-baseline"))
     mutations = _mutations(payload)
     metrics = _score(mutations)
     publication_packet = _swarm_publication_packet(candidate_id, metrics, mutations)
-    docs = [{"kind": "benchmark_evidence", "slug": "crypto-backtest-" + candidate_id, "title": candidate_id + " Backtest Evidence", "content": "\n".join(["# " + candidate_id + " Backtest Evidence", "", "- evidence_lane: backtest_benchmark", "- profitability_score: " + str(metrics["profitability_score"]), "- sharpe_ratio: " + str(metrics["sharpe_ratio"]), "- max_drawdown: " + str(metrics["max_drawdown"]), "- paper_trade_readiness: " + str(metrics["paper_trade_readiness"]), "- recommended_next_step: " + str(metrics["recommended_next_step"])])}]
-    if metrics["recommended_next_step"] == "queue_for_paper_trade":
-        docs.append({"kind": "grounded_doctrine", "slug": "crypto-doctrine-" + candidate_id, "title": candidate_id + " Doctrine Candidate", "content": "Eligible for paper trade after backtest bridge review."})
-    elif metrics["recommended_next_step"] == "run_contradiction_probe":
-        docs.append({"kind": "grounded_boundary", "slug": "crypto-boundary-" + candidate_id, "title": candidate_id + " Boundary Candidate", "content": "Treat as a failure surface or contradiction probe, not doctrine."})
     docs.append(
         {
             "kind": "benchmark_win_packet",
             "slug": "crypto-swarm-publication-" + candidate_id,
             "title": candidate_id + " Swarm Publication Packet",
             "content": json.dumps(publication_packet, indent=2, sort_keys=True),
+            "memory_tier": "raw_run",
         }
     )
     return {"documents": docs, "publication_packet": publication_packet}
