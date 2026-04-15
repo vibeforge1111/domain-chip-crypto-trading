@@ -1,0 +1,46 @@
+{
+  "benchmark_priority": "medium",
+  "card_id": "dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-42ffb9b5-sparse_signal",
+  "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+  "doctrine_family": "breakout_volatility_expansion",
+  "generated_at": "2026-04-15T15:47:53.089312Z",
+  "generation_source": "build_doctrine_from_contradictions",
+  "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+  "ingest_priority": 100,
+  "lineage_failures": [
+    "sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
+    "holdout_decay: The final holdout slice drops below break-even profitability after fees.",
+    "segment_instability: Walk-forward consistency is too low across chronological splits.",
+    "execution_fragility: Edge does not survive elevated fees and slippage cleanly."
+  ],
+  "mechanism": "Generated from contradiction probe on auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90 targeting sparse_signal failure surface.",
+  "mutation_template": {
+    "activation_profile": "wider",
+    "asset_universe": "BTC",
+    "doctrine_id": "breakout_volatility_expansion",
+    "market_regime": "trend",
+    "paper_gate": "balanced",
+    "strategy_id": "breakout_open_interest_confirmation",
+    "timeframe": "15m",
+    "venue": "kalshi"
+  },
+  "no_trade_boundaries": [
+    "Skip conditions identified by the sparse_signal probe as contributing to poor performance."
+  ],
+  "packet_id": "dp-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-42ffb9b5-sparse_signal",
+  "packet_status": "ready_for_card_ingest",
+  "proposal_id": "auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90-sparse_signal",
+  "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+  "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+  "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+  "setup_definition": "Apply sparse_signal-targeted mutation overrides to auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90 signal logic and benchmark.",
+  "source_ids": [
+    "autoloop_contradiction_probe",
+    "john-bollinger-bands"
+  ],
+  "source_urls": [],
+  "strategy_family": "breakout_expansion_confirmation",
+  "target_contract_family": "btc_up_down_15m",
+  "title": "Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90",
+  "trader": "recursive_flywheel"
+}

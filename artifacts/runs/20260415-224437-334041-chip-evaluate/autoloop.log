@@ -1,0 +1,15 @@
+profitability_score: 0.5326
+sharpe_ratio: 0.4046
+max_drawdown: 0.99
+win_rate: 0.5526
+paper_trade_readiness: 0.332
+verdict_confidence: 0.717
+[metrics]
+{
+  "max_drawdown": 0.99,
+  "paper_trade_readiness": 0.332,
+  "profitability_score": 0.5326,
+  "sharpe_ratio": 0.4046,
+  "verdict_confidence": 0.717,
+  "win_rate": 0.5526
+}

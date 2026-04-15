@@ -1,0 +1,101 @@
+{
+  "workspaceId": "ws_evolution_2026-04-15",
+  "agentId": "agent:trading-crypto-evolution",
+  "runtimeSource": {
+    "kind": "spark_researcher",
+    "version": "0.2.0",
+    "loopKind": "chip",
+    "sourceInstanceId": "agent:trading-crypto-evolution",
+    "sourceRunId": "spark-researcher:2026-04-15T13:55:21.337327+00:00",
+    "chipKey": "trading-crypto-evolution",
+    "chipLabel": "Crypto Trading Evolution"
+  },
+  "specialization": {
+    "id": "specialization:trading-crypto-evolution",
+    "key": "trading-crypto-evolution",
+    "label": "Crypto Trading Evolution",
+    "memoryPolicy": "selective"
+  },
+  "runtimePulse": {
+    "agentId": "agent:trading-crypto-evolution",
+    "repoId": "repo:domain-chip-trading-crypto-evolution",
+    "runtimeState": "running",
+    "passNumber": 3,
+    "stageKey": "evolutionary_search",
+    "stageLabel": "Generation 8",
+    "blocker": null,
+    "recommendation": "Champion at plateau. Focus on guard synergy exploration and temperature shock to escape local optima.",
+    "lastUpdatedAt": "2026-04-15T13:56:19.021140+00:00"
+  },
+  "intelligencePulse": {
+    "specializationId": "specialization:trading-crypto-evolution",
+    "specializationLabel": "Crypto Trading Evolution",
+    "activeEvolutionPathId": "evolution-path:population-search",
+    "activeEvolutionPathSummary": "Evolve crypto trading configurations through population-based search to maximize win rate with validated guard combinations.",
+    "newestInsightId": null,
+    "newestInsightSummary": null,
+    "strongestMasteryId": null,
+    "strongestMasterySummary": null,
+    "pendingContradictionCount": 0,
+    "pendingUpgradeCount": 0,
+    "recommendedAbsorbTargetId": null,
+    "recommendedUpgradeId": null,
+    "evidence": [
+      {
+        "lane": "benchmark_evidence",
+        "support": "strong",
+        "summary": "Gen 8: 1 outcomes evaluated; best WR 100.0%; 0 validated insights."
+      }
+    ]
+  },
+  "evolutionPaths": [
+    {
+      "id": "evolution-path:population-search",
+      "scope": "specialization",
+      "specializationId": "specialization:trading-crypto-evolution",
+      "summary": "Evolve crypto trading configurations through population-based search to maximize win rate with validated guard combinations.",
+      "status": "open",
+      "assignedAgentId": "agent:trading-crypto-evolution",
+      "bestOutcomeId": "outcome:evo-gen1-new_champion-unknown",
+      "expiresAt": null,
+      "createdAt": "2026-04-15T13:55:21.337327+00:00",
+      "updatedAt": "2026-04-15T13:56:19.021140+00:00"
+    }
+  ],
+  "insights": [],
+  "masteries": [],
+  "masteryReviews": [],
+  "contradictions": [],
+  "upgrades": [],
+  "upgradeDeliveries": [],
+  "outcomes": [
+    {
+      "id": "outcome:evo-gen1-new_champion-unknown",
+      "targetType": "evolution_path",
+      "targetId": "evolution-path:population-search",
+      "evidenceLane": "benchmark_evidence",
+      "verdict": "pass",
+      "summary": "New champion unknown with 100.0% win rate (++41.8% over previous best).",
+      "metricName": "win_rate",
+      "metricValue": 1.0,
+      "createdAt": "2026-04-15T12:29:06.203525+00:00",
+      "context": {
+        "benchmark": {
+          "benchmarkName": "crypto_backtest_evaluation",
+          "scenarioId": "gen_1",
+          "scenarioPack": "evolutionary_search",
+          "baselineId": "population-baseline",
+          "strongestComponent": "guard_synergy",
+          "weakestComponent": "regime_adaptability",
+          "componentScores": {
+            "win_rate": 1.0,
+            "guard_synergy": 0.99,
+            "regime_adaptability": 0.7
+          }
+        }
+      }
+    }
+  ],
+  "artifactRefs": [],
+  "emittedAt": "2026-04-15T13:56:19.021140+00:00"
+}

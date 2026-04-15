@@ -1273,6 +1273,34 @@ function renderDoctrineInsights(cards) {
   }).join('');
 }
 
+// ── Self-Edits Queue ─────────────────────────────
+function renderSelfEdits(edits) {
+  const el = document.getElementById('self-edits');
+  const countEl = document.getElementById('self-edit-count');
+  if (!edits || edits.length === 0) {
+    el.innerHTML = '<div class="text-xs" style="color:#6A7080">No self-edits queued</div>';
+    countEl.textContent = '0 queued';
+    return;
+  }
+  countEl.textContent = edits.length + ' queued';
+  el.innerHTML = edits.map(e => {
+    const parent = (e.parent_candidate_id || '').replace(/^auto-/, '').substring(0, 30);
+    const editId = (e.edit_id || '').substring(0, 25);
+    const priority = (e.priority || 0).toFixed(2);
+    const failures = (e.failure_modes || []).slice(0, 3);
+    const allowed = (e.allowed_edits || []).slice(0, 3);
+    return '<div class="p-3 rounded-lg" style="background:#141820;border:1px solid #222430">' +
+      '<div class="flex items-center justify-between mb-1">' +
+        '<span class="text-xs font-semibold" style="color:#68A8D8">' + editId + '</span>' +
+        '<span class="badge badge-amber" style="font-size:0.6rem">p=' + priority + '</span>' +
+      '</div>' +
+      '<div class="text-xs" style="color:#8890B0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">from: ' + parent + '</div>' +
+      (failures.length > 0 ? '<div class="text-xs mt-1" style="color:#E08878">' + failures.map(f => f.replace(/_/g,' ')).join(', ') + '</div>' : '') +
+      (allowed.length > 0 ? '<div class="text-xs mt-1" style="color:#6A7080">edits: ' + allowed.map(a => a.replace(/\./g,' ')).join(', ') + '</div>' : '') +
+    '</div>';
+  }).join('');
+}
+
 // ── Top Candidates Table ──────────────────────────
 function sortCandidates(field) {
   if (_candidateSort.field === field) _candidateSort.asc = !_candidateSort.asc;
@@ -1550,6 +1578,7 @@ async function refresh() {
     renderStrategyPerformance(autoloop.strategy_family_stats);
     renderDoctrineInsights(autoloop.doctrine ? autoloop.doctrine.recent_cards : []);
     renderTopCandidates();
+    renderSelfEdits(autoloop.self_edits);
     renderWfGate(autoloop.wf_scatter);
   }
 

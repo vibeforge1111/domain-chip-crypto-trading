@@ -1,0 +1,2 @@
+[console_scripts]
+crypto-autoloop = domain_chip_crypto_trading.autoloop:main

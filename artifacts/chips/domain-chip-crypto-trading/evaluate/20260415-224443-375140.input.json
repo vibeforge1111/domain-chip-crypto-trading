@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "candidate_id": "range-funding-ethsol-1h",
+    "candidate_summary": "Probe whether funding dislocations work better under a range doctrine.",
+    "hypothesis": "If the baseline is overfit to trend continuation, a range/funding lane should improve trade density and reduce flat benchmark outcomes.",
+    "mutations": {
+      "asset_universe": "ETH,SOL",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "strategy_id": "funding_mean_revert",
+      "timeframe": "1h",
+      "venue": "bybit"
+    }
+  },
+  "chip_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "command_args": [],
+  "command_kind": "chip-evaluate",
+  "command_name": "autoloop",
+  "eval_goal": "maximize",
+  "eval_metric": "win_rate",
+  "hook": "evaluate",
+  "intent": {
+    "active": false,
+    "frontier_mode": "relaxed",
+    "goal": "",
+    "notes": "",
+    "outcome": "",
+    "resource_modes": [
+      "packets",
+      "memory",
+      "web"
+    ],
+    "search_queries": [],
+    "success_criteria": []
+  },
+  "manifest_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\spark-chip.json",
+  "metrics": {
+    "trades": {
+      "kind": "int",
+      "pattern": "trades[\"']?:\\s*([0-9]+)"
+    },
+    "walk_forward": {
+      "kind": "float",
+      "pattern": "walk_forward[\"']?:\\s*([0-9.]+)"
+    },
+    "win_rate": {
+      "kind": "float",
+      "pattern": "win_rate[\"']?:\\s*([0-9.]+)"
+    }
+  },
+  "project_name": "domain-chip-crypto-trading",
+  "repo_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "runtime_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "workspace_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224442-741752-chip-evaluate\\workspace"
+}
