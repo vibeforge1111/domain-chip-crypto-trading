@@ -285,6 +285,142 @@
         "venue": "binance",
         "volume_context_guard": "strict_participation"
       }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "moderate_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "on",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "squeeze_release_window",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=moderate_squeeze-late_sample_guard=on]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "moderate_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "on",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "all",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=moderate_squeeze-session_profile=squeeze_release_window]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "moderate_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "off",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "squeeze_release_window",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=moderate_squeeze]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "moderate_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "off",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "all",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "base",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_dead_zone",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "thin_filter"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "base",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_dead_zone",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "strict_participation"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "base",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_post_open_drift",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "thin_filter"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "base",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_post_open_drift",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "strict_participation"
+      }
     }
   ],
   "chip": {

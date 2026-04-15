@@ -1,7 +1,7 @@
 {
   "asset_universe": "BTC,ETH",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
+  "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
   "contract_count": 5424,
   "covered_contract_count": 5423,
   "data_mode": "contract_window_backtest",
@@ -14,7 +14,7 @@
   "metric_name": "profitability_score",
   "minimum_trade_count": 25,
   "mutations": {
-    "activation_profile": "wider",
+    "activation_profile": "base",
     "asset_universe": "BTC,ETH",
     "doctrine_id": "trend_regime_following",
     "market_regime": "trend",
@@ -41,7 +41,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
+  "run_id": "heavy-backtest-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
   "sharpe_ratio": -0.4013,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "ema_pullback_long",
