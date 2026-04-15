@@ -20,8 +20,8 @@ The intended path is:
 - pattern_count: `0`
 - classified_event_candidates: `0`
 - regime_mismatch_count: `0`
-- benchmark_top_candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window`
-- benchmark_top_profitability: `0.4497`
+- benchmark_top_candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed`
+- benchmark_top_profitability: `0.4484`
 - benchmark_top_readiness: `0.048`
 - benchmark_top_drawdown: `0.99`
 

@@ -3,8 +3,8 @@
 This loop owns heavy benchmark evaluation, contradiction extraction, mutation generation, and self-edit review.
 
 - material_change: `True`
-- candidate_count: `25`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window`
+- candidate_count: `9`
+- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed`
 - top_recommended_next_step: `run_contradiction_probe`
 - approved_self_edits: `0`
 
