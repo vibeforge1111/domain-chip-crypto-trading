@@ -2,27 +2,8 @@
 
 This page is the ranked scout feed that should drive the research automation before it invents anything new.
 
-- queue_count: `21`
+- queue_count: `20`
 - generated_from: `artifacts/research/research_backlog.json`
-
-## bet_sizing
-
-- queue_id: `style-bet_sizing`
-- queue_kind: `undercovered_style`
-- priority_score: `0.72`
-- priority_tier: `2`
-- status: `approved_but_unpacketed`
-- recommended_action: `packet_missing_style`
-- style_families: `bet_sizing`
-- source_names: ``
-- target_regimes: ``
-- expected_child_shapes: ``
-- dataset_ready: `n/a`
-- validation_status: `n/a`
-- predicted_regime_id: `n/a`
-- review_outcome: `n/a`
-- replacement_pack_ids: ``
-- reason: Approved sources exist for this style family, but no packet or doctrine card covers it yet.
 
 ## box_breakout
 
@@ -223,6 +204,25 @@ This page is the ranked scout feed that should drive the research automation bef
 - status: `approved_but_unpacketed`
 - recommended_action: `packet_missing_style`
 - style_families: `position_sizing_psychology`
+- source_names: ``
+- target_regimes: ``
+- expected_child_shapes: ``
+- dataset_ready: `n/a`
+- validation_status: `n/a`
+- predicted_regime_id: `n/a`
+- review_outcome: `n/a`
+- replacement_pack_ids: ``
+- reason: Approved sources exist for this style family, but no packet or doctrine card covers it yet.
+
+## price_action
+
+- queue_id: `style-price_action`
+- queue_kind: `undercovered_style`
+- priority_score: `0.72`
+- priority_tier: `2`
+- status: `approved_but_unpacketed`
+- recommended_action: `packet_missing_style`
+- style_families: `price_action`
 - source_names: ``
 - target_regimes: ``
 - expected_child_shapes: ``

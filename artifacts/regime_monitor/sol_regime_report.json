@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-04-15T12:45:35.155556Z",
+  "window_days": 30,
+  "stats": {
+    "total_contracts": 2828,
+    "compression_contracts": 1754,
+    "compression_pct": 62.0,
+    "close_location_mean": 0.1,
+    "close_location_std": 0.076,
+    "rsi_mean": 49.8,
+    "rsi_std": 14.7,
+    "close_loc_below_022": 93.2,
+    "close_loc_above_078": 0.0,
+    "up_signals": 53,
+    "down_signals": 0,
+    "skip_signals": 1701,
+    "total_trades": 53,
+    "up_bias_pct": 100.0,
+    "win_rate": 0.604,
+    "up_wr": 0.604,
+    "down_wr": null
+  },
+  "baseline": {
+    "close_location_mean": 0.178,
+    "close_location_std": 0.145,
+    "rsi_mean": 50.4,
+    "rsi_std": 14.8,
+    "up_bias_pct": 96.0,
+    "compression_pct": 45.2,
+    "up_wr_historical": 0.568,
+    "trades_per_day_30d": 1.2
+  },
+  "alerts": []
+}

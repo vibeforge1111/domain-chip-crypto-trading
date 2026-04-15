@@ -7,7 +7,7 @@
       "walk_forward_splits": 6
     },
     "benchmark_priority": "medium",
-    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal-sparse_signal",
+    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal",
     "required_metrics": {
       "max_drawdown_max": null,
       "paper_trade_readiness_min": null,
@@ -17,7 +17,7 @@
     "status": "queued_for_heavy_backtest",
     "surprise_score": 0.0,
     "target_contract_family": "btc_up_down_15m",
-    "title": "Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal",
+    "title": "Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
@@ -30,7 +30,7 @@
       "walk_forward_splits": 6
     },
     "benchmark_priority": "high",
-    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-holdout_decay",
+    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay",
     "required_metrics": {
       "max_drawdown_max": null,
       "paper_trade_readiness_min": null,
@@ -40,7 +40,7 @@
     "status": "queued_for_heavy_backtest",
     "surprise_score": 0.0,
     "target_contract_family": "btc_up_down_15m",
-    "title": "Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
+    "title": "Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window",
     "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "late_sample_guard=on, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"

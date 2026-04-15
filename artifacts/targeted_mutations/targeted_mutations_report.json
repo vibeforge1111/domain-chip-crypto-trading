@@ -1,0 +1,118 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c",
+      "candidate_summary": "Targeted guard ablation on auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm (WR=0.0). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec",
+      "candidate_summary": "Targeted guard ablation on auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm (WR=0.0). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3",
+      "candidate_summary": "Targeted guard ablation on auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window: remove late_sample_guard",
+      "hypothesis": "Removing late_sample_guard='on' from auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window (WR=0.0). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0",
+      "candidate_summary": "Targeted guard ablation on auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on: remove late_sample_guard",
+      "hypothesis": "Removing late_sample_guard='on' from auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on (WR=0.0). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280",
+      "candidate_summary": "Targeted guard ablation on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm: remove drawdown_guard",
+      "hypothesis": "Removing drawdown_guard='high' from auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm (WR=0.6346). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7",
+      "candidate_summary": "Targeted guard ablation on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm (WR=0.6346). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069",
+      "candidate_summary": "Targeted guard ablation on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm: remove drawdown_guard",
+      "hypothesis": "Removing drawdown_guard='high' from auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm (WR=0.6327). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde",
+      "candidate_summary": "Targeted guard ablation on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='strict_participation' from auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm (WR=0.6327). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb",
+      "candidate_summary": "Targeted guard ablation on auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm (WR=0.5619). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad",
+      "candidate_summary": "Targeted guard ablation on auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='strict_participation' from auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm (WR=0.5376). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter (WR=0.4815). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='strict_participation' from auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation (WR=0.5238). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter (WR=0.4242). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-089893",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='strict_participation' from auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation (WR=0.5455). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339",
+      "candidate_summary": "Targeted guard ablation on auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window: remove late_sample_guard",
+      "hypothesis": "Removing late_sample_guard='on' from auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window (WR=0.0). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae",
+      "candidate_summary": "Targeted guard ablation on auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on: remove late_sample_guard",
+      "hypothesis": "Removing late_sample_guard='on' from auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on (WR=0.0). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter (WR=0.4828). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='strict_participation' from auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation (WR=0.5217). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='thin_filter' from auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter (WR=0.4286). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    },
+    {
+      "candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8",
+      "candidate_summary": "Targeted guard ablation on auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation: remove volume_context_guard",
+      "hypothesis": "Removing volume_context_guard='strict_participation' from auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation (WR=0.5417). If this guard is hurting more than helping, removal should increase trade count and possibly improve WF consistency."
+    }
+  ],
+  "counts_by_type": {
+    "guard_ablation": 20,
+    "regime_extension": 0,
+    "threshold_relaxation": 0
+  },
+  "dry_run": false,
+  "existing_candidates_before": 24,
+  "generated_at": "2026-04-15T12:39:54.608889Z",
+  "mutation_types": [
+    "regime_extension",
+    "threshold_relaxation",
+    "guard_ablation"
+  ],
+  "total_generated": 20
+}

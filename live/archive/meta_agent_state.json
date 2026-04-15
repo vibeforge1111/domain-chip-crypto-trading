@@ -1,14 +1,14 @@
 {
   "strategy_params": {
     "perturbation": {
-      "mutation_rate": 0.25,
-      "crossover_rate": 0.5,
-      "guard_add_prob": 0.2,
-      "guard_remove_prob": 0.1,
-      "regime_extend_prob": 0.15,
-      "diversity_weight": 0.8,
-      "exploitation_weight": 0.2,
-      "temperature": 0.7
+      "mutation_rate": 0.22677471065270288,
+      "crossover_rate": 0.48116328020474514,
+      "guard_add_prob": 0.17419182547388018,
+      "guard_remove_prob": 0.14732393234035118,
+      "regime_extend_prob": 0.19608738945572282,
+      "diversity_weight": 0.8335603396604041,
+      "exploitation_weight": 0.1664396603395959,
+      "temperature": 0.6564598784962057
     },
     "crossover": {
       "mutation_rate": 0.3,
@@ -62,10 +62,10 @@
     }
   },
   "strategy_weights": {
-    "perturbation": 1.5,
-    "crossover": 1.0,
-    "feature_guided": 1.0,
-    "regime_transfer": 0.5,
+    "perturbation": 0.7857142857142857,
+    "crossover": 0.6666666666666666,
+    "feature_guided": 0.5,
+    "regime_transfer": 0.8333333333333333,
     "dead_end_avoidance": 1.0,
     "random_exploration": 0.5
   }
