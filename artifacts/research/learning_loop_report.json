@@ -1,53 +1,46 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--4be3b4dd-sparse_signal.json",
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-6aa0e9ba-sparse_signal.json",
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-c-1cd605c7-sparse_signal.json"
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7dda48e2-sparse_signal.json",
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--67923d1b-sparse_signal.json",
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c0f9b4d4-sparse_signal.json"
     ],
     "added_count": 3,
     "approved_waiting_packet_count": 0,
-    "card_count": 124,
+    "card_count": 127,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
-    "reconciliation_repaired_cards": [
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d200c56e-sparse_signal.json",
-      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a5acbdd1-holdout_decay.json"
-    ],
-    "reconciliation_repaired_count": 2,
+    "reconciliation_repaired_cards": [],
+    "reconciliation_repaired_count": 0,
     "state_consistent": true
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 119,
-    "doctrine_packets_generated": 5,
-    "pending_packet_count": 5,
+    "card_count": 124,
+    "doctrine_packets_generated": 3,
+    "pending_packet_count": 3,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.068,
-  "finished_at": "2026-04-15T17:16:29.712389Z",
+  "duration_seconds": 3.177,
+  "finished_at": "2026-04-15T17:22:34.586588Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
     "card_count",
     "pending_packet_count",
-    "added_count",
-    "reconciliation_repaired_count"
+    "added_count"
   ],
   "reconciliation": {
-    "card_count": 124,
+    "card_count": 127,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 124,
+    "packet_count": 127,
     "repair_mode": true,
-    "repaired_cards": [
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d200c56e-sparse_signal.json",
-      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a5acbdd1-holdout_decay.json"
-    ],
-    "repaired_count": 2,
+    "repaired_cards": [],
+    "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-15T17:16:26.644683Z"
+  "started_at": "2026-04-15T17:22:31.409902Z"
 }
