@@ -223,17 +223,18 @@ def suggest(payload: dict) -> dict:
     suggestions = []
 
     # 1. Cross-mutations of top performers
+    # NOTE: mutations must be empty ({}) — researcher has no mutable_parameters
+    # and will crash with KeyError if mutations are non-empty.
+    # Suggestions are informational; the researcher runs the full project command.
     top_two = ranked[:2]
     if len(top_two) == 2:
         a_muts = top_two[0].get("mutations", {})
         b_muts = top_two[1].get("mutations", {})
-        cross_muts = dict(a_muts)
-        cross_muts["doctrine_id"] = b_muts.get("doctrine_id", a_muts.get("doctrine_id", ""))
         suggestions.append({
             "candidate_id": f"suggest-cross-{a_muts.get('strategy_id', 'x')}-{b_muts.get('doctrine_id', 'y')}",
             "candidate_summary": f"Cross-pollinate top strategy ({a_muts.get('strategy_id', '')}) with runner-up doctrine ({b_muts.get('doctrine_id', '')}).",
             "hypothesis": "Cross-mutation of the two best-performing candidates may combine their strengths.",
-            "mutations": cross_muts,
+            "mutations": {},
         })
 
     # 2. Variety backlog entries
@@ -248,26 +249,20 @@ def suggest(payload: dict) -> dict:
             "candidate_id": f"suggest-variety-{strat}-{regime}",
             "candidate_summary": f"Explore {strat} in {regime} regime (from variety backlog).",
             "hypothesis": f"Under-explored combination: {strat} x {regime}.",
-            "mutations": {
-                "strategy_id": strat,
-                "market_regime": regime,
-                "asset_universe": "BTC",
-                "timeframe": "15m",
-            },
+            "mutations": {},
         })
 
     # 3. Flip the worst performer's doctrine
     if ranked:
         worst = ranked[-1]
-        w_muts = dict(worst.get("mutations", {}))
+        w_muts = worst.get("mutations", {})
         best_doctrine = ranked[0].get("mutations", {}).get("doctrine_id", "")
         if best_doctrine and w_muts.get("doctrine_id") != best_doctrine:
-            w_muts["doctrine_id"] = best_doctrine
             suggestions.append({
                 "candidate_id": f"suggest-flip-{w_muts.get('strategy_id', 'x')}-{best_doctrine}",
                 "candidate_summary": f"Apply best-performing doctrine to worst-performing strategy.",
                 "hypothesis": "If doctrine matters more than strategy, the worst performer may improve with the best doctrine.",
-                "mutations": w_muts,
+                "mutations": {},
             })
 
     # Baseline metric from top candidate
