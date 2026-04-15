@@ -1,5 +1,5 @@
 """
-DGM-H Evolution Dashboard - Real-Time Monitor
+Spark Domain Chip: Crypto Trading - Real-Time Monitor
 ================================================
 shadcn/ui-inspired dark dashboard with live auto-refresh.
 
@@ -25,7 +25,7 @@ GENERATIONS = ARCHIVE / "generations"
 META = ARCHIVE / "meta_improvements"
 DIAG = ARCHIVE / "self_diagnosis"
 
-app = FastAPI(title="DGM-H Dashboard API")
+app = FastAPI(title="Spark Domain Chip: Crypto Trading API")
 
 
 # ── helpers ──────────────────────────────────────────────────────────────
@@ -889,7 +889,7 @@ HTML_PAGE = r"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>DGM-H Evolution Dashboard</title>
+<title>Spark Domain Chip: Crypto Trading</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -978,8 +978,8 @@ tailwind.config = {
 <!-- HEADER -->
 <div class="flex items-center justify-between mb-8">
   <div>
-    <h1 class="text-2xl font-bold tracking-tight">DGM-H Evolution</h1>
-    <p class="text-sm text-muted-foreground" style="color: #8890B0;">Self-improving trading strategy discovery</p>
+    <h1 class="text-2xl font-bold tracking-tight">Spark Domain Chip <span style="color:#2FCA94">Crypto Trading</span></h1>
+    <p class="text-sm text-muted-foreground" style="color: #8890B0;">Autoloop doctrine discovery + backtesting + live paper trading</p>
     <a href="/evolution-viz" class="text-xs" style="color:#6A7080;text-decoration:none;margin-top:2px;display:inline-block" onmouseover="this.style.color='#2FCA94'" onmouseout="this.style.color='#6A7080'">Evolution Graph &rarr;</a>
   </div>
   <div class="flex items-center gap-3">
@@ -1048,7 +1048,7 @@ tailwind.config = {
 
     <!-- Methods -->
     <div class="card p-5">
-      <div class="section-title">Evolution Methods</div>
+      <div class="section-title">Search Methods</div>
       <div id="methods" class="space-y-3"></div>
     </div>
 
@@ -1479,7 +1479,7 @@ tailwind.config = {
 
 <!-- FOOTER -->
 <div class="mt-6 flex items-center justify-between text-xs" style="color: #6A7080;">
-  <span>DGM-H (Darwin Godel Machine - Hyperagents) &middot; Evolutionary search + LLM guards &middot; Built with Claude Code</span>
+  <span>Spark Domain Chip: Crypto Trading &middot; Autoloop + Evolution + Live Paper Trading &middot; Built with Claude Code</span>
   <span id="footer-status">Connecting...</span>
 </div>
 
@@ -2500,7 +2500,7 @@ EVOLUTION_VIZ_PAGE = r"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Evolution Graph - DGM-H</title>
+<title>Evolution Graph - Spark Domain Chip</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -2524,7 +2524,7 @@ EVOLUTION_VIZ_PAGE = r"""<!DOCTYPE html>
 <!-- Header -->
 <div class="ctrl-bar" style="border-bottom-width:2px">
   <a href="/" style="color:#6A7080;text-decoration:none;font-size:0.8rem" onmouseover="this.style.color='#2FCA94'" onmouseout="this.style.color='#6A7080'">&larr; Dashboard</a>
-  <h1 style="font-size:1.25rem;font-weight:700;margin:0">Evolution Graph</h1>
+  <h1 style="font-size:1.25rem;font-weight:700;margin:0">Strategy Evolution Graph</h1>
   <div style="margin-left:auto;display:flex;gap:12px;align-items:center">
     <span class="ctrl-label" id="viz-nodes">-- nodes</span>
     <span class="ctrl-label" id="viz-edges">-- edges</span>

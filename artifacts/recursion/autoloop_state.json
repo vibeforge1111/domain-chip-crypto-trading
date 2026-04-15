@@ -1,18 +1,15 @@
 {
-  "blocked_at": "2026-04-15T13:01:09.552647Z",
-  "cycle_count": 2,
-  "last_backtest_cycle": 1,
-  "last_commit_message": null,
-  "last_cycle_finished_at": "2026-04-15T12:18:19.996858Z",
-  "last_cycle_started_at": "2026-04-15T12:18:19.970560Z",
+  "cycle_count": 3,
+  "last_backtest_cycle": 3,
+  "last_commit_message": "Tri-loop cycle 3: backtest auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+  "last_cycle_finished_at": "2026-04-15T13:35:38.345638Z",
+  "last_cycle_started_at": "2026-04-15T13:35:38.326787Z",
   "last_data_refresh_cycle": 1,
-  "last_learning_cycle": 1,
+  "last_learning_cycle": 3,
   "last_material_change": true,
   "last_paper_trade_cycle": 1,
   "last_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
   "noop_streak": 0,
   "paper_trade_queue_count": 0,
-  "pending_packet_count": 0,
-  "reason": "tracked worktree is dirty: artifacts/backtests/heavy_backtest_summary.json, artifacts/data/refresh_report.json, artifacts/paper_trade/paper_trade_history.jsonl, artifacts/recursion/doctrine_generation_report.json, artifacts/recursion/heavy_backtest_queue.json, artifacts/recursion/mutation_backlog.json, artifacts/recursion/mutation_trial_dedupe_report.json, artifacts/recursion/mutation_trials.json, artifacts/recursion/signal_mutation_report.json, artifacts/recursion/variety_backlog.json, artifacts/research/doctrine_ingest_report.json, artifacts/research/doctrine_reconciliation_report.json, artifacts/research/learning_loop_report.json, artifacts/research/research_backlog.json, artifacts/research/research_scout_queue.json, domain-chip-crypto-trading/07-Domains/Crypto Trading/Doctrine Cards.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Doctrine Packets.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Heavy Backtest Queue.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Learning Loop.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Mutation Backlog.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Research Backlog.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Research Scout Queue.md, domain-chip-crypto-trading/07-Domains/Crypto Trading/Variety Backlog.md, live/archive/meta_improvements/performance_log.jsonl, spark-researcher.project.json",
-  "status": "blocked"
+  "pending_packet_count": 0
 }
