@@ -1,0 +1,97 @@
+{
+  "generation": 1,
+  "started_at": "2026-04-15T12:27:51.399068+00:00",
+  "finished_at": "2026-04-15T12:29:06.178856+00:00",
+  "elapsed_seconds": 74.779788,
+  "variants_generated": 10,
+  "variants_evaluated": 10,
+  "new_elite": 0,
+  "new_viable": 2,
+  "staged_eval": {
+    "quick_reject": 6,
+    "medium_reject": 0,
+    "full": 4
+  },
+  "compute_phase": "exploit",
+  "transfer_candidates": 0,
+  "transfer_effectiveness": {},
+  "insights_count": 0,
+  "actionable_insights": 0,
+  "self_diagnosis": null,
+  "llm_guards_generated": 0,
+  "self_ref_strategies": 0,
+  "active_custom_strategies": 0,
+  "paper_trade_results": null,
+  "population_summary": {
+    "size": 15,
+    "elite": 1,
+    "viable": 6,
+    "best_wr": 1.0,
+    "avg_wr": 0.5446733333333333,
+    "strategies_used": [
+      "crossover",
+      "regime_transfer",
+      "perturbation",
+      "seed_champion"
+    ],
+    "generations_span": [
+      0,
+      1
+    ],
+    "total_tested": 15
+  },
+  "meta_changes": {},
+  "strategy_effectiveness": {
+    "random_exploration": {
+      "attempts": 3,
+      "improvements": 0,
+      "improvement_rate": 0.0,
+      "avg_wr": 0.5544,
+      "best_wr": 0.5676,
+      "generations_active": [
+        1
+      ]
+    },
+    "regime_transfer": {
+      "attempts": 4,
+      "improvements": 0,
+      "improvement_rate": 0.0,
+      "avg_wr": 0.5242249999999999,
+      "best_wr": 0.5796,
+      "generations_active": [
+        1
+      ]
+    },
+    "perturbation": {
+      "attempts": 7,
+      "improvements": 4,
+      "improvement_rate": 0.5714285714285714,
+      "avg_wr": 0.5448571428571428,
+      "best_wr": 1.0,
+      "generations_active": [
+        1
+      ]
+    },
+    "crossover": {
+      "attempts": 1,
+      "improvements": 0,
+      "improvement_rate": 0.0,
+      "avg_wr": 0.5757,
+      "best_wr": 0.5757,
+      "generations_active": [
+        1
+      ]
+    }
+  },
+  "generation_progress": [
+    {
+      "generation": 1,
+      "population_size": 15,
+      "best_wr": 1.0,
+      "avg_wr": 0.54332,
+      "median_wr": 0.5619
+    }
+  ],
+  "dead_end_count": 0,
+  "saved_to": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\live\\archive\\generations\\gen_0001.json"
+}

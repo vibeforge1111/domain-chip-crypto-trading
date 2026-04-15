@@ -109,10 +109,10 @@
     "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
   },
   {
-    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d",
-    "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-429f9a89c4 suggested child variety",
+    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251",
+    "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e9d3e21c36 suggested child variety",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"quality_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-    "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-429f9a89c4: drawdown guard plus quality filter.",
+    "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e9d3e21c36: drawdown guard plus quality filter.",
     "mutations": {
       "activation_profile": "adaptive",
       "asset_universe": "BTC",

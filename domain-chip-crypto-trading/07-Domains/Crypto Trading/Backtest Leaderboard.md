@@ -82,7 +82,7 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - elevated_fees: trades=`19` profitability=`0.4863` avg_return=`-0.0274` gate=`False`
 - fee_and_slippage: trades=`19` profitability=`0.4663` avg_return=`-0.0674` gate=`False`
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`

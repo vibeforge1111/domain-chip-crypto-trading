@@ -52,7 +52,7 @@ This page plays the same role as the startup chip's promotion bridge page, but f
 - primary_mechanism: Backtested on 19 active BTC 1h contract decisions across 5423 covered windows. Fallback used because requested timeframe `4h` unavailable.
 - primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`

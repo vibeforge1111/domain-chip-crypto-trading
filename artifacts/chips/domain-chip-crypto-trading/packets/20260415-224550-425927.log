@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "domain_chip_crypto_trading.cli",
+    "packets",
+    "--input",
+    "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\packets\\20260415-224550-425927.input.json",
+    "--output",
+    "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\packets\\20260415-224550-425927.output.json"
+  ],
+  "cwd": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "input_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\packets\\20260415-224550-425927.input.json",
+  "output_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\packets\\20260415-224550-425927.output.json",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

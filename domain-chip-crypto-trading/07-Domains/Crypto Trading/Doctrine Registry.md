@@ -13,17 +13,17 @@ This page is the crypto equivalent of startup benchmark doctrine pages.
 ## mean_reversion_liquidity_reclaim
 
 - mechanism: Liquidity reclaims monetize rotation if exits stay disciplined.
-- strongest_pair: `n/a`
-- current_regime_fit: `n/a`
-- profitability_score: `n/a`
+- strongest_pair: `funding_mean_revert`
+- current_regime_fit: `range`
+- profitability_score: `0.5164`
 - boundary: Fails when expansion is mistaken for reclaim.
 
 ## breakout_volatility_expansion
 
 - mechanism: Breakout doctrine pays in violent expansion with strict false-break filters.
-- strongest_pair: `n/a`
-- current_regime_fit: `n/a`
-- profitability_score: `n/a`
+- strongest_pair: `bollinger_squeeze_breakout`
+- current_regime_fit: `high_vol`
+- profitability_score: `0.5326`
 - boundary: Punishes loose risk during fakeouts.
 
 ## risk_first_asymmetric_capture

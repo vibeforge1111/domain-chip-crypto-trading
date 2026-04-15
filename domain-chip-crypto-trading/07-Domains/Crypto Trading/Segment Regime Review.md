@@ -45,7 +45,7 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d / wf-5
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251 / wf-5
 
 - claimed_regime_id: `fear_shock_high_alert`
 - candidate_market_regime: `high_vol`

@@ -1,0 +1,29 @@
+{
+  "sleep_seconds": 300,
+  "max_cycles": 0,
+  "max_noop_streak": 8,
+  "stop_on_dirty_tracked_worktree": true,
+  "commit_if_material_change": true,
+  "loops": {
+    "learning": {
+      "enabled": true,
+      "every_n_cycles": 6,
+      "trigger_pending_packets": true
+    },
+    "backtest": {
+      "enabled": true,
+      "every_n_cycles": 1,
+      "trigger_pending_variety": true
+    },
+    "paper_trade": {
+      "enabled": true,
+      "every_n_cycles": 3,
+      "trigger_queue_presence": true
+    }
+  },
+  "ignored_paths": [
+    ".obsidian",
+    "artifacts/recursion/autoloop_state.json",
+    "artifacts/recursion/cycle_journal.jsonl"
+  ]
+}

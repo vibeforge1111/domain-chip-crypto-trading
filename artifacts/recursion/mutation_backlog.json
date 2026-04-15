@@ -11,9 +11,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -64,9 +66,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "mean_reversion_liquidity_reclaim",
@@ -117,9 +121,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -170,9 +176,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "risk_first_asymmetric_capture",
@@ -223,9 +231,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "risk_first_asymmetric_capture",
@@ -276,9 +286,11 @@
     "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -329,9 +341,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -381,9 +395,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -433,9 +449,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -486,9 +504,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -539,9 +559,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -592,9 +614,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -645,9 +669,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -698,9 +724,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -750,9 +778,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -804,9 +834,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -857,9 +889,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -910,9 +944,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -964,9 +1000,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1017,9 +1055,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1070,9 +1110,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1123,9 +1165,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1176,9 +1220,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1229,9 +1275,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1282,9 +1330,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1335,9 +1385,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1388,9 +1440,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1441,9 +1495,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -1495,9 +1551,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1548,9 +1606,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1601,9 +1661,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1654,9 +1716,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1707,9 +1771,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1760,9 +1826,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -1814,9 +1882,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1867,9 +1937,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1920,9 +1992,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -1973,9 +2047,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2026,9 +2102,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2079,9 +2157,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2132,9 +2212,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2185,9 +2267,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -2239,9 +2323,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2292,9 +2378,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2345,9 +2433,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2398,9 +2488,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2451,9 +2543,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2504,9 +2598,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2557,9 +2653,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -2611,9 +2709,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2664,9 +2764,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2717,9 +2819,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2769,9 +2873,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2822,9 +2928,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2875,9 +2983,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2928,9 +3038,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -2981,9 +3093,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3034,9 +3148,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3086,9 +3202,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3140,9 +3258,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3194,9 +3314,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3247,9 +3369,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3300,9 +3424,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3354,9 +3480,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3407,9 +3535,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3460,9 +3590,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3513,9 +3645,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3567,9 +3701,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3621,9 +3757,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3674,9 +3812,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3727,9 +3867,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3781,9 +3923,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3834,9 +3978,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3887,9 +4033,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -3940,9 +4088,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -3993,9 +4143,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4046,9 +4198,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4099,9 +4253,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4151,9 +4307,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4204,9 +4362,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4257,9 +4417,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4309,9 +4471,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -4363,9 +4527,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -4417,9 +4583,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4470,9 +4638,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -4524,9 +4694,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4577,9 +4749,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4630,9 +4804,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -4684,9 +4860,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4737,9 +4915,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4790,9 +4970,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -4843,9 +5025,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4896,9 +5080,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -4949,9 +5135,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5002,9 +5190,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5055,9 +5245,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5108,9 +5300,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5161,9 +5355,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5214,9 +5410,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5266,9 +5464,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5319,9 +5519,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5372,9 +5574,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5425,9 +5629,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5478,9 +5684,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5531,9 +5739,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5584,9 +5794,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5637,9 +5849,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5690,9 +5904,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5743,9 +5959,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5796,9 +6014,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5849,9 +6069,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5902,9 +6124,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -5955,9 +6179,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6008,9 +6234,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6061,9 +6289,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6114,9 +6344,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6167,9 +6399,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6220,9 +6454,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6273,9 +6509,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6326,9 +6564,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6379,9 +6619,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6423,6 +6665,61 @@
     "benchmark_metrics": {},
     "benchmark_priority": "medium",
     "benchmark_result": {},
+    "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--38930cd8-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e9d3e21c36-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e9d3e21c36",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
     "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--39fd1d22-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "breakout_volatility_expansion",
@@ -6432,9 +6729,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6485,9 +6784,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6538,9 +6839,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6591,9 +6894,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6644,9 +6949,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6697,9 +7004,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6750,9 +7059,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6794,6 +7105,61 @@
     "benchmark_metrics": {},
     "benchmark_priority": "medium",
     "benchmark_result": {},
+    "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--5c8ec27d-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
     "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--5f1e4942-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "breakout_volatility_expansion",
@@ -6803,9 +7169,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6856,9 +7224,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6909,9 +7279,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -6962,9 +7334,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7015,9 +7389,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7068,9 +7444,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7121,9 +7499,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7174,9 +7554,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7227,9 +7609,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7280,9 +7664,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7333,9 +7719,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7386,9 +7774,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7439,9 +7829,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7492,9 +7884,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7545,9 +7939,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7598,9 +7994,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7651,9 +8049,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7704,9 +8104,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7757,9 +8159,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7810,9 +8214,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7863,9 +8269,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7916,9 +8324,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -7969,9 +8379,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8022,9 +8434,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8075,9 +8489,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8128,9 +8544,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8181,9 +8599,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8234,9 +8654,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8287,9 +8709,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8340,9 +8764,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8393,9 +8819,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8446,9 +8874,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8499,9 +8929,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8552,9 +8984,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8605,9 +9039,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8658,9 +9094,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8711,9 +9149,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8764,9 +9204,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8817,9 +9259,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8870,9 +9314,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8923,9 +9369,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -8976,9 +9424,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9029,9 +9479,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9082,9 +9534,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9135,9 +9589,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9188,9 +9644,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9241,9 +9699,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9294,9 +9754,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9338,6 +9800,61 @@
     "benchmark_metrics": {},
     "benchmark_priority": "medium",
     "benchmark_result": {},
+    "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ec244541-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-11d08b35f4-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-11d08b35f4",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
     "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ecc095b4-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "breakout_volatility_expansion",
@@ -9347,9 +9864,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9400,9 +9919,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9453,9 +9974,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9506,9 +10029,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9559,9 +10084,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9612,9 +10139,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9665,9 +10194,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9718,9 +10249,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9771,9 +10304,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -9824,9 +10359,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -9878,9 +10415,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -9932,9 +10471,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -9986,9 +10527,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "breakout_volatility_expansion",
@@ -10040,9 +10583,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10093,9 +10638,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10146,9 +10693,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10200,9 +10749,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10254,9 +10805,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10308,9 +10861,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10362,9 +10917,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10416,9 +10973,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10470,9 +11029,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10524,9 +11085,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "asset_universe": "BTC",
       "doctrine_id": "trend_regime_following",
@@ -10578,9 +11141,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10631,9 +11196,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10684,9 +11251,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10737,9 +11306,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10790,9 +11361,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
@@ -10843,9 +11416,11 @@
     "family_top_candidate_id": "",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
-      "baseline"
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
     ],
-    "lineage_ready": false,
+    "lineage_ready": true,
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",

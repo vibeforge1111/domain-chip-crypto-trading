@@ -1,0 +1,87 @@
+{
+  "backend": "local",
+  "chip_documents": [
+    {
+      "kind": "benchmark_evidence",
+      "memory_tier": "raw_run",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\benchmark_evidence-crypto-backtest-global-baseline.md",
+      "title": "global-baseline Backtest Evidence"
+    },
+    {
+      "kind": "grounded_boundary",
+      "memory_tier": "raw_run",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\grounded_boundary-crypto-boundary-global-baseline.md",
+      "title": "global-baseline Boundary Candidate"
+    },
+    {
+      "kind": "benchmark_win_packet",
+      "memory_tier": "raw_run",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\benchmark_win_packet-crypto-swarm-publication-global-baseline.md",
+      "title": "global-baseline Swarm Publication Packet"
+    }
+  ],
+  "document_count": 11,
+  "documents_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents",
+  "episode_count": 0,
+  "kinds": {
+    "belief": 1,
+    "benchmark_evidence": 1,
+    "benchmark_win_packet": 1,
+    "grounded_boundary": 1,
+    "outcome": 3,
+    "run": 4
+  },
+  "memory_tiers": {
+    "belief": 1,
+    "raw_outcome": 3,
+    "raw_run": 7
+  },
+  "outcomes": [
+    {
+      "best_metric": 0.0,
+      "candidate_id": "baseline",
+      "command_name": "autoloop",
+      "improved_runs": 0,
+      "latest_metric": 0.0,
+      "latest_verdict": "baseline",
+      "outcome_id": "outcome-autoloop-baseline",
+      "run_count": 2,
+      "run_ids": [
+        "20260415-165150-013401-train-once",
+        "20260415-224437-048326-chip-evaluate"
+      ],
+      "title": "autoloop / baseline"
+    },
+    {
+      "best_metric": 0.5526,
+      "candidate_id": "bollinger-highvol-hyperliquid-1h",
+      "command_name": "autoloop",
+      "improved_runs": 0,
+      "latest_metric": 0.5526,
+      "latest_verdict": "baseline",
+      "outcome_id": "outcome-autoloop-bollinger-highvol-hyperliquid-1h",
+      "run_count": 1,
+      "run_ids": [
+        "20260415-224437-334041-chip-evaluate"
+      ],
+      "title": "autoloop / bollinger-highvol-hyperliquid-1h"
+    },
+    {
+      "best_metric": 0.5364,
+      "candidate_id": "range-funding-ethsol-1h",
+      "command_name": "autoloop",
+      "improved_runs": 0,
+      "latest_metric": 0.5364,
+      "latest_verdict": "near_best",
+      "outcome_id": "outcome-autoloop-range-funding-ethsol-1h",
+      "run_count": 1,
+      "run_ids": [
+        "20260415-224442-741752-chip-evaluate"
+      ],
+      "title": "autoloop / range-funding-ethsol-1h"
+    }
+  ],
+  "self_edit_documents": [],
+  "source_runs": 4,
+  "working_memory": {}
+}

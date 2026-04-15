@@ -1,0 +1,50 @@
+{
+  "documents": [
+    {
+      "content": "# global-baseline Backtest Evidence\n\n- evidence_lane: backtest_benchmark\n- profitability_score: 0.34\n- sharpe_ratio: 0.72\n- max_drawdown: 0.24\n- paper_trade_readiness: 0.366\n- recommended_next_step: run_contradiction_probe",
+      "kind": "benchmark_evidence",
+      "slug": "crypto-backtest-global-baseline",
+      "title": "global-baseline Backtest Evidence"
+    },
+    {
+      "content": "Treat as a failure surface or contradiction probe, not doctrine.",
+      "kind": "grounded_boundary",
+      "slug": "crypto-boundary-global-baseline",
+      "title": "global-baseline Boundary Candidate"
+    },
+    {
+      "content": "{\n  \"baseline_mutations\": {},\n  \"benchmark_verdict\": \"reject\",\n  \"candidate_id\": \"global-baseline\",\n  \"candidate_mutations\": {},\n  \"candidate_path\": \"benchmarks/trading-crypto-candidate.json\",\n  \"insight_boundary\": \"Passive baseline is not doctrine and should not be promoted.\",\n  \"insight_mechanism\": \"Baseline only. Add a doctrine before promoting any strategy claim.\",\n  \"insight_summary\": \"Crypto Trading scored 0.366 on the default scenario, led by max_drawdown while doctrine_fit remains the next frontier.\",\n  \"metrics\": {\n    \"max_drawdown\": 0.24,\n    \"paper_trade_readiness\": 0.366,\n    \"profitability_score\": 0.34,\n    \"sharpe_ratio\": 0.72,\n    \"verdict_confidence\": 0.6515,\n    \"win_rate\": 0.48\n  },\n  \"packet_kind\": \"benchmark_candidate_publication\",\n  \"promotion_candidate_kind\": \"contradiction_surface\",\n  \"recommended_next_step\": \"run_contradiction_probe\",\n  \"scenario_id\": \"\",\n  \"scenario_pack\": \"\",\n  \"scenario_track\": \"\",\n  \"schema_version\": \"spark-benchmark-win-packet.v1\",\n  \"specialization_label\": \"Crypto Trading\",\n  \"specialization_path_key\": \"trading-crypto\",\n  \"swarm_publication_ready\": false\n}",
+      "kind": "benchmark_win_packet",
+      "slug": "crypto-swarm-publication-global-baseline",
+      "title": "global-baseline Swarm Publication Packet"
+    }
+  ],
+  "publication_packet": {
+    "baseline_mutations": {},
+    "benchmark_verdict": "reject",
+    "candidate_id": "global-baseline",
+    "candidate_mutations": {},
+    "candidate_path": "benchmarks/trading-crypto-candidate.json",
+    "insight_boundary": "Passive baseline is not doctrine and should not be promoted.",
+    "insight_mechanism": "Baseline only. Add a doctrine before promoting any strategy claim.",
+    "insight_summary": "Crypto Trading scored 0.366 on the default scenario, led by max_drawdown while doctrine_fit remains the next frontier.",
+    "metrics": {
+      "max_drawdown": 0.24,
+      "paper_trade_readiness": 0.366,
+      "profitability_score": 0.34,
+      "sharpe_ratio": 0.72,
+      "verdict_confidence": 0.6515,
+      "win_rate": 0.48
+    },
+    "packet_kind": "benchmark_candidate_publication",
+    "promotion_candidate_kind": "contradiction_surface",
+    "recommended_next_step": "run_contradiction_probe",
+    "scenario_id": "",
+    "scenario_pack": "",
+    "scenario_track": "",
+    "schema_version": "spark-benchmark-win-packet.v1",
+    "specialization_label": "Crypto Trading",
+    "specialization_path_key": "trading-crypto",
+    "swarm_publication_ready": false
+  }
+}

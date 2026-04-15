@@ -4,7 +4,7 @@ This page is the trading equivalent of a `why it lost` surface.
 
 Track failure shapes here when a combination looks exciting but should not be promoted.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`

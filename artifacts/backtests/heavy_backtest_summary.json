@@ -282,9 +282,9 @@
       }
     },
     {
-      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d",
-      "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-429f9a89c4 suggested child variety",
-      "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-429f9a89c4: drawdown guard plus quality filter.",
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251",
+      "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e9d3e21c36 suggested child variety",
+      "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e9d3e21c36: drawdown guard plus quality filter.",
       "metrics": {
         "max_drawdown": 0.99,
         "paper_trade_readiness": 0.0,

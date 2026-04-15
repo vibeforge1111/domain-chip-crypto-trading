@@ -1,0 +1,16 @@
+{
+  "schema_version": "spark-chip.v1",
+  "io_protocol": "spark-hook-io.v1",
+  "chip_name": "domain-chip-crypto-trading",
+  "description": "Crypto trading domain chip with tri-loop autoloop: doctrine discovery, walk-forward backtesting, and live paper trading across BTC/ETH/SOL.",
+  "domain": "trading",
+  "version": "1.0.0",
+  "capabilities": ["evaluate", "suggest", "packets", "watchtower"],
+  "commands": {
+    "evaluate": ["python", "-m", "domain_chip_crypto_trading.cli", "evaluate"],
+    "suggest": ["python", "-m", "domain_chip_crypto_trading.cli", "suggest"],
+    "packets": ["python", "-m", "domain_chip_crypto_trading.cli", "packets"],
+    "watchtower": ["python", "-m", "domain_chip_crypto_trading.cli", "watchtower"]
+  },
+  "workspace_excludes": ["live/generated_guards/.cache", "artifacts/", ".obsidian"]
+}

@@ -1,0 +1,313 @@
+{
+  "agentId": "agent:domain-chip-crypto-trading",
+  "artifactRefs": [
+    {
+      "hash": null,
+      "id": "20260415-224442-741752-chip-evaluate:run_dir",
+      "kind": "run_trace",
+      "label": "Run directory",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224442-741752-chip-evaluate",
+      "url": null
+    },
+    {
+      "hash": null,
+      "id": "20260415-224442-741752-chip-evaluate:log_path",
+      "kind": "run_trace",
+      "label": "Run log",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224442-741752-chip-evaluate\\autoloop.log",
+      "url": null
+    },
+    {
+      "hash": null,
+      "id": "20260415-224442-741752-chip-evaluate:trace_path",
+      "kind": "run_trace",
+      "label": "Trace file",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\traces\\e49a931851d3d8c65247acb0794c84dc.jsonl",
+      "url": null
+    }
+  ],
+  "contradictions": [],
+  "emittedAt": "2026-04-15T22:44:46+00:00",
+  "evolutionPaths": [
+    {
+      "assignedAgentId": "agent:domain-chip-crypto-trading",
+      "bestOutcomeId": "outcome:20260415-224442-741752-chip-evaluate",
+      "createdAt": "2026-04-15T22:44:46+00:00",
+      "expiresAt": null,
+      "id": "evolution-path:domain-chip-crypto-trading:autoloop",
+      "scope": "specialization",
+      "specializationId": "specialization:domain-chip-crypto-trading",
+      "status": "open",
+      "summary": "Improve autoloop on win_rate",
+      "updatedAt": "2026-04-15T22:44:46+00:00"
+    }
+  ],
+  "insights": [
+    {
+      "benchmarkMetrics": {
+        "benchmarkProfile": "contract_window_backtest",
+        "contractCount": 5424,
+        "coveredContractCount": 5423,
+        "evaluatedAsset": "ETH",
+        "evaluatedTimeframe": "1h",
+        "fallbackReason": "",
+        "holdoutProfitability": 0.5388,
+        "maxDrawdown": 0.99,
+        "minimumTradeCount": 29,
+        "paperTradeReadiness": 0.3075,
+        "requestedAssetUniverse": "ETH,SOL",
+        "requestedTimeframe": "1h",
+        "sharpeRatio": 0.4047,
+        "stressResilience": 0.3333,
+        "tradeCount": 151,
+        "tradeCountGatePass": true,
+        "walkForwardConsistency": 0.8,
+        "winRate": 0.5364
+      },
+      "boundary": null,
+      "confidence": 0.65,
+      "contradiction": null,
+      "createdAt": "2026-04-15T22:44:46+00:00",
+      "evidenceLane": "live_evidence",
+      "id": "insight:20260415-224442-741752-chip-evaluate",
+      "mechanism": "Probe whether funding dislocations work better under a range doctrine.",
+      "sourceRefs": [
+        "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224442-741752-chip-evaluate"
+      ],
+      "specializationId": "specialization:domain-chip-crypto-trading",
+      "status": "live_supported",
+      "summary": "autoloop near_best on win_rate=0.5364",
+      "updatedAt": "2026-04-15T22:44:46+00:00"
+    }
+  ],
+  "intelligencePulse": {
+    "activeEvolutionPathId": "evolution-path:domain-chip-crypto-trading:autoloop",
+    "activeEvolutionPathSummary": "Improve autoloop on win_rate",
+    "evidence": [
+      {
+        "artifactRefs": [
+          {
+            "hash": null,
+            "id": "20260415-224442-741752-chip-evaluate:run_dir",
+            "kind": "run_trace",
+            "label": "Run directory",
+            "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224442-741752-chip-evaluate",
+            "url": null
+          },
+          {
+            "hash": null,
+            "id": "20260415-224442-741752-chip-evaluate:log_path",
+            "kind": "run_trace",
+            "label": "Run log",
+            "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-224442-741752-chip-evaluate\\autoloop.log",
+            "url": null
+          },
+          {
+            "hash": null,
+            "id": "20260415-224442-741752-chip-evaluate:trace_path",
+            "kind": "run_trace",
+            "label": "Trace file",
+            "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\traces\\e49a931851d3d8c65247acb0794c84dc.jsonl",
+            "url": null
+          }
+        ],
+        "benchmarkMetrics": {
+          "benchmarkProfile": "contract_window_backtest",
+          "contractCount": 5424,
+          "coveredContractCount": 5423,
+          "evaluatedAsset": "ETH",
+          "evaluatedTimeframe": "1h",
+          "fallbackReason": "",
+          "holdoutProfitability": 0.5388,
+          "maxDrawdown": 0.99,
+          "minimumTradeCount": 29,
+          "paperTradeReadiness": 0.3075,
+          "requestedAssetUniverse": "ETH,SOL",
+          "requestedTimeframe": "1h",
+          "sharpeRatio": 0.4047,
+          "stressResilience": 0.3333,
+          "tradeCount": 151,
+          "tradeCountGatePass": true,
+          "walkForwardConsistency": 0.8,
+          "winRate": 0.5364
+        },
+        "lane": "live_evidence",
+        "summary": "autoloop near_best on win_rate=0.5364",
+        "support": "moderate"
+      }
+    ],
+    "newestInsightId": "insight:20260415-224442-741752-chip-evaluate",
+    "newestInsightSummary": "autoloop near_best on win_rate=0.5364",
+    "pendingContradictionCount": 0,
+    "pendingUpgradeCount": 0,
+    "recommendedAbsorbTargetId": "insight:20260415-224442-741752-chip-evaluate",
+    "recommendedUpgradeId": null,
+    "specializationId": "specialization:domain-chip-crypto-trading",
+    "specializationLabel": "domain-chip-crypto-trading",
+    "strongestMasteryId": null,
+    "strongestMasterySummary": null
+  },
+  "masteries": [],
+  "masteryReviews": [],
+  "outcomes": [
+    {
+      "benchmarkMetrics": {
+        "benchmarkProfile": "contract_window_backtest",
+        "contractCount": 5424,
+        "coveredContractCount": 5423,
+        "evaluatedAsset": "ETH",
+        "evaluatedTimeframe": "1h",
+        "fallbackReason": "",
+        "holdoutProfitability": 0.5388,
+        "maxDrawdown": 0.99,
+        "minimumTradeCount": 29,
+        "paperTradeReadiness": 0.3075,
+        "requestedAssetUniverse": "ETH,SOL",
+        "requestedTimeframe": "1h",
+        "sharpeRatio": 0.4047,
+        "stressResilience": 0.3333,
+        "tradeCount": 151,
+        "tradeCountGatePass": true,
+        "walkForwardConsistency": 0.8,
+        "winRate": 0.5364
+      },
+      "context": {
+        "benchmark": {
+          "baselineId": "global-baseline",
+          "benchmarkName": "TradingBacktest",
+          "componentScores": {
+            "holdout": 0.5388,
+            "readiness": 0.3075,
+            "stress": 0.3333,
+            "walk_forward": 0.8
+          },
+          "planner": null,
+          "scenarioId": "range-funding-ethsol-1h",
+          "scenarioPack": "contract_window_backtest",
+          "strongestComponent": "walk_forward",
+          "weakestComponent": "readiness"
+        },
+        "scorecard": {
+          "components": [
+            {
+              "goal": "higher",
+              "key": "profitability_score",
+              "label": "Profitability score",
+              "value": 0.5364
+            },
+            {
+              "goal": "higher",
+              "key": "win_rate",
+              "label": "Win rate",
+              "value": 0.5364
+            },
+            {
+              "goal": "higher",
+              "key": "paper_trade_readiness",
+              "label": "Paper trade readiness",
+              "value": 0.3075
+            },
+            {
+              "goal": "higher",
+              "key": "holdout_profitability",
+              "label": "Holdout profitability",
+              "value": 0.5388
+            },
+            {
+              "goal": "higher",
+              "key": "walk_forward_consistency",
+              "label": "Walk-forward consistency",
+              "value": 0.8
+            },
+            {
+              "goal": "higher",
+              "key": "stress_resilience",
+              "label": "Stress resilience",
+              "value": 0.3333
+            },
+            {
+              "goal": "lower",
+              "key": "max_drawdown",
+              "label": "Max drawdown",
+              "value": 0.99
+            }
+          ],
+          "details": [
+            {
+              "key": "trade_count",
+              "label": "Trade count",
+              "value": "151"
+            },
+            {
+              "key": "minimum_trade_count",
+              "label": "Minimum trade count",
+              "value": "29"
+            },
+            {
+              "key": "evaluated_asset",
+              "label": "Evaluated asset",
+              "value": "ETH"
+            },
+            {
+              "key": "evaluated_timeframe",
+              "label": "Evaluated timeframe",
+              "value": "1h"
+            }
+          ],
+          "headlineGoal": "higher",
+          "headlineLabel": "win rate",
+          "headlineValue": 0.5364,
+          "modelLabel": "Trading backtest quality"
+        },
+        "trading": {
+          "evaluatedAsset": "ETH",
+          "evaluatedTimeframe": "1h",
+          "fallbackReason": "",
+          "minimumTradeCount": 29,
+          "requestedAssetUniverse": "ETH,SOL",
+          "requestedTimeframe": "1h",
+          "tradeCount": 151,
+          "tradeCountGatePass": true
+        }
+      },
+      "createdAt": "2026-04-15T22:44:46+00:00",
+      "evidenceLane": "live_evidence",
+      "id": "outcome:20260415-224442-741752-chip-evaluate",
+      "metricName": "win_rate",
+      "metricValue": 0.5364,
+      "summary": "autoloop near_best on win_rate=0.5364",
+      "targetId": "evolution-path:domain-chip-crypto-trading:autoloop",
+      "targetType": "evolution_path",
+      "verdict": "flat"
+    }
+  ],
+  "runtimePulse": {
+    "agentId": "agent:domain-chip-crypto-trading",
+    "blocker": null,
+    "lastUpdatedAt": "2026-04-15T22:44:46+00:00",
+    "passNumber": 4,
+    "recommendation": "Review the newest insight and outcome.",
+    "repoId": "repo:domain-chip-crypto-trading",
+    "runtimeState": "running",
+    "stageKey": "autoloop",
+    "stageLabel": "Autoloop"
+  },
+  "runtimeSource": {
+    "chipKey": null,
+    "chipLabel": null,
+    "kind": "spark_researcher",
+    "loopKind": "generalist",
+    "sourceInstanceId": "agent:domain-chip-crypto-trading",
+    "sourceRunId": "spark-researcher:20260415-224442-741752-chip-evaluate",
+    "version": "0.1.0"
+  },
+  "specialization": {
+    "id": "specialization:domain-chip-crypto-trading",
+    "key": "domain-chip-crypto-trading",
+    "label": "domain-chip-crypto-trading",
+    "memoryPolicy": "selective"
+  },
+  "upgradeDeliveries": [],
+  "upgrades": [],
+  "workspaceId": "ws_63c783d6-7511-4e5a-b613-b7c3a645d911"
+}

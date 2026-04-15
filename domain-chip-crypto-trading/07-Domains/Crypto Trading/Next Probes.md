@@ -2,9 +2,9 @@
 
 This page turns the seeded catalog into an actionable next frontier.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d-sparse_signal
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251-sparse_signal
 
-- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d`
+- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251`
 - doctrine: `breakout_volatility_expansion`
 - strategy: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`

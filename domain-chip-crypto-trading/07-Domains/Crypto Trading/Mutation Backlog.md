@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `205`
+- proposal_count: `208`
 
 ## Trend continuation with pullback confirmation
 
@@ -19,7 +19,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Ed Seykota, TurtleTrader / Richard Dennis tradition, Adam H. Grimes`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -46,7 +46,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Linda Bradford Raschke, StockCharts ChartSchool, TradingView Help Center`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -73,7 +73,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Mark Minervini, Peter Brandt, StockCharts ChartSchool`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -100,7 +100,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `George Soros, John Murphy, Kalshi Help Center`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -127,7 +127,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Edward O. Thorp, Van Tharp, Tom Basso`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -154,7 +154,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Linda Bradford Raschke, John Bollinger, TradingView Help Center`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -181,7 +181,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.69`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Recursive Flywheel, John Bollinger`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`
@@ -208,7 +208,7 @@ These are the current source-grounded mutation proposals.
 - surprise_score: `0.69`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Recursive Flywheel, John Bollinger`
-- lineage_ready: `False`
+- lineage_ready: `True`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
 - benchmark_paper_trade_readiness: `n/a`

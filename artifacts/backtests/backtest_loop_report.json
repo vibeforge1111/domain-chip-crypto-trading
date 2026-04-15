@@ -40,8 +40,8 @@
     }
   },
   "commit_message": null,
-  "duration_seconds": 149.854,
-  "finished_at": "2026-04-15T21:45:40.144146Z",
+  "duration_seconds": 142.908,
+  "finished_at": "2026-04-15T22:48:22.135326Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
@@ -52,5 +52,5 @@
     "top_walk_forward_consistency",
     "top_stress_resilience"
   ],
-  "started_at": "2026-04-15T21:43:10.289650Z"
+  "started_at": "2026-04-15T22:45:59.227266Z"
 }

@@ -1,0 +1,47 @@
+{
+  "benchmark_priority": "high",
+  "card_id": "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a5acbdd1-holdout_decay",
+  "counterfactual": "Without addressing holdout_decay, this candidate family will remain stuck at the current benchmark quality.",
+  "doctrine_family": "breakout_volatility_expansion",
+  "generated_at": "2026-04-15T17:16:26.682181Z",
+  "generation_source": "build_doctrine_from_contradictions",
+  "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
+  "ingest_priority": 150,
+  "lineage_failures": [
+    "holdout_decay: The final holdout slice drops below break-even profitability after fees.",
+    "segment_instability: Walk-forward consistency is too low across chronological splits.",
+    "execution_fragility: Edge does not survive elevated fees and slippage cleanly.",
+    "drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate."
+  ],
+  "mechanism": "Generated from contradiction probe on auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed targeting holdout_decay failure surface.",
+  "mutation_template": {
+    "asset_universe": "BTC",
+    "doctrine_id": "breakout_volatility_expansion",
+    "late_sample_guard": "on",
+    "market_regime": "high_vol",
+    "paper_gate": "balanced",
+    "strategy_id": "bollinger_squeeze_breakout",
+    "timeframe": "15m",
+    "venue": "kalshi",
+    "volume_context_guard": "thin_filter"
+  },
+  "no_trade_boundaries": [
+    "Skip conditions identified by the holdout_decay probe as contributing to poor performance."
+  ],
+  "packet_id": "dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a5acbdd1-holdout_decay",
+  "packet_status": "ready_for_card_ingest",
+  "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed-holdout_decay",
+  "research_thesis": "The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.",
+  "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+  "root_lesson": "Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.",
+  "setup_definition": "Apply holdout_decay-targeted mutation overrides to auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed signal logic and benchmark.",
+  "source_ids": [
+    "autoloop_contradiction_probe",
+    "john-bollinger-bands"
+  ],
+  "source_urls": [],
+  "strategy_family": "breakout_expansion_confirmation",
+  "target_contract_family": "btc_up_down_15m",
+  "title": "Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed",
+  "trader": "recursive_flywheel"
+}
