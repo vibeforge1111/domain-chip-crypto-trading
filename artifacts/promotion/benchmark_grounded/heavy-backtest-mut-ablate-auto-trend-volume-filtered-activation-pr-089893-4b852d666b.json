@@ -7,7 +7,7 @@
   "data_mode": "contract_window_backtest",
   "doctrine_id": "trend_regime_following",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776270539764893700",
+  "generated_at": "1776270603758903000",
   "holdout_profitability_score": 0.38,
   "market_regime": "trend",
   "max_drawdown": 0.99,
