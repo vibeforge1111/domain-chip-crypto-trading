@@ -987,6 +987,14 @@ tailwind.config = {
 .strat-bar-seg:hover::after { content: attr(data-tip); position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: #181C26; color: #F0F0F4; font-size: 0.65rem; padding: 2px 6px; border-radius: 3px; white-space: nowrap; pointer-events: none; z-index: 10; border: 1px solid #222430; }
 .mut-bar { height: 10px; border-radius: 3px; background: #1a3d2e; transition: width 0.4s; }
 .mut-bar-rm { background: #3d1a1a; }
+
+/* Dark scrollbars matching theme */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #141820; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #2A2E3C; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3A3F50; }
+::-webkit-scrollbar-corner { background: #141820; }
+* { scrollbar-width: thin; scrollbar-color: #2A2E3C #141820; }
 </style>
 </head>
 <body class="min-h-screen p-6">
@@ -1004,6 +1012,236 @@ tailwind.config = {
       <span class="text-sm font-medium text-emerald-400">Live</span>
     </div>
     <span id="clock" class="text-xs" style="color: #8890B0;">--:--:--</span>
+  </div>
+</div>
+
+<!-- AUTOLOOP TRI-LOOP SECTION (primary view) -->
+<div class="mb-4" id="autoloop-section">
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="section-title mb-0">Autoloop <span class="text-xs font-normal" style="color:#6A7080">(Doctrine Discovery + Backtest + Paper Trade)</span></div>
+        <span id="autoloop-status-badge" class="text-xs px-2 py-0.5 rounded" style="background:#222430;color:#6A7080">--</span>
+      </div>
+      <div class="flex gap-4 text-xs" style="color:#6A7080">
+        <span>Cycle: <span id="al-cycle" class="font-mono" style="color:#F0F0F4">--</span></span>
+        <span>Noop: <span id="al-noop" class="font-mono" style="color:#F0F0F4">--</span></span>
+      </div>
+    </div>
+
+    <!-- Lane status cards -->
+    <div class="grid grid-cols-3 gap-3 mb-4">
+      <!-- Learning Lane -->
+      <div class="card p-3" style="background:#141820">
+        <div class="text-xs mb-1" style="color:#6A7080">Learning Lane</div>
+        <div class="flex items-baseline gap-2">
+          <span id="al-doctrine-cards" class="text-lg font-mono font-bold" style="color:#2FCA94">--</span>
+          <span class="text-xs" style="color:#6A7080">doctrine cards</span>
+        </div>
+        <div class="text-xs mt-1" style="color:#6A7080">
+          <span id="al-doctrine-packets" class="font-mono">--</span> packets
+        </div>
+      </div>
+
+      <!-- Backtest Lane -->
+      <div class="card p-3" style="background:#141820">
+        <div class="text-xs mb-1" style="color:#6A7080">Backtest Lane</div>
+        <div class="flex items-baseline gap-2">
+          <span id="al-bt-candidates" class="text-lg font-mono font-bold" style="color:#68A8D8">--</span>
+          <span class="text-xs" style="color:#6A7080">candidates</span>
+        </div>
+        <div class="text-xs mt-1" style="color:#6A7080">
+          <span id="al-variety" class="font-mono">--</span> variety &middot;
+          <span id="al-trials" class="font-mono">--</span> trials
+        </div>
+      </div>
+
+      <!-- Paper Trade Lane -->
+      <div class="card p-3" style="background:#141820">
+        <div class="text-xs mb-1" style="color:#6A7080">Paper Trade Lane</div>
+        <div class="flex items-baseline gap-2">
+          <span id="al-pt-queue" class="text-lg font-mono font-bold" style="color:#E8B86D">--</span>
+          <span class="text-xs" style="color:#6A7080">in queue</span>
+        </div>
+        <div class="text-xs mt-1" style="color:#6A7080">
+          <span id="al-pt-ready" class="font-mono">--</span> ready &middot;
+          <span id="al-pt-sig" class="font-mono">--</span> significant
+        </div>
+      </div>
+    </div>
+
+    <!-- Regime targeting -->
+    <div class="mb-4">
+      <div class="text-xs mb-2 font-medium" style="color:#8890B0">Regime Targeting</div>
+      <div id="al-regime-targeting" class="flex items-center gap-2 flex-wrap"></div>
+    </div>
+
+    <!-- Cycle timeline + top candidates side by side -->
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Cycle timeline chart -->
+      <div>
+        <div class="text-xs mb-2" style="color:#6A7080">Cycle Timeline <span class="font-mono" id="al-timeline-range"></span></div>
+        <canvas id="al-cycle-chart" height="120"></canvas>
+      </div>
+
+      <!-- Top backtest candidates -->
+      <div>
+        <div class="text-xs mb-2" style="color:#6A7080">Top Backtest Candidates</div>
+        <div style="max-height:180px;overflow-y:auto">
+          <table class="w-full text-xs">
+            <thead><tr style="color:#6A7080">
+              <th class="text-left pb-1">Candidate</th>
+              <th class="text-right pb-1">WR</th>
+              <th class="text-right pb-1">WF</th>
+              <th class="text-right pb-1">DD</th>
+              <th class="text-right pb-1">Trades</th>
+              <th class="text-right pb-1">Ready</th>
+            </tr></thead>
+            <tbody id="al-candidates-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We're Learning -->
+    <div class="mt-4 grid grid-cols-3 gap-3">
+      <!-- Variety Backlog -->
+      <div>
+        <div class="text-xs mb-2 font-medium" style="color:#8890B0">Doctrine Variety Backlog</div>
+        <div id="al-variety-list" style="max-height:160px;overflow-y:auto"></div>
+      </div>
+      <!-- Active Hypotheses -->
+      <div>
+        <div class="text-xs mb-2 font-medium" style="color:#8890B0">Active Hypotheses</div>
+        <div id="al-hypotheses-list" style="max-height:160px;overflow-y:auto"></div>
+      </div>
+      <!-- Failure Surface -->
+      <div>
+        <div class="text-xs mb-2 font-medium" style="color:#8890B0">Failure Surface <span class="font-normal" style="color:#6A7080">(Self-Edit Queue)</span></div>
+        <div id="al-failures-list" style="max-height:160px;overflow-y:auto"></div>
+      </div>
+    </div>
+
+    <!-- Recent doctrine cards -->
+    <div class="mt-4">
+      <div class="text-xs mb-2" style="color:#6A7080">Recent Doctrine Cards</div>
+      <div id="al-doctrine-list" class="flex flex-wrap gap-2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE TRADING SECTION (real-time Binance data) -->
+<div class="mb-4" id="live-pt-section">
+  <div class="card p-5">
+    <!-- Header row: title + status + period tabs -->
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="section-title mb-0">Live Trading <span class="text-xs font-normal" style="color:#6A7080">(Real-Time Binance)</span></div>
+        <div id="live-pt-status-badge"></div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="flex" style="background:#141820;border-radius:6px;padding:2px;gap:2px" id="live-period-tabs">
+          <button class="live-period-tab" data-period="daily" style="padding:3px 10px;border-radius:4px;font-size:0.7rem;border:none;cursor:pointer;background:transparent;color:#6A7080">Daily</button>
+          <button class="live-period-tab" data-period="weekly" style="padding:3px 10px;border-radius:4px;font-size:0.7rem;border:none;cursor:pointer;background:transparent;color:#6A7080">Weekly</button>
+          <button class="live-period-tab active" data-period="alltime" style="padding:3px 10px;border-radius:4px;font-size:0.7rem;border:none;cursor:pointer;background:#222430;color:#F0F0F4">All-Time</button>
+        </div>
+        <span class="text-xs" style="color:#6A7080" id="live-pt-updated"></span>
+      </div>
+    </div>
+
+    <!-- Summary stats row (changes with period tab) -->
+    <div class="grid grid-cols-6 gap-3 mb-4">
+      <div class="card p-3" style="background:#141820">
+        <div class="stat-label">Settlements</div>
+        <div class="stat-value text-sm text-violet-400" id="live-settlements">--</div>
+      </div>
+      <div class="card p-3" style="background:#141820">
+        <div class="stat-label">Trades</div>
+        <div class="stat-value text-sm text-sky-400" id="live-trades-count">--</div>
+      </div>
+      <div class="card p-3" style="background:#141820">
+        <div class="stat-label">Wins</div>
+        <div class="stat-value text-sm" style="color:#2FCA94" id="live-wins-count">--</div>
+      </div>
+      <div class="card p-3" style="background:#141820">
+        <div class="stat-label">Losses</div>
+        <div class="stat-value text-sm" style="color:#E08878" id="live-losses-count">--</div>
+      </div>
+      <div class="card p-3" style="background:#141820">
+        <div class="stat-label">Win Rate</div>
+        <div class="stat-value text-sm" id="live-accuracy">--</div>
+      </div>
+      <div class="card p-3" style="background:#141820">
+        <div class="stat-label">Agents / Strategies</div>
+        <div class="stat-value text-sm" id="live-agents-strats">--</div>
+      </div>
+    </div>
+
+    <!-- Current contracts (multi-timeframe) -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Active Contracts</div>
+      <div id="live-contracts" class="grid gap-2" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+        <div style="padding:12px;text-align:center;color:#6A7080;font-size:0.8rem">
+          Start: <span style="font-family:'DM Mono',monospace;color:#8890B0">python live_paper_trader.py --assets BTC --per-strategy 3</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regime history strip -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Regime History</div>
+      <div id="live-regime-history" class="flex items-center gap-1 flex-wrap" style="min-height:24px"></div>
+    </div>
+
+    <!-- Strategy performance table -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Strategy Performance</div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left" style="color:#6A7080; border-bottom:1px solid #222430;">
+              <th class="pb-2 pr-4 font-medium">Strategy</th>
+              <th class="pb-2 pr-4 font-medium">Agents</th>
+              <th class="pb-2 pr-4 font-medium">Trades</th>
+              <th class="pb-2 pr-4 font-medium">Wins</th>
+              <th class="pb-2 pr-4 font-medium">Losses</th>
+              <th class="pb-2 pr-4 font-medium">Win Rate</th>
+              <th class="pb-2 font-medium">Regimes</th>
+            </tr>
+          </thead>
+          <tbody id="live-strategy-table"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Agent performance table -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Agent Performance</div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left" style="color:#6A7080; border-bottom:1px solid #222430;">
+              <th class="pb-2 pr-4 font-medium">Agent</th>
+              <th class="pb-2 pr-4 font-medium">Strategy</th>
+              <th class="pb-2 pr-4 font-medium">TF</th>
+              <th class="pb-2 pr-4 font-medium">BT WR</th>
+              <th class="pb-2 pr-4 font-medium">Live WR</th>
+              <th class="pb-2 pr-4 font-medium">Delta</th>
+              <th class="pb-2 pr-4 font-medium">Trades</th>
+              <th class="pb-2 pr-4 font-medium">Wins</th>
+              <th class="pb-2 font-medium">Skips</th>
+            </tr>
+          </thead>
+          <tbody id="live-agent-table"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Recent settlements -->
+    <div>
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Recent Settlements</div>
+      <div id="live-settlements-list" style="max-height:250px;overflow-y:auto;"></div>
+    </div>
   </div>
 </div>
 
@@ -1119,123 +1357,6 @@ tailwind.config = {
   </div>
 </div>
 
-<!-- LIVE TRADING SECTION (real-time Binance data) -->
-<div class="mt-4" id="live-pt-section">
-  <div class="card p-5">
-    <!-- Header row: title + status + period tabs -->
-    <div class="flex items-center justify-between mb-4">
-      <div class="flex items-center gap-3">
-        <div class="section-title mb-0">Live Trading <span class="text-xs font-normal" style="color:#6A7080">(Real-Time Binance)</span></div>
-        <div id="live-pt-status-badge"></div>
-      </div>
-      <div class="flex items-center gap-2">
-        <div class="flex" style="background:#141820;border-radius:6px;padding:2px;gap:2px" id="live-period-tabs">
-          <button class="live-period-tab" data-period="daily" style="padding:3px 10px;border-radius:4px;font-size:0.7rem;border:none;cursor:pointer;background:transparent;color:#6A7080">Daily</button>
-          <button class="live-period-tab" data-period="weekly" style="padding:3px 10px;border-radius:4px;font-size:0.7rem;border:none;cursor:pointer;background:transparent;color:#6A7080">Weekly</button>
-          <button class="live-period-tab active" data-period="alltime" style="padding:3px 10px;border-radius:4px;font-size:0.7rem;border:none;cursor:pointer;background:#222430;color:#F0F0F4">All-Time</button>
-        </div>
-        <span class="text-xs" style="color:#6A7080" id="live-pt-updated"></span>
-      </div>
-    </div>
-
-    <!-- Summary stats row (changes with period tab) -->
-    <div class="grid grid-cols-6 gap-3 mb-4">
-      <div class="card p-3" style="background:#141820">
-        <div class="stat-label">Settlements</div>
-        <div class="stat-value text-sm text-violet-400" id="live-settlements">--</div>
-      </div>
-      <div class="card p-3" style="background:#141820">
-        <div class="stat-label">Trades</div>
-        <div class="stat-value text-sm text-sky-400" id="live-trades-count">--</div>
-      </div>
-      <div class="card p-3" style="background:#141820">
-        <div class="stat-label">Wins</div>
-        <div class="stat-value text-sm" style="color:#2FCA94" id="live-wins-count">--</div>
-      </div>
-      <div class="card p-3" style="background:#141820">
-        <div class="stat-label">Losses</div>
-        <div class="stat-value text-sm" style="color:#E08878" id="live-losses-count">--</div>
-      </div>
-      <div class="card p-3" style="background:#141820">
-        <div class="stat-label">Win Rate</div>
-        <div class="stat-value text-sm" id="live-accuracy">--</div>
-      </div>
-      <div class="card p-3" style="background:#141820">
-        <div class="stat-label">Agents / Strategies</div>
-        <div class="stat-value text-sm" id="live-agents-strats">--</div>
-      </div>
-    </div>
-
-    <!-- Current contracts (multi-timeframe) -->
-    <div class="mb-4">
-      <div class="text-xs font-medium mb-2" style="color:#8890B0">Active Contracts</div>
-      <div id="live-contracts" class="grid gap-2" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
-        <div style="padding:12px;text-align:center;color:#6A7080;font-size:0.8rem">
-          Start: <span style="font-family:'DM Mono',monospace;color:#8890B0">python live_paper_trader.py --assets BTC --per-strategy 3</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Regime history strip -->
-    <div class="mb-4">
-      <div class="text-xs font-medium mb-2" style="color:#8890B0">Regime History</div>
-      <div id="live-regime-history" class="flex items-center gap-1 flex-wrap" style="min-height:24px"></div>
-    </div>
-
-    <!-- Strategy performance table -->
-    <div class="mb-4">
-      <div class="text-xs font-medium mb-2" style="color:#8890B0">Strategy Performance</div>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="text-left" style="color:#6A7080; border-bottom:1px solid #222430;">
-              <th class="pb-2 pr-4 font-medium">Strategy</th>
-              <th class="pb-2 pr-4 font-medium">Agents</th>
-              <th class="pb-2 pr-4 font-medium">Trades</th>
-              <th class="pb-2 pr-4 font-medium">Wins</th>
-              <th class="pb-2 pr-4 font-medium">Losses</th>
-              <th class="pb-2 pr-4 font-medium">Win Rate</th>
-              <th class="pb-2 font-medium">Regimes</th>
-            </tr>
-          </thead>
-          <tbody id="live-strategy-table"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Agent performance table -->
-    <div class="mb-4">
-      <div class="text-xs font-medium mb-2" style="color:#8890B0">Agent Performance</div>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="text-left" style="color:#6A7080; border-bottom:1px solid #222430;">
-              <th class="pb-2 pr-4 font-medium">Agent</th>
-              <th class="pb-2 pr-4 font-medium">Strategy</th>
-              <th class="pb-2 pr-4 font-medium">TF</th>
-              <th class="pb-2 pr-4 font-medium">BT WR</th>
-              <th class="pb-2 pr-4 font-medium">Live WR</th>
-              <th class="pb-2 pr-4 font-medium">Delta</th>
-              <th class="pb-2 pr-4 font-medium">Trades</th>
-              <th class="pb-2 pr-4 font-medium">Wins</th>
-              <th class="pb-2 font-medium">Skips</th>
-            </tr>
-          </thead>
-          <tbody id="live-agent-table"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Recent settlements -->
-    <div>
-      <div class="text-xs font-medium mb-2" style="color:#8890B0">Recent Settlements</div>
-      <div id="live-settlements-list" style="max-height:250px;overflow-y:auto;"></div>
-    </div>
-  </div>
-</div>
-
-<!-- (Holdout Backtest section removed — not fed by autoloop) -->
-
 <!-- TOP AGENTS -->
 <div class="mt-4">
   <div class="card p-5">
@@ -1305,97 +1426,6 @@ tailwind.config = {
   <div class="card p-5">
     <div class="section-title">Guard Discoveries</div>
     <div id="insights" class="grid grid-cols-3 gap-2"></div>
-  </div>
-</div>
-
-<!-- AUTOLOOP TRI-LOOP SECTION -->
-<div class="mt-4" id="autoloop-section">
-  <!-- Autoloop header + status -->
-  <div class="card p-5">
-    <div class="flex items-center justify-between mb-4">
-      <div class="flex items-center gap-3">
-        <div class="section-title mb-0">Autoloop <span class="text-xs font-normal" style="color:#6A7080">(Doctrine Discovery + Backtest + Paper Trade)</span></div>
-        <span id="autoloop-status-badge" class="text-xs px-2 py-0.5 rounded" style="background:#222430;color:#6A7080">--</span>
-      </div>
-      <div class="flex gap-4 text-xs" style="color:#6A7080">
-        <span>Cycle: <span id="al-cycle" class="font-mono" style="color:#F0F0F4">--</span></span>
-        <span>Noop: <span id="al-noop" class="font-mono" style="color:#F0F0F4">--</span></span>
-      </div>
-    </div>
-
-    <!-- Lane status cards -->
-    <div class="grid grid-cols-3 gap-3 mb-4">
-      <!-- Learning Lane -->
-      <div class="card p-3" style="background:#141820">
-        <div class="text-xs mb-1" style="color:#6A7080">Learning Lane</div>
-        <div class="flex items-baseline gap-2">
-          <span id="al-doctrine-cards" class="text-lg font-mono font-bold" style="color:#2FCA94">--</span>
-          <span class="text-xs" style="color:#6A7080">doctrine cards</span>
-        </div>
-        <div class="text-xs mt-1" style="color:#6A7080">
-          <span id="al-doctrine-packets" class="font-mono">--</span> packets
-        </div>
-      </div>
-
-      <!-- Backtest Lane -->
-      <div class="card p-3" style="background:#141820">
-        <div class="text-xs mb-1" style="color:#6A7080">Backtest Lane</div>
-        <div class="flex items-baseline gap-2">
-          <span id="al-bt-candidates" class="text-lg font-mono font-bold" style="color:#68A8D8">--</span>
-          <span class="text-xs" style="color:#6A7080">candidates</span>
-        </div>
-        <div class="text-xs mt-1" style="color:#6A7080">
-          <span id="al-variety" class="font-mono">--</span> variety &middot;
-          <span id="al-trials" class="font-mono">--</span> trials
-        </div>
-      </div>
-
-      <!-- Paper Trade Lane -->
-      <div class="card p-3" style="background:#141820">
-        <div class="text-xs mb-1" style="color:#6A7080">Paper Trade Lane</div>
-        <div class="flex items-baseline gap-2">
-          <span id="al-pt-queue" class="text-lg font-mono font-bold" style="color:#E8B86D">--</span>
-          <span class="text-xs" style="color:#6A7080">in queue</span>
-        </div>
-        <div class="text-xs mt-1" style="color:#6A7080">
-          <span id="al-pt-ready" class="font-mono">--</span> ready &middot;
-          <span id="al-pt-sig" class="font-mono">--</span> significant
-        </div>
-      </div>
-    </div>
-
-    <!-- Cycle timeline + top candidates side by side -->
-    <div class="grid grid-cols-2 gap-4">
-      <!-- Cycle timeline chart -->
-      <div>
-        <div class="text-xs mb-2" style="color:#6A7080">Cycle Timeline <span class="font-mono" id="al-timeline-range"></span></div>
-        <canvas id="al-cycle-chart" height="120"></canvas>
-      </div>
-
-      <!-- Top backtest candidates -->
-      <div>
-        <div class="text-xs mb-2" style="color:#6A7080">Top Backtest Candidates</div>
-        <div style="max-height:180px;overflow-y:auto">
-          <table class="w-full text-xs">
-            <thead><tr style="color:#6A7080">
-              <th class="text-left pb-1">Candidate</th>
-              <th class="text-right pb-1">WR</th>
-              <th class="text-right pb-1">WF</th>
-              <th class="text-right pb-1">DD</th>
-              <th class="text-right pb-1">Trades</th>
-              <th class="text-right pb-1">Ready</th>
-            </tr></thead>
-            <tbody id="al-candidates-table"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Recent doctrine cards -->
-    <div class="mt-4">
-      <div class="text-xs mb-2" style="color:#6A7080">Recent Doctrine Cards</div>
-      <div id="al-doctrine-list" class="flex flex-wrap gap-2"></div>
-    </div>
   </div>
 </div>
 
@@ -2144,8 +2174,9 @@ function renderAutoloop(data) {
       const dd = c.dd ? (c.dd * 100).toFixed(1) + '%' : '--';
       const ready = c.readiness ? (c.readiness >= 0.8 ? 'Yes' : 'No') : '--';
       const readyColor = c.readiness >= 0.8 ? '#2FCA94' : '#6A7080';
+      const isEligible = c.eligible || c.readiness >= 0.8;
       const name = c.id.replace(/_/g, ' ').substring(0, 30);
-      return '<tr style="border-bottom:1px solid #1E2230">' +
+      return '<tr style="border-bottom:1px solid #1E2230' + (isEligible ? ';border-left:3px solid #2FCA94' : '') + '">' +
         '<td class="py-1 text-left" style="color:#8890B0">' + name + '</td>' +
         '<td class="py-1 text-right font-mono" style="color:' + wrColor + '">' + wr + '%</td>' +
         '<td class="py-1 text-right font-mono" style="color:#8890B0">' + wf + '</td>' +
@@ -2176,6 +2207,88 @@ function renderAutoloop(data) {
     }).join('');
   } else {
     docList.innerHTML = '<div class="text-xs" style="color:#6A7080">No doctrine cards yet — run learning loop</div>';
+  }
+
+  // Regime targeting (from doctrine cards)
+  const regimeEl = document.getElementById('al-regime-targeting');
+  if (regimeEl) {
+    const regimeCounts = {};
+    (doc.recent_cards || []).forEach(c => {
+      const r = c.regime || 'unknown';
+      regimeCounts[r] = (regimeCounts[r] || 0) + 1;
+    });
+    const REGIME_C = { compression:'#68A8D8', trend:'#2FCA94', range:'#E8B86D', event_driven:'#f472b6', fear_shock:'#E08878', high_vol:'#f97316' };
+    const entries = Object.entries(regimeCounts).sort((a, b) => b[1] - a[1]);
+    if (entries.length > 0) {
+      regimeEl.innerHTML = entries.map(([r, count]) => {
+        const c = REGIME_C[r] || '#6A7080';
+        return '<span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;background:' + c + '15;border:1px solid ' + c + '33;font-size:0.75rem;color:' + c + '">' +
+          '<span style="font-weight:600">' + r.replace(/_/g,' ') + '</span>' +
+          '<span style="color:#6A7080;font-size:0.65rem">' + count + ' cards</span></span>';
+      }).join('');
+    } else {
+      regimeEl.innerHTML = '<span class="text-xs" style="color:#6A7080">No regime data yet</span>';
+    }
+  }
+
+  // Variety backlog
+  const varietyEl = document.getElementById('al-variety-list');
+  const variety = data.variety_backlog || [];
+  if (varietyEl) {
+    if (variety.length > 0) {
+      varietyEl.innerHTML = variety.slice(0, 10).map(v => {
+        const name = (v.doctrine_family || v.family || '').replace(/_/g, ' ');
+        const pending = v.pending_proposal_count || v.pending || 0;
+        return '<div class="flex items-center justify-between py-1" style="border-bottom:1px solid #1E2230;font-size:0.75rem">' +
+          '<span style="color:#8890B0">' + name + '</span>' +
+          '<span class="font-mono" style="color:' + (pending > 0 ? '#E8B86D' : '#6A7080') + '">' + pending + ' pending</span>' +
+        '</div>';
+      }).join('');
+    } else {
+      varietyEl.innerHTML = '<div class="text-xs" style="color:#6A7080">No backlog entries</div>';
+    }
+  }
+
+  // Active hypotheses (from mutation trials)
+  const hypoEl = document.getElementById('al-hypotheses-list');
+  const trials = data.mutation_trials || [];
+  if (hypoEl) {
+    if (trials.length > 0) {
+      hypoEl.innerHTML = trials.slice(0, 6).map(t => {
+        const hyp = (t.hypothesis || '').substring(0, 80);
+        const cid = (t.candidate_id || '').substring(0, 20);
+        return '<div class="py-1" style="border-bottom:1px solid #1E2230;font-size:0.7rem">' +
+          '<div style="color:#68A8D8;font-weight:500">' + cid.replace(/_/g, ' ') + '</div>' +
+          '<div style="color:#6A7080;margin-top:1px">' + hyp + (hyp.length >= 80 ? '...' : '') + '</div>' +
+        '</div>';
+      }).join('');
+    } else {
+      hypoEl.innerHTML = '<div class="text-xs" style="color:#6A7080">No active hypotheses</div>';
+    }
+  }
+
+  // Failure surface (self-edit queue)
+  const failEl = document.getElementById('al-failures-list');
+  const edits = data.self_edits || [];
+  if (failEl) {
+    if (edits.length > 0) {
+      // Aggregate failure modes across all edits
+      const modeCounts = {};
+      edits.forEach(e => {
+        (e.failure_modes || []).forEach(m => { modeCounts[m] = (modeCounts[m] || 0) + 1; });
+      });
+      const modes = Object.entries(modeCounts).sort((a, b) => b[1] - a[1]);
+      failEl.innerHTML =
+        '<div class="text-xs mb-2" style="color:#8890B0">' + edits.length + ' edits queued</div>' +
+        modes.map(([mode, count]) => {
+          const c = mode === 'holdout_decay' ? '#E08878' : mode === 'sparse_signal' ? '#E8B86D' : mode === 'drawdown_excess' ? '#f43f5e' : '#6A7080';
+          return '<div class="flex items-center justify-between py-0.5" style="font-size:0.7rem">' +
+            '<span style="color:' + c + '">' + mode.replace(/_/g, ' ') + '</span>' +
+            '<span class="font-mono" style="color:#6A7080">' + count + 'x</span></div>';
+        }).join('');
+    } else {
+      failEl.innerHTML = '<div class="text-xs" style="color:#6A7080">No self-edits queued</div>';
+    }
   }
 }
 
@@ -2242,6 +2355,12 @@ EVOLUTION_VIZ_PAGE = r"""<!DOCTYPE html>
   .badge-v { background:#14161E; border:1px solid #222430; color:#68A8D8; padding:1px 6px; border-radius:4px; font-size:0.65rem; font-weight:600; }
   .badge-s { background:#222430; color:#8890B0; padding:1px 6px; border-radius:4px; font-size:0.65rem; }
   .legend-dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #141820; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb { background: #2A2E3C; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3A3F50; }
+  ::-webkit-scrollbar-corner { background: #141820; }
+  * { scrollbar-width: thin; scrollbar-color: #2A2E3C #141820; }
 </style>
 </head>
 <body>
