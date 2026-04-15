@@ -7,10 +7,46 @@ This queue holds bounded benchmark-driven self-edits.
 - deferred_count: `0`
 - rejected_count: `0`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78-sparse_signal
+## self-edit-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay
 
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78-probe-sparse_signal`
+- parent_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter`
+- child_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay`
+- priority: `0.99`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
+- decision: `n/a`
+- target_improved: `n/a`
+- child_profitability_score: `n/a`
+- child_holdout_profitability_score: `n/a`
+- child_trade_count: `n/a`
+
+## self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay
+
+- parent_candidate_id: `auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter`
+- child_candidate_id: `auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay`
+- priority: `0.99`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
+- decision: `n/a`
+- target_improved: `n/a`
+- child_profitability_score: `n/a`
+- child_holdout_profitability_score: `n/a`
+- child_trade_count: `n/a`
+
+## self-edit-auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm-sparse_signal
+
+- parent_candidate_id: `auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm`
+- child_candidate_id: `auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm-probe-sparse_signal`
+- priority: `0.99`
+- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- decision: `n/a`
+- target_improved: `n/a`
+- child_profitability_score: `n/a`
+- child_holdout_profitability_score: `n/a`
+- child_trade_count: `n/a`
+
+## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-64d9632ea7-sparse_signal
+
+- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-64d9632ea7`
+- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-64d9632ea7-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -31,46 +67,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter-sparse_signal
+## self-edit-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal
 
-- parent_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter`
-- child_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter-probe-sparse_signal`
-- priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
-- decision: `n/a`
-- target_improved: `n/a`
-- child_profitability_score: `n/a`
-- child_holdout_profitability_score: `n/a`
-- child_trade_count: `n/a`
-
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6c80dac70-sparse_signal
-
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6c80dac70`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6c80dac70-probe-sparse_signal`
-- priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
-- decision: `n/a`
-- target_improved: `n/a`
-- child_profitability_score: `n/a`
-- child_holdout_profitability_score: `n/a`
-- child_trade_count: `n/a`
-
-## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal
-
-- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c`
-- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-probe-sparse_signal`
-- priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
-- decision: `n/a`
-- target_improved: `n/a`
-- child_profitability_score: `n/a`
-- child_holdout_profitability_score: `n/a`
-- child_trade_count: `n/a`
-
-## self-edit-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal
-
-- parent_candidate_id: `btc-15m-momentum-breakout-structure-psychology_no_chase`
-- child_candidate_id: `btc-15m-momentum-breakout-structure-psychology_no_chase-probe-sparse_signal`
+- parent_candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm`
+- child_candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
