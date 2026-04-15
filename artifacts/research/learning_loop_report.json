@@ -1,13 +1,13 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--5b62fe8a-sparse_signal.json",
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-vo-f6ce6b1a-sparse_signal.json",
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--1e39443c-sparse_signal.json"
+      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-faae1ec9-sparse_signal.json",
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--2223a1fc-sparse_signal.json",
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--2c95ad30-sparse_signal.json"
     ],
     "added_count": 3,
     "approved_waiting_packet_count": 0,
-    "card_count": 137,
+    "card_count": 140,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
@@ -17,13 +17,13 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 134,
+    "card_count": 137,
     "doctrine_packets_generated": 3,
     "pending_packet_count": 3,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 2.973,
-  "finished_at": "2026-04-15T17:35:32.804766Z",
+  "duration_seconds": 4.305,
+  "finished_at": "2026-04-15T17:41:40.697490Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
@@ -32,15 +32,15 @@
     "added_count"
   ],
   "reconciliation": {
-    "card_count": 137,
+    "card_count": 140,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 137,
+    "packet_count": 140,
     "repair_mode": true,
     "repaired_cards": [],
     "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-15T17:35:29.831445Z"
+  "started_at": "2026-04-15T17:41:36.392242Z"
 }
