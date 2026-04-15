@@ -1,7 +1,7 @@
 {
   "after": {
     "benchmark": {
-      "candidate_count": 33,
+      "candidate_count": 25,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
       "top_holdout_profitability_score": 0.3967,
       "top_max_drawdown": 0.99,
@@ -21,7 +21,7 @@
   },
   "before": {
     "benchmark": {
-      "candidate_count": 25,
+      "candidate_count": 33,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
       "top_holdout_profitability_score": 0.3967,
       "top_max_drawdown": 0.99,
@@ -40,12 +40,12 @@
     }
   },
   "commit_message": null,
-  "duration_seconds": 102.713,
-  "finished_at": "2026-04-15T16:55:43.316323Z",
+  "duration_seconds": 55.183,
+  "finished_at": "2026-04-15T16:57:13.402447Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
     "candidate_count"
   ],
-  "started_at": "2026-04-15T16:54:00.602886Z"
+  "started_at": "2026-04-15T16:56:18.219160Z"
 }
