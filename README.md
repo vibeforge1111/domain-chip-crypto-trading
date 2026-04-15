@@ -37,6 +37,18 @@ python live/live_paper_trader.py
 - Settles predictions at 15m/1h/4h boundaries
 - Logs to `artifacts/paper_trade/`
 
+### Run the Dashboard (real-time monitoring UI)
+```bash
+python live/dashboard_app.py
+# → http://localhost:8502
+```
+- Dark-themed shadcn/ui-inspired dashboard with auto-refresh every 10s
+- **Autoloop status**: cycle timeline, lane cards (learning/backtest/paper trade), regime targeting, doctrine variety backlog, active hypotheses, failure surface
+- **Live Trading**: real-time Binance settlements, strategy + agent performance, regime history
+- **Evolution metrics**: population growth, elite production, strategy diversity, mutation activity
+- **Top Agents table**: sortable, filterable by strategy/asset/timeframe/method
+- **Evolution Graph**: interactive D3 visualization at `/evolution-viz`
+
 ### Run Evolution (DGM-H strategy discovery)
 ```bash
 python live/run_evolution.py -g 10 -w 4
