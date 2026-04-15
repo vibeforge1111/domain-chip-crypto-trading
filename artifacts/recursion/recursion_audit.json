@@ -19,8 +19,8 @@
     {
       "evidence": [
         "High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h",
-        "Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191, btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-863252572b, baseline",
-        "Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e, btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-863252572b"
+        "Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de, btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e7c96ccb56, baseline",
+        "Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de"
       ],
       "severity": "warn",
       "status": "contained",
@@ -30,9 +30,9 @@
   "benchmark_summary": {
     "candidate_count": 9,
     "contract_family": "btc_up_down_15m",
-    "top_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191",
-    "top_stress_resilience": 0.3333,
-    "top_walk_forward_consistency": 0.2
+    "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed",
+    "top_stress_resilience": 0.0,
+    "top_walk_forward_consistency": 0.4
   },
   "decision": "defer",
   "guardrail_status": {
