@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-04-15T16:56:15.474497Z",
+  "generated_at": "2026-04-15T17:00:49.394308Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--e37cb37e-sparse_signal"
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compre-a02e38ae-holdout_decay",
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7993749b-sparse_signal",
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-re-ee569cbb-sparse_signal"
   ],
-  "packets_generated": 1,
-  "probes_analyzed": 33,
-  "skipped_duplicate_count": 32,
+  "packets_generated": 3,
+  "probes_analyzed": 25,
+  "skipped_duplicate_count": 22,
   "skipped_no_template_count": 0
 }

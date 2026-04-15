@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `19`
-- pending_family_count: `19`
+- family_count: `16`
+- pending_family_count: `16`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
@@ -13,8 +13,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `4`
-- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-sta-debb7d4d61-sparse_signal, auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stabilit-a4fec90483-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay`
-- pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced`
+- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-sessio-14f5ffacb2-holdout_decay, auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-sta-debb7d4d61-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay`
+- pending_child_labels: `late_sample_guard=on, paper_gate=balanced | activation_profile=wider, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
 - contradiction_modes: `n/a`
@@ -61,16 +61,16 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "bollinger_squeeze_breakout"}`
 - target_contract_family: `btc_up_down_15m`
 - status: `uncovered_variety_pending`
-- tested_child_count: `6`
-- benchmarked_candidate_count: `6`
+- tested_child_count: `2`
+- benchmarked_candidate_count: `2`
 - pending_proposal_count: `1`
 - pending_proposal_ids: `btc-15m-volatility-compression-breakout`
 - pending_child_labels: `paper_gate=strict`
-- suggested_child_target_count: `5`
+- suggested_child_target_count: `4`
 - suggested_child_targets: `late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter | no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window | execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=strict | activation_profile=adaptive, paper_gate=strict`
-- contradiction_modes: `drawdown_excess, execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze`
-- top_profitability_score: `0.4513`
+- contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
+- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-probe-sparse_signal`
+- top_profitability_score: `0.0`
 - top_recommended_next_step: `run_contradiction_probe`
 
 ## trend_regime_following -> pullback_then_continuation
@@ -166,7 +166,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `1`
-- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no-43433d0def-sparse_signal`
+- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no-6652aacdec-sparse_signal`
 - pending_child_labels: `activation_profile=wider, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`

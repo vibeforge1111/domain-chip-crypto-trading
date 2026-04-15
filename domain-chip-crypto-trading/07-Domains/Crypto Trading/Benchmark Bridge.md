@@ -4,20 +4,44 @@ Backtesting is the benchmark lane for this chip.
 
 This page plays the same role as the startup chip's promotion bridge page, but for trading combinations.
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191
+## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b
 
 - doctrine_id: `trend_regime_following`
 - strategy_id: `ema_pullback_long`
 - market_regime: `trend`
-- profitability_score: `0.5`
-- sharpe_ratio: `-0.0`
+- profitability_score: `0.5063`
+- sharpe_ratio: `0.0551`
 - max_drawdown: `0.99`
-- paper_trade_readiness: `0.1452`
+- paper_trade_readiness: `0.1813`
 - contract_count: `5424`
 - covered_contract_count: `5423`
-- trade_count: `25`
+- trade_count: `19`
 - minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
+- trade_count_gate_pass: `False`
+- holdout_profitability_score: `0.48`
+- walk_forward_consistency: `0.4`
+- stress_resilience: `0.3333`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+- promotion_candidate_kind: `benchmark_grounded_boundary`
+- eligibility_status: `eligible_for_boundary_promotion`
+- primary_mechanism: Backtested on 19 active BTC 1h contract decisions across 5423 covered windows. Fallback used because requested timeframe `4h` unavailable.
+- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
+
+## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de
+
+- doctrine_id: `trend_regime_following`
+- strategy_id: `ema_pullback_long`
+- market_regime: `trend`
+- profitability_score: `0.5017`
+- sharpe_ratio: `0.0167`
+- max_drawdown: `0.99`
+- paper_trade_readiness: `0.1488`
+- contract_count: `5424`
+- covered_contract_count: `5423`
+- trade_count: `23`
+- minimum_trade_count: `25`
+- trade_count_gate_pass: `False`
 - holdout_profitability_score: `0.48`
 - walk_forward_consistency: `0.2`
 - stress_resilience: `0.3333`
@@ -25,175 +49,151 @@ This page plays the same role as the startup chip's promotion bridge page, but f
 - recommended_next_step: `run_contradiction_probe`
 - promotion_candidate_kind: `benchmark_grounded_boundary`
 - eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 25 active BTC 1h contract decisions across 5423 covered windows. Fallback used because requested timeframe `4h` unavailable.
+- primary_mechanism: Backtested on 23 active BTC 1h contract decisions across 5423 covered windows. Fallback used because requested timeframe `4h` unavailable.
 - primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter
-
-- doctrine_id: `trend_regime_following`
-- strategy_id: `ema_pullback_long`
-- market_regime: `trend`
-- profitability_score: `0.4615`
-- sharpe_ratio: `-0.4006`
-- max_drawdown: `0.99`
-- paper_trade_readiness: `0.024`
-- contract_count: `5112`
-- covered_contract_count: `5111`
-- trade_count: `27`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.4086`
-- walk_forward_consistency: `0.2`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-- promotion_candidate_kind: `benchmark_grounded_boundary`
-- eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 27 active BTC 1h contract decisions across 5111 covered windows. Fallback used because requested timeframe `4h` unavailable.
-- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
-
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `bollinger_squeeze_breakout`
-- market_regime: `high_vol`
-- profitability_score: `0.4513`
-- sharpe_ratio: `-1.2215`
-- max_drawdown: `0.99`
-- paper_trade_readiness: `0.048`
-- contract_count: `20448`
-- covered_contract_count: `20447`
-- trade_count: `157`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.3967`
-- walk_forward_consistency: `0.4`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-- promotion_candidate_kind: `benchmark_grounded_boundary`
-- eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 157 active BTC 15m contract decisions across 20447 covered windows.
-- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
-
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `bollinger_squeeze_breakout`
-- market_regime: `high_vol`
-- profitability_score: `0.4497`
-- sharpe_ratio: `-0.8188`
-- max_drawdown: `0.99`
-- paper_trade_readiness: `0.048`
-- contract_count: `20448`
-- covered_contract_count: `20447`
-- trade_count: `66`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.4086`
-- walk_forward_consistency: `0.4`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-- promotion_candidate_kind: `benchmark_grounded_boundary`
-- eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 66 active BTC 15m contract decisions across 20447 covered windows.
-- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
-
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter
-
-- doctrine_id: `trend_regime_following`
-- strategy_id: `ema_pullback_long`
-- market_regime: `trend`
-- profitability_score: `0.4042`
-- sharpe_ratio: `-1.113`
-- max_drawdown: `0.99`
-- paper_trade_readiness: `0.024`
-- contract_count: `5112`
-- covered_contract_count: `5111`
-- trade_count: `33`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.38`
-- walk_forward_consistency: `0.2`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-- promotion_candidate_kind: `benchmark_grounded_boundary`
-- eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 33 active BTC 1h contract decisions across 5111 covered windows. Fallback used because requested timeframe `4h` unavailable.
-- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
-
-## auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-sessio-14f5ffacb2
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
-- profitability_score: `0.2903`
-- sharpe_ratio: `-2.4404`
+- profitability_score: `0.3133`
+- sharpe_ratio: `-1.8146`
 - max_drawdown: `0.99`
 - paper_trade_readiness: `0.0`
 - contract_count: `21696`
 - covered_contract_count: `21695`
-- trade_count: `29`
+- trade_count: `21`
 - minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.23`
+- trade_count_gate_pass: `False`
+- holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
 - stress_resilience: `0.0`
 - data_mode: `contract_window_backtest`
 - recommended_next_step: `run_contradiction_probe`
 - promotion_candidate_kind: `benchmark_grounded_boundary`
 - eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 29 active BTC 15m contract decisions across 21695 covered windows.
+- primary_mechanism: Backtested on 21 active BTC 15m contract decisions across 21695 covered windows.
 - primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
 
-## auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c
 
-- doctrine_id: `mean_reversion_liquidity_reclaim`
-- strategy_id: `wedge_exhaustion_reversal`
-- market_regime: `range`
-- profitability_score: `0.6146`
-- sharpe_ratio: `1.7164`
-- max_drawdown: `0.5263`
-- paper_trade_readiness: `0.6202`
-- contract_count: `20448`
-- covered_contract_count: `20447`
-- trade_count: `52`
-- minimum_trade_count: `151`
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `breakout_open_interest_confirmation`
+- market_regime: `trend`
+- profitability_score: `0.0`
+- sharpe_ratio: `0.0`
+- max_drawdown: `0.0`
+- paper_trade_readiness: `0.17`
+- contract_count: `21696`
+- covered_contract_count: `21695`
+- trade_count: `0`
+- minimum_trade_count: `25`
 - trade_count_gate_pass: `False`
-- holdout_profitability_score: `0.6164`
+- holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
-- stress_resilience: `1.0`
+- stress_resilience: `0.0`
 - data_mode: `contract_window_backtest`
 - recommended_next_step: `run_contradiction_probe`
 - promotion_candidate_kind: `benchmark_grounded_boundary`
 - eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 52 active BTC 15m contract decisions across 20447 covered windows.
+- primary_mechanism: Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.
 - primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
 
-## auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm
+## auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-probe-sparse_signal
 
-- doctrine_id: `mean_reversion_liquidity_reclaim`
-- strategy_id: `wedge_exhaustion_reversal`
-- market_regime: `range`
-- profitability_score: `0.6127`
-- sharpe_ratio: `1.6358`
-- max_drawdown: `0.4379`
-- paper_trade_readiness: `0.6432`
-- contract_count: `20448`
-- covered_contract_count: `20447`
-- trade_count: `49`
-- minimum_trade_count: `151`
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
+- profitability_score: `0.0`
+- sharpe_ratio: `0.0`
+- max_drawdown: `0.0`
+- paper_trade_readiness: `0.17`
+- contract_count: `21696`
+- covered_contract_count: `21695`
+- trade_count: `0`
+- minimum_trade_count: `25`
 - trade_count_gate_pass: `False`
-- holdout_profitability_score: `0.58`
+- holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
-- stress_resilience: `1.0`
+- stress_resilience: `0.0`
 - data_mode: `contract_window_backtest`
 - recommended_next_step: `run_contradiction_probe`
 - promotion_candidate_kind: `benchmark_grounded_boundary`
 - eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 49 active BTC 15m contract decisions across 20447 covered windows.
+- primary_mechanism: Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.
+- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
+
+## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter
+
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
+- profitability_score: `0.0`
+- sharpe_ratio: `0.0`
+- max_drawdown: `0.0`
+- paper_trade_readiness: `0.17`
+- contract_count: `21696`
+- covered_contract_count: `21695`
+- trade_count: `0`
+- minimum_trade_count: `25`
+- trade_count_gate_pass: `False`
+- holdout_profitability_score: `0.0`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+- promotion_candidate_kind: `benchmark_grounded_boundary`
+- eligibility_status: `eligible_for_boundary_promotion`
+- primary_mechanism: Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.
+- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
+
+## baseline
+
+- doctrine_id: `n/a`
+- strategy_id: `n/a`
+- market_regime: `n/a`
+- profitability_score: `0.0`
+- sharpe_ratio: `0.0`
+- max_drawdown: `0.0`
+- paper_trade_readiness: `0.17`
+- contract_count: `21696`
+- covered_contract_count: `21695`
+- trade_count: `0`
+- minimum_trade_count: `433`
+- trade_count_gate_pass: `False`
+- holdout_profitability_score: `0.0`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+- promotion_candidate_kind: `benchmark_grounded_boundary`
+- eligibility_status: `eligible_for_boundary_promotion`
+- primary_mechanism: Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.
+- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
+
+## btc-15m-momentum-breakout-structure-psychology_no_chase
+
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `breakout_open_interest_confirmation`
+- market_regime: `trend`
+- profitability_score: `0.0`
+- sharpe_ratio: `0.0`
+- max_drawdown: `0.0`
+- paper_trade_readiness: `0.17`
+- contract_count: `21696`
+- covered_contract_count: `21695`
+- trade_count: `0`
+- minimum_trade_count: `25`
+- trade_count_gate_pass: `False`
+- holdout_profitability_score: `0.0`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+- promotion_candidate_kind: `benchmark_grounded_boundary`
+- eligibility_status: `eligible_for_boundary_promotion`
+- primary_mechanism: Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.
 - primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
 
 ## Recommended Next-Step Ladder

@@ -1,12 +1,14 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--e37cb37e-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7993749b-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-re-ee569cbb-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compre-a02e38ae-holdout_decay.json"
   ],
-  "added_count": 1,
-  "eligible_packet_count": 1,
-  "existing_card_count": 114,
+  "added_count": 3,
+  "eligible_packet_count": 3,
+  "existing_card_count": 115,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 115,
+  "packet_count": 118,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }

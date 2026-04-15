@@ -1,6 +1,26 @@
 {
   "after": {
     "benchmark": {
+      "candidate_count": 9,
+      "top_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
+      "top_holdout_profitability_score": 0.48,
+      "top_max_drawdown": 0.99,
+      "top_paper_trade_readiness": 0.1813,
+      "top_profitability_score": 0.5063,
+      "top_recommended_next_step": "run_contradiction_probe",
+      "top_stress_resilience": 0.3333,
+      "top_walk_forward_consistency": 0.4
+    },
+    "self_edit_audit": {
+      "approved_count": 0,
+      "deferred_count": 0,
+      "evaluation_count": 0,
+      "rejected_count": 0,
+      "top_approved_edit_id": null
+    }
+  },
+  "before": {
+    "benchmark": {
       "candidate_count": 25,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
       "top_holdout_profitability_score": 0.3967,
@@ -19,33 +39,18 @@
       "top_approved_edit_id": null
     }
   },
-  "before": {
-    "benchmark": {
-      "candidate_count": 33,
-      "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
-      "top_holdout_profitability_score": 0.3967,
-      "top_max_drawdown": 0.99,
-      "top_paper_trade_readiness": 0.048,
-      "top_profitability_score": 0.4513,
-      "top_recommended_next_step": "run_contradiction_probe",
-      "top_stress_resilience": 0.0,
-      "top_walk_forward_consistency": 0.4
-    },
-    "self_edit_audit": {
-      "approved_count": 0,
-      "deferred_count": 0,
-      "evaluation_count": 0,
-      "rejected_count": 0,
-      "top_approved_edit_id": null
-    }
-  },
   "commit_message": null,
-  "duration_seconds": 55.183,
-  "finished_at": "2026-04-15T16:57:13.402447Z",
+  "duration_seconds": 109.768,
+  "finished_at": "2026-04-15T17:02:42.291500Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
-    "candidate_count"
+    "top_candidate_changed",
+    "candidate_count",
+    "top_profitability_score",
+    "top_paper_trade_readiness",
+    "top_holdout_profitability_score",
+    "top_stress_resilience"
   ],
-  "started_at": "2026-04-15T16:56:18.219160Z"
+  "started_at": "2026-04-15T17:00:52.523929Z"
 }
