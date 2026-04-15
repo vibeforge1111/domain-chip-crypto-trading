@@ -7,10 +7,10 @@
   "version": "1.0.0",
   "capabilities": ["evaluate", "suggest", "packets", "watchtower"],
   "commands": {
-    "evaluate": ["python", "live/hyperagent/chip_hooks.py", "evaluate"],
-    "suggest": ["python", "live/hyperagent/chip_hooks.py", "suggest"],
-    "packets": ["python", "live/hyperagent/chip_hooks.py", "packets"],
-    "watchtower": ["python", "live/hyperagent/chip_hooks.py", "watchtower"]
+    "evaluate": ["python", "-m", "domain_chip_crypto_trading.cli", "evaluate"],
+    "suggest": ["python", "-m", "domain_chip_crypto_trading.cli", "suggest"],
+    "packets": ["python", "-m", "domain_chip_crypto_trading.cli", "packets"],
+    "watchtower": ["python", "-m", "domain_chip_crypto_trading.cli", "watchtower"]
   },
   "workspace_excludes": ["live/generated_guards/.cache", "artifacts/", ".obsidian"]
 }
