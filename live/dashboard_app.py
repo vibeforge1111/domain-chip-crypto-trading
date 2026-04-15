@@ -1245,34 +1245,6 @@ tailwind.config = {
   </div>
 </div>
 
-<!-- TOP METRICS -->
-<div class="grid grid-cols-6 gap-3 mb-6" id="metrics">
-  <div class="card p-4 fade-up">
-    <div class="stat-label">Generation</div>
-    <div class="stat-value" id="m-gen">--</div>
-  </div>
-  <div class="card p-4 fade-up">
-    <div class="stat-label">Best Win Rate</div>
-    <div class="stat-value text-emerald-400" id="m-best-wr">--</div>
-  </div>
-  <div class="card p-4 fade-up">
-    <div class="stat-label">Avg Win Rate</div>
-    <div class="stat-value" id="m-avg-wr">--</div>
-  </div>
-  <div class="card p-4 fade-up">
-    <div class="stat-label">Elite Agents</div>
-    <div class="stat-value text-violet-400" id="m-elite">--</div>
-    <div class="text-xs mt-1" style="color: #8890B0;" id="m-elite-delta"></div>
-  </div>
-  <div class="card p-4 fade-up">
-    <div class="stat-label">Viable Agents</div>
-    <div class="stat-value text-sky-400" id="m-viable">--</div>
-  </div>
-  <div class="card p-4 fade-up">
-    <div class="stat-label">Total Population</div>
-    <div class="stat-value" id="m-total">--</div>
-  </div>
-</div>
 
 <!-- MAIN GRID -->
 <div class="grid grid-cols-12 gap-4">
