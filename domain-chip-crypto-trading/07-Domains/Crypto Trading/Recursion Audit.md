@@ -46,7 +46,7 @@ This page mirrors the recursive-evolution guardrail packet.
 
 - severity: `warn`
 - status: `contained`
-- evidence: `Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191, auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter, mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86 | Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window, auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window`
+- evidence: `Walk-forward consistency stays weak for: auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter, mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86, mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba | Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window, auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window`
 
 ## Required Fixes
 
