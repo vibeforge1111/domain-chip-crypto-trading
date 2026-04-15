@@ -3,10 +3,10 @@
 This loop owns heavy benchmark evaluation, contradiction extraction, mutation generation, and self-edit review.
 
 - material_change: `True`
-- candidate_count: `25`
+- candidate_count: `33`
 - top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window`
 - top_recommended_next_step: `run_contradiction_probe`
-- approved_self_edits: `0`
+- approved_self_edits: `1`
 
 Loop contract:
 
