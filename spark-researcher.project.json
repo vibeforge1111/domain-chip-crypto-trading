@@ -1,46 +1,357 @@
 {
-  "project_name": "domain-chip-crypto-trading",
-  "project_root": ".",
   "candidate_trials": [
     {
       "candidate_id": "baseline",
       "candidate_summary": "Run the current experiment config.",
       "hypothesis": "The current experiment config defines the local floor.",
       "mutations": {}
+    },
+    {
+      "candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+      "candidate_summary": "Range reclaim with session-aligned wick rejection entry. [reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm]",
+      "hypothesis": "Combining session alignment with wick rejection should produce higher-quality mean-reversion entries that survive holdout.",
+      "mutations": {
+        "asset_universe": "BTC,ETH,SOL",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "session_profile": "opening_range_failure",
+        "strategy_id": "range_reclaim_scalp",
+        "timeframe": "1h",
+        "venue": "bybit",
+        "volume_context_guard": "thin_filter",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm",
+      "candidate_summary": "Range reclaim with session-aligned wick rejection entry. [reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm]",
+      "hypothesis": "Combining session alignment with wick rejection should produce higher-quality mean-reversion entries that survive holdout.",
+      "mutations": {
+        "asset_universe": "BTC,ETH,SOL",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "session_profile": "opening_range_failure",
+        "strategy_id": "range_reclaim_scalp",
+        "timeframe": "1h",
+        "venue": "bybit",
+        "volume_context_guard": "off",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+      "candidate_summary": "Range reclaim with session-aligned wick rejection entry. [reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm]",
+      "hypothesis": "Combining session alignment with wick rejection should produce higher-quality mean-reversion entries that survive holdout.",
+      "mutations": {
+        "asset_universe": "BTC,ETH,SOL",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "wick_reclaim_close",
+        "session_profile": "opening_range_failure",
+        "strategy_id": "range_reclaim_scalp",
+        "timeframe": "1h",
+        "venue": "bybit",
+        "volume_context_guard": "thin_filter",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm",
+      "candidate_summary": "Range reclaim with session-aligned wick rejection entry. [reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm]",
+      "hypothesis": "Combining session alignment with wick rejection should produce higher-quality mean-reversion entries that survive holdout.",
+      "mutations": {
+        "asset_universe": "BTC,ETH,SOL",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "wick_reclaim_close",
+        "session_profile": "opening_range_failure",
+        "strategy_id": "range_reclaim_scalp",
+        "timeframe": "1h",
+        "venue": "bybit",
+        "volume_context_guard": "off",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "tight_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "on",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "squeeze_release_window",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=tight_squeeze-late_sample_guard=on]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "tight_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "on",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "all",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=tight_squeeze-session_profile=squeeze_release_window]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "tight_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "off",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "squeeze_release_window",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+      "candidate_summary": "Breakout with combined compression and impulse follow-through. [compression_profile=tight_squeeze]",
+      "hypothesis": "Requiring both squeeze compression and impulse follow-through should filter fakeouts while preserving real breakout signals.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "tight_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "off",
+        "market_regime": "high_vol",
+        "paper_gate": "balanced",
+        "session_profile": "all",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    },
+    {
+      "candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+      "candidate_summary": "Wedge exhaustion reversal with drawdown and volume guards. [drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm]",
+      "hypothesis": "Adding drawdown guard and volume filter to wedge reversals should reduce max drawdown while maintaining signal density.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "drawdown_guard": "high",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "strategy_id": "wedge_exhaustion_reversal",
+        "timeframe": "15m",
+        "venue": "kalshi",
+        "volume_context_guard": "thin_filter",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm",
+      "candidate_summary": "Wedge exhaustion reversal with drawdown and volume guards. [drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm]",
+      "hypothesis": "Adding drawdown guard and volume filter to wedge reversals should reduce max drawdown while maintaining signal density.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "drawdown_guard": "high",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "strategy_id": "wedge_exhaustion_reversal",
+        "timeframe": "15m",
+        "venue": "kalshi",
+        "volume_context_guard": "strict_participation",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+      "candidate_summary": "Wedge exhaustion reversal with drawdown and volume guards. [reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm]",
+      "hypothesis": "Adding drawdown guard and volume filter to wedge reversals should reduce max drawdown while maintaining signal density.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "drawdown_guard": "off",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "strategy_id": "wedge_exhaustion_reversal",
+        "timeframe": "15m",
+        "venue": "kalshi",
+        "volume_context_guard": "thin_filter",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm",
+      "candidate_summary": "Wedge exhaustion reversal with drawdown and volume guards. [reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm]",
+      "hypothesis": "Adding drawdown guard and volume filter to wedge reversals should reduce max drawdown while maintaining signal density.",
+      "mutations": {
+        "asset_universe": "BTC",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "drawdown_guard": "off",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "strategy_id": "wedge_exhaustion_reversal",
+        "timeframe": "15m",
+        "venue": "kalshi",
+        "volume_context_guard": "strict_participation",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "wider",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_dead_zone",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "thin_filter"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "wider",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_dead_zone",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "strict_participation"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "wider",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_post_open_drift",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "thin_filter"
+      }
+    },
+    {
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation",
+      "candidate_summary": "Trend following with volume context and dead-zone avoidance. [activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation]",
+      "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
+      "mutations": {
+        "activation_profile": "wider",
+        "asset_universe": "BTC,ETH",
+        "doctrine_id": "trend_regime_following",
+        "market_regime": "trend",
+        "no_trade_window": "avoid_post_open_drift",
+        "paper_gate": "balanced",
+        "strategy_id": "ema_pullback_long",
+        "timeframe": "4h",
+        "venue": "binance",
+        "volume_context_guard": "strict_participation"
+      }
     }
   ],
+  "chip": {
+    "manifest": "spark-chip.json",
+    "path": "."
+  },
   "commands": {
     "autoloop": {
-      "args": ["python", "scripts/researcher_run.py"],
+      "args": [
+        "python",
+        "scripts/researcher_run.py"
+      ],
       "cwd": ".",
       "kind": "train-once",
       "log_name": "autoloop.log"
     }
   },
-  "chip": {
-    "path": ".",
-    "manifest": "spark-chip.json"
-  },
   "eval_goal": "maximize",
   "eval_metric": "win_rate",
+  "guardrails": {
+    "blocked_command_fragments": [
+      "shutdown",
+      "format",
+      "reg delete",
+      "Remove-Item",
+      "del /f",
+      "rm -rf"
+    ],
+    "consecutive_discard_limit": 3,
+    "max_loop_iterations": 8,
+    "require_clean_git_for_self_edit": true,
+    "require_human_approval_for_self_edit": true
+  },
+  "memory": {
+    "backend": "local"
+  },
   "metrics": {
-    "win_rate": { "kind": "float", "pattern": "win_rate[\"']?:\\s*([0-9.]+)" },
-    "walk_forward": { "kind": "float", "pattern": "walk_forward[\"']?:\\s*([0-9.]+)" },
-    "trades": { "kind": "int", "pattern": "trades[\"']?:\\s*([0-9]+)" }
+    "trades": {
+      "kind": "int",
+      "pattern": "trades[\"']?:\\s*([0-9]+)"
+    },
+    "walk_forward": {
+      "kind": "float",
+      "pattern": "walk_forward[\"']?:\\s*([0-9.]+)"
+    },
+    "win_rate": {
+      "kind": "float",
+      "pattern": "win_rate[\"']?:\\s*([0-9.]+)"
+    }
   },
   "mutable_parameters": [],
-  "mutable_targets": ["src", "scripts", "docs", "live"],
-  "guardrails": {
-    "max_loop_iterations": 8,
-    "consecutive_discard_limit": 3,
-    "require_human_approval_for_self_edit": true,
-    "require_clean_git_for_self_edit": true,
-    "blocked_command_fragments": ["shutdown", "format", "reg delete", "Remove-Item", "del /f", "rm -rf"]
-  },
-  "memory": { "backend": "local" },
+  "mutable_targets": [
+    "src",
+    "scripts",
+    "docs",
+    "live"
+  ],
+  "project_name": "domain-chip-crypto-trading",
+  "project_root": ".",
   "self_edit": {
     "command": [],
-    "mutable_targets": ["src", "scripts", "docs", "live"],
+    "mutable_targets": [
+      "src",
+      "scripts",
+      "docs",
+      "live"
+    ],
     "prompt_preamble": "Keep the repo lightweight, transparent, and review-first."
   }
 }
