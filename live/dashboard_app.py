@@ -850,15 +850,31 @@ def api_autoloop_status():
 
 @app.get("/api/regime-distribution")
 def api_regime_distribution():
-    """Regime distribution from backtest data and SOL monitor."""
-    # Read from pattern_regime_map if available
-    prm = _json(RESEARCH / "pattern_regime_map.json")
+    """Regime distribution from doctrine cards and backtest candidates."""
     regime_map = {}
-    if isinstance(prm, dict):
-        for pattern_id, pdata in prm.items():
-            if isinstance(pdata, dict):
-                for regime, count in pdata.get("regime_counts", {}).items():
-                    regime_map[regime] = regime_map.get(regime, 0) + count
+
+    # Primary source: doctrine cards (always populated by autoloop)
+    if DOCTRINE_CARDS_DIR.exists():
+        for f in DOCTRINE_CARDS_DIR.glob("*.json"):
+            try:
+                card = json.loads(f.read_text(encoding="utf-8"))
+                regime = (card.get("mutation_template") or {}).get("market_regime", "")
+                if regime:
+                    regime_map[regime] = regime_map.get(regime, 0) + 1
+            except Exception:
+                pass
+
+    # Secondary source: backtest benchmark results
+    bt_dir = ARTIFACTS / "promotion" / "benchmark_grounded"
+    if bt_dir.exists():
+        for f in bt_dir.glob("*.json"):
+            try:
+                bt = json.loads(f.read_text(encoding="utf-8"))
+                regime = bt.get("market_regime", bt.get("regime", ""))
+                if regime:
+                    regime_map[regime] = regime_map.get(regime, 0) + 1
+            except Exception:
+                pass
 
     # Read learning loop report for recent regime data
     learning_report = _json(RESEARCH / "learning_loop_report.json")
@@ -1052,10 +1068,11 @@ tailwind.config = {
       <div id="methods" class="space-y-3"></div>
     </div>
 
-    <!-- Health -->
+    <!-- Regime Distribution -->
     <div class="card p-5">
-      <div class="section-title">System Health</div>
-      <div id="health" class="grid grid-cols-2 gap-3"></div>
+      <div class="section-title">Regime Distribution</div>
+      <div id="regime-bars" class="space-y-2"></div>
+      <div class="text-xs mt-2" style="color:#6A7080">From pattern-regime map across all doctrine families</div>
     </div>
   </div>
 </div>
@@ -1217,102 +1234,7 @@ tailwind.config = {
   </div>
 </div>
 
-<!-- HOLDOUT BACKTEST SECTION (formerly "Paper Trade" - same historical data as BT) -->
-<div class="mt-4">
-  <!-- Holdout BT Top Metrics Row -->
-  <div class="grid grid-cols-6 gap-3 mb-4">
-    <div class="card p-4">
-      <div class="flex items-center gap-2 mb-1">
-        <div class="stat-label">Daemon</div>
-        <div id="pt-daemon-status"></div>
-      </div>
-      <div class="stat-value" id="pt-cycles-display">--</div>
-      <div class="text-xs mt-1" style="color:#6A7080" id="pt-daemon-detail">cycles</div>
-    </div>
-    <div class="card p-4">
-      <div class="stat-label">Agents Tested</div>
-      <div class="stat-value text-violet-400" id="pt-unique">--</div>
-      <div class="text-xs mt-1" style="color:#6A7080" id="pt-coverage-detail">of -- elite</div>
-    </div>
-    <div class="card p-4">
-      <div class="stat-label">Avg Holdout Delta</div>
-      <div class="stat-value text-emerald-400" id="pt-avg-delta">--</div>
-      <div class="text-xs mt-1" style="color:#6A7080">Holdout vs Backtest</div>
-    </div>
-    <div class="card p-4">
-      <div class="stat-label">Needs Data</div>
-      <div class="stat-value" style="color:#6A7080" id="pt-count-needs">--</div>
-    </div>
-    <div class="card p-4">
-      <div class="stat-label">Validated</div>
-      <div class="stat-value text-sky-400" id="pt-count-validated">--</div>
-    </div>
-    <div class="card p-4">
-      <div class="stat-label">Live Ready</div>
-      <div class="stat-value text-emerald-400" id="pt-count-live">--</div>
-    </div>
-  </div>
-
-  <!-- Coverage bar -->
-  <div class="card p-4 mb-4">
-    <div class="flex items-center justify-between mb-2">
-      <span class="text-xs font-medium" style="color:#8890B0" id="pt-coverage-label">Coverage: -- of -- elite tested</span>
-      <div class="flex items-center gap-3">
-        <span class="text-xs font-semibold text-violet-400" id="pt-coverage-pct">--%</span>
-        <span id="pt-summary-badges"></span>
-      </div>
-    </div>
-    <div class="progress-bar" style="height:8px">
-      <div class="progress-fill" id="pt-coverage-bar" style="width:0%;background:linear-gradient(90deg,#68A8D8,#2FCA94)"></div>
-    </div>
-  </div>
-
-  <!-- PT Charts: side-by-side on top -->
-  <div class="grid grid-cols-2 gap-4 mb-4">
-    <div class="card p-5">
-      <div class="section-title">Backtest vs Holdout BT</div>
-      <canvas id="ptScatterChart" style="max-height:220px;"></canvas>
-    </div>
-    <div class="card p-5">
-      <div class="section-title">Holdout BT Win Rate Over Time</div>
-      <canvas id="ptChart" style="max-height:220px;"></canvas>
-    </div>
-  </div>
-
-  <!-- PT Leaderboard: full width like Top Agents -->
-  <div class="card p-5">
-    <div class="flex items-center justify-between mb-4">
-      <div class="section-title mb-0">Holdout Backtest Leaderboard</div>
-      <div class="flex items-center gap-2">
-        <span class="text-xs" style="color:#6A7080">Top 20 by Holdout Score (same-period BT, not live)</span>
-      </div>
-    </div>
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm" id="pt-table">
-        <thead>
-          <tr class="text-left" style="color:#6A7080; border-bottom:1px solid #222430;">
-            <th class="pb-2 pr-4 font-medium">#</th>
-            <th class="pb-2 pr-4 font-medium">Holdout WR</th>
-            <th class="pb-2 pr-4 font-medium">BT Win Rate</th>
-            <th class="pb-2 pr-4 font-medium">Delta</th>
-            <th class="pb-2 pr-4 font-medium">Agent</th>
-            <th class="pb-2 pr-4 font-medium">Strategy</th>
-            <th class="pb-2 pr-4 font-medium">Asset</th>
-            <th class="pb-2 pr-4 font-medium">TF</th>
-            <th class="pb-2 pr-4 font-medium">Score</th>
-            <th class="pb-2 pr-4 font-medium">BT Trades</th>
-            <th class="pb-2 pr-4 font-medium">Holdout Trades</th>
-            <th class="pb-2 pr-4 font-medium">Runs</th>
-            <th class="pb-2 pr-4 font-medium">Consistency</th>
-            <th class="pb-2 font-medium">Status</th>
-          </tr>
-        </thead>
-        <tbody id="pt-leaderboard"></tbody>
-      </table>
-    </div>
-    <div id="pt-table-count" class="text-xs mt-3" style="color:#6A7080;"></div>
-  </div>
-</div>
+<!-- (Holdout Backtest section removed — not fed by autoloop) -->
 
 <!-- TOP AGENTS -->
 <div class="mt-4">
@@ -1581,233 +1503,39 @@ function renderFeed(elites) {
   }).join('');
 }
 
-let ptChartInstance = null;
-let ptScatterInstance = null;
+// (renderPaperTrade removed — holdout BT section not used by autoloop)
 
-function renderPaperTrade(data) {
-  if (!data || !data.summary) return;
-  const { history, summary } = data;
+// (renderPtDashboard, renderPtScatter, renderPtChart, renderHealth removed — evolution-era holdout BT)
 
-  // Total runs shown in daemon detail
-  const runsEl = document.getElementById('pt-daemon-detail');
-  if (runsEl && summary.total_runs) {
-    const existing = runsEl.textContent;
-    if (!existing.includes('runs')) runsEl.textContent = existing + ' | ' + summary.total_runs + ' total runs';
-  }
-
-  // PT timeline chart
-  renderPtChart(history);
-}
-
-function renderPtDashboard(data) {
+function renderRegimes(data) {
   if (!data) return;
-  const { daemon, coverage, status_counts, leaderboard, scatter } = data;
+  const el = document.getElementById('regime-bars');
+  const regimes = data.regimes || {};
+  const entries = Object.entries(regimes).sort((a, b) => b[1] - a[1]);
+  const total = entries.reduce((s, [, c]) => s + c, 0) || 1;
 
-  // Daemon status: pulse dot in the card
-  const dsEl = document.getElementById('pt-daemon-status');
-  const statusColor = daemon.status === 'running' ? CHART_COLORS.emerald : daemon.status === 'stopped' ? '#E08878' : '#D8C868';
-  const pulse = daemon.status === 'running' ? 'animation:pulse 2s infinite;' : '';
-  dsEl.innerHTML = '<span style="width:8px;height:8px;border-radius:50%;background:' + statusColor + ';display:inline-block;' + pulse + '"></span>';
+  const REGIME_COLORS = {
+    compression: '#68A8D8', trend: '#2FCA94', range: '#E8B86D',
+    event_driven: '#f472b6', fear_shock: '#E08878',
+  };
 
-  // Cycles display
-  document.getElementById('pt-cycles-display').textContent = daemon.cycles || 0;
-  const activeDaemons = daemon.active_daemons || (daemon.status === 'running' ? 1 : 0);
-  const daemonLabel = activeDaemons > 1
-    ? activeDaemons + ' daemons (' + daemon.interval + 's interval)'
-    : daemon.status === 'running' ? 'cycles (' + daemon.interval + 's interval)' : daemon.status || 'not started';
-  // Show per-TF breakdown if multiple daemons
-  const daemonsList = data.daemons || [];
-  let daemonDetail = daemonLabel;
-  if (daemonsList.length > 1) {
-    const tfLabels = daemonsList.filter(d => d.status === 'running').map(d => d.timeframe).join(', ');
-    if (tfLabels) daemonDetail += ' | TF: ' + tfLabels;
-  }
-  document.getElementById('pt-daemon-detail').textContent = daemonDetail;
-
-  // Coverage metrics
-  const tested = coverage.tested_agents || 0;
-  const total = coverage.total_elite || 0;
-  const pct = coverage.coverage_pct || 0;
-  document.getElementById('pt-unique').textContent = tested.toLocaleString();
-  document.getElementById('pt-coverage-detail').textContent = 'of ' + total.toLocaleString() + ' elite';
-  document.getElementById('pt-coverage-label').textContent = 'Coverage: ' + tested.toLocaleString() + ' of ' + total.toLocaleString() + ' elite tested';
-  document.getElementById('pt-coverage-pct').textContent = (pct * 100).toFixed(1) + '%';
-  document.getElementById('pt-coverage-bar').style.width = Math.min(100, pct * 100) + '%';
-
-  // Avg delta from scatter data
-  if (scatter && scatter.length) {
-    const deltas = scatter.map(s => s.pt_wr - s.bt_wr);
-    const avg = deltas.reduce((a,b) => a+b, 0) / deltas.length;
-    const sign = avg >= 0 ? '+' : '';
-    document.getElementById('pt-avg-delta').textContent = sign + (avg * 100).toFixed(1) + '%';
-  }
-
-  // Status counts
-  document.getElementById('pt-count-needs').textContent = status_counts.needs_more_data || 0;
-  document.getElementById('pt-count-validated').textContent = status_counts.validated || 0;
-  document.getElementById('pt-count-live').textContent = status_counts.live_ready || 0;
-
-  // Summary badge on coverage bar
-  const badgesEl = document.getElementById('pt-summary-badges');
-  const liveCount = status_counts.live_ready || 0;
-  const valCount = status_counts.validated || 0;
-  if (liveCount > 0) {
-    badgesEl.innerHTML = '<span class="badge badge-emerald">' + liveCount + ' Live-Ready</span>';
-  } else if (valCount > 0) {
-    badgesEl.innerHTML = '<span class="badge badge-sky">' + valCount + ' Validated</span>';
-  } else if (tested > 0) {
-    badgesEl.innerHTML = '<span class="badge" style="background:#1E2230;color:#6A7080">Building Coverage</span>';
-  } else {
-    badgesEl.innerHTML = '';
-  }
-
-  // Leaderboard table - styled like Top Agents
-  const tbody = document.getElementById('pt-leaderboard');
-  if (leaderboard && leaderboard.length) {
-    tbody.innerHTML = leaderboard.map((d, i) => {
-      const rank = i + 1;
-      const rankHtml = rank <= 3 ? '<span style="color:' + CHART_COLORS.emerald + ';font-weight:700">' + rank + '</span>' : rank;
-
-      // PT WR color coding like Top Agents BT WR
-      const ptWr = (d.pt_wr_avg * 100).toFixed(1);
-      const ptColor = d.pt_wr_avg >= 0.80 ? CHART_COLORS.emerald : d.pt_wr_avg >= 0.70 ? CHART_COLORS.sky : d.pt_wr_avg >= 0.60 ? CHART_COLORS.violet : '#8890B0';
-
-      const deltaColor = d.pt_delta_avg >= 0 ? CHART_COLORS.emerald : '#E08878';
-      const deltaSign = d.pt_delta_avg >= 0 ? '+' : '';
-
-      const scoreColor = d.pt_score >= 0.8 ? CHART_COLORS.emerald : d.pt_score >= 0.6 ? CHART_COLORS.sky : CHART_COLORS.muted;
-
-      // Consistency: show std as a bar concept
-      const consistencyHtml = d.run_count <= 1
-        ? '<span style="color:#6A7080">--</span>'
-        : '<span style="color:' + (d.pt_wr_std < 0.05 ? CHART_COLORS.emerald : d.pt_wr_std < 0.10 ? '#D8C868' : '#E08878') + '">&plusmn;' + (d.pt_wr_std*100).toFixed(1) + '%</span>';
-
-      const strat = (d.strategy || '?').replace(/_/g, ' ');
-      const asset = (d.asset || '?').split(',')[0].toUpperCase();
-      const tf = d.timeframe || '?';
-
-      const statusBadge = d.status === 'live_ready'
-        ? '<span class="badge badge-emerald" style="padding:3px 12px;white-space:nowrap">Live Ready</span>'
-        : d.status === 'validated'
-        ? '<span class="badge badge-sky" style="padding:3px 12px;white-space:nowrap">Validated</span>'
-        : '<span class="badge badge-muted" style="padding:3px 12px;white-space:nowrap">Needs Data</span>';
-
-      const p = 'padding:6px 12px 6px 0;';
-      return '<tr style="border-bottom:1px solid #1E2230">' +
-        '<td style="' + p + '">' + rankHtml + '</td>' +
-        '<td style="' + p + 'color:' + ptColor + ';font-weight:700;font-size:0.875rem">' + ptWr + '%</td>' +
-        '<td style="' + p + 'color:#8890B0">' + (d.bt_wr*100).toFixed(1) + '%</td>' +
-        '<td style="' + p + 'color:' + deltaColor + '">' + deltaSign + (d.pt_delta_avg*100).toFixed(1) + '%</td>' +
-        '<td style="' + p + 'font-family:DM Mono,monospace;font-size:0.75rem;color:#8890B0">' + d.agent + '</td>' +
-        '<td style="' + p + 'font-size:0.8rem">' + strat + '</td>' +
-        '<td style="' + p + '">' + asset + '</td>' +
-        '<td style="' + p + '">' + tf + '</td>' +
-        '<td style="' + p + 'font-weight:600;color:' + scoreColor + '">' + d.pt_score.toFixed(3) + '</td>' +
-        '<td style="' + p + 'color:#6A7080">' + (d.bt_trades || '--') + '</td>' +
-        '<td style="' + p + '">' + d.pt_trades_total + '</td>' +
-        '<td style="' + p + '">' + d.run_count + '</td>' +
-        '<td style="' + p + '">' + consistencyHtml + '</td>' +
-        '<td style="' + p + '">' + statusBadge + '</td>' +
-        '</tr>';
+  if (entries.length > 0) {
+    el.innerHTML = entries.map(([regime, count]) => {
+      const pct = (count / total * 100).toFixed(1);
+      const color = REGIME_COLORS[regime] || '#8890B0';
+      const label = regime.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return '<div>' +
+        '<div class="flex justify-between items-baseline mb-1">' +
+          '<span class="text-xs font-medium">' + label + '</span>' +
+          '<span class="text-xs font-mono" style="color:' + color + '">' + pct + '% <span style="color:#6A7080">(' + count + ')</span></span>' +
+        '</div>' +
+        '<div class="progress-bar">' +
+          '<div class="progress-fill" style="width:' + pct + '%;background:' + color + '"></div>' +
+        '</div></div>';
     }).join('');
   } else {
-    tbody.innerHTML = '<tr><td colspan="14" style="padding:24px;text-align:center;color:#6A7080">Start the holdout BT daemon: <span style="font-family:DM Mono,monospace;color:#8890B0">python run_paper_trade.py --daemon</span></td></tr>';
+    el.innerHTML = '<div class="text-xs" style="color:#6A7080">No regime data yet — run learning loop to populate pattern-regime map</div>';
   }
-
-  // Table count
-  const countEl = document.getElementById('pt-table-count');
-  if (countEl) countEl.textContent = 'Showing ' + leaderboard.length + ' of ' + tested + ' holdout-tested agents';
-
-  // Scatter chart
-  renderPtScatter(scatter);
-}
-
-function renderPtScatter(scatter) {
-  const ctx = document.getElementById('ptScatterChart');
-  if (!ctx || !scatter || !scatter.length) return;
-  if (ptScatterInstance) ptScatterInstance.destroy();
-
-  const colorMap = { live_ready: CHART_COLORS.emerald, validated: CHART_COLORS.sky, needs_more_data: CHART_COLORS.muted };
-  const datasets = [
-    { label: 'BT = Holdout (diagonal)', data: [{x:50,y:50},{x:85,y:85}], type:'line', borderColor:'#222430', borderDash:[4,4], borderWidth:1, pointRadius:0, fill:false },
-    ...['live_ready','validated','needs_more_data'].map(status => ({
-      label: status.replace(/_/g,' '),
-      data: scatter.filter(s => s.status === status).map(s => ({x:s.bt_wr*100, y:s.pt_wr*100})),
-      backgroundColor: colorMap[status] + '80',
-      borderColor: colorMap[status],
-      pointRadius: 4, pointHoverRadius: 6, borderWidth: 1,
-    })),
-  ];
-
-  ptScatterInstance = new Chart(ctx.getContext('2d'), {
-    type: 'scatter',
-    data: { datasets },
-    options: {
-      ...CHART_DEFAULTS,
-      plugins: { ...CHART_DEFAULTS.plugins, legend: { ...CHART_DEFAULTS.plugins.legend, position:'bottom', labels:{...CHART_DEFAULTS.plugins.legend.labels, boxWidth:6, padding:6, font:{size:8,family:'Inter'}} } },
-      scales: {
-        x: { ...CHART_DEFAULTS.scales.x, title:{display:true, text:'BT Win Rate %', color:CHART_COLORS.muted, font:{size:8}}, min:50, max:85 },
-        y: { ...CHART_DEFAULTS.scales.y, title:{display:true, text:'Holdout Win Rate %', color:CHART_COLORS.muted, font:{size:8}}, min:50, max:85 },
-      },
-    },
-  });
-}
-
-function renderPtChart(history) {
-  const ctx = document.getElementById('ptChart');
-  if (!ctx) return;
-  if (ptChartInstance) ptChartInstance.destroy();
-
-  const byAgent = {};
-  for (const h of history) {
-    if (!byAgent[h.agent]) byAgent[h.agent] = [];
-    byAgent[h.agent].push(h);
-  }
-
-  const datasets = [];
-  const agentColors = [CHART_COLORS.emerald, CHART_COLORS.violet, CHART_COLORS.sky, '#D8C868', '#f472b6', '#fb923c', '#a3e635', '#22d3ee', '#e879f9', '#E08878'];
-  let colorIdx = 0;
-  const allGens = new Set();
-  for (const [agent, points] of Object.entries(byAgent)) {
-    const c = agentColors[colorIdx++ % agentColors.length];
-    points.forEach(p => allGens.add(p.gen));
-    datasets.push({
-      label: agent,
-      data: points.map(p => ({ x: p.gen, y: p.pt_wr * 100 })),
-      borderColor: c, backgroundColor: c + '30',
-      pointRadius: 3, pointHoverRadius: 5, borderWidth: 2, tension: 0.2, fill: false,
-    });
-  }
-  const labels = [...allGens].sort((a, b) => a - b);
-
-  ptChartInstance = new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: { labels, datasets },
-    options: {
-      ...CHART_DEFAULTS,
-      plugins: { ...CHART_DEFAULTS.plugins, legend: { ...CHART_DEFAULTS.plugins.legend, position:'bottom', labels:{...CHART_DEFAULTS.plugins.legend.labels, boxWidth:6, padding:8, font:{size:9,family:'Inter'}} } },
-      scales: {
-        x: { ...CHART_DEFAULTS.scales.x, type:'linear', title:{display:true, text:'Generation', color:CHART_COLORS.muted, font:{size:9}} },
-        y: { ...CHART_DEFAULTS.scales.y, title:{display:true, text:'Holdout Win Rate %', color:CHART_COLORS.muted, font:{size:9}}, min:50 },
-      },
-    },
-  });
-}
-
-function renderHealth(d) {
-  const el = document.getElementById('health');
-  const items = [
-    { label: 'Prediction Error', value: (d.mae * 100).toFixed(1) + '%', color: '' },
-    { label: 'Systematic Bias', value: (d.bias * 100).toFixed(1) + '%', color: d.bias < 0.02 ? CHART_COLORS.emerald : '' },
-    { label: 'Pass Rate', value: (d.pass_rate * 100).toFixed(0) + '%', color: CHART_COLORS.emerald },
-    { label: 'Temporal Bias', value: (d.temporal * 100).toFixed(1) + '%', color: d.temporal < 0.03 ? CHART_COLORS.emerald : '#D8C868' },
-  ];
-  el.innerHTML = items.map(i => `
-    <div>
-      <div class="stat-label">${i.label}</div>
-      <div class="text-lg font-semibold" ${i.color ? `style="color:${i.color}"` : ''}>${i.value}</div>
-    </div>
-  `).join('');
 }
 
 function renderInsights(data) {
@@ -2453,31 +2181,27 @@ function renderAutoloop(data) {
 
 // ── Main loop ─────────────────────────────────────
 async function refresh() {
-  const [status, elites, popHist, pt, ptDash, health, insights, livePt, actFeed, stratDiv, autoloop] = await Promise.all([
+  const [status, elites, popHist, insights, livePt, actFeed, stratDiv, autoloop, regimes] = await Promise.all([
     fetchJSON('/api/status'),
     fetchJSON('/api/recent-elites'),
     fetchJSON('/api/population-history'),
-    fetchJSON('/api/paper-trade'),
-    fetchJSON('/api/pt-dashboard'),
-    fetchJSON('/api/health'),
     fetchJSON('/api/insights'),
     fetchJSON('/api/live-pt'),
     fetchJSON('/api/activity-feed?n=80'),
     fetchJSON('/api/strategy-diversity'),
     fetchJSON('/api/autoloop-status'),
+    fetchJSON('/api/regime-distribution'),
   ]);
 
   if (status) { renderMetrics(status); renderMethods(status.methods || {}); }
   if (elites) renderFeed(elites);
   if (popHist && popHist.length) { renderPopChart(popHist); renderEliteChart(popHist); }
-  if (pt) renderPaperTrade(pt);
-  if (ptDash) renderPtDashboard(ptDash);
-  if (health) renderHealth(health);
   if (insights) renderInsights(insights);
   renderLivePt(livePt);
   if (actFeed) renderActivityFeed(actFeed.entries);
   if (stratDiv) { renderStrategyDiversity(stratDiv); renderMutationActivity(stratDiv.mutation_activity); }
   if (autoloop) renderAutoloop(autoloop);
+  if (regimes) renderRegimes(regimes);
 
   // Refresh agents table
   await loadAgents();
