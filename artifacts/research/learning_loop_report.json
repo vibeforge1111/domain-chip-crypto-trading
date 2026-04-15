@@ -1,46 +1,51 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-a9807f2d-sparse_signal.json",
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--18cc924a-sparse_signal.json",
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--df0c0e51-sparse_signal.json"
+      "dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-8ba026ce-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filte-1ec8bfe5-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout--c2f54dc7-sparse_signal.json"
     ],
     "added_count": 3,
     "approved_waiting_packet_count": 0,
-    "card_count": 94,
+    "card_count": 98,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
-    "reconciliation_repaired_cards": [],
-    "reconciliation_repaired_count": 0,
+    "reconciliation_repaired_cards": [
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--8f066372-sparse_signal.json"
+    ],
+    "reconciliation_repaired_count": 1,
     "state_consistent": true
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 91,
-    "doctrine_packets_generated": 3,
-    "pending_packet_count": 3,
+    "card_count": 94,
+    "doctrine_packets_generated": 4,
+    "pending_packet_count": 4,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 5.451,
-  "finished_at": "2026-04-15T15:54:08.752015Z",
+  "duration_seconds": 3.054,
+  "finished_at": "2026-04-15T15:58:21.707082Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
     "card_count",
     "pending_packet_count",
-    "added_count"
+    "added_count",
+    "reconciliation_repaired_count"
   ],
   "reconciliation": {
-    "card_count": 94,
+    "card_count": 98,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 94,
+    "packet_count": 98,
     "repair_mode": true,
-    "repaired_cards": [],
-    "repaired_count": 0,
+    "repaired_cards": [
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--8f066372-sparse_signal.json"
+    ],
+    "repaired_count": 1,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-15T15:54:03.301266Z"
+  "started_at": "2026-04-15T15:58:18.653236Z"
 }

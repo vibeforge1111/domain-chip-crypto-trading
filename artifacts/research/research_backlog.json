@@ -2,10 +2,10 @@
   "approved_source_count": 38,
   "approved_waiting_packet_count": 0,
   "candidate_rows": [],
-  "card_count": 94,
+  "card_count": 98,
   "futurelog_rows": [],
   "next_to_research_count": 0,
-  "packet_count": 94,
+  "packet_count": 98,
   "ready_for_source_ingest_count": 0,
   "regime_intelligence_count": 0,
   "regime_rows": [],
@@ -152,23 +152,23 @@
     },
     {
       "approved_source_count": 1,
-      "card_count": 5,
+      "card_count": 6,
       "coverage_status": "covered",
-      "packet_count": 5,
+      "packet_count": 6,
       "style_family": "bet_sizing"
     },
     {
       "approved_source_count": 1,
-      "card_count": 94,
+      "card_count": 98,
       "coverage_status": "covered",
-      "packet_count": 94,
+      "packet_count": 98,
       "style_family": "recursive_self_improvement"
     },
     {
       "approved_source_count": 1,
-      "card_count": 48,
+      "card_count": 51,
       "coverage_status": "covered",
-      "packet_count": 48,
+      "packet_count": 51,
       "style_family": "volatility_analysis"
     },
     {
