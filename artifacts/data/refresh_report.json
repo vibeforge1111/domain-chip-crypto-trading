@@ -1,13 +1,15 @@
 {
   "material_change": false,
-  "refreshed_at": "2026-04-15T19:26:09.412871Z",
+  "refreshed_at": "2026-04-15T20:02:43.449891Z",
   "symbol_reports": [
     {
       "contract_counts": {},
-      "days_failed": 0,
+      "days_failed": 1,
       "days_fetched": 0,
-      "days_requested": 0,
-      "failed_days": [],
+      "days_requested": 1,
+      "failed_days": [
+        "2026-04-15"
+      ],
       "fetched_days": [],
       "last_existing_date": "2026-04-14",
       "material_change": false,
@@ -17,10 +19,12 @@
     },
     {
       "contract_counts": {},
-      "days_failed": 0,
+      "days_failed": 1,
       "days_fetched": 0,
-      "days_requested": 0,
-      "failed_days": [],
+      "days_requested": 1,
+      "failed_days": [
+        "2026-04-15"
+      ],
       "fetched_days": [],
       "last_existing_date": "2026-04-14",
       "material_change": false,
@@ -30,10 +34,12 @@
     },
     {
       "contract_counts": {},
-      "days_failed": 0,
+      "days_failed": 1,
       "days_fetched": 0,
-      "days_requested": 0,
-      "failed_days": [],
+      "days_requested": 1,
+      "failed_days": [
+        "2026-04-15"
+      ],
       "fetched_days": [],
       "last_existing_date": "2026-04-14",
       "material_change": false,
