@@ -777,9 +777,14 @@ def api_autoloop_status():
     variety = _json(RECURSION / "variety_backlog.json")
     variety_count = len(variety) if isinstance(variety, list) else variety.get("count", 0)
 
-    # Mutation trials
+    # Mutation trials (flat list or dict with "trials" key)
     trials = _json(RECURSION / "mutation_trials.json")
-    trial_count = len(trials.get("trials", [])) if isinstance(trials, dict) else 0
+    if isinstance(trials, list):
+        trial_count = len(trials)
+    elif isinstance(trials, dict):
+        trial_count = len(trials.get("trials", []))
+    else:
+        trial_count = 0
 
     # Build cycle timeline for chart
     cycle_timeline = []
@@ -794,18 +799,27 @@ def api_autoloop_status():
     # Top candidates from backtest
     candidates = []
     if isinstance(bt_summary, dict):
-        for cid, cdata in list(bt_summary.items())[:20]:
-            if isinstance(cdata, dict):
+        rows = bt_summary.get("rows", [])
+        if isinstance(rows, list):
+            for row in rows[:30]:
+                if not isinstance(row, dict):
+                    continue
+                m = row.get("metrics", {})
+                r = row.get("result", {})
+                cid = row.get("candidate_id", "?")
                 candidates.append({
                     "id": cid[:50],
-                    "wr": cdata.get("win_rate", 0),
-                    "wf": cdata.get("walk_forward_consistency", 0),
-                    "dd": cdata.get("max_drawdown", 0),
-                    "trades": cdata.get("trade_count", 0),
-                    "sharpe": cdata.get("sharpe_ratio", 0),
-                    "readiness": cdata.get("paper_trade_readiness", 0),
-                    "stress": cdata.get("stress_resilience", 0),
-                    "next_step": cdata.get("recommended_next_step", ""),
+                    "wr": m.get("win_rate", 0),
+                    "wf": r.get("walk_forward_consistency", 0),
+                    "dd": m.get("max_drawdown", 0),
+                    "trades": r.get("trade_count", 0),
+                    "sharpe": m.get("sharpe_ratio", 0),
+                    "readiness": m.get("paper_trade_readiness", 0),
+                    "stress": r.get("stress_resilience", 0),
+                    "next_step": r.get("recommended_next_step", ""),
+                    "verdict": r.get("verdict", ""),
+                    "strategy": row.get("mutations", {}).get("strategy_id", ""),
+                    "doctrine": row.get("mutations", {}).get("doctrine_id", ""),
                 })
     candidates.sort(key=lambda x: x.get("wr", 0), reverse=True)
 
