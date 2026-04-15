@@ -1,13 +1,13 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f",
+  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776273054431212000",
+  "generated_at": "1776273080080481200",
   "holdout_profitability_score": 0.0,
   "market_regime": "high_vol",
   "max_drawdown": 0.0,
@@ -16,7 +16,7 @@
   "mutations": {
     "activation_profile": "wider",
     "asset_universe": "BTC",
-    "compression_profile": "tight_squeeze",
+    "compression_profile": "moderate_squeeze",
     "doctrine_id": "breakout_volatility_expansion",
     "execution_buffer": "high",
     "late_sample_guard": "on",
@@ -38,7 +38,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f",
+  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024",
   "sharpe_ratio": 0.0,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "bollinger_squeeze_breakout",

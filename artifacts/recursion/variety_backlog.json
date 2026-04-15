@@ -409,7 +409,7 @@
     "source_names": [],
     "status": "suggested_child_targets_ready",
     "strategy_family": "ema_pullback_long",
-    "suggested_child_target_count": 4,
+    "suggested_child_target_count": 5,
     "suggested_child_targets": [
       {
         "label": "late sample guard plus session filter",
@@ -419,6 +419,15 @@
         },
         "variety_child_id": "{\"activation_profile\": \"wider\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_post_open_drift\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
         "variety_child_label": "activation_profile=wider, late_sample_guard=on, no_trade_window=avoid_post_open_drift, paper_gate=balanced, session_profile=late_cycle_filter"
+      },
+      {
+        "label": "session stability filter",
+        "mutations": {
+          "no_trade_window": "avoid_transition_window",
+          "session_profile": "stability_window"
+        },
+        "variety_child_id": "{\"activation_profile\": \"wider\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
+        "variety_child_label": "activation_profile=wider, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window"
       },
       {
         "label": "execution buffer plus transition skip",
@@ -436,15 +445,6 @@
         },
         "variety_child_id": "{\"activation_profile\": \"adaptive\", \"no_trade_window\": \"avoid_post_open_drift\", \"paper_gate\": \"balanced\"}",
         "variety_child_label": "activation_profile=adaptive, no_trade_window=avoid_post_open_drift, paper_gate=balanced"
-      },
-      {
-        "label": "drawdown guard plus quality filter",
-        "mutations": {
-          "drawdown_guard": "high",
-          "session_profile": "quality_window"
-        },
-        "variety_child_id": "{\"activation_profile\": \"wider\", \"drawdown_guard\": \"high\", \"no_trade_window\": \"avoid_post_open_drift\", \"paper_gate\": \"balanced\", \"session_profile\": \"quality_window\"}",
-        "variety_child_label": "activation_profile=wider, drawdown_guard=high, no_trade_window=avoid_post_open_drift, paper_gate=balanced, session_profile=quality_window"
       }
     ],
     "target_contract_family": "btc_up_down_15m",
