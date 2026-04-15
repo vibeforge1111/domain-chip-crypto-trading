@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `80`
+- proposal_count: `83`
 
 ## Trend continuation with pullback confirmation
 
@@ -193,13 +193,13 @@ These are the current source-grounded mutation proposals.
 - benchmark_stress_resilience: `n/a`
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 
-## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on
+## Auto-generated: sparse_signal fix for auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal-psychology_wait_fo-861a71fdb3
 
-- proposal_id: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal`
-- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-197be20a-sparse_signal`
-- doctrine_family: `breakout_volatility_expansion`
-- strategy_family: `breakout_expansion_confirmation`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "breakout_expansion_confirmation"}`
+- proposal_id: `auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal-psychology_wait_fo-861a71fdb3-sparse_signal`
+- card_id: `dc-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wa-8c86e7ba-sparse_signal`
+- doctrine_family: `risk_first_asymmetric_capture`
+- strategy_family: `asymmetric_capture`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "risk_first_asymmetric_capture", "regime": "event_driven", "strategy": "asymmetric_capture"}`
 - variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
 - variety_child_label: `activation_profile=wider, paper_gate=balanced`
 - family_tested_child_count: `0`
@@ -207,7 +207,7 @@ These are the current source-grounded mutation proposals.
 - benchmark_priority: `medium`
 - surprise_score: `0.0`
 - duplicate_of_proposal_id: `n/a`
-- source_names: `Recursive Flywheel, John Bollinger`
+- source_names: `Recursive Flywheel, Edward O. Thorp`
 - lineage_ready: `False`
 - status: `research_seeded_backtest_required`
 - benchmark_profitability_score: `n/a`
@@ -218,4 +218,4 @@ These are the current source-grounded mutation proposals.
 - benchmark_trade_count_gate_pass: `n/a`
 - benchmark_walk_forward_consistency: `n/a`
 - benchmark_stress_resilience: `n/a`
-- thesis: The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- thesis: The risk_first_asymmetric_capture doctrine with funding_mean_revert strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
