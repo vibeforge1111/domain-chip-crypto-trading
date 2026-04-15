@@ -1,91 +1,45 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal.json",
-      "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal.json"
+      "dc-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_-b080df8b-sparse_signal.json",
+      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7c0afa17-sparse_signal.json"
     ],
-    "added_count": 3,
+    "added_count": 2,
     "approved_waiting_packet_count": 0,
-    "card_count": 64,
+    "card_count": 66,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
-    "reconciliation_repaired_cards": [
-      "dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal.json",
-      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay.json",
-      "dc-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay.json"
-    ],
-    "reconciliation_repaired_count": 21,
+    "reconciliation_repaired_cards": [],
+    "reconciliation_repaired_count": 0,
     "state_consistent": true
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 40,
-    "doctrine_packets_generated": 24,
-    "pending_packet_count": 24,
+    "card_count": 64,
+    "doctrine_packets_generated": 2,
+    "pending_packet_count": 2,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.396,
-  "finished_at": "2026-04-15T13:53:50.719741Z",
+  "duration_seconds": 2.883,
+  "finished_at": "2026-04-15T14:06:09.043339Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
     "card_count",
     "pending_packet_count",
-    "added_count",
-    "reconciliation_repaired_count"
+    "added_count"
   ],
   "reconciliation": {
-    "card_count": 64,
+    "card_count": 66,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 64,
+    "packet_count": 66,
     "repair_mode": true,
-    "repaired_cards": [
-      "dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal.json",
-      "dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal.json",
-      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay.json",
-      "dc-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay.json",
-      "dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay.json"
-    ],
-    "repaired_count": 21,
+    "repaired_cards": [],
+    "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-15T13:53:47.323988Z"
+  "started_at": "2026-04-15T14:06:06.160208Z"
 }
