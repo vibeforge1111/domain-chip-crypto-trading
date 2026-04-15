@@ -1,17 +1,8 @@
 {
-  "candidates_generated": 8,
-  "generated_at": "2026-04-15T18:12:35.675358Z",
-  "generated_candidate_ids": [
-    "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
-    "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on",
-    "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window",
-    "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze",
-    "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
-    "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
-    "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter",
-    "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation"
-  ],
-  "material_change": true,
+  "candidates_generated": 0,
+  "generated_at": "2026-04-15T18:19:24.086551Z",
+  "generated_candidate_ids": [],
+  "material_change": false,
   "templates_processed": 4,
   "total_candidate_count": 25
 }
