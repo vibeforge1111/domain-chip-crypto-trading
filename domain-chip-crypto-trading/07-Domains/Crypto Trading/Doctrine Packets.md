@@ -2,7 +2,7 @@
 
 These are the tracked source-grounded trader doctrine packets that feed the card ingest lane.
 
-- doctrine_packet_count: `40`
+- doctrine_packet_count: `64`
 
 ## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on
 
@@ -324,6 +324,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246
+
+- packet_id: `dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal`
+- card_id: `dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59
 
 - packet_id: `dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-4a75dff4-sparse_signal`
@@ -337,6 +353,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
 - mechanism: Generated from contradiction probe on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59 targeting sparse_signal failure surface.
 - setup_definition: Apply sparse_signal-targeted mutation overrides to auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0
+
+- packet_id: `dp-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal`
+- card_id: `dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0 signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
 
@@ -500,6 +532,134 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c
+
+- packet_id: `dp-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "range_reclaim_scalp", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec
+
+- packet_id: `dp-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "range_reclaim_scalp", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280
+
+- packet_id: `dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde
+
+- packet_id: `dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7
+
+- packet_id: `dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069
+
+- packet_id: `dp-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb
+
+- packet_id: `dp-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad
+
+- packet_id: `dp-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal`
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window
 
 - packet_id: `dp-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-fdf15e8e-holdout_decay`
@@ -548,6 +708,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
+## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter
+
+- packet_id: `dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay`
+- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
 ## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze
 
 - packet_id: `dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-holdout_decay`
@@ -563,6 +739,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - setup_definition: Apply holdout_decay-targeted mutation overrides to auto-breakout-impulse-squeeze-compression_profile=tight_squeeze signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b
+
+- packet_id: `dp-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay`
+- card_id: `dc-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
 ## Auto-generated: holdout_decay fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter
 
@@ -641,5 +833,197 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
 - mechanism: Generated from contradiction probe on auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter targeting holdout_decay failure surface.
 - setup_definition: Apply holdout_decay-targeted mutation overrides to auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0
+
+- packet_id: `dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339
+
+- packet_id: `dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3
+
+- packet_id: `dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae
+
+- packet_id: `dp-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-089893
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-activation_pr-089893 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-activation_pr-089893 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8
+
+- packet_id: `dp-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay`
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8 signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`

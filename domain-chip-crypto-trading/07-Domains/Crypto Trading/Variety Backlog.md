@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `15`
-- pending_family_count: `15`
+- family_count: `16`
+- pending_family_count: `16`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
@@ -12,8 +12,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - status: `uncovered_variety_pending`
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
-- pending_proposal_count: `3`
-- pending_proposal_ids: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal`
+- pending_proposal_count: `4`
+- pending_proposal_ids: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-holdout_decay, auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal`
 - pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
@@ -30,7 +30,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `2`
-- pending_proposal_ids: `auto-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal, auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59-sparse_signal`
+- pending_proposal_ids: `auto-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal, auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246-sparse_signal`
 - pending_child_labels: `activation_profile=wider, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`

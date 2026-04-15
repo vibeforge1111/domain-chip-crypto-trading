@@ -55,9 +55,9 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59
+## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246
 
-- proposal_id: `auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59-sparse_signal`
+- proposal_id: `auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246-sparse_signal`
 - benchmark_priority: `medium`
 - surprise_score: `0.0`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "mean_reversion_liquidity_reclaim", "regime": "range", "strategy": "range_reclaim_rotation"}`

@@ -1,10 +1,14 @@
 {
-  "added_cards": [],
-  "added_count": 0,
-  "eligible_packet_count": 0,
+  "added_cards": [
+    "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal.json",
+    "dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal.json"
+  ],
+  "added_count": 3,
+  "eligible_packet_count": 24,
   "existing_card_count": 40,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 40,
-  "remaining_packet_count": 0,
+  "packet_count": 64,
+  "remaining_packet_count": 21,
   "required_source_count_per_mutation": 2
 }
