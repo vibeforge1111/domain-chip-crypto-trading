@@ -1,10 +1,12 @@
 {
-  "added_cards": [],
-  "added_count": 0,
-  "eligible_packet_count": 0,
+  "added_cards": [
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-bre-f351cfd3-sparse_signal.json"
+  ],
+  "added_count": 1,
+  "eligible_packet_count": 1,
   "existing_card_count": 101,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 101,
+  "packet_count": 102,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
