@@ -1,71 +1,48 @@
 {
   "status": "running",
-  "started_at": "2026-04-15T12:30:10.275537+00:00",
+  "started_at": "2026-04-15T13:55:35.775333+00:00",
   "assets": [
     "BTC",
     "ETH",
     "SOL"
   ],
-  "agents_loaded": 5,
-  "strategies_loaded": 1,
+  "agents_loaded": 7,
+  "strategies_loaded": 3,
   "total_settlements": 0,
-  "current_contracts": {
-    "ETH:15m": {
-      "contract_id": "live-eth-15m-20260415-1215",
-      "open_price": 2334.39,
-      "evaluated_at": "2026-04-15T12:30:11.365814+00:00",
-      "timeframe": "15m",
-      "regime": "compression",
-      "strategies_matched": [
-        "compression_range_bounce",
-        "rsi_extreme_reversion",
-        "multi_confirm_bounce",
-        "vwap_reversion",
-        "range_extreme_fade",
-        "bollinger_squeeze_breakout",
-        "range_reclaim_scalp",
-        "intermarket_context_gate",
-        "participation_gate_overlay"
-      ],
-      "agents_invoked": 5,
-      "predictions": {
-        "58d7a553": "skip",
-        "24f80dec": "skip",
-        "1fe1bf5a": "skip",
-        "6f8ed62f": "skip",
-        "d8a6adf4": "skip"
-      }
-    },
-    "SOL:15m": {
-      "contract_id": "live-sol-15m-20260415-1215",
-      "open_price": 83.51,
-      "evaluated_at": "2026-04-15T12:30:11.365814+00:00",
-      "timeframe": "15m",
-      "regime": "compression",
-      "strategies_matched": [
-        "compression_range_bounce",
-        "rsi_extreme_reversion",
-        "multi_confirm_bounce",
-        "vwap_reversion",
-        "range_extreme_fade",
-        "bollinger_squeeze_breakout",
-        "range_reclaim_scalp",
-        "intermarket_context_gate",
-        "participation_gate_overlay"
-      ],
-      "agents_invoked": 5,
-      "predictions": {
-        "58d7a553": "skip",
-        "24f80dec": "skip",
-        "1fe1bf5a": "skip",
-        "6f8ed62f": "skip",
-        "d8a6adf4": "skip"
-      }
-    }
-  },
+  "current_contracts": {},
   "agent_stats": {
+    "6efb2e0a": {
+      "bt_wr": 0.5839,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
     "58d7a553": {
       "bt_wr": 0.5825,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
+    "2c730802": {
+      "bt_wr": 0.5823,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
+    "cdedbb62": {
+      "bt_wr": 0.5823,
       "live_wr": 0,
       "live_trades": 0,
       "live_wins": 0,
@@ -84,50 +61,58 @@
       "strategy": "compression_range_bounce",
       "timeframe": "15m"
     },
-    "1fe1bf5a": {
-      "bt_wr": 0.5692,
+    "48997575": {
+      "bt_wr": 0.5336,
       "live_wr": 0,
       "live_trades": 0,
       "live_wins": 0,
       "skips": 0,
       "delta": 0,
-      "strategy": "compression_range_bounce",
+      "strategy": "participation_gate_overlay",
       "timeframe": "15m"
     },
-    "6f8ed62f": {
-      "bt_wr": 0.5583,
+    "cb639d81": {
+      "bt_wr": 0.5967,
       "live_wr": 0,
       "live_trades": 0,
       "live_wins": 0,
       "skips": 0,
       "delta": 0,
-      "strategy": "compression_range_bounce",
-      "timeframe": "15m"
-    },
-    "d8a6adf4": {
-      "bt_wr": 0.5557,
-      "live_wr": 0,
-      "live_trades": 0,
-      "live_wins": 0,
-      "skips": 0,
-      "delta": 0,
-      "strategy": "compression_range_bounce",
-      "timeframe": "15m"
+      "strategy": "rsi_extreme_reversion",
+      "timeframe": "4h"
     }
   },
   "strategies": {
     "compression_range_bounce": {
       "agents": 5,
-      "best_wr": 0.5825,
+      "best_wr": 0.5839,
       "regimes": [
         "compression"
       ]
+    },
+    "participation_gate_overlay": {
+      "agents": 1,
+      "best_wr": 0.5336,
+      "regimes": [
+        "compression",
+        "event_driven",
+        "high_vol",
+        "range",
+        "trend"
+      ]
+    },
+    "rsi_extreme_reversion": {
+      "agents": 1,
+      "best_wr": 0.5967,
+      "regimes": [
+        "compression",
+        "event_driven",
+        "high_vol",
+        "range",
+        "trend"
+      ]
     }
   },
-  "regime_history": [
-    "range",
-    "compression",
-    "compression"
-  ],
-  "last_updated": "2026-04-15T12:30:12.099574+00:00"
+  "regime_history": [],
+  "last_updated": "2026-04-15T13:55:36.749508+00:00"
 }

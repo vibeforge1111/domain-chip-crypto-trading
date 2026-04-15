@@ -7,10 +7,11 @@
       "activation_profile=wider, paper_gate=balanced",
       "late_sample_guard=on, paper_gate=balanced"
     ],
-    "pending_proposal_count": 3,
+    "pending_proposal_count": 4,
     "pending_proposal_ids": [
       "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal",
       "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay",
+      "auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-holdout_decay",
       "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal"
     ],
     "source_names": [
@@ -35,7 +36,7 @@
     "pending_proposal_count": 2,
     "pending_proposal_ids": [
       "auto-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
-      "auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59-sparse_signal"
+      "auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246-sparse_signal"
     ],
     "source_names": [
       "Recursive Flywheel",
@@ -310,6 +311,67 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"risk_first_asymmetric_capture\", \"regime\": \"event_driven\", \"strategy\": \"asymmetric_capture\"}"
   },
   {
+    "benchmarked_candidate_count": 10,
+    "contradiction_modes": [
+      "drawdown_excess",
+      "execution_fragility",
+      "holdout_decay",
+      "segment_instability",
+      "sparse_signal"
+    ],
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "pending_child_labels": [],
+    "pending_proposal_count": 0,
+    "pending_proposal_ids": [],
+    "source_names": [],
+    "status": "suggested_child_targets_ready",
+    "strategy_family": "wedge_exhaustion_reversal",
+    "suggested_child_target_count": 5,
+    "suggested_child_targets": [
+      {
+        "label": "late sample guard plus session filter",
+        "mutations": {
+          "late_sample_guard": "on",
+          "session_profile": "late_cycle_filter"
+        },
+        "variety_child_id": "{\"drawdown_guard\": \"high\", \"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"reclaim_close\", \"session_profile\": \"late_cycle_filter\", \"wick_profile\": \"rejection_confirm\"}",
+        "variety_child_label": "drawdown_guard=high, late_sample_guard=on, paper_gate=balanced, reversal_confirmation=reclaim_close, session_profile=late_cycle_filter, wick_profile=rejection_confirm"
+      },
+      {
+        "label": "session stability filter",
+        "mutations": {
+          "no_trade_window": "avoid_transition_window",
+          "session_profile": "stability_window"
+        },
+        "variety_child_id": "{\"drawdown_guard\": \"high\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"reclaim_close\", \"session_profile\": \"stability_window\", \"wick_profile\": \"rejection_confirm\"}",
+        "variety_child_label": "drawdown_guard=high, no_trade_window=avoid_transition_window, paper_gate=balanced, reversal_confirmation=reclaim_close, session_profile=stability_window, wick_profile=rejection_confirm"
+      },
+      {
+        "label": "execution buffer plus transition skip",
+        "mutations": {
+          "execution_buffer": "high",
+          "no_trade_window": "avoid_transition_window"
+        },
+        "variety_child_id": "{\"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"reclaim_close\", \"wick_profile\": \"rejection_confirm\"}",
+        "variety_child_label": "drawdown_guard=high, execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=balanced, reversal_confirmation=reclaim_close, wick_profile=rejection_confirm"
+      },
+      {
+        "label": "adaptive activation profile",
+        "mutations": {
+          "activation_profile": "adaptive"
+        },
+        "variety_child_id": "{\"activation_profile\": \"adaptive\", \"drawdown_guard\": \"high\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"reclaim_close\", \"wick_profile\": \"rejection_confirm\"}",
+        "variety_child_label": "activation_profile=adaptive, drawdown_guard=high, paper_gate=balanced, reversal_confirmation=reclaim_close, wick_profile=rejection_confirm"
+      }
+    ],
+    "target_contract_family": "btc_up_down_15m",
+    "tested_child_count": 3,
+    "top_candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+    "top_profitability_score": 0.6146,
+    "top_recommended_next_step": "run_contradiction_probe",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"wedge_exhaustion_reversal\"}"
+  },
+  {
     "benchmarked_candidate_count": 2,
     "contradiction_modes": [
       "drawdown_excess",
@@ -325,7 +387,7 @@
     "source_names": [],
     "status": "suggested_child_targets_ready",
     "strategy_family": "breakout_open_interest_confirmation",
-    "suggested_child_target_count": 5,
+    "suggested_child_target_count": 4,
     "suggested_child_targets": [
       {
         "label": "late sample guard plus session filter",
@@ -333,17 +395,8 @@
           "late_sample_guard": "on",
           "session_profile": "late_cycle_filter"
         },
-        "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\"}",
-        "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter"
-      },
-      {
-        "label": "session stability filter",
-        "mutations": {
-          "no_trade_window": "avoid_transition_window",
-          "session_profile": "stability_window"
-        },
-        "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\"}",
-        "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window"
+        "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\"}",
+        "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, late_sample_guard=on, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=late_cycle_filter"
       },
       {
         "label": "execution buffer plus transition skip",
@@ -351,21 +404,30 @@
           "execution_buffer": "high",
           "no_trade_window": "avoid_transition_window"
         },
-        "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\"}",
-        "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, execution_buffer=high, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict"
+        "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\"}",
+        "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, execution_buffer=high, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window"
       },
       {
         "label": "adaptive activation profile",
         "mutations": {
           "activation_profile": "adaptive"
         },
-        "variety_child_id": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"strict\"}",
-        "variety_child_label": "activation_profile=adaptive, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, paper_gate=strict"
+        "variety_child_id": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\"}",
+        "variety_child_label": "activation_profile=adaptive, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window"
+      },
+      {
+        "label": "drawdown guard plus quality filter",
+        "mutations": {
+          "drawdown_guard": "high",
+          "session_profile": "quality_window"
+        },
+        "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"drawdown_guard\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"quality_window\"}",
+        "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, drawdown_guard=high, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=quality_window"
       }
     ],
     "target_contract_family": "btc_up_down_15m",
     "tested_child_count": 2,
-    "top_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase",
+    "top_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter",
     "top_profitability_score": 0.3278,
     "top_recommended_next_step": "run_contradiction_probe",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
@@ -386,7 +448,7 @@
     "source_names": [],
     "status": "suggested_child_targets_ready",
     "strategy_family": "ema_pullback_long",
-    "suggested_child_target_count": 5,
+    "suggested_child_target_count": 4,
     "suggested_child_targets": [
       {
         "label": "late sample guard plus session filter",
@@ -396,15 +458,6 @@
         },
         "variety_child_id": "{\"activation_profile\": \"wider\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_post_open_drift\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
         "variety_child_label": "activation_profile=wider, late_sample_guard=on, no_trade_window=avoid_post_open_drift, paper_gate=balanced, session_profile=late_cycle_filter"
-      },
-      {
-        "label": "session stability filter",
-        "mutations": {
-          "no_trade_window": "avoid_transition_window",
-          "session_profile": "stability_window"
-        },
-        "variety_child_id": "{\"activation_profile\": \"wider\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
-        "variety_child_label": "activation_profile=wider, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window"
       },
       {
         "label": "execution buffer plus transition skip",
@@ -422,6 +475,15 @@
         },
         "variety_child_id": "{\"activation_profile\": \"adaptive\", \"no_trade_window\": \"avoid_post_open_drift\", \"paper_gate\": \"balanced\"}",
         "variety_child_label": "activation_profile=adaptive, no_trade_window=avoid_post_open_drift, paper_gate=balanced"
+      },
+      {
+        "label": "drawdown guard plus quality filter",
+        "mutations": {
+          "drawdown_guard": "high",
+          "session_profile": "quality_window"
+        },
+        "variety_child_id": "{\"activation_profile\": \"wider\", \"drawdown_guard\": \"high\", \"no_trade_window\": \"avoid_post_open_drift\", \"paper_gate\": \"balanced\", \"session_profile\": \"quality_window\"}",
+        "variety_child_label": "activation_profile=wider, drawdown_guard=high, no_trade_window=avoid_post_open_drift, paper_gate=balanced, session_profile=quality_window"
       }
     ],
     "target_contract_family": "btc_up_down_15m",
@@ -492,56 +554,63 @@
     "variety_family_id": "{\"contract\": \"bybit:1h\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_scalp\"}"
   },
   {
-    "benchmarked_candidate_count": 12,
+    "benchmarked_candidate_count": 2,
     "contradiction_modes": [
-      "drawdown_excess",
       "execution_fragility",
       "holdout_decay",
       "segment_instability",
       "sparse_signal"
     ],
-    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "doctrine_family": "breakout_volatility_expansion",
     "pending_child_labels": [],
     "pending_proposal_count": 0,
     "pending_proposal_ids": [],
     "source_names": [],
     "status": "suggested_child_targets_ready",
-    "strategy_family": "wedge_exhaustion_reversal",
-    "suggested_child_target_count": 3,
+    "strategy_family": "breakout_open_interest_confirmation",
+    "suggested_child_target_count": 4,
     "suggested_child_targets": [
+      {
+        "label": "late sample guard plus session filter",
+        "mutations": {
+          "late_sample_guard": "on",
+          "session_profile": "late_cycle_filter"
+        },
+        "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
+        "variety_child_label": "activation_profile=wider, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, late_sample_guard=on, paper_gate=balanced, session_profile=late_cycle_filter"
+      },
+      {
+        "label": "session stability filter",
+        "mutations": {
+          "no_trade_window": "avoid_transition_window",
+          "session_profile": "stability_window"
+        },
+        "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
+        "variety_child_label": "activation_profile=wider, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window"
+      },
       {
         "label": "execution buffer plus transition skip",
         "mutations": {
           "execution_buffer": "high",
           "no_trade_window": "avoid_transition_window"
         },
-        "variety_child_id": "{\"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"reclaim_close\", \"wick_profile\": \"rejection_confirm\"}",
-        "variety_child_label": "drawdown_guard=high, execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=balanced, reversal_confirmation=reclaim_close, wick_profile=rejection_confirm"
+        "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\"}",
+        "variety_child_label": "activation_profile=wider, chase_policy=no_chase_after_crowded_good_news, execution_buffer=high, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=balanced"
       },
       {
         "label": "adaptive activation profile",
         "mutations": {
           "activation_profile": "adaptive"
         },
-        "variety_child_id": "{\"activation_profile\": \"adaptive\", \"drawdown_guard\": \"high\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"reclaim_close\", \"wick_profile\": \"rejection_confirm\"}",
-        "variety_child_label": "activation_profile=adaptive, drawdown_guard=high, paper_gate=balanced, reversal_confirmation=reclaim_close, wick_profile=rejection_confirm"
-      },
-      {
-        "label": "wick reclaim drawdown guard",
-        "mutations": {
-          "drawdown_guard": "high",
-          "reversal_confirmation": "wick_reclaim_close",
-          "wick_profile": "rejection_confirm"
-        },
-        "variety_child_id": "{\"drawdown_guard\": \"high\", \"paper_gate\": \"balanced\", \"reversal_confirmation\": \"wick_reclaim_close\", \"wick_profile\": \"rejection_confirm\"}",
-        "variety_child_label": "drawdown_guard=high, paper_gate=balanced, reversal_confirmation=wick_reclaim_close, wick_profile=rejection_confirm"
+        "variety_child_id": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"balanced\"}",
+        "variety_child_label": "activation_profile=adaptive, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, paper_gate=balanced"
       }
     ],
     "target_contract_family": "btc_up_down_15m",
-    "tested_child_count": 5,
-    "top_candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
-    "top_profitability_score": 0.6146,
+    "tested_child_count": 2,
+    "top_candidate_id": "auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-sparse_si-050e28924f",
+    "top_profitability_score": 0.0,
     "top_recommended_next_step": "run_contradiction_probe",
-    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"wedge_exhaustion_reversal\"}"
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
   }
 ]

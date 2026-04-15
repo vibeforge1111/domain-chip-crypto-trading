@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `40`
+- doctrine_card_count: `64`
 
 ## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on
 
@@ -134,6 +134,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter
+
+- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay`
+- proposal_id: `auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
 ## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window
 
 - card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-d0e6bd8d-sparse_signal`
@@ -172,6 +185,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: holdout_decay fix for auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b
+
+- card_id: `dc-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_c-e905fc1a-holdout_decay`
+- proposal_id: `auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for breakout_open_interest_confirmation.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
 ## Auto-generated: sparse_signal fix for auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm
 
@@ -381,10 +407,36 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
+## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246
+
+- card_id: `dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-2b47e8aa-sparse_signal`
+- proposal_id: `auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59
 
 - card_id: `dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-4a75dff4-sparse_signal`
 - proposal_id: `auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0
+
+- card_id: `dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-7d282f0f-sparse_signal`
+- proposal_id: `auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0-sparse_signal`
 - doctrine_family: `mean_reversion_liquidity_reclaim`
 - strategy_family: `range_reclaim_rotation`
 - benchmark_priority: `medium`
@@ -523,3 +575,263 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0
+
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339
+
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-40a339-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3
+
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-a354e3-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae
+
+- card_id: `dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c
+
+- card_id: `dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-range-session-wick-reversal_confirm-8e6a0c-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with range_reclaim_scalp strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "range_reclaim_scalp", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec
+
+- card_id: `dc-auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-range-session-wick-reversal_confirm-bb0fec-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with range_reclaim_scalp strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "range_reclaim_scalp", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-089893
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-activation_pr-089893-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-activation_pr-8776bc-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-1617c8-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-b8ceda-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8
+
+- card_id: `dc-auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay`
+- proposal_id: `auto-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280
+
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-150280-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde
+
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-25bcde-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7
+
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-88dae7-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069
+
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb
+
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad
+
+- card_id: `dc-auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal`
+- proposal_id: `auto-mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wedge_exhaustion_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wedge_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`

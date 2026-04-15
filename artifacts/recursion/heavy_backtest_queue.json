@@ -76,7 +76,7 @@
       "walk_forward_splits": 6
     },
     "benchmark_priority": "medium",
-    "proposal_id": "auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59-sparse_signal",
+    "proposal_id": "auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246-sparse_signal",
     "required_metrics": {
       "max_drawdown_max": null,
       "paper_trade_readiness_min": null,
@@ -86,7 +86,7 @@
     "status": "queued_for_heavy_backtest",
     "surprise_score": 0.0,
     "target_contract_family": "btc_up_down_15m",
-    "title": "Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_partic-be1741bb59",
+    "title": "Auto-generated: sparse_signal fix for auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-841b053246",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"

@@ -12,21 +12,21 @@
       "top_walk_forward_consistency": 0.4
     },
     "self_edit_audit": {
-      "approved_count": 1,
+      "approved_count": 0,
       "deferred_count": 0,
-      "evaluation_count": 1,
+      "evaluation_count": 0,
       "rejected_count": 0,
-      "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
+      "top_approved_edit_id": null
     }
   },
   "before": {
     "benchmark": {
       "candidate_count": 52,
-      "top_candidate_id": "btc-15m-sizing-overlay-psychology_wait_followthrough",
-      "top_holdout_profitability_score": 0.5726,
+      "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+      "top_holdout_profitability_score": 0.3967,
       "top_max_drawdown": 0.99,
       "top_paper_trade_readiness": 0.048,
-      "top_profitability_score": 0.4657,
+      "top_profitability_score": 0.4513,
       "top_recommended_next_step": "run_contradiction_probe",
       "top_stress_resilience": 0.0,
       "top_walk_forward_consistency": 0.4
@@ -40,12 +40,14 @@
     }
   },
   "commit_message": null,
-  "duration_seconds": 61.462,
-  "finished_at": "2026-04-15T13:35:37.426453Z",
+  "duration_seconds": 61.454,
+  "finished_at": "2026-04-15T13:55:01.663286Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
-    "candidate_count"
+    "evaluation_count",
+    "approved_count",
+    "top_approved_edit_id"
   ],
-  "started_at": "2026-04-15T13:34:35.964475Z"
+  "started_at": "2026-04-15T13:54:00.209675Z"
 }
