@@ -106,22 +106,20 @@
   },
   {
     "allowed_edits": [
-      "activation_profile.wider",
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-probe-sparse_signal",
+    "child_candidate_id": "auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43-probe-holdout_decay",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal",
+    "edit_id": "self-edit-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43-holdout_decay",
     "failure_modes": [
-      "sparse_signal",
       "holdout_decay",
       "segment_instability",
       "execution_fragility",
       "drawdown_excess"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069",
+    "parent_candidate_id": "auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
