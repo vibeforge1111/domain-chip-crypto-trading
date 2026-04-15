@@ -1085,6 +1085,142 @@
       }
     },
     {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter",
+      "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze suggested child variety",
+      "hypothesis": "Test the next uncovered child variety for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze: session stability filter.",
+      "metrics": {
+        "max_drawdown": 0.99,
+        "paper_trade_readiness": 0.048,
+        "profitability_score": 0.4484,
+        "sharpe_ratio": -1.301,
+        "verdict_confidence": 0.6834,
+        "win_rate": 0.4684
+      },
+      "mutations": {
+        "asset_universe": "BTC",
+        "compression_profile": "tight_squeeze",
+        "doctrine_id": "breakout_volatility_expansion",
+        "late_sample_guard": "off",
+        "market_regime": "high_vol",
+        "no_trade_window": "avoid_transition_window",
+        "paper_gate": "balanced",
+        "session_profile": "stability_window",
+        "strategy_id": "bollinger_squeeze_breakout",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      },
+      "result": {
+        "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
+        "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
+        "contract_count": 21696,
+        "covered_contract_count": 21695,
+        "data_fallback_reason": "",
+        "data_mode": "contract_window_backtest",
+        "evaluated_asset": "BTC",
+        "evaluated_timeframe": "15m",
+        "evidence_lane": "backtest_benchmark",
+        "holdout_profitability_score": 0.4467,
+        "mechanism": "Backtested on 158 active BTC 15m contract decisions across 21695 covered windows.",
+        "minimum_trade_count": 25,
+        "recommended_next_step": "run_contradiction_probe",
+        "regime_stats": {
+          "high_vol": {
+            "avg_return": -0.1033,
+            "trade_count": 158,
+            "win_rate": 0.4684
+          }
+        },
+        "regime_validation": {
+          "dataset_ready_count": 0,
+          "market_regime": "high_vol",
+          "mismatch_review_count": 0,
+          "mixed_proxy_count": 0,
+          "regime_id": "compression_pre_breakout",
+          "validated_match_count": 0,
+          "validated_regime_support": false
+        },
+        "requested_asset_universe": "BTC",
+        "requested_timeframe": "15m",
+        "stress_resilience": 0.0,
+        "stress_stats": {
+          "base": {
+            "avg_return": -0.1033,
+            "profitability_score": 0.4484,
+            "trade_count": 158,
+            "trade_count_gate_pass": true
+          },
+          "elevated_fees": {
+            "avg_return": -0.1433,
+            "profitability_score": 0.4284,
+            "trade_count": 158,
+            "trade_count_gate_pass": true
+          },
+          "fee_and_slippage": {
+            "avg_return": -0.1833,
+            "profitability_score": 0.4084,
+            "trade_count": 158,
+            "trade_count_gate_pass": true
+          }
+        },
+        "trade_count": 158,
+        "trade_count_gate_pass": true,
+        "verdict": "reject",
+        "walk_forward_consistency": 0.4,
+        "walk_forward_stats": [
+          {
+            "avg_return": -0.7067,
+            "end_contract_id": "kxbtc15m-20251016-0430",
+            "profitability_score": 0.1467,
+            "segment_id": "wf-1",
+            "start_contract_id": "kxbtc15m-20250901-0000",
+            "trade_count": 6,
+            "trade_count_gate_pass": true,
+            "win_rate": 0.1667
+          },
+          {
+            "avg_return": 0.1908,
+            "end_contract_id": "kxbtc15m-20251130-0915",
+            "profitability_score": 0.5954,
+            "segment_id": "wf-2",
+            "start_contract_id": "kxbtc15m-20251016-0445",
+            "trade_count": 26,
+            "trade_count_gate_pass": true,
+            "win_rate": 0.6154
+          },
+          {
+            "avg_return": 0.1029,
+            "end_contract_id": "kxbtc15m-20260114-1400",
+            "profitability_score": 0.5514,
+            "segment_id": "wf-3",
+            "start_contract_id": "kxbtc15m-20251130-0930",
+            "trade_count": 21,
+            "trade_count_gate_pass": true,
+            "win_rate": 0.5714
+          },
+          {
+            "avg_return": -0.1956,
+            "end_contract_id": "kxbtc15m-20260228-1845",
+            "profitability_score": 0.4022,
+            "segment_id": "wf-4",
+            "start_contract_id": "kxbtc15m-20260114-1415",
+            "trade_count": 90,
+            "trade_count_gate_pass": true,
+            "win_rate": 0.4222
+          },
+          {
+            "avg_return": -0.1067,
+            "end_contract_id": "kxbtc15m-20260414-2345",
+            "profitability_score": 0.4467,
+            "segment_id": "wf-5",
+            "start_contract_id": "kxbtc15m-20260228-1900",
+            "trade_count": 15,
+            "trade_count_gate_pass": true,
+            "win_rate": 0.4667
+          }
+        ]
+      }
+    },
+    {
       "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
       "candidate_summary": "Trend following with volume context and dead-zone avoidance. [no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter]",
       "hypothesis": "Volume-filtered trend following with dead zone avoidance should produce more consistent returns by skipping thin-market conditions.",
@@ -2697,8 +2833,8 @@
       }
     },
     {
-      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
-      "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191 contradiction probe",
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e",
+      "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation contradiction probe",
       "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
       "metrics": {
         "max_drawdown": 0.99,
@@ -2717,7 +2853,6 @@
         "market_regime": "trend",
         "no_trade_window": "avoid_dead_zone",
         "paper_gate": "balanced",
-        "session_profile": "stability_window",
         "strategy_id": "ema_pullback_long",
         "timeframe": "4h",
         "venue": "binance",
@@ -3375,8 +3510,8 @@
       }
     },
     {
-      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de",
-      "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation contradiction probe",
+      "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay",
+      "candidate_summary": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter contradiction probe",
       "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
       "metrics": {
         "max_drawdown": 0.99,
@@ -3387,17 +3522,18 @@
         "win_rate": 0.5217
       },
       "mutations": {
-        "activation_profile": "wider",
+        "activation_profile": "base",
         "asset_universe": "BTC,ETH",
         "doctrine_id": "trend_regime_following",
         "execution_buffer": "high",
+        "late_sample_guard": "on",
         "market_regime": "trend",
         "no_trade_window": "avoid_dead_zone",
         "paper_gate": "balanced",
         "strategy_id": "ema_pullback_long",
         "timeframe": "4h",
         "venue": "binance",
-        "volume_context_guard": "strict_participation"
+        "volume_context_guard": "thin_filter"
       },
       "result": {
         "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
@@ -3468,14 +3604,14 @@
             "win_rate": 0.5
           },
           {
-            "avg_return": -0.04,
+            "avg_return": -0.1829,
             "end_contract_id": "kxbtc1h-20251130-0700",
-            "profitability_score": 0.48,
+            "profitability_score": 0.4086,
             "segment_id": "wf-2",
             "start_contract_id": "kxbtc1h-20251016-0400",
-            "trade_count": 6,
+            "trade_count": 7,
             "trade_count_gate_pass": true,
-            "win_rate": 0.5
+            "win_rate": 0.4286
           },
           {
             "avg_return": -0.54,
@@ -3488,14 +3624,14 @@
             "win_rate": 0.25
           },
           {
-            "avg_return": 0.3886,
+            "avg_return": 0.6267,
             "end_contract_id": "kxbtc1h-20260228-1500",
-            "profitability_score": 0.6943,
+            "profitability_score": 0.8133,
             "segment_id": "wf-4",
             "start_contract_id": "kxbtc1h-20260114-1200",
-            "trade_count": 7,
+            "trade_count": 6,
             "trade_count_gate_pass": true,
-            "win_rate": 0.7143
+            "win_rate": 0.8333
           },
           {
             "avg_return": -0.04,
@@ -4865,9 +5001,9 @@
       }
     },
     {
-      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dda880a9e1",
-      "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter suggested child variety",
-      "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter: execution buffer plus transition skip.",
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-2ca86d1d8a",
+      "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dda880a9e1 suggested child variety",
+      "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dda880a9e1: adaptive activation profile.",
       "metrics": {
         "max_drawdown": 0.99,
         "paper_trade_readiness": 0.0,
@@ -4877,6 +5013,7 @@
         "win_rate": 0.3333
       },
       "mutations": {
+        "activation_profile": "adaptive",
         "asset_universe": "BTC",
         "chase_policy": "no_chase_after_crowded_good_news",
         "doctrine_id": "breakout_volatility_expansion",
@@ -6296,8 +6433,8 @@
       }
     },
     {
-      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-probe-sparse_signal",
-      "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on contradiction probe",
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024",
+      "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window contradiction probe",
       "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
       "metrics": {
         "max_drawdown": 0.0,
@@ -6317,7 +6454,7 @@
         "market_regime": "high_vol",
         "no_trade_window": "avoid_dead_zone",
         "paper_gate": "balanced",
-        "session_profile": "all",
+        "session_profile": "squeeze_release_window",
         "strategy_id": "bollinger_squeeze_breakout",
         "timeframe": "15m",
         "venue": "kalshi"
@@ -6428,138 +6565,9 @@
       }
     },
     {
-      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter",
-      "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze suggested child variety",
-      "hypothesis": "Test the next uncovered child variety for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze: late sample guard plus session filter.",
-      "metrics": {
-        "max_drawdown": 0.0,
-        "paper_trade_readiness": 0.17,
-        "profitability_score": 0.0,
-        "sharpe_ratio": 0.0,
-        "verdict_confidence": 0.6,
-        "win_rate": 0.0
-      },
-      "mutations": {
-        "asset_universe": "BTC",
-        "compression_profile": "tight_squeeze",
-        "doctrine_id": "breakout_volatility_expansion",
-        "late_sample_guard": "on",
-        "market_regime": "high_vol",
-        "paper_gate": "balanced",
-        "session_profile": "late_cycle_filter",
-        "strategy_id": "bollinger_squeeze_breakout",
-        "timeframe": "15m",
-        "venue": "kalshi"
-      },
-      "result": {
-        "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
-        "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
-        "contract_count": 21696,
-        "covered_contract_count": 21695,
-        "data_fallback_reason": "",
-        "data_mode": "contract_window_backtest",
-        "evaluated_asset": "BTC",
-        "evaluated_timeframe": "15m",
-        "evidence_lane": "backtest_benchmark",
-        "holdout_profitability_score": 0.0,
-        "mechanism": "Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.",
-        "minimum_trade_count": 25,
-        "recommended_next_step": "run_contradiction_probe",
-        "regime_stats": {},
-        "regime_validation": {
-          "dataset_ready_count": 0,
-          "market_regime": "high_vol",
-          "mismatch_review_count": 0,
-          "mixed_proxy_count": 0,
-          "regime_id": "compression_pre_breakout",
-          "validated_match_count": 0,
-          "validated_regime_support": false
-        },
-        "requested_asset_universe": "BTC",
-        "requested_timeframe": "15m",
-        "stress_resilience": 0.0,
-        "stress_stats": {
-          "base": {
-            "avg_return": 0.0,
-            "profitability_score": 0.0,
-            "trade_count": 0,
-            "trade_count_gate_pass": false
-          },
-          "elevated_fees": {
-            "avg_return": 0.0,
-            "profitability_score": 0.0,
-            "trade_count": 0,
-            "trade_count_gate_pass": false
-          },
-          "fee_and_slippage": {
-            "avg_return": 0.0,
-            "profitability_score": 0.0,
-            "trade_count": 0,
-            "trade_count_gate_pass": false
-          }
-        },
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "verdict": "reject",
-        "walk_forward_consistency": 0.0,
-        "walk_forward_stats": [
-          {
-            "avg_return": 0.0,
-            "end_contract_id": "kxbtc15m-20251016-0430",
-            "profitability_score": 0.0,
-            "segment_id": "wf-1",
-            "start_contract_id": "kxbtc15m-20250901-0000",
-            "trade_count": 0,
-            "trade_count_gate_pass": false,
-            "win_rate": 0.0
-          },
-          {
-            "avg_return": 0.0,
-            "end_contract_id": "kxbtc15m-20251130-0915",
-            "profitability_score": 0.0,
-            "segment_id": "wf-2",
-            "start_contract_id": "kxbtc15m-20251016-0445",
-            "trade_count": 0,
-            "trade_count_gate_pass": false,
-            "win_rate": 0.0
-          },
-          {
-            "avg_return": 0.0,
-            "end_contract_id": "kxbtc15m-20260114-1400",
-            "profitability_score": 0.0,
-            "segment_id": "wf-3",
-            "start_contract_id": "kxbtc15m-20251130-0930",
-            "trade_count": 0,
-            "trade_count_gate_pass": false,
-            "win_rate": 0.0
-          },
-          {
-            "avg_return": 0.0,
-            "end_contract_id": "kxbtc15m-20260228-1845",
-            "profitability_score": 0.0,
-            "segment_id": "wf-4",
-            "start_contract_id": "kxbtc15m-20260114-1415",
-            "trade_count": 0,
-            "trade_count_gate_pass": false,
-            "win_rate": 0.0
-          },
-          {
-            "avg_return": 0.0,
-            "end_contract_id": "kxbtc15m-20260414-2345",
-            "profitability_score": 0.0,
-            "segment_id": "wf-5",
-            "start_contract_id": "kxbtc15m-20260228-1900",
-            "trade_count": 0,
-            "trade_count_gate_pass": false,
-            "win_rate": 0.0
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-late-sam-f6a0484c88",
-      "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter suggested child variety",
-      "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter: late sample guard plus session filter.",
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-ba1cf3775c",
+      "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dda880a9e1 suggested child variety",
+      "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dda880a9e1: late sample guard plus session filter.",
       "metrics": {
         "max_drawdown": 0.0,
         "paper_trade_readiness": 0.17,
@@ -6572,6 +6580,7 @@
         "asset_universe": "BTC",
         "chase_policy": "no_chase_after_crowded_good_news",
         "doctrine_id": "breakout_volatility_expansion",
+        "execution_buffer": "high",
         "follow_through_profile": "delayed_confirmation",
         "late_sample_guard": "on",
         "market_regime": "high_vol",
@@ -6688,9 +6697,9 @@
       }
     },
     {
-      "candidate_id": "auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal-psychology_wait_followthrough",
-      "candidate_summary": "auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal psychology mutation",
-      "hypothesis": "Convert the psychology overlay into a delayed event-interpretation child so macro/event setups stay abstinent until follow-through proves the regime.",
+      "candidate_id": "auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-spar-bbe5ae0950",
+      "candidate_summary": "auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-sparse_si-050e28924f-sparse_signal psychology mutation",
+      "hypothesis": "Convert the psychology overlay into a no-chase, delayed-confirmation child so crowded good-news continuation is not treated as immediate breakout edge.",
       "metrics": {
         "max_drawdown": 0.0,
         "paper_trade_readiness": 0.17,
@@ -6702,11 +6711,12 @@
       "mutations": {
         "activation_profile": "wider",
         "asset_universe": "BTC",
-        "doctrine_id": "risk_first_asymmetric_capture",
-        "event_interpretation_policy": "wait_for_follow_through",
-        "market_regime": "event_driven",
+        "chase_policy": "no_chase_after_crowded_good_news",
+        "doctrine_id": "breakout_volatility_expansion",
+        "follow_through_profile": "delayed_confirmation",
+        "market_regime": "trend",
         "paper_gate": "balanced",
-        "strategy_id": "funding_mean_revert",
+        "strategy_id": "breakout_open_interest_confirmation",
         "timeframe": "15m",
         "venue": "kalshi"
       },
@@ -6722,15 +6732,15 @@
         "evidence_lane": "backtest_benchmark",
         "holdout_profitability_score": 0.0,
         "mechanism": "Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.",
-        "minimum_trade_count": 59,
+        "minimum_trade_count": 25,
         "recommended_next_step": "run_contradiction_probe",
         "regime_stats": {},
         "regime_validation": {
           "dataset_ready_count": 0,
-          "market_regime": "event_driven",
+          "market_regime": "trend",
           "mismatch_review_count": 0,
           "mixed_proxy_count": 0,
-          "regime_id": "event_driven_macro_transition",
+          "regime_id": "trend_continuation_greed",
           "validated_match_count": 0,
           "validated_regime_support": false
         },
@@ -6816,9 +6826,9 @@
       }
     },
     {
-      "candidate_id": "btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough",
-      "candidate_summary": "btc-15m-regime-shift-no-trade-filter psychology mutation",
-      "hypothesis": "Convert the psychology overlay into a delayed event-interpretation child so macro/event setups stay abstinent until follow-through proves the regime.",
+      "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase",
+      "candidate_summary": "btc-15m-momentum-breakout-structure psychology mutation",
+      "hypothesis": "Convert the psychology overlay into a no-chase, delayed-confirmation child so crowded good-news continuation is not treated as immediate breakout edge.",
       "metrics": {
         "max_drawdown": 0.0,
         "paper_trade_readiness": 0.17,
@@ -6829,11 +6839,12 @@
       },
       "mutations": {
         "asset_universe": "BTC",
-        "doctrine_id": "risk_first_asymmetric_capture",
-        "event_interpretation_policy": "wait_for_follow_through",
-        "market_regime": "event_driven",
+        "chase_policy": "no_chase_after_crowded_good_news",
+        "doctrine_id": "breakout_volatility_expansion",
+        "follow_through_profile": "delayed_confirmation",
+        "market_regime": "trend",
         "paper_gate": "strict",
-        "strategy_id": "funding_mean_revert",
+        "strategy_id": "breakout_open_interest_confirmation",
         "timeframe": "15m",
         "venue": "kalshi"
       },
@@ -6849,15 +6860,15 @@
         "evidence_lane": "backtest_benchmark",
         "holdout_profitability_score": 0.0,
         "mechanism": "Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.",
-        "minimum_trade_count": 59,
+        "minimum_trade_count": 25,
         "recommended_next_step": "run_contradiction_probe",
         "regime_stats": {},
         "regime_validation": {
           "dataset_ready_count": 0,
-          "market_regime": "event_driven",
+          "market_regime": "trend",
           "mismatch_review_count": 0,
           "mixed_proxy_count": 0,
-          "regime_id": "event_driven_macro_transition",
+          "regime_id": "trend_continuation_greed",
           "validated_match_count": 0,
           "validated_regime_support": false
         },
