@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-04-15T19:26:14.397433Z",
+  "generated_at": "2026-04-15T19:32:18.768585Z",
   "generated_packet_ids": [
-    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--09c8be4f-sparse_signal"
+    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--e4bddc6e-sparse_signal",
+    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--8579d202-sparse_signal"
   ],
-  "packets_generated": 1,
+  "packets_generated": 2,
   "probes_analyzed": 33,
-  "skipped_duplicate_count": 32,
+  "skipped_duplicate_count": 31,
   "skipped_no_template_count": 0
 }

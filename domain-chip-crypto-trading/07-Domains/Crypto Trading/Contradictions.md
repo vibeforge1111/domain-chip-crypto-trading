@@ -74,7 +74,7 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-5: profitability=`0.4086` avg_return=`-0.1829` trades=`14`
 - wf-2: profitability=`0.4506` avg_return=`-0.0988` trades=`17`
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-b2e3ddd00c
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-b4ae3c2a49
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
