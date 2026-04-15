@@ -1,13 +1,13 @@
 {
   "asset_universe": "BTC,ETH",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e",
+  "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
   "contract_count": 5424,
   "covered_contract_count": 5423,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "trend_regime_following",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776281597198720400",
+  "generated_at": "1776281962669392000",
   "holdout_profitability_score": 0.48,
   "market_regime": "trend",
   "max_drawdown": 0.99,
@@ -22,6 +22,7 @@
     "market_regime": "trend",
     "no_trade_window": "avoid_dead_zone",
     "paper_gate": "balanced",
+    "session_profile": "stability_window",
     "strategy_id": "ema_pullback_long",
     "timeframe": "4h",
     "venue": "binance",
@@ -43,7 +44,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e",
+  "run_id": "heavy-backtest-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
   "sharpe_ratio": 0.0551,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "ema_pullback_long",
