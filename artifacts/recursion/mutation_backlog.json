@@ -2302,7 +2302,7 @@
     "counterfactual": "Without this mutation, the loop stays trapped in seeded generic doctrine combinations and never pressure-tests richer trader teachings.",
     "doctrine_family": "breakout_volatility_expansion",
     "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-    "family_tested_child_count": 10,
+    "family_tested_child_count": 14,
     "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [],

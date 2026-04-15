@@ -19,60 +19,60 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `0.48`
 - child_trade_count: `23.0`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal
+## self-edit-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay
 
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-probe-sparse_signal`
+- parent_candidate_id: `mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86`
+- child_candidate_id: `mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-probe-holdout_decay`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal
+## self-edit-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay
 
-- parent_candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm`
-- child_candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-probe-sparse_signal`
+- parent_candidate_id: `mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba`
+- child_candidate_id: `mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-probe-holdout_decay`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal
+## self-edit-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay
 
-- parent_candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm`
-- child_candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-probe-sparse_signal`
+- parent_candidate_id: `mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f`
+- child_candidate_id: `mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-probe-holdout_decay`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal
+## self-edit-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay
 
-- parent_candidate_id: `auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm`
-- child_candidate_id: `auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-probe-sparse_signal`
+- parent_candidate_id: `mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8`
+- child_candidate_id: `mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-probe-holdout_decay`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal
+## self-edit-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-holdout_decay
 
-- parent_candidate_id: `auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm`
-- child_candidate_id: `auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-probe-sparse_signal`
+- parent_candidate_id: `auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b`
+- child_candidate_id: `auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-probe-holdout_decay`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
