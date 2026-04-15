@@ -1,7 +1,7 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze",
+  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
@@ -15,12 +15,13 @@
   "minimum_trade_count": 25,
   "mutations": {
     "asset_universe": "BTC",
-    "compression_profile": "moderate_squeeze",
+    "compression_profile": "tight_squeeze",
     "doctrine_id": "breakout_volatility_expansion",
     "late_sample_guard": "off",
     "market_regime": "high_vol",
+    "no_trade_window": "avoid_transition_window",
     "paper_gate": "balanced",
-    "session_profile": "all",
+    "session_profile": "stability_window",
     "strategy_id": "bollinger_squeeze_breakout",
     "timeframe": "15m",
     "venue": "kalshi"
@@ -41,7 +42,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze",
+  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed",
   "sharpe_ratio": -1.301,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "bollinger_squeeze_breakout",
