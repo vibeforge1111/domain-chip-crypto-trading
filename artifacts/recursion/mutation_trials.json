@@ -1,8 +1,8 @@
 [
   {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e",
-    "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation contradiction probe",
-    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"strategy_id\": \"ema_pullback_long\"}",
+    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
+    "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191 contradiction probe",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"ema_pullback_long\"}",
     "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "mutations": {
       "activation_profile": "wider",
@@ -12,86 +12,6 @@
       "late_sample_guard": "on",
       "market_regime": "trend",
       "no_trade_window": "avoid_dead_zone",
-      "paper_gate": "balanced",
-      "strategy_id": "ema_pullback_long",
-      "timeframe": "4h",
-      "venue": "binance",
-      "volume_context_guard": "strict_participation"
-    },
-    "proposal_origin": "contradiction_probe",
-    "source_names": [
-      "benchmark_contradiction_probe"
-    ],
-    "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\"}",
-    "variety_child_label": "activation_profile=wider, execution_buffer=high, late_sample_guard=on, no_trade_window=avoid_dead_zone, paper_gate=balanced",
-    "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-probe-sparse_signal",
-    "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on contradiction probe",
-    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"compression_profile\": \"moderate_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"all\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
-    "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "mutations": {
-      "activation_profile": "wider",
-      "asset_universe": "BTC",
-      "compression_profile": "moderate_squeeze",
-      "doctrine_id": "breakout_volatility_expansion",
-      "execution_buffer": "high",
-      "late_sample_guard": "on",
-      "market_regime": "high_vol",
-      "no_trade_window": "avoid_dead_zone",
-      "paper_gate": "balanced",
-      "session_profile": "all",
-      "strategy_id": "bollinger_squeeze_breakout",
-      "timeframe": "15m",
-      "venue": "kalshi"
-    },
-    "proposal_origin": "contradiction_probe",
-    "source_names": [
-      "benchmark_contradiction_probe"
-    ],
-    "variety_child_id": "{\"activation_profile\": \"wider\", \"compression_profile\": \"moderate_squeeze\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"all\"}",
-    "variety_child_label": "activation_profile=wider, compression_profile=moderate_squeeze, execution_buffer=high, late_sample_guard=on, no_trade_window=avoid_dead_zone, paper_gate=balanced, session_profile=all",
-    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-probe-holdout_decay",
-    "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze contradiction probe",
-    "effective_mutation_fingerprint": "{\"compression_profile\": \"moderate_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"all\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
-    "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "mutations": {
-      "asset_universe": "BTC",
-      "compression_profile": "moderate_squeeze",
-      "doctrine_id": "breakout_volatility_expansion",
-      "execution_buffer": "high",
-      "late_sample_guard": "on",
-      "market_regime": "high_vol",
-      "no_trade_window": "avoid_dead_zone",
-      "paper_gate": "balanced",
-      "session_profile": "all",
-      "strategy_id": "bollinger_squeeze_breakout",
-      "timeframe": "15m",
-      "venue": "kalshi"
-    },
-    "proposal_origin": "contradiction_probe",
-    "source_names": [
-      "benchmark_contradiction_probe"
-    ],
-    "variety_child_id": "{\"compression_profile\": \"moderate_squeeze\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"all\"}",
-    "variety_child_label": "compression_profile=moderate_squeeze, execution_buffer=high, late_sample_guard=on, no_trade_window=avoid_dead_zone, paper_gate=balanced, session_profile=all",
-    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191",
-    "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation suggested child variety",
-    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"ema_pullback_long\"}",
-    "hypothesis": "Test the next uncovered child variety for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation: session stability filter.",
-    "mutations": {
-      "activation_profile": "wider",
-      "asset_universe": "BTC,ETH",
-      "doctrine_id": "trend_regime_following",
-      "market_regime": "trend",
-      "no_trade_window": "avoid_transition_window",
       "paper_gate": "balanced",
       "session_profile": "stability_window",
       "strategy_id": "ema_pullback_long",
@@ -99,19 +19,129 @@
       "venue": "binance",
       "volume_context_guard": "strict_participation"
     },
+    "proposal_origin": "contradiction_probe",
+    "source_names": [
+      "benchmark_contradiction_probe"
+    ],
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
+    "variety_child_label": "activation_profile=wider, execution_buffer=high, late_sample_guard=on, no_trade_window=avoid_dead_zone, paper_gate=balanced, session_profile=stability_window",
+    "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
+  },
+  {
+    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de",
+    "candidate_summary": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation contradiction probe",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"strategy_id\": \"ema_pullback_long\"}",
+    "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC,ETH",
+      "doctrine_id": "trend_regime_following",
+      "execution_buffer": "high",
+      "market_regime": "trend",
+      "no_trade_window": "avoid_dead_zone",
+      "paper_gate": "balanced",
+      "strategy_id": "ema_pullback_long",
+      "timeframe": "4h",
+      "venue": "binance",
+      "volume_context_guard": "strict_participation"
+    },
+    "proposal_origin": "contradiction_probe",
+    "source_names": [
+      "benchmark_contradiction_probe"
+    ],
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, execution_buffer=high, no_trade_window=avoid_dead_zone, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
+  },
+  {
+    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024",
+    "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window contradiction probe",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"compression_profile\": \"moderate_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+    "hypothesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "compression_profile": "moderate_squeeze",
+      "doctrine_id": "breakout_volatility_expansion",
+      "execution_buffer": "high",
+      "late_sample_guard": "on",
+      "market_regime": "high_vol",
+      "no_trade_window": "avoid_dead_zone",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "bollinger_squeeze_breakout",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_origin": "contradiction_probe",
+    "source_names": [
+      "benchmark_contradiction_probe"
+    ],
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"compression_profile\": \"moderate_squeeze\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "activation_profile=wider, compression_profile=moderate_squeeze, execution_buffer=high, late_sample_guard=on, no_trade_window=avoid_dead_zone, paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
+  },
+  {
+    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed",
+    "candidate_summary": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window suggested child variety",
+    "effective_mutation_fingerprint": "{\"compression_profile\": \"tight_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"late_sample_guard\": \"off\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+    "hypothesis": "Test the next uncovered child variety for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window: session stability filter.",
+    "mutations": {
+      "asset_universe": "BTC",
+      "compression_profile": "tight_squeeze",
+      "doctrine_id": "breakout_volatility_expansion",
+      "late_sample_guard": "off",
+      "market_regime": "high_vol",
+      "no_trade_window": "avoid_transition_window",
+      "paper_gate": "balanced",
+      "session_profile": "stability_window",
+      "strategy_id": "bollinger_squeeze_breakout",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
     "proposal_origin": "variety_backlog",
     "source_names": [
       "variety_backlog"
     ],
-    "variety_child_id": "{\"activation_profile\": \"wider\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
-    "variety_child_label": "activation_profile=wider, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window",
-    "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
+    "variety_child_id": "{\"compression_profile\": \"tight_squeeze\", \"late_sample_guard\": \"off\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
+    "variety_child_label": "compression_profile=tight_squeeze, late_sample_guard=off, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
   },
   {
-    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253",
-    "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-fc8d511be5 suggested child variety",
-    "effective_mutation_fingerprint": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"quality_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-    "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-fc8d511be5: drawdown guard plus quality filter.",
+    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-1c5cc0b50f",
+    "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253 suggested child variety",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253: late sample guard plus session filter.",
+    "mutations": {
+      "activation_profile": "adaptive",
+      "asset_universe": "BTC",
+      "chase_policy": "no_chase_after_crowded_good_news",
+      "doctrine_id": "breakout_volatility_expansion",
+      "drawdown_guard": "high",
+      "execution_buffer": "high",
+      "follow_through_profile": "delayed_confirmation",
+      "late_sample_guard": "on",
+      "market_regime": "high_vol",
+      "no_trade_window": "avoid_transition_window",
+      "paper_gate": "strict",
+      "session_profile": "late_cycle_filter",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_origin": "variety_backlog",
+    "source_names": [
+      "variety_backlog"
+    ],
+    "variety_child_id": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\"}",
+    "variety_child_label": "activation_profile=adaptive, chase_policy=no_chase_after_crowded_good_news, drawdown_guard=high, execution_buffer=high, follow_through_profile=delayed_confirmation, late_sample_guard=on, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=late_cycle_filter",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+  },
+  {
+    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-962498bfe5",
+    "candidate_summary": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253 suggested child variety",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "hypothesis": "Test the next uncovered child variety for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253: session stability filter.",
     "mutations": {
       "activation_profile": "adaptive",
       "asset_universe": "BTC",
@@ -123,7 +153,7 @@
       "market_regime": "high_vol",
       "no_trade_window": "avoid_transition_window",
       "paper_gate": "strict",
-      "session_profile": "quality_window",
+      "session_profile": "stability_window",
       "strategy_id": "breakout_open_interest_confirmation",
       "timeframe": "15m",
       "venue": "kalshi"
@@ -132,76 +162,48 @@
     "source_names": [
       "variety_backlog"
     ],
-    "variety_child_id": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"quality_window\"}",
-    "variety_child_label": "activation_profile=adaptive, chase_policy=no_chase_after_crowded_good_news, drawdown_guard=high, execution_buffer=high, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=quality_window",
+    "variety_child_id": "{\"activation_profile\": \"adaptive\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"drawdown_guard\": \"high\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\"}",
+    "variety_child_label": "activation_profile=adaptive, chase_policy=no_chase_after_crowded_good_news, drawdown_guard=high, execution_buffer=high, follow_through_profile=delayed_confirmation, no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-7db8188d54",
-    "candidate_summary": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7 suggested child variety",
-    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-    "hypothesis": "Test the next uncovered child variety for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7: late sample guard plus session filter.",
+    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7",
+    "candidate_summary": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal psychology mutation",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "hypothesis": "Convert the psychology overlay into a no-chase, delayed-confirmation child so crowded good-news continuation is not treated as immediate breakout edge.",
     "mutations": {
       "activation_profile": "wider",
       "asset_universe": "BTC",
       "chase_policy": "no_chase_after_crowded_good_news",
       "doctrine_id": "breakout_volatility_expansion",
       "follow_through_profile": "delayed_confirmation",
-      "late_sample_guard": "on",
       "market_regime": "trend",
       "paper_gate": "balanced",
-      "session_profile": "late_cycle_filter",
       "strategy_id": "breakout_open_interest_confirmation",
       "timeframe": "15m",
       "venue": "kalshi"
     },
-    "proposal_origin": "variety_backlog",
+    "proposal_origin": "psychology_pattern_map",
     "source_names": [
-      "variety_backlog"
+      "psychology_pattern_regime_map"
     ],
-    "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
-    "variety_child_label": "activation_profile=wider, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, late_sample_guard=on, paper_gate=balanced, session_profile=late_cycle_filter",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-1353cb3ab6",
-    "candidate_summary": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb-holdout_decay psychology mutation",
-    "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase",
+    "candidate_summary": "btc-15m-momentum-breakout-structure psychology mutation",
+    "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"trend\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
     "hypothesis": "Convert the psychology overlay into a no-chase, delayed-confirmation child so crowded good-news continuation is not treated as immediate breakout edge.",
     "mutations": {
       "asset_universe": "BTC",
       "chase_policy": "no_chase_after_crowded_good_news",
       "doctrine_id": "breakout_volatility_expansion",
       "follow_through_profile": "delayed_confirmation",
-      "late_sample_guard": "on",
-      "market_regime": "high_vol",
-      "paper_gate": "balanced",
+      "market_regime": "trend",
+      "paper_gate": "strict",
       "strategy_id": "breakout_open_interest_confirmation",
-      "timeframe": "15m",
-      "venue": "kalshi",
-      "volume_context_guard": "thin_filter"
-    },
-    "proposal_origin": "psychology_pattern_map",
-    "source_names": [
-      "psychology_pattern_regime_map"
-    ],
-    "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
-    "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, late_sample_guard=on, paper_gate=balanced",
-    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
-  },
-  {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700",
-    "candidate_summary": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_w-c27c34dead-sparse_signal psychology mutation",
-    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"risk_first_asymmetric_capture\", \"event_interpretation_policy\": \"wait_for_follow_through\", \"market_regime\": \"event_driven\", \"paper_gate\": \"balanced\", \"strategy_id\": \"funding_mean_revert\"}",
-    "hypothesis": "Convert the psychology overlay into a delayed event-interpretation child so macro/event setups stay abstinent until follow-through proves the regime.",
-    "mutations": {
-      "activation_profile": "wider",
-      "asset_universe": "BTC",
-      "doctrine_id": "risk_first_asymmetric_capture",
-      "event_interpretation_policy": "wait_for_follow_through",
-      "market_regime": "event_driven",
-      "paper_gate": "balanced",
-      "strategy_id": "funding_mean_revert",
       "timeframe": "15m",
       "venue": "kalshi"
     },
@@ -209,8 +211,8 @@
     "source_names": [
       "psychology_pattern_regime_map"
     ],
-    "variety_child_id": "{\"activation_profile\": \"wider\", \"event_interpretation_policy\": \"wait_for_follow_through\", \"paper_gate\": \"balanced\"}",
-    "variety_child_label": "activation_profile=wider, event_interpretation_policy=wait_for_follow_through, paper_gate=balanced",
-    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"risk_first_asymmetric_capture\", \"regime\": \"event_driven\", \"strategy\": \"funding_mean_revert\"}"
+    "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"strict\"}",
+    "variety_child_label": "chase_policy=no_chase_after_crowded_good_news, follow_through_profile=delayed_confirmation, paper_gate=strict",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
   }
 ]

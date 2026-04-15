@@ -43,10 +43,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253-sparse_signal
+## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-962498bfe5-sparse_signal
 
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57961d6253-probe-sparse_signal`
+- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-962498bfe5`
+- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-962498bfe5-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
