@@ -1,0 +1,127 @@
+{
+  "asset_universe": "BTC",
+  "bridge_version": "crypto-bridge.v1",
+  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
+  "contract_count": 20448,
+  "covered_contract_count": 20447,
+  "data_mode": "contract_window_backtest",
+  "doctrine_id": "breakout_volatility_expansion",
+  "eligibility_status": "eligible_for_boundary_promotion",
+  "generated_at": "1776255498812722600",
+  "holdout_profitability_score": 0.4086,
+  "market_regime": "high_vol",
+  "max_drawdown": 0.99,
+  "metric_name": "profitability_score",
+  "minimum_trade_count": 25,
+  "mutations": {
+    "asset_universe": "BTC",
+    "compression_profile": "tight_squeeze",
+    "doctrine_id": "breakout_volatility_expansion",
+    "late_sample_guard": "off",
+    "market_regime": "high_vol",
+    "paper_gate": "balanced",
+    "session_profile": "squeeze_release_window",
+    "strategy_id": "bollinger_squeeze_breakout",
+    "timeframe": "15m",
+    "venue": "kalshi"
+  },
+  "paper_trade_readiness": 0.048,
+  "primary_boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
+  "primary_mechanism": "Backtested on 66 active BTC 15m contract decisions across 20447 covered windows.",
+  "profitability_score": 0.4497,
+  "promotion_candidate_kind": "benchmark_grounded_boundary",
+  "recommended_next_step": "run_contradiction_probe",
+  "regime_stats": {
+    "high_vol": {
+      "avg_return": -0.1006,
+      "trade_count": 66,
+      "win_rate": 0.4697
+    }
+  },
+  "report_paths": [
+    "artifacts/backtests/heavy_backtest_summary.json"
+  ],
+  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
+  "sharpe_ratio": -0.8188,
+  "source_benchmark": "backtest_benchmark",
+  "strategy_id": "bollinger_squeeze_breakout",
+  "stress_resilience": 0.0,
+  "stress_stats": {
+    "base": {
+      "avg_return": -0.1006,
+      "profitability_score": 0.4497,
+      "trade_count": 66,
+      "trade_count_gate_pass": true
+    },
+    "elevated_fees": {
+      "avg_return": -0.1406,
+      "profitability_score": 0.4297,
+      "trade_count": 66,
+      "trade_count_gate_pass": true
+    },
+    "fee_and_slippage": {
+      "avg_return": -0.1806,
+      "profitability_score": 0.4097,
+      "trade_count": 66,
+      "trade_count_gate_pass": true
+    }
+  },
+  "timeframe": "15m",
+  "trade_count": 66,
+  "trade_count_gate_pass": true,
+  "venue": "kalshi",
+  "walk_forward_consistency": 0.4,
+  "walk_forward_stats": [
+    {
+      "avg_return": 0.0,
+      "end_contract_id": "kxbtc15m-20251013-1400",
+      "profitability_score": 0.0,
+      "segment_id": "wf-1",
+      "start_contract_id": "kxbtc15m-20250901-0000",
+      "trade_count": 0,
+      "trade_count_gate_pass": false,
+      "win_rate": 0.0
+    },
+    {
+      "avg_return": 0.3446,
+      "end_contract_id": "kxbtc15m-20251125-0415",
+      "profitability_score": 0.6723,
+      "segment_id": "wf-2",
+      "start_contract_id": "kxbtc15m-20251013-1415",
+      "trade_count": 13,
+      "trade_count_gate_pass": true,
+      "win_rate": 0.6923
+    },
+    {
+      "avg_return": 0.0369,
+      "end_contract_id": "kxbtc15m-20260106-1830",
+      "profitability_score": 0.5185,
+      "segment_id": "wf-3",
+      "start_contract_id": "kxbtc15m-20251125-0430",
+      "trade_count": 13,
+      "trade_count_gate_pass": true,
+      "win_rate": 0.5385
+    },
+    {
+      "avg_return": -0.3477,
+      "end_contract_id": "kxbtc15m-20260218-0845",
+      "profitability_score": 0.3262,
+      "segment_id": "wf-4",
+      "start_contract_id": "kxbtc15m-20260106-1845",
+      "trade_count": 26,
+      "trade_count_gate_pass": true,
+      "win_rate": 0.3462
+    },
+    {
+      "avg_return": -0.1829,
+      "end_contract_id": "kxbtc15m-20260401-2345",
+      "profitability_score": 0.4086,
+      "segment_id": "wf-5",
+      "start_contract_id": "kxbtc15m-20260218-0900",
+      "trade_count": 14,
+      "trade_count_gate_pass": true,
+      "win_rate": 0.4286
+    }
+  ],
+  "win_rate": 0.4697
+}

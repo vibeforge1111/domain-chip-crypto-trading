@@ -1,0 +1,24 @@
+{
+  "after": {
+    "executed_candidate_count": 0,
+    "pending_data_count": 0,
+    "queue_count": 0,
+    "top_candidate_id": "",
+    "top_recommendation": "",
+    "top_status": ""
+  },
+  "before": {
+    "executed_candidate_count": 0,
+    "pending_data_count": 0,
+    "queue_count": 0,
+    "top_candidate_id": "",
+    "top_recommendation": "",
+    "top_status": ""
+  },
+  "duration_seconds": 0.171,
+  "finished_at": "2026-04-15T12:18:19.929465Z",
+  "loop_kind": "paper_trade",
+  "material_change": false,
+  "material_reasons": [],
+  "started_at": "2026-04-15T12:18:19.758508Z"
+}

@@ -1,0 +1,251 @@
+{
+  "approved_source_count": 38,
+  "approved_waiting_packet_count": 0,
+  "candidate_rows": [],
+  "card_count": 24,
+  "futurelog_rows": [],
+  "next_to_research_count": 0,
+  "packet_count": 24,
+  "ready_for_source_ingest_count": 0,
+  "regime_intelligence_count": 0,
+  "regime_rows": [],
+  "style_rows": [
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "bet_sizing"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "box_breakout"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "candlestick_context"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "classical_charting"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "growth_breakout"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "intermarket_technical_analysis"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "macro_charting"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "macro_reflexivity"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "market_timing_exhaustion"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "momentum_breakout"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "position_sizing_psychology"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "price_action"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "price_action_context"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "quant_systems"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "short_term_trading"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "squeeze_momentum"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "systems_psychology"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "tape_reading_speculation"
+    },
+    {
+      "approved_source_count": 2,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "short_term_discretionary"
+    },
+    {
+      "approved_source_count": 3,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "execution"
+    },
+    {
+      "approved_source_count": 9,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "technical_analysis"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 24,
+      "coverage_status": "covered",
+      "packet_count": 24,
+      "style_family": "recursive_self_improvement"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 8,
+      "coverage_status": "covered",
+      "packet_count": 8,
+      "style_family": "volatility_analysis"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 10,
+      "coverage_status": "covered",
+      "packet_count": 10,
+      "style_family": "wyckoff_structure"
+    },
+    {
+      "approved_source_count": 3,
+      "card_count": 6,
+      "coverage_status": "covered",
+      "packet_count": 6,
+      "style_family": "trend_following"
+    }
+  ],
+  "top_futurelog_items": [],
+  "top_ready_candidates": [],
+  "top_regime_rows": [],
+  "top_undercovered_styles": [
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "bet_sizing"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "box_breakout"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "candlestick_context"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "classical_charting"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "growth_breakout"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "intermarket_technical_analysis"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "macro_charting"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "macro_reflexivity"
+    }
+  ],
+  "trader_candidate_count": 0
+}

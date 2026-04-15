@@ -1,0 +1,14 @@
+{
+  "added_cards": [
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-1890f889-sparse_signal.json",
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a11a4748-sparse_signal.json",
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a20bc9e9-sparse_signal.json"
+  ],
+  "added_count": 3,
+  "eligible_packet_count": 24,
+  "existing_card_count": 0,
+  "max_new_mutations_per_cycle": 3,
+  "packet_count": 24,
+  "remaining_packet_count": 21,
+  "required_source_count_per_mutation": 2
+}
