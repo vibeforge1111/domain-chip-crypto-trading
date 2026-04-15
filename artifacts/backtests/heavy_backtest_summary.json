@@ -4,8 +4,8 @@
   "candidate_count": 52,
   "contract_family": "btc_up_down_15m",
   "incremental_stats": {
-    "cached": 44,
-    "evaluated": 8
+    "cached": 52,
+    "evaluated": 0
   },
   "rows": [
     {
