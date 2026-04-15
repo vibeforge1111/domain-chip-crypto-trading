@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `97`
+- proposal_count: `100`
 
 ## Trend continuation with pullback confirmation
 
@@ -139,10 +139,10 @@ These are the current source-grounded mutation proposals.
 - benchmark_stress_resilience: `n/a`
 - thesis: Sizing should be treated as a second-stage mutation only after contract-level edge is stable under heavy backtest.
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-92e252e942
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90-sparse_signal`
-- card_id: `dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-42ffb9b5-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-92e252e942-sparse_signal`
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-stru-a9807f2d-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "trend", "strategy": "breakout_expansion_confirmation"}`
@@ -166,10 +166,10 @@ These are the current source-grounded mutation proposals.
 - benchmark_stress_resilience: `n/a`
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-250c5b2ea9
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-250c5b2ea9-sparse_signal`
-- card_id: `dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-48a7a320-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90-sparse_signal`
+- card_id: `dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-42ffb9b5-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "trend", "strategy": "breakout_expansion_confirmation"}`
@@ -179,7 +179,7 @@ These are the current source-grounded mutation proposals.
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
 - surprise_score: `0.0`
-- duplicate_of_proposal_id: `auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90-sparse_signal`
+- duplicate_of_proposal_id: `auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-92e252e942-sparse_signal`
 - source_names: `Recursive Flywheel, John Bollinger`
 - lineage_ready: `False`
 - status: `duplicate_effective_mutation`
@@ -193,10 +193,10 @@ These are the current source-grounded mutation proposals.
 - benchmark_stress_resilience: `n/a`
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-80dad0c29f
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-250c5b2ea9
 
-- proposal_id: `auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-80dad0c29f-sparse_signal`
-- card_id: `dc-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-a85cc5d5-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-250c5b2ea9-sparse_signal`
+- card_id: `dc-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-48a7a320-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "trend", "strategy": "breakout_expansion_confirmation"}`
@@ -206,7 +206,7 @@ These are the current source-grounded mutation proposals.
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
 - surprise_score: `0.0`
-- duplicate_of_proposal_id: `auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_-0fb64aac90-sparse_signal`
+- duplicate_of_proposal_id: `auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-92e252e942-sparse_signal`
 - source_names: `Recursive Flywheel, John Bollinger`
 - lineage_ready: `False`
 - status: `duplicate_effective_mutation`

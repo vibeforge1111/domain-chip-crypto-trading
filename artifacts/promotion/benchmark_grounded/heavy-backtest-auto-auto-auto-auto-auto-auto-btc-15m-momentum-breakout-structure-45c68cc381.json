@@ -1,13 +1,13 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-92e252e942",
+  "candidate_id": "auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-a9b080eeeb",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776268391805809300",
+  "generated_at": "1776268517241801700",
   "holdout_profitability_score": 0.0,
   "market_regime": "trend",
   "max_drawdown": 0.0,
@@ -19,8 +19,10 @@
     "chase_policy": "no_chase_after_crowded_good_news",
     "doctrine_id": "breakout_volatility_expansion",
     "follow_through_profile": "delayed_confirmation",
+    "late_sample_guard": "on",
     "market_regime": "trend",
     "paper_gate": "balanced",
+    "session_profile": "late_cycle_filter",
     "strategy_id": "breakout_open_interest_confirmation",
     "timeframe": "15m",
     "venue": "kalshi"
@@ -35,7 +37,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-92e252e942",
+  "run_id": "heavy-backtest-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-a9b080eeeb",
   "sharpe_ratio": 0.0,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "breakout_open_interest_confirmation",

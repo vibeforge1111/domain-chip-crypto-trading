@@ -7,7 +7,7 @@
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776268391805809300",
+  "generated_at": "1776268517241801700",
   "holdout_profitability_score": 0.48,
   "market_regime": "high_vol",
   "max_drawdown": 0.99,
