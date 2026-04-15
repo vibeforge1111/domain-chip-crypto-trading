@@ -1,0 +1,45 @@
+{
+  "benchmark_priority": "medium",
+  "card_id": "dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-39e57366-sparse_signal",
+  "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+  "doctrine_family": "trend_regime_following",
+  "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+  "ingested_from": "doctrine_packet",
+  "lineage_failures": [
+    "sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
+    "holdout_decay: The final holdout slice drops below break-even profitability after fees.",
+    "segment_instability: Walk-forward consistency is too low across chronological splits.",
+    "execution_fragility: Edge does not survive elevated fees and slippage cleanly.",
+    "drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate."
+  ],
+  "mechanism": "Generated from contradiction probe on auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation targeting sparse_signal failure surface.",
+  "mutation_template": {
+    "activation_profile": "wider",
+    "asset_universe": "BTC",
+    "doctrine_id": "trend_regime_following",
+    "market_regime": "trend",
+    "paper_gate": "balanced",
+    "strategy_id": "ema_pullback_long",
+    "timeframe": "15m",
+    "venue": "kalshi"
+  },
+  "no_trade_boundaries": [
+    "Skip conditions identified by the sparse_signal probe as contributing to poor performance."
+  ],
+  "proposal_id": "auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-sparse_signal",
+  "research_thesis": "The trend_regime_following doctrine with ema_pullback_long strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+  "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+  "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+  "setup_definition": "Apply sparse_signal-targeted mutation overrides to auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation signal logic and benchmark.",
+  "source_count": 2,
+  "source_ids": [
+    "autoloop_contradiction_probe",
+    "ed-seykota-principles-of-great-traders"
+  ],
+  "source_packet_id": "dp-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-39e57366-sparse_signal",
+  "status": "candidate_card",
+  "strategy_family": "ema_trend_continuation",
+  "target_contract_family": "btc_up_down_15m",
+  "title": "Auto-generated: sparse_signal fix for auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
+  "trader": "recursive_flywheel"
+}

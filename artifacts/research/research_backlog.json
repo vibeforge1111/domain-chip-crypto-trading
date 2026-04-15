@@ -2,21 +2,14 @@
   "approved_source_count": 38,
   "approved_waiting_packet_count": 0,
   "candidate_rows": [],
-  "card_count": 24,
+  "card_count": 40,
   "futurelog_rows": [],
   "next_to_research_count": 0,
-  "packet_count": 24,
+  "packet_count": 40,
   "ready_for_source_ingest_count": 0,
   "regime_intelligence_count": 0,
   "regime_rows": [],
   "style_rows": [
-    {
-      "approved_source_count": 1,
-      "card_count": 0,
-      "coverage_status": "approved_but_unpacketed",
-      "packet_count": 0,
-      "style_family": "bet_sizing"
-    },
     {
       "approved_source_count": 1,
       "card_count": 0,
@@ -159,16 +152,23 @@
     },
     {
       "approved_source_count": 1,
-      "card_count": 24,
+      "card_count": 1,
       "coverage_status": "covered",
-      "packet_count": 24,
+      "packet_count": 1,
+      "style_family": "bet_sizing"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 40,
+      "coverage_status": "covered",
+      "packet_count": 40,
       "style_family": "recursive_self_improvement"
     },
     {
       "approved_source_count": 1,
-      "card_count": 8,
+      "card_count": 17,
       "coverage_status": "covered",
-      "packet_count": 8,
+      "packet_count": 17,
       "style_family": "volatility_analysis"
     },
     {
@@ -180,9 +180,9 @@
     },
     {
       "approved_source_count": 3,
-      "card_count": 6,
+      "card_count": 12,
       "coverage_status": "covered",
-      "packet_count": 6,
+      "packet_count": 12,
       "style_family": "trend_following"
     }
   ],
@@ -190,13 +190,6 @@
   "top_ready_candidates": [],
   "top_regime_rows": [],
   "top_undercovered_styles": [
-    {
-      "approved_source_count": 1,
-      "card_count": 0,
-      "coverage_status": "approved_but_unpacketed",
-      "packet_count": 0,
-      "style_family": "bet_sizing"
-    },
     {
       "approved_source_count": 1,
       "card_count": 0,
@@ -245,6 +238,13 @@
       "coverage_status": "approved_but_unpacketed",
       "packet_count": 0,
       "style_family": "macro_reflexivity"
+    },
+    {
+      "approved_source_count": 1,
+      "card_count": 0,
+      "coverage_status": "approved_but_unpacketed",
+      "packet_count": 0,
+      "style_family": "market_timing_exhaustion"
     }
   ],
   "trader_candidate_count": 0

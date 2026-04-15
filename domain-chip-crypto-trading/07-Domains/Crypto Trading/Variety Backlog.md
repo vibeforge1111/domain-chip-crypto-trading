@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `16`
-- pending_family_count: `16`
+- family_count: `17`
+- pending_family_count: `17`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
@@ -13,7 +13,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `3`
-- pending_proposal_ids: `auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal`
+- pending_proposal_ids: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal`
 - pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
@@ -166,7 +166,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `1`
-- pending_proposal_ids: `auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal`
+- pending_proposal_ids: `auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-sparse_signal`
 - pending_child_labels: `activation_profile=wider, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`

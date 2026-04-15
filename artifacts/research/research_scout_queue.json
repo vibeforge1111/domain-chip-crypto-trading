@@ -1,23 +1,7 @@
 {
   "generated_from": "artifacts/research/research_backlog.json",
-  "queue_count": 21,
+  "queue_count": 20,
   "rows": [
-    {
-      "expected_child_shapes": [],
-      "priority_score": 0.72,
-      "priority_tier": 2,
-      "queue_id": "style-bet_sizing",
-      "queue_kind": "undercovered_style",
-      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
-      "recommended_action": "packet_missing_style",
-      "source_names": [],
-      "status": "approved_but_unpacketed",
-      "style_families": [
-        "bet_sizing"
-      ],
-      "target_regimes": [],
-      "title": "bet_sizing"
-    },
     {
       "expected_child_shapes": [],
       "priority_score": 0.72,
@@ -344,22 +328,6 @@
       "expected_child_shapes": [],
       "priority_score": 0.72,
       "priority_tier": 2,
-      "queue_id": "style-bet_sizing",
-      "queue_kind": "undercovered_style",
-      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
-      "recommended_action": "packet_missing_style",
-      "source_names": [],
-      "status": "approved_but_unpacketed",
-      "style_families": [
-        "bet_sizing"
-      ],
-      "target_regimes": [],
-      "title": "bet_sizing"
-    },
-    {
-      "expected_child_shapes": [],
-      "priority_score": 0.72,
-      "priority_tier": 2,
       "queue_id": "style-box_breakout",
       "queue_kind": "undercovered_style",
       "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
@@ -531,6 +499,22 @@
       ],
       "target_regimes": [],
       "title": "position_sizing_psychology"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-price_action",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "price_action"
+      ],
+      "target_regimes": [],
+      "title": "price_action"
     }
   ]
 }

@@ -9,9 +9,9 @@
     ],
     "pending_proposal_count": 3,
     "pending_proposal_ids": [
-      "auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal-sparse_signal",
-      "auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-holdout_decay",
-      "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal"
+      "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal",
+      "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay",
+      "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal"
     ],
     "source_names": [
       "Recursive Flywheel",
@@ -272,7 +272,7 @@
     ],
     "pending_proposal_count": 1,
     "pending_proposal_ids": [
-      "auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal"
+      "auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-sparse_signal"
     ],
     "source_names": [
       "Recursive Flywheel",
@@ -285,6 +285,29 @@
     "target_contract_family": "btc_up_down_15m",
     "tested_child_count": 0,
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmarked_candidate_count": 0,
+    "contradiction_modes": [],
+    "doctrine_family": "risk_first_asymmetric_capture",
+    "pending_child_labels": [
+      "activation_profile=wider, paper_gate=balanced"
+    ],
+    "pending_proposal_count": 1,
+    "pending_proposal_ids": [
+      "auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough-sparse_signal"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Edward O. Thorp"
+    ],
+    "status": "uncovered_variety_pending",
+    "strategy_family": "asymmetric_capture",
+    "suggested_child_target_count": 0,
+    "suggested_child_targets": [],
+    "target_contract_family": "btc_up_down_15m",
+    "tested_child_count": 0,
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"risk_first_asymmetric_capture\", \"regime\": \"event_driven\", \"strategy\": \"asymmetric_capture\"}"
   },
   {
     "benchmarked_candidate_count": 4,
