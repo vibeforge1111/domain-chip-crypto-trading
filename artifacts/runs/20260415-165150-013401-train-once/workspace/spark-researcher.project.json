@@ -1,0 +1,88 @@
+{
+  "candidate_trials": [
+    {
+      "candidate_id": "baseline",
+      "candidate_summary": "Run the current experiment config.",
+      "hypothesis": "The current experiment config defines the local floor.",
+      "mutations": {}
+    }
+  ],
+  "commands": {
+    "autoloop": {
+      "args": [
+        "crypto-autoloop",
+        "run-once"
+      ],
+      "cwd": ".",
+      "kind": "train-once",
+      "log_name": "autoloop.log"
+    }
+  },
+  "eval_goal": "maximize",
+  "eval_metric": "win_rate",
+  "guardrails": {
+    "blocked_command_fragments": [
+      "shutdown",
+      "format",
+      "reg delete",
+      "Remove-Item",
+      "del /f",
+      "rm -rf"
+    ],
+    "consecutive_discard_limit": 3,
+    "max_loop_iterations": 8,
+    "require_clean_git_for_self_edit": true,
+    "require_human_approval_for_self_edit": true
+  },
+  "memory": {
+    "backend": "local"
+  },
+  "metrics": {
+    "win_rate": {
+      "kind": "float",
+      "pattern": "win_rate[\"']?:\\s*([0-9.]+)"
+    },
+    "walk_forward": {
+      "kind": "float",
+      "pattern": "walk_forward[\"']?:\\s*([0-9.]+)"
+    },
+    "trades": {
+      "kind": "int",
+      "pattern": "trades[\"']?:\\s*([0-9]+)"
+    }
+  },
+  "mutable_parameters": [],
+  "mutable_targets": [
+    "src",
+    "scripts",
+    "docs",
+    "autoloop",
+    "live"
+  ],
+  "project_name": "domain-chip-crypto-trading",
+  "project_root": ".",
+  "self_edit": {
+    "command": [],
+    "mutable_targets": [
+      "src",
+      "scripts",
+      "docs",
+      "autoloop",
+      "live"
+    ],
+    "prompt_preamble": "Keep the repo lightweight, transparent, and review-first."
+  },
+  "trainers": [
+    {
+      "compile_command": [
+        "python",
+        "trainer.py"
+      ],
+      "examples_path": "training_examples.jsonl",
+      "max_examples": 200,
+      "min_examples": 3,
+      "name": "default-compiler",
+      "recompile_every": 2
+    }
+  ]
+}

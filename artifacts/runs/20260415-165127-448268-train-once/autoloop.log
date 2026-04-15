@@ -1,0 +1,7 @@
+{
+  "cwd": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\runs\\20260415-165127-448268-train-once\\workspace",
+  "command": [
+    "crypto-autoloop",
+    "run-once"
+  ]
+}

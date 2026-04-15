@@ -1,12 +1,10 @@
 {
-  "generated_at": "2026-04-15T16:47:37.341802Z",
+  "generated_at": "2026-04-15T16:51:55.923195Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-brea-dfb1955f-holdout_decay",
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-14ae19a7-sparse_signal",
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-95f85476-sparse_signal"
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-76203b10-sparse_signal"
   ],
-  "packets_generated": 3,
+  "packets_generated": 1,
   "probes_analyzed": 52,
-  "skipped_duplicate_count": 49,
+  "skipped_duplicate_count": 51,
   "skipped_no_template_count": 0
 }

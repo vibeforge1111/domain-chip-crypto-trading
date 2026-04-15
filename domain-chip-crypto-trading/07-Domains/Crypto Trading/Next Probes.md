@@ -2,92 +2,12 @@
 
 This page turns the seeded catalog into an actionable next frontier.
 
-## auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-bd164cb4e6-sparse_signal
 
-- candidate_id: `auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter`
-- doctrine: `trend_regime_following`
-- strategy: `ema_pullback_long`
-- market_regime: `trend`
-- priority: `0.99`
-- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Probe Actions
-
-- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
-- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
-- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
-
-## mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay
-
-- candidate_id: `mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86`
-- doctrine: `trend_regime_following`
-- strategy: `ema_pullback_long`
-- market_regime: `trend`
-- priority: `0.99`
-- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Probe Actions
-
-- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
-- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
-- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
-
-## mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay
-
-- candidate_id: `mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba`
-- doctrine: `trend_regime_following`
-- strategy: `ema_pullback_long`
-- market_regime: `trend`
-- priority: `0.99`
-- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Probe Actions
-
-- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
-- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
-- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
-
-## mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay
-
-- candidate_id: `mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f`
-- doctrine: `trend_regime_following`
-- strategy: `ema_pullback_long`
-- market_regime: `trend`
-- priority: `0.99`
-- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Probe Actions
-
-- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
-- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
-- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
-
-## mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay
-
-- candidate_id: `mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8`
-- doctrine: `trend_regime_following`
-- strategy: `ema_pullback_long`
-- market_regime: `trend`
-- priority: `0.99`
-- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Probe Actions
-
-- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
-- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
-- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
-
-## mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal
-
-- candidate_id: `mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069`
-- doctrine: `mean_reversion_liquidity_reclaim`
-- strategy: `wedge_exhaustion_reversal`
-- market_regime: `range`
+- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-bd164cb4e6`
+- doctrine: `breakout_volatility_expansion`
+- strategy: `breakout_open_interest_confirmation`
+- market_regime: `high_vol`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
@@ -99,11 +19,27 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb-sparse_signal
+## baseline-sparse_signal
 
-- candidate_id: `mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb`
+- candidate_id: `baseline`
+- doctrine: `n/a`
+- strategy: `n/a`
+- market_regime: `n/a`
+- priority: `0.99`
+- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Probe Actions
+
+- sparse_signal: Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability.
+- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
+- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
+- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
+
+## auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal
+
+- candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm`
 - doctrine: `mean_reversion_liquidity_reclaim`
-- strategy: `wedge_exhaustion_reversal`
+- strategy: `range_reclaim_scalp`
 - market_regime: `range`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
@@ -114,13 +50,12 @@ This page turns the seeded catalog into an actionable next frontier.
 - holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad-sparse_signal
+## auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal
 
-- candidate_id: `mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad`
+- candidate_id: `auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm`
 - doctrine: `mean_reversion_liquidity_reclaim`
-- strategy: `wedge_exhaustion_reversal`
+- strategy: `range_reclaim_scalp`
 - market_regime: `range`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
@@ -131,4 +66,67 @@ This page turns the seeded catalog into an actionable next frontier.
 - holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
-- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
+
+## auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal
+
+- candidate_id: `auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm`
+- doctrine: `mean_reversion_liquidity_reclaim`
+- strategy: `range_reclaim_scalp`
+- market_regime: `range`
+- priority: `0.99`
+- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Probe Actions
+
+- sparse_signal: Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability.
+- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
+- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
+- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
+
+## auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal
+
+- candidate_id: `auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm`
+- doctrine: `mean_reversion_liquidity_reclaim`
+- strategy: `range_reclaim_scalp`
+- market_regime: `range`
+- priority: `0.99`
+- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Probe Actions
+
+- sparse_signal: Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability.
+- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
+- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
+- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
+
+## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window-sparse_signal
+
+- candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window`
+- doctrine: `breakout_volatility_expansion`
+- strategy: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
+- priority: `0.99`
+- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Probe Actions
+
+- sparse_signal: Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability.
+- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
+- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
+- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
+
+## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-sparse_signal
+
+- candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on`
+- doctrine: `breakout_volatility_expansion`
+- strategy: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
+- priority: `0.99`
+- why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Probe Actions
+
+- sparse_signal: Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability.
+- holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
+- segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
+- execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
