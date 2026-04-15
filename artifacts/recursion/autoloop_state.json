@@ -1,0 +1,10 @@
+{
+  "status": "idle",
+  "cycle_count": 0,
+  "last_cycle_finished_at": null,
+  "blocked_at": null,
+  "reason": null,
+  "paper_trade_queue_count": 0,
+  "noop_streak": 0,
+  "last_top_candidate_id": null
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "autoloop_id": "crypto-trading-autoloop",
+  "label": "Crypto Trading Autoloop",
+  "entrypoint": "python scripts/crypto_autoloop.py",
+  "runtime": {
+    "operating_model": "docs/CRYPTO_TRADING_AUTOLOOP.md",
+    "manifest": "docs/recursion/autoloop-manifest.json",
+    "policy": "docs/recursion/autoloop-policy.json",
+    "state": "artifacts/recursion/autoloop_state.json",
+    "journal": "artifacts/recursion/cycle_journal.jsonl",
+    "status_script": "scripts/describe_autoloop.py",
+    "supervisor": "scripts/run_autoloop_supervisor.py",
+    "watchtower_builder": "scripts/build_watchtower.py",
+    "vault_root": "domain-chip-crypto-trading/07-Domains/Crypto Trading"
+  },
+  "lanes": [
+    {
+      "id": "learning",
+      "operator_doc": "autoloop/lanes/learning.md",
+      "runner": "scripts/run_learning_loop.py",
+      "purpose": "Convert source-grounded research packets into doctrine cards.",
+      "inputs": [
+        "docs/research-ingest/*.json",
+        "docs/doctrine-packets/*.json"
+      ],
+      "outputs": [
+        "docs/doctrine-cards/*.json",
+        "artifacts/research/learning_loop_report.json"
+      ]
+    },
+    {
+      "id": "backtest",
+      "operator_doc": "autoloop/lanes/backtest.md",
+      "runner": "scripts/run_backtest_loop.py",
+      "purpose": "Benchmark doctrine-backed candidates, generate bridge packets, and refresh recursive queues.",
+      "inputs": [
+        "benchmarks/trading-crypto-candidate.json",
+        "docs/doctrine-cards/*.json",
+        "data/*.jsonl"
+      ],
+      "outputs": [
+        "artifacts/backtests/backtest_loop_report.json",
+        "artifacts/promotion/benchmark_grounded/*.json",
+        "artifacts/recursion/*.json"
+      ]
+    },
+    {
+      "id": "paper-trade",
+      "operator_doc": "autoloop/lanes/paper-trade.md",
+      "runner": "scripts/run_paper_trade_cycle.py",
+      "purpose": "Validate only bridge-approved candidates on slower outer validation data.",
+      "inputs": [
+        "artifacts/promotion/benchmark_grounded/*.json",
+        "data/paper_trade_*"
+      ],
+      "outputs": [
+        "artifacts/paper_trade/paper_trade_queue.json",
+        "artifacts/paper_trade/paper_trade_summary.json",
+        "artifacts/paper_trade/paper_trade_loop_report.json"
+      ]
+    },
+    {
+      "id": "supervisor",
+      "operator_doc": "autoloop/lanes/supervisor.md",
+      "runner": "scripts/run_autoloop_supervisor.py",
+      "purpose": "Schedule lanes, persist loop state, and stop when the worktree or policy says to stop.",
+      "inputs": [
+        "docs/recursion/autoloop-policy.json",
+        "artifacts/recursion/autoloop_state.json"
+      ],
+      "outputs": [
+        "artifacts/recursion/autoloop_state.json",
+        "artifacts/recursion/cycle_journal.jsonl"
+      ]
+    }
+  ],
+  "runbooks": [
+    {
+      "id": "first-cycle",
+      "path": "autoloop/runbooks/first-cycle.md"
+    },
+    {
+      "id": "daily-ops",
+      "path": "autoloop/runbooks/daily-ops.md"
+    }
+  ]
+}
