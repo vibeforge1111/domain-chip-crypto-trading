@@ -65,6 +65,7 @@ DEFAULT_POLICY = {
         ".obsidian",
         "artifacts/recursion/autoloop_state.json",
         "artifacts/recursion/cycle_journal.jsonl",
+        "spark-researcher.project.json",
     ],
     "loops": {
         "learning": {
