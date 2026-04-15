@@ -1,0 +1,22 @@
+{
+  "baseline_metric": 0.6327,
+  "reasons": [
+    "Top candidate WR: 63.3% \u2014 room for improvement via cross-mutation.",
+    "7 strategy families explored \u2014 variety gaps remain.",
+    "Walk-forward gate (>=0.8) blocks all current candidates \u2014 structural changes needed."
+  ],
+  "suggestions": [
+    {
+      "candidate_id": "suggest-cross-wedge_exhaustion_reversal-mean_reversion_liquidity_reclaim",
+      "candidate_summary": "Cross-pollinate top strategy (wedge_exhaustion_reversal) with runner-up doctrine (mean_reversion_liquidity_reclaim).",
+      "hypothesis": "Cross-mutation of the two best-performing candidates may combine their strengths.",
+      "mutations": {}
+    },
+    {
+      "candidate_id": "suggest-flip-bollinger_squeeze_breakout-mean_reversion_liquidity_reclaim",
+      "candidate_summary": "Apply best-performing doctrine to worst-performing strategy.",
+      "hypothesis": "If doctrine matters more than strategy, the worst performer may improve with the best doctrine.",
+      "mutations": {}
+    }
+  ]
+}
