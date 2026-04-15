@@ -14,8 +14,8 @@ This page mirrors the recursive-evolution guardrail packet.
 
 ## Self Edit Summary
 
-- evaluation_count: `0`
-- approved_count: `0`
+- evaluation_count: `1`
+- approved_count: `1`
 - deferred_count: `0`
 - rejected_count: `0`
 
