@@ -1,6 +1,26 @@
 {
   "after": {
     "benchmark": {
+      "candidate_count": 33,
+      "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
+      "top_holdout_profitability_score": 0.48,
+      "top_max_drawdown": 0.99,
+      "top_paper_trade_readiness": 0.048,
+      "top_profitability_score": 0.4497,
+      "top_recommended_next_step": "run_contradiction_probe",
+      "top_stress_resilience": 0.0,
+      "top_walk_forward_consistency": 0.4
+    },
+    "self_edit_audit": {
+      "approved_count": 1,
+      "deferred_count": 0,
+      "evaluation_count": 1,
+      "rejected_count": 0,
+      "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
+    }
+  },
+  "before": {
+    "benchmark": {
       "candidate_count": 25,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
       "top_holdout_profitability_score": 0.48,
@@ -19,33 +39,16 @@
       "top_approved_edit_id": null
     }
   },
-  "before": {
-    "benchmark": {
-      "candidate_count": 33,
-      "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
-      "top_holdout_profitability_score": 0.48,
-      "top_max_drawdown": 0.99,
-      "top_paper_trade_readiness": 0.048,
-      "top_profitability_score": 0.4497,
-      "top_recommended_next_step": "run_contradiction_probe",
-      "top_stress_resilience": 0.0,
-      "top_walk_forward_consistency": 0.4
-    },
-    "self_edit_audit": {
-      "approved_count": 0,
-      "deferred_count": 0,
-      "evaluation_count": 0,
-      "rejected_count": 0,
-      "top_approved_edit_id": null
-    }
-  },
   "commit_message": null,
-  "duration_seconds": 55.619,
-  "finished_at": "2026-04-15T18:07:26.897867Z",
+  "duration_seconds": 99.899,
+  "finished_at": "2026-04-15T18:14:15.568677Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
-    "candidate_count"
+    "candidate_count",
+    "evaluation_count",
+    "approved_count",
+    "top_approved_edit_id"
   ],
-  "started_at": "2026-04-15T18:06:31.278544Z"
+  "started_at": "2026-04-15T18:12:35.669668Z"
 }

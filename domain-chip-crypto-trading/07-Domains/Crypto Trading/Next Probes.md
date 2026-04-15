@@ -18,12 +18,12 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb-holdout_decay
+## auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay
 
-- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb`
-- doctrine: `breakout_volatility_expansion`
-- strategy: `breakout_open_interest_confirmation`
-- market_regime: `high_vol`
+- candidate_id: `auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter`
+- doctrine: `trend_regime_following`
+- strategy: `ema_pullback_long`
+- market_regime: `trend`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
@@ -51,9 +51,9 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-df8ec1ec2a-sparse_signal
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-cb5051ff0c-sparse_signal
 
-- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-df8ec1ec2a`
+- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-cb5051ff0c`
 - doctrine: `breakout_volatility_expansion`
 - strategy: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
