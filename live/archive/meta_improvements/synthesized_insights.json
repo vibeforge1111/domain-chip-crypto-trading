@@ -159,6 +159,197 @@
     "actionable": true
   },
   {
+    "insight": "Guard 'cr_wick_guard' improves WR by 0.246 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.7434,
+      "without_guard_avg_wr": 0.497,
+      "with_guard_count": 29,
+      "without_guard_count": 16,
+      "delta": 0.2464
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_down_in_downtrend' hurts WR by 0.036 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.6287,
+      "without_guard_avg_wr": 0.6646,
+      "with_guard_count": 11,
+      "without_guard_count": 34,
+      "delta": -0.036
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": false
+  },
+  {
+    "insight": "Guard 'volume_guard' improves WR by 0.331 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.9352,
+      "without_guard_avg_wr": 0.6044,
+      "with_guard_count": 7,
+      "without_guard_count": 38,
+      "delta": 0.3308
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_loose_setup' improves WR by 0.215 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.8036,
+      "without_guard_avg_wr": 0.5891,
+      "with_guard_count": 14,
+      "without_guard_count": 31,
+      "delta": 0.2146
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_downtrend_high_pos' improves WR by 0.050 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.7006,
+      "without_guard_avg_wr": 0.6502,
+      "with_guard_count": 5,
+      "without_guard_count": 40,
+      "delta": 0.0504
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'session_quality_filter' improves WR by 0.150 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.7258,
+      "without_guard_avg_wr": 0.5758,
+      "with_guard_count": 24,
+      "without_guard_count": 21,
+      "delta": 0.1501
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_atr_guard' hurts WR by 0.106 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.5781,
+      "without_guard_avg_wr": 0.6841,
+      "with_guard_count": 12,
+      "without_guard_count": 33,
+      "delta": -0.106
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": false
+  },
+  {
+    "insight": "Guard 'cr_bb_confirm' improves WR by 0.307 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.8946,
+      "without_guard_avg_wr": 0.5876,
+      "with_guard_count": 10,
+      "without_guard_count": 35,
+      "delta": 0.307
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_stoch_confirm' improves WR by 0.221 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.8326,
+      "without_guard_avg_wr": 0.6116,
+      "with_guard_count": 9,
+      "without_guard_count": 36,
+      "delta": 0.2209
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_obv_confirm' improves WR by 0.023 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.6771,
+      "without_guard_avg_wr": 0.6537,
+      "with_guard_count": 4,
+      "without_guard_count": 41,
+      "delta": 0.0234
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Guard 'cr_macd_confirm' improves WR by 0.075 on average",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "with_guard_avg_wr": 0.7226,
+      "without_guard_avg_wr": 0.6475,
+      "with_guard_count": 5,
+      "without_guard_count": 40,
+      "delta": 0.0751
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Regime 'compression_only' is productive: avg WR=0.620, 10 elite agents",
+    "type": "regime_insight",
+    "evidence": {
+      "regime": "compression_only",
+      "avg_wr": 0.6204,
+      "elite_count": 10,
+      "sample_size": 25
+    },
+    "confidence": 1.0,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
     "insight": "Strategy 'perturbation' produces highest avg WR (0.795)",
     "type": "strategy_pattern",
     "evidence": {
@@ -169,6 +360,49 @@
     "confidence": 0.8,
     "generation_discovered": 3,
     "last_validated": 3,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Strategy 'crossover' produces highest avg WR (0.803)",
+    "type": "strategy_pattern",
+    "evidence": {
+      "strategy": "crossover",
+      "avg_wr": 0.8034,
+      "sample_size": 8
+    },
+    "confidence": 0.8,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Regime 'trend,event_driven' is productive: avg WR=0.834, 4 elite agents",
+    "type": "regime_insight",
+    "evidence": {
+      "regime": "trend,event_driven",
+      "avg_wr": 0.8336,
+      "elite_count": 4,
+      "sample_size": 5
+    },
+    "confidence": 0.62,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Elite agents have 942+ trades (min observed)",
+    "type": "guard_effectiveness",
+    "evidence": {
+      "min_trades": 942,
+      "avg_trades": 1315.0,
+      "elite_count": 3
+    },
+    "confidence": 0.6,
+    "generation_discovered": 6,
+    "last_validated": 6,
     "times_validated": 1,
     "actionable": true
   },
@@ -184,6 +418,35 @@
     "confidence": 0.38,
     "generation_discovered": 3,
     "last_validated": 3,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Regime 'trend' is productive: avg WR=0.773, 2 elite agents",
+    "type": "regime_insight",
+    "evidence": {
+      "regime": "trend",
+      "avg_wr": 0.7729,
+      "elite_count": 2,
+      "sample_size": 3
+    },
+    "confidence": 0.38,
+    "generation_discovered": 6,
+    "last_validated": 6,
+    "times_validated": 1,
+    "actionable": true
+  },
+  {
+    "insight": "Avoid strategy 'dead_end_avoidance' \u2014 avg WR only 0.384",
+    "type": "dead_end",
+    "evidence": {
+      "strategy": "dead_end_avoidance",
+      "avg_wr": 0.3843,
+      "sample_size": 3
+    },
+    "confidence": 0.3,
+    "generation_discovered": 6,
+    "last_validated": 6,
     "times_validated": 1,
     "actionable": true
   }
