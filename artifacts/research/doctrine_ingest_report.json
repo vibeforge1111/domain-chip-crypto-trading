@@ -1,14 +1,13 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--4b223481-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--a06900c7-sparse_signal.json",
-    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-502baaf8-sparse_signal.json"
+    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--7df24931-sparse_signal.json",
+    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--dd8128c9-sparse_signal.json"
   ],
-  "added_count": 3,
-  "eligible_packet_count": 5,
-  "existing_card_count": 127,
+  "added_count": 2,
+  "eligible_packet_count": 2,
+  "existing_card_count": 132,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 132,
-  "remaining_packet_count": 2,
+  "packet_count": 134,
+  "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }

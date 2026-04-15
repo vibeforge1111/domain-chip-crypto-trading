@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `138`
+- proposal_count: `140`
 
 ## Trend continuation with pullback confirmation
 
@@ -148,7 +148,7 @@ These are the current source-grounded mutation proposals.
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "bollinger_squeeze_breakout"}`
 - variety_child_id: `{"paper_gate": "strict"}`
 - variety_child_label: `paper_gate=strict`
-- family_tested_child_count: `6`
+- family_tested_child_count: `10`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `high`
 - surprise_score: `0.81`
