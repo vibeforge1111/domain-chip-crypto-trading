@@ -1,29 +1,27 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-7db8188d54",
+  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-ba86215459",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776280867377716800",
+  "generated_at": "1776281232357382600",
   "holdout_profitability_score": 0.0,
-  "market_regime": "trend",
+  "market_regime": "high_vol",
   "max_drawdown": 0.0,
   "metric_name": "profitability_score",
   "minimum_trade_count": 25,
   "mutations": {
-    "activation_profile": "wider",
     "asset_universe": "BTC",
-    "chase_policy": "no_chase_after_crowded_good_news",
+    "compression_profile": "tight_squeeze",
     "doctrine_id": "breakout_volatility_expansion",
-    "follow_through_profile": "delayed_confirmation",
     "late_sample_guard": "on",
-    "market_regime": "trend",
+    "market_regime": "high_vol",
     "paper_gate": "balanced",
     "session_profile": "late_cycle_filter",
-    "strategy_id": "breakout_open_interest_confirmation",
+    "strategy_id": "bollinger_squeeze_breakout",
     "timeframe": "15m",
     "venue": "kalshi"
   },
@@ -37,10 +35,10 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-7db8188d54",
+  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-ba86215459",
   "sharpe_ratio": 0.0,
   "source_benchmark": "backtest_benchmark",
-  "strategy_id": "breakout_open_interest_confirmation",
+  "strategy_id": "bollinger_squeeze_breakout",
   "stress_resilience": 0.0,
   "stress_stats": {
     "base": {
