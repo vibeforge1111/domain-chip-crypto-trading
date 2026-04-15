@@ -2,7 +2,23 @@
 
 These are the tracked source-grounded trader doctrine packets that feed the card ingest lane.
 
-- doctrine_packet_count: `98`
+- doctrine_packet_count: `101`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psyc-e5f3f1036b
+
+- packet_id: `dp-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-2409f99c-sparse_signal`
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-2409f99c-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psyc-e5f3f1036b targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psyc-e5f3f1036b signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psycholog-a9b080eeeb
 
@@ -788,6 +804,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6c80dac70
+
+- packet_id: `dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--0d7e041b-sparse_signal`
+- card_id: `dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--0d7e041b-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6c80dac70 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6c80dac70 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e56230fb74
 
 - packet_id: `dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--18cc924a-sparse_signal`
@@ -801,6 +833,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
 - mechanism: Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e56230fb74 targeting sparse_signal failure surface.
 - setup_definition: Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e56230fb74 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78
+
+- packet_id: `dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--1d92d3f5-sparse_signal`
+- card_id: `dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--1d92d3f5-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-43b884be78 signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
