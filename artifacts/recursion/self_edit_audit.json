@@ -1,7 +1,7 @@
 {
-  "approved_count": 0,
+  "approved_count": 1,
   "deferred_count": 0,
-  "evaluation_count": 0,
+  "evaluation_count": 1,
   "rejected_count": 0,
-  "top_approved_edit_id": null
+  "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
 }
