@@ -7,7 +7,7 @@
   "data_mode": "contract_window_backtest",
   "doctrine_id": "mean_reversion_liquidity_reclaim",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776268023030417200",
+  "generated_at": "1776268134907831200",
   "holdout_profitability_score": 0.53,
   "market_regime": "range",
   "max_drawdown": 0.7961,

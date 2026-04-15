@@ -67,12 +67,12 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-sparse_signal
+## self-edit-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43-holdout_decay
 
-- parent_candidate_id: `mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069`
-- child_candidate_id: `mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069-probe-sparse_signal`
+- parent_candidate_id: `auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43`
+- child_candidate_id: `auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43-probe-holdout_decay`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`

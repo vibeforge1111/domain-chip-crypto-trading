@@ -1,13 +1,13 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-a4154b065c",
+  "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-bd164cb4e6",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776268023030417200",
+  "generated_at": "1776268134907831200",
   "holdout_profitability_score": 0.0,
   "market_regime": "high_vol",
   "max_drawdown": 0.99,
@@ -24,7 +24,7 @@
     "market_regime": "high_vol",
     "no_trade_window": "avoid_transition_window",
     "paper_gate": "strict",
-    "session_profile": "stability_window",
+    "session_profile": "quality_window",
     "strategy_id": "breakout_open_interest_confirmation",
     "timeframe": "15m",
     "venue": "kalshi"
@@ -45,7 +45,7 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-a4154b065c",
+  "run_id": "heavy-backtest-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-bd164cb4e6",
   "sharpe_ratio": -1.8146,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "breakout_open_interest_confirmation",
