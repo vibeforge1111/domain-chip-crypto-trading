@@ -17,7 +17,7 @@
 
 ## Current Practical Read
 
-- current benchmark leader: `btc-15m-sizing-overlay-psychology_wait_followthrough`
+- current benchmark leader: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze`
 - current backtest loop bias: `n/a`
 - current paper-trade queue: `0`
 

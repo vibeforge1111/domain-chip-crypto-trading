@@ -12,7 +12,7 @@ This page is the shortest honest read on the current crypto trading system.
 ## What Is Real Now
 
 - active benchmark candidate count: `52`
-- current top benchmark candidate: `btc-15m-sizing-overlay-psychology_wait_followthrough`
+- current top benchmark candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze`
 - validated regime families: `n/a` / `n/a`
 - classified event candidates: `n/a` / `n/a`
 - contradiction, mutation, and self-edit lanes are operational

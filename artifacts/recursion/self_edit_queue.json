@@ -22,22 +22,20 @@
   },
   {
     "allowed_edits": [
-      "activation_profile.wider",
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-probe-sparse_signal",
+    "child_candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-probe-holdout_decay",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_signal",
+    "edit_id": "self-edit-mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86-holdout_decay",
     "failure_modes": [
-      "sparse_signal",
       "holdout_decay",
       "segment_instability",
       "execution_fragility",
       "drawdown_excess"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter",
+    "parent_candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-de5c86",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
@@ -45,21 +43,20 @@
   },
   {
     "allowed_edits": [
-      "activation_profile.wider",
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-probe-sparse_signal",
+    "child_candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-probe-holdout_decay",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
+    "edit_id": "self-edit-mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba-holdout_decay",
     "failure_modes": [
-      "sparse_signal",
       "holdout_decay",
       "segment_instability",
-      "execution_fragility"
+      "execution_fragility",
+      "drawdown_excess"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+    "parent_candidate_id": "mut-ablate-auto-trend-volume-filtered-activation_pr-f32eba",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
@@ -67,21 +64,20 @@
   },
   {
     "allowed_edits": [
-      "activation_profile.wider",
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-probe-sparse_signal",
+    "child_candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-probe-holdout_decay",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal",
+    "edit_id": "self-edit-mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f-holdout_decay",
     "failure_modes": [
-      "sparse_signal",
       "holdout_decay",
       "segment_instability",
-      "execution_fragility"
+      "execution_fragility",
+      "drawdown_excess"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm",
+    "parent_candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-3af36f",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
@@ -89,21 +85,20 @@
   },
   {
     "allowed_edits": [
-      "activation_profile.wider",
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-probe-sparse_signal",
+    "child_candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-probe-holdout_decay",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
+    "edit_id": "self-edit-mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8-holdout_decay",
     "failure_modes": [
-      "sparse_signal",
       "holdout_decay",
       "segment_instability",
-      "execution_fragility"
+      "execution_fragility",
+      "drawdown_excess"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+    "parent_candidate_id": "mut-ablate-auto-trend-volume-filtered-no_trade_wind-e072b8",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
@@ -111,21 +106,20 @@
   },
   {
     "allowed_edits": [
-      "activation_profile.wider",
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-probe-sparse_signal",
+    "child_candidate_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-probe-holdout_decay",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal",
+    "edit_id": "self-edit-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-holdout_decay",
     "failure_modes": [
-      "sparse_signal",
       "holdout_decay",
       "segment_instability",
-      "execution_fragility"
+      "execution_fragility",
+      "drawdown_excess"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm",
+    "parent_candidate_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",

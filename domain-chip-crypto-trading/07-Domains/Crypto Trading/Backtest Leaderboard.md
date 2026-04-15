@@ -6,44 +6,6 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - contract_family: `btc_up_down_15m`
 - candidate_count: `52`
 
-## btc-15m-sizing-overlay-psychology_wait_followthrough
-
-- doctrine_id: `risk_first_asymmetric_capture`
-- strategy_id: `ema_pullback_long`
-- market_regime: `trend`
-- profitability_score: `0.4657`
-- sharpe_ratio: `-0.7029`
-- max_drawdown: `0.99`
-- paper_trade_readiness: `0.048`
-- contract_count: `21696`
-- covered_contract_count: `21695`
-- trade_count: `105`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.5726`
-- walk_forward_consistency: `0.4`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-
-### Regime Segments
-
-- trend: trades=`105` win_rate=`0.4857` avg_return=`-0.0686`
-
-### Walk-Forward Segments
-
-- wf-1: trades=`10` profitability=`0.28` win_rate=`0.3` gate=`True`
-- wf-2: trades=`26` profitability=`0.4031` win_rate=`0.4231` gate=`True`
-- wf-3: trades=`10` profitability=`0.68` win_rate=`0.7` gate=`True`
-- wf-4: trades=`32` profitability=`0.4175` win_rate=`0.4375` gate=`True`
-- wf-5: trades=`27` profitability=`0.5726` win_rate=`0.5926` gate=`True`
-
-### Stress Scenarios
-
-- base: trades=`105` profitability=`0.4657` avg_return=`-0.0686` gate=`True`
-- elevated_fees: trades=`105` profitability=`0.4457` avg_return=`-0.1086` gate=`True`
-- fee_and_slippage: trades=`105` profitability=`0.4257` avg_return=`-0.1486` gate=`True`
-
 ## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze
 
 - doctrine_id: `breakout_volatility_expansion`
@@ -273,6 +235,44 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - fee_and_slippage: trades=`158` profitability=`0.4084` avg_return=`-0.1833` gate=`True`
 
 ## mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0
+
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
+- profitability_score: `0.4484`
+- sharpe_ratio: `-1.301`
+- max_drawdown: `0.99`
+- paper_trade_readiness: `0.048`
+- contract_count: `21696`
+- covered_contract_count: `21695`
+- trade_count: `158`
+- minimum_trade_count: `25`
+- trade_count_gate_pass: `True`
+- holdout_profitability_score: `0.4467`
+- walk_forward_consistency: `0.4`
+- stress_resilience: `0.0`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+
+### Regime Segments
+
+- high_vol: trades=`158` win_rate=`0.4684` avg_return=`-0.1033`
+
+### Walk-Forward Segments
+
+- wf-1: trades=`6` profitability=`0.1467` win_rate=`0.1667` gate=`True`
+- wf-2: trades=`26` profitability=`0.5954` win_rate=`0.6154` gate=`True`
+- wf-3: trades=`21` profitability=`0.5514` win_rate=`0.5714` gate=`True`
+- wf-4: trades=`90` profitability=`0.4022` win_rate=`0.4222` gate=`True`
+- wf-5: trades=`15` profitability=`0.4467` win_rate=`0.4667` gate=`True`
+
+### Stress Scenarios
+
+- base: trades=`158` profitability=`0.4484` avg_return=`-0.1033` gate=`True`
+- elevated_fees: trades=`158` profitability=`0.4284` avg_return=`-0.1433` gate=`True`
+- fee_and_slippage: trades=`158` profitability=`0.4084` avg_return=`-0.1833` gate=`True`
+
+## mut-ablate-auto-breakout-impulse-squeeze-compressio-b4ddae
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `bollinger_squeeze_breakout`
