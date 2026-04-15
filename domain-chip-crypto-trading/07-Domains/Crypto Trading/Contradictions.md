@@ -119,29 +119,6 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-5: profitability=`0.3133` avg_return=`-0.3733` trades=`6`
 - wf-2: profitability=`0.355` avg_return=`-0.29` trades=`8`
 
-## auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `breakout_open_interest_confirmation`
-- priority: `0.99`
-- holdout_profitability_score: `0.23`
-- walk_forward_consistency: `0.0`
-- stress_resilience: `0.0`
-- max_drawdown: `0.99`
-- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Failure Modes
-
-- holdout_decay: The final holdout slice drops below break-even profitability after fees.
-- segment_instability: Walk-forward consistency is too low across chronological splits.
-- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
-- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
-
-### Weakest Segments
-
-- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
-- wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
-
 ## mut-ablate-auto-wedge-guarded-drawdown_guard=high-r-ad4069
 
 - doctrine_id: `mean_reversion_liquidity_reclaim`
@@ -167,6 +144,30 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-2: profitability=`0.4506` avg_return=`-0.0988` trades=`17`
 
 ## mut-ablate-auto-wedge-guarded-reversal_confirmation-138fcb
+
+- doctrine_id: `mean_reversion_liquidity_reclaim`
+- strategy_id: `wedge_exhaustion_reversal`
+- priority: `0.99`
+- holdout_profitability_score: `0.4011`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.3333`
+- max_drawdown: `0.99`
+- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Failure Modes
+
+- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
+- holdout_decay: The final holdout slice drops below break-even profitability after fees.
+- segment_instability: Walk-forward consistency is too low across chronological splits.
+- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
+
+### Weakest Segments
+
+- wf-5: profitability=`0.4011` avg_return=`-0.1979` trades=`19`
+- wf-3: profitability=`0.4031` avg_return=`-0.1938` trades=`26`
+
+## mut-ablate-auto-wedge-guarded-reversal_confirmation-d6abad
 
 - doctrine_id: `mean_reversion_liquidity_reclaim`
 - strategy_id: `wedge_exhaustion_reversal`
