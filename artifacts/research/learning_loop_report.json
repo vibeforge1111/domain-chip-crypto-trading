@@ -1,11 +1,13 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--e37cb37e-sparse_signal.json"
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7993749b-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-re-ee569cbb-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compre-a02e38ae-holdout_decay.json"
     ],
-    "added_count": 1,
+    "added_count": 3,
     "approved_waiting_packet_count": 0,
-    "card_count": 115,
+    "card_count": 118,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
@@ -15,13 +17,13 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 114,
-    "doctrine_packets_generated": 1,
-    "pending_packet_count": 1,
+    "card_count": 115,
+    "doctrine_packets_generated": 3,
+    "pending_packet_count": 3,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 2.762,
-  "finished_at": "2026-04-15T16:56:18.213562Z",
+  "duration_seconds": 3.158,
+  "finished_at": "2026-04-15T17:00:52.518258Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
@@ -30,15 +32,15 @@
     "added_count"
   ],
   "reconciliation": {
-    "card_count": 115,
+    "card_count": 118,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 115,
+    "packet_count": 118,
     "repair_mode": true,
     "repaired_cards": [],
     "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-15T16:56:15.451878Z"
+  "started_at": "2026-04-15T17:00:49.360184Z"
 }
