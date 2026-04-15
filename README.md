@@ -56,9 +56,16 @@ spark-researcher autoloop --command autoloop --rounds 3
 
 # Check status
 spark-researcher summary
+
+# Other useful commands
+spark-researcher failures          # View failure surfaces
+spark-researcher beliefs           # View accumulated beliefs
+spark-researcher candidates        # List candidate trials
 ```
 - Wraps the tri-loop in a research harness with candidate suggestion, metric tracking, and trace logging
 - Config: `spark-researcher.project.json`
+- **Important**: The researcher uses `scripts/researcher_run.py` as its run command. This wrapper runs `crypto-autoloop run-once` from the project root (not the researcher's isolated workspace) and emits metrics in a parseable format. If you modify how metrics are produced, update this wrapper.
+- The config ships with a baseline-only candidate and no `mutable_parameters`. The autoloop discovers candidates internally through its doctrine/mutation pipeline — the researcher observes and tracks metrics rather than injecting its own mutations.
 
 ### Status & Diagnostics
 ```bash
@@ -75,7 +82,9 @@ src/domain_chip_crypto_trading/
   cli.py            # Deterministic evaluator with doctrine scoring
   autoloop.py       # Tri-loop orchestrator CLI
 
-scripts/            # 30 autoloop scripts (supervisor, learning, backtest, forge, data prep)
+scripts/
+  researcher_run.py   # Spark Researcher wrapper (runs autoloop, emits metrics)
+  ...                 # 30 autoloop scripts (supervisor, learning, backtest, forge, data prep)
 
 live/
   live_paper_trader.py          # Real-time Binance observer pattern
