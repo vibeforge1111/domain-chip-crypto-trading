@@ -1,13 +1,12 @@
 {
   "added_cards": [
-    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--8579d202-sparse_signal.json",
-    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--e4bddc6e-sparse_signal.json"
+    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--7fce9b87-sparse_signal.json"
   ],
-  "added_count": 2,
-  "eligible_packet_count": 2,
-  "existing_card_count": 170,
+  "added_count": 1,
+  "eligible_packet_count": 1,
+  "existing_card_count": 172,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 172,
+  "packet_count": 173,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }

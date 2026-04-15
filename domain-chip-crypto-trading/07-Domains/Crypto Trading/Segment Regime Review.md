@@ -79,16 +79,16 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191 / wf-3
+## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed / wf-1
 
-- claimed_regime_id: `trend_continuation_greed`
-- candidate_market_regime: `trend`
+- claimed_regime_id: `fear_shock_high_alert`
+- candidate_market_regime: `high_vol`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.23`
-- weakest_avg_return: `-0.54`
-- weakest_trade_count: `4`
-- segment_start: `n/a`
-- segment_end: `n/a`
+- weakest_profitability_score: `0.1467`
+- weakest_avg_return: `-0.7067`
+- weakest_trade_count: `6`
+- segment_start: `2025-09-01T00:00`
+- segment_end: `2025-10-16T04:30`
 - strongest_overlap_pack_id: `n/a`
 - strongest_overlap_regime_id: `n/a`
 - strongest_overlap_validation_status: `n/a`
