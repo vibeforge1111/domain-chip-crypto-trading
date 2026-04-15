@@ -66,6 +66,7 @@ DEFAULT_POLICY = {
         "artifacts/recursion/autoloop_state.json",
         "artifacts/recursion/cycle_journal.jsonl",
         "spark-researcher.project.json",
+        "spark-chip.json",
     ],
     "loops": {
         "learning": {
