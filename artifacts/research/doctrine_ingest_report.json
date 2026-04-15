@@ -1,14 +1,14 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-da6e1b96-sparse_signal.json",
-    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--215e8b6f-sparse_signal.json",
-    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d55e7cd6-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psyc-a85cc5d5-sparse_signal.json",
+    "dc-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psycholo-eac6eb15-sparse_signal.json",
+    "dc-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology-c72b6b38-sparse_signal.json"
   ],
   "added_count": 3,
-  "eligible_packet_count": 3,
-  "existing_card_count": 77,
+  "eligible_packet_count": 4,
+  "existing_card_count": 80,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 80,
-  "remaining_packet_count": 0,
+  "packet_count": 84,
+  "remaining_packet_count": 1,
   "required_source_count_per_mutation": 2
 }

@@ -7,6 +7,29 @@
       "walk_forward_splits": 6
     },
     "benchmark_priority": "medium",
+    "proposal_id": "auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse-e73cf94755-sparse_signal",
+    "required_metrics": {
+      "max_drawdown_max": null,
+      "paper_trade_readiness_min": null,
+      "profitability_score_min": null,
+      "sharpe_ratio_min": null
+    },
+    "status": "queued_for_heavy_backtest",
+    "surprise_score": 0.0,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse-e73cf94755",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_plan": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "benchmark_priority": "medium",
     "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal",
     "required_metrics": {
       "max_drawdown_max": null,
@@ -20,29 +43,6 @@
     "title": "Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
-    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
-  },
-  {
-    "benchmark_plan": {
-      "holdout_policy": "final_20_percent",
-      "min_contract_windows": 500,
-      "mode": "heavy_backtest",
-      "walk_forward_splits": 6
-    },
-    "benchmark_priority": "high",
-    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay",
-    "required_metrics": {
-      "max_drawdown_max": null,
-      "paper_trade_readiness_min": null,
-      "profitability_score_min": null,
-      "sharpe_ratio_min": null
-    },
-    "status": "queued_for_heavy_backtest",
-    "surprise_score": 0.0,
-    "target_contract_family": "btc_up_down_15m",
-    "title": "Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window",
-    "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
-    "variety_child_label": "late_sample_guard=on, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
   },
   {
