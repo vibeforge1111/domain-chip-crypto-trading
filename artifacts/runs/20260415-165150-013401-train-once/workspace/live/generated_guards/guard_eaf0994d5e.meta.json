@@ -1,9 +1,0 @@
-{
-  "guard_id": "eaf0994d5e",
-  "generation": 5,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f15c31d4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip on extreme volatility regimes (too quiet or too wild).\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    if atr_ratio < 0.7 or atr_ratio > 1.6:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\live\\generated_guards\\guard_eaf0994d5e.py",
-  "synergy_mode": true
-}
