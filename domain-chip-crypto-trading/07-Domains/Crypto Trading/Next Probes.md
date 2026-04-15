@@ -51,9 +51,9 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e0541165bf-sparse_signal
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e43d8593ef-sparse_signal
 
-- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e0541165bf`
+- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e43d8593ef`
 - doctrine: `breakout_volatility_expansion`
 - strategy: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
