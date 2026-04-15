@@ -12,11 +12,11 @@
       "top_walk_forward_consistency": 0.4
     },
     "self_edit_audit": {
-      "approved_count": 1,
+      "approved_count": 0,
       "deferred_count": 0,
-      "evaluation_count": 1,
+      "evaluation_count": 0,
       "rejected_count": 0,
-      "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
+      "top_approved_edit_id": null
     }
   },
   "before": {
@@ -32,16 +32,16 @@
       "top_walk_forward_consistency": 0.4
     },
     "self_edit_audit": {
-      "approved_count": 0,
+      "approved_count": 1,
       "deferred_count": 0,
-      "evaluation_count": 0,
+      "evaluation_count": 1,
       "rejected_count": 0,
-      "top_approved_edit_id": null
+      "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
     }
   },
   "commit_message": null,
-  "duration_seconds": 55.775,
-  "finished_at": "2026-04-15T18:50:40.128252Z",
+  "duration_seconds": 55.492,
+  "finished_at": "2026-04-15T18:56:44.116404Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
@@ -49,5 +49,5 @@
     "approved_count",
     "top_approved_edit_id"
   ],
-  "started_at": "2026-04-15T18:49:44.353030Z"
+  "started_at": "2026-04-15T18:55:48.624749Z"
 }
