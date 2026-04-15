@@ -52,7 +52,8 @@ spark-researcher summary
 | `scripts/run_strategy_forge.py` | Indicator mutation discovery |
 | `scripts/live_signal_engine.py` | Real-time signal generator |
 | `live/live_paper_trader.py` | Binance observer + agent pool |
-| `spark-researcher.project.json` | Spark Researcher config |
+| `scripts/researcher_run.py` | Spark Researcher wrapper (emits metrics) |
+| `spark-researcher.project.json` | Spark Researcher config (baseline-only, no mutable_parameters) |
 
 ## Architecture
 
