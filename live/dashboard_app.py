@@ -729,6 +729,150 @@ def _parse_ts(ts_str):
         return datetime.min.replace(tzinfo=timezone.utc)
 
 
+# ── Autoloop API (tri-loop: learning + backtest + paper trade) ────────────
+REPO_ROOT = BASE.parent
+ARTIFACTS = REPO_ROOT / "artifacts"
+RESEARCH = ARTIFACTS / "research"
+RECURSION = ARTIFACTS / "recursion"
+BACKTESTS = ARTIFACTS / "backtests"
+PAPER_TRADE_DIR = ARTIFACTS / "paper_trade"
+DOCTRINE_CARDS_DIR = REPO_ROOT / "docs" / "doctrine-cards"
+DOCTRINE_PACKETS_DIR = REPO_ROOT / "docs" / "doctrine-packets"
+
+
+@app.get("/api/autoloop-status")
+def api_autoloop_status():
+    """Tri-loop autoloop state: cycle count, lane status, candidates."""
+    state = _json(RECURSION / "autoloop_state.json")
+    journal_path = RECURSION / "cycle_journal.jsonl"
+    recent_cycles = _jsonl_tail(journal_path, 20)
+
+    # Doctrine cards
+    cards = []
+    if DOCTRINE_CARDS_DIR.exists():
+        for f in sorted(DOCTRINE_CARDS_DIR.glob("*.json")):
+            try:
+                cards.append(json.loads(f.read_text(encoding="utf-8")))
+            except Exception:
+                pass
+
+    # Doctrine packets
+    packets = []
+    if DOCTRINE_PACKETS_DIR.exists():
+        for f in sorted(DOCTRINE_PACKETS_DIR.glob("*.json")):
+            try:
+                packets.append(json.loads(f.read_text(encoding="utf-8")))
+            except Exception:
+                pass
+
+    # Backtest summary
+    bt_summary = _json(BACKTESTS / "heavy_backtest_summary.json")
+    bt_report = _json(BACKTESTS / "backtest_loop_report.json")
+
+    # Paper trade queue
+    pt_queue = _json(PAPER_TRADE_DIR / "paper_trade_queue.json")
+    pt_monitor = _json(PAPER_TRADE_DIR / "paper_trade_monitor_report.json")
+
+    # Variety backlog
+    variety = _json(RECURSION / "variety_backlog.json")
+    variety_count = len(variety) if isinstance(variety, list) else variety.get("count", 0)
+
+    # Mutation trials
+    trials = _json(RECURSION / "mutation_trials.json")
+    trial_count = len(trials.get("trials", [])) if isinstance(trials, dict) else 0
+
+    # Build cycle timeline for chart
+    cycle_timeline = []
+    for c in recent_cycles:
+        entry = {"cycle": c.get("cycle_number", 0)}
+        for lane in ["learning", "backtest", "paper_trade"]:
+            lane_data = c.get(lane, {})
+            entry[lane] = lane_data.get("material_change", False)
+        entry["material"] = c.get("material_change", False)
+        cycle_timeline.append(entry)
+
+    # Top candidates from backtest
+    candidates = []
+    if isinstance(bt_summary, dict):
+        for cid, cdata in list(bt_summary.items())[:20]:
+            if isinstance(cdata, dict):
+                candidates.append({
+                    "id": cid[:50],
+                    "wr": cdata.get("win_rate", 0),
+                    "wf": cdata.get("walk_forward_consistency", 0),
+                    "dd": cdata.get("max_drawdown", 0),
+                    "trades": cdata.get("trade_count", 0),
+                    "sharpe": cdata.get("sharpe_ratio", 0),
+                    "readiness": cdata.get("paper_trade_readiness", 0),
+                    "stress": cdata.get("stress_resilience", 0),
+                    "next_step": cdata.get("recommended_next_step", ""),
+                })
+    candidates.sort(key=lambda x: x.get("wr", 0), reverse=True)
+
+    return {
+        "state": {
+            "status": state.get("status", "unknown"),
+            "cycle_count": state.get("cycle_count", 0),
+            "last_finished": state.get("last_cycle_finished_at", ""),
+            "last_material": state.get("last_material_change", False),
+            "noop_streak": state.get("noop_streak", 0),
+            "top_candidate": state.get("last_top_candidate_id", ""),
+            "blocked_at": state.get("blocked_at"),
+            "reason": state.get("reason"),
+        },
+        "doctrine": {
+            "card_count": len(cards),
+            "packet_count": len(packets),
+            "recent_cards": [
+                {"id": c.get("card_id", c.get("id", "?")),
+                 "doctrine": c.get("doctrine_family", c.get("doctrine_id", "?")),
+                 "strategy": c.get("strategy_family", c.get("strategy_id", "?")),
+                 "regime": c.get("mutation_template", {}).get("market_regime", c.get("market_regime", "?")),
+                 "title": c.get("title", "")}
+                for c in cards[-8:]
+            ],
+        },
+        "backtest": {
+            "candidate_count": len(candidates),
+            "top_candidate": candidates[0] if candidates else None,
+            "candidates": candidates[:10],
+            "variety_count": variety_count,
+            "trial_count": trial_count,
+        },
+        "paper_trade": {
+            "queue_count": len(pt_queue.get("candidates", [])) if isinstance(pt_queue, dict) else 0,
+            "promotion_ready": pt_monitor.get("promotion_ready_count", 0) if isinstance(pt_monitor, dict) else 0,
+            "significant": pt_monitor.get("statistically_significant_count", 0) if isinstance(pt_monitor, dict) else 0,
+        },
+        "cycle_timeline": cycle_timeline,
+    }
+
+
+@app.get("/api/regime-distribution")
+def api_regime_distribution():
+    """Regime distribution from backtest data and SOL monitor."""
+    # Read from pattern_regime_map if available
+    prm = _json(RESEARCH / "pattern_regime_map.json")
+    regime_map = {}
+    if isinstance(prm, dict):
+        for pattern_id, pdata in prm.items():
+            if isinstance(pdata, dict):
+                for regime, count in pdata.get("regime_counts", {}).items():
+                    regime_map[regime] = regime_map.get(regime, 0) + count
+
+    # Read learning loop report for recent regime data
+    learning_report = _json(RESEARCH / "learning_loop_report.json")
+
+    return {
+        "regimes": regime_map,
+        "learning_report": {
+            "card_count": learning_report.get("after", {}).get("card_count", 0),
+            "packet_count": learning_report.get("before", {}).get("pending_packet_count", 0),
+            "consistent": learning_report.get("after", {}).get("state_consistent", True),
+        },
+    }
+
+
 # ── HTML dashboard ───────────────────────────────────────────────────────
 @app.get("/", response_class=HTMLResponse)
 def dashboard_html():
@@ -1239,6 +1383,97 @@ tailwind.config = {
   <div class="card p-5">
     <div class="section-title">Guard Discoveries</div>
     <div id="insights" class="grid grid-cols-3 gap-2"></div>
+  </div>
+</div>
+
+<!-- AUTOLOOP TRI-LOOP SECTION -->
+<div class="mt-4" id="autoloop-section">
+  <!-- Autoloop header + status -->
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="section-title mb-0">Autoloop <span class="text-xs font-normal" style="color:#6A7080">(Doctrine Discovery + Backtest + Paper Trade)</span></div>
+        <span id="autoloop-status-badge" class="text-xs px-2 py-0.5 rounded" style="background:#222430;color:#6A7080">--</span>
+      </div>
+      <div class="flex gap-4 text-xs" style="color:#6A7080">
+        <span>Cycle: <span id="al-cycle" class="font-mono" style="color:#F0F0F4">--</span></span>
+        <span>Noop: <span id="al-noop" class="font-mono" style="color:#F0F0F4">--</span></span>
+      </div>
+    </div>
+
+    <!-- Lane status cards -->
+    <div class="grid grid-cols-3 gap-3 mb-4">
+      <!-- Learning Lane -->
+      <div class="card p-3" style="background:#141820">
+        <div class="text-xs mb-1" style="color:#6A7080">Learning Lane</div>
+        <div class="flex items-baseline gap-2">
+          <span id="al-doctrine-cards" class="text-lg font-mono font-bold" style="color:#2FCA94">--</span>
+          <span class="text-xs" style="color:#6A7080">doctrine cards</span>
+        </div>
+        <div class="text-xs mt-1" style="color:#6A7080">
+          <span id="al-doctrine-packets" class="font-mono">--</span> packets
+        </div>
+      </div>
+
+      <!-- Backtest Lane -->
+      <div class="card p-3" style="background:#141820">
+        <div class="text-xs mb-1" style="color:#6A7080">Backtest Lane</div>
+        <div class="flex items-baseline gap-2">
+          <span id="al-bt-candidates" class="text-lg font-mono font-bold" style="color:#68A8D8">--</span>
+          <span class="text-xs" style="color:#6A7080">candidates</span>
+        </div>
+        <div class="text-xs mt-1" style="color:#6A7080">
+          <span id="al-variety" class="font-mono">--</span> variety &middot;
+          <span id="al-trials" class="font-mono">--</span> trials
+        </div>
+      </div>
+
+      <!-- Paper Trade Lane -->
+      <div class="card p-3" style="background:#141820">
+        <div class="text-xs mb-1" style="color:#6A7080">Paper Trade Lane</div>
+        <div class="flex items-baseline gap-2">
+          <span id="al-pt-queue" class="text-lg font-mono font-bold" style="color:#E8B86D">--</span>
+          <span class="text-xs" style="color:#6A7080">in queue</span>
+        </div>
+        <div class="text-xs mt-1" style="color:#6A7080">
+          <span id="al-pt-ready" class="font-mono">--</span> ready &middot;
+          <span id="al-pt-sig" class="font-mono">--</span> significant
+        </div>
+      </div>
+    </div>
+
+    <!-- Cycle timeline + top candidates side by side -->
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Cycle timeline chart -->
+      <div>
+        <div class="text-xs mb-2" style="color:#6A7080">Cycle Timeline <span class="font-mono" id="al-timeline-range"></span></div>
+        <canvas id="al-cycle-chart" height="120"></canvas>
+      </div>
+
+      <!-- Top backtest candidates -->
+      <div>
+        <div class="text-xs mb-2" style="color:#6A7080">Top Backtest Candidates</div>
+        <div style="max-height:180px;overflow-y:auto">
+          <table class="w-full text-xs">
+            <thead><tr style="color:#6A7080">
+              <th class="text-left pb-1">Candidate</th>
+              <th class="text-right pb-1">WR</th>
+              <th class="text-right pb-1">WF</th>
+              <th class="text-right pb-1">DD</th>
+              <th class="text-right pb-1">Trades</th>
+              <th class="text-right pb-1">Ready</th>
+            </tr></thead>
+            <tbody id="al-candidates-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent doctrine cards -->
+    <div class="mt-4">
+      <div class="text-xs mb-2" style="color:#6A7080">Recent Doctrine Cards</div>
+      <div id="al-doctrine-list" class="flex flex-wrap gap-2"></div>
+    </div>
   </div>
 </div>
 
@@ -2098,9 +2333,127 @@ function renderLivePt(data) {
   }
 }
 
+// ── Autoloop rendering ────────────────────────────
+let alCycleChartInstance = null;
+
+function renderAutoloop(data) {
+  if (!data) return;
+  const s = data.state || {};
+  const doc = data.doctrine || {};
+  const bt = data.backtest || {};
+  const pt = data.paper_trade || {};
+
+  // Status badge
+  const badge = document.getElementById('autoloop-status-badge');
+  const st = s.status || 'unknown';
+  badge.textContent = st;
+  badge.style.color = st === 'running' ? '#2FCA94' : st === 'idle' ? '#E8B86D' : '#6A7080';
+  badge.style.borderColor = st === 'running' ? '#2FCA94' : st === 'idle' ? '#E8B86D' : '#2A2E3C';
+  badge.style.border = '1px solid';
+
+  // Cycle + noop
+  document.getElementById('al-cycle').textContent = s.cycle_count || 0;
+  document.getElementById('al-noop').textContent = s.noop_streak || 0;
+
+  // Learning lane
+  document.getElementById('al-doctrine-cards').textContent = doc.card_count || 0;
+  document.getElementById('al-doctrine-packets').textContent = doc.packet_count || 0;
+
+  // Backtest lane
+  document.getElementById('al-bt-candidates').textContent = bt.candidate_count || 0;
+  document.getElementById('al-variety').textContent = bt.variety_count || 0;
+  document.getElementById('al-trials').textContent = bt.trial_count || 0;
+
+  // Paper trade lane
+  document.getElementById('al-pt-queue').textContent = pt.queue_count || 0;
+  document.getElementById('al-pt-ready').textContent = pt.promotion_ready || 0;
+  document.getElementById('al-pt-sig').textContent = pt.significant || 0;
+
+  // Cycle timeline chart
+  const timeline = data.cycle_timeline || [];
+  if (timeline.length > 0) {
+    const labels = timeline.map(c => 'C' + c.cycle);
+    const learningData = timeline.map(c => c.learning ? 1 : 0);
+    const backtestData = timeline.map(c => c.backtest ? 1 : 0);
+    const ptData = timeline.map(c => c.paper_trade ? 1 : 0);
+
+    document.getElementById('al-timeline-range').textContent =
+      '(C' + timeline[0].cycle + ' - C' + timeline[timeline.length-1].cycle + ')';
+
+    if (alCycleChartInstance) alCycleChartInstance.destroy();
+    const ctx = document.getElementById('al-cycle-chart').getContext('2d');
+    alCycleChartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Learning', data: learningData, backgroundColor: '#2FCA94', barPercentage: 0.8 },
+          { label: 'Backtest', data: backtestData, backgroundColor: '#68A8D8', barPercentage: 0.8 },
+          { label: 'Paper Trade', data: ptData, backgroundColor: '#E8B86D', barPercentage: 0.8 },
+        ]
+      },
+      options: {
+        ...CHART_DEFAULTS,
+        plugins: { legend: { display: true, position: 'top',
+          labels: { color: '#6A7080', boxWidth: 8, padding: 8, font: { size: 10, family: 'DM Sans' } }
+        }},
+        scales: {
+          x: { stacked: true, grid: { display: false }, ticks: { color: '#6A7080', font: { size: 9, family: 'DM Mono' }, maxRotation: 0 } },
+          y: { stacked: true, display: false, max: 3 },
+        }
+      }
+    });
+  }
+
+  // Top candidates table
+  const tbody = document.getElementById('al-candidates-table');
+  const cands = bt.candidates || [];
+  if (cands.length > 0) {
+    tbody.innerHTML = cands.map(c => {
+      const wr = (c.wr * 100).toFixed(1);
+      const wrColor = c.wr >= 0.6 ? '#2FCA94' : c.wr >= 0.5 ? '#68A8D8' : '#6A7080';
+      const wf = c.wf ? c.wf.toFixed(2) : '--';
+      const dd = c.dd ? (c.dd * 100).toFixed(1) + '%' : '--';
+      const ready = c.readiness ? (c.readiness >= 0.8 ? 'Yes' : 'No') : '--';
+      const readyColor = c.readiness >= 0.8 ? '#2FCA94' : '#6A7080';
+      const name = c.id.replace(/_/g, ' ').substring(0, 30);
+      return '<tr style="border-bottom:1px solid #1E2230">' +
+        '<td class="py-1 text-left" style="color:#8890B0">' + name + '</td>' +
+        '<td class="py-1 text-right font-mono" style="color:' + wrColor + '">' + wr + '%</td>' +
+        '<td class="py-1 text-right font-mono" style="color:#8890B0">' + wf + '</td>' +
+        '<td class="py-1 text-right font-mono" style="color:#8890B0">' + dd + '</td>' +
+        '<td class="py-1 text-right font-mono" style="color:#8890B0">' + (c.trades || '--') + '</td>' +
+        '<td class="py-1 text-right font-mono" style="color:' + readyColor + '">' + ready + '</td>' +
+        '</tr>';
+    }).join('');
+  } else {
+    tbody.innerHTML = '<tr><td colspan="6" class="py-2 text-center" style="color:#6A7080">No candidates yet — run backtest loop</td></tr>';
+  }
+
+  // Recent doctrine cards
+  const docList = document.getElementById('al-doctrine-list');
+  const recentCards = doc.recent_cards || [];
+  if (recentCards.length > 0) {
+    docList.innerHTML = recentCards.map(c => {
+      const doctrine = (c.doctrine || '').replace(/_/g, ' ');
+      const strategy = (c.strategy || '').replace(/_/g, ' ');
+      const regime = c.regime || '';
+      const title = c.title || '';
+      return '<div class="card px-3 py-2" style="background:#141820;min-width:180px;max-width:280px">' +
+        '<div class="text-xs font-semibold" style="color:#2FCA94">' + doctrine + '</div>' +
+        '<div class="text-xs" style="color:#8890B0">' + strategy + '</div>' +
+        (regime ? '<div class="text-xs mt-0.5" style="color:#6A7080">regime: ' + regime + '</div>' : '') +
+        (title ? '<div class="text-xs mt-1 truncate" style="color:#6A7080;max-width:260px" title="' + title.replace(/"/g,'&quot;') + '">' + title.substring(0, 60) + (title.length > 60 ? '...' : '') + '</div>' : '') +
+        '</div>';
+    }).join('');
+  } else {
+    docList.innerHTML = '<div class="text-xs" style="color:#6A7080">No doctrine cards yet — run learning loop</div>';
+  }
+}
+
 // ── Main loop ─────────────────────────────────────
 async function refresh() {
-  const [status, elites, popHist, pt, ptDash, health, insights, livePt, actFeed, stratDiv] = await Promise.all([
+  const [status, elites, popHist, pt, ptDash, health, insights, livePt, actFeed, stratDiv, autoloop] = await Promise.all([
     fetchJSON('/api/status'),
     fetchJSON('/api/recent-elites'),
     fetchJSON('/api/population-history'),
@@ -2111,6 +2464,7 @@ async function refresh() {
     fetchJSON('/api/live-pt'),
     fetchJSON('/api/activity-feed?n=80'),
     fetchJSON('/api/strategy-diversity'),
+    fetchJSON('/api/autoloop-status'),
   ]);
 
   if (status) { renderMetrics(status); renderMethods(status.methods || {}); }
@@ -2123,6 +2477,7 @@ async function refresh() {
   renderLivePt(livePt);
   if (actFeed) renderActivityFeed(actFeed.entries);
   if (stratDiv) { renderStrategyDiversity(stratDiv); renderMutationActivity(stratDiv.mutation_activity); }
+  if (autoloop) renderAutoloop(autoloop);
 
   // Refresh agents table
   await loadAgents();
