@@ -1,14 +1,12 @@
 {
-  "generated_at": "2026-04-15T15:29:20.046084Z",
+  "generated_at": "2026-04-15T15:35:29.155834Z",
   "generated_packet_ids": [
-    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--2d58d047-sparse_signal",
-    "dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a34e9da3-sparse_signal",
-    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--ecc095b4-sparse_signal",
-    "dp-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_fo-97d9451a-sparse_signal",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-1d40b657-sparse_signal"
+    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c3e66e90-sparse_signal",
+    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--da3efb95-sparse_signal",
+    "dp-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholog-d55683ce-sparse_signal"
   ],
-  "packets_generated": 5,
+  "packets_generated": 3,
   "probes_analyzed": 52,
-  "skipped_duplicate_count": 47,
+  "skipped_duplicate_count": 49,
   "skipped_no_template_count": 0
 }
