@@ -3,7 +3,7 @@
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
   "packet_count": 40,
-  "repair_mode": false,
+  "repair_mode": true,
   "repaired_cards": [],
   "repaired_count": 0,
   "required_source_count_per_mutation": 2,
