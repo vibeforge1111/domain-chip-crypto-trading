@@ -1,67 +1,77 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7",
+  "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776289080871930400",
+  "generated_at": "1776289539633702800",
   "holdout_profitability_score": 0.0,
-  "market_regime": "trend",
-  "max_drawdown": 0.0,
+  "market_regime": "high_vol",
+  "max_drawdown": 0.99,
   "metric_name": "profitability_score",
   "minimum_trade_count": 25,
   "mutations": {
-    "activation_profile": "wider",
+    "activation_profile": "adaptive",
     "asset_universe": "BTC",
     "chase_policy": "no_chase_after_crowded_good_news",
     "doctrine_id": "breakout_volatility_expansion",
+    "drawdown_guard": "high",
+    "execution_buffer": "high",
     "follow_through_profile": "delayed_confirmation",
-    "market_regime": "trend",
-    "paper_gate": "balanced",
+    "market_regime": "high_vol",
+    "no_trade_window": "avoid_transition_window",
+    "paper_gate": "strict",
+    "session_profile": "quality_window",
     "strategy_id": "breakout_open_interest_confirmation",
     "timeframe": "15m",
     "venue": "kalshi"
   },
-  "paper_trade_readiness": 0.17,
+  "paper_trade_readiness": 0.0,
   "primary_boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
-  "primary_mechanism": "Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.",
-  "profitability_score": 0.0,
+  "primary_mechanism": "Backtested on 21 active BTC 15m contract decisions across 21695 covered windows.",
+  "profitability_score": 0.3133,
   "promotion_candidate_kind": "benchmark_grounded_boundary",
   "recommended_next_step": "run_contradiction_probe",
-  "regime_stats": {},
+  "regime_stats": {
+    "high_vol": {
+      "avg_return": -0.3733,
+      "trade_count": 21,
+      "win_rate": 0.3333
+    }
+  },
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7",
-  "sharpe_ratio": 0.0,
+  "run_id": "heavy-backtest-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-182908c81d",
+  "sharpe_ratio": -1.8146,
   "source_benchmark": "backtest_benchmark",
   "strategy_id": "breakout_open_interest_confirmation",
   "stress_resilience": 0.0,
   "stress_stats": {
     "base": {
-      "avg_return": 0.0,
-      "profitability_score": 0.0,
-      "trade_count": 0,
+      "avg_return": -0.3733,
+      "profitability_score": 0.3133,
+      "trade_count": 21,
       "trade_count_gate_pass": false
     },
     "elevated_fees": {
-      "avg_return": 0.0,
-      "profitability_score": 0.0,
-      "trade_count": 0,
+      "avg_return": -0.4133,
+      "profitability_score": 0.2933,
+      "trade_count": 21,
       "trade_count_gate_pass": false
     },
     "fee_and_slippage": {
-      "avg_return": 0.0,
-      "profitability_score": 0.0,
-      "trade_count": 0,
+      "avg_return": -0.4533,
+      "profitability_score": 0.2733,
+      "trade_count": 21,
       "trade_count_gate_pass": false
     }
   },
   "timeframe": "15m",
-  "trade_count": 0,
+  "trade_count": 21,
   "trade_count_gate_pass": false,
   "venue": "kalshi",
   "walk_forward_consistency": 0.0,
@@ -77,45 +87,45 @@
       "win_rate": 0.0
     },
     {
-      "avg_return": 0.0,
+      "avg_return": 0.2933,
       "end_contract_id": "kxbtc15m-20251130-0915",
-      "profitability_score": 0.0,
+      "profitability_score": 0.6467,
       "segment_id": "wf-2",
       "start_contract_id": "kxbtc15m-20251016-0445",
-      "trade_count": 0,
+      "trade_count": 3,
       "trade_count_gate_pass": false,
-      "win_rate": 0.0
+      "win_rate": 0.6667
     },
     {
-      "avg_return": 0.0,
+      "avg_return": -0.04,
       "end_contract_id": "kxbtc15m-20260114-1400",
-      "profitability_score": 0.0,
+      "profitability_score": 0.48,
       "segment_id": "wf-3",
       "start_contract_id": "kxbtc15m-20251130-0930",
-      "trade_count": 0,
+      "trade_count": 2,
       "trade_count_gate_pass": false,
-      "win_rate": 0.0
+      "win_rate": 0.5
     },
     {
-      "avg_return": 0.0,
+      "avg_return": -0.5067,
       "end_contract_id": "kxbtc15m-20260228-1845",
-      "profitability_score": 0.0,
+      "profitability_score": 0.2467,
       "segment_id": "wf-4",
       "start_contract_id": "kxbtc15m-20260114-1415",
-      "trade_count": 0,
-      "trade_count_gate_pass": false,
-      "win_rate": 0.0
+      "trade_count": 15,
+      "trade_count_gate_pass": true,
+      "win_rate": 0.2667
     },
     {
-      "avg_return": 0.0,
+      "avg_return": -1.04,
       "end_contract_id": "kxbtc15m-20260414-2345",
       "profitability_score": 0.0,
       "segment_id": "wf-5",
       "start_contract_id": "kxbtc15m-20260228-1900",
-      "trade_count": 0,
+      "trade_count": 1,
       "trade_count_gate_pass": false,
       "win_rate": 0.0
     }
   ],
-  "win_rate": 0.0
+  "win_rate": 0.3333
 }
