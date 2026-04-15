@@ -4,13 +4,13 @@ This page is the trading equivalent of a `why it lost` surface.
 
 Track failure shapes here when a combination looks exciting but should not be promoted.
 
-## auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter
+## auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-sessio-14f5ffacb2
 
-- doctrine_id: `trend_regime_following`
-- strategy_id: `ema_pullback_long`
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `breakout_open_interest_confirmation`
 - priority: `0.99`
-- holdout_profitability_score: `0.3133`
-- walk_forward_consistency: `0.2`
+- holdout_profitability_score: `0.23`
+- walk_forward_consistency: `0.0`
 - stress_resilience: `0.0`
 - max_drawdown: `0.99`
 - contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
@@ -24,10 +24,10 @@ Track failure shapes here when a combination looks exciting but should not be pr
 
 ### Weakest Segments
 
-- wf-5: profitability=`0.3133` avg_return=`-0.3733` trades=`6`
-- wf-2: profitability=`0.355` avg_return=`-0.29` trades=`8`
+- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
+- wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-e56230fb74
+## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-153939d395
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`

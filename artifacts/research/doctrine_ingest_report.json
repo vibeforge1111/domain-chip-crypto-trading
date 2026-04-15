@@ -1,14 +1,12 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-cc018326-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime--6254eda7-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-6f8857bf-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--e37cb37e-sparse_signal.json"
   ],
-  "added_count": 3,
-  "eligible_packet_count": 4,
-  "existing_card_count": 110,
+  "added_count": 1,
+  "eligible_packet_count": 1,
+  "existing_card_count": 114,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 114,
-  "remaining_packet_count": 1,
+  "packet_count": 115,
+  "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
