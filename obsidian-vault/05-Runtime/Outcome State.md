@@ -2,9 +2,9 @@
 
 ## autoloop / baseline
 
-- runs: `2`
+- runs: `3`
 - improved_runs: `0`
-- latest_verdict: `baseline`
+- latest_verdict: `flat`
 - best_metric: `0.0`
 - latest_metric: `0.0`
 

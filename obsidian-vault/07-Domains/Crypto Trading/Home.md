@@ -2,8 +2,8 @@
 
 - chip: `domain-chip-crypto-trading`
 - evaluation: `backtest benchmark first, paper trade second`
-- total_runs: `4`
-- tested_candidates: `4`
+- total_runs: `5`
+- tested_candidates: `5`
 - paper_trade_ready: `0`
 - contradiction_surfaces: `3`
 

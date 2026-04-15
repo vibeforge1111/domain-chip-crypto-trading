@@ -3,15 +3,21 @@
   "chip_documents": [
     {
       "kind": "benchmark_evidence",
-      "memory_tier": "raw_run",
-      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\benchmark_evidence-crypto-backtest-global-baseline.md",
-      "title": "global-baseline Backtest Evidence"
+      "memory_tier": "durable",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\benchmark_evidence-crypto-autoloop-benchmark.md",
+      "title": "Autoloop Benchmark Evidence"
+    },
+    {
+      "kind": "grounded_doctrine",
+      "memory_tier": "durable",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\grounded_doctrine-crypto-autoloop-doctrine.md",
+      "title": "Autoloop Grounded Doctrine"
     },
     {
       "kind": "grounded_boundary",
-      "memory_tier": "raw_run",
-      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\grounded_boundary-crypto-boundary-global-baseline.md",
-      "title": "global-baseline Boundary Candidate"
+      "memory_tier": "durable",
+      "path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents\\grounded_boundary-crypto-autoloop-dead-ends.md",
+      "title": "Autoloop Dead-End Patterns"
     },
     {
       "kind": "benchmark_win_packet",
@@ -20,7 +26,7 @@
       "title": "global-baseline Swarm Publication Packet"
     }
   ],
-  "document_count": 11,
+  "document_count": 13,
   "documents_root": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\memory\\documents",
   "episode_count": 0,
   "kinds": {
@@ -28,13 +34,15 @@
     "benchmark_evidence": 1,
     "benchmark_win_packet": 1,
     "grounded_boundary": 1,
+    "grounded_doctrine": 1,
     "outcome": 3,
-    "run": 4
+    "run": 5
   },
   "memory_tiers": {
     "belief": 1,
+    "durable": 3,
     "raw_outcome": 3,
-    "raw_run": 7
+    "raw_run": 6
   },
   "outcomes": [
     {
@@ -43,12 +51,13 @@
       "command_name": "autoloop",
       "improved_runs": 0,
       "latest_metric": 0.0,
-      "latest_verdict": "baseline",
+      "latest_verdict": "flat",
       "outcome_id": "outcome-autoloop-baseline",
-      "run_count": 2,
+      "run_count": 3,
       "run_ids": [
         "20260415-165150-013401-train-once",
-        "20260415-224437-048326-chip-evaluate"
+        "20260415-224437-048326-chip-evaluate",
+        "20260415-224550-366975-train-once"
       ],
       "title": "autoloop / baseline"
     },
@@ -82,6 +91,6 @@
     }
   ],
   "self_edit_documents": [],
-  "source_runs": 4,
+  "source_runs": 5,
   "working_memory": {}
 }

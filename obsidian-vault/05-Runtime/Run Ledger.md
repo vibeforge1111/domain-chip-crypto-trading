@@ -1,6 +1,13 @@
 # Run Ledger
 
-- total runs: `4`
+- total runs: `5`
+
+## 20260415-224550-366975-train-once
+
+- candidate: `None`
+- verdict: `flat`
+- metric: `0.0`
+- created_at: `2026-04-15T22:48:25+00:00`
 
 ## 20260415-224442-741752-chip-evaluate
 

@@ -60,11 +60,11 @@
 
 ## Snapshot
 
-- total runs: `4`
+- total runs: `5`
 - tracked metrics: `1`
 - trainer entries: `0`
-- memory docs: `11`
-- packet docs: `3`
+- memory docs: `13`
+- packet docs: `4`
 - episode rows: `0`
 - durable beliefs: `0`
 - provisional beliefs: `0`

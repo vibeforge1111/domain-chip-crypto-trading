@@ -408,8 +408,9 @@ def api_autoloop_status():
     # Walk-forward scatter
     wf_scatter = [
         {"id": c["id"][:30], "wr": c["wr"], "wf": c["wf"],
-         "strategy": c["strategy"], "verdict": c["verdict"]}
-        for c in candidates if c["wr"] > 0
+         "strategy": c["strategy"], "verdict": c["verdict"],
+         "trades": c.get("trades", 0)}
+        for c in candidates if c["wr"] > 0 and c.get("trades", 0) > 0
     ]
 
     return {
@@ -566,16 +567,19 @@ def api_cycle_feed(n: int = Query(50, le=100)):
     for c in reversed(journal):
         entry = {
             "cycle": c.get("cycle_number", 0),
-            "timestamp": c.get("timestamp", ""),
+            "timestamp": c.get("finished_at", c.get("started_at", "")),
             "material": c.get("material_change", False),
+            "loops_run": c.get("loops_run", []),
             "lanes": {},
         }
         for lane in ["learning", "backtest", "paper_trade"]:
             ld = c.get(lane, {})
+            if not isinstance(ld, dict):
+                ld = {}
             entry["lanes"][lane] = {
-                "ran": bool(ld),
+                "ran": ld.get("ran", False),
                 "material": ld.get("material_change", False),
-                "details": ld.get("summary", ld.get("result", "")),
+                "details": ld.get("material_reasons", ld.get("summary", "")),
             }
         entries.append(entry)
     return {"entries": entries}
@@ -1104,7 +1108,13 @@ function renderCycleFeed() {
     const pBadge = lanes.paper_trade && lanes.paper_trade.material ? '<span class="badge badge-amber" style="font-size:0.6rem;padding:1px 6px">Paper</span>' : '';
     const materialBadge = e.material ? '<span style="font-size:0.6rem;color:#2FCA94;font-weight:600">MATERIAL</span>' : '';
     let time = '';
-    try { const t = new Date(e.timestamp); time = t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); } catch {}
+    if (e.timestamp) {
+      try { const t = new Date(e.timestamp); if (!isNaN(t)) time = t.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); } catch {}
+    }
+    const detailParts = [];
+    if (lanes.learning && lanes.learning.details) detailParts.push(lanes.learning.details);
+    if (lanes.backtest && lanes.backtest.details) detailParts.push(lanes.backtest.details);
+    const detailStr = detailParts.length > 0 ? detailParts.flat().join(', ').substring(0, 80) : '';
 
     return '<div class="feed-item" style="border-left-color:' + borderColor + '">' +
       '<div class="flex justify-between items-center">' +
@@ -1113,7 +1123,9 @@ function renderCycleFeed() {
           lBadge + bBadge + pBadge + materialBadge +
         '</div>' +
         '<span class="text-xs" style="color:#6A7080">' + time + '</span>' +
-      '</div></div>';
+      '</div>' +
+      (detailStr ? '<div class="text-xs mt-0.5" style="color:#6A7080;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + detailStr + '</div>' : '') +
+    '</div>';
   }).join('');
 }
 
@@ -1382,7 +1394,7 @@ function renderWfGate(scatter) {
     type: 'scatter',
     data: {
       datasets: [
-        { label: 'WF >= 0.8 (diagonal)', data: [{x:40,y:0.8},{x:70,y:0.8}], type:'line', borderColor:'#2FCA9444', borderDash:[4,4], borderWidth:1, pointRadius:0, fill:false },
+        { label: 'WF >= 0.8 threshold', data: [{x:0,y:0.8},{x:70,y:0.8}], type:'line', borderColor:'#2FCA9444', borderDash:[4,4], borderWidth:1, pointRadius:0, fill:false },
         {
           label: 'Candidates',
           data: scatter.map(s => ({x: s.wr*100, y: s.wf})),
@@ -1396,7 +1408,7 @@ function renderWfGate(scatter) {
       ...CHART_DEFAULTS,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ...CHART_DEFAULTS.scales.x, title: {display:true, text:'Win Rate %', color:C.muted, font:{size:9}}, min: 40, max: 70 },
+        x: { ...CHART_DEFAULTS.scales.x, title: {display:true, text:'Win Rate %', color:C.muted, font:{size:9}}, min: 0, max: 70, beginAtZero: true },
         y: { ...CHART_DEFAULTS.scales.y, title: {display:true, text:'Walk-Forward', color:C.muted, font:{size:9}}, min: 0, max: 1 },
       },
     },
