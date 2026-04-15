@@ -203,12 +203,13 @@ def build_signal_mutations(repo_root: Path) -> dict[str, Any]:
         children = _generate_children(template, existing_ids)
         all_new.extend(children)
 
-    # Append new candidates to config
-    trials = list(config.get("candidate_trials", []))
-    trials.extend(all_new)
-    config["candidate_trials"] = trials
+    # Append new candidates to mutation_trials (not researcher config)
+    mutation_trials.extend(all_new)
+    trials_path = repo_root / "artifacts" / "recursion" / "mutation_trials.json"
+    trials_path.parent.mkdir(parents=True, exist_ok=True)
+    safe_write_json(trials_path, mutation_trials)
 
-    safe_write_json(config_path, config)
+    trials = list(config.get("candidate_trials", [])) + all_new
 
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
