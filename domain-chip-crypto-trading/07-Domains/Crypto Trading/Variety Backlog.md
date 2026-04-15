@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `19`
-- pending_family_count: `19`
+- family_count: `18`
+- pending_family_count: `18`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
@@ -13,8 +13,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `4`
-- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-sessio-14f5ffacb2-holdout_decay, auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-sta-debb7d4d61-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay`
-- pending_child_labels: `late_sample_guard=on, paper_gate=balanced | activation_profile=wider, paper_gate=balanced`
+- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-s-8a29e7e35d-sparse_signal, auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-sessio-14f5ffacb2-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay`
+- pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
 - contradiction_modes: `n/a`
@@ -61,8 +61,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "bollinger_squeeze_breakout"}`
 - target_contract_family: `btc_up_down_15m`
 - status: `uncovered_variety_pending`
-- tested_child_count: `10`
-- benchmarked_candidate_count: `10`
+- tested_child_count: `6`
+- benchmarked_candidate_count: `6`
 - pending_proposal_count: `1`
 - pending_proposal_ids: `btc-15m-volatility-compression-breakout`
 - pending_child_labels: `paper_gate=strict`

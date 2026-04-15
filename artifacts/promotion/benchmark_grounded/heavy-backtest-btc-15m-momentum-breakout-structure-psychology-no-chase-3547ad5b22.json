@@ -1,27 +1,26 @@
 {
   "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
+  "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
   "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
-  "generated_at": "1776273080080481200",
+  "generated_at": "1776273444747768600",
   "holdout_profitability_score": 0.0,
-  "market_regime": "high_vol",
+  "market_regime": "trend",
   "max_drawdown": 0.0,
   "metric_name": "profitability_score",
   "minimum_trade_count": 25,
   "mutations": {
     "asset_universe": "BTC",
-    "compression_profile": "moderate_squeeze",
+    "chase_policy": "no_chase_after_crowded_good_news",
     "doctrine_id": "breakout_volatility_expansion",
-    "late_sample_guard": "on",
-    "market_regime": "high_vol",
-    "paper_gate": "balanced",
-    "session_profile": "squeeze_release_window",
-    "strategy_id": "bollinger_squeeze_breakout",
+    "follow_through_profile": "delayed_confirmation",
+    "market_regime": "trend",
+    "paper_gate": "strict",
+    "strategy_id": "breakout_open_interest_confirmation",
     "timeframe": "15m",
     "venue": "kalshi"
   },
@@ -35,10 +34,10 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
+  "run_id": "heavy-backtest-btc-15m-momentum-breakout-structure-psychology_no_chase",
   "sharpe_ratio": 0.0,
   "source_benchmark": "backtest_benchmark",
-  "strategy_id": "bollinger_squeeze_breakout",
+  "strategy_id": "breakout_open_interest_confirmation",
   "stress_resilience": 0.0,
   "stress_stats": {
     "base": {

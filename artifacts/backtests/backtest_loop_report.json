@@ -1,6 +1,26 @@
 {
   "after": {
     "benchmark": {
+      "candidate_count": 25,
+      "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
+      "top_holdout_profitability_score": 0.48,
+      "top_max_drawdown": 0.99,
+      "top_paper_trade_readiness": 0.048,
+      "top_profitability_score": 0.4497,
+      "top_recommended_next_step": "run_contradiction_probe",
+      "top_stress_resilience": 0.0,
+      "top_walk_forward_consistency": 0.4
+    },
+    "self_edit_audit": {
+      "approved_count": 0,
+      "deferred_count": 0,
+      "evaluation_count": 0,
+      "rejected_count": 0,
+      "top_approved_edit_id": null
+    }
+  },
+  "before": {
+    "benchmark": {
       "candidate_count": 33,
       "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
       "top_holdout_profitability_score": 0.48,
@@ -19,40 +39,16 @@
       "top_approved_edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay"
     }
   },
-  "before": {
-    "benchmark": {
-      "candidate_count": 9,
-      "top_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
-      "top_holdout_profitability_score": 0.48,
-      "top_max_drawdown": 0.99,
-      "top_paper_trade_readiness": 0.1813,
-      "top_profitability_score": 0.5063,
-      "top_recommended_next_step": "run_contradiction_probe",
-      "top_stress_resilience": 0.3333,
-      "top_walk_forward_consistency": 0.4
-    },
-    "self_edit_audit": {
-      "approved_count": 0,
-      "deferred_count": 0,
-      "evaluation_count": 0,
-      "rejected_count": 0,
-      "top_approved_edit_id": null
-    }
-  },
   "commit_message": null,
-  "duration_seconds": 209.523,
-  "finished_at": "2026-04-15T17:11:21.003846Z",
+  "duration_seconds": 55.555,
+  "finished_at": "2026-04-15T17:17:25.272590Z",
   "loop_kind": "backtest",
   "material_change": true,
   "material_reasons": [
-    "top_candidate_changed",
     "candidate_count",
-    "top_profitability_score",
-    "top_paper_trade_readiness",
-    "top_stress_resilience",
     "evaluation_count",
     "approved_count",
     "top_approved_edit_id"
   ],
-  "started_at": "2026-04-15T17:07:51.481249Z"
+  "started_at": "2026-04-15T17:16:29.717899Z"
 }

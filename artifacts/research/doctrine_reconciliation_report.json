@@ -1,11 +1,14 @@
 {
-  "card_count": 119,
+  "card_count": 124,
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
-  "packet_count": 119,
+  "packet_count": 124,
   "repair_mode": true,
-  "repaired_cards": [],
-  "repaired_count": 0,
+  "repaired_cards": [
+    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d200c56e-sparse_signal.json",
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a5acbdd1-holdout_decay.json"
+  ],
+  "repaired_count": 2,
   "required_source_count_per_mutation": 2,
   "state_consistent": true
 }

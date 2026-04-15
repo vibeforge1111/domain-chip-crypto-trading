@@ -2,12 +2,25 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `119`
+- doctrine_card_count: `124`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c
 
 - card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--110b4bcd-sparse_signal`
 - proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-a3311e5b13
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--4be3b4dd-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-a3311e5b13-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - benchmark_priority: `medium`
@@ -42,6 +55,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_f-3067a4e898
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-6aa0e9ba-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_wait_f-3067a4e898-sparse_signal`
+- doctrine_family: `risk_first_asymmetric_capture`
+- strategy_family: `asymmetric_capture`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, edward-thorp-kelly`
+- status: `candidate_card`
+- thesis: The risk_first_asymmetric_capture doctrine with funding_mean_revert strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "risk_first_asymmetric_capture", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "funding_mean_revert", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-8eb6ebe447
 
@@ -159,6 +185,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The risk_first_asymmetric_capture doctrine with funding_mean_revert strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "risk_first_asymmetric_capture", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "funding_mean_revert", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-s-8a29e7e35d
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-c-1cd605c7-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-s-8a29e7e35d-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psyc-e5f3f1036b
 
@@ -588,6 +627,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed
+
+- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-a5acbdd1-holdout_decay`
+- proposal_id: `auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed-holdout_decay`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `high`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for bollinger_squeeze_breakout.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
 ## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter
 
@@ -1191,6 +1243,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 
 - card_id: `dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c9c2d1bc-sparse_signal`
 - proposal_id: `auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-a4154b065c-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-64d9632ea7
+
+- card_id: `dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--d200c56e-sparse_signal`
+- proposal_id: `auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-64d9632ea7-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - benchmark_priority: `medium`

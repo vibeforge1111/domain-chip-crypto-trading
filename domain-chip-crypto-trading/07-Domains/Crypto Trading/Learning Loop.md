@@ -2,9 +2,9 @@
 
 This loop owns doctrine packet ingestion, doctrine card creation, and learning-surface refreshes.
 
-- material_change: `False`
-- added_count: `0`
-- card_count: `119`
+- material_change: `True`
+- added_count: `3`
+- card_count: `124`
 - pending_packet_count: `0`
 
 Loop contract:
