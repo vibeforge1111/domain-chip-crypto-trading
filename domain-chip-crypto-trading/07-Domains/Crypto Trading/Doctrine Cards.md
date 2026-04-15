@@ -2,7 +2,20 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `64`
+- doctrine_card_count: `66`
+
+## Auto-generated: sparse_signal fix for auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-sparse_si-050e28924f
+
+- card_id: `dc-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_-b080df8b-sparse_signal`
+- proposal_id: `auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal-psychology_no_chase-sparse_si-050e28924f-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on
 
@@ -21,6 +34,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 
 - card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7a32d6e2-sparse_signal`
 - proposal_id: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-probe-holdout_decay
+
+- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-7c0afa17-sparse_signal`
+- proposal_id: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-probe-holdout_decay-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - benchmark_priority: `medium`
