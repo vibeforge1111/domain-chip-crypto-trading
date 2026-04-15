@@ -1,0 +1,46 @@
+{
+  "candidate_trials": [
+    {
+      "candidate_id": "suggest-cross-wedge_exhaustion_reversal-mean_reversion_liquidity_reclaim",
+      "candidate_summary": "Cross-pollinate top strategy (wedge_exhaustion_reversal) with runner-up doctrine (mean_reversion_liquidity_reclaim).",
+      "commands": [
+        "autoloop"
+      ],
+      "hypothesis": "Cross-mutation of the two best-performing candidates may combine their strengths.",
+      "metadata": {},
+      "mutations": {
+        "asset_universe": "BTC",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "drawdown_guard": "high",
+        "market_regime": "range",
+        "paper_gate": "balanced",
+        "reversal_confirmation": "reclaim_close",
+        "strategy_id": "wedge_exhaustion_reversal",
+        "timeframe": "15m",
+        "venue": "kalshi",
+        "volume_context_guard": "strict_participation",
+        "wick_profile": "rejection_confirm"
+      }
+    },
+    {
+      "candidate_id": "suggest-flip-breakout_open_interest_confirmation-mean_reversion_liquidity_reclaim",
+      "candidate_summary": "Apply best-performing doctrine to worst-performing strategy.",
+      "commands": [
+        "autoloop"
+      ],
+      "hypothesis": "If doctrine matters more than strategy, the worst performer may improve with the best doctrine.",
+      "metadata": {},
+      "mutations": {
+        "asset_universe": "BTC",
+        "chase_policy": "no_chase_after_crowded_good_news",
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "follow_through_profile": "delayed_confirmation",
+        "market_regime": "trend",
+        "paper_gate": "strict",
+        "strategy_id": "breakout_open_interest_confirmation",
+        "timeframe": "15m",
+        "venue": "kalshi"
+      }
+    }
+  ]
+}

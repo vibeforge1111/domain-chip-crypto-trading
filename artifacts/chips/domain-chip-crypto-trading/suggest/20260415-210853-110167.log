@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "live/hyperagent/chip_hooks.py",
+    "suggest",
+    "--input",
+    "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\suggest\\20260415-210853-110167.input.json",
+    "--output",
+    "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\suggest\\20260415-210853-110167.output.json"
+  ],
+  "cwd": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading",
+  "input_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\suggest\\20260415-210853-110167.input.json",
+  "output_path": "C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\chips\\domain-chip-crypto-trading\\suggest\\20260415-210853-110167.output.json",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}
