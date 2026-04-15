@@ -1,8 +1,10 @@
 {
-  "generated_at": "2026-04-15T16:10:29.352844Z",
-  "generated_packet_ids": [],
-  "packets_generated": 0,
+  "generated_at": "2026-04-15T16:16:34.734997Z",
+  "generated_packet_ids": [
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-bre-f351cfd3-sparse_signal"
+  ],
+  "packets_generated": 1,
   "probes_analyzed": 52,
-  "skipped_duplicate_count": 52,
+  "skipped_duplicate_count": 51,
   "skipped_no_template_count": 0
 }
