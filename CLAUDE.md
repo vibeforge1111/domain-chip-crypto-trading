@@ -31,9 +31,11 @@ python live/live_paper_trader.py
 - Polls every 60s, settles at timeframe boundaries
 - Logs to `artifacts/paper_trade/`
 
-### Evolution (DGM-H population search)
+### Spark Researcher (autonomous research loop)
 ```bash
-python live/run_evolution.py -g 10 -w 4
+pipx install git+https://github.com/vibeforge1111/spark-researcher.git
+spark-researcher autoloop --command autoloop --rounds 3
+spark-researcher summary
 ```
 
 ## Key Files
@@ -50,8 +52,7 @@ python live/run_evolution.py -g 10 -w 4
 | `scripts/run_strategy_forge.py` | Indicator mutation discovery |
 | `scripts/live_signal_engine.py` | Real-time signal generator |
 | `live/live_paper_trader.py` | Binance observer + agent pool |
-| `live/run_evolution.py` | DGM-H evolution loop |
-| `live/hyperagent/` | Evolution engine, meta-agent, risk manager |
+| `spark-researcher.project.json` | Spark Researcher config |
 
 ## Architecture
 

@@ -46,10 +46,19 @@ python live/dashboard_app.py
 - **Autoloop status**: cycle timeline, lane cards (learning/backtest/paper trade), regime targeting, doctrine variety backlog, active hypotheses, failure surface
 - **Live Trading**: real-time Binance settlements, strategy + agent performance, regime history
 
-### Run Evolution (DGM-H strategy discovery)
+### Run Spark Researcher (autonomous research loop)
 ```bash
-python live/run_evolution.py -g 10 -w 4
+# Install
+pipx install git+https://github.com/vibeforge1111/spark-researcher.git
+
+# Run autoloop (3 rounds)
+spark-researcher autoloop --command autoloop --rounds 3
+
+# Check status
+spark-researcher summary
 ```
+- Wraps the tri-loop in a research harness with candidate suggestion, metric tracking, and trace logging
+- Config: `spark-researcher.project.json`
 
 ### Status & Diagnostics
 ```bash
@@ -70,9 +79,7 @@ scripts/            # 30 autoloop scripts (supervisor, learning, backtest, forge
 
 live/
   live_paper_trader.py          # Real-time Binance observer pattern
-  run_evolution.py              # DGM-H evolution loop
   run_paper_trade.py            # Paper trade validation
-  hyperagent/                   # Evolution engine, meta-agent, risk manager
 
 autoloop/           # Control plane (lanes, runbooks, policy)
 data/               # Market data (BTC/ETH/SOL candles + contracts)
