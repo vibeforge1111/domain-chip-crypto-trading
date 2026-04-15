@@ -1,0 +1,33 @@
+{
+  "card_count": 24,
+  "eligible_missing_card_count": 0,
+  "eligible_missing_cards": [],
+  "packet_count": 24,
+  "repair_mode": true,
+  "repaired_cards": [
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-d0e6bd8d-sparse_signal.json",
+    "dc-auto-auto-range-session-wick-reversal_confirmation=reclaim_close--910ca77a-sparse_signal.json",
+    "dc-auto-auto-range-session-wick-reversal_confirmation=reclaim_close--df8dec19-sparse_signal.json",
+    "dc-auto-auto-range-session-wick-reversal_confirmation=wick_reclaim_c-925c9cb3-sparse_signal.json",
+    "dc-auto-auto-range-session-wick-reversal_confirmation=wick_reclaim_c-c0c6119f-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-08497885-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-17544b7b-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-4bd7f345-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-f6e09589-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-4a75dff4-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-90369ef1-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation-ad7cf0f0-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-c6e6068f-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-f5541c29-sparse_signal.json",
+    "dc-auto-auto-wedge-guarded-reversal_confirmation=reclaim_close-volum-fd29dc82-sparse_signal.json",
+    "dc-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal.json",
+    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal.json",
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-89039839-holdout_decay.json",
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-holdout_decay.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-1e4e793e-holdout_decay.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-2879e426-holdout_decay.json"
+  ],
+  "repaired_count": 21,
+  "required_source_count_per_mutation": 2,
+  "state_consistent": true
+}

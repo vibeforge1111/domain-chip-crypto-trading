@@ -1,0 +1,536 @@
+{
+  "generated_from": "artifacts/research/research_backlog.json",
+  "queue_count": 21,
+  "rows": [
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-bet_sizing",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "bet_sizing"
+      ],
+      "target_regimes": [],
+      "title": "bet_sizing"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-box_breakout",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "box_breakout"
+      ],
+      "target_regimes": [],
+      "title": "box_breakout"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-candlestick_context",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "candlestick_context"
+      ],
+      "target_regimes": [],
+      "title": "candlestick_context"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-classical_charting",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "classical_charting"
+      ],
+      "target_regimes": [],
+      "title": "classical_charting"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-execution",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "execution"
+      ],
+      "target_regimes": [],
+      "title": "execution"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-growth_breakout",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "growth_breakout"
+      ],
+      "target_regimes": [],
+      "title": "growth_breakout"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-intermarket_technical_analysis",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "intermarket_technical_analysis"
+      ],
+      "target_regimes": [],
+      "title": "intermarket_technical_analysis"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-macro_charting",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "macro_charting"
+      ],
+      "target_regimes": [],
+      "title": "macro_charting"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-macro_reflexivity",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "macro_reflexivity"
+      ],
+      "target_regimes": [],
+      "title": "macro_reflexivity"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-market_timing_exhaustion",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "market_timing_exhaustion"
+      ],
+      "target_regimes": [],
+      "title": "market_timing_exhaustion"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-momentum_breakout",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "momentum_breakout"
+      ],
+      "target_regimes": [],
+      "title": "momentum_breakout"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-position_sizing_psychology",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "position_sizing_psychology"
+      ],
+      "target_regimes": [],
+      "title": "position_sizing_psychology"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-price_action",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "price_action"
+      ],
+      "target_regimes": [],
+      "title": "price_action"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-price_action_context",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "price_action_context"
+      ],
+      "target_regimes": [],
+      "title": "price_action_context"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-quant_systems",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "quant_systems"
+      ],
+      "target_regimes": [],
+      "title": "quant_systems"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-short_term_discretionary",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "short_term_discretionary"
+      ],
+      "target_regimes": [],
+      "title": "short_term_discretionary"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-short_term_trading",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "short_term_trading"
+      ],
+      "target_regimes": [],
+      "title": "short_term_trading"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-squeeze_momentum",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "squeeze_momentum"
+      ],
+      "target_regimes": [],
+      "title": "squeeze_momentum"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-systems_psychology",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "systems_psychology"
+      ],
+      "target_regimes": [],
+      "title": "systems_psychology"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-tape_reading_speculation",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "tape_reading_speculation"
+      ],
+      "target_regimes": [],
+      "title": "tape_reading_speculation"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-technical_analysis",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "technical_analysis"
+      ],
+      "target_regimes": [],
+      "title": "technical_analysis"
+    }
+  ],
+  "top_rows": [
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-bet_sizing",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "bet_sizing"
+      ],
+      "target_regimes": [],
+      "title": "bet_sizing"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-box_breakout",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "box_breakout"
+      ],
+      "target_regimes": [],
+      "title": "box_breakout"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-candlestick_context",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "candlestick_context"
+      ],
+      "target_regimes": [],
+      "title": "candlestick_context"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-classical_charting",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "classical_charting"
+      ],
+      "target_regimes": [],
+      "title": "classical_charting"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-execution",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "execution"
+      ],
+      "target_regimes": [],
+      "title": "execution"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-growth_breakout",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "growth_breakout"
+      ],
+      "target_regimes": [],
+      "title": "growth_breakout"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-intermarket_technical_analysis",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "intermarket_technical_analysis"
+      ],
+      "target_regimes": [],
+      "title": "intermarket_technical_analysis"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-macro_charting",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "macro_charting"
+      ],
+      "target_regimes": [],
+      "title": "macro_charting"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-macro_reflexivity",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "macro_reflexivity"
+      ],
+      "target_regimes": [],
+      "title": "macro_reflexivity"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-market_timing_exhaustion",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "market_timing_exhaustion"
+      ],
+      "target_regimes": [],
+      "title": "market_timing_exhaustion"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-momentum_breakout",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "momentum_breakout"
+      ],
+      "target_regimes": [],
+      "title": "momentum_breakout"
+    },
+    {
+      "expected_child_shapes": [],
+      "priority_score": 0.72,
+      "priority_tier": 2,
+      "queue_id": "style-position_sizing_psychology",
+      "queue_kind": "undercovered_style",
+      "reason": "Approved sources exist for this style family, but no packet or doctrine card covers it yet.",
+      "recommended_action": "packet_missing_style",
+      "source_names": [],
+      "status": "approved_but_unpacketed",
+      "style_families": [
+        "position_sizing_psychology"
+      ],
+      "target_regimes": [],
+      "title": "position_sizing_psychology"
+    }
+  ]
+}

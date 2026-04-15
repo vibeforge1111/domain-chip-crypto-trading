@@ -1,10 +1,15 @@
 {
-  "status": "idle",
-  "cycle_count": 0,
-  "last_cycle_finished_at": null,
-  "blocked_at": null,
-  "reason": null,
-  "paper_trade_queue_count": 0,
+  "cycle_count": 1,
+  "last_backtest_cycle": 1,
+  "last_commit_message": null,
+  "last_cycle_finished_at": "2026-04-15T12:18:19.996858Z",
+  "last_cycle_started_at": "2026-04-15T12:18:19.970560Z",
+  "last_data_refresh_cycle": 1,
+  "last_learning_cycle": 1,
+  "last_material_change": true,
+  "last_paper_trade_cycle": 1,
+  "last_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
   "noop_streak": 0,
-  "last_top_candidate_id": null
+  "paper_trade_queue_count": 0,
+  "pending_packet_count": 0
 }

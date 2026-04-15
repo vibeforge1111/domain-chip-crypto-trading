@@ -1,0 +1,92 @@
+{
+  "anti_patterns_detected": [
+    {
+      "evidence": [
+        "The current backtester is real, but the strongest candidates still need walk-forward and stress robustness before they count as causal proof."
+      ],
+      "severity": "warn",
+      "status": "open",
+      "tag": "ghost_improvement"
+    },
+    {
+      "evidence": [
+        "Heavy-backtest summary currently covers 32 candidates; this must keep shifting toward BTC-specific mutation trials."
+      ],
+      "severity": "warn",
+      "status": "contained",
+      "tag": "comfort_zone_optimization"
+    },
+    {
+      "evidence": [
+        "Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191, auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
+        "Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window, auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window"
+      ],
+      "severity": "warn",
+      "status": "contained",
+      "tag": "golden_demo_collapse"
+    }
+  ],
+  "benchmark_summary": {
+    "candidate_count": 32,
+    "contract_family": "btc_up_down_15m",
+    "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze",
+    "top_stress_resilience": 0.0,
+    "top_walk_forward_consistency": 0.4
+  },
+  "decision": "reject",
+  "guardrail_status": {
+    "complexity_gate": "pass",
+    "human_gate": "pass",
+    "lineage_gate": "fail",
+    "memory_hygiene_gate": "pass",
+    "schema_gate": "pass",
+    "transfer_gate": "warn"
+  },
+  "next_experiments": [
+    "Extend the BTC 1m plus contract-window dataset into additional months and more violent market regimes.",
+    "Use walk-forward and stress failures to design the next BTC 15m mutation probes instead of adding doctrine breadth blindly.",
+    "Run the top three backlog proposals through the heavy-backtest queue before adding more doctrine families."
+  ],
+  "pillar_assessment": {
+    "causal_anchor": {
+      "evidence": [
+        "Research proposals now require root lesson, counterfactual, ghost-improvement check, and rollback condition.",
+        "The current proposals are anchored to existing ledger failures and now receive benchmark status updates from heavy-backtest summaries."
+      ],
+      "status": "warn"
+    },
+    "cross_pollination": {
+      "evidence": [
+        "Cross-domain trader teachings are being mapped into BTC up/down 15m contract proposals rather than copied directly.",
+        "Transfer still needs broader contract coverage before doctrine promotion."
+      ],
+      "status": "pass"
+    },
+    "entropy_filter": {
+      "evidence": [
+        "Changes are confined to docs, artifact builders, and watchtower pages rather than adding runtime framework complexity."
+      ],
+      "status": "pass"
+    },
+    "surprise_priority": {
+      "evidence": [
+        "Queue ranking is driven by surprise score so research effort flows toward unproven but high-value doctrine families."
+      ],
+      "status": "pass"
+    }
+  },
+  "required_fixes_before_approve": [
+    "Keep extending the BTC dataset across more market regimes while separating sparse high-profit variants from scalable ones.",
+    "Record lineage failures per mutation proposal before self-edit or doctrine promotion.",
+    "Benchmark every proposed mutation on holdout windows, walk-forward splits, and fee/slippage stress before paper-trade escalation."
+  ],
+  "risk_if_ignored": "The loop will overfit narrative research, promote false doctrines from placeholder scores, and reach paper trade without causal benchmark evidence.",
+  "self_edit_summary": {
+    "approved_count": 1,
+    "deferred_count": 0,
+    "evaluation_count": 1,
+    "rejected_count": 0
+  },
+  "stability_score": 0.38,
+  "top_bottleneck": "Heavy backtests now include walk-forward and stress checks, but the top gated candidates still fail on drawdown, holdout strength, or robustness under fee/slippage pressure."
+}

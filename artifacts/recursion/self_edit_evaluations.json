@@ -1,0 +1,30 @@
+[
+  {
+    "child_candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay",
+    "comparison": {
+      "child_holdout_profitability_score": 0.48,
+      "child_max_drawdown": 0.99,
+      "child_profitability_score": 0.5017,
+      "child_stress_resilience": 0.3333,
+      "child_trade_count": 23.0,
+      "child_walk_forward_consistency": 0.2,
+      "parent_holdout_profitability_score": 0.3133,
+      "parent_max_drawdown": 0.99,
+      "parent_profitability_score": 0.4628,
+      "parent_stress_resilience": 0.0,
+      "parent_trade_count": 29.0,
+      "parent_walk_forward_consistency": 0.2
+    },
+    "decision": "approve",
+    "edit_id": "self-edit-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay",
+    "failure_modes": [
+      "holdout_decay",
+      "segment_instability",
+      "execution_fragility",
+      "drawdown_excess"
+    ],
+    "parent_candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
+    "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
+    "target_improved": true
+  }
+]

@@ -1,0 +1,102 @@
+{
+  "material_change": true,
+  "refreshed_at": "2026-04-15T12:16:15.050904Z",
+  "symbol_reports": [
+    {
+      "contract_counts": {
+        "15m": 21696,
+        "1h": 5424
+      },
+      "days_failed": 0,
+      "days_fetched": 13,
+      "days_requested": 13,
+      "failed_days": [],
+      "fetched_days": [
+        "2026-04-02",
+        "2026-04-03",
+        "2026-04-04",
+        "2026-04-05",
+        "2026-04-06",
+        "2026-04-07",
+        "2026-04-08",
+        "2026-04-09",
+        "2026-04-10",
+        "2026-04-11",
+        "2026-04-12",
+        "2026-04-13",
+        "2026-04-14"
+      ],
+      "last_existing_date": "2026-04-01",
+      "material_change": true,
+      "new_candle_count": 18720,
+      "slug": "btc",
+      "symbol": "BTCUSDT"
+    },
+    {
+      "contract_counts": {
+        "15m": 21696,
+        "1h": 5424
+      },
+      "days_failed": 0,
+      "days_fetched": 13,
+      "days_requested": 13,
+      "failed_days": [],
+      "fetched_days": [
+        "2026-04-02",
+        "2026-04-03",
+        "2026-04-04",
+        "2026-04-05",
+        "2026-04-06",
+        "2026-04-07",
+        "2026-04-08",
+        "2026-04-09",
+        "2026-04-10",
+        "2026-04-11",
+        "2026-04-12",
+        "2026-04-13",
+        "2026-04-14"
+      ],
+      "last_existing_date": "2026-04-01",
+      "material_change": true,
+      "new_candle_count": 18720,
+      "slug": "eth",
+      "symbol": "ETHUSDT"
+    },
+    {
+      "contract_counts": {
+        "15m": 21696,
+        "1h": 5424
+      },
+      "days_failed": 0,
+      "days_fetched": 13,
+      "days_requested": 13,
+      "failed_days": [],
+      "fetched_days": [
+        "2026-04-02",
+        "2026-04-03",
+        "2026-04-04",
+        "2026-04-05",
+        "2026-04-06",
+        "2026-04-07",
+        "2026-04-08",
+        "2026-04-09",
+        "2026-04-10",
+        "2026-04-11",
+        "2026-04-12",
+        "2026-04-13",
+        "2026-04-14"
+      ],
+      "last_existing_date": "2026-04-01",
+      "material_change": true,
+      "new_candle_count": 18720,
+      "slug": "sol",
+      "symbol": "SOLUSDT"
+    }
+  ],
+  "symbols_refreshed": [
+    "btc",
+    "eth",
+    "sol"
+  ],
+  "total_new_candles": 56160
+}
