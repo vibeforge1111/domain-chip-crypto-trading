@@ -10,7 +10,7 @@ This page mirrors the startup chip standard: one loop, one current state, one ne
 - learning_loop_status: `active`
 - learning_pending_packets: `0`
 - backtest_loop_status: `active`
-- contradiction_probe_status: `idle`
+- contradiction_probe_status: `active`
 - paper_trade_loop_status: `active`
 - paper_trade_queue_status: `empty`
 

@@ -3,12 +3,12 @@
 This page mirrors the recursive-evolution guardrail packet.
 
 - decision: `reject`
-- stability_score: `0.38`
+- stability_score: `0.48`
 - top_bottleneck: Heavy backtests now include walk-forward and stress checks, but the top gated candidates still fail on drawdown, holdout strength, or robustness under fee/slippage pressure.
 
 ## Benchmark Summary
 
-- candidate_count: `25`
+- candidate_count: `33`
 - top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze`
 - contract_family: `btc_up_down_15m`
 
@@ -26,7 +26,7 @@ This page mirrors the recursive-evolution guardrail packet.
 - lineage_gate: `fail`
 - memory_hygiene_gate: `pass`
 - schema_gate: `pass`
-- transfer_gate: `warn`
+- transfer_gate: `pass`
 
 ## Anti-Patterns
 
@@ -40,13 +40,13 @@ This page mirrors the recursive-evolution guardrail packet.
 
 - severity: `warn`
 - status: `contained`
-- evidence: `Heavy-backtest summary currently covers 25 candidates; this must keep shifting toward BTC-specific mutation trials.`
+- evidence: `Heavy-backtest summary currently covers 33 candidates; this must keep shifting toward BTC-specific mutation trials.`
 
 ### golden_demo_collapse
 
 - severity: `warn`
 - status: `contained`
-- evidence: `Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter | Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191`
+- evidence: `Walk-forward consistency stays weak for: auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter, auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter | Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window, auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window`
 
 ## Required Fixes
 

@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `116`
+- proposal_count: `120`
 
 ## Trend continuation with pullback confirmation
 
@@ -16,7 +16,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `high`
-- surprise_score: `0.0`
+- surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Ed Seykota, TurtleTrader / Richard Dennis tradition, Adam H. Grimes`
 - lineage_ready: `False`
@@ -43,7 +43,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `high`
-- surprise_score: `0.0`
+- surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Linda Bradford Raschke, StockCharts ChartSchool, TradingView Help Center`
 - lineage_ready: `False`
@@ -70,7 +70,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
-- surprise_score: `0.0`
+- surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Mark Minervini, Peter Brandt, StockCharts ChartSchool`
 - lineage_ready: `False`
@@ -97,7 +97,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
-- surprise_score: `0.0`
+- surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `George Soros, John Murphy, Kalshi Help Center`
 - lineage_ready: `False`
@@ -124,7 +124,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
-- surprise_score: `0.0`
+- surprise_score: `0.81`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Edward O. Thorp, Van Tharp, Tom Basso`
 - lineage_ready: `False`
@@ -139,6 +139,33 @@ These are the current source-grounded mutation proposals.
 - benchmark_stress_resilience: `n/a`
 - thesis: Sizing should be treated as a second-stage mutation only after contract-level edge is stable under heavy backtest.
 
+## Volatility compression breakout
+
+- proposal_id: `btc-15m-volatility-compression-breakout`
+- card_id: `n/a`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `bollinger_squeeze_breakout`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "bollinger_squeeze_breakout"}`
+- variety_child_id: `{"paper_gate": "strict"}`
+- variety_child_label: `paper_gate=strict`
+- family_tested_child_count: `10`
+- target_contract_family: `btc_up_down_15m`
+- benchmark_priority: `high`
+- surprise_score: `0.81`
+- duplicate_of_proposal_id: `n/a`
+- source_names: `Linda Bradford Raschke, John Bollinger, TradingView Help Center`
+- lineage_ready: `False`
+- status: `research_seeded_backtest_required`
+- benchmark_profitability_score: `n/a`
+- benchmark_paper_trade_readiness: `n/a`
+- benchmark_next_step: `n/a`
+- benchmark_trade_count: `n/a`
+- benchmark_minimum_trade_count: `n/a`
+- benchmark_trade_count_gate_pass: `n/a`
+- benchmark_walk_forward_consistency: `n/a`
+- benchmark_stress_resilience: `n/a`
+- thesis: Compression followed by expansion should produce the cleanest contract edge when false-break filters are strict.
+
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-8eb6ebe447
 
 - proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-8eb6ebe447-sparse_signal`
@@ -151,7 +178,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
-- surprise_score: `0.0`
+- surprise_score: `0.69`
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Recursive Flywheel, John Bollinger`
 - lineage_ready: `False`
@@ -166,10 +193,10 @@ These are the current source-grounded mutation proposals.
 - benchmark_stress_resilience: `n/a`
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-spa-19c42eb0ae
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-04c5a6db38
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-spa-19c42eb0ae-sparse_signal`
-- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-14ae19a7-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-04c5a6db38-sparse_signal`
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-1-cc018326-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "trend", "strategy": "breakout_expansion_confirmation"}`
@@ -178,34 +205,7 @@ These are the current source-grounded mutation proposals.
 - family_tested_child_count: `0`
 - target_contract_family: `btc_up_down_15m`
 - benchmark_priority: `medium`
-- surprise_score: `0.0`
-- duplicate_of_proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-8eb6ebe447-sparse_signal`
-- source_names: `Recursive Flywheel, John Bollinger`
-- lineage_ready: `False`
-- status: `duplicate_effective_mutation`
-- benchmark_profitability_score: `n/a`
-- benchmark_paper_trade_readiness: `n/a`
-- benchmark_next_step: `n/a`
-- benchmark_trade_count: `n/a`
-- benchmark_minimum_trade_count: `n/a`
-- benchmark_trade_count_gate_pass: `n/a`
-- benchmark_walk_forward_consistency: `n/a`
-- benchmark_stress_resilience: `n/a`
-- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
-
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-spa-68e8b2f9bc
-
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-spa-68e8b2f9bc-sparse_signal`
-- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-mo-a92f2886-sparse_signal`
-- doctrine_family: `breakout_volatility_expansion`
-- strategy_family: `breakout_expansion_confirmation`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "trend", "strategy": "breakout_expansion_confirmation"}`
-- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
-- variety_child_label: `activation_profile=wider, paper_gate=balanced`
-- family_tested_child_count: `0`
-- target_contract_family: `btc_up_down_15m`
-- benchmark_priority: `medium`
-- surprise_score: `0.0`
+- surprise_score: `0.69`
 - duplicate_of_proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chas-8eb6ebe447-sparse_signal`
 - source_names: `Recursive Flywheel, John Bollinger`
 - lineage_ready: `False`
