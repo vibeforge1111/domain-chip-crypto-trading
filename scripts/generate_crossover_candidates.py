@@ -375,14 +375,17 @@ def run(
     for strat, cnt in child_strat_counts.most_common():
         print(f"    {strat}: {cnt}")
 
-    # 6. Write (unless dry-run)
+    # 6. Write to mutation_trials (unless dry-run)
     if dry_run:
-        print("\n  [DRY RUN] Not writing to project.json")
+        print("\n  [DRY RUN] Not writing candidates")
     else:
-        project["candidate_trials"].extend(children)
-        safe_write_json(PROJECT_PATH, project)
-        total = len(project["candidate_trials"])
-        print(f"\n  Wrote {len(children)} new candidates to project.json (total: {total})")
+        trials_path = REPO / "artifacts" / "recursion" / "mutation_trials.json"
+        trials_path.parent.mkdir(parents=True, exist_ok=True)
+        existing_trials = json.loads(trials_path.read_text(encoding="utf-8")) if trials_path.exists() else []
+        existing_trials = existing_trials if isinstance(existing_trials, list) else []
+        existing_trials.extend(children)
+        safe_write_json(trials_path, existing_trials)
+        print(f"\n  Wrote {len(children)} new candidates to mutation_trials.json (total: {len(existing_trials)})")
 
     return children
 

@@ -448,11 +448,14 @@ def generate_targeted_mutations(
         print(json.dumps(report, indent=2, sort_keys=True))
         return report
 
-    # Append to project config
+    # Append to mutation_trials instead of researcher config
     if all_new:
-        trials.extend(all_new)
-        config["candidate_trials"] = trials
-        safe_write_json(CONFIG_PATH, config)
+        trials_path = REPO_ROOT / "artifacts" / "recursion" / "mutation_trials.json"
+        trials_path.parent.mkdir(parents=True, exist_ok=True)
+        existing_trials = json.loads(trials_path.read_text(encoding="utf-8")) if trials_path.exists() else []
+        existing_trials = existing_trials if isinstance(existing_trials, list) else []
+        existing_trials.extend(all_new)
+        safe_write_json(trials_path, existing_trials)
 
     # Write report
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

@@ -301,15 +301,16 @@ def generate_indicator_mutations(
     forge_path = FORGE_DIR / "indicator_mutations.json"
     forge_path.write_text(json.dumps(forge_output, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
-    # Optionally append to main config for standard backtest pipeline
+    # Append to mutation_trials instead of researcher config
     if append_to_config and all_new:
-        trials = list(config.get("candidate_trials", []))
-        # Strip forge_metadata before appending (not needed in config)
+        trials_path = repo_root / "artifacts" / "recursion" / "mutation_trials.json"
+        trials_path.parent.mkdir(parents=True, exist_ok=True)
+        existing_trials = json.loads(trials_path.read_text(encoding="utf-8")) if trials_path.exists() else []
+        existing_trials = existing_trials if isinstance(existing_trials, list) else []
         for candidate in all_new:
             trial = {k: v for k, v in candidate.items() if k != "forge_metadata"}
-            trials.append(trial)
-        config["candidate_trials"] = trials
-        config_path.write_text(json.dumps(config, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+            existing_trials.append(trial)
+        safe_write_json(trials_path, existing_trials)
 
     report = {
         "generated_at": forge_output["generated_at"],
