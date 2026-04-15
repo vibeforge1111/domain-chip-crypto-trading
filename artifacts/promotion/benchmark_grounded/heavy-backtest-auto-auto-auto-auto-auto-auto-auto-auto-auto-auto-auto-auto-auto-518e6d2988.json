@@ -1,19 +1,32 @@
 {
-  "asset_universe": "",
+  "asset_universe": "BTC",
   "bridge_version": "crypto-bridge.v1",
-  "candidate_id": "baseline",
+  "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-a3311e5b13",
   "contract_count": 21696,
   "covered_contract_count": 21695,
   "data_mode": "contract_window_backtest",
-  "doctrine_id": "",
+  "doctrine_id": "breakout_volatility_expansion",
   "eligibility_status": "eligible_for_boundary_promotion",
   "generated_at": "1776273054431212000",
   "holdout_profitability_score": 0.0,
-  "market_regime": "",
+  "market_regime": "trend",
   "max_drawdown": 0.0,
   "metric_name": "profitability_score",
-  "minimum_trade_count": 433,
-  "mutations": {},
+  "minimum_trade_count": 25,
+  "mutations": {
+    "activation_profile": "wider",
+    "asset_universe": "BTC",
+    "chase_policy": "no_chase_after_crowded_good_news",
+    "doctrine_id": "breakout_volatility_expansion",
+    "follow_through_profile": "delayed_confirmation",
+    "late_sample_guard": "on",
+    "market_regime": "trend",
+    "paper_gate": "balanced",
+    "session_profile": "late_cycle_filter",
+    "strategy_id": "breakout_open_interest_confirmation",
+    "timeframe": "15m",
+    "venue": "kalshi"
+  },
   "paper_trade_readiness": 0.17,
   "primary_boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
   "primary_mechanism": "Backtested on 0 active BTC 15m contract decisions across 21695 covered windows.",
@@ -24,10 +37,10 @@
   "report_paths": [
     "artifacts/backtests/heavy_backtest_summary.json"
   ],
-  "run_id": "heavy-backtest-baseline",
+  "run_id": "heavy-backtest-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-a3311e5b13",
   "sharpe_ratio": 0.0,
   "source_benchmark": "backtest_benchmark",
-  "strategy_id": "",
+  "strategy_id": "breakout_open_interest_confirmation",
   "stress_resilience": 0.0,
   "stress_stats": {
     "base": {
@@ -49,10 +62,10 @@
       "trade_count_gate_pass": false
     }
   },
-  "timeframe": "",
+  "timeframe": "15m",
   "trade_count": 0,
   "trade_count_gate_pass": false,
-  "venue": "",
+  "venue": "kalshi",
   "walk_forward_consistency": 0.0,
   "walk_forward_stats": [
     {

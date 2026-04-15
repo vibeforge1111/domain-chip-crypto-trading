@@ -1,0 +1,128 @@
+{
+  "asset_universe": "BTC",
+  "bridge_version": "crypto-bridge.v1",
+  "candidate_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+  "contract_count": 21696,
+  "covered_contract_count": 21695,
+  "data_mode": "contract_window_backtest",
+  "doctrine_id": "mean_reversion_liquidity_reclaim",
+  "eligibility_status": "eligible_for_boundary_promotion",
+  "generated_at": "1776273054431212000",
+  "holdout_profitability_score": 0.4244,
+  "market_regime": "range",
+  "max_drawdown": 0.7961,
+  "metric_name": "profitability_score",
+  "minimum_trade_count": 161,
+  "mutations": {
+    "asset_universe": "BTC",
+    "doctrine_id": "mean_reversion_liquidity_reclaim",
+    "drawdown_guard": "off",
+    "market_regime": "range",
+    "paper_gate": "balanced",
+    "reversal_confirmation": "reclaim_close",
+    "strategy_id": "wedge_exhaustion_reversal",
+    "timeframe": "15m",
+    "venue": "kalshi",
+    "volume_context_guard": "thin_filter",
+    "wick_profile": "rejection_confirm"
+  },
+  "paper_trade_readiness": 0.3509,
+  "primary_boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
+  "primary_mechanism": "Backtested on 108 active BTC 15m contract decisions across 21695 covered windows.",
+  "profitability_score": 0.5356,
+  "promotion_candidate_kind": "benchmark_grounded_boundary",
+  "recommended_next_step": "run_contradiction_probe",
+  "regime_stats": {
+    "range": {
+      "avg_return": 0.0711,
+      "trade_count": 108,
+      "win_rate": 0.5556
+    }
+  },
+  "report_paths": [
+    "artifacts/backtests/heavy_backtest_summary.json"
+  ],
+  "run_id": "heavy-backtest-auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+  "sharpe_ratio": 0.7436,
+  "source_benchmark": "backtest_benchmark",
+  "strategy_id": "wedge_exhaustion_reversal",
+  "stress_resilience": 0.6667,
+  "stress_stats": {
+    "base": {
+      "avg_return": 0.0711,
+      "profitability_score": 0.5356,
+      "trade_count": 108,
+      "trade_count_gate_pass": false
+    },
+    "elevated_fees": {
+      "avg_return": 0.0311,
+      "profitability_score": 0.5156,
+      "trade_count": 108,
+      "trade_count_gate_pass": false
+    },
+    "fee_and_slippage": {
+      "avg_return": -0.0089,
+      "profitability_score": 0.4956,
+      "trade_count": 108,
+      "trade_count_gate_pass": false
+    }
+  },
+  "timeframe": "15m",
+  "trade_count": 108,
+  "trade_count_gate_pass": false,
+  "venue": "kalshi",
+  "walk_forward_consistency": 0.0,
+  "walk_forward_stats": [
+    {
+      "avg_return": 0.1267,
+      "end_contract_id": "kxbtc15m-20251016-0430",
+      "profitability_score": 0.5633,
+      "segment_id": "wf-1",
+      "start_contract_id": "kxbtc15m-20250901-0000",
+      "trade_count": 24,
+      "trade_count_gate_pass": false,
+      "win_rate": 0.5833
+    },
+    {
+      "avg_return": 0.0509,
+      "end_contract_id": "kxbtc15m-20251130-0915",
+      "profitability_score": 0.5255,
+      "segment_id": "wf-2",
+      "start_contract_id": "kxbtc15m-20251016-0445",
+      "trade_count": 22,
+      "trade_count_gate_pass": false,
+      "win_rate": 0.5455
+    },
+    {
+      "avg_return": -0.0835,
+      "end_contract_id": "kxbtc15m-20260114-1400",
+      "profitability_score": 0.4583,
+      "segment_id": "wf-3",
+      "start_contract_id": "kxbtc15m-20251130-0930",
+      "trade_count": 23,
+      "trade_count_gate_pass": false,
+      "win_rate": 0.4783
+    },
+    {
+      "avg_return": 0.3886,
+      "end_contract_id": "kxbtc15m-20260228-1845",
+      "profitability_score": 0.6943,
+      "segment_id": "wf-4",
+      "start_contract_id": "kxbtc15m-20260114-1415",
+      "trade_count": 21,
+      "trade_count_gate_pass": false,
+      "win_rate": 0.7143
+    },
+    {
+      "avg_return": -0.1511,
+      "end_contract_id": "kxbtc15m-20260414-2345",
+      "profitability_score": 0.4244,
+      "segment_id": "wf-5",
+      "start_contract_id": "kxbtc15m-20260228-1900",
+      "trade_count": 18,
+      "trade_count_gate_pass": false,
+      "win_rate": 0.4444
+    }
+  ],
+  "win_rate": 0.5556
+}
