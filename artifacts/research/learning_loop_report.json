@@ -1,9 +1,7 @@
 {
   "after": {
-    "added_cards": [
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--840d57ea-sparse_signal.json"
-    ],
-    "added_count": 1,
+    "added_cards": [],
+    "added_count": 0,
     "approved_waiting_packet_count": 0,
     "card_count": 203,
     "eligible_missing_card_count": 0,
@@ -15,20 +13,16 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 202,
-    "doctrine_packets_generated": 1,
-    "pending_packet_count": 1,
+    "card_count": 203,
+    "doctrine_packets_generated": 0,
+    "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 2.971,
-  "finished_at": "2026-04-15T23:03:29.086326Z",
+  "duration_seconds": 2.937,
+  "finished_at": "2026-04-15T23:05:13.920614Z",
   "loop_kind": "learning",
-  "material_change": true,
-  "material_reasons": [
-    "card_count",
-    "pending_packet_count",
-    "added_count"
-  ],
+  "material_change": false,
+  "material_reasons": [],
   "reconciliation": {
     "card_count": 203,
     "eligible_missing_card_count": 0,
@@ -40,5 +34,5 @@
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-15T23:03:26.115570Z"
+  "started_at": "2026-04-15T23:05:10.983509Z"
 }

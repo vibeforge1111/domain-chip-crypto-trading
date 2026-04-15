@@ -1,0 +1,61 @@
+{
+  "baseline_metric": 0.5263,
+  "reasons": [
+    "Top benchmark candidate `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e` is at WR `52.6%` with WF `40%` after `64` cycles.",
+    "`12` variety families are still uncovered, so the next useful probes should come from known doctrine x strategy gaps rather than arbitrary indicator churn.",
+    "`9` contradiction probes are active; the next loop should mutate around failure surfaces, not promote on backtest residue alone."
+  ],
+  "suggestions": [
+    {
+      "candidate_id": "cross-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191",
+      "candidate_summary": "Cross the current leader `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e` with one mutation from `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191` instead of adding a fresh doctrine blindly.",
+      "hypothesis": "The benchmark already has a better frontier than the baseline-only loop. Use the runner-up's strongest differing mutation as the next bounded probe.",
+      "metadata": {
+        "leader_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e",
+        "proposed_mutations": {
+          "activation_profile": "wider",
+          "asset_universe": "BTC,ETH",
+          "doctrine_id": "trend_regime_following",
+          "execution_buffer": "high",
+          "late_sample_guard": "on",
+          "market_regime": "trend",
+          "no_trade_window": "avoid_dead_zone",
+          "paper_gate": "balanced",
+          "strategy_id": "ema_pullback_long",
+          "timeframe": "4h",
+          "venue": "binance",
+          "volume_context_guard": "strict_participation"
+        },
+        "runner_up_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191",
+        "source": "top_cross_pollination"
+      },
+      "mutations": {}
+    },
+    {
+      "candidate_id": "variety-breakout_expansion_confirmation-breakout_volatility_expansion",
+      "candidate_summary": "Explore the uncovered variety backlog for `breakout_expansion_confirmation` under `breakout_volatility_expansion`.",
+      "hypothesis": "Variety backlog is still open on `activation_profile=wider, paper_gate=balanced`. Closing those uncovered child combinations is higher-signal than generic indicator churn.",
+      "metadata": {
+        "proposed_mutations": {},
+        "source": "variety_backlog",
+        "status": "uncovered_variety_pending",
+        "target_contract_family": "btc_up_down_15m",
+        "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+      },
+      "mutations": {}
+    },
+    {
+      "candidate_id": "variety-range_reclaim_rotation-mean_reversion_liquidity_reclaim",
+      "candidate_summary": "Explore the uncovered variety backlog for `range_reclaim_rotation` under `mean_reversion_liquidity_reclaim`.",
+      "hypothesis": "Variety backlog is still open on `activation_profile=wider, paper_gate=balanced`. Closing those uncovered child combinations is higher-signal than generic indicator churn.",
+      "metadata": {
+        "proposed_mutations": {},
+        "source": "variety_backlog",
+        "status": "uncovered_variety_pending",
+        "target_contract_family": "btc_up_down_15m",
+        "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+      },
+      "mutations": {}
+    }
+  ]
+}

@@ -1,10 +1,8 @@
 {
-  "added_cards": [
-    "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--840d57ea-sparse_signal.json"
-  ],
-  "added_count": 1,
-  "eligible_packet_count": 1,
-  "existing_card_count": 202,
+  "added_cards": [],
+  "added_count": 0,
+  "eligible_packet_count": 0,
+  "existing_card_count": 203,
   "max_new_mutations_per_cycle": 3,
   "packet_count": 203,
   "remaining_packet_count": 0,

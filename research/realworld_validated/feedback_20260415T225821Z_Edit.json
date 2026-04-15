@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "Modified C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\live\\dashboard_app.py",
+  "tool_name": "Edit",
+  "result_summary": "",
+  "timestamp": "2026-04-15T22:58:21.238944+00:00",
+  "source": "claude_code_hook"
+}

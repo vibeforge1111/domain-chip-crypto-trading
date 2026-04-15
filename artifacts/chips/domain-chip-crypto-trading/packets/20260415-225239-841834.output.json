@@ -1,0 +1,60 @@
+{
+  "documents": [
+    {
+      "content": "# Autoloop Benchmark Evidence\n\n- cycle_count: 64\n- candidate_count: 9\n- contract_family: btc_up_down_15m\n- top_candidate: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-05b2227a3e\n- win_rate: 52.6%\n- sharpe_ratio: 0.0551\n- max_drawdown: 99.00%\n- walk_forward_consistency: 40.0%\n- trade_count: 19\n- verdict: reject\n\n## Top 5 Candidates\n\n| Candidate | WR | Sharpe | WF | Verdict |\n|-----------|----|--------|----|---------|\n| auto-trend-volume-filtered-activation_pro... | 52.6% | 0.06 | 40% | reject |\n| auto-trend-volume-filtered-activation_pro... | 52.0% | 0.00 | 20% | reject |\n| btc-15m-volatility-compression-breakout-p... | 33.3% | -1.81 | 0% | reject |\n| baseline | 0.0% | 0.00 | 0% | reject |\n| auto-breakout-impulse-squeeze-compression... | 0.0% | 0.00 | 0% | reject |",
+      "kind": "benchmark_evidence",
+      "memory_tier": "durable",
+      "slug": "crypto-autoloop-benchmark",
+      "title": "Autoloop Benchmark Evidence"
+    },
+    {
+      "content": "# Grounded Doctrine\n\nBased on 9 heavy-backtest candidates across 64 autoloop cycles.\n\n## Strategy Family Performance\n\n| Strategy | Candidates | Best WR | Avg WR |\n|----------|------------|---------|--------|\n| ema_pullback_long | 2 | 52.6% | 52.3% |\n| breakout_open_interest_confirmation | 3 | 33.3% | 11.1% |\n| unknown | 1 | 0.0% | 0.0% |\n| bollinger_squeeze_breakout | 2 | 0.0% | 0.0% |\n| funding_mean_revert | 1 | 0.0% | 0.0% |\n\n## Doctrine Family Performance\n\n| Doctrine | Candidates | Best WR | Avg WR |\n|----------|------------|---------|--------|\n| trend_regime_following | 2 | 52.6% | 52.3% |\n| breakout_volatility_expansion | 5 | 33.3% | 6.7% |\n| unknown | 1 | 0.0% | 0.0% |\n| risk_first_asymmetric_capture | 1 | 0.0% | 0.0% |\n\n## Doctrine Cards (202 total)\n\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--110b4bcd-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--36abb8e8-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--4b223481-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychology_w-c27c34dead\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--4be3b4dd-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-a3311e5b13\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--5b62fe8a-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7993749b-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no-6652aacdec\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7dda48e2-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--a06900c7-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-7db8188d54\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--b3f7a643-holdout_decay**: Auto-generated: holdout_decay fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb\n- **dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--c8e0c008-sparse_signal**: Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-1353cb3ab6",
+      "kind": "grounded_doctrine",
+      "memory_tier": "durable",
+      "slug": "crypto-autoloop-doctrine",
+      "title": "Autoloop Grounded Doctrine"
+    },
+    {
+      "content": "# Grounded Boundary (Dead Ends)\n\n9 of 9 heavy-backtest candidates are currently rejected.\n\n## Common Rejection Patterns\n\n- breakout_open_interest_confirmation: 3 rejections\n- ema_pullback_long: 2 rejections\n- bollinger_squeeze_breakout: 2 rejections\n- unknown: 1 rejections\n- funding_mean_revert: 1 rejections\n\n## Active Contradictions (9)\n\n- btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-186746c251-sparse_signal: sparse_signal (priority 0.99)\n- baseline-sparse_signal: sparse_signal (priority 0.99)\n- auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal-sparse_signal: sparse_signal (priority 0.99)\n- auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f-sparse_signal: sparse_signal (priority 0.99)\n- auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-7db8188d54-sparse_signal: sparse_signal (priority 0.99)",
+      "kind": "grounded_boundary",
+      "memory_tier": "durable",
+      "slug": "crypto-autoloop-dead-ends",
+      "title": "Autoloop Dead-End Patterns"
+    },
+    {
+      "content": "{\n  \"baseline_mutations\": {},\n  \"benchmark_verdict\": \"reject\",\n  \"candidate_id\": \"global-baseline\",\n  \"candidate_mutations\": {},\n  \"candidate_path\": \"benchmarks/trading-crypto-candidate.json\",\n  \"insight_boundary\": \"Passive baseline is not doctrine and should not be promoted.\",\n  \"insight_mechanism\": \"Baseline only. Add a doctrine before promoting any strategy claim.\",\n  \"insight_summary\": \"Crypto Trading scored 0.366 on the default scenario, led by max_drawdown while doctrine_fit remains the next frontier.\",\n  \"metrics\": {\n    \"max_drawdown\": 0.24,\n    \"paper_trade_readiness\": 0.366,\n    \"profitability_score\": 0.34,\n    \"sharpe_ratio\": 0.72,\n    \"verdict_confidence\": 0.6515,\n    \"win_rate\": 0.48\n  },\n  \"packet_kind\": \"benchmark_candidate_publication\",\n  \"promotion_candidate_kind\": \"contradiction_surface\",\n  \"recommended_next_step\": \"run_contradiction_probe\",\n  \"scenario_id\": \"\",\n  \"scenario_pack\": \"\",\n  \"scenario_track\": \"\",\n  \"schema_version\": \"spark-benchmark-win-packet.v1\",\n  \"specialization_label\": \"Crypto Trading\",\n  \"specialization_path_key\": \"trading-crypto\",\n  \"swarm_publication_ready\": false\n}",
+      "kind": "benchmark_win_packet",
+      "memory_tier": "raw_run",
+      "slug": "crypto-swarm-publication-global-baseline",
+      "title": "global-baseline Swarm Publication Packet"
+    }
+  ],
+  "publication_packet": {
+    "baseline_mutations": {},
+    "benchmark_verdict": "reject",
+    "candidate_id": "global-baseline",
+    "candidate_mutations": {},
+    "candidate_path": "benchmarks/trading-crypto-candidate.json",
+    "insight_boundary": "Passive baseline is not doctrine and should not be promoted.",
+    "insight_mechanism": "Baseline only. Add a doctrine before promoting any strategy claim.",
+    "insight_summary": "Crypto Trading scored 0.366 on the default scenario, led by max_drawdown while doctrine_fit remains the next frontier.",
+    "metrics": {
+      "max_drawdown": 0.24,
+      "paper_trade_readiness": 0.366,
+      "profitability_score": 0.34,
+      "sharpe_ratio": 0.72,
+      "verdict_confidence": 0.6515,
+      "win_rate": 0.48
+    },
+    "packet_kind": "benchmark_candidate_publication",
+    "promotion_candidate_kind": "contradiction_surface",
+    "recommended_next_step": "run_contradiction_probe",
+    "scenario_id": "",
+    "scenario_pack": "",
+    "scenario_track": "",
+    "schema_version": "spark-benchmark-win-packet.v1",
+    "specialization_label": "Crypto Trading",
+    "specialization_path_key": "trading-crypto",
+    "swarm_publication_ready": false
+  }
+}
