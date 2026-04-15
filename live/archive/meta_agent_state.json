@@ -1,0 +1,72 @@
+{
+  "strategy_params": {
+    "perturbation": {
+      "mutation_rate": 0.25,
+      "crossover_rate": 0.5,
+      "guard_add_prob": 0.2,
+      "guard_remove_prob": 0.1,
+      "regime_extend_prob": 0.15,
+      "diversity_weight": 0.8,
+      "exploitation_weight": 0.2,
+      "temperature": 0.7
+    },
+    "crossover": {
+      "mutation_rate": 0.3,
+      "crossover_rate": 0.5,
+      "guard_add_prob": 0.2,
+      "guard_remove_prob": 0.1,
+      "regime_extend_prob": 0.15,
+      "diversity_weight": 0.8,
+      "exploitation_weight": 0.2,
+      "temperature": 1.0
+    },
+    "feature_guided": {
+      "mutation_rate": 0.15,
+      "crossover_rate": 0.5,
+      "guard_add_prob": 0.4,
+      "guard_remove_prob": 0.1,
+      "regime_extend_prob": 0.15,
+      "diversity_weight": 0.8,
+      "exploitation_weight": 0.2,
+      "temperature": 1.0
+    },
+    "regime_transfer": {
+      "mutation_rate": 0.3,
+      "crossover_rate": 0.5,
+      "guard_add_prob": 0.2,
+      "guard_remove_prob": 0.1,
+      "regime_extend_prob": 0.5,
+      "diversity_weight": 0.8,
+      "exploitation_weight": 0.2,
+      "temperature": 0.7
+    },
+    "dead_end_avoidance": {
+      "mutation_rate": 0.2,
+      "crossover_rate": 0.5,
+      "guard_add_prob": 0.2,
+      "guard_remove_prob": 0.1,
+      "regime_extend_prob": 0.15,
+      "diversity_weight": 0.8,
+      "exploitation_weight": 0.2,
+      "temperature": 1.0
+    },
+    "random_exploration": {
+      "mutation_rate": 0.6,
+      "crossover_rate": 0.5,
+      "guard_add_prob": 0.2,
+      "guard_remove_prob": 0.1,
+      "regime_extend_prob": 0.15,
+      "diversity_weight": 0.8,
+      "exploitation_weight": 0.2,
+      "temperature": 0.5
+    }
+  },
+  "strategy_weights": {
+    "perturbation": 1.5,
+    "crossover": 1.0,
+    "feature_guided": 1.0,
+    "regime_transfer": 0.5,
+    "dead_end_avoidance": 1.0,
+    "random_exploration": 0.5
+  }
+}

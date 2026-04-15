@@ -1,0 +1,133 @@
+{
+  "status": "running",
+  "started_at": "2026-04-15T12:30:10.275537+00:00",
+  "assets": [
+    "BTC",
+    "ETH",
+    "SOL"
+  ],
+  "agents_loaded": 5,
+  "strategies_loaded": 1,
+  "total_settlements": 0,
+  "current_contracts": {
+    "ETH:15m": {
+      "contract_id": "live-eth-15m-20260415-1215",
+      "open_price": 2334.39,
+      "evaluated_at": "2026-04-15T12:30:11.365814+00:00",
+      "timeframe": "15m",
+      "regime": "compression",
+      "strategies_matched": [
+        "compression_range_bounce",
+        "rsi_extreme_reversion",
+        "multi_confirm_bounce",
+        "vwap_reversion",
+        "range_extreme_fade",
+        "bollinger_squeeze_breakout",
+        "range_reclaim_scalp",
+        "intermarket_context_gate",
+        "participation_gate_overlay"
+      ],
+      "agents_invoked": 5,
+      "predictions": {
+        "58d7a553": "skip",
+        "24f80dec": "skip",
+        "1fe1bf5a": "skip",
+        "6f8ed62f": "skip",
+        "d8a6adf4": "skip"
+      }
+    },
+    "SOL:15m": {
+      "contract_id": "live-sol-15m-20260415-1215",
+      "open_price": 83.51,
+      "evaluated_at": "2026-04-15T12:30:11.365814+00:00",
+      "timeframe": "15m",
+      "regime": "compression",
+      "strategies_matched": [
+        "compression_range_bounce",
+        "rsi_extreme_reversion",
+        "multi_confirm_bounce",
+        "vwap_reversion",
+        "range_extreme_fade",
+        "bollinger_squeeze_breakout",
+        "range_reclaim_scalp",
+        "intermarket_context_gate",
+        "participation_gate_overlay"
+      ],
+      "agents_invoked": 5,
+      "predictions": {
+        "58d7a553": "skip",
+        "24f80dec": "skip",
+        "1fe1bf5a": "skip",
+        "6f8ed62f": "skip",
+        "d8a6adf4": "skip"
+      }
+    }
+  },
+  "agent_stats": {
+    "58d7a553": {
+      "bt_wr": 0.5825,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
+    "24f80dec": {
+      "bt_wr": 0.5796,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
+    "1fe1bf5a": {
+      "bt_wr": 0.5692,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
+    "6f8ed62f": {
+      "bt_wr": 0.5583,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    },
+    "d8a6adf4": {
+      "bt_wr": 0.5557,
+      "live_wr": 0,
+      "live_trades": 0,
+      "live_wins": 0,
+      "skips": 0,
+      "delta": 0,
+      "strategy": "compression_range_bounce",
+      "timeframe": "15m"
+    }
+  },
+  "strategies": {
+    "compression_range_bounce": {
+      "agents": 5,
+      "best_wr": 0.5825,
+      "regimes": [
+        "compression"
+      ]
+    }
+  },
+  "regime_history": [
+    "range",
+    "compression",
+    "compression"
+  ],
+  "last_updated": "2026-04-15T12:30:12.099574+00:00"
+}

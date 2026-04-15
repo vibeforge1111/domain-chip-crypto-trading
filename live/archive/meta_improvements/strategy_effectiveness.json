@@ -1,0 +1,42 @@
+{
+  "random_exploration": {
+    "attempts": 3,
+    "improvements": 0,
+    "improvement_rate": 0.0,
+    "avg_wr": 0.5544,
+    "best_wr": 0.5676,
+    "generations_active": [
+      1
+    ]
+  },
+  "regime_transfer": {
+    "attempts": 4,
+    "improvements": 0,
+    "improvement_rate": 0.0,
+    "avg_wr": 0.5242249999999999,
+    "best_wr": 0.5796,
+    "generations_active": [
+      1
+    ]
+  },
+  "perturbation": {
+    "attempts": 7,
+    "improvements": 4,
+    "improvement_rate": 0.5714285714285714,
+    "avg_wr": 0.5448571428571428,
+    "best_wr": 1.0,
+    "generations_active": [
+      1
+    ]
+  },
+  "crossover": {
+    "attempts": 1,
+    "improvements": 0,
+    "improvement_rate": 0.0,
+    "avg_wr": 0.5757,
+    "best_wr": 0.5757,
+    "generations_active": [
+      1
+    ]
+  }
+}
