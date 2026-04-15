@@ -4,6 +4,30 @@ Backtesting is the benchmark lane for this chip.
 
 This page plays the same role as the startup chip's promotion bridge page, but for trading combinations.
 
+## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191
+
+- doctrine_id: `trend_regime_following`
+- strategy_id: `ema_pullback_long`
+- market_regime: `trend`
+- profitability_score: `0.5`
+- sharpe_ratio: `-0.0`
+- max_drawdown: `0.99`
+- paper_trade_readiness: `0.1452`
+- contract_count: `5424`
+- covered_contract_count: `5423`
+- trade_count: `25`
+- minimum_trade_count: `25`
+- trade_count_gate_pass: `True`
+- holdout_profitability_score: `0.48`
+- walk_forward_consistency: `0.2`
+- stress_resilience: `0.3333`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+- promotion_candidate_kind: `benchmark_grounded_boundary`
+- eligibility_status: `eligible_for_boundary_promotion`
+- primary_mechanism: Backtested on 25 active BTC 1h contract decisions across 5423 covered windows. Fallback used because requested timeframe `4h` unavailable.
+- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
+
 ## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter
 
 - doctrine_id: `trend_regime_following`
@@ -53,30 +77,6 @@ This page plays the same role as the startup chip's promotion bridge page, but f
 - primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
 
 ## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `bollinger_squeeze_breakout`
-- market_regime: `high_vol`
-- profitability_score: `0.4484`
-- sharpe_ratio: `-1.301`
-- max_drawdown: `0.99`
-- paper_trade_readiness: `0.048`
-- contract_count: `21696`
-- covered_contract_count: `21695`
-- trade_count: `158`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.4467`
-- walk_forward_consistency: `0.4`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-- promotion_candidate_kind: `benchmark_grounded_boundary`
-- eligibility_status: `eligible_for_boundary_promotion`
-- primary_mechanism: Backtested on 158 active BTC 15m contract decisions across 21695 covered windows.
-- primary_boundary: Insufficient heavy-backtest breadth or unstable returns still block promotion.
-
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `bollinger_squeeze_breakout`
