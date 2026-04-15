@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `17`
-- pending_family_count: `17`
+- family_count: `16`
+- pending_family_count: `16`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
@@ -13,8 +13,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `4`
-- pending_proposal_ids: `auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse-e73cf94755-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse_sign-ab83a29a6b-holdout_decay`
-- pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced`
+- pending_proposal_ids: `auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-s-d1dc75cf43-holdout_decay, auto-auto-auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-sparse-e73cf94755-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay`
+- pending_child_labels: `late_sample_guard=on, paper_gate=balanced | activation_profile=wider, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
 - contradiction_modes: `n/a`
