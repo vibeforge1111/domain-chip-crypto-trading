@@ -35,3 +35,17 @@ fernet_key*
 
 # Publisher-side tooling (not for subscribers)
 scripts/export_premium_pack.py
+
+# ── Strategy Alpha (Pro Users Only) ─────────────────
+# Agent mutations, fitness data, population archives
+artifacts/bridge_packets/
+artifacts/backtests/
+artifacts/paper_trade/
+artifacts/recursion/mutation_trials.json
+live/archive/generations/
+live/archive/meta_agent_state.json
+live/archive/meta_improvements/
+live/archive/live_pt_state.json
+
+# Candidate trials contain proven mutation configs
+spark-researcher.project.json
