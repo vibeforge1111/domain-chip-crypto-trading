@@ -67,10 +67,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-baseline-sparse_signal
+## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal
 
-- parent_candidate_id: `baseline`
-- child_candidate_id: `baseline-probe-sparse_signal`
+- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase`
+- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
