@@ -17,7 +17,7 @@
 
 ## Current Practical Read
 
-- current benchmark leader: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- current benchmark leader: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal`
 - current backtest loop bias: `n/a`
 - current paper-trade queue: `0`
 

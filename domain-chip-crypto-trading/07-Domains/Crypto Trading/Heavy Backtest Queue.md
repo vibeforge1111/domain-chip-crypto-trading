@@ -4,14 +4,14 @@ This queue is the benchmark gate for recursive improvement.
 
 - queue_count: `9`
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
+## Auto-generated: holdout_decay fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal`
-- benchmark_priority: `medium`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d-holdout_decay`
+- benchmark_priority: `high`
 - surprise_score: `0.69`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "breakout_expansion_confirmation"}`
-- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
-- variety_child_label: `activation_profile=wider, paper_gate=balanced`
+- variety_child_id: `{"late_sample_guard": "on", "paper_gate": "balanced"}`
+- variety_child_label: `late_sample_guard=on, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -21,14 +21,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: holdout_decay fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d
+## Auto-generated: sparse_signal fix for auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal-ps-20707864ff
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d-holdout_decay`
-- benchmark_priority: `high`
+- proposal_id: `auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal-ps-20707864ff-sparse_signal`
+- benchmark_priority: `medium`
 - surprise_score: `0.69`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "breakout_expansion_confirmation"}`
-- variety_child_id: `{"late_sample_guard": "on", "paper_gate": "balanced"}`
-- variety_child_label: `late_sample_guard=on, paper_gate=balanced`
+- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
+- variety_child_label: `activation_profile=wider, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -55,14 +55,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation
+## Auto-generated: holdout_decay fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f
 
-- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-sparse_signal`
-- benchmark_priority: `medium`
+- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f-holdout_decay`
+- benchmark_priority: `high`
 - surprise_score: `0.69`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "ema_trend_continuation"}`
-- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
-- variety_child_label: `activation_profile=wider, paper_gate=balanced`
+- variety_child_id: `{"late_sample_guard": "on", "paper_gate": "balanced"}`
+- variety_child_label: `late_sample_guard=on, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -123,14 +123,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Trend continuation with pullback confirmation
+## Auto-generated: sparse_signal fix for auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec-sparse_signal
 
-- proposal_id: `btc-15m-trend-continuation`
-- benchmark_priority: `high`
-- surprise_score: `0.81`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "pullback_then_continuation"}`
-- variety_child_id: `{"paper_gate": "strict"}`
-- variety_child_label: `paper_gate=strict`
+- proposal_id: `auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec-sparse_signal-sparse_signal`
+- benchmark_priority: `medium`
+- surprise_score: `0.69`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "None", "regime": "None", "strategy": "None"}`
+- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
+- variety_child_label: `activation_profile=wider, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -140,14 +140,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Exhaustion mean reversion after impulse
+## Trend continuation with pullback confirmation
 
-- proposal_id: `btc-15m-exhaustion-mean-reversion`
+- proposal_id: `btc-15m-trend-continuation`
 - benchmark_priority: `high`
 - surprise_score: `0.81`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "mean_reversion_liquidity_reclaim", "regime": "range", "strategy": "rsi_exhaustion_reclaim"}`
-- variety_child_id: `{"paper_gate": "balanced"}`
-- variety_child_label: `paper_gate=balanced`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "pullback_then_continuation"}`
+- variety_child_id: `{"paper_gate": "strict"}`
+- variety_child_label: `paper_gate=strict`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
