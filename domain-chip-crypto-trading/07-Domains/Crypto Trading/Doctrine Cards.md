@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `389`
+- doctrine_card_count: `392`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
@@ -901,6 +901,32 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "None", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "None", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-9edb58e18b
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-s-2721dac5-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-9edb58e18b-sparse_signal`
+- doctrine_family: `None`
+- strategy_family: `None`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The None doctrine with None strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "None", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "None", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-0dd77b3f94
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-s-37f311ec-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-0dd77b3f94-sparse_signal`
+- doctrine_family: `None`
+- strategy_family: `None`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The None doctrine with None strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "None", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "None", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b
 
 - card_id: `dc-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-s-c2b4207b-sparse_signal`
@@ -918,6 +944,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 
 - card_id: `dc-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compr-4ac15436-sparse_signal`
 - proposal_id: `auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-e9e6feb0b4
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compr-d2192327-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-e9e6feb0b4-sparse_signal`
 - doctrine_family: `breakout_volatility_expansion`
 - strategy_family: `breakout_expansion_confirmation`
 - benchmark_priority: `medium`
