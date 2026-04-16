@@ -237,7 +237,7 @@ class StrategyRegistry:
 class AgentPool:
     """Loads top N agents per strategy+timeframe from the population archive."""
 
-    def __init__(self, per_strategy: int = 3, include_viable: bool = False):
+    def __init__(self, per_strategy: int = 5, include_viable: bool = True):
         self.per_strategy = per_strategy
         self.include_viable = include_viable
         # Keyed by "strategy_id" — agents within include timeframe info
@@ -413,7 +413,7 @@ class LivePaperTrader:
     # 4h boundary hours (UTC)
     _4H_HOURS = {0, 4, 8, 12, 16, 20}
 
-    def __init__(self, assets: list[str], per_strategy: int = 3, include_viable: bool = False):
+    def __init__(self, assets: list[str], per_strategy: int = 5, include_viable: bool = True):
         self.assets = [a.upper() for a in assets]
         self.feed = BinanceFeed()
         # 300 candles = 5 hours of 1m data (enough for 4h contracts + lookback)
