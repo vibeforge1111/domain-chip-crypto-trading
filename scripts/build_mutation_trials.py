@@ -399,6 +399,100 @@ def _pro_insight_trials(summary_index: dict[str, dict]) -> list[dict]:
     return trials
 
 
+def _pro_crossover_trials(summary_index: dict[str, dict]) -> list[dict]:
+    """Generate trials by crossing pro agent mutations with existing candidates.
+
+    Two modes:
+    1. Direct seeding: top pro agents submitted as-is (verify they work in our backtester)
+    2. Crossover: merge pro agent guard combos onto existing candidate base strategies
+    """
+    pro_path = REPO_ROOT / "live" / "archive" / "generations" / "pro__gen_premium.json"
+    if not pro_path.exists():
+        return []
+    try:
+        data = json.loads(pro_path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+
+    agents = data.get("agents", [])
+    if not agents:
+        return []
+
+    # Sort by win rate, take top 10 diverse agents
+    agents.sort(key=lambda a: a.get("fitness", {}).get("win_rate", 0), reverse=True)
+    seen_fingerprints: set[str] = set()
+    top_agents: list[dict] = []
+    for a in agents:
+        fp = json.dumps(sorted(a.get("mutations", {}).items()))
+        if fp not in seen_fingerprints:
+            seen_fingerprints.add(fp)
+            top_agents.append(a)
+        if len(top_agents) >= 10:
+            break
+
+    trials: list[dict] = []
+
+    # Mode 1: Direct seeding — submit top 3 pro agents as candidates
+    for agent in top_agents[:3]:
+        mutations = {str(k): str(v) for k, v in agent["mutations"].items() if v}
+        wr = agent.get("fitness", {}).get("win_rate", 0)
+        trials.append(
+            {
+                "candidate_id": _cap_id(f"pro-seed-{agent['agent_id'][:12]}"),
+                "candidate_summary": f"Pro agent direct seed (evolution WR={wr:.1%})",
+                "hypothesis": f"Direct verification: evolution agent {agent['agent_id'][:12]} achieved {wr:.1%} WR across {agent.get('fitness',{}).get('trade_count',0)} trades. Test in current backtester.",
+                "mutations": normalize_mutations(mutations),
+                "source_names": ["pro_agent_crossover"],
+                "proposal_origin": "pro_crossover",
+            }
+        )
+
+    # Mode 2: Crossover — merge pro guard combos onto existing base strategies
+    # Take guard-only fields from pro agents and apply to user candidates
+    # that use different base strategies (cross-pollination)
+    pro_guard_keys = {
+        "volume_guard", "volume_context_guard", "drawdown_guard",
+        "session_quality_filter", "counter_trend_guard",
+        "cr_wick_guard", "cr_loose_setup", "cr_downtrend_high_pos",
+        "cr_compression_deadzone", "cr_down_in_downtrend",
+        "cr_weak_reclaim", "cr_impulse_reversal", "cr_wick_downtrend",
+        "cr_rsi_band",
+    }
+
+    # Extract the best pro guard combo
+    best_pro = top_agents[0]
+    pro_guards = {
+        k: str(v) for k, v in best_pro["mutations"].items()
+        if k in pro_guard_keys and v
+    }
+
+    for cid, base in summary_index.items():
+        # Skip if same strategy family as pro agents (already covered by direct seed)
+        if base.get("strategy_id") == "compression_range_bounce":
+            continue
+        # Merge pro guards onto this candidate's base strategy
+        mutations = dict(base)
+        applied = []
+        for guard_name, guard_value in pro_guards.items():
+            if not mutations.get(guard_name):  # Only add missing guards
+                mutations[guard_name] = guard_value
+                applied.append(guard_name)
+        if not applied:
+            continue
+        trials.append(
+            {
+                "candidate_id": _cap_id(f"{cid}-pro-crossover"),
+                "candidate_summary": f"Pro crossover: {len(applied)} elite guards onto {base.get('strategy_id', '?')}",
+                "hypothesis": f"Cross-pollinate best pro agent guard combo ({', '.join(applied[:3])}) onto {cid} base strategy.",
+                "mutations": normalize_mutations(mutations),
+                "source_names": ["pro_agent_crossover"],
+                "proposal_origin": "pro_crossover",
+            }
+        )
+
+    return trials
+
+
 def _psychology_trials(backlog: list[dict], pattern_map: dict) -> list[dict]:
     trials: list[dict] = []
     pattern_rows = pattern_map.get("pattern_rows", []) if isinstance(pattern_map.get("pattern_rows"), list) else []
@@ -641,6 +735,7 @@ def main() -> None:
     trials.extend(_variety_trials(variety_backlog, summary_index))
     trials.extend(_psychology_trials(backlog, pattern_map))
     trials.extend(_pro_insight_trials(summary_index))
+    trials.extend(_pro_crossover_trials(summary_index))
     trials = [_enrich_trial(item) for item in trials]
     trials, deduped = _dedupe_trials(trials)
     trials, gated = _filter_tested_trials(trials, benchmark_summary, policy)
