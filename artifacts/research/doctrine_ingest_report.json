@@ -1,14 +1,14 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--043ff10e-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--1ca3fd25-sparse_signal.json",
-    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-be2da2c8-segment_instability.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--15748171-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--316a94e0-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9b50ffb6-segment_instability.json"
   ],
   "added_count": 3,
   "eligible_packet_count": 3,
-  "existing_card_count": 293,
+  "existing_card_count": 296,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 296,
+  "packet_count": 299,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }

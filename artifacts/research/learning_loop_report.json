@@ -1,13 +1,13 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--043ff10e-sparse_signal.json",
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--1ca3fd25-sparse_signal.json",
-      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-be2da2c8-segment_instability.json"
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--15748171-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--316a94e0-sparse_signal.json",
+      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9b50ffb6-segment_instability.json"
     ],
     "added_count": 3,
     "approved_waiting_packet_count": 0,
-    "card_count": 296,
+    "card_count": 299,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
@@ -17,13 +17,13 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 293,
+    "card_count": 296,
     "doctrine_packets_generated": 3,
     "pending_packet_count": 3,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.231,
-  "finished_at": "2026-04-16T09:27:47.374529Z",
+  "duration_seconds": 3.284,
+  "finished_at": "2026-04-16T09:35:28.691754Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
@@ -32,15 +32,15 @@
     "added_count"
   ],
   "reconciliation": {
-    "card_count": 296,
+    "card_count": 299,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 296,
+    "packet_count": 299,
     "repair_mode": true,
     "repaired_cards": [],
     "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T09:27:44.143885Z"
+  "started_at": "2026-04-16T09:35:25.407578Z"
 }
