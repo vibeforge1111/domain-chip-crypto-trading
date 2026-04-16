@@ -1,12 +1,12 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_sign-4862a3ee-sparse_signal.json",
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-77ff8839-sparse_signal.json"
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squ-6c1dff25-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-616c2167-sparse_signal.json"
     ],
     "added_count": 2,
     "approved_waiting_packet_count": 0,
-    "card_count": 401,
+    "card_count": 403,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
@@ -16,13 +16,13 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 399,
+    "card_count": 401,
     "doctrine_packets_generated": 2,
     "pending_packet_count": 2,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 8.062,
-  "finished_at": "2026-04-16T15:12:00.022937Z",
+  "duration_seconds": 8.368,
+  "finished_at": "2026-04-16T15:22:42.156790Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
@@ -31,15 +31,15 @@
     "added_count"
   ],
   "reconciliation": {
-    "card_count": 401,
+    "card_count": 403,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 401,
+    "packet_count": 403,
     "repair_mode": true,
     "repaired_cards": [],
     "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T15:11:51.961055Z"
+  "started_at": "2026-04-16T15:22:33.788541Z"
 }
