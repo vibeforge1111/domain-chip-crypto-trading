@@ -4,8 +4,8 @@ This loop owns heavy benchmark evaluation, contradiction extraction, mutation ge
 
 - material_change: `True`
 - candidate_count: `9`
-- top_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal`
-- top_recommended_next_step: `hold_for_more_backtest_evidence`
+- top_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-0eb0f7b091`
+- top_recommended_next_step: `run_contradiction_probe`
 - approved_self_edits: `0`
 
 Loop contract:

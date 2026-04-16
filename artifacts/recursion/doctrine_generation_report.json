@@ -1,15 +1,14 @@
 {
-  "generated_at": "2026-04-16T13:08:41.438507Z",
+  "generated_at": "2026-04-16T13:11:25.666771Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=-b420dd47-sparse_signal",
-    "dp-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-63d7cc59-sparse_signal",
-    "dp-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-5218cbfe-sparse_signal",
-    "dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-62b0fc63-sparse_signal",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-e8ddecc5-sparse_signal",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9e723a78-holdout_decay"
+    "dp-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-a7de311d-sparse_signal",
+    "dp-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-816400bb-sparse_signal",
+    "dp-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moder-a14e03a3-sparse_signal",
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--68359be1-sparse_signal",
+    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-06865012-holdout_decay"
   ],
-  "packets_generated": 6,
-  "probes_analyzed": 8,
-  "skipped_duplicate_count": 2,
+  "packets_generated": 5,
+  "probes_analyzed": 9,
+  "skipped_duplicate_count": 4,
   "skipped_no_template_count": 0
 }
