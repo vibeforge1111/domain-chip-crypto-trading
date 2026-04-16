@@ -1,14 +1,14 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sign-efd55272-sparse_signal.json",
-    "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-4886bd61-sparse_signal.json",
-    "dc-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moder-d971c39f-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--db6e4cc9-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_pro-d34af660-sparse_signal.json",
+    "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-98936770-sparse_signal.json"
   ],
   "added_count": 3,
-  "eligible_packet_count": 3,
-  "existing_card_count": 350,
+  "eligible_packet_count": 4,
+  "existing_card_count": 353,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 353,
-  "remaining_packet_count": 0,
+  "packet_count": 357,
+  "remaining_packet_count": 1,
   "required_source_count_per_mutation": 2
 }
