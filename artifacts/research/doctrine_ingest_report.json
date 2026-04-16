@@ -1,12 +1,12 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-2cc5532f-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-097f64e9-sparse_signal.json"
   ],
   "added_count": 1,
   "eligible_packet_count": 1,
-  "existing_card_count": 434,
+  "existing_card_count": 435,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 435,
+  "packet_count": 436,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
