@@ -2,7 +2,7 @@
 
 These are the tracked source-grounded trader doctrine packets that feed the card ingest lane.
 
-- doctrine_packet_count: `251`
+- doctrine_packet_count: `255`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c
 
@@ -820,6 +820,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: segment_instability fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b
+
+- packet_id: `dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-b403e157-segment_instability`
+- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-b403e157-segment_instability`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.
+- mechanism: Generated from contradiction probe on auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b targeting segment_instability failure surface.
+- setup_definition: Apply segment_instability-targeted mutation overrides to auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window
 
 - packet_id: `dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-d0e6bd8d-sparse_signal`
@@ -1329,6 +1345,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
 - mechanism: Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dc1f4525f2 targeting sparse_signal failure surface.
 - setup_definition: Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dc1f4525f2 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57e9e12181
+
+- packet_id: `dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--06875e47-sparse_signal`
+- card_id: `dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--06875e47-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57e9e12181 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57e9e12181 signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
@@ -2724,6 +2756,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-35b6b3bc47
+
+- packet_id: `dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c0afae1c-sparse_signal`
+- card_id: `dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c0afae1c-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-35b6b3bc47 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-35b6b3bc47 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d6408f5f69
 
 - packet_id: `dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c0f9b4d4-sparse_signal`
@@ -3777,6 +3825,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
 - mechanism: Generated from contradiction probe on auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter targeting holdout_decay failure surface.
 - setup_definition: Apply holdout_decay-targeted mutation overrides to auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: holdout_decay fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-da0da700c6
+
+- packet_id: `dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-69caff29-holdout_decay`
+- card_id: `dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-69caff29-holdout_decay`
+- trader: `recursive_flywheel`
+- benchmark_priority: `high`
+- ingest_priority: `150`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- root_lesson: Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.
+- mechanism: Generated from contradiction probe on auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-da0da700c6 targeting holdout_decay failure surface.
+- setup_definition: Apply holdout_decay-targeted mutation overrides to auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-da0da700c6 signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 

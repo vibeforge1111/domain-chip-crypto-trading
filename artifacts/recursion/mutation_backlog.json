@@ -283,7 +283,7 @@
     "doctrine_family": "breakout_volatility_expansion",
     "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b",
+    "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
       "baseline",
@@ -3690,6 +3690,60 @@
   },
   {
     "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-b403e157-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "bollinger_squeeze_breakout",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
     "benchmark_priority": "high",
     "benchmark_result": {},
     "card_id": "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-bd9d2cbd-holdout_decay",
@@ -4623,6 +4677,62 @@
     "title": "Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_trend_continuation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "high",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-69caff29-holdout_decay",
+    "counterfactual": "Without addressing holdout_decay, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "trend_regime_following",
+    "duplicate_of_proposal_id": "auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"trend_regime_following\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"strategy_id\": \"ema_pullback_long\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "trend_regime_following",
+      "late_sample_guard": "on",
+      "market_regime": "trend",
+      "paper_gate": "balanced",
+      "strategy_id": "ema_pullback_long",
+      "timeframe": "15m",
+      "venue": "kalshi",
+      "volume_context_guard": "thin_filter"
+    },
+    "proposal_id": "auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-da0da700c6-holdout_decay",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "ed-seykota-principles-of-great-traders"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Ed Seykota"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "ema_trend_continuation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: holdout_decay fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-da0da700c6",
+    "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "late_sample_guard=on, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_trend_continuation\"}"
   },
   {
@@ -5887,6 +5997,61 @@
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-dc1f4525f2",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--06875e47-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57e9e12181-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-57e9e12181",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
@@ -10672,6 +10837,61 @@
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-19afe0a703",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c0afae1c-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-35b6b3bc47-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-35b6b3bc47",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
