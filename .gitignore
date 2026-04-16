@@ -41,11 +41,18 @@ scripts/export_premium_pack.py
 artifacts/bridge_packets/
 artifacts/backtests/
 artifacts/paper_trade/
+artifacts/promotion/
+artifacts/targeted_mutations/
 artifacts/recursion/mutation_trials.json
+artifacts/recursion/heavy_backtest_queue.json
+artifacts/recursion/signal_mutation_report.json
+artifacts/runs/
 live/archive/generations/
 live/archive/meta_agent_state.json
 live/archive/meta_improvements/
 live/archive/live_pt_state.json
+packs/
 
 # Candidate trials contain proven mutation configs
 spark-researcher.project.json
+spark-researcher.project.json.bak
