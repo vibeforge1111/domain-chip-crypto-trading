@@ -1,14 +1,13 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-e7836e49-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze--3125895a-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-s-40d89f71-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-06e33ecd-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-40e9fb21-sparse_signal.json"
   ],
-  "added_count": 3,
-  "eligible_packet_count": 3,
-  "existing_card_count": 394,
+  "added_count": 2,
+  "eligible_packet_count": 2,
+  "existing_card_count": 397,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 397,
+  "packet_count": 399,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
