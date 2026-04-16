@@ -69,9 +69,9 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - suggested_child_target_count: `4`
 - suggested_child_targets: `late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter | no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window | execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=strict | activation_profile=adaptive, paper_gate=strict`
 - contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal`
-- top_profitability_score: `0.0`
-- top_recommended_next_step: `run_contradiction_probe`
+- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- top_profitability_score: `0.58`
+- top_recommended_next_step: `hold_for_more_backtest_evidence`
 
 ## trend_regime_following -> pullback_then_continuation
 
