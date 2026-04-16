@@ -65,6 +65,64 @@ class EvolutionEngine:
         self.meta_agent.load_state(meta_state_path)
         logger.info("Loaded state: gen=%d, population=%d", gen_num, len(agents))
 
+    def _export_elite_bridge_packets(
+        self, agents: list[Agent], generation: int
+    ) -> int:
+        """Write bridge packets for new elite agents so the paper trade queue picks them up.
+
+        Bridge packets land in artifacts/bridge_packets/evo-<agent_id>.json.
+        build_paper_trade_queue.py already reads forge-*.json from this dir;
+        we add an evo-* loader there to complete the bridge.
+        """
+        bridge_dir = REPO_ROOT / "artifacts" / "bridge_packets"
+        bridge_dir.mkdir(parents=True, exist_ok=True)
+        count = 0
+        for agent in agents:
+            if not agent.is_elite:
+                continue
+            packet_path = bridge_dir / f"evo-{agent.agent_id}.json"
+            if packet_path.exists():
+                continue  # already exported in a prior generation
+            mutations = agent.mutations
+            packet = {
+                "candidate_id": f"evo-{agent.agent_id}",
+                "run_id": f"evolution-gen-{generation}",
+                "doctrine_id": mutations.get("doctrine_id", ""),
+                "strategy_id": mutations.get("strategy_id", ""),
+                "market_regime": mutations.get("market_regime", ""),
+                "timeframe": mutations.get("timeframe", "15m"),
+                "venue": mutations.get("venue", ""),
+                "asset_universe": mutations.get("asset_universe", "BTC"),
+                "mutations": mutations,
+                "profitability_score": agent.fitness.get("profitability_score", 0),
+                "paper_trade_readiness": agent.fitness.get("paper_trade_readiness", 0),
+                "max_drawdown": agent.fitness.get("max_drawdown", 0),
+                "trade_count": agent.fitness.get("trade_count", 0),
+                "minimum_trade_count": agent.fitness.get("trade_count", 0),
+                "trade_count_gate_pass": agent.fitness.get("trade_count", 0) >= 30,
+                "holdout_profitability_score": agent.fitness.get("holdout_profitability", 0),
+                "walk_forward_consistency": agent.fitness.get("wealth_factor", 0),
+                "stress_resilience": agent.fitness.get("stress_resilience", 0),
+                "eligibility_status": "eligible_for_paper_trade",
+                "recommended_next_step": "queue_for_paper_trade",
+                "primary_mechanism": (
+                    f"Evolution gen {generation}: {agent.meta_strategy} "
+                    f"WR={agent.win_rate:.3f} WF={agent.wealth_factor:.2f} "
+                    f"({agent.fitness.get('trade_count', 0)} trades)"
+                ),
+                "primary_boundary": "Promotion allowed only for outer paper-trade validation.",
+                "queue_origin": "evolution",
+            }
+            packet_path.write_text(
+                json.dumps(packet, indent=2), encoding="utf-8"
+            )
+            count += 1
+            logger.info(
+                "Exported elite bridge packet: %s (WR=%.3f, strategy=%s)",
+                agent.agent_id, agent.win_rate, mutations.get("strategy_id", "?"),
+            )
+        return count
+
     def _prune_old_generations(self, keep_recent: int = 10, keep_every: int = 100):
         """Remove old generation files, keeping recent + milestones."""
         gen_files = sorted(self.population.generations_path.glob("gen_*.json"))
@@ -149,7 +207,10 @@ class EvolutionEngine:
         if gen % 3 == 0:
             self.synthesizer.synthesize(gen)
 
-        # 6. Save state
+        # 6. Export new elite agents as bridge packets for paper trade queue
+        self._export_elite_bridge_packets(new_agents, gen)
+
+        # 7. Save state
         self.population.save_generation(gen)
         self.meta_agent.save_state(self.archive_root / "meta_agent_state.json")
         self._prune_old_generations()

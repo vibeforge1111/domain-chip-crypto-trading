@@ -112,6 +112,22 @@ def _forge_rows(repo_root: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def _evo_rows(repo_root: Path) -> list[dict[str, Any]]:
+    """Load evolution-promoted elite agents from bridge_packets directory."""
+    evo_bridge = repo_root / "artifacts" / "bridge_packets"
+    if not evo_bridge.exists():
+        return []
+    rows: list[dict[str, Any]] = []
+    for path in sorted(evo_bridge.glob("evo-*.json")):
+        packet = _load_packet(path)
+        if not packet:
+            continue
+        row = _queue_row(packet, path)
+        row["queue_origin"] = "evolution"
+        rows.append(row)
+    return rows
+
+
 def build_paper_trade_queue(repo_root: Path) -> Path:
     bridge_root = repo_root / "artifacts" / "promotion" / "benchmark_grounded"
     target_root = repo_root / "artifacts" / "paper_trade"
@@ -128,6 +144,7 @@ def build_paper_trade_queue(repo_root: Path) -> Path:
             queue_rows.append(_queue_row(packet, path))
     queue_rows.extend(_pilot_rows(repo_root))
     queue_rows.extend(_forge_rows(repo_root))
+    queue_rows.extend(_evo_rows(repo_root))
     queue_rows.sort(
         key=lambda row: (
             float(row.get("paper_trade_readiness", 0.0) or 0.0),
