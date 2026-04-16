@@ -9,7 +9,7 @@ Heavy backtesting is the only benchmark lane allowed to ground them.
 - current_decision: `defer`
 - stability_score: `0.66`
 - queued_heavy_backtests: `9`
-- queued_self_edits: `5`
+- queued_self_edits: `6`
 - approved_self_edits: `0`
 
 ## Loop

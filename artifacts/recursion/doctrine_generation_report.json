@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-04-16T11:29:27.337470Z",
+  "generated_at": "2026-04-16T11:33:19.202523Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-2f8dd026-sparse_signal"
+    "dp-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-e482f418-sparse_signal",
+    "dp-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-745c5df8-sparse_signal"
   ],
-  "packets_generated": 1,
+  "packets_generated": 2,
   "probes_analyzed": 8,
-  "skipped_duplicate_count": 7,
+  "skipped_duplicate_count": 6,
   "skipped_no_template_count": 0
 }
