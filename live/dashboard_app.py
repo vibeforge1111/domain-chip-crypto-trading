@@ -921,6 +921,29 @@ tailwind.config = {
   </div>
 </div>
 
+<!-- REGIME DISTRIBUTION -->
+<div class="mb-4">
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-3">
+      <div class="section-title mb-0">Regime Distribution</div>
+      <div class="flex items-center gap-4 text-xs" style="color:#6A7080">
+        <span>Doctrine: <span id="regime-doctrine-total" class="font-mono" style="color:#F0F0F4">--</span></span>
+        <span>Backtest: <span id="regime-bt-total" class="font-mono" style="color:#F0F0F4">--</span></span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <div class="text-xs mb-2" style="color:#6A7080">Doctrine Cards by Regime</div>
+        <div id="regime-doctrine-bars" class="space-y-1.5"></div>
+      </div>
+      <div>
+        <div class="text-xs mb-2" style="color:#6A7080">Backtest Candidates by Regime</div>
+        <div id="regime-bt-bars" class="space-y-1.5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- AUTOLOOP TRI-LOOP (lane details) -->
 <div class="mb-4" id="autoloop-section">
   <div class="card p-5">
@@ -1644,6 +1667,15 @@ function renderLivePt(data) {
   accEl.style.color = acc >= 50 ? C.emerald : (ps.trades > 0 ? C.red : C.muted);
   document.getElementById('live-agents-strats').textContent = (data.agents_loaded || 0) + ' / ' + (data.strategies_loaded || 0);
 
+  // Regime strip
+  renderRegimeStrip(data.regime_history || []);
+
+  // Agent performance table
+  renderAgentPerformance(data.agent_stats, ps);
+
+  // Live strategy breakdown
+  renderLiveStrategyBreakdown(ps);
+
   // Contracts
   const contractsDiv = document.getElementById('live-contracts');
   const contracts = data.current_contracts || {};
@@ -1658,16 +1690,18 @@ function renderLivePt(data) {
       const skips = entries.filter(([,p]) => p === 'skip').length;
       const tf = c.timeframe || '?';
       const regime = c.regime || 'unknown';
+      const regimeColor = REGIME_COLORS[regime] || '#6A7080';
       const asset = key.split(':')[0] || '?';
       return '<div class="card p-3" style="background:#141820">' +
         '<div class="flex items-center justify-between mb-1">' +
           '<span class="text-xs font-semibold">' + asset + ' ' + tf + '</span>' +
-          '<span class="text-xs" style="color:#6A7080">' + regime + '</span>' +
+          '<span style="display:inline-block;padding:1px 8px;border-radius:9999px;font-size:0.6rem;font-weight:500;background:' + regimeColor + '20;color:' + regimeColor + ';border:1px solid ' + regimeColor + '40">' + regime.replace(/_/g,' ') + '</span>' +
         '</div>' +
-        '<div class="flex items-center gap-2">' +
+        '<div class="flex items-center gap-2 mt-1">' +
           (longs > 0 ? '<span class="badge badge-emerald" style="font-size:0.6rem">' + longs + ' LONG</span>' : '') +
           (shorts > 0 ? '<span class="badge badge-red" style="font-size:0.6rem">' + shorts + ' SHORT</span>' : '') +
           '<span style="font-size:0.6rem;color:#6A7080">' + skips + ' skip</span>' +
+          '<span style="font-size:0.6rem;color:#6A7080;margin-left:auto">' + entries.length + ' agents</span>' +
         '</div></div>';
     }).join('');
   } else {
@@ -1698,15 +1732,43 @@ function renderLivePt(data) {
   }
 }
 
+// ── Regime Distribution ───────────────────────────
+function renderRegimeDistribution(data) {
+  if (!data) return;
+  document.getElementById('regime-doctrine-total').textContent = data.total_cards || 0;
+  document.getElementById('regime-bt-total').textContent = data.total_candidates || 0;
+
+  function renderBars(containerId, regimes) {
+    const el = document.getElementById(containerId);
+    const entries = Object.entries(regimes || {}).sort((a,b) => b[1] - a[1]);
+    const total = Math.max(entries.reduce((s, [,v]) => s + v, 0), 1);
+    const maxVal = entries.length > 0 ? entries[0][1] : 1;
+    if (entries.length === 0) { el.innerHTML = '<div class="text-xs" style="color:#6A7080">No data</div>'; return; }
+    el.innerHTML = entries.map(([regime, count]) => {
+      const color = REGIME_COLORS[regime] || '#6A7080';
+      const pct = (count / total * 100).toFixed(0);
+      const barW = Math.max(count / maxVal * 100, 2);
+      return '<div class="flex items-center gap-2">' +
+        '<span class="text-xs" style="min-width:90px;color:#8890B0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + regime.replace(/_/g,' ') + '</span>' +
+        '<div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:' + barW + '%;background:' + color + '"></div></div>' +
+        '<span class="text-xs font-mono" style="min-width:50px;text-align:right;color:#6A7080">' + count + ' (' + pct + '%)</span>' +
+      '</div>';
+    }).join('');
+  }
+  renderBars('regime-doctrine-bars', data.doctrine_regimes);
+  renderBars('regime-bt-bars', data.backtest_regimes);
+}
+
 // ── Main Loop ─────────────────────────────────────
 async function refresh() {
-  const [autoloop, cycleFeed, candidateHistory, stratDiversity, researcherHealth, livePt] = await Promise.all([
+  const [autoloop, cycleFeed, candidateHistory, stratDiversity, researcherHealth, livePt, regimeDist] = await Promise.all([
     fetchJSON('/api/autoloop-status'),
     fetchJSON('/api/cycle-feed'),
     fetchJSON('/api/candidate-history'),
     fetchJSON('/api/strategy-diversity'),
     fetchJSON('/api/researcher-health'),
     fetchJSON('/api/live-pt'),
+    fetchJSON('/api/regime-distribution'),
   ]);
 
   _autoloopData = autoloop;
@@ -1729,6 +1791,7 @@ async function refresh() {
   }
   if (stratDiversity) renderStrategyDiversity(stratDiversity);
   if (researcherHealth) renderResearcherHealth(researcherHealth);
+  if (regimeDist) renderRegimeDistribution(regimeDist);
   renderLivePt(livePt);
 
   document.getElementById('clock').textContent = new Date().toLocaleTimeString();
