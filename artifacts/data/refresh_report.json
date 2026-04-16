@@ -1,6 +1,6 @@
 {
-  "material_change": true,
-  "refreshed_at": "2026-04-16T03:53:09.919797Z",
+  "material_change": false,
+  "refreshed_at": "2026-04-16T07:47:05.116687Z",
   "symbol_reports": [
     {
       "contract_counts": {},
@@ -29,20 +29,15 @@
       "symbol": "ETHUSDT"
     },
     {
-      "contract_counts": {
-        "15m": 21792,
-        "1h": 5448
-      },
+      "contract_counts": {},
       "days_failed": 0,
-      "days_fetched": 1,
-      "days_requested": 1,
+      "days_fetched": 0,
+      "days_requested": 0,
       "failed_days": [],
-      "fetched_days": [
-        "2026-04-15"
-      ],
-      "last_existing_date": "2026-04-14",
-      "material_change": true,
-      "new_candle_count": 1440,
+      "fetched_days": [],
+      "last_existing_date": "2026-04-15",
+      "material_change": false,
+      "new_candle_count": 0,
       "slug": "sol",
       "symbol": "SOLUSDT"
     }
@@ -52,5 +47,5 @@
     "eth",
     "sol"
   ],
-  "total_new_candles": 1440
+  "total_new_candles": 0
 }
