@@ -9,7 +9,7 @@ This page mirrors the recursive-evolution guardrail packet.
 ## Benchmark Summary
 
 - candidate_count: `9`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed`
+- top_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b`
 - contract_family: `btc_up_down_15m`
 
 ## Self Edit Summary
@@ -46,7 +46,7 @@ This page mirrors the recursive-evolution guardrail packet.
 
 - severity: `warn`
 - status: `contained`
-- evidence: `High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h | Walk-forward consistency stays weak for: auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay, btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740, baseline | Stress resilience remains below threshold for: auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-variet-2cc3bf4fed, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b, auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay`
+- evidence: `High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h | Walk-forward consistency stays weak for: auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay, baseline, auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-probe-sparse_signal | Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b, auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay, baseline`
 
 ## Required Fixes
 

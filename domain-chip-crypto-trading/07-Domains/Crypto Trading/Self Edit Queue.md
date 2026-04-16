@@ -19,18 +19,6 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740-sparse_signal
-
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740-probe-sparse_signal`
-- priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
-- decision: `n/a`
-- target_improved: `n/a`
-- child_profitability_score: `n/a`
-- child_holdout_profitability_score: `n/a`
-- child_trade_count: `n/a`
-
 ## self-edit-baseline-sparse_signal
 
 - parent_candidate_id: `baseline`
@@ -43,10 +31,34 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0900ecfd7c-sparse_signal
+## self-edit-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024-sparse_signal
 
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0900ecfd7c`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0900ecfd7c-probe-sparse_signal`
+- parent_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024`
+- child_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024-probe-sparse_signal`
+- priority: `0.99`
+- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- decision: `n/a`
+- target_improved: `n/a`
+- child_profitability_score: `n/a`
+- child_holdout_profitability_score: `n/a`
+- child_trade_count: `n/a`
+
+## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09-sparse_signal
+
+- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09`
+- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09-probe-sparse_signal`
+- priority: `0.99`
+- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- decision: `n/a`
+- target_improved: `n/a`
+- child_profitability_score: `n/a`
+- child_holdout_profitability_score: `n/a`
+- child_trade_count: `n/a`
+
+## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-747ed0b865-sparse_signal
+
+- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-747ed0b865`
+- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-747ed0b865-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -59,18 +71,6 @@ This queue holds bounded benchmark-driven self-edits.
 
 - parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7`
 - child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7-probe-sparse_signal`
-- priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
-- decision: `n/a`
-- target_improved: `n/a`
-- child_profitability_score: `n/a`
-- child_holdout_profitability_score: `n/a`
-- child_trade_count: `n/a`
-
-## self-edit-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal
-
-- parent_candidate_id: `btc-15m-momentum-breakout-structure-psychology_no_chase`
-- child_candidate_id: `btc-15m-momentum-breakout-structure-psychology_no_chase-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`

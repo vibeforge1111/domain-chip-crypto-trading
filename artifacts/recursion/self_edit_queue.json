@@ -28,29 +28,6 @@
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740-probe-sparse_signal",
-    "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740-sparse_signal",
-    "failure_modes": [
-      "sparse_signal",
-      "holdout_decay",
-      "segment_instability",
-      "execution_fragility",
-      "drawdown_excess"
-    ],
-    "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-7252eb8740",
-    "priority": 0.99,
-    "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
-    "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "status": "queued_for_self_edit_eval"
-  },
-  {
-    "allowed_edits": [
-      "activation_profile.wider",
-      "late_sample_guard.on",
-      "execution_buffer.high"
-    ],
     "child_candidate_id": "baseline-probe-sparse_signal",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
     "edit_id": "self-edit-baseline-sparse_signal",
@@ -73,9 +50,9 @@
       "late_sample_guard.on",
       "execution_buffer.high"
     ],
-    "child_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0900ecfd7c-probe-sparse_signal",
+    "child_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024-probe-sparse_signal",
     "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0900ecfd7c-sparse_signal",
+    "edit_id": "self-edit-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024-sparse_signal",
     "failure_modes": [
       "sparse_signal",
       "holdout_decay",
@@ -83,7 +60,51 @@
       "execution_fragility"
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-0900ecfd7c",
+    "parent_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squee-1183d97024",
+    "priority": 0.99,
+    "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
+    "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "status": "queued_for_self_edit_eval"
+  },
+  {
+    "allowed_edits": [
+      "activation_profile.wider",
+      "late_sample_guard.on",
+      "execution_buffer.high"
+    ],
+    "child_candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09-probe-sparse_signal",
+    "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
+    "edit_id": "self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09-sparse_signal",
+    "failure_modes": [
+      "sparse_signal",
+      "holdout_decay",
+      "segment_instability",
+      "execution_fragility"
+    ],
+    "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
+    "parent_candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09",
+    "priority": 0.99,
+    "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
+    "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "status": "queued_for_self_edit_eval"
+  },
+  {
+    "allowed_edits": [
+      "activation_profile.wider",
+      "late_sample_guard.on",
+      "execution_buffer.high"
+    ],
+    "child_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-747ed0b865-probe-sparse_signal",
+    "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
+    "edit_id": "self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-747ed0b865-sparse_signal",
+    "failure_modes": [
+      "sparse_signal",
+      "holdout_decay",
+      "segment_instability",
+      "execution_fragility"
+    ],
+    "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
+    "parent_candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-747ed0b865",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
@@ -106,28 +127,6 @@
     ],
     "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
     "parent_candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7",
-    "priority": 0.99,
-    "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
-    "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "status": "queued_for_self_edit_eval"
-  },
-  {
-    "allowed_edits": [
-      "activation_profile.wider",
-      "late_sample_guard.on",
-      "execution_buffer.high"
-    ],
-    "child_candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase-probe-sparse_signal",
-    "counterfactual": "Without a bounded self-edit mutation, the loop keeps rediscovering the same failure surface without testing a concrete repair.",
-    "edit_id": "self-edit-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal",
-    "failure_modes": [
-      "sparse_signal",
-      "holdout_decay",
-      "segment_instability",
-      "execution_fragility"
-    ],
-    "ghost_improvement_check": "Approve only if the child improves the targeted failure metric without hiding behind lower trade count or worse drawdown.",
-    "parent_candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase",
     "priority": 0.99,
     "rollback_condition": "Reject if the child worsens profitability, drawdown, holdout behavior, or robustness versus the parent.",
     "root_lesson": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
