@@ -38,14 +38,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: holdout_decay fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d-holdout_decay`
-- benchmark_priority: `high`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal`
+- benchmark_priority: `medium`
 - surprise_score: `0.69`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "breakout_expansion_confirmation"}`
-- variety_child_id: `{"late_sample_guard": "on", "paper_gate": "balanced"}`
-- variety_child_label: `late_sample_guard=on, paper_gate=balanced`
+- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
+- variety_child_label: `activation_profile=wider, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -55,9 +55,9 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_-95f2a4e7c1
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_-95f2a4e7c1-sparse_signal`
 - benchmark_priority: `medium`
 - surprise_score: `0.69`
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "breakout_expansion_confirmation"}`
