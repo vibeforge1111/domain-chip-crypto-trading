@@ -38,6 +38,40 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
+## Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation
+
+- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-sparse_signal`
+- benchmark_priority: `medium`
+- surprise_score: `0.69`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "ema_trend_continuation"}`
+- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
+- variety_child_label: `activation_profile=wider, paper_gate=balanced`
+- status: `queued_for_heavy_backtest`
+- min_contract_windows: `500`
+- walk_forward_splits: `6`
+- holdout_policy: `final_20_percent`
+- profitability_score_min: `n/a`
+- sharpe_ratio_min: `n/a`
+- max_drawdown_max: `n/a`
+- paper_trade_readiness_min: `n/a`
+
+## Auto-generated: segment_instability fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation
+
+- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-segment_instability`
+- benchmark_priority: `medium`
+- surprise_score: `0.69`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "ema_trend_continuation"}`
+- variety_child_id: `{"paper_gate": "balanced", "session_profile": "squeeze_release_window"}`
+- variety_child_label: `paper_gate=balanced, session_profile=squeeze_release_window`
+- status: `queued_for_heavy_backtest`
+- min_contract_windows: `500`
+- walk_forward_splits: `6`
+- holdout_policy: `final_20_percent`
+- profitability_score_min: `n/a`
+- sharpe_ratio_min: `n/a`
+- max_drawdown_max: `n/a`
+- paper_trade_readiness_min: `n/a`
+
 ## Auto-generated: sparse_signal fix for auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm
 
 - proposal_id: `auto-auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal`
@@ -63,40 +97,6 @@ This queue is the benchmark gate for recursive improvement.
 - variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "mean_reversion_liquidity_reclaim", "regime": "range", "strategy": "range_reclaim_rotation"}`
 - variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
 - variety_child_label: `activation_profile=wider, paper_gate=balanced`
-- status: `queued_for_heavy_backtest`
-- min_contract_windows: `500`
-- walk_forward_splits: `6`
-- holdout_policy: `final_20_percent`
-- profitability_score_min: `n/a`
-- sharpe_ratio_min: `n/a`
-- max_drawdown_max: `n/a`
-- paper_trade_readiness_min: `n/a`
-
-## Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation
-
-- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-sparse_signal`
-- benchmark_priority: `medium`
-- surprise_score: `0.69`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "ema_trend_continuation"}`
-- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
-- variety_child_label: `activation_profile=wider, paper_gate=balanced`
-- status: `queued_for_heavy_backtest`
-- min_contract_windows: `500`
-- walk_forward_splits: `6`
-- holdout_policy: `final_20_percent`
-- profitability_score_min: `n/a`
-- sharpe_ratio_min: `n/a`
-- max_drawdown_max: `n/a`
-- paper_trade_readiness_min: `n/a`
-
-## Auto-generated: holdout_decay fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter
-
-- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay`
-- benchmark_priority: `high`
-- surprise_score: `0.69`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "ema_trend_continuation"}`
-- variety_child_id: `{"late_sample_guard": "on", "paper_gate": "balanced"}`
-- variety_child_label: `late_sample_guard=on, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
