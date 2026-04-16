@@ -1,10 +1,14 @@
 {
-  "added_cards": [],
-  "added_count": 0,
-  "eligible_packet_count": 0,
+  "added_cards": [
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-i-a10d144d-sparse_signal.json",
+    "dc-auto-evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter-sparse_signal.json",
+    "dc-auto-evo-2c7f7e468e9b-variety-session-stability-filter-sparse_signal.json"
+  ],
+  "added_count": 3,
+  "eligible_packet_count": 4,
   "existing_card_count": 457,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 457,
-  "remaining_packet_count": 0,
+  "packet_count": 461,
+  "remaining_packet_count": 1,
   "required_source_count_per_mutation": 2
 }

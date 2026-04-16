@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `457`
+- doctrine_card_count: `461`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
@@ -770,6 +770,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The None doctrine with None strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "None", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "None", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-i-a10d144d-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-spa-19c42eb0ae
 
@@ -5516,10 +5529,49 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter
+
+- card_id: `dc-auto-evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter-sparse_signal`
+- proposal_id: `auto-evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter-sparse_signal`
+- doctrine_family: `event_momentum`
+- strategy_family: `channel_breakout_fade`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-2c7f7e468e9b-variety-session-stability-filter
+
+- card_id: `dc-auto-evo-2c7f7e468e9b-variety-session-stability-filter-sparse_signal`
+- proposal_id: `auto-evo-2c7f7e468e9b-variety-session-stability-filter-sparse_signal`
+- doctrine_family: `event_momentum`
+- strategy_family: `channel_breakout_fade`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: segment_instability fix for evo-4680319e88c6
 
 - card_id: `dc-auto-evo-4680319e88c6-segment_instability`
 - proposal_id: `auto-evo-4680319e88c6-segment_instability`
+- doctrine_family: `intermarket_regime_confirmation`
+- strategy_family: `intermarket_context_gate`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The intermarket_regime_confirmation doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "intermarket_regime_confirmation", "market_regime": "event_driven", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "intermarket_context_gate", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-4680319e88c6-variety-execution-buffer-plus-transition-skip
+
+- card_id: `dc-auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-sk-41872276-segment_instability`
+- proposal_id: `auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-skip-segment_instability`
 - doctrine_family: `intermarket_regime_confirmation`
 - strategy_family: `intermarket_context_gate`
 - benchmark_priority: `medium`

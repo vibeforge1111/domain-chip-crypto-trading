@@ -2,7 +2,7 @@
 
 These are the tracked source-grounded trader doctrine packets that feed the card ingest lane.
 
-- doctrine_packet_count: `457`
+- doctrine_packet_count: `461`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
@@ -867,6 +867,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - setup_definition: Apply sparse_signal-targeted mutation overrides to auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_sign-19eba0c7a1-sparse_signal-sparse_signal-sparse_signal signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "None", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "None", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43
+
+- packet_id: `dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-i-a10d144d-sparse_signal`
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-i-a10d144d-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43 targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-spa-19c42eb0ae
 
@@ -6340,6 +6356,38 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter
+
+- packet_id: `dp-auto-evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter-sparse_signal`
+- card_id: `dc-auto-evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-2c7f7e468e9b-variety-session-stability-filter
+
+- packet_id: `dp-auto-evo-2c7f7e468e9b-variety-session-stability-filter-sparse_signal`
+- card_id: `dc-auto-evo-2c7f7e468e9b-variety-session-stability-filter-sparse_signal`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- root_lesson: Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.
+- mechanism: Generated from contradiction probe on evo-2c7f7e468e9b-variety-session-stability-filter targeting sparse_signal failure surface.
+- setup_definition: Apply sparse_signal-targeted mutation overrides to evo-2c7f7e468e9b-variety-session-stability-filter signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: segment_instability fix for evo-4680319e88c6
 
 - packet_id: `dp-auto-evo-4680319e88c6-segment_instability`
@@ -6353,6 +6401,22 @@ These are the tracked source-grounded trader doctrine packets that feed the card
 - root_lesson: Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.
 - mechanism: Generated from contradiction probe on evo-4680319e88c6 targeting segment_instability failure surface.
 - setup_definition: Apply segment_instability-targeted mutation overrides to evo-4680319e88c6 signal logic and benchmark.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "intermarket_regime_confirmation", "market_regime": "event_driven", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "intermarket_context_gate", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-4680319e88c6-variety-execution-buffer-plus-transition-skip
+
+- packet_id: `dp-auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-sk-41872276-segment_instability`
+- card_id: `dc-auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-sk-41872276-segment_instability`
+- trader: `recursive_flywheel`
+- benchmark_priority: `medium`
+- ingest_priority: `100`
+- packet_status: `ready_for_card_ingest`
+- card_present: `True`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- root_lesson: Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.
+- mechanism: Generated from contradiction probe on evo-4680319e88c6-variety-execution-buffer-plus-transition-skip targeting segment_instability failure surface.
+- setup_definition: Apply segment_instability-targeted mutation overrides to evo-4680319e88c6-variety-execution-buffer-plus-transition-skip signal logic and benchmark.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "intermarket_regime_confirmation", "market_regime": "event_driven", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "intermarket_context_gate", "timeframe": "15m", "venue": "kalshi"}`
 
