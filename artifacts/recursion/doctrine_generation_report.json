@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-16T09:50:51.123742Z",
+  "generated_at": "2026-04-16T09:59:13.025240Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--7fc2bc4a-sparse_signal",
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--e7f0e418-sparse_signal",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-a01bf4cf-segment_instability"
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--769bbba7-sparse_signal",
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--d0b5b1fc-sparse_signal",
+    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-aeccac07-segment_instability"
   ],
   "packets_generated": 3,
-  "probes_analyzed": 9,
-  "skipped_duplicate_count": 6,
+  "probes_analyzed": 8,
+  "skipped_duplicate_count": 5,
   "skipped_no_template_count": 0
 }

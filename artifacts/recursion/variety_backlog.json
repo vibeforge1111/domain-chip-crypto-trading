@@ -80,7 +80,7 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
   },
   {
-    "benchmarked_candidate_count": 2,
+    "benchmarked_candidate_count": 6,
     "contradiction_modes": [
       "execution_fragility",
       "holdout_decay",
@@ -141,7 +141,7 @@
       }
     ],
     "target_contract_family": "btc_up_down_15m",
-    "tested_child_count": 2,
+    "tested_child_count": 6,
     "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter",
     "top_profitability_score": 0.58,
     "top_recommended_next_step": "hold_for_more_backtest_evidence",
@@ -516,7 +516,7 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"risk_first_asymmetric_capture\", \"regime\": \"event_driven\", \"strategy\": \"funding_mean_revert\"}"
   },
   {
-    "benchmarked_candidate_count": 2,
+    "benchmarked_candidate_count": 6,
     "contradiction_modes": [
       "drawdown_excess",
       "execution_fragility",
@@ -560,7 +560,7 @@
       }
     ],
     "target_contract_family": "btc_up_down_15m",
-    "tested_child_count": 2,
+    "tested_child_count": 4,
     "top_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-ffa2348bb0",
     "top_profitability_score": 0.54,
     "top_recommended_next_step": "run_contradiction_probe",
@@ -609,5 +609,43 @@
     "top_profitability_score": 0.3133,
     "top_recommended_next_step": "run_contradiction_probe",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+  },
+  {
+    "benchmarked_candidate_count": 4,
+    "contradiction_modes": [],
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "pending_child_labels": [],
+    "pending_proposal_count": 0,
+    "pending_proposal_ids": [],
+    "source_names": [],
+    "status": "family_covered_waiting_new_child",
+    "strategy_family": "wedge_exhaustion_reversal",
+    "suggested_child_target_count": 0,
+    "suggested_child_targets": [],
+    "target_contract_family": "btc_up_down_15m",
+    "tested_child_count": 2,
+    "top_candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+    "top_profitability_score": 0.6189,
+    "top_recommended_next_step": "run_contradiction_probe",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"wedge_exhaustion_reversal\"}"
+  },
+  {
+    "benchmarked_candidate_count": 4,
+    "contradiction_modes": [],
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "pending_child_labels": [],
+    "pending_proposal_count": 0,
+    "pending_proposal_ids": [],
+    "source_names": [],
+    "status": "family_covered_waiting_new_child",
+    "strategy_family": "range_reclaim_scalp",
+    "suggested_child_target_count": 0,
+    "suggested_child_targets": [],
+    "target_contract_family": "btc_up_down_15m",
+    "tested_child_count": 2,
+    "top_candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
+    "top_profitability_score": 0.98,
+    "top_recommended_next_step": "run_contradiction_probe",
+    "variety_family_id": "{\"contract\": \"bybit:1h\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_scalp\"}"
   }
 ]

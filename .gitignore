@@ -12,3 +12,26 @@ venv/
 *.db
 *.sqlite
 .spark-swarm/
+
+# ── Premium Pack System (NEVER commit) ──────────────
+# Encrypted pack archives
+*.cpak
+
+# Decrypted pack contents (installed assets)
+packs/*/
+packs/registry.json
+
+# Merged premium files in live system
+live/generated_guards/pro__*
+live/archive/generations/pro__*
+
+# Premium insights overlay
+packs/pro-*/
+
+# License keys
+*.key
+license_key*
+fernet_key*
+
+# Publisher-side tooling (not for subscribers)
+scripts/export_premium_pack.py
