@@ -307,6 +307,98 @@ def _variety_trials(variety_backlog: list[dict], summary_index: dict[str, dict])
     return trials
 
 
+def _load_guard_rankings() -> dict[str, dict[str, str | float]]:
+    """Load proven guard effectiveness from pro insights pack.
+
+    Returns dict of {guard_name: {value: str, delta: float}} sorted by delta.
+    Returns empty dict if pack not installed.
+    """
+    import re
+
+    insights_path = REPO_ROOT / "packs" / "pro-insights-v1" / "synthesized_insights.json"
+    if not insights_path.exists():
+        return {}
+    try:
+        insights = json.loads(insights_path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+    # Dedupe by guard name, keep highest delta
+    best: dict[str, dict] = {}
+    for item in insights:
+        if item.get("type") != "guard_effectiveness" or not item.get("actionable"):
+            continue
+        m = re.match(r"Guard '([^']+)'", item.get("insight", ""))
+        if not m:
+            continue
+        name = m.group(1)
+        delta = item.get("evidence", {}).get("delta", 0)
+        if name not in best or delta > best[name]["delta"]:
+            best[name] = {"delta": delta, "evidence": item["evidence"]}
+
+    # Map guard names to their most effective values (from pro agent census)
+    PROVEN_GUARD_VALUES = {
+        "session_quality_filter": "skip_compression_toxic",
+        "cr_loose_setup": "skip_marginal",
+        "cr_wick_guard": "reject_high",
+        "volume_guard": "moderate",
+        "cr_downtrend_high_pos": "skip",
+        "cr_down_in_downtrend": "skip_deep",
+        "cr_compression_deadzone": "skip_mid",
+        "counter_trend_guard": "skip_moderate",
+        "drawdown_guard": "moderate",
+        "cr_weak_reclaim": "skip_weak",
+        "cr_impulse_reversal": "skip_reversal_gentle",
+        "volume_context_guard": "skip_spike",
+    }
+
+    result = {}
+    for name, info in sorted(best.items(), key=lambda x: -x[1]["delta"]):
+        value = PROVEN_GUARD_VALUES.get(name)
+        if value:
+            result[name] = {"value": value, "delta": info["delta"]}
+    return result
+
+
+def _pro_insight_trials(summary_index: dict[str, dict]) -> list[dict]:
+    """Generate trials seeded by proven guard effectiveness from pro insights.
+
+    For each existing candidate, tries adding the top proven guards it's missing.
+    """
+    guard_rankings = _load_guard_rankings()
+    if not guard_rankings:
+        return []
+
+    # Take top 5 guards by delta
+    top_guards = list(guard_rankings.items())[:5]
+    trials: list[dict] = []
+
+    for cid, base in summary_index.items():
+        for guard_name, info in top_guards:
+            guard_value = info["value"]
+            delta = info["delta"]
+            # Skip if candidate already has this guard with the same value
+            if base.get(guard_name) == guard_value:
+                continue
+            # Skip if candidate already has ANY value for this guard (don't override)
+            if base.get(guard_name):
+                continue
+            mutations = dict(base)
+            mutations[guard_name] = guard_value
+            trials.append(
+                {
+                    "candidate_id": _cap_id(f"{cid}-pro-guard-{guard_name}"),
+                    "candidate_summary": f"Pro insight: add {guard_name}={guard_value} (proven +{delta:.1%} WR)",
+                    "hypothesis": f"Evolution system proved {guard_name}={guard_value} improves WR by {delta:.1%} across {info.get('evidence', {}).get('with_guard_count', '?')} agents. Seed this guard into {cid}.",
+                    "mutations": normalize_mutations(mutations),
+                    "source_names": ["pro_insights_guard_effectiveness"],
+                    "proposal_origin": "pro_insights",
+                }
+            )
+
+    return trials
+
+
 def _psychology_trials(backlog: list[dict], pattern_map: dict) -> list[dict]:
     trials: list[dict] = []
     pattern_rows = pattern_map.get("pattern_rows", []) if isinstance(pattern_map.get("pattern_rows"), list) else []
@@ -393,9 +485,10 @@ def _enrich_trial(item: dict) -> dict:
 def _dedupe_trials(trials: list[dict]) -> tuple[list[dict], list[dict]]:
     priority = {
         "contradiction_probe": 0,
-        "psychology_pattern_map": 1,
-        "variety_backlog": 2,
-        "mutation_backlog": 3,
+        "pro_insights": 1,
+        "psychology_pattern_map": 2,
+        "variety_backlog": 3,
+        "mutation_backlog": 4,
     }
     ordered = sorted(
         trials,
@@ -441,8 +534,11 @@ def _filter_tested_trials(trials: list[dict], benchmark_summary: dict, policy: d
     # Without this, higher-priority contradiction probes starve variety exploration.
     variety_trial_count = sum(1 for t in trials if str(t.get("proposal_origin", "")) == "variety_backlog")
     reserved_variety_slots = min(max(0, max_total * 2 // 5), variety_trial_count) if variety_trial_count > 0 else 0
+    # Pro insights lane: proven guard seeding from evolution system
+    pro_trial_count = sum(1 for t in trials if str(t.get("proposal_origin", "")) == "pro_insights")
+    reserved_pro_slots = min(2, pro_trial_count) if pro_trial_count > 0 else 0
     # Per-origin caps to ensure diversity across lanes
-    max_probe_slots = max_total - reserved_variety_slots - reserved_psychology_slots
+    max_probe_slots = max_total - reserved_variety_slots - reserved_psychology_slots - reserved_pro_slots
 
     gated: list[dict] = []
     kept: list[dict] = []
@@ -453,9 +549,10 @@ def _filter_tested_trials(trials: list[dict], benchmark_summary: dict, policy: d
         key=lambda item: (
             {
                 "contradiction_probe": 0,
-                "variety_backlog": 1,
-                "psychology_pattern_map": 2,
-                "mutation_backlog": 3,
+                "pro_insights": 1,
+                "variety_backlog": 2,
+                "psychology_pattern_map": 3,
+                "mutation_backlog": 4,
             }.get(str(item.get("proposal_origin", "")), 9),
             str(item.get("variety_family_id", "")),
             str(item.get("candidate_id", "")),
@@ -481,6 +578,8 @@ def _filter_tested_trials(trials: list[dict], benchmark_summary: dict, policy: d
             gate_reason = "probe_lane_exhausted"
         elif proposal_origin == "variety_backlog" and origin_counts.get("variety_backlog", 0) >= reserved_variety_slots:
             gate_reason = "variety_lane_exhausted"
+        elif proposal_origin == "pro_insights" and origin_counts.get("pro_insights", 0) >= reserved_pro_slots:
+            gate_reason = "pro_insights_lane_exhausted"
         elif proposal_origin == "psychology_pattern_map" and origin_counts.get("psychology_pattern_map", 0) >= reserved_psychology_slots:
             gate_reason = "psychology_lane_exhausted"
         elif len(kept) >= max_total:
@@ -541,6 +640,7 @@ def main() -> None:
     trials.extend(_derived_trials(probes, summary_index))
     trials.extend(_variety_trials(variety_backlog, summary_index))
     trials.extend(_psychology_trials(backlog, pattern_map))
+    trials.extend(_pro_insight_trials(summary_index))
     trials = [_enrich_trial(item) for item in trials]
     trials, deduped = _dedupe_trials(trials)
     trials, gated = _filter_tested_trials(trials, benchmark_summary, policy)
