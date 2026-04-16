@@ -1,8 +1,0 @@
-{
-  "guard_id": "ee8acfad31",
-  "generation": 240,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "fc77d60e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject candles dominated by wicks (indecision/rejection signals)\n    total_wick = features.get('upper_wick_ratio', 0) + features.get('lower_wick_ratio', 0)\n    if total_wick > 0.6:\n        return \"skip\"\n    \n    # Reject small body candles with low volume (weak conviction)\n    body_ratio = features.get('body_ratio', 0)\n    volume_ratio = features.get('volume_ratio', 0)\n    if body_ratio < 0.25 and volume_ratio < 0.7:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ee8acfad31.py"
-}

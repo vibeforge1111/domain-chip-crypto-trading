@@ -1,8 +1,0 @@
-{
-  "guard_id": "3a7345210a",
-  "generation": 4015,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "697a3510",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    confirmations = 0\n    \n    # RSI confirmation (not in extreme zone)\n    if prediction == \"long\" and features.get(\"rsi_14\", 50) > 40:\n        confirmations += 1\n    elif prediction == \"short\" and features.get(\"rsi_14\", 50) < 60:\n        confirmations += 1\n    \n    # Stochastic confirmation\n    if prediction == \"long\" and features.get(\"stoch_k\", 50) > 30:\n        confirmations += 1\n    elif prediction == \"short\" and features.get(\"stoch_k\", 50) < 70:\n        confirmations += 1\n    \n    # VWAP deviation confirmation\n    if prediction == \"long\" and features.get(\"vwap_deviation\", 0) > -0.015:\n        confirmations += 1\n    elif prediction == \"short\" and features.get(\"vwap_deviation\", 0) < 0.015:\n        confirmations += 1\n    \n    # OBV slope confirmation\n    if prediction == \"long\" and features.get(\"obv_slope\", 0) > 0:\n        confirmations += 1\n    elif prediction == \"short\" and features.get(\"obv_slope\", 0) < 0:\n        confirmations += 1\n    \n    # MACD histogram confirmation\n    if prediction == \"long\" and features.get(\"macd_histogram\", 0) > 0:\n        confirmations += 1\n    elif prediction == \"short\" and features.get(\"macd_histogram\", 0) < 0:\n        confirmations += 1\n    \n    # Require at least 3 of 5 indicators to agree\n    if confirmations < 3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3a7345210a.py"
-}

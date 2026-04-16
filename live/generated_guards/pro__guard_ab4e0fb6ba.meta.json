@@ -1,8 +1,0 @@
-{
-  "guard_id": "ab4e0fb6ba",
-  "generation": 735,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b0e78dbb",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with weak momentum divergence from trend strength.\"\"\"\n    if features.get('body_ratio', 0) < 0.2 and features.get('momentum_score', 0) < 0.3:\n        return \"skip\"\n    if features.get('rsi_14', 50) > 70 and features.get('ema_slope', 0) < 0 and prediction == \"long\":\n        return \"skip\"\n    if features.get('rsi_14', 50) < 30 and features.get('ema_slope', 0) > 0 and prediction == \"short\":\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ab4e0fb6ba.py"
-}

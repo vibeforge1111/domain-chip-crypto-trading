@@ -1,8 +1,0 @@
-{
-  "guard_id": "d58264e895",
-  "generation": 4460,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1517485e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression: low bb_width with price at band extremes and extreme stoch\n    bb_width = features.get('bb_width', 1)\n    bb_compressed = bb_width < 0.02\n    \n    if bb_compressed:\n        bb_extreme = features.get('bb_pct_b', 0.5) < 0.15 or features.get('bb_pct_b', 0.5) > 0.85\n        stoch_extreme = features.get('stoch_k', 50) < 20 or features.get('stoch_k', 50) > 80\n        \n        # False compression: compressed bands + extreme price position + stoch exhaustion\n        if bb_extreme and stoch_extreme:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d58264e895.py"
-}

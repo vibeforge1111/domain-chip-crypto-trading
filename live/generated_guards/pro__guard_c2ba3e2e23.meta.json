@@ -1,8 +1,0 @@
-{
-  "guard_id": "c2ba3e2e23",
-  "generation": 730,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "59b27b6a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with dominant wicks at extreme BB positions (reversal traps).\"\"\"\n    dominant_wick = max(features.get('upper_wick_ratio', 0), features.get('lower_wick_ratio', 0))\n    bb_extreme = features.get('bb_position', 0.5) < 0.15 or features.get('bb_position', 0.5) > 0.85\n    \n    if dominant_wick > 0.5 and bb_extreme:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c2ba3e2e23.py"
-}

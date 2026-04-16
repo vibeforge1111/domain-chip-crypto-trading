@@ -1,8 +1,0 @@
-{
-  "guard_id": "fbf352fc57",
-  "generation": 4990,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "fbdbd2f8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 0.1)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    \n    # False compression: both very low = dead zone with no energy for sustained moves\n    if bb_width < 0.025 and atr_ratio < 0.55:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fbf352fc57.py"
-}

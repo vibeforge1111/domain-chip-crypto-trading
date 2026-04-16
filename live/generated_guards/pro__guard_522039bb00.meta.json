@@ -1,8 +1,0 @@
-{
-  "guard_id": "522039bb00",
-  "generation": 2620,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "86a0455a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band position extremes with VWAP confirmation.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Only allow trades at BB extremes (<0.05 or >0.95)\n    if bb_pct_b < 0.05 and prediction == \"long\" and vwap_dev < 0:\n        return prediction\n    if bb_pct_b > 0.95 and prediction == \"short\" and vwap_dev > 0:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_522039bb00.py"
-}

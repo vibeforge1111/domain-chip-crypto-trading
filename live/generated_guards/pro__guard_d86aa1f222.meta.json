@@ -1,8 +1,0 @@
-{
-  "guard_id": "d86aa1f222",
-  "generation": 1405,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e78234c1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on candle structure alignment with direction and momentum.\"\"\"\n    # Check RSI zones for trade validity\n    rsi = features.get(\"rsi_14\", 50)\n    \n    # For long signals: require RSI oversold (<35) or at least neutral\n    if prediction == \"long\" and rsi > 65:\n        return \"skip\"\n    \n    # For short signals: require RSI overbought (>65) or at least neutral\n    if prediction == \"short\" and rsi < 35:\n        return \"skip\"\n    \n    # Align wick direction with prediction (bullish candle for longs, bearish for shorts)\n    if prediction == \"long\" and features.get(\"upper_wick_ratio\", 0) > features.get(\"lower_wick_ratio\", 0) * 1.5:\n        return \"skip\"\n    \n    if prediction == \"short\" and features.get(\"lower_wick_ratio\", 0) > features.get(\"upper_wick_ratio\", 0) * 1.5:\n        return \"skip\"\n    \n    # Require solid body (not doji/indecision candles)\n    if features.get(\"body_ratio\", 1) < 0.25:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d86aa1f222.py"
-}

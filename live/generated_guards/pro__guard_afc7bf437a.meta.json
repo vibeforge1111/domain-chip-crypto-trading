@@ -1,8 +1,0 @@
-{
-  "guard_id": "afc7bf437a",
-  "generation": 360,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "42935bec",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with weak momentum or low conviction signals.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Skip if momentum diverges from trend direction\n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    \n    if prediction == \"long\" and rsi > 65 and ema_slope < -0.001:\n        return \"skip\"\n    if prediction == \"short\" and rsi < 35 and ema_slope > 0.001:\n        return \"skip\"\n    \n    # Skip if low volume AND small candle range (no conviction)\n    if features.get(\"volume_ratio\", 1) < 0.7 and features.get(\"range_pct\", 0) < 0.5:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_afc7bf437a.py"
-}

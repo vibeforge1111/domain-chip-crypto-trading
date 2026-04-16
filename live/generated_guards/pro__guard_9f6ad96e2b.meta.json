@@ -1,8 +1,0 @@
-{
-  "guard_id": "9f6ad96e2b",
-  "generation": 545,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "34ad6a4b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on candle quality and momentum alignment.\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body_ratio = features.get(\"body_ratio\", 0)\n    rsi = features.get(\"rsi_14\", 50)\n    bb_position = features.get(\"bb_position\", 0.5)\n    \n    # Reject if candle is primarily wick (doji-like) - unreliable signal\n    total_wick = upper_wick + lower_wick\n    if total_wick > 0.7 and body_ratio < 0.2:\n        return \"skip\"\n    \n    # Reject if RSI extreme AND price at Bollinger Band edge (overextended)\n    if (rsi > 75 or rsi < 25) and (bb_position < 0.1 or bb_position > 0.9):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9f6ad96e2b.py"
-}

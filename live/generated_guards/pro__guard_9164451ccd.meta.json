@@ -1,8 +1,0 @@
-{
-  "guard_id": "9164451ccd",
-  "generation": 875,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "34be7f0d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using BB position + momentum divergence and candle conviction.\"\"\"\n    bb_pos = features.get('bb_position', 0.5)\n    momentum = features.get('momentum_score', 0)\n    body_ratio = features.get('body_ratio', 0.5)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    \n    # Skip if momentum contradicts BB position (potential reversal)\n    if bb_pos > 0.85 and momentum < -0.2:\n        return \"skip\"\n    if bb_pos < 0.15 and momentum > 0.2:\n        return \"skip\"\n    \n    # Skip if doji-like candle without strong volatility to justify it\n    if body_ratio < 0.1 and atr_ratio < 1.2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9164451ccd.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "1504d9cd64",
-  "generation": 3470,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5f776236",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against trades during momentum deceleration.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Skip longs if MACD histogram negative (bearish momentum)\n    if prediction == \"long\" and macd < -0.0001:\n        return \"skip\"\n    \n    # Skip shorts if MACD histogram positive (bullish momentum)\n    if prediction == \"short\" and macd > 0.0001:\n        return \"skip\"\n    \n    # Additional filter: avoid counter-trend entries near VWAP extremes\n    if prediction == \"long\" and macd < 0 and vwap_dev > 0.01:\n        return \"skip\"\n    if prediction == \"short\" and macd > 0 and vwap_dev < -0.01:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1504d9cd64.py"
-}

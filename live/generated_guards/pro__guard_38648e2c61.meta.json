@@ -1,8 +1,0 @@
-{
-  "guard_id": "38648e2c61",
-  "generation": 2220,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3b44793e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    obv = features.get('obv_slope', 0)\n    macd = features.get('macd_histogram', 0)\n    stoch = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Long setup: price below VWAP should have positive momentum signals\n    if prediction == \"long\":\n        if vwap_dev < -0.003 and obv < 0 and macd < 0:\n            return \"skip\"\n        if vwap_dev > 0.005 and rsi_2h > 70:\n            return \"skip\"\n    \n    # Short setup: price above VWAP should have negative momentum signals\n    if prediction == \"short\":\n        if vwap_dev > 0.003 and obv > 0 and macd > 0:\n            return \"skip\"\n        if vwap_dev < -0.005 and rsi_2h < 30:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_38648e2c61.py"
-}

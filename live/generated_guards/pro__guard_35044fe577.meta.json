@@ -1,8 +1,0 @@
-{
-  "guard_id": "35044fe577",
-  "generation": 805,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "351b5be6",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during compression breakouts (low ATR + high volume = often fail).\"\"\"\n    if features['atr_ratio'] < 0.5 and features['volume_ratio'] > 1.5:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_35044fe577.py"
-}

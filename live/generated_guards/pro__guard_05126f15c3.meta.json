@@ -1,8 +1,0 @@
-{
-  "guard_id": "05126f15c3",
-  "generation": 365,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5d91fd8d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with wick imbalance lacking volume confirmation or RSI extremes without momentum.\"\"\"\n    # Skip if strong wick imbalance without volume confirmation\n    wick_diff = abs(features['upper_wick_ratio'] - features['lower_wick_ratio'])\n    if wick_diff > 0.4 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    # Skip if RSI at extreme without momentum support\n    if (features['rsi_14'] > 75 or features['rsi_14'] < 25) and features['momentum_score'] < 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_05126f15c3.py"
-}

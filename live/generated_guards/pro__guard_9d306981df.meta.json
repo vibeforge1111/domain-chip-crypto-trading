@@ -1,8 +1,0 @@
-{
-  "guard_id": "9d306981df",
-  "generation": 4800,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d1ce5b7d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression: low BB width but rising ATR = likely breakout\n    if features['bb_width'] < 0.12 and features['atr_ratio'] > 1.3:\n        return \"skip\"\n    \n    # Skip overbought/oversold extremes conflicting with direction\n    if features['stoch_k'] > 88 and prediction == \"long\":\n        return \"skip\"\n    if features['stoch_k'] < 12 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter if too far from VWAP (reversion risk)\n    if features['vwap_deviation'] > 0.025 and prediction == \"long\":\n        return \"skip\"\n    if features['vwap_deviation'] < -0.025 and prediction == \"short\":\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9d306981df.py"
-}

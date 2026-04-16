@@ -1,8 +1,0 @@
-{
-  "guard_id": "85fae3651e",
-  "generation": 3690,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2518974c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    agree_count = 0\n    \n    if prediction == \"long\":\n        if features.get('macd_histogram', 0) > 0:\n            agree_count += 1\n        if features.get('vwap_deviation', 0) > 0:\n            agree_count += 1\n        if features.get('obv_slope', 0) > 0:\n            agree_count += 1\n        if features.get('stoch_k', 50) < 80:\n            agree_count += 1\n        if features.get('rsi_2h', 50) < 70:\n            agree_count += 1\n    elif prediction == \"short\":\n        if features.get('macd_histogram', 0) < 0:\n            agree_count += 1\n        if features.get('vwap_deviation', 0) < 0:\n            agree_count += 1\n        if features.get('obv_slope', 0) < 0:\n            agree_count += 1\n        if features.get('stoch_k', 50) > 20:\n            agree_count += 1\n        if features.get('rsi_2h', 50) > 30:\n            agree_count += 1\n    \n    return \"skip\" if agree_count < 2 else prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_85fae3651e.py"
-}

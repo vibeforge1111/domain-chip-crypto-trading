@@ -1,8 +1,0 @@
-{
-  "guard_id": "9de73882eb",
-  "generation": 4900,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1ec46869",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR expansion + BB width.\"\"\"\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # True compression: tight BB + rising ATR\n    in_compression = bb_width < 0.2\n    volatility_building = atr_ratio > 1.1\n    \n    # False signal: compression but no volatility expansion yet\n    if in_compression and not volatility_building:\n        return \"skip\"\n    \n    # Reject if prediction contradicts stoch momentum\n    if prediction == \"long\" and stoch_k < 25:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k > 75:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9de73882eb.py"
-}

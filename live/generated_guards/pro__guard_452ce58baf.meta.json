@@ -1,8 +1,0 @@
-{
-  "guard_id": "452ce58baf",
-  "generation": 2035,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ef129a2f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades not at BB extreme zones for high-confidence entries.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Long only at lower BB extreme with oversold stochastic\n    if prediction == \"long\" and (bb_pct_b >= 0.05 or stoch_k >= 20):\n        return \"skip\"\n    \n    # Short only at upper BB extreme with overbought stochastic\n    if prediction == \"short\" and (bb_pct_b <= 0.95 or stoch_k <= 80):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_452ce58baf.py"
-}

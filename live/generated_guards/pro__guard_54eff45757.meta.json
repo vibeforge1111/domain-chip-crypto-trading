@@ -1,8 +1,0 @@
-{
-  "guard_id": "54eff45757",
-  "generation": 3660,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e1ae9787",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades during false compression setups.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    obv_slope = features.get('obv_slope', 0)\n    macd_histogram = features.get('macd_histogram', 0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    \n    # False compression: tight bands + price mid-range + weak momentum + low volume\n    compressed = bb_width < 0.8\n    mid_position = 0.35 < bb_pct_b < 0.65\n    weak_momentum = obv_slope < 0 and macd_histogram < 0\n    low_volume = atr_ratio < 0.9\n    \n    if compressed and mid_position and weak_momentum and low_volume:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_54eff45757.py"
-}

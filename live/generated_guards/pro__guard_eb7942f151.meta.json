@@ -1,8 +1,0 @@
-{
-  "guard_id": "eb7942f151",
-  "generation": 295,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f24b5ca7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject if candle has excessive wicks (unclear market structure)\n    total_wick = features.get('upper_wick_ratio', 0) + features.get('lower_wick_ratio', 0)\n    if total_wick > 0.75:\n        return \"skip\"\n    \n    # Reject if RSI extreme without momentum/trend alignment\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0)\n    if (rsi > 70 or rsi < 30) and momentum * (1 if prediction == \"long\" else -1) < 0:\n        return \"skip\"\n    \n    # Reject if low volume during breakout-like moves\n    if features.get('volume_ratio', 1) < 0.6 and features.get('range_pct', 0) > 0.02:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_eb7942f151.py"
-}

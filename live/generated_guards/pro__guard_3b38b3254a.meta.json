@@ -1,8 +1,0 @@
-{
-  "guard_id": "3b38b3254a",
-  "generation": 695,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7da6a44b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if ATR is too compressed (low volatility regime)\n    if features.get('atr_ratio', 1) < 0.7:\n        return \"skip\"\n    \n    # Require volume confirmation for the trade\n    if features.get('volume_ratio', 1) < 0.9:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3b38b3254a.py"
-}

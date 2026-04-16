@@ -1,8 +1,0 @@
-{
-  "guard_id": "2e97738455",
-  "generation": 4985,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "15c0b58c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression: low bb_width + low atr_ratio + misaligned momentum\n    is_compression = features['bb_width'] < 0.02 and features['atr_ratio'] < 0.8\n    if is_compression:\n        if prediction == 'long' and features['macd_histogram'] < -0.0001:\n            return 'skip'\n        if prediction == 'short' and features['macd_histogram'] > 0.0001:\n            return 'skip'\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2e97738455.py"
-}

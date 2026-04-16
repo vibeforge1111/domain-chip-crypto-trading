@@ -1,8 +1,0 @@
-{
-  "guard_id": "d2dacd257c",
-  "generation": 425,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b3595c89",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject overextended positions at band extremes with extreme RSI (mean reversion risk)\n    bb_pos = features.get('bb_position', 0.5)\n    rsi = features.get('rsi_14', 50)\n    \n    if bb_pos > 0.9 and rsi > 70:\n        return \"skip\"\n    if bb_pos < 0.1 and rsi < 30:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d2dacd257c.py"
-}

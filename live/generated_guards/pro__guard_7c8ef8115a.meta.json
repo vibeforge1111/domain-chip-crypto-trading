@@ -1,8 +1,0 @@
-{
-  "guard_id": "7c8ef8115a",
-  "generation": 920,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "67d3ff95",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades on wick-dominated candles (reversal-prone structure).\"\"\"\n    if prediction == \"long\" and features[\"upper_wick_ratio\"] > features[\"body_ratio\"]:\n        return \"skip\"\n    if prediction == \"short\" and features[\"lower_wick_ratio\"] > features[\"body_ratio\"]:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7c8ef8115a.py"
-}

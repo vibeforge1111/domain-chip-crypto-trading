@@ -1,8 +1,0 @@
-{
-  "guard_id": "c0ca805404",
-  "generation": 2245,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "620a724b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return \"skip\"\n    \n    confirmations = 0\n    \n    # Stoch confirmation: oversold (<20) for long, overbought (>80) for short\n    stoch = features.get(\"stoch_k\", 50)\n    if prediction == \"long\" and stoch < 20:\n        confirmations += 1\n    elif prediction == \"short\" and stoch > 80:\n        confirmations += 1\n    \n    # VWAP deviation confirmation: above VWAP for long, below for short\n    vwap = features.get(\"vwap_deviation\", 0)\n    if prediction == \"long\" and vwap > 0:\n        confirmations += 1\n    elif prediction == \"short\" and vwap < 0:\n        confirmations += 1\n    \n    # RSI confirmation: oversold (<40) for long, overbought (>60) for short\n    rsi = features.get(\"rsi_14\", 50)\n    if prediction == \"long\" and rsi < 40:\n        confirmations += 1\n    elif prediction == \"short\" and rsi > 60:\n        confirmations += 1\n    \n    # MACD histogram confirmation: positive for long, negative for short\n    macd = features.get(\"macd_histogram\", 0)\n    if prediction == \"long\" and macd > 0:\n        confirmations += 1\n    elif prediction == \"short\" and macd < 0:\n        confirmations += 1\n    \n    # Require at least 2 confirmations\n    if confirmations < 2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c0ca805404.py"
-}

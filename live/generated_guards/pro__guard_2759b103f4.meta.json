@@ -1,8 +1,0 @@
-{
-  "guard_id": "2759b103f4",
-  "generation": 65,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a1c625b7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals when momentum contradicts RSI extremes or volatility spikes occur.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    volatility = features.get(\"volatility_regime\", 0)\n    range_pct = features.get(\"range_pct\", 0)\n    \n    # Momentum divergence during RSI extremes (exhaustion signal)\n    rsi_extreme = rsi > 70 or rsi < 30\n    momentum_weak = abs(momentum) < 0.2\n    if rsi_extreme and momentum_weak:\n        return \"skip\"\n    \n    # High volatility spike with large candles (reversal risk)\n    if volatility > 1.5 and range_pct > 2.0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2759b103f4.py"
-}

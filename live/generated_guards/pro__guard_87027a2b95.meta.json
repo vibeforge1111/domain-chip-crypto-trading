@@ -1,8 +1,0 @@
-{
-  "guard_id": "87027a2b95",
-  "generation": 3025,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7a935efa",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return \"skip\"\n    \n    agree = 0\n    bb = features.get(\"bb_pct_b\", 0.5)\n    vwap = features.get(\"vwap_deviation\", 0)\n    sk = features.get(\"stoch_k\", 50)\n    sd = features.get(\"stoch_d\", 50)\n    obv = features.get(\"obv_slope\", 0)\n    macd = features.get(\"macd_histogram\", 0)\n    rsi2h = features.get(\"rsi_2h\", 50)\n    \n    if prediction == \"long\":\n        if bb < 0.4: agree += 1\n        if vwap > 0: agree += 1\n        if sk < 25 and sd < 25: agree += 1\n        if obv > 0: agree += 1\n        if macd > 0: agree += 1\n        if rsi2h < 50: agree += 1\n    else:\n        if bb > 0.6: agree += 1\n        if vwap < 0: agree += 1\n        if sk > 75 and sd > 75: agree += 1\n        if obv < 0: agree += 1\n        if macd < 0: agree += 1\n        if rsi2h > 50: agree += 1\n    \n    return prediction if agree >= 2 else \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_87027a2b95.py"
-}

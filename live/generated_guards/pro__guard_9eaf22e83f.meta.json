@@ -1,8 +1,0 @@
-{
-  "guard_id": "9eaf22e83f",
-  "generation": 1965,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "55475cd3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades where volume flow (obv_slope) contradicts the trade direction.\"\"\"\n    obv_slope = features.get(\"obv_slope\", 0)\n    if prediction == \"long\" and obv_slope < 0:\n        return \"skip\"\n    if prediction == \"short\" and obv_slope > 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9eaf22e83f.py"
-}

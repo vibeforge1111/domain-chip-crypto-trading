@@ -1,8 +1,0 @@
-{
-  "guard_id": "e0e423d6be",
-  "generation": 2885,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7149a134",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    macd = features.get(\"macd_histogram\", 0)\n    vwap = features.get(\"vwap_deviation\", 0)\n    \n    if prediction == \"long\" and (macd < 0 or vwap < 0):\n        return \"skip\"\n    if prediction == \"short\" and (macd > 0 or vwap > 0):\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e0e423d6be.py"
-}

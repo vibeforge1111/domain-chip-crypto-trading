@@ -1,8 +1,0 @@
-{
-  "guard_id": "d5bf76fd0e",
-  "generation": 3655,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "11ac6dcc",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum is stalling (histogram near zero).\"\"\"\n    macd = features.get('macd_histogram', 0)\n    # Skip if momentum is weak/consolidating (histogram near zero)\n    if abs(macd) < 0.0002:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d5bf76fd0e.py"
-}

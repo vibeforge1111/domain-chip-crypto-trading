@@ -1,8 +1,0 @@
-{
-  "guard_id": "c54add4dda",
-  "generation": 2085,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c90b42c8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression signals using atr_ratio, bb_width, and bb_pct_b.\"\"\"\n    bb_width = features.get(\"bb_width\", 1.0)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # True compression: low bb_width, moderate atr_ratio\n    is_compressed = bb_width < 0.25 and atr_ratio < 0.7\n    \n    # False compression: compressed but at Bollinger extremes\n    is_false_compression = is_compressed and (bb_pct_b < 0.15 or bb_pct_b > 0.85)\n    \n    # Stochastic confirms valid entry zone (not overbought/oversold)\n    stoch_valid = 25 < stoch_k < 75\n    \n    if is_false_compression and not stoch_valid:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c54add4dda.py"
-}

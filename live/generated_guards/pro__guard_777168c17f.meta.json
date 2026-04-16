@@ -1,8 +1,0 @@
-{
-  "guard_id": "777168c17f",
-  "generation": 2170,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "194b08a9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Only allow trades at extreme bb_pct_b positions\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    # Additional confirmation: stoch should align with direction\n    if prediction == \"long\" and stoch_k > 30:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 70:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_777168c17f.py"
-}

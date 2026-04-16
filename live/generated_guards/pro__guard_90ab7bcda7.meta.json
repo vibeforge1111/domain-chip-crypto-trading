@@ -1,8 +1,0 @@
-{
-  "guard_id": "90ab7bcda7",
-  "generation": 3760,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "0ccde236",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    \n    # Require stoch_k/stoch_d crossover alignment with prediction\n    if prediction == 'long':\n        if stoch_k <= stoch_d:\n            return 'skip'\n    elif prediction == 'short':\n        if stoch_k >= stoch_d:\n            return 'skip'\n    \n    # Skip extreme stochastic levels (avoid overbought/oversold traps)\n    if stoch_k < 20 or stoch_k > 80:\n        return 'skip'\n    \n    # Confirm trend with 2h RSI\n    if prediction == 'long' and rsi_2h < 45:\n        return 'skip'\n    if prediction == 'short' and rsi_2h > 55:\n        return 'skip'\n    \n    # Reject trades too far from VWAP\n    if abs(vwap_dev) > 0.005:\n        return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_90ab7bcda7.py"
-}

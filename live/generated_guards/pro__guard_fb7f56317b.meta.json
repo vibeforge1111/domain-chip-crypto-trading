@@ -1,8 +1,0 @@
-{
-  "guard_id": "fb7f56317b",
-  "generation": 3780,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a2b22ce9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades to high-confidence BB extremes (<0.05 or >0.95).\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    if prediction == \"long\" and bb_pct_b >= 0.05:\n        return \"skip\"\n    if prediction == \"short\" and bb_pct_b <= 0.95:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fb7f56317b.py"
-}

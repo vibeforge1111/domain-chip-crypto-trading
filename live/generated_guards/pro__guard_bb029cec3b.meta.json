@@ -1,8 +1,0 @@
-{
-  "guard_id": "bb029cec3b",
-  "generation": 775,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2bada89c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filters trades on volatility expansion without confirmation.\"\"\"\n    # Skip if ATR expands but volume/momentum don't confirm\n    if features.get('atr_ratio', 0) > 1.5:\n        if features.get('volume_ratio', 1) < 1.0 or features.get('momentum_score', 50) < 45:\n            return \"skip\"\n    \n    # Skip if BB position is extreme without momentum support\n    bb_pos = features.get('bb_position', 0.5)\n    if bb_pos > 0.9 or bb_pos < 0.1:\n        if features.get('momentum_score', 50) < 40:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bb029cec3b.py"
-}

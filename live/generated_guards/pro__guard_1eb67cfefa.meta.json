@@ -1,8 +1,0 @@
-{
-  "guard_id": "1eb67cfefa",
-  "generation": 3335,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "879ce398",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using BB extremes as high-confidence entry zones.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # Only allow trades at extreme BB positions (<0.05 or >0.95)\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    # For long signals at lower band, price should be below VWAP\n    if prediction == \"long\" and bb_pct_b < 0.05 and vwap_deviation >= 0:\n        return \"skip\"\n    \n    # For short signals at upper band, price should be above VWAP\n    if prediction == \"short\" and bb_pct_b > 0.95 and vwap_deviation <= 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1eb67cfefa.py"
-}

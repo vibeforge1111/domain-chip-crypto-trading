@@ -1,8 +1,0 @@
-{
-  "guard_id": "10a36118db",
-  "generation": 2830,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "69bc89d5",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Require meaningful crossover separation\n    if abs(stoch_k - stoch_d) < 5:\n        return \"skip\"\n    \n    # Long: stoch_k above stoch_d AND in/just-leaving oversold zone\n    if prediction == \"long\" and stoch_k > stoch_d:\n        if stoch_k <= 40:\n            return prediction\n        return \"skip\"\n    \n    # Short: stoch_k below stoch_d AND in/just-leaving overbought zone\n    if prediction == \"short\" and stoch_k < stoch_d:\n        if stoch_k >= 60:\n            return prediction\n        return \"skip\"\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_10a36118db.py"
-}

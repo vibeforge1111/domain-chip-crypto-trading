@@ -1,8 +1,0 @@
-{
-  "guard_id": "2a5bab4c54",
-  "generation": 5265,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "330c10d6",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using compression detection (atr_ratio + bb_width).\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    macd_histogram = features.get('macd_histogram', 0)\n    \n    # True compression: low volatility AND tight bands\n    compression = atr_ratio < 0.75 and bb_width < 0.75\n    \n    if compression:\n        # False compression: stochastic at extremes signals reversal coming\n        if stoch_k < 20 or stoch_k > 80:\n            return \"skip\"\n        \n        # False compression: bb_pct_b at extremes means trend, not compression\n        if bb_pct_b < 0.15 or bb_pct_b > 0.85:\n            return \"skip\"\n        \n        # False compression: macd histogram building means momentum present\n        if abs(macd_histogram) > 0.001:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2a5bab4c54.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "5662705d3e",
-  "generation": 950,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a3684a40",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals based on candle indecision, volume confirmation, and momentum alignment.\"\"\"\n    # Skip if candle shows indecision (wicks on both sides, small body)\n    if features['upper_wick_ratio'] > 0.3 and features['lower_wick_ratio'] > 0.3 and features['body_ratio'] < 0.3:\n        return \"skip\"\n    \n    # Skip if significant price move without volume confirmation\n    if features['range_pct'] > 1.5 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    # Skip if RSI in extreme zone but trend strength is weak (divergence signal)\n    if (features['rsi_14'] > 70 or features['rsi_14'] < 30) and features['trend_strength'] < 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5662705d3e.py"
-}

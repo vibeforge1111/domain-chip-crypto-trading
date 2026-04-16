@@ -1,8 +1,0 @@
-{
-  "guard_id": "052de944a5",
-  "generation": 3030,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "fa92f52f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades not aligned with stochastic crossover momentum.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # Reject longs when stoch_k below stoch_d (bearish alignment)\n    if prediction == \"long\" and stoch_k < stoch_d:\n        return \"skip\"\n    # Reject shorts when stoch_k above stoch_d (bullish alignment)\n    if prediction == \"short\" and stoch_k > stoch_d:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_052de944a5.py"
-}

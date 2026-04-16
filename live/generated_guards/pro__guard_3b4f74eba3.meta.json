@@ -1,8 +1,0 @@
-{
-  "guard_id": "3b4f74eba3",
-  "generation": 1860,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "58f820df",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Rejects trades where momentum contradicts trend direction.\"\"\"\n    if prediction == \"long\":\n        if features['rsi_14'] < 50 and features['momentum_score'] < 0:\n            return \"skip\"\n    elif prediction == \"short\":\n        if features['rsi_14'] > 50 and features['momentum_score'] > 0:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3b4f74eba3.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "f4ebac8321",
-  "generation": 2775,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c30fcd56",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum deceleration using MACD histogram.\"\"\"\n    macd = features.get('macd_histogram', 0)\n    stoch = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip if MACD histogram negative (momentum deceleration)\n    if macd < -0.0002:\n        return \"skip\"\n    \n    # Skip if overbought with weakening momentum\n    if stoch > 75 and macd < 0:\n        return \"skip\"\n    \n    # Skip if wider timeframe RSI extended and momentum fading\n    if rsi_2h > 70 and macd < 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f4ebac8321.py"
-}

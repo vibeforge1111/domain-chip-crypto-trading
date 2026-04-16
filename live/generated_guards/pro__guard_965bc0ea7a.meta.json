@@ -1,8 +1,0 @@
-{
-  "guard_id": "965bc0ea7a",
-  "generation": 3885,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "55080148",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    long_confirm = 0\n    short_confirm = 0\n    \n    if features.get('stoch_k', 50) < 70:\n        long_confirm += 1\n    if features.get('stoch_k', 50) > 30:\n        short_confirm += 1\n    \n    if features.get('vwap_deviation', 0) > 0:\n        long_confirm += 1\n    if features.get('vwap_deviation', 0) < 0:\n        short_confirm += 1\n    \n    if features.get('macd_histogram', 0) > 0:\n        long_confirm += 1\n    if features.get('macd_histogram', 0) < 0:\n        short_confirm += 1\n    \n    if features.get('obv_slope', 0) > 0:\n        long_confirm += 1\n    if features.get('obv_slope', 0) < 0:\n        short_confirm += 1\n    \n    if features.get('bb_pct_b', 0.5) < 0.6:\n        long_confirm += 1\n    if features.get('bb_pct_b', 0.5) > 0.4:\n        short_confirm += 1\n    \n    if features.get('rsi_2h', 50) < 65:\n        long_confirm += 1\n    if features.get('rsi_2h', 50) > 35:\n        short_confirm += 1\n    \n    if prediction == \"long\" and long_confirm < 3:\n        return \"skip\"\n    if prediction == \"short\" and short_confirm < 3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_965bc0ea7a.py"
-}

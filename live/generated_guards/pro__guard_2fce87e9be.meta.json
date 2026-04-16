@@ -1,8 +1,0 @@
-{
-  "guard_id": "2fce87e9be",
-  "generation": 1805,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "74aade03",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals with momentum-volume divergence or wick imbalance.\"\"\"\n    momentum = features.get('momentum_score', 0)\n    volume = features.get('volume_ratio', 1)\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    rsi = features.get('rsi_14', 50)\n    bb_pos = features.get('bb_position', 0.5)\n    \n    # Reject: strong momentum but weak volume confirmation\n    if abs(momentum) > 0.6 and volume < 0.8:\n        return \"skip\"\n    \n    # Reject: extreme RSI but price mid-range in bands (weak signal)\n    if (rsi > 75 or rsi < 25) and 0.3 < bb_pos < 0.7:\n        return \"skip\"\n    \n    # Reject long: dominant upper wick suggesting selling pressure\n    if prediction == \"long\" and upper_wick > 0.4:\n        return \"skip\"\n    \n    # Reject short: dominant lower wick suggesting buying pressure\n    if prediction == \"short\" and lower_wick > 0.4:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2fce87e9be.py"
-}

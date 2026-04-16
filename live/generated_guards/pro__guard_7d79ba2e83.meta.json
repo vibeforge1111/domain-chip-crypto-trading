@@ -1,8 +1,0 @@
-{
-  "guard_id": "7d79ba2e83",
-  "generation": 5415,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "56d5891e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where momentum is decelerating (flat MACD histogram).\"\"\"\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # Skip if MACD histogram is near zero (momentum flattening)\n    if abs(macd_histogram) < 0.0005:\n        return \"skip\"\n    \n    # Skip if MACD histogram contradicts prediction direction\n    if prediction == \"long\" and macd_histogram < 0:\n        return \"skip\"\n    if prediction == \"short\" and macd_histogram > 0:\n        return \"skip\"\n    \n    # Skip if volume confirmation contradicts trade direction\n    if prediction == \"long\" and obv_slope < 0:\n        return \"skip\"\n    if prediction == \"short\" and obv_slope > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7d79ba2e83.py"
-}

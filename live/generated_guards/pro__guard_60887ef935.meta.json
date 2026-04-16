@@ -1,8 +1,0 @@
-{
-  "guard_id": "60887ef935",
-  "generation": 4040,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "db1a120b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum decelerates at extreme band positions.\"\"\"\n    macd_hist = features.get('macd_histogram', 0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Momentum deceleration: histogram shrinking toward zero at extremes\n    hist_near_zero = abs(macd_hist) < 0.0003\n    at_upper_band = bb_pct_b > 0.8\n    at_lower_band = bb_pct_b < 0.2\n    \n    if prediction == 'long':\n        # Skip if bullish momentum decelerating near upper band with overbought stochastic\n        if hist_near_zero and at_upper_band and stoch_k > 70:\n            return 'skip'\n        # Skip if price above VWAP but 2h RSI showing divergence\n        if vwap_dev > 0.01 and rsi_2h < 35:\n            return 'skip'\n    \n    elif prediction == 'short':\n        # Skip if bearish momentum decelerating near lower band with oversold stochastic\n        if hist_near_zero and at_lower_band and stoch_k < 30:\n            return 'skip'\n        # Skip if price below VWAP but 2h RSI showing divergence\n        if vwap_dev < -0.01 and rsi_2h > 65:\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_60887ef935.py"
-}

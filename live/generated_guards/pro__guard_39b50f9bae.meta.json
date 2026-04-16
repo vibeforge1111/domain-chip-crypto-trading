@@ -1,8 +1,0 @@
-{
-  "guard_id": "39b50f9bae",
-  "generation": 1635,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "93a356f0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with weak trend or momentum exhaustion.\"\"\"\n    # Skip if trend strength is weak (no clear direction)\n    if features.get('trend_strength', 0) < 0.3:\n        return \"skip\"\n    \n    # Skip if RSI in extreme zone (reversal risk)\n    rsi = features.get('rsi_14', 50)\n    if prediction == \"long\" and rsi > 72:\n        return \"skip\"\n    if prediction == \"short\" and rsi < 28:\n        return \"skip\"\n    \n    # Skip if EMA slope contradicts prediction\n    ema_slope = features.get('ema_slope', 0)\n    if prediction == \"long\" and ema_slope < 0:\n        return \"skip\"\n    if prediction == \"short\" and ema_slope > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_39b50f9bae.py"
-}

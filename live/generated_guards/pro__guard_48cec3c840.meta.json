@@ -1,8 +1,0 @@
-{
-  "guard_id": "48cec3c840",
-  "generation": 655,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "18221b8a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when price is at extreme Bollinger Band position with low volume.\"\"\"\n    bb_pos = features['bb_position']\n    vol_ratio = features['volume_ratio']\n    \n    # Price at band extremes with weak volume suggests weak conviction\n    if (bb_pos > 0.9 or bb_pos < 0.1) and vol_ratio < 0.5:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_48cec3c840.py"
-}

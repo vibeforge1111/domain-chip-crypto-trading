@@ -1,8 +1,0 @@
-{
-  "guard_id": "bb89d047c1",
-  "generation": 320,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "49891324",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when candle structure is unreliable AND momentum contradicts trend.\"\"\"\n    # High wick dominance indicates weak/inconclusive price action\n    wick_dominant = features['upper_wick_ratio'] + features['lower_wick_ratio'] > 0.7\n    \n    # Momentum diverging from trend suggests weakening conviction\n    trend_dir = 1 if features['ema_slope'] > 0 else -1\n    momentum_dir = 1 if features['momentum_score'] > 0 else -1\n    momentum_diverges = trend_dir != momentum_dir and abs(features['momentum_score']) > 0.3\n    \n    # Reject only when BOTH conditions occur together\n    if wick_dominant and momentum_diverges:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bb89d047c1.py"
-}

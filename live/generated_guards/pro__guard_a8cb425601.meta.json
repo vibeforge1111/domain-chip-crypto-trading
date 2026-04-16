@@ -1,8 +1,0 @@
-{
-  "guard_id": "a8cb425601",
-  "generation": 3945,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b21077b8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if momentum contradicts the signal direction\n    hist = features.get('macd_histogram', 0)\n    if prediction == \"long\" and hist < 0:\n        return \"skip\"\n    if prediction == \"short\" and hist > 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a8cb425601.py"
-}

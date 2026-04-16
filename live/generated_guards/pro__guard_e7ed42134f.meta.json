@@ -1,8 +1,0 @@
-{
-  "guard_id": "e7ed42134f",
-  "generation": 2745,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c67ea5fb",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering using Bollinger Band extremes.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Filter longs: only allow when price near lower band (<0.05)\n    if prediction == \"long\" and bb_pct_b >= 0.05:\n        return \"skip\"\n    \n    # Filter shorts: only allow when price near upper band (>0.95)\n    if prediction == \"short\" and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e7ed42134f.py"
-}

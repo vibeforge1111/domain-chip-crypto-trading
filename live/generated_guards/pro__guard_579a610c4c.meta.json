@@ -1,8 +1,0 @@
-{
-  "guard_id": "579a610c4c",
-  "generation": 1350,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "08e899a5",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    ema_slope = features.get(\"ema_slope\", 0)\n    trend_strength = features.get(\"trend_strength\", 0)\n    rsi = features.get(\"rsi_14\", 50)\n    bb_pos = features.get(\"bb_position\", 0.5)\n    body_ratio = features.get(\"body_ratio\", 0)\n    volume_ratio = features.get(\"volume_ratio\", 1)\n    \n    # Filter: prediction must align with trend direction\n    if prediction == \"long\" and ema_slope < 0.001 and trend_strength < 0.3:\n        return \"skip\"\n    if prediction == \"short\" and ema_slope > -0.001 and trend_strength < 0.3:\n        return \"skip\"\n    \n    # Filter: weak momentum zone with low volume\n    if 45 < rsi < 55 and volume_ratio < 0.8:\n        return \"skip\"\n    \n    # Filter: exhausted move at extremes\n    if body_ratio < 0.2 and (bb_pos > 0.9 or bb_pos < 0.1):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_579a610c4c.py"
-}

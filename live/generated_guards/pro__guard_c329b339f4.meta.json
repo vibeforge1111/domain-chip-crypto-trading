@@ -1,8 +1,0 @@
-{
-  "guard_id": "c329b339f4",
-  "generation": 4835,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "16e1d7b3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: BB width and ATR both low\n    compressed = features.get('bb_width', 1) > 0.5 and features.get('atr_ratio', 1) > 1.2\n    \n    if not compressed and prediction != 'skip':\n        bb_pct = features.get('bb_pct_b', 0.5)\n        vwap_dev = features.get('vwap_deviation', 0)\n        stoch = features.get('stoch_k', 50)\n        rsi_2h = features.get('rsi_2h', 50)\n        \n        # Long setup: price near lower band, below VWAP, oversold, 2h neutral/bullish\n        if prediction == 'long':\n            if bb_pct > 0.6 or vwap_dev > 0.01 or stoch > 75 or rsi_2h > 70:\n                return 'skip'\n        \n        # Short setup: price near upper band, above VWAP, overbought, 2h neutral/bearish\n        elif prediction == 'short':\n            if bb_pct < 0.4 or vwap_dev < -0.01 or stoch < 25 or rsi_2h < 30:\n                return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c329b339f4.py"
-}

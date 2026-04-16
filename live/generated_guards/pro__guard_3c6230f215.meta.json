@@ -1,8 +1,0 @@
-{
-  "guard_id": "3c6230f215",
-  "generation": 90,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7c343c78",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard filtering by momentum alignment and candle quality.\"\"\"\n    # Reject trades with momentum contradicting the direction\n    momentum = features.get(\"momentum_score\", 0)\n    if prediction == \"long\" and momentum < -0.15:\n        return \"skip\"\n    if prediction == \"short\" and momentum > 0.15:\n        return \"skip\"\n    # Reject in low volatility chop\n    if features.get(\"volatility_regime\", 1) < 0.35:\n        return \"skip\"\n    # Reject candles with excessive wicks (uncertainty)\n    total_wick = features.get(\"upper_wick_ratio\", 0) + features.get(\"lower_wick_ratio\", 0)\n    if total_wick > 0.65:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3c6230f215.py"
-}

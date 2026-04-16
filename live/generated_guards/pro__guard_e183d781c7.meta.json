@@ -1,8 +1,0 @@
-{
-  "guard_id": "e183d781c7",
-  "generation": 2280,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "435cdd95",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when MACD histogram indicates momentum loss or reversal.\"\"\"\n    macd = features.get('macd_histogram', 0)\n    # Skip if momentum is negligible (histogram near zero)\n    if abs(macd) < 0.0001:\n        return \"skip\"\n    # Skip long if histogram is negative (downward momentum)\n    if prediction == \"long\" and macd < 0:\n        return \"skip\"\n    # Skip short if histogram is positive (upward momentum)\n    if prediction == \"short\" and macd > 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e183d781c7.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "ba6dd5da31",
-  "generation": 3290,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5d5653a9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using new features.\"\"\"\n    if features.get('bb_width', 1) < 0.5 and features.get('atr_ratio', 1) < 0.7:\n        warnings = 0\n        if features.get('macd_histogram', 0) < 0:\n            warnings += 1\n        if abs(features.get('vwap_deviation', 0)) > 0.01:\n            warnings += 1\n        if features.get('obv_slope', 0) < 0:\n            warnings += 1\n        if features.get('stoch_k', 50) - features.get('stoch_d', 50) > 15:\n            warnings += 1\n        if warnings >= 3:\n            return 'skip'\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ba6dd5da31.py"
-}

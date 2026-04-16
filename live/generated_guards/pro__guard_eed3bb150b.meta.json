@@ -1,8 +1,0 @@
-{
-  "guard_id": "eed3bb150b",
-  "generation": 4745,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "94c27af3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum is decelerating against the direction.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Momentum deceleration: long without bullish histogram, or short without bearish\n    if prediction == \"long\" and macd < 0:\n        return \"skip\"\n    if prediction == \"short\" and macd > 0:\n        return \"skip\"\n    \n    # Overbought/oversold divergence with wider timeframe\n    if prediction == \"long\" and stoch_k > 80 and rsi_2h > 65:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 20 and rsi_2h < 35:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_eed3bb150b.py"
-}

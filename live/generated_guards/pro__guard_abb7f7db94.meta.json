@@ -1,8 +1,0 @@
-{
-  "guard_id": "abb7f7db94",
-  "generation": 1985,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bd9cd36d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on stochastic crossover confirmation.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Require stoch_k > stoch_d for longs (bullish crossover)\n    if prediction == 'long' and stoch_k <= stoch_d:\n        return \"skip\"\n    \n    # Require stoch_k < stoch_d for shorts (bearish crossover)\n    if prediction == 'short' and stoch_k >= stoch_d:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_abb7f7db94.py"
-}

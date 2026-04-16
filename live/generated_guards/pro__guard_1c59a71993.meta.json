@@ -1,8 +1,0 @@
-{
-  "guard_id": "1c59a71993",
-  "generation": 1545,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e6f019a4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals where dominant wick dominates body (rejection candle).\"\"\"\n    dominant_wick = max(features['upper_wick_ratio'], features['lower_wick_ratio'])\n    if dominant_wick > 0.65 and features['body_ratio'] < 0.25:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1c59a71993.py"
-}

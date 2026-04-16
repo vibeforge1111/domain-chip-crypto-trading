@@ -1,8 +1,0 @@
-{
-  "guard_id": "ce8104baa8",
-  "generation": 2105,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3257fcfd",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during compression to detect true vs false breakouts.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    vwap_dev = abs(features.get(\"vwap_deviation\", 0))\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    macd_hist = features.get(\"macd_histogram\", 0)\n    \n    # True compression: both atr and bb_width low, price near VWAP, not at extremes\n    is_compression = atr_ratio < 0.75 and bb_width < 0.75\n    \n    if is_compression:\n        # False compression: price drifted far from VWAP during compression\n        if vwap_dev > 0.008:\n            return \"skip\"\n        # False compression: stochastic at extreme during compression (often reversal bait)\n        if stoch_k < 20 or stoch_k > 80:\n            if abs(macd_hist) > 0.0003:\n                return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ce8104baa8.py"
-}

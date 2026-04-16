@@ -1,8 +1,0 @@
-{
-  "guard_id": "b0e7f8866f",
-  "generation": 4930,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c45492c2",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # Detect compression: tight BB + low ATR\n    is_compressed = bb_width < 0.5 and atr_ratio < 0.7\n    \n    # False compression: compressed but at extremes with weak momentum\n    at_extreme = bb_pct_b < 0.2 or bb_pct_b > 0.8\n    weak_momentum = stoch_k < 30 or stoch_k > 70\n    far_from_vwap = abs(vwap_deviation) > 0.02\n    weak_obv = abs(obv_slope) < 0.1\n    \n    # Reject false compression: compressed + extreme + divergent indicators\n    if is_compressed and at_extreme and weak_momentum:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b0e7f8866f.py"
-}

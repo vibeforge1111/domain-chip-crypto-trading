@@ -1,8 +1,0 @@
-{
-  "guard_id": "9afec5e769",
-  "generation": 4275,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "979a41ed",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect false compression: tight bands + low ATR but momentum divergence.\"\"\"\n    # False compression trap: narrow bands with extreme stoch and no volume confirmation\n    if features['bb_width'] < 0.02 and features['atr_ratio'] < 0.8:\n        # Stochastic extreme with bearish OBV slope suggests squeeze trap\n        if (features['stoch_k'] > 80 or features['stoch_k'] < 20) and features['obv_slope'] < 0:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9afec5e769.py"
-}

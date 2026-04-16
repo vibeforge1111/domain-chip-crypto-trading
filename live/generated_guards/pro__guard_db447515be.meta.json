@@ -1,8 +1,0 @@
-{
-  "guard_id": "db447515be",
-  "generation": 2605,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "be38871b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Stochastic crossover timing guard for precise entries.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    \n    # Stochastic must be in valid range (not extreme)\n    if stoch_k < 20 or stoch_k > 80 or stoch_d < 20 or stoch_d > 80:\n        return \"skip\"\n    \n    # For long: k must be above d (bullish crossover)\n    if prediction == 'long' and stoch_k <= stoch_d:\n        return \"skip\"\n    \n    # For short: d must be above k (bearish crossover)\n    if prediction == 'short' and stoch_d <= stoch_k:\n        return \"skip\"\n    \n    # Avoid entries too far from VWAP\n    if abs(vwap_dev) > 0.005:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_db447515be.py"
-}

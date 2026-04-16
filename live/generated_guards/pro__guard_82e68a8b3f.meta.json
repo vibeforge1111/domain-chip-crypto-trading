@@ -1,8 +1,0 @@
-{
-  "guard_id": "82e68a8b3f",
-  "generation": 2705,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "aad0f11a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip false breakouts from compression without momentum support.\"\"\"\n    is_compression = features['atr_ratio'] < 0.75 and features['bb_width'] < 0.6\n    inside_bands = 0.25 < features['bb_pct_b'] < 0.75\n    lacks_momentum = features['macd_histogram'] <= 0 and features['obv_slope'] <= 0\n    weak_context = features['rsi_2h'] < 45\n    if is_compression and inside_bands and (lacks_momentum or weak_context):\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_82e68a8b3f.py"
-}

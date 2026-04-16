@@ -1,8 +1,0 @@
-{
-  "guard_id": "4a12267d98",
-  "generation": 2430,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b77d3752",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using atr_ratio, bb_width, and momentum indicators.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    macd_histogram = features.get(\"macd_histogram\", 0.0)\n    obv_slope = features.get(\"obv_slope\", 0.0)\n    stoch_k = features.get(\"stoch_k\", 50.0)\n    rsi_2h = features.get(\"rsi_2h\", 50.0)\n    \n    # Detect compression: low ATR ratio AND narrow BB\n    compression = atr_ratio < 0.8 and bb_width < 0.35\n    \n    # Count momentum indicators showing directional bias\n    momentum_signals = 0\n    if abs(macd_histogram) > 0.0005:\n        momentum_signals += 1\n    if obv_slope > 0 or obv_slope < 0:\n        momentum_signals += 1\n    if stoch_k < 25 or stoch_k > 75:\n        momentum_signals += 1\n    if rsi_2h < 35 or rsi_2h > 65:\n        momentum_signals += 1\n    \n    # False compression: compression without momentum divergence\n    if compression and momentum_signals < 2 and 0.3 < bb_pct_b < 0.7:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4a12267d98.py"
-}

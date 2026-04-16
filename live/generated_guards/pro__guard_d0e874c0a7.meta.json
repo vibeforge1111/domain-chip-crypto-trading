@@ -1,8 +1,0 @@
-{
-  "guard_id": "d0e874c0a7",
-  "generation": 5140,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "67f095ee",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with weak conviction near VWAP and misaligned momentum.\"\"\"\n    # Skip if price too close to VWAP (indecision zone)\n    if abs(features.get('vwap_deviation', 0)) < 0.002:\n        return \"skip\"\n    \n    # Skip longs when overbought or negative momentum\n    if prediction == \"long\":\n        if features.get('stoch_k', 50) > 80:\n            return \"skip\"\n        if features.get('macd_histogram', 0) < -0.0001:\n            return \"skip\"\n    \n    # Skip shorts when oversold or positive momentum\n    if prediction == \"short\":\n        if features.get('stoch_k', 50) < 20:\n            return \"skip\"\n        if features.get('macd_histogram', 0) > 0.0001:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d0e874c0a7.py"
-}

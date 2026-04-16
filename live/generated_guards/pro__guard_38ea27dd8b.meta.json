@@ -1,8 +1,0 @@
-{
-  "guard_id": "38ea27dd8b",
-  "generation": 5505,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "4016a55a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True squeeze: low atr_ratio AND low bb_width = compression\n    is_true_squeeze = features.get('atr_ratio', 1) < 1.0 and features.get('bb_width', 1) < 0.9\n    \n    # False compression: high volatility but tight bands = likely rejection\n    if features.get('atr_ratio', 1) > 1.5 and features.get('bb_width', 1) < 1.1:\n        return \"skip\"\n    \n    # Skip extreme stochastic readings\n    if features.get('stoch_k', 50) > 85 or features.get('stoch_k', 50) < 15:\n        return \"skip\"\n    \n    # Skip if 2h RSI conflicts with prediction direction\n    rsi_2h = features.get('rsi_2h', 50)\n    if prediction == \"long\" and rsi_2h > 70:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h < 30:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_38ea27dd8b.py"
-}

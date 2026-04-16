@@ -1,8 +1,0 @@
-{
-  "guard_id": "d500251a7a",
-  "generation": 3985,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3b9069e9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Stochastic crossover timing guard.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    if prediction == 'long':\n        # K must cross above D and ideally in oversold territory\n        if stoch_k <= stoch_d or stoch_k < 30:\n            return 'skip'\n        # VWAP confirmation: price should be above VWAP\n        if features.get('vwap_deviation', 0) < 0:\n            return 'skip'\n    elif prediction == 'short':\n        # K must cross below D and ideally in overbought territory\n        if stoch_k >= stoch_d or stoch_k > 70:\n            return 'skip'\n        # VWAP confirmation: price should be below VWAP\n        if features.get('vwap_deviation', 0) > 0:\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d500251a7a.py"
-}

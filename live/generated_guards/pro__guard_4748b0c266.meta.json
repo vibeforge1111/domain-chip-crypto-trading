@@ -1,8 +1,0 @@
-{
-  "guard_id": "4748b0c266",
-  "generation": 375,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "419e272c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip long if RSI overbought and momentum weak\n    if prediction == \"long\" and features['rsi_14'] > 70 and features['momentum_score'] < 0.4:\n        return \"skip\"\n    \n    # Skip short if RSI oversold and momentum weak\n    if prediction == \"short\" and features['rsi_14'] < 30 and features['momentum_score'] > -0.4:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4748b0c266.py"
-}

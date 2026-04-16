@@ -1,8 +1,0 @@
-{
-  "guard_id": "984786d977",
-  "generation": 650,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5147d5f5",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_position = features.get(\"bb_position\", 0.5)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    \n    # Skip if candle is a doji (small body) - unreliable signal\n    if body_ratio < 0.15:\n        return \"skip\"\n    \n    # Skip if RSI at extreme and BB at extreme same direction\n    if rsi_14 > 70 and bb_position > 0.9:\n        return \"skip\"\n    if rsi_14 < 30 and bb_position < 0.1:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_984786d977.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "73670c23cc",
-  "generation": 4150,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2ec6de4c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    # Reject longs when price significantly below VWAP (negative deviation)\n    if prediction == \"long\" and vwap_dev < -0.008:\n        return \"skip\"\n    \n    # Reject shorts when price significantly above VWAP (positive deviation)\n    if prediction == \"short\" and vwap_dev > 0.008:\n        return \"skip\"\n    \n    # Additional filter: reject when momentum disagrees with prediction\n    if prediction == \"long\" and momentum < -0.3:\n        return \"skip\"\n    if prediction == \"short\" and momentum > 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_73670c23cc.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "733fe83eef",
-  "generation": 335,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "0769f36e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with poor candle structure and weak momentum alignment.\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    body_ratio = features.get('body_ratio', 0)\n    bb_position = features.get('bb_position', 0.5)\n    ema_slope = features.get('ema_slope', 0)\n    trend_strength = features.get('trend_strength', 0)\n    \n    # Reject if candle has excessive wicks (poor structure)\n    if upper_wick + lower_wick > 0.7:\n        return \"skip\"\n    \n    # Reject if body is too small relative to wicks\n    if body_ratio < 0.2:\n        return \"skip\"\n    \n    # Reject counter-trend trades at Bollinger extremes\n    if prediction == 'long' and bb_position > 0.85 and ema_slope < 0:\n        return \"skip\"\n    if prediction == 'short' and bb_position < 0.15 and ema_slope > 0:\n        return \"skip\"\n    \n    # Reject if weak trend + weak BB signal\n    if trend_strength < 0.25 and (bb_position > 0.8 or bb_position < 0.2):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_733fe83eef.py"
-}

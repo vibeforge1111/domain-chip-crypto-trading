@@ -1,8 +1,0 @@
-{
-  "guard_id": "b96f2e2b5a",
-  "generation": 4750,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c5b3f489",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression to filter bad trades.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # True compression: low BB width and low ATR\n    is_compressed = bb_width < 0.85 and atr_ratio < 0.85\n    \n    # False compression indicators\n    # Price stuck in middle of bands (no directional bias)\n    no_band_position = abs(bb_pct_b - 0.5) < 0.15\n    # Stochastic flat without direction\n    stoch_flat = abs(stoch_k - stoch_d) < 5 and 30 < stoch_k < 70\n    # No momentum building (flat MACD and OBV)\n    no_momentum = abs(macd_histogram) < 0.0002 and abs(obv_slope) < 0.01\n    \n    # Skip false compression setups\n    if is_compressed and no_band_position and stoch_flat and no_momentum:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b96f2e2b5a.py"
-}

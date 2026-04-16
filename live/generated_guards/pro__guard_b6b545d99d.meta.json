@@ -1,8 +1,0 @@
-{
-  "guard_id": "b6b545d99d",
-  "generation": 2250,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f3fbeadc",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_diff = features.get('stoch_k', 50) - features.get('stoch_d', 50)\n    bb_pos = features.get('bb_pct_b', 0.5)\n    \n    if prediction == \"long\" and stoch_diff < 0:\n        return \"skip\"\n    if prediction == \"short\" and stoch_diff > 0:\n        return \"skip\"\n    \n    if prediction == \"long\" and bb_pos > 0.9:\n        return \"skip\"\n    if prediction == \"short\" and bb_pos < 0.1:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b6b545d99d.py"
-}

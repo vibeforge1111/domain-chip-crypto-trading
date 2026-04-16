@@ -1,8 +1,0 @@
-{
-  "guard_id": "444a361867",
-  "generation": 2895,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f737b045",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using BB width, ATR ratio, and band position.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    vwap_deviation = features.get('vwap_deviation', 0.0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Compression detected: BB width below threshold\n    compression = bb_width < 0.6\n    \n    # False compression: tight bands but price at extreme band position\n    false_compression = compression and (bb_pct_b < 0.15 or bb_pct_b > 0.85)\n    \n    # True compression: tight bands with price near middle and low ATR (imminent expansion)\n    true_compression = compression and 0.3 <= bb_pct_b <= 0.7 and atr_ratio < 0.85\n    \n    # Skip if false compression (extreme position + tight bands = trap)\n    if false_compression:\n        return \"skip\"\n    \n    # Skip if compression with stoch divergence (potential reversal)\n    if compression and abs(stoch_k - stoch_d) > 20:\n        return \"skip\"\n    \n    # Skip if compressed but far from VWAP (weak conviction)\n    if compression and abs(vwap_deviation) > 0.015:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_444a361867.py"
-}

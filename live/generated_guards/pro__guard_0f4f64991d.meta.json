@@ -1,8 +1,0 @@
-{
-  "guard_id": "0f4f64991d",
-  "generation": 4055,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d5a7efda",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when compression exists but momentum diverges.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.5)\n    rsi_2h = features.get('rsi_2h', 50)\n    obv_slope = features.get('obv_slope', 0.0)\n    vwap_dev = features.get('vwap_deviation', 0.0)\n    \n    # True compression: low ATR ratio AND narrow BB width\n    is_compression = atr_ratio < 0.7 and bb_width < 0.4\n    \n    if is_compression:\n        # Skip long if RSI in wider timeframe is elevated (bearish divergence)\n        if prediction == \"long\" and (rsi_2h > 65 or obv_slope < -0.01 or vwap_dev < -0.015):\n            return \"skip\"\n        # Skip short if RSI in wider timeframe is suppressed (bullish divergence)\n        if prediction == \"short\" and (rsi_2h < 35 or obv_slope > 0.01 or vwap_dev > 0.015):\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0f4f64991d.py"
-}

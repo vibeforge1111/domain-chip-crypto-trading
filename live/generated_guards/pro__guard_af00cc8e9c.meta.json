@@ -1,8 +1,0 @@
-{
-  "guard_id": "af00cc8e9c",
-  "generation": 3635,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c82dbc4b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n    Uses bb_pct_b extremes as high-confidence entry zones.\n\n    Args:\n        features: Dict with keys like bb_pct_b, vwap_deviation, stoch_k, stoch_d, etc.\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # High-confidence entry zones: bb_pct_b at extremes\n    is_extreme_low = bb_pct_b < 0.05\n    is_extreme_high = bb_pct_b > 0.95\n    \n    # Only allow longs at extreme low, shorts at extreme high\n    if prediction == \"long\" and not is_extreme_low:\n        return \"skip\"\n    if prediction == \"short\" and not is_extreme_high:\n        return \"skip\"\n    \n    # Secondary confirmation: stochastic alignment\n    if prediction == \"long\" and stoch_k > 70:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 30:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_af00cc8e9c.py"
-}

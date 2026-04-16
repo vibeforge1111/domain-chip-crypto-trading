@@ -1,8 +1,0 @@
-{
-  "guard_id": "db5832d800",
-  "generation": 4715,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "106a402e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when broader timeframe RSI is at extreme levels.\"\"\"\n    rsi_2h = features.get('rsi_2h', 50)\n    if prediction == \"long\" and rsi_2h > 70:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h < 30:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_db5832d800.py"
-}

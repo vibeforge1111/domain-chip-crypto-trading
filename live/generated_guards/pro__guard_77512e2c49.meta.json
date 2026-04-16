@@ -1,8 +1,0 @@
-{
-  "guard_id": "77512e2c49",
-  "generation": 790,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1e26527b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with extreme RSI lacking trend confirmation.\"\"\"\n    if (features['rsi_14'] > 72 or features['rsi_14'] < 28) and features['trend_strength'] < 0.4:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_77512e2c49.py"
-}

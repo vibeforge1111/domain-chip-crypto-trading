@@ -1,8 +1,0 @@
-{
-  "guard_id": "8825716222",
-  "generation": 500,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c551752d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals where wick imbalance contradicts price at BB extremes.\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    bb_pos = features.get(\"bb_position\", 0.5)\n    volatility = features.get(\"volatility_regime\", 0.5)\n    \n    # Long at top of BBs with large upper wick = rejection, not continuation\n    if upper_wick > 0.3 and bb_pos > 0.75 and prediction == \"long\":\n        return \"skip\"\n    \n    # Short at bottom of BBs with large lower wick = rejection, not continuation\n    if lower_wick > 0.3 and bb_pos < 0.25 and prediction == \"short\":\n        return \"skip\"\n    \n    # Skip in low volatility with weak momentum\n    if volatility < 0.4 and features.get(\"momentum_score\", 0.5) < 0.35:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8825716222.py"
-}

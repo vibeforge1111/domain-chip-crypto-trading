@@ -1,8 +1,0 @@
-{
-  "guard_id": "eb06fbcd01",
-  "generation": 1125,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6b090b7f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when volatility is too low - avoid range-bound chop.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    volatility_regime = features.get(\"volatility_regime\", 0.5)\n    range_pct = features.get(\"range_pct\", 0.0)\n    \n    # Skip if volatility is very low (choppy market)\n    if atr_ratio < 0.6 and volatility_regime < 0.3:\n        return \"skip\"\n    \n    # Skip if candle range is suspiciously small\n    if range_pct < 0.005:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_eb06fbcd01.py"
-}

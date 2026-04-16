@@ -1,8 +1,0 @@
-{
-  "guard_id": "f7576e96be",
-  "generation": 3670,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "181ca9a5",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_2h = features.get('rsi_2h', 50)\n    stoch_k = features.get('stoch_k', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # True compression: tight bands relative to ATR, neutral position\n    is_tight_compression = bb_width < 0.8 and atr_ratio < 0.9 and bb_width < atr_ratio\n    is_neutral_position = 0.25 < bb_pct_b < 0.75\n    is_2h_not_extreme = 25 < rsi_2h < 75\n    is_stoch_healthy = 15 < stoch_k < 85\n    is_vwap_contained = abs(vwap_deviation) < 0.01\n    \n    if is_tight_compression and not (is_neutral_position and is_2h_not_extreme and is_stoch_healthy and is_vwap_contained):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f7576e96be.py"
-}

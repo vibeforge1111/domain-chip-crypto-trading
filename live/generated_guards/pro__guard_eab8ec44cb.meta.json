@@ -1,8 +1,0 @@
-{
-  "guard_id": "eab8ec44cb",
-  "generation": 3620,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "cf1b5592",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # Longs need bullish crossover (k crosses above d) from oversold\n    if prediction == \"long\" and (stoch_k <= stoch_d or stoch_k > 30):\n        return \"skip\"\n    \n    # Shorts need bearish crossover (k crosses below d) from overbought\n    if prediction == \"short\" and (stoch_k >= stoch_d or stoch_k < 70):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_eab8ec44cb.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "0ad2611793",
-  "generation": 2160,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "25e7165d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    rsi = features.get(\"rsi_14\", 50)\n    \n    # Skip if too close to VWAP (within 0.3%) and middle of Bollinger Band\n    if abs(vwap_dev) < 0.003 and 0.35 < bb_pct < 0.65 and 45 < rsi < 55:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0ad2611793.py"
-}

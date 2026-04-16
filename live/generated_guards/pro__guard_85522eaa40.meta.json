@@ -1,8 +1,0 @@
-{
-  "guard_id": "85522eaa40",
-  "generation": 2515,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d4c787cf",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering using BB extremes.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Only allow trades at extreme BB positions (<5th or >95th percentile)\n    bb_extreme = bb_pct_b < 0.05 or bb_pct_b > 0.95\n    \n    # Confirm with volume spike (>1.2x average) and extreme stochastic\n    volume_confirm = volume_ratio > 1.2\n    stoch_extreme = stoch_k < 20 or stoch_k > 80\n    \n    if bb_extreme and volume_confirm and stoch_extreme:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_85522eaa40.py"
-}

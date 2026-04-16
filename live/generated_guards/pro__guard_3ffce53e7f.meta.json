@@ -1,8 +1,0 @@
-{
-  "guard_id": "3ffce53e7f",
-  "generation": 660,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3993c2a9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Momentum alignment guard - rejects trades where momentum contradicts signal.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    momentum = features.get(\"momentum_score\", 0)\n    ema_slope = features.get(\"ema_slope\", 0)\n    rsi = features.get(\"rsi_14\", 50)\n    \n    # Skip longs when momentum is negative or EMA is sloping down\n    if prediction == \"long\" and (momentum < -0.1 or ema_slope < -0.01):\n        return \"skip\"\n    \n    # Skip shorts when momentum is positive or EMA is sloping up\n    if prediction == \"short\" and (momentum > 0.1 or ema_slope > 0.01):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3ffce53e7f.py"
-}

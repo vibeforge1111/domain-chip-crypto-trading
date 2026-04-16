@@ -1,8 +1,0 @@
-{
-  "guard_id": "676235eb52",
-  "generation": 2395,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "89fb9d03",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band extreme zones with RSI confirmation.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # High-confidence entry zones: bb_pct_b extremes\n    in_lower_extreme = bb_pct_b < 0.05\n    in_upper_extreme = bb_pct_b > 0.95\n    \n    # For longs: require lower band extreme AND oversold RSI AND below VWAP\n    if prediction == 'long':\n        if not (in_lower_extreme and rsi_14 < 35 and vwap_deviation < 0):\n            return 'skip'\n    \n    # For shorts: require upper band extreme AND overbought RSI AND above VWAP\n    elif prediction == 'short':\n        if not (in_upper_extreme and rsi_14 > 65 and vwap_deviation > 0):\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_676235eb52.py"
-}

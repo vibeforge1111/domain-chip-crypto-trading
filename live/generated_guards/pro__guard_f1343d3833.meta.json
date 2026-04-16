@@ -1,8 +1,0 @@
-{
-  "guard_id": "f1343d3833",
-  "generation": 905,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "0d141ca3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when candle shows weak commitment in volatile conditions.\"\"\"\n    # Doji-like candle with low momentum and high volatility is a bad setup\n    if (features.get('body_ratio', 1) < 0.2 and \n        features.get('momentum_score', 0.5) < 0.35 and \n        features.get('atr_ratio', 1) > 1.2):\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f1343d3833.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "65ff3f019c",
-  "generation": 885,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2d1002ca",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during low-volatility compression phases.\n    \n    Reject signals when Bollinger Bands are squeezed (low width) AND\n    candle body is small relative to range - indicating indecision\n    before a potential false breakout.\n    \"\"\"\n    bb_squeezed = features.get('bb_width', 1.0) < 0.015\n    small_body = features.get('body_ratio', 1.0) < 0.3\n    low_volume = features.get('volume_ratio', 1.0) < 0.7\n    \n    if bb_squeezed and small_body and low_volume:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_65ff3f019c.py"
-}

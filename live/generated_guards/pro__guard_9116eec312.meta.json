@@ -1,8 +1,0 @@
-{
-  "guard_id": "9116eec312",
-  "generation": 4445,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "acfbb923",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    bullish_signals = 0\n    bearish_signals = 0\n    \n    if features.get(\"rsi_14\", 50) < 60:\n        bullish_signals += 1\n    if features.get(\"rsi_14\", 50) > 40:\n        bearish_signals += 1\n    \n    if features.get(\"stoch_k\", 50) < 75:\n        bullish_signals += 1\n    if features.get(\"stoch_k\", 50) > 25:\n        bearish_signals += 1\n    \n    if features.get(\"vwap_deviation\", 0) > 0:\n        bullish_signals += 1\n    if features.get(\"vwap_deviation\", 0) < 0:\n        bearish_signals += 1\n    \n    if features.get(\"obv_slope\", 0) > 0:\n        bullish_signals += 1\n    if features.get(\"obv_slope\", 0) < 0:\n        bearish_signals += 1\n    \n    if features.get(\"macd_histogram\", 0) > 0:\n        bullish_signals += 1\n    if features.get(\"macd_histogram\", 0) < 0:\n        bearish_signals += 1\n    \n    if prediction == \"long\" and bullish_signals >= 2:\n        return prediction\n    if prediction == \"short\" and bearish_signals >= 2:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9116eec312.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "ee5945fefb",
-  "generation": 800,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "28263166",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter trades when momentum is weak AND volatility is elevated\n    if features['momentum_score'] < 0.2 and features['atr_ratio'] > 1.3:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ee5945fefb.py"
-}

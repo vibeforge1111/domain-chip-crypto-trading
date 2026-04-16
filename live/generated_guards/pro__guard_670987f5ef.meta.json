@@ -1,8 +1,0 @@
-{
-  "guard_id": "670987f5ef",
-  "generation": 2350,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "156a408e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on stochastic crossover alignment.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Stochastic crossover must align with prediction direction\n    if prediction == 'long' and stoch_k <= stoch_d:\n        return 'skip'\n    if prediction == 'short' and stoch_k >= stoch_d:\n        return 'skip'\n    \n    # Require meaningful crossover strength to avoid weak signals\n    if prediction == 'long' and (stoch_k - stoch_d) < 5:\n        return 'skip'\n    if prediction == 'short' and (stoch_d - stoch_k) < 5:\n        return 'skip'\n    \n    # Align with 2h RSI momentum context\n    if prediction == 'long' and rsi_2h < 30:\n        return 'skip'\n    if prediction == 'short' and rsi_2h > 70:\n        return 'skip'\n    \n    # Validate entry location within Bollinger Bands\n    if prediction == 'long' and bb_pct_b < 0.15:\n        return 'skip'\n    if prediction == 'short' and bb_pct_b > 0.85:\n        return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_670987f5ef.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "12651e7519",
-  "generation": 4025,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "283c245a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    bullish = sum([\n        features[\"stoch_k\"] < 25,\n        features[\"vwap_deviation\"] > 0.003,\n        features[\"macd_histogram\"] > 0,\n        features[\"rsi_2h\"] < 45,\n        features[\"bb_pct_b\"] < 0.25\n    ])\n    bearish = sum([\n        features[\"stoch_k\"] > 75,\n        features[\"vwap_deviation\"] < -0.003,\n        features[\"macd_histogram\"] < 0,\n        features[\"rsi_2h\"] > 55,\n        features[\"bb_pct_b\"] > 0.75\n    ])\n    \n    confirm = bullish if prediction == \"long\" else bearish\n    return \"skip\" if confirm < 2 else prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_12651e7519.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "3d20780bc9",
-  "generation": 1605,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a1b1efa3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter low-range candles (chop/noise)\n    if features['range_pct'] < 0.005:\n        return \"skip\"\n    \n    # Skip long when downtrend + overbought RSI (momentum divergence)\n    if prediction == \"long\":\n        if features['ema_slope'] < 0 and features['rsi_14'] > 55:\n            return \"skip\"\n    \n    # Skip short when uptrend + oversold RSI (momentum divergence)\n    if prediction == \"short\":\n        if features['ema_slope'] > 0 and features['rsi_14'] < 45:\n            return \"skip\"\n    \n    # Require minimum volume to confirm institutional interest\n    if features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3d20780bc9.py"
-}

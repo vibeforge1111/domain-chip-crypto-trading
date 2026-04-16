@@ -1,8 +1,0 @@
-{
-  "guard_id": "b46e625334",
-  "generation": 1715,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b8d78b4e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum is misaligned with the predicted direction.\n    Uses stochastic crossover and overbought/oversold levels to filter weak setups.\n    \"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    if prediction == \"long\":\n        # Reject longs when stochastic shows bearish crossover or overbought\n        if stoch_k < stoch_d or stoch_k > 80:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Reject shorts when stochastic shows bullish crossover or oversold\n        if stoch_k > stoch_d or stoch_k < 20:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b46e625334.py"
-}

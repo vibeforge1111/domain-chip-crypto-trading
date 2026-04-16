@@ -1,8 +1,0 @@
-{
-  "guard_id": "a98a7e2a7d",
-  "generation": 2795,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3afe6482",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false breakouts during compression by checking momentum divergence.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    is_compression = bb_width < 0.25\n    extreme_vwap = abs(features.get('vwap_deviation', 0)) > 0.015\n    stoch_exhausted = features.get('stoch_k', 50) > 85 or features.get('stoch_k', 50) < 15\n    \n    # Skip false breakouts: compression with momentum divergence\n    if is_compression and (extreme_vwap or stoch_exhausted):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a98a7e2a7d.py"
-}

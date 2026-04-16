@@ -1,8 +1,0 @@
-{
-  "guard_id": "e8131ba3f1",
-  "generation": 5460,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2f39d58c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during compressed markets using ATR, BB width, and momentum validation.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # Detect compression: both ATR and BB width are low\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.4\n    \n    if is_compressed:\n        # During compression, stochastic extremes suggest exhaustion/false moves\n        stoch_extreme = stoch_k > 85 or stoch_k < 15\n        stoch_divergence = abs(stoch_k - stoch_d) > 20\n        \n        # VWAP far from price suggests distribution/accumulation trap\n        vwap_far = abs(vwap_deviation) > 0.015\n        \n        # Flat MACD during compression = weak momentum, likely false breakout\n        macd_weak = abs(macd_histogram) < 0.0002\n        \n        # OBV flat with price movement = divergence\n        obv_divergent = abs(obv_slope) < 0.001 and abs(vwap_deviation) > 0.01\n        \n        # Skip if compression with multiple conflicting signals\n        if (stoch_extreme and vwap_far) or (macd_weak and obv_divergent):\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e8131ba3f1.py"
-}

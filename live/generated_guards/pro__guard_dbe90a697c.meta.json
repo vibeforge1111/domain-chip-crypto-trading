@@ -1,8 +1,0 @@
-{
-  "guard_id": "dbe90a697c",
-  "generation": 3080,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "def0a3cf",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band extremes with stochastic confirmation.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # High-confidence long: at lower band AND stochastic confirming\n    if bb_pct_b < 0.05 and prediction == \"long\":\n        return prediction\n    # High-confidence short: at upper band AND stochastic confirming\n    if bb_pct_b > 0.95 and prediction == \"short\":\n        return prediction\n    \n    # Filter out contradictory trades at extremes\n    if bb_pct_b < 0.05 and prediction == \"short\":\n        return \"skip\"\n    if bb_pct_b > 0.95 and prediction == \"long\":\n        return \"skip\"\n    \n    # Require stochastic confirmation for non-extreme entries\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        if prediction == \"long\" and stoch_k < 30:\n            return prediction\n        if prediction == \"short\" and stoch_k > 70:\n            return prediction\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dbe90a697c.py"
-}

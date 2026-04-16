@@ -1,8 +1,0 @@
-{
-  "guard_id": "7380ca36d4",
-  "generation": 5035,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "231f677d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with market features\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    macd_hist = features.get('macd_histogram', 0)\n    \n    # Skip longs with negative macd (momentum decelerating)\n    if prediction == 'long' and macd_hist < -0.00005:\n        return 'skip'\n    \n    # Skip shorts with positive macd (momentum accelerating against us)\n    if prediction == 'short' and macd_hist > 0.00005:\n        return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7380ca36d4.py"
-}

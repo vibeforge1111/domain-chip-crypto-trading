@@ -1,8 +1,0 @@
-{
-  "guard_id": "e043c793f9",
-  "generation": 5235,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f55cf0b9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    agreements = 0\n    \n    # RSI 2h directional alignment\n    if prediction == \"long\" and features[\"rsi_2h\"] < 50:\n        agreements += 1\n    elif prediction == \"short\" and features[\"rsi_2h\"] > 50:\n        agreements += 1\n    \n    # Stochastic K/D crossover + not extreme\n    if prediction == \"long\" and features[\"stoch_k\"] > features[\"stoch_d\"] and features[\"stoch_k\"] < 80:\n        agreements += 1\n    elif prediction == \"short\" and features[\"stoch_k\"] < features[\"stoch_d\"] and features[\"stoch_k\"] > 20:\n        agreements += 1\n    \n    # VWAP deviation confirmation\n    if prediction == \"long\" and features[\"vwap_deviation\"] > 0:\n        agreements += 1\n    elif prediction == \"short\" and features[\"vwap_deviation\"] < 0:\n        agreements += 1\n    \n    # BB position confirmation (not at extremes)\n    if prediction == \"long\" and 0.15 < features[\"bb_pct_b\"] < 0.85:\n        agreements += 1\n    elif prediction == \"short\" and 0.15 < features[\"bb_pct_b\"] < 0.85:\n        agreements += 1\n    \n    return prediction if agreements >= 2 else \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e043c793f9.py"
-}

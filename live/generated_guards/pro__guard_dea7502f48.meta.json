@@ -1,8 +1,0 @@
-{
-  "guard_id": "dea7502f48",
-  "generation": 4410,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "afa6b9d0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    if prediction == \"long\":\n        # Bullish: stoch_k above stoch_d or crossing up from oversold\n        if stoch_k < stoch_d and stoch_k > 30:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Bearish: stoch_k below stoch_d or crossing down from overbought\n        if stoch_k > stoch_d and stoch_k < 70:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dea7502f48.py"
-}

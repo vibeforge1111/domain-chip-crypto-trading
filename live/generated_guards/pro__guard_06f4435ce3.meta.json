@@ -1,8 +1,0 @@
-{
-  "guard_id": "06f4435ce3",
-  "generation": 3815,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "856af26f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using ATR, BB, and momentum divergence.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.5)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    macd_histogram = features.get('macd_histogram', 0.0)\n    obv_slope = features.get('obv_slope', 0.0)\n    \n    # True compression: low ATR + narrow bands\n    is_compression = atr_ratio < 0.65 and bb_width < 0.35\n    \n    # At extreme of Bollinger Bands\n    at_extreme = bb_pct_b < 0.2 or bb_pct_b > 0.8\n    \n    # Momentum divergence from direction of trade\n    momentum_against = (prediction == \"long\" and macd_histogram < -0.0001) or (prediction == \"short\" and macd_histogram > 0.0001)\n    \n    # OBV not confirming direction\n    volume_not_confirming = (prediction == \"long\" and obv_slope < 0) or (prediction == \"short\" and obv_slope > 0)\n    \n    # False compression trap: tight + extreme + weak momentum/volume\n    if is_compression and at_extreme and (momentum_against or volume_not_confirming):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_06f4435ce3.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "b422ef0cec",
-  "generation": 4585,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "19fa30c5",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter out trades too close to VWAP (weak signal)\n    if abs(features.get('vwap_deviation', 0)) < 0.003:\n        return \"skip\"\n    # Filter out weak momentum trades\n    if abs(features.get('macd_histogram', 0)) < 0.0002:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b422ef0cec.py"
-}

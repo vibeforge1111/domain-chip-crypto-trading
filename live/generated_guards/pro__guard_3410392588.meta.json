@@ -1,8 +1,0 @@
-{
-  "guard_id": "3410392588",
-  "generation": 4695,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1a718907",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    macd = features.get('macd_histogram', 0)\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch = features.get('stoch_k', 50)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # Reject if momentum is decelerating (macd histogram near zero)\n    # and price is extended from VWAP in direction opposite to trade\n    if prediction == \"long\" and -0.0003 < macd < 0.0003 and vwap_dev < -0.005:\n        return \"skip\"\n    if prediction == \"short\" and -0.0003 < macd < 0.0003 and vwap_dev > 0.005:\n        return \"skip\"\n    \n    # Reject if momentum decelerating with overbought/oversold conditions\n    if abs(macd) < 0.0002 and (stoch > 80 or stoch < 20):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3410392588.py"
-}

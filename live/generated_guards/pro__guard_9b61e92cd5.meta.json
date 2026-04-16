@@ -1,8 +1,0 @@
-{
-  "guard_id": "9b61e92cd5",
-  "generation": 2230,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "893449e6",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades too close to VWAP or with extreme stochastic readings.\"\"\"\n    # Skip if price is too close to fair value (low directional conviction)\n    if abs(features.get('vwap_deviation', 0)) < 0.001:\n        return \"skip\"\n    # Skip if stochastic is in extreme territory (potential reversal risk)\n    if features.get('stoch_k', 50) > 85 or features.get('stoch_k', 50) < 15:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9b61e92cd5.py"
-}

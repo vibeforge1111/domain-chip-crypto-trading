@@ -1,8 +1,0 @@
-{
-  "guard_id": "87fd897cbc",
-  "generation": 4610,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "84297fe7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    long_signals = (\n        (features.get('rsi_14', 50) < 70) +\n        (features.get('stoch_k', 50) < 80) +\n        (features.get('vwap_deviation', 0) < 0) +\n        (features.get('bb_pct_b', 0.5) < 0.5) +\n        (features.get('macd_histogram', 0) > 0) +\n        (features.get('obv_slope', 0) > 0)\n    )\n    \n    short_signals = (\n        (features.get('rsi_14', 50) > 30) +\n        (features.get('stoch_k', 50) > 20) +\n        (features.get('vwap_deviation', 0) > 0) +\n        (features.get('bb_pct_b', 0.5) > 0.5) +\n        (features.get('macd_histogram', 0) < 0) +\n        (features.get('obv_slope', 0) < 0)\n    )\n    \n    return \"skip\" if (prediction == \"long\" and long_signals < 2) or (prediction == \"short\" and short_signals < 2) else prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_87fd897cbc.py"
-}

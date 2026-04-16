@@ -1,8 +1,0 @@
-{
-  "guard_id": "ea0a8fe1cf",
-  "generation": 5435,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e16ce237",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    macd = features.get(\"macd_histogram\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    # Skip longs when macd histogram is negative (bearish momentum)\n    # and price is already below VWAP (confirming weakness)\n    if prediction == \"long\" and macd < 0 and vwap_dev < 0:\n        return \"skip\"\n    # Skip shorts when macd histogram is positive (bullish momentum)\n    # and price is already above VWAP (confirming strength)\n    if prediction == \"short\" and macd > 0 and vwap_dev > 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ea0a8fe1cf.py"
-}

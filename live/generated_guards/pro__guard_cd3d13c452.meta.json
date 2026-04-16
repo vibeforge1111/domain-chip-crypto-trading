@@ -1,8 +1,0 @@
-{
-  "guard_id": "cd3d13c452",
-  "generation": 2915,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "9d6927d0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using Bollinger Band extremes.\"\"\"\n    bb = features.get('bb_pct_b', 0.5)\n    vwap = features.get('vwap_deviation', 0)\n    stoch = features.get('stoch_k', 50)\n    \n    # Only accept trades at BB extremes (<0.05 or >0.95)\n    if bb < 0.05 or bb > 0.95:\n        if prediction == \"long\" and (stoch < 20 or vwap < 0):\n            return \"skip\"\n        if prediction == \"short\" and (stoch > 80 or vwap > 0):\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cd3d13c452.py"
-}

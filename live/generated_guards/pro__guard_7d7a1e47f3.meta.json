@@ -1,8 +1,0 @@
-{
-  "guard_id": "7d7a1e47f3",
-  "generation": 2750,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b2e9f56a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Only allow trades at BB extremes for high-confidence entries\n    if bb_pct_b > 0.05 and bb_pct_b < 0.95:\n        return \"skip\"\n    \n    # Reject longs if RSI_2h is overbought\n    if prediction == \"long\" and rsi_2h > 70:\n        return \"skip\"\n    \n    # Reject shorts if RSI_2h is oversold\n    if prediction == \"short\" and rsi_2h < 30:\n        return \"skip\"\n    \n    # Reject longs if price above VWAP (not below)\n    if prediction == \"long\" and vwap_deviation >= 0:\n        return \"skip\"\n    \n    # Reject shorts if price below VWAP (not above)\n    if prediction == \"short\" and vwap_deviation <= 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7d7a1e47f3.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "50ed5a2a4c",
-  "generation": 3360,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5d9c64ae",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades on momentum deceleration via MACD histogram.\"\"\"\n    hist = features.get('macd_histogram', 0)\n    if prediction == \"long\" and hist < 0:\n        return \"skip\"\n    if prediction == \"short\" and hist > 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_50ed5a2a4c.py"
-}

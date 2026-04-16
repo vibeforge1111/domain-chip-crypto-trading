@@ -1,8 +1,0 @@
-{
-  "guard_id": "aa746ba8a9",
-  "generation": 2890,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "64211aa6",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if price too far from VWAP (either direction signals exhaustion)\n    if abs(features.get('vwap_deviation', 0)) > 0.015:\n        return \"skip\"\n    \n    # Skip if momentum indicators disagree (RSI vs Stoch divergence)\n    rsi_2h = features.get('rsi_2h', 50)\n    stoch_k = features.get('stoch_k', 50)\n    rsi_14 = features.get('rsi_14', 50)\n    \n    if rsi_2h > 60 and stoch_k < 30:\n        return \"skip\"\n    if rsi_2h < 40 and stoch_k > 70:\n        return \"skip\"\n    if rsi_2h > 65 and rsi_14 < 40:\n        return \"skip\"\n    if rsi_2h < 35 and rsi_14 > 60:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_aa746ba8a9.py"
-}

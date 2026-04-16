@@ -1,8 +1,0 @@
-{
-  "guard_id": "88e1e15947",
-  "generation": 4000,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bd4f6ed7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect false compression: tight bands but no directional momentum.\"\"\"\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    macd_hist = features.get('macd_histogram', 0)\n    vwap_dev = features.get('vwap_deviation', 0)\n    \n    # True compression present\n    compressed = bb_width < 0.15 and atr_ratio < 0.7\n    \n    # Weak directional signal despite compression\n    stoch_neutral = 35 < stoch_k < 65\n    rsi_2h_neutral = 40 < rsi_2h < 60\n    macd_weak = abs(macd_hist) < 0.0002\n    vwap_centered = abs(vwap_dev) < 0.002\n    \n    if compressed and stoch_neutral and rsi_2h_neutral and macd_weak and vwap_centered:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_88e1e15947.py"
-}

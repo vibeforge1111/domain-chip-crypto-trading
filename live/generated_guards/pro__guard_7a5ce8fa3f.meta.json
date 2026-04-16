@@ -1,8 +1,0 @@
-{
-  "guard_id": "7a5ce8fa3f",
-  "generation": 4755,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "939c466a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation: require 2+ signals to agree with direction.\"\"\"\n    if prediction not in (\"long\", \"short\"):\n        return prediction\n    \n    bullish = sum([\n        features.get(\"vwap_deviation\", 0) > 0,\n        features.get(\"bb_pct_b\", 0.5) > 0.5,\n        features.get(\"macd_histogram\", 0) > 0,\n        features.get(\"obv_slope\", 0) > 0,\n    ])\n    bearish = sum([\n        features.get(\"vwap_deviation\", 0) < 0,\n        features.get(\"bb_pct_b\", 0.5) < 0.5,\n        features.get(\"macd_histogram\", 0) < 0,\n        features.get(\"obv_slope\", 0) < 0,\n    ])\n    \n    if prediction == \"long\" and bullish < 2:\n        return \"skip\"\n    if prediction == \"short\" and bearish < 2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7a5ce8fa3f.py"
-}

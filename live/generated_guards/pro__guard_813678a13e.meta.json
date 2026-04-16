@@ -1,8 +1,0 @@
-{
-  "guard_id": "813678a13e",
-  "generation": 2065,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "0985880a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: low volatility with no conflicting signals\n    is_compressed = features.get('atr_ratio', 1) < 0.5 and features.get('bb_width', 0.5) < 0.3\n    \n    if is_compressed and prediction != \"skip\":\n        # False compression: extreme stochastics in compressed state\n        if features.get('stoch_k', 50) < 20 or features.get('stoch_k', 50) > 80:\n            return \"skip\"\n        \n        # False compression: VWAP far from price during compression breakout\n        if abs(features.get('vwap_deviation', 0)) > 0.02:\n            return \"skip\"\n        \n        # False compression: conflicting RSI 2h context\n        rsi_2h = features.get('rsi_2h', 50)\n        if (prediction == \"long\" and rsi_2h > 70) or (prediction == \"short\" and rsi_2h < 30):\n            return \"skip\"\n        \n        # False compression: MACD histogram opposing prediction\n        macd = features.get('macd_histogram', 0)\n        if (prediction == \"long\" and macd < -0.001) or (prediction == \"short\" and macd > 0.001):\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_813678a13e.py"
-}

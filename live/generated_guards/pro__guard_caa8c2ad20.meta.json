@@ -1,8 +1,0 @@
-{
-  "guard_id": "caa8c2ad20",
-  "generation": 1110,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d841621e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on RSI extremes amplified by high volatility.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    vol_regime = features.get('volatility_regime', 0.5)\n    \n    # Skip overbought/oversold signals when volatility is elevated\n    if vol_regime > 1.3 and (rsi < 35 or rsi > 65):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_caa8c2ad20.py"
-}

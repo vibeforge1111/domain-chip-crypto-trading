@@ -1,8 +1,0 @@
-{
-  "guard_id": "3539e94997",
-  "generation": 830,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c9bfff92",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals where RSI extremes conflict with momentum direction.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0)\n    \n    # Skip longs when overbought with weakening momentum\n    if prediction == 'long' and rsi > 65 and momentum < -0.1:\n        return 'skip'\n    \n    # Skip shorts when oversold with strengthening momentum\n    if prediction == 'short' and rsi < 35 and momentum > 0.1:\n        return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3539e94997.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "5145a4147c",
-  "generation": 1955,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b2d3ada8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct = features.get('bb_pct_b', 0.5)\n    vwap = features.get('vwap_deviation', 0)\n    stoch = features.get('stoch_k', 50)\n    stoch_2h = features.get('stoch_k', 50)\n    \n    if bb_pct < 0.05:\n        if vwap < -0.002 and stoch > 20 and stoch_2h > 30:\n            return prediction\n    elif bb_pct > 0.95:\n        if vwap > 0.002 and stoch < 80 and stoch_2h < 70:\n            return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5145a4147c.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "389889e1c0",
-  "generation": 40,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6be3abf4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip signals when candle shows rejection pattern (large wick + small body)\n    dominant_wick = max(features.get('upper_wick_ratio', 0), features.get('lower_wick_ratio', 0))\n    if dominant_wick > 0.5 and features.get('body_ratio', 1) < 0.3:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_389889e1c0.py"
-}

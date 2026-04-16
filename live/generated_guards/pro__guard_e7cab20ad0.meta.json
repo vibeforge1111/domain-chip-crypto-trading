@@ -1,8 +1,0 @@
-{
-  "guard_id": "e7cab20ad0",
-  "generation": 2650,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "af6adad8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # True compression: narrow BB AND low ATR AND price near middle of bands\n    is_compressed = bb_width < 0.5 and atr_ratio < 0.8\n    \n    # False compression: compressed but price at extremes (pre-breakout trap)\n    is_false_compression = is_compressed and (bb_pct_b < 0.15 or bb_pct_b > 0.85)\n    \n    if is_false_compression:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e7cab20ad0.py"
-}

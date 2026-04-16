@@ -1,8 +1,0 @@
-{
-  "guard_id": "ac86a1d980",
-  "generation": 3730,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "66c208c5",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # True compression: both ATR and BB width must be low\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.15\n    \n    if is_compressed:\n        # Momentum must be building for valid breakout\n        momentum_confirming = (stoch_k > 60 or stoch_k < 40 or\n                               abs(macd_histogram) > 0.0005 or\n                               abs(obv_slope) > 0.1)\n        if not momentum_confirming:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ac86a1d980.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "43a9e139ad",
-  "generation": 5240,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "38af10fb",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades too close to fair value using VWAP deviation with momentum confirmation.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip if price is very close to VWAP (< 0.15%) AND stochastics are extreme\n    if abs(vwap_dev) < 0.0015 and (stoch_k > 80 or stoch_k < 20 or stoch_d > 80 or stoch_d < 20):\n        return \"skip\"\n    \n    # Skip if price too close to VWAP in extreme 2h RSI regime\n    if abs(vwap_dev) < 0.001 and (rsi_2h > 72 or rsi_2h < 28):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_43a9e139ad.py"
-}

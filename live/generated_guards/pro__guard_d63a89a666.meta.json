@@ -1,8 +1,0 @@
-{
-  "guard_id": "d63a89a666",
-  "generation": 3810,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "203bfe7d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n    Focus: Filter based on vwap_deviation AND momentum_score disagreement\n    \"\"\"\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    # Bullish momentum but price below VWAP = disagreement\n    if momentum > 0.2 and vwap_dev < -0.005:\n        return \"skip\"\n    # Bearish momentum but price above VWAP = disagreement\n    if momentum < -0.2 and vwap_dev > 0.005:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d63a89a666.py"
-}

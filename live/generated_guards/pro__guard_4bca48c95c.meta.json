@@ -1,8 +1,0 @@
-{
-  "guard_id": "4bca48c95c",
-  "generation": 2995,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b550d7f8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter longs when macd_histogram is bearish (momentum against direction)\n    if prediction == \"long\" and features.get(\"macd_histogram\", 0) < -0.0002:\n        return \"skip\"\n    # Filter shorts when macd_histogram is bullish (momentum against direction)\n    if prediction == \"short\" and features.get(\"macd_histogram\", 0) > 0.0002:\n        return \"skip\"\n    # Skip longs when stoch_k is overbought (momentum exhaustion risk)\n    if prediction == \"long\" and features.get(\"stoch_k\", 50) > 85:\n        return \"skip\"\n    # Skip shorts when stoch_k is oversold (bounce risk)\n    if prediction == \"short\" and features.get(\"stoch_k\", 50) < 15:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4bca48c95c.py"
-}

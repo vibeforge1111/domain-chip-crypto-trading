@@ -1,8 +1,0 @@
-{
-  "guard_id": "5b22be605b",
-  "generation": 1610,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "082672c2",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with poor candle structure, weak momentum, or low volatility.\"\"\"\n    # Require minimum body ratio for reliable candle structure\n    if features['body_ratio'] < 0.25:\n        return \"skip\"\n    \n    # Skip if momentum is weak regardless of direction\n    if abs(features['momentum_score']) < 0.35:\n        return \"skip\"\n    \n    # Skip if BBands are in squeeze (potential false breakout)\n    if features['bb_width'] < 0.02:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5b22be605b.py"
-}

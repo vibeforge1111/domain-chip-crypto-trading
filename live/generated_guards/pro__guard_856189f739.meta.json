@@ -1,8 +1,0 @@
-{
-  "guard_id": "856189f739",
-  "generation": 1905,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "21f47186",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Momentum divergence and confirmation guard.\n    Filters trades where RSI and Stochastic disagree or volume lacks conviction.\n    \"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    \n    # Skip if RSI-Stochastic divergence > 30 points (they disagree)\n    if abs(rsi - stoch_k) > 30:\n        return \"skip\"\n    \n    # Skip if stoch_k and stoch_d cross is recent (inconsistent signals)\n    if abs(stoch_k - stoch_d) > 20:\n        return \"skip\"\n    \n    # Skip if volume confirmation is weak on a potential move\n    if volume_ratio < 0.5:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_856189f739.py"
-}

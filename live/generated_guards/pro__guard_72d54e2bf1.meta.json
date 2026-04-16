@@ -1,8 +1,0 @@
-{
-  "guard_id": "72d54e2bf1",
-  "generation": 4765,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "fc099677",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n    Detects true vs false compression using ATR ratio and BB width.\n    \"\"\"\n    bb_width = features.get(\"bb_width\", 0.02)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    vwap_dev = features.get(\"vwap_deviation\", 0.0)\n    stoch_k = features.get(\"stoch_k\", 50.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # True compression: low BB width + high ATR ratio (squeeze-breakout)\n    # False compression: low BB width + low ATR ratio (dead quiet)\n    is_compression = bb_width < 0.03\n    is_true_compression = is_compression and atr_ratio > 1.1\n    \n    # Valid breakout context: near VWAP or reasonable BB position\n    vwap_valid = abs(vwap_dev) < 0.005\n    \n    # Stochastic not in extreme zone (avoids reversal traps)\n    stoch_valid = 20 < stoch_k < 80\n    \n    # BB position not at extreme\n    bb_valid = 0.15 < bb_pct_b < 0.85\n    \n    # Skip if false compression detected (quiet market likely to stay quiet)\n    if is_compression and not is_true_compression:\n        return \"skip\"\n    \n    # Skip if compression without confirmation signals\n    if is_compression and (not vwap_valid or not stoch_valid):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_72d54e2bf1.py"
-}

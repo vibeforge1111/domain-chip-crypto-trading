@@ -1,8 +1,0 @@
-{
-  "guard_id": "0b5858a697",
-  "generation": 1015,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "08677a00",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with volatile moves lacking volume confirmation.\"\"\"\n    high_atr_move = features.get('atr_ratio', 0) > 1.3\n    low_volume = features.get('volume_ratio', 1) < 0.7\n    \n    if high_atr_move and low_volume:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0b5858a697.py"
-}

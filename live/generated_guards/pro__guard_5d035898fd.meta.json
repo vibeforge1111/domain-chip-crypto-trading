@@ -1,8 +1,0 @@
-{
-  "guard_id": "5d035898fd",
-  "generation": 4920,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "34339baf",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Skip if too close to fair value (low VWAP deviation = no edge)\n    if abs(vwap_dev) < 0.002:\n        return \"skip\"\n    \n    # Skip momentum exhaustion at extremes\n    if prediction == \"long\" and stoch_k > 85 and stoch_d > 80:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 15 and stoch_d < 20:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5d035898fd.py"
-}

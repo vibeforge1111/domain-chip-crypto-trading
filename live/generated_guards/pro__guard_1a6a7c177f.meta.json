@@ -1,8 +1,0 @@
-{
-  "guard_id": "1a6a7c177f",
-  "generation": 2230,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "25868258",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: both ATR and BB width compressed\n    is_compressed = features['atr_ratio'] < 0.8 and features['bb_width'] < 0.15\n    \n    # False compression trap: low ATR but wide BB (contradiction = potential trap)\n    is_false_compression = features['atr_ratio'] < 0.8 and features['bb_width'] > 0.25\n    \n    if is_false_compression:\n        return \"skip\"\n    \n    if is_compressed and prediction != \"skip\":\n        # Near band extremes during compression often precedes breakouts - skip\n        if features['bb_pct_b'] > 0.92 or features['bb_pct_b'] < 0.08:\n            return \"skip\"\n        \n        # True compression should have low VWAP deviation\n        if abs(features['vwap_deviation']) > 0.012:\n            return \"skip\"\n        \n        # Align with 2h RSI trend\n        if prediction == \"long\" and features['rsi_2h'] < 40:\n            return \"skip\"\n        if prediction == \"short\" and features['rsi_2h'] > 60:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1a6a7c177f.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "e0533f7eb5",
-  "generation": 2665,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bf895200",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = abs(features.get('vwap_deviation', 0))\n    stoch_d = features.get('stoch_d', 50)\n    \n    if vwap_dev < 0.003:\n        return \"skip\"\n    \n    if prediction == \"long\" and stoch_d < 25:\n        return \"skip\"\n    if prediction == \"short\" and stoch_d > 75:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e0533f7eb5.py"
-}

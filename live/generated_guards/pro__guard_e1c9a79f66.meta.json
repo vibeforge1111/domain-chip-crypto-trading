@@ -1,8 +1,0 @@
-{
-  "guard_id": "e1c9a79f66",
-  "generation": 5305,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "956ec40d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # VWAP and momentum disagreement filter\n    vwap_aligned = (vwap > 0.003 and momentum > 0) or (vwap < -0.003 and momentum < 0)\n    strong_disagreement = abs(vwap) > 0.005 and abs(momentum) > 0.4\n    \n    # Stochastic confirmation of momentum\n    momentum_confirmed = (momentum > 0 and stoch_k > 40) or (momentum < 0 and stoch_k < 60)\n    \n    if strong_disagreement and not momentum_confirmed:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e1c9a79f66.py"
-}

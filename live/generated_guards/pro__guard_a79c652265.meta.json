@@ -1,8 +1,0 @@
-{
-  "guard_id": "a79c652265",
-  "generation": 3875,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bc8979d7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using 2h RSI alignment with broader trend and momentum.\"\"\"\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Align long entries with bullish broader trend\n    if prediction == \"long\" and rsi_2h < 42:\n        return \"skip\"\n    \n    # Align short entries with bearish broader trend\n    if prediction == \"short\" and rsi_2h > 58:\n        return \"skip\"\n    \n    # Avoid buying at upper Bollinger Band extreme with overbought short-term\n    if prediction == \"long\" and bb_pct_b > 0.88 and stoch_k > 75:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a79c652265.py"
-}

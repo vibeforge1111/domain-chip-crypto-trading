@@ -1,8 +1,0 @@
-{
-  "guard_id": "71f74754c9",
-  "generation": 555,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "45299cd2",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades in choppy/volatile conditions without confirmed trend.\"\"\"\n    # Skip if high volatility but weak trend (whipsaw-prone conditions)\n    if features['atr_ratio'] > 1.5 and features['trend_strength'] < 0.4:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_71f74754c9.py"
-}

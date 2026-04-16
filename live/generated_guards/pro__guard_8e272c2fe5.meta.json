@@ -1,8 +1,0 @@
-{
-  "guard_id": "8e272c2fe5",
-  "generation": 4670,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "68365372",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against momentum exhaustion using macd_histogram and overbought/oversold conditions.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    stoch = features.get(\"stoch_k\", 50)\n    bb_pos = features.get(\"bb_pct_b\", 0.5)\n    rsi = features.get(\"rsi_14\", 50)\n    \n    # Momentum deceleration check - macd histogram near zero suggests weakening momentum\n    momentum_flat = abs(macd) < 0.0003\n    \n    if prediction == \"long\":\n        # Skip longs when momentum weakening + overbought + upper BB\n        if momentum_flat and stoch > 75 and bb_pos > 0.85:\n            return \"skip\"\n        # Skip longs when macd turning down from positive with RSI divergence\n        if macd < 0 and rsi > 65 and bb_pos > 0.8:\n            return \"skip\"\n            \n    elif prediction == \"short\":\n        # Skip shorts when momentum weakening + oversold + lower BB\n        if momentum_flat and stoch < 25 and bb_pos < 0.15:\n            return \"skip\"\n        # Skip shorts when macd turning up from negative with RSI divergence\n        if macd > 0 and rsi < 35 and bb_pos < 0.2:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8e272c2fe5.py"
-}

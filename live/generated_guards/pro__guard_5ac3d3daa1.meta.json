@@ -1,8 +1,0 @@
-{
-  "guard_id": "5ac3d3daa1",
-  "generation": 3905,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "64310cf1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum decelerates despite signal.\"\"\"\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    if prediction == \"long\":\n        # Reject longs when macd histogram is negative (bearish momentum)\n        if macd_histogram < -0.0001:\n            return \"skip\"\n        # Reject longs when momentum diverges: rising MACD but falling OBV\n        if macd_histogram > 0 and obv_slope < 0:\n            return \"skip\"\n            \n    elif prediction == \"short\":\n        # Reject shorts when macd histogram is positive (bullish momentum)\n        if macd_histogram > 0.0001:\n            return \"skip\"\n        # Reject shorts when momentum diverges: falling MACD but rising OBV\n        if macd_histogram < 0 and obv_slope > 0:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5ac3d3daa1.py"
-}

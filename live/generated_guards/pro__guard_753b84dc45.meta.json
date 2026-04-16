@@ -1,8 +1,0 @@
-{
-  "guard_id": "753b84dc45",
-  "generation": 5320,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d9b73e9b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    obv_slope = features.get('obv_slope', 0)\n    macd_histogram = features.get('macd_histogram', 0)\n    \n    # Detect compression: low ATR and narrow BB\n    is_compression = atr_ratio < 0.7 and bb_width < 0.4\n    \n    if is_compression and prediction != \"skip\":\n        # True compression should show momentum building: strong volume + oversold\n        momentum_ready = obv_slope > 0.001 and stoch_k < 25\n        if not momentum_ready:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_753b84dc45.py"
-}

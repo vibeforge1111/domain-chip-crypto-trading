@@ -1,8 +1,0 @@
-{
-  "guard_id": "66ee55028d",
-  "generation": 2210,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5593c722",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    \n    # Focus: Only trade at extreme BB positions (< 5% or > 95%)\n    in_extreme = bb_pct_b < 0.05 or bb_pct_b > 0.95\n    if not in_extreme:\n        return \"skip\"\n    \n    # Confirm with RSI: longs need oversold, shorts need overbought\n    if prediction == \"long\" and rsi_14 < 35:\n        return prediction\n    if prediction == \"short\" and rsi_14 > 65:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_66ee55028d.py"
-}

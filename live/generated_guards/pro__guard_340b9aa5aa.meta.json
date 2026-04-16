@@ -1,8 +1,0 @@
-{
-  "guard_id": "340b9aa5aa",
-  "generation": 150,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "de61e32b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with weak momentum confirmation at band extremes.\"\"\"\n    momentum = features.get('momentum_score', 0)\n    bb_pos = features.get('bb_position', 0.5)\n    volume = features.get('volume_ratio', 1)\n    rsi = features.get('rsi_14', 50)\n    \n    # Skip if momentum weak AND at Bollinger Band extremes (potential reversal, not continuation)\n    if momentum < 0.3 and (bb_pos < 0.15 or bb_pos > 0.85):\n        return \"skip\"\n    \n    # Skip if extreme RSI without volume confirmation\n    if (rsi > 72 or rsi < 28) and volume < 0.8:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_340b9aa5aa.py"
-}

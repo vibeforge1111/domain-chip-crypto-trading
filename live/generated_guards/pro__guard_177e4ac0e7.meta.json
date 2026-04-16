@@ -1,8 +1,0 @@
-{
-  "guard_id": "177e4ac0e7",
-  "generation": 850,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b2e0ec5f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against RSI extremes in weak trends and Bollinger exhaustion moves.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    trend_strength = features.get('trend_strength', 0.5)\n    bb_position = features.get('bb_position', 0.5)\n    momentum = features.get('momentum_score', 0)\n    \n    # Skip if RSI is extreme but trend is weak (potential reversal trap)\n    if (rsi > 70 or rsi < 30) and trend_strength < 0.4:\n        return \"skip\"\n    \n    # Skip if price at extreme Bollinger position without momentum confirmation\n    if (bb_position < 0.1 or bb_position > 0.9) and momentum < 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_177e4ac0e7.py"
-}

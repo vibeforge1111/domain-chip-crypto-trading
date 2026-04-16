@@ -1,8 +1,0 @@
-{
-  "guard_id": "2e905eb807",
-  "generation": 3430,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "93090217",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using extreme bb_pct_b zones with stoch confirmation.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Lower band extreme - potential long\n    if bb_pct_b < 0.05 and prediction == \"long\":\n        if stoch_k < 10:  # Already deeply oversold, may have bounced\n            return \"skip\"\n    \n    # Upper band extreme - potential short\n    if bb_pct_b > 0.95 and prediction == \"short\":\n        if stoch_k > 90:  # Already deeply overbought, may have reversed\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2e905eb807.py"
-}

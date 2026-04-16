@@ -1,8 +1,0 @@
-{
-  "guard_id": "0d1994ca4e",
-  "generation": 2145,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "58c8da27",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on stochastic crossover quality.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    stoch_diff = abs(stoch_k - stoch_d)\n    \n    # Reject when k and d are too close (unclear crossover, choppy)\n    if stoch_diff < 2:\n        return \"skip\"\n    \n    # Reject when both in middle zone with weak separation\n    if 20 < stoch_k < 80 and 20 < stoch_d < 80 and stoch_diff < 4:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0d1994ca4e.py"
-}

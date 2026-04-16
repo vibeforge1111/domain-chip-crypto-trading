@@ -1,8 +1,0 @@
-{
-  "guard_id": "cfab11f650",
-  "generation": 4420,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f3e2b110",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: low ATR + narrow BB width\n    if features['atr_ratio'] > 0.85 or features['bb_width'] > 0.55:\n        return \"skip\"\n    \n    # Valid compression: bb_pct_b in middle zone (not near extremes)\n    if features['bb_pct_b'] < 0.25 or features['bb_pct_b'] > 0.75:\n        return \"skip\"\n    \n    # Reject if near VWAP extremes (not true compression)\n    if abs(features['vwap_deviation']) > 0.015:\n        return \"skip\"\n    \n    # Skip extreme stochastic readings in compression\n    if features['stoch_k'] > 85 or features['stoch_k'] < 15:\n        return \"skip\"\n    \n    # Valid 2h context: not extended\n    if features['rsi_2h'] > 70 or features['rsi_2h'] < 30:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cfab11f650.py"
-}

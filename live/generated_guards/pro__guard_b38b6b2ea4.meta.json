@@ -1,8 +1,0 @@
-{
-  "guard_id": "b38b6b2ea4",
-  "generation": 5450,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6c2ee39c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # True compression: narrow BB + potential ATR expansion\n    if bb_width >= 0.5 or atr_ratio < 0.6:\n        return \"skip\"\n    \n    # Momentum must confirm direction (not overbought/oversold)\n    if prediction == \"long\":\n        if not (macd_histogram > 0 and 25 < stoch_k < 75):\n            return \"skip\"\n        if obv_slope < 0 or vwap_deviation < -0.003:\n            return \"skip\"\n    elif prediction == \"short\":\n        if not (macd_histogram < 0 and 25 < stoch_k < 75):\n            return \"skip\"\n        if obv_slope > 0 or vwap_deviation > 0.003:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b38b6b2ea4.py"
-}

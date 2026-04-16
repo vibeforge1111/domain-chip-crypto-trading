@@ -1,8 +1,0 @@
-{
-  "guard_id": "e6b61761c7",
-  "generation": 5385,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d49124c8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: low BB width + stable ATR\n    is_compression = features.get('bb_width', 1) < 0.12\n    stable_atr = features.get('atr_ratio', 1) < 1.1\n    \n    # False compression signals\n    stoch_extreme = features.get('stoch_k', 50) > 85 or features.get('stoch_k', 50) < 15\n    vwap_far = abs(features.get('vwap_deviation', 0)) > 0.008\n    \n    # If in compression but has false signals, reject\n    if is_compression and (stoch_extreme or vwap_far):\n        return \"skip\"\n    \n    # Also reject if high ATR but high BB (expanding volatility trap)\n    if features.get('atr_ratio', 1) > 1.5 and features.get('bb_width', 1) > 0.2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e6b61761c7.py"
-}

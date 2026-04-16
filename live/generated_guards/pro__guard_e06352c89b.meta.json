@@ -1,8 +1,0 @@
-{
-  "guard_id": "e06352c89b",
-  "generation": 1785,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c9fdf805",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against momentum-volume divergence signals.\"\"\"\n    momentum = features.get(\"momentum_score\", 0)\n    obv = features.get(\"obv_slope\", 0)\n    range_pct = features.get(\"range_pct\", 0)\n    atr_ratio = features.get(\"atr_ratio\", 1)\n    \n    # Reject if momentum and volume flow diverge\n    if prediction == \"long\" and momentum > 0.1 and obv < -0.05:\n        return \"skip\"\n    if prediction == \"short\" and momentum < -0.1 and obv > 0.05:\n        return \"skip\"\n    \n    # Skip low-volatility chop (range must exceed half of average ATR)\n    if range_pct < atr_ratio * 0.5:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e06352c89b.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "7004f16a21",
-  "generation": 4065,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2867c2c0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Only allow trades at Bollinger Band extremes (<0.05 or >0.95).\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # Reject trades not at BB extremes\n    if bb_pct_b < 0.05 or bb_pct_b > 0.95:\n        return prediction\n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7004f16a21.py"
-}

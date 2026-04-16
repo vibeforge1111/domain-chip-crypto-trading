@@ -1,8 +1,0 @@
-{
-  "guard_id": "bdae8ae387",
-  "generation": 280,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bfdaf409",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with RSI extremes or low volatility consolidation.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    bb_w = features.get('bb_width', 0.5)\n    \n    # Skip long signals when overbought (potential reversal)\n    if features.get('prediction') == 'long' and rsi > 65:\n        return \"skip\"\n    # Skip short signals when oversold (potential reversal)  \n    if features.get('prediction') == 'short' and rsi < 35:\n        return \"skip\"\n    # Skip low volatility consolidation periods\n    if bb_w < 0.25:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bdae8ae387.py"
-}

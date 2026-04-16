@@ -1,8 +1,0 @@
-{
-  "guard_id": "d589699963",
-  "generation": 2235,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "16efa9b9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering using momentum deceleration detection.\n\n    Args:\n        features: Dict with keys including macd_histogram, stoch_k, stoch_d, obv_slope\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    stoch = features.get(\"stoch_k\", 50)\n    obv = features.get(\"obv_slope\", 0)\n    \n    # Reject long if momentum is decelerating (negative macd histogram)\n    if prediction == \"long\" and macd < 0:\n        return \"skip\"\n    \n    # Reject short if momentum is accelerating (positive macd histogram)\n    if prediction == \"short\" and macd > 0:\n        return \"skip\"\n    \n    # Additional check: reject longs in oversold with negative OBV (weak accumulation)\n    if prediction == \"long\" and stoch < 25 and obv < 0:\n        return \"skip\"\n    \n    # Additional check: reject shorts in overbought with rising OBV (strong accumulation)\n    if prediction == \"short\" and stoch > 75 and obv > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d589699963.py"
-}

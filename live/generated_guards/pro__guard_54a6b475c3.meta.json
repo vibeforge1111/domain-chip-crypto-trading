@@ -1,8 +1,0 @@
-{
-  "guard_id": "54a6b475c3",
-  "generation": 310,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d6d7b35b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if body is small relative to range (whipsaw prone)\n    if features['body_ratio'] < 0.25:\n        return \"skip\"\n    \n    # Skip if volume is too low (weak conviction)\n    if features['volume_ratio'] < 0.5:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_54a6b475c3.py"
-}

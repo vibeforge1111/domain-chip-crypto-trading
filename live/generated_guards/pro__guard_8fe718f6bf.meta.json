@@ -1,8 +1,0 @@
-{
-  "guard_id": "8fe718f6bf",
-  "generation": 5045,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "4ff4eb94",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    obv_slope = features.get(\"obv_slope\", 0)\n    # Skip longs when OBV slope is negative (volume flowing out against long)\n    if prediction == \"long\" and obv_slope < -0.1:\n        return \"skip\"\n    # Skip shorts when OBV slope is positive (volume flowing in against short)\n    if prediction == \"short\" and obv_slope > 0.1:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8fe718f6bf.py"
-}

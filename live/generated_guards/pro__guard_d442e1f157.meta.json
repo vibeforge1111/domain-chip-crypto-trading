@@ -1,8 +1,0 @@
-{
-  "guard_id": "d442e1f157",
-  "generation": 3970,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "538472b1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: tight bands + low volatility\n    is_compressed = features.get('bb_width', 1) < 0.15 and features.get('atr_ratio', 1) < 0.7\n    \n    # Check for false compression: price at band extremes with stoch confirmation\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    at_upper_extreme = bb_pct_b > 0.85 and stoch_k > 75\n    at_lower_extreme = bb_pct_b < 0.15 and stoch_k < 25\n    \n    if is_compressed and (at_upper_extreme or at_lower_extreme):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d442e1f157.py"
-}

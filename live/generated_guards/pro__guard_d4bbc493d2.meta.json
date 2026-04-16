@@ -1,8 +1,0 @@
-{
-  "guard_id": "d4bbc493d2",
-  "generation": 2935,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "da37941a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter trades too close to fair value (low opportunity)\n    if abs(features.get('vwap_deviation', 0)) < 0.003:\n        return \"skip\"\n    \n    # Filter if stochastic is in neutral zone (indecision)\n    stoch_k = features.get('stoch_k', 50)\n    if 25 < stoch_k < 75:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d4bbc493d2.py"
-}

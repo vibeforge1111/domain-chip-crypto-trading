@@ -1,8 +1,0 @@
-{
-  "guard_id": "6aaaad13c8",
-  "generation": 4200,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "226281de",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression setups using stochastic divergence and momentum confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    stoch_div = abs(features.get('stoch_k', 50) - features.get('stoch_d', 50))\n    macd_weak = abs(features.get('macd_histogram', 0)) < 0.0003\n    obv_flat = abs(features.get('obv_slope', 0)) < 0.5\n    vwap_away = abs(features.get('vwap_deviation', 0)) > 0.01\n    \n    # False compression: weak momentum + stoch divergence + no volume confirmation\n    false_comp = macd_weak and (obv_flat or vwap_away) and stoch_div > 5\n    if false_comp:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6aaaad13c8.py"
-}

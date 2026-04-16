@@ -1,8 +1,0 @@
-{
-  "guard_id": "76a11f8221",
-  "generation": 4510,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a7052ab8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using Bollinger Band extremes as high-confidence entry zones.\n\n    Args:\n        features: Dict with market features including bb_pct_b, stoch_k, stoch_d, rsi_2h\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # High-confidence entry: extreme bb_pct_b (<0.05 lower, >0.95 upper)\n    if bb_pct_b < 0.05:\n        # Lower band extreme: expect bounce up\n        if prediction == \"long\" and stoch_k < 20:\n            return prediction\n        return \"skip\"\n    elif bb_pct_b > 0.95:\n        # Upper band extreme: expect pullback down\n        if prediction == \"short\" and stoch_k > 80:\n            return prediction\n        return \"skip\"\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_76a11f8221.py"
-}

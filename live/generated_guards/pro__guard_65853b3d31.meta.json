@@ -1,8 +1,0 @@
-{
-  "guard_id": "65853b3d31",
-  "generation": 565,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5661da08",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject trades when RSI is extreme AND high volume (potential reversal)\n    if (features['rsi_14'] > 75 or features['rsi_14'] < 25) and features['volume_ratio'] > 1.4:\n        return \"skip\"\n    # Reject when trend is weak but volatility is high (choppy market)\n    if features['trend_strength'] < 0.35 and features['volatility_regime'] > 0.65:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_65853b3d31.py"
-}

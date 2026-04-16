@@ -1,8 +1,0 @@
-{
-  "guard_id": "0c401368c7",
-  "generation": 300,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "786cf604",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where candle structure suggests weak momentum.\"\"\"\n    # High wick in direction opposite to prediction signals rejection\n    if prediction == \"long\" and features['upper_wick_ratio'] > 0.5:\n        return \"skip\"\n    if prediction == \"short\" and features['lower_wick_ratio'] > 0.5:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0c401368c7.py"
-}

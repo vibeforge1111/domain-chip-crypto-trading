@@ -1,8 +1,0 @@
-{
-  "guard_id": "0b9a8b3ff3",
-  "generation": 395,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "cef2aef8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with weak candle conviction and momentum divergence.\"\"\"\n    body_ratio = features.get('body_ratio', 0)\n    upper_wick_ratio = features.get('upper_wick_ratio', 0)\n    lower_wick_ratio = features.get('lower_wick_ratio', 0)\n    trend_strength = features.get('trend_strength', 0)\n    momentum_score = features.get('momentum_score', 0)\n    \n    # Reject if candle has weak conviction (small body, large wicks)\n    if body_ratio < 0.25 and (upper_wick_ratio + lower_wick_ratio) > 0.5:\n        return \"skip\"\n    \n    # Reject if trend strength and momentum are diverging\n    if trend_strength * momentum_score < 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0b9a8b3ff3.py"
-}

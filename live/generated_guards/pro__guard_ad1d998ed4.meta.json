@@ -1,8 +1,0 @@
-{
-  "guard_id": "ad1d998ed4",
-  "generation": 5375,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6b6898ca",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression signals using ATR, BB width, and momentum confirmation.\"\"\"\n    # False compression: BB tight but ATR elevated (volatile breakout coming)\n    if features['bb_width'] < 0.15 and features['atr_ratio'] > 1.25:\n        return \"skip\"\n    \n    # Avoid ranging conditions - require momentum alignment\n    if features['stoch_k'] > 30 and features['stoch_k'] < 70:\n        return \"skip\"\n    \n    # Reject if price too far from VWAP (mean reversion risk)\n    if abs(features['vwap_deviation']) > 0.02:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ad1d998ed4.py"
-}

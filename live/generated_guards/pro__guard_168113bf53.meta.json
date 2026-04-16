@@ -1,8 +1,0 @@
-{
-  "guard_id": "168113bf53",
-  "generation": 1310,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "28d5865f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum-price divergence.\"\"\"\n    if features['rsi_14'] > 70 and features['momentum_score'] < 0.3:\n        return \"skip\"\n    if features['rsi_14'] < 30 and features['momentum_score'] > 0.7:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_168113bf53.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "041b08c878",
-  "generation": 5500,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e8a7ebf9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using atr_ratio, bb_width, and confirming indicators.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_width = features.get(\"bb_width\", 1.0)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    \n    # True compression: low bb_width + low atr_ratio\n    is_compression = bb_width < 0.15 and atr_ratio < 0.7\n    \n    if is_compression:\n        # False compression signals: extreme stoch, VWAP far away, momentum diverging\n        stoch_extreme = stoch_k > 80 or stoch_k < 20\n        vwap_far = abs(vwap_deviation) > 0.02\n        momentum_weak = abs(macd_histogram) < 0.0001\n        \n        # Check if position is too extreme within bands\n        bb_extreme = bb_pct_b > 0.9 or bb_pct_b < 0.1\n        \n        # Reject if multiple false compression indicators present\n        false_signals = sum([stoch_extreme, vwap_far, momentum_weak, bb_extreme])\n        if false_signals >= 2:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_041b08c878.py"
-}

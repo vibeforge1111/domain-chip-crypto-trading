@@ -1,8 +1,0 @@
-{
-  "guard_id": "1218006ab4",
-  "generation": 2045,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7580cf58",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    momentum = features.get(\"momentum_score\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    if prediction == \"long\":\n        if momentum < -0.1:\n            return \"skip\"\n        if vwap_dev > 0.015 and rsi_2h > 70:\n            return \"skip\"\n    elif prediction == \"short\":\n        if momentum > 0.1:\n            return \"skip\"\n        if vwap_dev < -0.015 and rsi_2h < 30:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1218006ab4.py"
-}

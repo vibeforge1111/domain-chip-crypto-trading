@@ -1,8 +1,0 @@
-{
-  "guard_id": "31f75c8d8c",
-  "generation": 520,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "4c7f2fef",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Candle integrity guard - reject signals with conflicting price action.\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    body = features.get('body_ratio', 0)\n    rsi = features.get('rsi_14', 50)\n    bb_width = features.get('bb_width', 0)\n    \n    # Reject longs with dominant upper wick (selling pressure in candle)\n    if prediction == \"long\" and upper_wick > 0.38:\n        return \"skip\"\n    \n    # Reject shorts with dominant lower wick (buying pressure in candle)\n    if prediction == \"short\" and lower_wick > 0.38:\n        return \"skip\"\n    \n    # Reject doji/indecision candles (small body, large wicks)\n    if body < 0.25 and (upper_wick + lower_wick) > 0.65:\n        return \"skip\"\n    \n    # Skip if extreme RSI and low volatility (choppy market)\n    if bb_width < 0.02 and (rsi < 30 or rsi > 70):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_31f75c8d8c.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "dcf48510a3",
-  "generation": 760,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "057491b4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Low conviction filter: reject weak signals with low volume AND small range\n    if features.get('volume_ratio', 1) < 0.6 and features.get('range_pct', 1) < 0.4:\n        return \"skip\"\n    \n    # Momentum-trend divergence filter: reject when momentum contradicts trend direction\n    momentum = features.get('momentum_score', 0)\n    trend = features.get('trend_strength', 0)\n    \n    if prediction == \"long\":\n        # For longs, momentum should not be strongly negative against trend\n        if momentum < -0.2 and trend > 0:\n            return \"skip\"\n    elif prediction == \"short\":\n        # For shorts, momentum should not be strongly positive against trend\n        if momentum > 0.2 and trend < 0:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dcf48510a3.py"
-}

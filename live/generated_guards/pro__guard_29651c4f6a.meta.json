@@ -1,8 +1,0 @@
-{
-  "guard_id": "29651c4f6a",
-  "generation": 1560,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "38cd9f5b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where candle quality is poor despite strong signals.\"\"\"\n    # Skip if high volatility with weak candle structure (unstable)\n    if features['atr_ratio'] > 1.6 and features['body_ratio'] < 0.3:\n        return \"skip\"\n    # Skip if momentum diverges from RSI significantly (conflicting signals)\n    rsi_normalized = features['rsi_14'] / 100.0\n    if abs(features['momentum_score'] - rsi_normalized) > 0.35:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_29651c4f6a.py"
-}

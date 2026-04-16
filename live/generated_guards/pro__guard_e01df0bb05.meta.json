@@ -1,8 +1,0 @@
-{
-  "guard_id": "e01df0bb05",
-  "generation": 2870,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2322eaca",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression signals using ATR ratio and Bollinger Band width.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    \n    # True compression detected: both indicators show low volatility\n    in_compression = atr_ratio < 0.7 and bb_width < 0.35\n    \n    if in_compression:\n        # Price pinned to BB edge = no room for true squeeze\n        if min(bb_pct_b, 1 - bb_pct_b) < 0.08:\n            return \"skip\"\n        \n        # Stochastic exhaustion in compression\n        if stoch_k < 15 or stoch_k > 85:\n            return \"skip\"\n        \n        # Extreme RSI in compression\n        if rsi_14 < 30 or rsi_14 > 70:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e01df0bb05.py"
-}

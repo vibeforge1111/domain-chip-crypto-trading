@@ -1,8 +1,0 @@
-{
-  "guard_id": "1acb71983e",
-  "generation": 2355,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "80caedc1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using stochastic crossover timing with momentum confirmation.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    if prediction == 'long':\n        # Reject if no bullish crossover (k below or equal to d)\n        if stoch_k <= stoch_d:\n            return 'skip'\n        # Reject if crossover not in oversold zone or overbought\n        if stoch_k > 80 or stoch_k < 20:\n            return 'skip'\n        # Require price near/below VWAP and positive volume flow\n        if vwap_dev > 0.005 or obv_slope < 0:\n            return 'skip'\n    \n    elif prediction == 'short':\n        # Reject if no bearish crossover (k above or equal to d)\n        if stoch_k >= stoch_d:\n            return 'skip'\n        # Reject if crossover not in overbought zone or oversold\n        if stoch_k < 20 or stoch_k > 80:\n            return 'skip'\n        # Require price near/above VWAP and negative volume flow\n        if vwap_dev < -0.005 or obv_slope > 0:\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1acb71983e.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "0f01bad296",
-  "generation": 5010,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b0a8ef4c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    vwap_ok = (prediction == \"long\" and features[\"vwap_deviation\"] > 0) or \\\n              (prediction == \"short\" and features[\"vwap_deviation\"] < 0)\n    \n    stoch_ok = (prediction == \"long\" and features[\"stoch_k\"] < 80) or \\\n               (prediction == \"short\" and features[\"stoch_k\"] > 20)\n    \n    momentum_ok = (prediction == \"long\" and features[\"macd_histogram\"] > 0 and features[\"obv_slope\"] > 0) or \\\n                  (prediction == \"short\" and features[\"macd_histogram\"] < 0 and features[\"obv_slope\"] < 0)\n    \n    bb_ok = (prediction == \"long\" and features[\"bb_pct_b\"] > 0.3) or \\\n            (prediction == \"short\" and features[\"bb_pct_b\"] < 0.7)\n    \n    rsi_ok = (prediction == \"long\" and features[\"rsi_2h\"] > 40) or \\\n             (prediction == \"short\" and features[\"rsi_2h\"] < 60)\n    \n    confirm_count = sum([vwap_ok, stoch_ok, momentum_ok, bb_ok, rsi_ok])\n    \n    if confirm_count < 2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0f01bad296.py"
-}

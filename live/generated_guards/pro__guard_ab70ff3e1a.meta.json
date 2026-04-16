@@ -1,8 +1,0 @@
-{
-  "guard_id": "ab70ff3e1a",
-  "generation": 180,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "87180c23",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where wick structure contradicts prediction direction.\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    bb_pos = features.get(\"bb_position\", 0.5)\n    \n    if prediction == \"long\" and upper_wick > 0.4:\n        return \"skip\"\n    if prediction == \"short\" and lower_wick > 0.4:\n        return \"skip\"\n    if prediction == \"long\" and bb_pos > 0.92:\n        return \"skip\"\n    if prediction == \"short\" and bb_pos < 0.08:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ab70ff3e1a.py"
-}

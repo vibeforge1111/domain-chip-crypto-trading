@@ -1,8 +1,0 @@
-{
-  "guard_id": "935a72cbbf",
-  "generation": 1180,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "8409dbc0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals where trend strength and EMA slope are misaligned.\"\"\"\n    ema_slope = features.get('ema_slope', 0)\n    trend_strength = features.get('trend_strength', 0)\n    \n    # Skip if trend strength is moderate-strong but EMA slope contradicts\n    if trend_strength > 0.3 and abs(ema_slope) < 0.001:\n        return \"skip\"\n    \n    # Skip if strong trend but EMA moves opposite direction\n    if trend_strength > 0.5 and (ema_slope * (1 if prediction == \"long\" else -1)) < 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_935a72cbbf.py"
-}

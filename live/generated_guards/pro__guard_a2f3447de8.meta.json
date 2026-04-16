@@ -1,8 +1,0 @@
-{
-  "guard_id": "a2f3447de8",
-  "generation": 370,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ee90f1c0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter when high volume but low volatility expansion (potential fakeout)\n    if prediction in [\"long\", \"short\"]:\n        vol_ratio = features.get(\"volume_ratio\", 1.0)\n        atr_ratio = features.get(\"atr_ratio\", 1.0)\n        rsi = features.get(\"rsi_14\", 50)\n        \n        # High volume + low ATR expansion + neutral RSI = chop/fakeout\n        if vol_ratio > 1.5 and atr_ratio < 0.8 and 40 < rsi < 60:\n            return \"skip\"\n        \n        # RSI at extremes with conflicting momentum\n        ema_slope = features.get(\"ema_slope\", 0)\n        if prediction == \"long\" and rsi > 70 and ema_slope < 0:\n            return \"skip\"\n        if prediction == \"short\" and rsi < 30 and ema_slope > 0:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a2f3447de8.py"
-}

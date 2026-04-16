@@ -1,8 +1,0 @@
-{
-  "guard_id": "8fa5365648",
-  "generation": 95,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "29b8166c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where candle rejection exceeds conviction.\"\"\"\n    total_wick = features.get('upper_wick_ratio', 0) + features.get('lower_wick_ratio', 0)\n    \n    # High wick = candle rejected at that level, reject if volume confirms weakness\n    if total_wick > 0.55 and features.get('volume_ratio', 1) < 0.75:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8fa5365648.py"
-}

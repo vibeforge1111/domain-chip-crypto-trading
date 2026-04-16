@@ -1,8 +1,0 @@
-{
-  "guard_id": "b2557d74d8",
-  "generation": 2455,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a67e4ce1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip false compressions where volatility hasn't truly contracted.\"\"\"\n    # False compression: high bb_width with high atr_ratio\n    if features[\"bb_width\"] > 0.12 and features[\"atr_ratio\"] > 1.1:\n        return \"skip\"\n    # Stochastic extremes indicate exhausted moves\n    if prediction == \"long\" and features[\"stoch_k\"] > 85:\n        return \"skip\"\n    if prediction == \"short\" and features[\"stoch_k\"] < 15:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b2557d74d8.py"
-}

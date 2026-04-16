@@ -1,8 +1,0 @@
-{
-  "guard_id": "8dbe693c7c",
-  "generation": 3500,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bc448225",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against false compression breakouts using ATR and Bollinger Band analysis.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # True compression: low atr_ratio AND low bb_width\n    is_compressed = atr_ratio < 0.75 and bb_width < 0.35\n    \n    if is_compressed:\n        # False compression: extreme position within bands during compression\n        if bb_pct_b < 0.15 or bb_pct_b > 0.85:\n            return \"skip\"\n        # False compression: far from VWAP during compression\n        if abs(vwap_deviation) > 0.007:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8dbe693c7c.py"
-}

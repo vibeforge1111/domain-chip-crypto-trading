@@ -1,8 +1,0 @@
-{
-  "guard_id": "d3f3818880",
-  "generation": 265,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "77487b3e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with momentum-trend divergence and extreme RSI.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Skip if momentum contradicts trend direction\n    momentum_aligned_long = features[\"momentum_score\"] > 0.3 and features[\"ema_slope\"] > 0\n    momentum_aligned_short = features[\"momentum_score\"] < -0.3 and features[\"ema_slope\"] < 0\n    \n    if prediction == \"long\" and not momentum_aligned_long:\n        return \"skip\"\n    if prediction == \"short\" and not momentum_aligned_short:\n        return \"skip\"\n    \n    # Additional RSI extreme filter\n    if prediction == \"long\" and features[\"rsi_14\"] > 72:\n        return \"skip\"\n    if prediction == \"short\" and features[\"rsi_14\"] < 28:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d3f3818880.py"
-}

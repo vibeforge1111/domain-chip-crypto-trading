@@ -1,8 +1,0 @@
-{
-  "guard_id": "9120095799",
-  "generation": 5200,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f2b68dfb",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band position and Stochastic extremes.\"\"\"\n    bb = features.get(\"bb_pct_b\", 0.5)\n    stoch = features.get(\"stoch_k\", 50)\n    \n    if prediction == \"long\":\n        # Reject long signals when both overbought (bb > 0.9 AND stoch > 80)\n        if bb > 0.9 and stoch > 80:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Reject short signals when both oversold (bb < 0.1 AND stoch < 20)\n        if bb < 0.1 and stoch < 20:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9120095799.py"
-}

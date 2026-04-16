@@ -1,8 +1,0 @@
-{
-  "guard_id": "fb4d07a7f0",
-  "generation": 3495,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ad080ba2",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    rsi = features.get('rsi_14', 50)\n    stoch_k = features.get('stoch_k', 50)\n    obv_slope = features.get('obv_slope', 0)\n    macd_hist = features.get('macd_histogram', 0)\n    \n    # Price above VWAP but momentum and trend indicators bearish (disagreement)\n    if vwap_dev > 0.01:\n        bearish_momentum = momentum < 0 and rsi < 45 and stoch_k < 40\n        bearish_volume = obv_slope < 0 and macd_hist < 0\n        if bearish_momentum and bearish_volume:\n            return \"skip\"\n    \n    # Price below VWAP but momentum and trend indicators bullish (disagreement)\n    if vwap_dev < -0.01:\n        bullish_momentum = momentum > 0 and rsi > 55 and stoch_k > 60\n        bullish_volume = obv_slope > 0 and macd_hist > 0\n        if bullish_momentum and bullish_volume:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fb4d07a7f0.py"
-}

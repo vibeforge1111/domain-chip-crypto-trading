@@ -1,8 +1,0 @@
-{
-  "guard_id": "4725bc5adc",
-  "generation": 4295,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b8a80310",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Long entries need bullish stochastic crossover\n    if prediction == \"long\":\n        if stoch_k <= stoch_d:\n            return \"skip\"\n        # Reject if 2h RSI is overbought (potential reversal)\n        if rsi_2h > 70:\n            return \"skip\"\n    \n    # Short entries need bearish stochastic crossover\n    if prediction == \"short\":\n        if stoch_k >= stoch_d:\n            return \"skip\"\n        # Reject if 2h RSI is oversold (potential reversal)\n        if rsi_2h < 30:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4725bc5adc.py"
-}

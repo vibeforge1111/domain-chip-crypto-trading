@@ -1,8 +1,0 @@
-{
-  "guard_id": "00b3d7837d",
-  "generation": 455,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "845a9c6c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on RSI and trend alignment.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    \n    # Skip if RSI neutral (no clear momentum) and low body ratio (doji-like candle)\n    if 45 <= rsi <= 55 and body_ratio < 0.4:\n        return \"skip\"\n    \n    # Longs: require RSI > 50 and upward slope (or at least not strongly downward)\n    if prediction == \"long\" and rsi < 45:\n        return \"skip\"\n    \n    # Shorts: require RSI < 50 and downward slope (or at least not strongly upward)\n    if prediction == \"short\" and rsi > 55:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_00b3d7837d.py"
-}

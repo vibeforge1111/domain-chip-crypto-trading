@@ -1,8 +1,0 @@
-{
-  "guard_id": "4c0a254f50",
-  "generation": 4375,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bcb1324f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using BB extreme zones with stochastic confirmation.\"\"\"\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    macd_hist = features.get(\"macd_histogram\", 0)\n    \n    if prediction == \"long\":\n        if bb_pct >= 0.05 or stoch_k >= 20 or stoch_d <= 50:\n            return \"skip\"\n    elif prediction == \"short\":\n        if bb_pct <= 0.95 or stoch_k <= 80 or stoch_d >= 50:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4c0a254f50.py"
-}

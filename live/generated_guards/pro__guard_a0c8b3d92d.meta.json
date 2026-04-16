@@ -1,8 +1,0 @@
-{
-  "guard_id": "a0c8b3d92d",
-  "generation": 2285,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "9b179a39",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    macd_hist = features.get(\"macd_histogram\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Reject long if momentum decelerating (negative hist) with positive volume flow\n    if prediction == \"long\" and macd_hist < -0.0002 and obv_slope > 0:\n        return \"skip\"\n    \n    # Reject short if momentum accelerating up (positive hist) with positive volume flow\n    if prediction == \"short\" and macd_hist > 0.0002 and obv_slope > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a0c8b3d92d.py"
-}

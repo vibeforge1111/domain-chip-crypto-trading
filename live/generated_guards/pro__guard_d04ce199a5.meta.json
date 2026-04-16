@@ -1,8 +1,0 @@
-{
-  "guard_id": "d04ce199a5",
-  "generation": 2450,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "fe3162fa",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # False compression: BB squeezing while ATR expanding signals imminent trap\n    if features['bb_width'] < 0.025 and features['atr_ratio'] > 1.4:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d04ce199a5.py"
-}

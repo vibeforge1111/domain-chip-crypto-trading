@@ -1,8 +1,0 @@
-{
-  "guard_id": "a2dd5b2f83",
-  "generation": 2020,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a7078c5b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false breakouts during compression using BB and momentum alignment.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1)\n    bb_width = features.get('bb_width', 0.3)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    obv_slope = features.get('obv_slope', 0)\n    macd_hist = features.get('macd_histogram', 0)\n    \n    # True compression: both ATR and BB narrow\n    is_compression = atr_ratio < 0.75 and bb_width < 0.18\n    \n    if is_compression:\n        # False compression signals\n        stoch_extreme = stoch_k > 78 or stoch_k < 22\n        stoch_divergence = abs(stoch_k - stoch_d) > 15\n        vwap_displaced = abs(vwap_dev) > 0.008\n        momentum_divergent = obv_slope * macd_hist < 0\n        \n        # Count conflict signals\n        conflicts = sum([stoch_extreme, stoch_divergence, vwap_displaced, momentum_divergent])\n        \n        if conflicts >= 2:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a2dd5b2f83.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "8924b12891",
-  "generation": 4025,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2c9d770b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Use BB% extremes (<0.05 or >0.95) as high-confidence entry zones.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_2h = features.get('rsi_2h', 50)\n    stoch_k = features.get('stoch_k', 50)\n    \n    if prediction == 'long':\n        if bb_pct_b > 0.05:\n            return 'skip'\n        if rsi_2h > 45 and stoch_k > 25:\n            return 'skip'\n    \n    if prediction == 'short':\n        if bb_pct_b < 0.95:\n            return 'skip'\n        if rsi_2h < 55 and stoch_k < 75:\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8924b12891.py"
-}

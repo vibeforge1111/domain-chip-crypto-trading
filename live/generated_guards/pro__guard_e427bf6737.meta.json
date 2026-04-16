@@ -1,8 +1,0 @@
-{
-  "guard_id": "e427bf6737",
-  "generation": 745,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "504aec00",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject low-quality candles (small body relative to total range)\n    if features['body_ratio'] < 0.35:\n        return \"skip\"\n    \n    # Require trend alignment between EMA slope and momentum score\n    if features['ema_slope'] * features['momentum_score'] < 0:\n        return \"skip\"\n    \n    # For long signals: positive momentum required + RSI not overbought\n    if prediction == \"long\":\n        if features['momentum_score'] < 0.15 or features['rsi_14'] > 75:\n            return \"skip\"\n    \n    # For short signals: negative momentum required + RSI not oversold\n    elif prediction == \"short\":\n        if features['momentum_score'] > -0.15 or features['rsi_14'] < 25:\n            return \"skip\"\n    \n    # Avoid low volatility chop (BB squeeze filter)\n    if features['bb_width'] < 0.5:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e427bf6737.py"
-}

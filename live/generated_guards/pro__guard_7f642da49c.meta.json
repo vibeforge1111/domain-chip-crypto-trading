@@ -1,8 +1,0 @@
-{
-  "guard_id": "7f642da49c",
-  "generation": 3360,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7694ef10",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression: tight bands but extreme conditions suggest failed breakout\n    if features['atr_ratio'] < 0.7 and features['bb_width'] < 0.15:\n        # Stochastic extreme at BB edge indicates reversal likely\n        if (features['stoch_k'] > 80 and features['bb_pct_b'] > 0.9) or \\\n           (features['stoch_k'] < 20 and features['bb_pct_b'] < 0.1):\n            return \"skip\"\n        # Momentum divergence during compression signals false move\n        if features['macd_histogram'] * (1 if prediction == \"long\" else -1) < -0.0005:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7f642da49c.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "9b504bc0ec",
-  "generation": 4485,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7dca27e4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    atr_ratio = features.get('atr_ratio', 1)\n    bb_width = features.get('bb_width', 1)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Detect compression\n    is_compressed = atr_ratio < 0.75 and bb_width < 0.5\n    \n    if is_compressed:\n        # True compression needs momentum alignment\n        stoch_aligned = (stoch_k > 60 and stoch_d > 60) or (stoch_k < 40 and stoch_d < 40)\n        has_momentum = macd_histogram > 0 or obv_slope > 0\n        \n        # Skip if compressed but no clear momentum direction\n        if prediction == 'long' and not (stoch_aligned and has_momentum):\n            return \"skip\"\n        if prediction == 'short' and not (stoch_aligned and (macd_histogram < 0 or obv_slope < 0)):\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9b504bc0ec.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "0d080731a6",
-  "generation": 4060,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "035be759",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like upper_wick_ratio, lower_wick_ratio, body_ratio, range_pct, volume_ratio, atr_ratio, rsi_14, ema_slope\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd_hist = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Momentum deceleration: reject longs with negative MACD, shorts with positive MACD\n    if prediction == \"long\" and macd_hist < -0.0003:\n        return \"skip\"\n    \n    if prediction == \"short\" and macd_hist > 0.0003:\n        return \"skip\"\n    \n    # Combined exhaustion: overbought/oversold with conflicting momentum\n    if prediction == \"long\" and stoch_k > 80 and macd_hist < 0:\n        return \"skip\"\n    \n    if prediction == \"short\" and stoch_k < 20 and macd_hist > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0d080731a6.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "53fd9d8dea",
-  "generation": 5335,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "17ca4d52",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Align entries with broader trend using 2-hour RSI and momentum confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi_2h = features.get(\"rsi_2h\", 50)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    \n    # Align with broader 2h trend\n    if prediction == \"long\" and rsi_2h < 50:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h > 50:\n        return \"skip\"\n    \n    # Require momentum confirmation\n    if prediction == \"long\" and macd_histogram < 0:\n        return \"skip\"\n    if prediction == \"short\" and macd_histogram > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_53fd9d8dea.py"
-}

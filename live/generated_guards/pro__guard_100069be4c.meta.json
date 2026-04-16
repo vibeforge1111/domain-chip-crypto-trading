@@ -1,8 +1,0 @@
-{
-  "guard_id": "100069be4c",
-  "generation": 145,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "88f93334",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against momentum-trend divergence and low volatility environments.\"\"\"\n    # Skip if momentum contradicts trend direction\n    momentum_score = features.get('momentum_score', 0)\n    trend_strength = features.get('trend_strength', 0)\n    if momentum_score * trend_strength < 0:\n        return \"skip\"\n    \n    # Skip if volatility is too low (squeeze or dead market)\n    if features.get('volatility_regime', 1) < 0.3:\n        return \"skip\"\n    \n    # Skip if RSI is in extreme zones (overbought/oversold exhaustion)\n    rsi = features.get('rsi_14', 50)\n    if rsi > 78 or rsi < 22:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_100069be4c.py"
-}

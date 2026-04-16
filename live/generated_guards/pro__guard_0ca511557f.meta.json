@@ -1,8 +1,0 @@
-{
-  "guard_id": "0ca511557f",
-  "generation": 255,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "8d1dd77c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter out trades with suspicious candle structure (dominant wicks indicate indecision).\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    body_ratio = features.get('body_ratio', 1)\n    \n    # Reject candles where wicks dominate (>60% combined) - high reversal risk\n    if (upper_wick + lower_wick) > 0.6:\n        return \"skip\"\n    \n    # Reject candles with very small bodies - no conviction\n    if body_ratio < 0.25:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0ca511557f.py"
-}

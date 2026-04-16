@@ -1,8 +1,0 @@
-{
-  "guard_id": "c3287481e4",
-  "generation": 1305,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "15916c8d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject trades where volume is high but momentum is weak (potential reversal signal)\n    if features['volume_ratio'] > 1.5 and features['momentum_score'] < 0.3:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c3287481e4.py"
-}

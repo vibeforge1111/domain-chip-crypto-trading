@@ -1,8 +1,0 @@
-{
-  "guard_id": "acac82a95a",
-  "generation": 5225,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b353479c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like vwap_deviation, bb_pct_b, stoch_k, etc.\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    vwap_dev = abs(features.get('vwap_deviation', 0))\n    \n    # Skip if price is too close to VWAP (within 0.2% of price = low conviction)\n    if vwap_dev < 0.002:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_acac82a95a.py"
-}

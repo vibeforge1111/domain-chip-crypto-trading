@@ -1,8 +1,0 @@
-{
-  "guard_id": "4d180e925f",
-  "generation": 4110,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "39e25ecf",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    \n    # True compression: low volatility AND narrow BBs\n    # This indicates energy building for a breakout\n    if atr_ratio < 0.7 and bb_width < 0.45:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4d180e925f.py"
-}

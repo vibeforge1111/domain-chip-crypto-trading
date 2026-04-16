@@ -1,8 +1,0 @@
-{
-  "guard_id": "b95a906844",
-  "generation": 4550,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "62f990fa",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # High-confidence entry zones: BB extreme + stoch confirmation + volume flow\n    if prediction == \"long\" and bb_pct < 0.05 and stoch_k < 25 and obv_slope > 0:\n        return prediction\n    if prediction == \"short\" and bb_pct > 0.95 and stoch_k > 75 and obv_slope < 0:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b95a906844.py"
-}

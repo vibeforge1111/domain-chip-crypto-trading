@@ -1,8 +1,0 @@
-{
-  "guard_id": "0f0245b6b9",
-  "generation": 2570,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3f6dddc3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    volume_ratio = features.get('volume_ratio', 1.0)\n    \n    # Only take trades at extreme BB positions\n    if bb_pct_b < 0.05 or bb_pct_b > 0.95:\n        # Validate direction alignment with extreme\n        if prediction == \"long\" and bb_pct_b > 0.5:\n            return \"skip\"\n        if prediction == \"short\" and bb_pct_b < 0.5:\n            return \"skip\"\n        # Require confirmation via volume\n        if volume_ratio < 0.8:\n            return \"skip\"\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0f0245b6b9.py"
-}

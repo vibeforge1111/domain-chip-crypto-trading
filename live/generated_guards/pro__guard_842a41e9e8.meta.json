@@ -1,8 +1,0 @@
-{
-  "guard_id": "842a41e9e8",
-  "generation": 590,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "942edb2a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filters signals with RSI-momentum divergence or weak volume confirmation.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    volume = features.get(\"volume_ratio\", 1)\n    \n    # Skip if RSI extreme but momentum doesn't confirm direction\n    if (rsi > 65 and momentum < -0.1) or (rsi < 35 and momentum > 0.1):\n        return \"skip\"\n    \n    # Skip if low volume on strong move indication\n    if abs(momentum) > 0.5 and volume < 0.8:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_842a41e9e8.py"
-}

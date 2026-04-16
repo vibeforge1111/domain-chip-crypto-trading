@@ -1,8 +1,0 @@
-{
-  "guard_id": "56b2679afd",
-  "generation": 60,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "adf66a40",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with extreme wick imbalance or RSI-conflict.\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    rsi = features.get('rsi_14', 50)\n    \n    # Skip long if dominant upper wick (reversal signal)\n    if prediction == 'long' and upper_wick > 0.5:\n        return \"skip\"\n    \n    # Skip short if dominant lower wick (reversal signal)\n    if prediction == 'short' and lower_wick > 0.5:\n        return \"skip\"\n    \n    # Skip if RSI contradicts direction\n    if prediction == 'long' and rsi < 30:\n        return \"skip\"\n    if prediction == 'short' and rsi > 70:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_56b2679afd.py"
-}

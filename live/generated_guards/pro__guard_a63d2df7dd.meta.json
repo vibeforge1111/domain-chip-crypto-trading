@@ -1,8 +1,0 @@
-{
-  "guard_id": "a63d2df7dd",
-  "generation": 1540,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "cfba5fd7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter countertrend trades - reject longs when overbought, shorts when oversold.\"\"\"\n    ema_slope = features.get('ema_slope', 0)\n    rsi_14 = features.get('rsi_14', 50)\n    \n    # Uptrend but overbought\n    if ema_slope > 0 and rsi_14 > 70:\n        return 'skip'\n    # Downtrend but oversold  \n    if ema_slope < 0 and rsi_14 < 30:\n        return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a63d2df7dd.py"
-}

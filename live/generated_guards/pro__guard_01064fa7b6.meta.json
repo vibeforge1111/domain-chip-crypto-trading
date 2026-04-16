@@ -1,8 +1,0 @@
-{
-  "guard_id": "01064fa7b6",
-  "generation": 3120,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "37f54884",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band extremes and confirmations.\"\"\"\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    \n    # Skip longs when price is too extended near upper band\n    if prediction == \"long\" and bb_pct > 0.95:\n        return \"skip\"\n    # Skip shorts when price is too extended near lower band\n    if prediction == \"short\" and bb_pct < 0.05:\n        return \"skip\"\n    \n    # Confirm with VWAP alignment\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    if prediction == \"long\" and vwap_dev < -0.003:\n        return \"skip\"\n    if prediction == \"short\" and vwap_dev > 0.003:\n        return \"skip\"\n    \n    # Stochastic confirmation to avoid reversal traps\n    stoch = features.get(\"stoch_k\", 50)\n    if prediction == \"long\" and stoch > 85:\n        return \"skip\"\n    if prediction == \"short\" and stoch < 15:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_01064fa7b6.py"
-}

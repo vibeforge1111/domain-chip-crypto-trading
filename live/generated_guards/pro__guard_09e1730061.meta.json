@@ -1,8 +1,0 @@
-{
-  "guard_id": "09e1730061",
-  "generation": 380,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c14da051",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with extreme Bollinger position but weak trend confirmation.\"\"\"\n    if features['bb_position'] > 0.9 and features['trend_strength'] < 0.4:\n        return \"skip\"\n    if features['bb_position'] < 0.1 and features['trend_strength'] < 0.4:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_09e1730061.py"
-}

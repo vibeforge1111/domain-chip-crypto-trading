@@ -1,8 +1,0 @@
-{
-  "guard_id": "45778cdd84",
-  "generation": 2165,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "4ae5374d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # False compression: bb_width tight but atr_ratio elevated = fake breakout setup\n    is_false_compression = features['bb_width'] < 0.12 and features['atr_ratio'] > 1.1\n    \n    if is_false_compression:\n        return \"skip\"\n    \n    # True compression check: both bb_width and atr_ratio low\n    is_true_squeeze = features['bb_width'] < 0.1 and features['atr_ratio'] < 0.85\n    \n    # During true squeeze, avoid entries at band extremes\n    if is_true_squeeze:\n        if features['bb_pct_b'] < 0.08 or features['bb_pct_b'] > 0.92:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_45778cdd84.py"
-}

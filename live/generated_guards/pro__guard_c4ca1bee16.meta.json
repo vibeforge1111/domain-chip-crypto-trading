@@ -1,8 +1,0 @@
-{
-  "guard_id": "c4ca1bee16",
-  "generation": 3045,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f0b7d3a9",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return \"skip\"\n    \n    macd = features.get(\"macd_histogram\", 0)\n    stoch = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Skip if momentum is decelerating (negative macd histogram)\n    if macd < -0.0003:\n        return \"skip\"\n    \n    # Skip long entries in overbought zone with bearish momentum\n    if prediction == \"long\" and stoch > 75 and macd < 0:\n        return \"skip\"\n    \n    # Skip short entries in oversold zone with bullish momentum\n    if prediction == \"short\" and stoch < 25 and macd > 0:\n        return \"skip\"\n    \n    # Skip if wider timeframe is stretched and local momentum contradicts\n    if rsi_2h > 65 and macd < 0 and prediction == \"long\":\n        return \"skip\"\n    if rsi_2h < 35 and macd > 0 and prediction == \"short\":\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c4ca1bee16.py"
-}

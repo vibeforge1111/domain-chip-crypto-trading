@@ -1,8 +1,0 @@
-{
-  "guard_id": "c8ef47b992",
-  "generation": 430,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a81eef86",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on wick dominance and volume confirmation.\n    \n    Pin bars and dojis with dominant wicks and low volume are unreliable.\n    \"\"\"\n    dominant_wick = max(features.get('upper_wick_ratio', 0), features.get('lower_wick_ratio', 0))\n    \n    # Strong wick dominance suggests rejection/consolidation, skip if low volume\n    if dominant_wick > 0.5 and features.get('volume_ratio', 1) < 1.0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c8ef47b992.py"
-}

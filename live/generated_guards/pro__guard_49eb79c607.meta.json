@@ -1,8 +1,0 @@
-{
-  "guard_id": "49eb79c607",
-  "generation": 230,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "8a3c026d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with conflicting wick-momentum signals or weak momentum.\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    momentum = features.get(\"momentum_score\", 0.5)\n    volume = features.get(\"volume_ratio\", 1)\n    \n    # Reject if wick contradicts prediction direction (rejection pattern)\n    if prediction == \"long\" and upper_wick > 0.35:\n        return \"skip\"\n    if prediction == \"short\" and lower_wick > 0.35:\n        return \"skip\"\n    \n    # Reject low momentum trades with elevated volume (exhaustion risk)\n    if momentum < 0.35 and volume > 1.2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_49eb79c607.py"
-}

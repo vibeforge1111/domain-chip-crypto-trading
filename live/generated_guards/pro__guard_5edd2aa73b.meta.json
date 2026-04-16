@@ -1,8 +1,0 @@
-{
-  "guard_id": "5edd2aa73b",
-  "generation": 855,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "46f5842b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades at BB extremes with contracting volatility or weak volume confirmation.\"\"\"\n    bb_pos = features.get('bb_position', 0.5)\n    atr_r = features.get('atr_ratio', 1.0)\n    vol_r = features.get('volume_ratio', 1.0)\n    \n    # At BB extremes but ATR compressing - likely reversal trap\n    if (bb_pos > 0.92 or bb_pos < 0.08) and atr_r < 0.75:\n        return \"skip\"\n    \n    # Very low volume without strong range - weak conviction signal\n    if vol_r < 0.5 and features.get('range_pct', 0) < 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5edd2aa73b.py"
-}

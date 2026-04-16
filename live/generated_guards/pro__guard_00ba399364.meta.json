@@ -1,8 +1,0 @@
-{
-  "guard_id": "00ba399364",
-  "generation": 720,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "053b4207",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where candle wicks dominate the move (rejection signals).\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    bb_width = features.get(\"bb_width\", 1.0)\n    \n    # For long signals: large upper wick = selling rejection\n    if prediction == \"long\" and upper_wick > 0.4:\n        return \"skip\"\n    \n    # For short signals: large lower wick = buying rejection\n    if prediction == \"short\" and lower_wick > 0.4:\n        return \"skip\"\n    \n    # Skip if body is too small relative to wicks (choppy/inconclusive candle)\n    if body_ratio < 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_00ba399364.py"
-}

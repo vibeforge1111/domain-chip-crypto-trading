@@ -1,8 +1,0 @@
-{
-  "guard_id": "71bcbb520f",
-  "generation": 3765,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ad40b1e7",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when MACD histogram shows momentum deceleration near extremes.\"\"\"\n    macd = features.get('macd_histogram', 0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # Detect momentum flattening (deceleration) with extreme stochastic\n    momentum_flat = abs(macd) < 0.0001\n    stoch_extreme = stoch_k > 80 or stoch_k < 20\n    bb_extreme = bb_pct_b > 0.95 or bb_pct_b < 0.05\n    \n    if momentum_flat and stoch_extreme and bb_extreme:\n        return \"skip\"\n    \n    # Additional: reject if going long with bearish macd and overbought stoch\n    if prediction == \"long\" and macd < -0.00005 and stoch_k > 75:\n        return \"skip\"\n    \n    # Additional: reject if going short with bullish macd and oversold stoch\n    if prediction == \"short\" and macd > 0.00005 and stoch_k < 25:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_71bcbb520f.py"
-}

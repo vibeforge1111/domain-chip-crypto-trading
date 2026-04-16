@@ -1,8 +1,0 @@
-{
-  "guard_id": "c78669e819",
-  "generation": 3040,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e64f566e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades by aligning with broader 2h RSI trend context.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi_2h = features.get(\"rsi_2h\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    if prediction == \"long\":\n        if rsi_2h < 42:\n            return \"skip\"\n        if vwap_dev < -0.003:\n            return \"skip\"\n    \n    if prediction == \"short\":\n        if rsi_2h > 58:\n            return \"skip\"\n        if vwap_dev > 0.003:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c78669e819.py"
-}

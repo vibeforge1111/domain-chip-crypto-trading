@@ -1,8 +1,0 @@
-{
-  "guard_id": "96a2084679",
-  "generation": 535,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1f7543e3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where momentum and trend direction are misaligned.\"\"\"\n    momentum = features.get('momentum_score', 0)\n    ema_slope = features.get('ema_slope', 0)\n    rsi = features.get('rsi_14', 50)\n    \n    # For long trades, require positive momentum and uptrend\n    if prediction == \"long\":\n        if momentum < 0 or ema_slope < 0:\n            return \"skip\"\n        # Avoid extreme overbought levels for longs\n        if rsi > 78:\n            return \"skip\"\n    \n    # For short trades, require negative momentum and downtrend\n    elif prediction == \"short\":\n        if momentum > 0 or ema_slope > 0:\n            return \"skip\"\n        # Avoid extreme oversold levels for shorts\n        if rsi < 22:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_96a2084679.py"
-}

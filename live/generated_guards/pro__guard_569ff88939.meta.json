@@ -1,8 +1,0 @@
-{
-  "guard_id": "569ff88939",
-  "generation": 4265,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7b4cc898",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band extremes with momentum and volume confirmation.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    \n    # Long setup: price near lower band with oversold momentum and volume surge\n    if bb_pct_b < 0.05 and prediction == \"long\" and stoch_k < 30 and volume_ratio > 1.0:\n        return prediction\n    \n    # Short setup: price near upper band with overbought momentum and volume surge\n    if bb_pct_b > 0.95 and prediction == \"short\" and stoch_k > 70 and volume_ratio > 1.0:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_569ff88939.py"
-}

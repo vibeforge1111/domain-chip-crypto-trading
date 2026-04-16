@@ -1,8 +1,0 @@
-{
-  "guard_id": "3c89a0e7e6",
-  "generation": 2670,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "cc50d523",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when overbought/oversold extremes align with BB position.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Skip longs when overbought (stoch_k > 80) AND price at upper band (bb_pct_b > 0.9)\n    if prediction == \"long\" and stoch_k > 80 and bb_pct_b > 0.9:\n        return \"skip\"\n    \n    # Skip shorts when oversold (stoch_k < 20) AND price at lower band (bb_pct_b < 0.1)\n    if prediction == \"short\" and stoch_k < 20 and bb_pct_b < 0.1:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3c89a0e7e6.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "275282d93b",
-  "generation": 3850,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3a1b03ff",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band extreme zones as high-confidence entry points.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    bb = features.get(\"bb_pct_b\", 0.5)\n    if prediction == \"long\" and bb >= 0.05:\n        return \"skip\"\n    if prediction == \"short\" and bb <= 0.95:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_275282d93b.py"
-}

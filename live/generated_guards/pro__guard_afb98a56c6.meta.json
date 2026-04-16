@@ -1,8 +1,0 @@
-{
-  "guard_id": "afb98a56c6",
-  "generation": 975,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6ca0de4a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals with conflicting RSI and momentum indicators.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0.5)\n    \n    # Reject if RSI and momentum are strongly misaligned\n    rsi_extreme = rsi > 70 or rsi < 30\n    momentum_weak = abs(momentum) < 0.2\n    \n    if rsi_extreme and momentum_weak:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_afb98a56c6.py"
-}

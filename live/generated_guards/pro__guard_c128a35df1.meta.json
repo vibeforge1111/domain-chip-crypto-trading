@@ -1,8 +1,0 @@
-{
-  "guard_id": "c128a35df1",
-  "generation": 3340,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "b5ed3ffc",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when MACD histogram signals momentum deceleration.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd_hist = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # Long: reject if MACD histogram is negative (no bullish momentum)\n    if prediction == \"long\" and macd_hist < 0:\n        return \"skip\"\n    \n    # Long: reject if stochastics overbought (momentum exhausted)\n    if prediction == \"long\" and stoch_k > 80 and stoch_d > 80:\n        return \"skip\"\n    \n    # Short: reject if MACD histogram is positive (no bearish momentum)\n    if prediction == \"short\" and macd_hist > 0:\n        return \"skip\"\n    \n    # Short: reject if stochastics oversold (momentum exhausted for bears)\n    if prediction == \"short\" and stoch_k < 20 and stoch_d < 20:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c128a35df1.py"
-}

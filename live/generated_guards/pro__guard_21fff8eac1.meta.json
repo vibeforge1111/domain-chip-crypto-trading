@@ -1,8 +1,0 @@
-{
-  "guard_id": "21fff8eac1",
-  "generation": 4085,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "629d813c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades counter to the broader 2-hour trend.\"\"\"\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    if prediction == \"long\" and rsi_2h < 30:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h > 70:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_21fff8eac1.py"
-}

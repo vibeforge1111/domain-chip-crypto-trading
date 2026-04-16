@@ -1,8 +1,0 @@
-{
-  "guard_id": "6f9aadf5b9",
-  "generation": 200,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2bad6668",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where wick structure contradicts trend momentum (exhaustion pattern).\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    trend_strength = features.get('trend_strength', 0)\n    volume_ratio = features.get('volume_ratio', 1)\n    bb_position = features.get('bb_position', 0.5)\n    \n    # Wick exhaustion: large wick against trend in BB extremities with volume confirmation\n    long_exhaustion = (prediction == 'long' and \n                       upper_wick > 0.35 and \n                       trend_strength > 0.2 and \n                       bb_position > 0.85 and \n                       volume_ratio > 1.3)\n    \n    short_exhaustion = (prediction == 'short' and \n                        lower_wick > 0.35 and \n                        trend_strength > 0.2 and \n                        bb_position < 0.15 and \n                        volume_ratio > 1.3)\n    \n    if long_exhaustion or short_exhaustion:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6f9aadf5b9.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "2ea937c5b6",
-  "generation": 1920,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "740704df",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals at Bollinger Band extremes during low volatility (potential false breakouts).\"\"\"\n    at_extreme = features[\"bb_pct_b\"] > 0.95 or features[\"bb_pct_b\"] < 0.05\n    low_volatility = features[\"volatility_regime\"] < 0.3\n    \n    if at_extreme and low_volatility:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2ea937c5b6.py"
-}

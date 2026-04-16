@@ -1,8 +1,0 @@
-{
-  "guard_id": "dcf33fc008",
-  "generation": 3295,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2d7eb773",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get(\"bb_width\", 1.0)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # True compression: low volatility on both BB width and ATR\n    is_compressed = bb_width < 0.15 and atr_ratio < 0.75\n    \n    if is_compressed:\n        # During compression, reject if positioned at extreme with divergent stochastics\n        if prediction == \"long\" and bb_pct_b < 0.25 and stoch_k < 25:\n            return \"skip\"\n        if prediction == \"short\" and bb_pct_b > 0.75 and stoch_k > 75:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dcf33fc008.py"
-}

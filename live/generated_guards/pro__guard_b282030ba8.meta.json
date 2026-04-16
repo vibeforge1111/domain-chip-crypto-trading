@@ -1,8 +1,0 @@
-{
-  "guard_id": "b282030ba8",
-  "generation": 1005,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2694904e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades on extreme RSI with concurrent Bollinger Band position extremes.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    bb_pos = features.get('bb_position', 0.5)\n    \n    if rsi > 68 and bb_pos > 0.92:\n        return \"skip\"\n    if rsi < 32 and bb_pos < 0.08:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b282030ba8.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "c8ff8bd33a",
-  "generation": 3685,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "19944a2f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering using BB extremes.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # High-confidence entry zones: BB extreme + overbought/oversold confirmation\n    if prediction == \"long\":\n        # Require BB near lower band + stochastic oversold\n        if not (bb_pct_b < 0.10 and stoch_k < 30):\n            return \"skip\"\n        # Confirm not counter-trend (2h RSI not deeply oversold in downtrend)\n        if rsi_2h < 25:\n            return \"skip\"\n    \n    elif prediction == \"short\":\n        # Require BB near upper band + stochastic overbought\n        if not (bb_pct_b > 0.90 and stoch_k > 70):\n            return \"skip\"\n        # Confirm not counter-trend (2h RSI not deeply overbought in uptrend)\n        if rsi_2h > 75:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c8ff8bd33a.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "65dd103cc7",
-  "generation": 4460,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6f309737",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    confirmations = 0\n    \n    # VWAP confirmation\n    if features.get(\"vwap_deviation\", 0) > 0:\n        confirmations += 1\n    elif features.get(\"vwap_deviation\", 0) < 0:\n        confirmations += 1\n    \n    # Stochastic confirmation (both K and D aligned)\n    if features.get(\"stoch_k\", 0) > features.get(\"stoch_d\", 0):\n        confirmations += 1\n    else:\n        confirmations += 1\n    \n    # MACD histogram confirmation\n    if features.get(\"macd_histogram\", 0) > 0:\n        confirmations += 1\n    elif features.get(\"macd_histogram\", 0) < 0:\n        confirmations += 1\n    \n    # OBV slope confirmation\n    if features.get(\"obv_slope\", 0) > 0:\n        confirmations += 1\n    elif features.get(\"obv_slope\", 0) < 0:\n        confirmations += 1\n    \n    # Require at least 2 confirmations to proceed\n    if confirmations >= 2:\n        return prediction\n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_65dd103cc7.py"
-}

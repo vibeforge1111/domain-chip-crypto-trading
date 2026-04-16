@@ -1,8 +1,0 @@
-{
-  "guard_id": "60ba19b1de",
-  "generation": 2920,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1a0de17b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during true vs false compression setups.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Detect true compression: both low volatility and narrow bands\n    true_compression = atr_ratio < 0.75 and bb_width < 0.35\n    \n    if true_compression:\n        # Skip if momentum is exhausted (extreme RSI on compression = false signal)\n        if rsi_14 < 30 or rsi_14 > 70:\n            return \"skip\"\n        # Skip if wider timeframe disagrees with direction\n        if prediction == \"long\" and rsi_2h < 40:\n            return \"skip\"\n        if prediction == \"short\" and rsi_2h > 60:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_60ba19b1de.py"
-}

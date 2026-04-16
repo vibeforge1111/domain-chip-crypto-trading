@@ -1,8 +1,0 @@
-{
-  "guard_id": "f5321ee6df",
-  "generation": 345,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "13e57da1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where wick dominance contradicts trend direction.\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    ema_slope = features.get('ema_slope', 0)\n    trend_strength = features.get('trend_strength', 0)\n    \n    # Skip if trend is weak but candle structure is extreme\n    if trend_strength < 0.3 and abs(upper_wick - lower_wick) > 0.2:\n        return \"skip\"\n    \n    # Wick dominance vs trend alignment\n    wick_dominance = upper_wick - lower_wick\n    \n    # In uptrend, lower wicks should dominate for long signals\n    if prediction == \"long\" and ema_slope > 0 and wick_dominance > 0.1:\n        return \"skip\"\n    \n    # In downtrend, upper wicks should dominate for short signals\n    if prediction == \"short\" and ema_slope < 0 and wick_dominance < -0.1:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f5321ee6df.py"
-}

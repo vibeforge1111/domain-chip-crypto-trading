@@ -1,8 +1,0 @@
-{
-  "guard_id": "9f98499255",
-  "generation": 2820,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3ea4a191",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when momentum is decelerating (macd_histogram near zero).\"\"\"\n    macd = features.get('macd_histogram', 0)\n    stoch_k = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip if momentum is flattening near zero (deceleration zone)\n    if abs(macd) < 0.0003:\n        return \"skip\"\n    \n    # Skip long if histogram fading AND overbought 2h RSI\n    if prediction == 'long' and macd > 0 and rsi_2h > 70:\n        return \"skip\"\n    \n    # Skip short if histogram fading AND oversold 2h RSI\n    if prediction == 'short' and macd < 0 and rsi_2h < 30:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9f98499255.py"
-}

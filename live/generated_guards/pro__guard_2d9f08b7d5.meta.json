@@ -1,8 +1,0 @@
-{
-  "guard_id": "2d9f08b7d5",
-  "generation": 3885,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "9c17acb4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # High-confidence zones: bb_pct_b extremes + confirming momentum\n    if prediction == \"long\" and (bb_pct_b > 0.05 or obv_slope <= 0):\n        return \"skip\"\n    if prediction == \"short\" and (bb_pct_b < 0.95 or obv_slope >= 0):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2d9f08b7d5.py"
-}

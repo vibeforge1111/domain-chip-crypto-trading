@@ -1,8 +1,0 @@
-{
-  "guard_id": "4f2fe73410",
-  "generation": 2495,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d4a021e3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression to filter bad signals.\"\"\"\n    is_compression = features.get('atr_ratio', 1) < 0.7 and features.get('bb_width', 0) < 0.3\n    \n    if is_compression:\n        # False compression signals\n        stoch_k = features.get('stoch_k', 50)\n        stoch_d = features.get('stoch_d', 50)\n        stoch_conflict = abs(stoch_k - stoch_d) > 15\n        \n        rsi_14 = features.get('rsi_14', 50)\n        rsi_2h = features.get('rsi_2h', 50)\n        tf_divergence = (rsi_14 > 60 and rsi_2h < 40) or (rsi_14 < 40 and rsi_2h > 60)\n        \n        vwap_far = abs(features.get('vwap_deviation', 0)) > 0.015\n        \n        # Skip if multiple conflicting signals during compression\n        conflicts = stoch_conflict + tf_divergence + vwap_far\n        if conflicts >= 2:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4f2fe73410.py"
-}

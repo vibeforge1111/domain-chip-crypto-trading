@@ -1,8 +1,0 @@
-{
-  "guard_id": "275574b76a",
-  "generation": 1940,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c9cef701",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades at extreme BB position during low volatility (choppy consolidation).\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    volatility_regime = features.get('volatility_regime', 0.5)\n    \n    # Reject when price is at BB extremes during low volatility (false breakout risk)\n    if (bb_pct_b < 0.1 or bb_pct_b > 0.9) and volatility_regime < 0.35:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_275574b76a.py"
-}

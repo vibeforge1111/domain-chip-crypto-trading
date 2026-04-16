@@ -1,8 +1,0 @@
-{
-  "guard_id": "5a152fe5fb",
-  "generation": 4510,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "d9b2fd04",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR ratio and BB width.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.5)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # True compression: low ATR + tight BB\n    is_compressed = atr_ratio < 0.85 and bb_width < 0.18\n    \n    # False compression: price at extreme BB position during compression\n    is_extreme = bb_pct_b < 0.25 or bb_pct_b > 0.75\n    \n    # Skip if compressed but at BB extremes (false compression)\n    if is_compressed and is_extreme:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5a152fe5fb.py"
-}

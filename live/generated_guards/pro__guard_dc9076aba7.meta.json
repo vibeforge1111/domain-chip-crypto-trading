@@ -1,8 +1,0 @@
-{
-  "guard_id": "dc9076aba7",
-  "generation": 3345,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "bf154e84",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals during false compression vs true compression.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    \n    # False compression: bands tight but volatility elevated\n    if bb_width < 0.5 and atr_ratio > 0.7:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dc9076aba7.py"
-}

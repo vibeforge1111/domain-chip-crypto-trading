@@ -1,8 +1,0 @@
-{
-  "guard_id": "5c64828a15",
-  "generation": 2885,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3f804638",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: low BB width + elevated ATR signals volatility expansion coming\n    is_compressed = features['bb_width'] < 0.12 and features['atr_ratio'] > 1.15\n    \n    if not is_compressed:\n        return \"skip\"\n    \n    # Stochastic confirms momentum direction\n    if prediction == 'long' and features['stoch_k'] > features['stoch_d']:\n        return prediction\n    if prediction == 'short' and features['stoch_k'] < features['stoch_d']:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5c64828a15.py"
-}

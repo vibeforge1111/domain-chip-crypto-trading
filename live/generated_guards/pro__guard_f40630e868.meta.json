@@ -1,8 +1,0 @@
-{
-  "guard_id": "f40630e868",
-  "generation": 1830,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "26bca9db",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when wick-to-body ratio contradicts the predicted direction.\"\"\"\n    if prediction == \"long\":\n        # Reject longs when upper wick dominates (selling pressure present)\n        if features.get(\"upper_wick_ratio\", 0) > 0.5 and features.get(\"body_ratio\", 0) < 0.3:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Reject shorts when lower wick dominates (buying pressure present)\n        if features.get(\"lower_wick_ratio\", 0) > 0.5 and features.get(\"body_ratio\", 0) < 0.3:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f40630e868.py"
-}

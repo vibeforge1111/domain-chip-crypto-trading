@@ -1,8 +1,0 @@
-{
-  "guard_id": "baaad0ba99",
-  "generation": 1755,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a2aecb4d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where RSI and momentum disagree (divergence signal).\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    # Standardize both to same polarity: positive = bullish, negative = bearish\n    rsi_direction = rsi - 50  # +50 to -50 range\n    momentum_direction = momentum\n    \n    # Skip if strong divergence (signs don't match)\n    if rsi_direction * momentum_direction < 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_baaad0ba99.py"
-}

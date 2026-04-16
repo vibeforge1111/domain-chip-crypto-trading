@@ -1,8 +1,0 @@
-{
-  "guard_id": "4d19668f8f",
-  "generation": 2765,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "eb5974e6",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression signals using ATR ratio, BB width, and momentum indicators.\"\"\"\n    # Detect low volatility compression\n    is_compressed = features.get('bb_width', 1) < 0.4 and features.get('atr_ratio', 1) < 0.7\n    \n    if is_compressed and prediction != \"skip\":\n        # False compression: stochastics extended AND price far from VWAP\n        stoch_extreme = features.get('stoch_k', 50) > 80 or features.get('stoch_k', 50) < 20\n        vwap_extended = abs(features.get('vwap_deviation', 0)) > 0.004\n        \n        if stoch_extreme and vwap_extended:\n            return \"skip\"\n        \n        # False compression: OBV diverging from MACD direction\n        obv_slope = features.get('obv_slope', 0)\n        macd = features.get('macd_histogram', 0)\n        if prediction == \"long\" and obv_slope < 0 and macd < 0:\n            return \"skip\"\n        if prediction == \"short\" and obv_slope > 0 and macd > 0:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4d19668f8f.py"
-}

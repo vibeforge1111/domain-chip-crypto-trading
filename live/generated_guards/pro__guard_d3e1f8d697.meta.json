@@ -1,8 +1,0 @@
-{
-  "guard_id": "d3e1f8d697",
-  "generation": 50,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "cc84c05a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject mean reversion signals when momentum contradicts the signal direction.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    \n    # Overbought but EMA flat/down - reject long signals\n    if prediction == \"long\" and rsi > 70 and ema_slope <= 0.001:\n        return \"skip\"\n    \n    # Oversold but EMA flat/up - reject short signals\n    if prediction == \"short\" and rsi < 30 and ema_slope >= -0.001:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d3e1f8d697.py"
-}

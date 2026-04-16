@@ -1,8 +1,0 @@
-{
-  "guard_id": "a44dab5291",
-  "generation": 4395,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "96ab12a4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect true compression: both atr and bb contracted\n    in_compression = features['atr_ratio'] < 0.75 and features['bb_width'] < 0.5\n    \n    if in_compression:\n        # False compression signals: mid-range bb + neutral stoch + weak obv\n        mid_range = 0.35 <= features['bb_pct_b'] <= 0.65\n        stoch_flat = abs(features['stoch_k'] - features['stoch_d']) < 12\n        obv_weak = features['obv_slope'] < 0.05\n        \n        if mid_range and stoch_flat and obv_weak:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a44dab5291.py"
-}

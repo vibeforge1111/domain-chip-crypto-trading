@@ -1,8 +1,0 @@
-{
-  "guard_id": "af7d8cd84b",
-  "generation": 1445,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "c040586d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject signals where momentum diverges from volume confirmation\n    if features['volume_ratio'] > 1.4 and features['momentum_score'] < 0 and prediction == \"long\":\n        return \"skip\"\n    if features['volume_ratio'] > 1.4 and features['momentum_score'] > 0 and prediction == \"short\":\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_af7d8cd84b.py"
-}

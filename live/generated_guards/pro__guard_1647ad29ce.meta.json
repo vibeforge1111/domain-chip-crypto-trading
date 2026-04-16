@@ -1,8 +1,0 @@
-{
-  "guard_id": "1647ad29ce",
-  "generation": 1010,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "2fc639dd",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on RSI-BB divergence and wick rejection patterns.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    bb_pos = features.get('bb_position', 0.5)\n    \n    # Reject when RSI extreme AND price at opposite band edge (reversal risk)\n    if rsi > 75 and bb_pos > 0.88:\n        return \"skip\"\n    if rsi < 25 and bb_pos < 0.12:\n        return \"skip\"\n    \n    # Reject wick rejections against predicted direction\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    \n    if prediction == \"long\" and upper_wick > 0.4 and upper_wick > lower_wick * 1.5:\n        return \"skip\"\n    if prediction == \"short\" and lower_wick > 0.4 and lower_wick > upper_wick * 1.5:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1647ad29ce.py"
-}

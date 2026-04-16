@@ -1,8 +1,0 @@
-{
-  "guard_id": "2eb6818c07",
-  "generation": 3035,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ae05db79",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false breakouts from compression using ATR, BB width, and oscillators.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1)\n    bb_width = features.get('bb_width', 0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # True compression: both ATR and BB width low\n    is_compression = atr_ratio < 0.6 and bb_width < 0.12\n    \n    # Warning signs for false breakout\n    stoch_divergence = abs(stoch_k - stoch_d) > 15\n    stretched_from_vwap = abs(vwap_deviation) > 0.004\n    \n    if is_compression and (stoch_divergence or stretched_from_vwap):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2eb6818c07.py"
-}

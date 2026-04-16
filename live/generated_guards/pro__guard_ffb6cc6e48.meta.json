@@ -1,8 +1,0 @@
-{
-  "guard_id": "ffb6cc6e48",
-  "generation": 2895,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e6ae2e8b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering using BB and Stochastic extremes.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Long signals: skip if overbought (BB upper + Stochastic high)\n    if prediction == \"long\" and bb_pct_b > 0.85 and stoch_k > 80:\n        return \"skip\"\n    \n    # Short signals: skip if oversold (BB lower + Stochastic low)\n    if prediction == \"short\" and bb_pct_b < 0.15 and stoch_k < 20:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ffb6cc6e48.py"
-}

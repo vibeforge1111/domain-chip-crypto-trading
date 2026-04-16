@@ -1,8 +1,0 @@
-{
-  "guard_id": "21e33abd2c",
-  "generation": 1815,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "434bbf60",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Oscillator Momentum Confirmation Filter - rejects trades without momentum alignment.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Check for oscillator divergence (momentum disagreement)\n    # Overbought divergence: RSI elevated but stochastic not confirming\n    if rsi > 70 and stoch_k < 70 and stoch_d < 70:\n        return \"skip\"\n    # Oversold divergence: RSI depressed but stochastic not confirming  \n    if rsi < 30 and stoch_k > 30 and stoch_d > 30:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_21e33abd2c.py"
-}

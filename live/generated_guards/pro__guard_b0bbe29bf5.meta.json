@@ -1,8 +1,0 @@
-{
-  "guard_id": "b0bbe29bf5",
-  "generation": 2610,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "561e3912",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using Bollinger Band extremes and RSI confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    \n    # Long entry: bb_pct_b < 0.05 (extreme lower band) AND RSI confirming oversold\n    if prediction == \"long\":\n        if bb_pct_b >= 0.05 or rsi_14 >= 35:\n            return \"skip\"\n    \n    # Short entry: bb_pct_b > 0.95 (extreme upper band) AND RSI confirming overbought\n    if prediction == \"short\":\n        if bb_pct_b <= 0.95 or rsi_14 <= 65:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b0bbe29bf5.py"
-}

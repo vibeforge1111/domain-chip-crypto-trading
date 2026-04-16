@@ -1,8 +1,0 @@
-{
-  "guard_id": "ee08d0c2f9",
-  "generation": 560,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "23d511fc",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on BB position and momentum alignment.\"\"\"\n    bb_position = features.get('bb_position', 0.5)\n    momentum_score = features.get('momentum_score', 0)\n    \n    if prediction == 'long':\n        if bb_position > 0.85 or momentum_score < 0.15:\n            return 'skip'\n    elif prediction == 'short':\n        if bb_position < 0.15 or momentum_score > -0.15:\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ee08d0c2f9.py"
-}

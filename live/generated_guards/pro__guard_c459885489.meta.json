@@ -1,8 +1,0 @@
-{
-  "guard_id": "c459885489",
-  "generation": 4180,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "289002c2",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject entries when not at BB extremes (high-confidence zones).\"\"\"\n    bb_pct = features.get('bb_pct_b', 0.5)\n    volume = features.get('volume_ratio', 1.0)\n    \n    if prediction == 'long':\n        # Long only at lower BB extreme with confirming volume\n        if bb_pct > 0.20 or volume < 0.8:\n            return 'skip'\n    elif prediction == 'short':\n        # Short only at upper BB extreme with confirming volume\n        if bb_pct < 0.80 or volume < 0.8:\n            return 'skip'\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c459885489.py"
-}

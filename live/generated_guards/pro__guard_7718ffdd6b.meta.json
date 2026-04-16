@@ -1,8 +1,0 @@
-{
-  "guard_id": "7718ffdd6b",
-  "generation": 2310,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7e8808c1",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades when MACD histogram shows momentum deceleration without volume confirmation.\"\"\"\n    macd_hist = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    if macd_hist < -0.0003 and obv_slope <= 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7718ffdd6b.py"
-}

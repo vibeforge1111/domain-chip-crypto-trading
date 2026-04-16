@@ -1,8 +1,0 @@
-{
-  "guard_id": "a4d2733a49",
-  "generation": 770,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "aef55b18",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter out low-volume breakouts (high range without volume confirmation).\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1)\n    volume_ratio = features.get(\"volume_ratio\", 1)\n    \n    # Reject if price moved significantly (above ATR) but without volume confirmation\n    if atr_ratio > 1.3 and volume_ratio < 0.8:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a4d2733a49.py"
-}

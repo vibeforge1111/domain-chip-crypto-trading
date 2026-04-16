@@ -1,8 +1,0 @@
-{
-  "guard_id": "cded243699",
-  "generation": 3770,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "185a834e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    bb = features.get(\"bb_pct_b\", 0.5)\n    vol = features.get(\"volume_ratio\", 1.0)\n    \n    # High-confidence entries at Bollinger Band extremes with volume confirmation\n    if prediction == \"long\" and (bb >= 0.10 or vol < 0.8):\n        return \"skip\"\n    if prediction == \"short\" and (bb <= 0.90 or vol < 0.8):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cded243699.py"
-}

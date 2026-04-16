@@ -1,8 +1,0 @@
-{
-  "guard_id": "bd63c8a623",
-  "generation": 2025,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "83c25ad8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    macd = features.get('macd_histogram', 0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Skip if vwap and momentum strongly disagree\n    if vwap_dev < -0.01 and momentum > 0.3:\n        return \"skip\"\n    if vwap_dev > 0.01 and momentum < -0.3:\n        return \"skip\"\n    \n    # Additional filter: momentum and MACD should align\n    if momentum > 0 and macd < -0.0001:\n        return \"skip\"\n    if momentum < 0 and macd > 0.0001:\n        return \"skip\"\n    \n    # Skip if stochastic in extreme and disagreeing with prediction\n    if prediction == \"long\" and stoch_k > 80 and stoch_d > 80:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 20 and stoch_d < 20:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bd63c8a623.py"
-}

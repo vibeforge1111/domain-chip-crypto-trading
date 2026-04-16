@@ -1,8 +1,0 @@
-{
-  "guard_id": "d33cf51096",
-  "generation": 440,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "52cae7e4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject high-volume exhaustion candles at extreme BB positions.\"\"\"\n    if features['volume_ratio'] > 1.8 and (features['bb_position'] > 0.92 or features['bb_position'] < 0.08):\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d33cf51096.py"
-}

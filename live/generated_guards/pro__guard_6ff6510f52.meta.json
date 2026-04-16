@@ -1,8 +1,0 @@
-{
-  "guard_id": "6ff6510f52",
-  "generation": 5385,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "5f2d8a49",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades too close to VWAP fair value or misaligned with wider RSI context.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip if too close to fair value (low VWAP deviation)\n    if abs(vwap_dev) < 0.003:\n        return \"skip\"\n    \n    # For longs, require bullish wider RSI context; for shorts, bearish\n    if prediction == \"long\" and rsi_2h < 45:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h > 55:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6ff6510f52.py"
-}

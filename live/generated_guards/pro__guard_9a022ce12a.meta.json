@@ -1,8 +1,0 @@
-{
-  "guard_id": "9a022ce12a",
-  "generation": 4955,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "48549613",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip if price too close to VWAP - not enough edge\n    if abs(vwap_dev) < 0.003:\n        return \"skip\"\n    \n    # Skip long if overbought on both timeframes\n    if prediction == \"long\" and stoch_k > 75 and rsi_2h > 65:\n        return \"skip\"\n    \n    # Skip short if oversold on both timeframes\n    if prediction == \"short\" and stoch_k < 25 and rsi_2h < 35:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9a022ce12a.py"
-}

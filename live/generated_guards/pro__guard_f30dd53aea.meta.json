@@ -1,8 +1,0 @@
-{
-  "guard_id": "f30dd53aea",
-  "generation": 3000,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a714f60f",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject false compressions: low bb_width but high atr_ratio (volatile squeeze).\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # True compression: low bb_width, moderate volatility\n    # False compression: compressed but ATR expanding (about to move violently)\n    if bb_width < 0.85 and atr_ratio > 1.25:\n        return \"skip\"\n    \n    # Also reject if compressed but price at extreme BB position\n    if bb_width < 0.8 and (bb_pct_b < 0.2 or bb_pct_b > 0.8):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f30dd53aea.py"
-}

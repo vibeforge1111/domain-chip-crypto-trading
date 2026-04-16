@@ -1,8 +1,0 @@
-{
-  "guard_id": "0e6c20a8de",
-  "generation": 4500,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "82b9e47b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    macd_hist = features.get(\"macd_histogram\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    if prediction == \"long\":\n        confirmations = 0\n        if bb_pct_b < 0.35: confirmations += 1  # Near lower band\n        if vwap_dev > 0: confirmations += 1  # Above VWAP\n        if stoch_k < 70 and stoch_d < 70: confirmations += 1  # Not overbought\n        if obv_slope > 0: confirmations += 1  # Bullish volume\n        if macd_hist > 0: confirmations += 1  # Positive MACD\n        if confirmations < 2: return \"skip\"\n    \n    elif prediction == \"short\":\n        confirmations = 0\n        if bb_pct_b > 0.65: confirmations += 1  # Near upper band\n        if vwap_dev < 0: confirmations += 1  # Below VWAP\n        if stoch_k > 30 and stoch_d > 30: confirmations += 1  # Not oversold\n        if obv_slope < 0: confirmations += 1  # Bearish volume\n        if macd_hist < 0: confirmations += 1  # Negative MACD\n        if confirmations < 2: return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0e6c20a8de.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "de1b7ef18a",
-  "generation": 4150,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "eec40107",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades too close to fair value (VWAP).\"\"\"\n    vwap_deviation = features.get('vwap_deviation', 0)\n    if abs(vwap_deviation) < 0.0025:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_de1b7ef18a.py"
-}

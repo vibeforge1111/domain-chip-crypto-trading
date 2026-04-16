@@ -1,8 +1,0 @@
-{
-  "guard_id": "7e860cb9a6",
-  "generation": 4910,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "97770821",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals using ATR vs BB compression and momentum divergence.\"\"\"\n    # False compression: tight bands but high volatility (potential false breakout)\n    if features['bb_width'] < 0.15 and features['atr_ratio'] > 1.5:\n        return \"skip\"\n    \n    # Extreme BB position without momentum confirmation\n    if (features['bb_pct_b'] > 0.92 or features['bb_pct_b'] < 0.08):\n        if features['macd_histogram'] * (1 if prediction == \"long\" else -1) < 0:\n            return \"skip\"\n    \n    # Stochastic overbought/oversold with diverging OBV slope\n    if features['stoch_k'] > 85 and features['obv_slope'] < 0:\n        return \"skip\"\n    if features['stoch_k'] < 15 and features['obv_slope'] > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7e860cb9a6.py"
-}

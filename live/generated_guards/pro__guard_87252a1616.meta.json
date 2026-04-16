@@ -1,8 +1,0 @@
-{
-  "guard_id": "87252a1616",
-  "generation": 2025,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1e2e7c5a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades that contradict the broader 2-hour trend.\"\"\"\n    rsi_2h = features.get('rsi_2h', 50)\n    momentum = features.get('momentum_score', 0)\n    \n    # Long trades rejected if broader timeframe shows weakness\n    if prediction == \"long\" and rsi_2h < 45 and momentum < 0:\n        return \"skip\"\n    \n    # Short trades rejected if broader timeframe shows strength\n    if prediction == \"short\" and rsi_2h > 55 and momentum > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_87252a1616.py"
-}

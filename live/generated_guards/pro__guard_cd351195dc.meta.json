@@ -1,8 +1,0 @@
-{
-  "guard_id": "cd351195dc",
-  "generation": 2945,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e6595973",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades in false compression setups.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = features.get(\"vwap_deviation\", 0.0)\n    \n    # True compression: low atr + low bb_width\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.3\n    \n    # False compression: compressed but price at extreme or far from VWAP\n    if is_compressed:\n        extreme_position = bb_pct_b > 0.85 or bb_pct_b < 0.15\n        far_from_vwap = abs(vwap_dev) > 0.015\n        if extreme_position or far_from_vwap:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cd351195dc.py"
-}

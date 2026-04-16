@@ -1,8 +1,0 @@
-{
-  "guard_id": "84744e3be3",
-  "generation": 55,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "9d7eda52",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals based on candle structure quality and momentum alignment.\"\"\"\n    # High wick dominance suggests rejection/uncertainty zones\n    wick_dominance = features['upper_wick_ratio'] + features['lower_wick_ratio']\n    if wick_dominance > 0.65:\n        return \"skip\"\n    \n    # Weak momentum + weak trend = low conviction trade\n    if features['momentum_score'] < 0.35 and features['trend_strength'] < 0.45:\n        return \"skip\"\n    \n    # RSI extremes with weak trend alignment is dangerous\n    if (features['rsi_14'] > 70 or features['rsi_14'] < 30) and abs(features['ema_slope']) < 0.001:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_84744e3be3.py"
-}

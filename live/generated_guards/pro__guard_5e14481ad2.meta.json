@@ -1,8 +1,0 @@
-{
-  "guard_id": "5e14481ad2",
-  "generation": 3930,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "79eefb54",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades during false compression setups.\"\"\"\n    # True compression requires BOTH low ATR and low BB width\n    atr_compressed = features.get('atr_ratio', 1.0) < 0.7\n    bb_compressed = features.get('bb_width', 1.0) < 0.5\n    \n    # False compression: mixed signals from volatility indicators\n    if atr_compressed != bb_compressed:\n        return \"skip\"\n    \n    # Price sitting at VWAP during compression = indecision/false squeeze\n    vwap_dev = abs(features.get('vwap_deviation', 0))\n    if vwap_dev < 0.002:\n        return \"skip\"\n    \n    # Reject compression trades when 2h RSI shows exhaustion (compression likely false)\n    rsi_2h = features.get('rsi_2h', 50)\n    if rsi_2h < 30 or rsi_2h > 70:\n        return \"skip\"\n    \n    # Stochastic extremes during compression suggest false signal\n    stoch_k = features.get('stoch_k', 50)\n    if stoch_k > 85 or stoch_k < 15:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5e14481ad2.py"
-}

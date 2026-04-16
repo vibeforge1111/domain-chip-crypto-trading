@@ -1,8 +1,0 @@
-{
-  "guard_id": "3b50326234",
-  "generation": 4125,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "065b8a45",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    obv_slope = features.get(\"obv_slope\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Skip longs when OBV slope is negative (selling pressure) or 2h RSI overbought\n    if prediction == \"long\" and (obv_slope < -0.005 or rsi_2h > 68):\n        return \"skip\"\n    \n    # Skip shorts when OBV slope is positive (buying pressure) or 2h RSI oversold\n    if prediction == \"short\" and (obv_slope > 0.005 or rsi_2h < 32):\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3b50326234.py"
-}

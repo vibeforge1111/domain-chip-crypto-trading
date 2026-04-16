@@ -1,8 +1,0 @@
-{
-  "guard_id": "6bfc9853bc",
-  "generation": 1175,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "63bf1b12",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter: reject when RSI is extreme and momentum contradicts prediction\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0)\n    if rsi > 68 and momentum < -0.15 and prediction == \"long\":\n        return \"skip\"\n    if rsi < 32 and momentum > 0.15 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter: reject when price is at extreme BB position during high volatility\n    bb_pos = features.get('bb_position', 0.5)\n    vol_regime = features.get('volatility_regime', 0.5)\n    if (bb_pos > 0.92 or bb_pos < 0.08) and vol_regime > 0.75:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6bfc9853bc.py"
-}

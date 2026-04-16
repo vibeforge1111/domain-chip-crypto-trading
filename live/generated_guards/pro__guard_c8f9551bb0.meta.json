@@ -1,8 +1,0 @@
-{
-  "guard_id": "c8f9551bb0",
-  "generation": 4325,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ccb19272",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using rsi_2h to align with broader trend.\"\"\"\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    stoch_k = features.get(\"stoch_k\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Align with broader trend\n    if prediction == \"long\":\n        # Reject if broader timeframe is bearish\n        if rsi_2h < 45:\n            return \"skip\"\n        # Reject if overbought on both timeframes\n        if stoch_k > 85 and rsi_2h > 60:\n            return \"skip\"\n        # Reject if price far above VWAP (potential reversal)\n        if vwap_dev > 0.02:\n            return \"skip\"\n    \n    elif prediction == \"short\":\n        # Reject if broader timeframe is bullish\n        if rsi_2h > 55:\n            return \"skip\"\n        # Reject if oversold on both timeframes\n        if stoch_k < 15 and rsi_2h < 40:\n            return \"skip\"\n        # Reject if price far below VWAP (potential bounce)\n        if vwap_dev < -0.02:\n            return \"skip\"\n    \n    # Reject extreme BB positions regardless of direction\n    if bb_pct_b > 0.95 or bb_pct_b < 0.05:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c8f9551bb0.py"
-}

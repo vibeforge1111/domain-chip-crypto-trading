@@ -1,8 +1,0 @@
-{
-  "guard_id": "549b5ff148",
-  "generation": 400,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "3af1979b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades during Bollinger Band squeeze with extreme position (false breakout risk).\"\"\"\n    bb_width = features.get(\"bb_width\", 0.5)\n    bb_position = features.get(\"bb_position\", 0.5)\n    \n    # Squeeze conditions: low bandwidth + extreme position = likely false breakout\n    squeeze = bb_width < 0.3\n    extreme = bb_position > 0.85 or bb_position < 0.15\n    \n    if squeeze and extreme:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_549b5ff148.py"
-}

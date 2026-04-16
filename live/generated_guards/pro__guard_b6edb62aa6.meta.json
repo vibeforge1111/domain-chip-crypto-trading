@@ -1,8 +1,0 @@
-{
-  "guard_id": "b6edb62aa6",
-  "generation": 610,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "7f1b2c78",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter weak signals: small body with high volume and volatility often indicates rejection/whipsaw\n    if (features['body_ratio'] < 0.25 and \n        features['volume_ratio'] > 1.4 and \n        features['volatility_regime'] > 0.65):\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b6edb62aa6.py"
-}

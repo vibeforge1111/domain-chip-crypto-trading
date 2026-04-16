@@ -1,8 +1,0 @@
-{
-  "guard_id": "08df1ec498",
-  "generation": 3785,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "eb42ee5c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using BB width and ATR expansion.\"\"\"\n    if features['bb_width'] < 0.12:\n        if features['atr_ratio'] > 1.4 and features['volume_ratio'] < 0.8:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_08df1ec498.py"
-}

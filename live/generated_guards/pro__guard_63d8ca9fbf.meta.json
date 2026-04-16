@@ -1,8 +1,0 @@
-{
-  "guard_id": "63d8ca9fbf",
-  "generation": 70,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "dfde11b3",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where momentum indicators conflict with trend direction.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    momentum_score = features.get(\"momentum_score\", 0)\n    \n    # Reject longs when RSI below 45 in downtrend with negative momentum\n    if prediction == \"long\" and rsi < 45 and ema_slope < 0 and momentum_score < 0:\n        return \"skip\"\n    \n    # Reject shorts when RSI above 55 in uptrend with positive momentum  \n    if prediction == \"short\" and rsi > 55 and ema_slope > 0 and momentum_score > 0:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_63d8ca9fbf.py"
-}

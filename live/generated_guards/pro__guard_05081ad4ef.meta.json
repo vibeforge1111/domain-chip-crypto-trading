@@ -1,8 +1,0 @@
-{
-  "guard_id": "05081ad4ef",
-  "generation": 3810,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "eddf1445",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    macd_hist = features.get('macd_histogram', 0.0)\n    rsi_2h = features.get('rsi_2h', 50.0)\n    stoch_k = features.get('stoch_k', 50.0)\n    \n    # True compression: both BB width and ATR compressed\n    is_compression = (bb_width < 0.7) and (atr_ratio < 0.8)\n    \n    if not is_compression:\n        return prediction\n    \n    # False compression signals lack directional setup\n    # Valid compression needs: not centered in BB, aligned momentum\n    bb_center_dist = abs(bb_pct_b - 0.5)\n    has_direction = bb_center_dist > 0.12\n    \n    # Momentum must align with prediction direction\n    momentum_ok = (prediction == \"long\" and macd_hist > 0) or \\\n                  (prediction == \"short\" and macd_hist < 0)\n    \n    # Broader context RSI shouldn't be extreme\n    context_ok = 35 < rsi_2h < 65\n    \n    # Stochastic confirms not overextended\n    stoch_ok = 20 < stoch_k < 80\n    \n    if is_compression and has_direction and momentum_ok and context_ok and stoch_ok:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_05081ad4ef.py"
-}

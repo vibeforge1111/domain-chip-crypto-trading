@@ -1,8 +1,0 @@
-{
-  "guard_id": "0e0a8fef31",
-  "generation": 2875,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1113551b",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during false compression setups.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Detect compression: low ATR + narrow BB\n    is_compression = atr_ratio < 0.75 and bb_width < 0.6\n    \n    # False compression at extreme BB with extreme stoch = skip\n    if is_compression and bb_pct_b < 0.15 and stoch_k < 20:\n        return \"skip\"\n    if is_compression and bb_pct_b > 0.85 and stoch_k > 80:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0e0a8fef31.py"
-}

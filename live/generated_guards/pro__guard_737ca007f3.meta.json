@@ -1,8 +1,0 @@
-{
-  "guard_id": "737ca007f3",
-  "generation": 3315,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6c74a28a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip longs when 2h RSI is overbought, skip shorts when 2h RSI is oversold.\"\"\"\n    rsi_2h = features.get('rsi_2h', 50)\n    if prediction == \"long\" and rsi_2h > 75:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h < 25:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_737ca007f3.py"
-}

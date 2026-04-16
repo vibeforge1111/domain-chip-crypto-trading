@@ -1,8 +1,0 @@
-{
-  "guard_id": "8424ef46e6",
-  "generation": 4490,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "902da001",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # High-confidence entries only at BB extremes with multi-confirmation\n    if prediction == \"long\" and bb_pct_b < 0.05 and stoch_k < 25 and rsi_2h < 40 and vwap_dev < 0:\n        return prediction\n    if prediction == \"short\" and bb_pct_b > 0.95 and stoch_k > 75 and rsi_2h > 60 and vwap_dev > 0:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8424ef46e6.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "b02f0d2684",
-  "generation": 4020,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "86321d5a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compressions using BB width, ATR ratio, and position.\"\"\"\n    bb_width = features.get(\"bb_width\", 1.0)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    macd_histogram = features.get(\"macd_histogram\", 0.0)\n    \n    # True compression: tight bands + rising ATR (volatility building)\n    if bb_width < 0.15 and atr_ratio < 0.8:\n        return \"skip\"\n    \n    # Reversal trap: extreme BB position with stoch divergence\n    bb_extreme = bb_pct_b > 0.85 or bb_pct_b < 0.15\n    stoch_extreme = stoch_k > 80 or stoch_k < 20\n    weak_momentum = macd_histogram * (1 if bb_pct_b > 0.5 else -1) < 0\n    \n    if bb_extreme and stoch_extreme and weak_momentum:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b02f0d2684.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "db0f4cc8bc",
-  "generation": 1220,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "6b89cddf",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter: Extreme RSI + high volatility = potential reversal, skip\n    if (features['rsi_14'] < 30 or features['rsi_14'] > 70) and features['atr_ratio'] > 1.3:\n        return \"skip\"\n    \n    # Filter: Dominant wicks signal indecision/weak momentum\n    if features['upper_wick_ratio'] + features['lower_wick_ratio'] > features['body_ratio'] * 2:\n        return \"skip\"\n    \n    # Filter: Extreme BB position with weak momentum signals exhaustion\n    if (features['bb_position'] > 0.9 or features['bb_position'] < 0.1) and features['momentum_score'] < 0.3:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_db0f4cc8bc.py"
-}

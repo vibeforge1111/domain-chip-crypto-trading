@@ -1,8 +1,0 @@
-{
-  "guard_id": "36c0ae0e7a",
-  "generation": 2940,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "689866de",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    rsi = features.get('rsi_14', 50)\n    stoch_k = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Filter: VWAP deviation disagrees with momentum direction\n    if vwap_dev > 0.015 and momentum < -0.2 and prediction == \"long\":\n        return \"skip\"\n    if vwap_dev < -0.015 and momentum > 0.2 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter: Momentum contradicts prediction\n    if momentum < -0.3 and prediction == \"long\":\n        return \"skip\"\n    if momentum > 0.3 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter: RSI extreme zone opposing prediction\n    if rsi > 75 and prediction == \"long\":\n        return \"skip\"\n    if rsi < 25 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter: Stochastic extreme opposing prediction\n    if stoch_k > 85 and prediction == \"long\":\n        return \"skip\"\n    if stoch_k < 15 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter: Short-term RSI contradicts longer-term trend\n    if rsi > 65 and rsi_2h < 40 and prediction == \"long\":\n        return \"skip\"\n    if rsi < 35 and rsi_2h > 60 and prediction == \"short\":\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_36c0ae0e7a.py"
-}

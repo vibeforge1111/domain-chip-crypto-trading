@@ -1,8 +1,0 @@
-{
-  "guard_id": "89087e1d3e",
-  "generation": 945,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "9bc250b4",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals with bullish wick rejection in downtrend - potential fakeouts.\"\"\"\n    # Bullish rejection (large lower wick) in a downtrend (negative EMA) on high volume\n    # often indicates a fakeout that traps buyers\n    wick_imbalance = features.get('lower_wick_ratio', 0) - features.get('upper_wick_ratio', 0)\n    volume_spike = features.get('volume_ratio', 1) > 1.2\n    \n    if wick_imbalance > 0.3 and volume_spike and features.get('ema_slope', 0) < 0:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_89087e1d3e.py"
-}

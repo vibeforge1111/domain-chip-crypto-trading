@@ -1,8 +1,0 @@
-{
-  "guard_id": "5825b66dc6",
-  "generation": 350,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "93b618a0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject weak signals during volatility expansion with small bodies.\"\"\"\n    small_body = features.get('body_ratio', 1) < 0.25\n    low_volume = features.get('volume_ratio', 1) < 0.85\n    high_atr = features.get('atr_ratio', 1) > 1.15\n    \n    if small_body and low_volume and high_atr:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5825b66dc6.py"
-}

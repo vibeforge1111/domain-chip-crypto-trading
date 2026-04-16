@@ -1,8 +1,0 @@
-{
-  "guard_id": "559cc1080b",
-  "generation": 415,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "ea6e0c17",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if ATR expands significantly but BB width contracts (volatility squeeze = likely false break)\n    if features.get('atr_ratio', 0) > 1.5 and features.get('bb_width', 0) < 0.25:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_559cc1080b.py"
-}

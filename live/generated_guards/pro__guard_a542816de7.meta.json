@@ -1,8 +1,0 @@
-{
-  "guard_id": "a542816de7",
-  "generation": 2930,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "9c602513",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bull_count = 0\n    bear_count = 0\n    \n    # Bullish confirmations\n    if 0.2 < features.get('bb_pct_b', 0.5) < 0.8:\n        bull_count += 1\n    if features.get('vwap_deviation', 0) > 0:\n        bull_count += 1\n    if features.get('stoch_k', 50) > features.get('stoch_d', 50):\n        bull_count += 1\n    if features.get('obv_slope', 0) > 0:\n        bull_count += 1\n    if features.get('macd_histogram', 0) > 0:\n        bull_count += 1\n    if features.get('rsi_2h', 50) > 55:\n        bull_count += 1\n    \n    # Bearish confirmations\n    if 0.2 < features.get('bb_pct_b', 0.5) < 0.8:\n        bear_count += 1\n    if features.get('vwap_deviation', 0) < 0:\n        bear_count += 1\n    if features.get('stoch_k', 50) < features.get('stoch_d', 50):\n        bear_count += 1\n    if features.get('obv_slope', 0) < 0:\n        bear_count += 1\n    if features.get('macd_histogram', 0) < 0:\n        bear_count += 1\n    if features.get('rsi_2h', 50) < 45:\n        bear_count += 1\n    \n    if prediction == \"long\" and bull_count >= 2:\n        return prediction\n    if prediction == \"short\" and bear_count >= 2:\n        return prediction\n    \n    return \"skip\"",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a542816de7.py"
-}

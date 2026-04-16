@@ -1,8 +1,0 @@
-{
-  "guard_id": "d2705f2851",
-  "generation": 2920,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1ee265cf",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard - requires 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    confirmations = 0\n    \n    # RSI confirmation\n    if prediction == \"long\" and features.get(\"rsi_14\", 50) < 35:\n        confirmations += 1\n    if prediction == \"short\" and features.get(\"rsi_14\", 50) > 65:\n        confirmations += 1\n    \n    # VWAP confirmation\n    if prediction == \"long\" and features.get(\"vwap_deviation\", 0) > 0.002:\n        confirmations += 1\n    if prediction == \"short\" and features.get(\"vwap_deviation\", 0) < -0.002:\n        confirmations += 1\n    \n    # Stochastic confirmation\n    if prediction == \"long\" and features.get(\"stoch_k\", 50) < 25:\n        confirmations += 1\n    if prediction == \"short\" and features.get(\"stoch_k\", 50) > 75:\n        confirmations += 1\n    \n    # OBV slope confirmation\n    if prediction == \"long\" and features.get(\"obv_slope\", 0) > 0:\n        confirmations += 1\n    if prediction == \"short\" and features.get(\"obv_slope\", 0) < 0:\n        confirmations += 1\n    \n    # MACD histogram confirmation\n    if prediction == \"long\" and features.get(\"macd_histogram\", 0) > 0:\n        confirmations += 1\n    if prediction == \"short\" and features.get(\"macd_histogram\", 0) < 0:\n        confirmations += 1\n    \n    if confirmations < 2:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d2705f2851.py"
-}

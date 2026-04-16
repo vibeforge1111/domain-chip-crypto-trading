@@ -1,8 +1,0 @@
-{
-  "guard_id": "e8a5892ff2",
-  "generation": 5300,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e4575e35",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"VWAP proximity guard - skip when price too close to fair value with momentum conflicts.\"\"\"\n    vwap_dev = abs(features.get('vwap_deviation', 0))\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Skip if too close to VWAP AND stochastic shows weak momentum\n    if vwap_dev < 0.003 and stoch_k < 40:\n        return \"skip\"\n    \n    # Skip if near VWAP with bearish stochastic divergence\n    if vwap_dev < 0.005 and stoch_k < stoch_d:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e8a5892ff2.py"
-}

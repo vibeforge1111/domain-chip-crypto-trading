@@ -1,8 +1,0 @@
-{
-  "guard_id": "2e79a561d9",
-  "generation": 2400,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "4050311c",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression detection: low atr + narrow BBs\n    is_compression = features['atr_ratio'] < 0.7 and features['bb_width'] < 0.015\n    \n    if is_compression:\n        # False compression at BB extremes - likely reversal, not breakout\n        bb_extreme = features['bb_pct_b'] < 0.15 or features['bb_pct_b'] > 0.85\n        rsi_extreme = features['rsi_2h'] < 30 or features['rsi_2h'] > 70\n        if bb_extreme or rsi_extreme:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2e79a561d9.py"
-}

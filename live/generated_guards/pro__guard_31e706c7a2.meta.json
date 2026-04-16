@@ -1,8 +1,0 @@
-{
-  "guard_id": "31e706c7a2",
-  "generation": 1120,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "77bdd3b0",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject when RSI and momentum_score show strong divergence.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0)\n    rsi_norm = (rsi - 50) / 50  # Convert to -1 to 1 scale\n    \n    # Reject if RSI and momentum disagree beyond threshold\n    if abs(rsi_norm - momentum) > 0.35:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_31e706c7a2.py"
-}

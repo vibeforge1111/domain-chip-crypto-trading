@@ -1,8 +1,0 @@
-{
-  "guard_id": "157b2fd4e7",
-  "generation": 30,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "41605631",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where high volume meets large wick - potential exhaustion move.\"\"\"\n    volume = features.get(\"volume_ratio\", 1.0)\n    upper_wick = features.get(\"upper_wick_ratio\", 0.0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0.0)\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    \n    # Skip if high volume + dominant wick (exhaustion signal)\n    if volume > 1.4 and body_ratio < 0.4:\n        return \"skip\"\n    \n    # Additional filter: large opposing wick during momentum\n    if prediction == \"long\" and upper_wick > 0.5 and volume > 1.2:\n        return \"skip\"\n    if prediction == \"short\" and lower_wick > 0.5 and volume > 1.2:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_157b2fd4e7.py"
-}

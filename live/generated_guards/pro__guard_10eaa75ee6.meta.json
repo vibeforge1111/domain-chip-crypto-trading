@@ -1,8 +1,0 @@
-{
-  "guard_id": "10eaa75ee6",
-  "generation": 4300,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e294bafe",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR ratio, BB width, and momentum.\"\"\"\n    # True compression requires BOTH low ATR ratio AND low BB width\n    is_compressed = features.get('atr_ratio', 1) < 0.7 and features.get('bb_width', 0) < 0.7\n    if not is_compressed:\n        return \"skip\"\n    \n    # Volume confirmation needed for true compression\n    if features.get('volume_ratio', 0) < 0.8:\n        return \"skip\"\n    \n    # Check momentum alignment with direction\n    if prediction == \"long\":\n        # Need bullish MACD, reasonable stoch (not overbought), VWAP not bearish\n        if features.get('macd_histogram', 0) <= 0:\n            return \"skip\"\n        if features.get('stoch_k', 0) >= 80:\n            return \"skip\"\n        if features.get('vwap_deviation', 0) < -0.015:\n            return \"skip\"\n        if features.get('obv_slope', 0) <= 0:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Need bearish MACD, reasonable stoch (not oversold), VWAP not bullish\n        if features.get('macd_histogram', 0) >= 0:\n            return \"skip\"\n        if features.get('stoch_k', 0) <= 20:\n            return \"skip\"\n        if features.get('vwap_deviation', 0) > 0.015:\n            return \"skip\"\n        if features.get('obv_slope', 0) >= 0:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_10eaa75ee6.py"
-}

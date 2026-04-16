@@ -1,8 +1,0 @@
-{
-  "guard_id": "c04ba35710",
-  "generation": 880,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "f1e486e8",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if volume spike without volatility confirmation (liquidity anomaly)\n    if features['volume_ratio'] > 1.5 and features['atr_ratio'] < 0.9:\n        return \"skip\"\n    # Skip if very small body in high volatility (potential reversal candle)\n    if features['body_ratio'] < 0.2 and features['atr_ratio'] > 1.4:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c04ba35710.py"
-}

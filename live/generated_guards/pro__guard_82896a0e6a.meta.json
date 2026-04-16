@@ -1,8 +1,0 @@
-{
-  "guard_id": "82896a0e6a",
-  "generation": 1775,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "a416ffcd",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter: Skip momentum trades without volume confirmation at extremes.\"\"\"\n    # In overbought/oversold zones, require volume for momentum signals\n    if prediction == \"long\" and features['rsi_14'] > 65:\n        if features['volume_ratio'] < 1.3:\n            return \"skip\"\n    if prediction == \"short\" and features['rsi_14'] < 35:\n        if features['volume_ratio'] < 1.3:\n            return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_82896a0e6a.py"
-}

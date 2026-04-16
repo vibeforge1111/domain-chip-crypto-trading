@@ -1,8 +1,0 @@
-{
-  "guard_id": "ffde20ab65",
-  "generation": 4535,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1fa0255e",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Reject trades when not at BB extremes (<0.05 or >0.95)\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ffde20ab65.py"
-}

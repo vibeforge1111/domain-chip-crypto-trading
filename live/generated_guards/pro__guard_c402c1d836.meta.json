@@ -1,8 +1,0 @@
-{
-  "guard_id": "c402c1d836",
-  "generation": 2360,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "1c49ba5a",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    # False compression: tight BB + low ATR without momentum confirmation\n    if features['bb_width'] < 0.02 and features['atr_ratio'] < 0.8:\n        # Momentum divergence check via OBV\n        if features['obv_slope'] < 0 and prediction == 'long':\n            return 'skip'\n        if features['obv_slope'] > 0 and prediction == 'short':\n            return 'skip'\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c402c1d836.py"
-}

@@ -1,8 +1,0 @@
-{
-  "guard_id": "5669117da5",
-  "generation": 1425,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "354a2c6d",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during volatility squeeze with weakening trend - breakout direction is uncertain.\"\"\"\n    if features.get(\"bb_width\", 1) < 0.015 and features.get(\"trend_strength\", 1) < 0.3:\n        return \"skip\"\n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5669117da5.py"
-}

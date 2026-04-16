@@ -1,8 +1,0 @@
-{
-  "guard_id": "5026a6ab4a",
-  "generation": 4215,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "8e39b341",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using atr_ratio, bb_width, stoch, and bb_pct_b.\"\"\"\n    in_compression = features.get('atr_ratio', 1) < 0.7 and features.get('bb_width', 0.5) < 0.25\n    \n    if in_compression and prediction != \"skip\":\n        # False breakout: stoch at extreme during compression\n        if features.get('stoch_k', 50) > 80 or features.get('stoch_k', 50) < 20:\n            return \"skip\"\n        \n        # False signal: bb_pct_b at band extremes\n        bb_pos = features.get('bb_pct_b', 0.5)\n        if bb_pos < 0.08 or bb_pos > 0.92:\n            return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5026a6ab4a.py"
-}

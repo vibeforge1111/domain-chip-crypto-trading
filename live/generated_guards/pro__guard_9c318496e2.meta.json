@@ -1,8 +1,0 @@
-{
-  "guard_id": "9c318496e2",
-  "generation": 5180,
-  "model": "MiniMax-M2.7",
-  "prompt_hash": "e863d561",
-  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    mom_score = features.get('momentum_score', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Skip if vwap and momentum strongly disagree\n    if vwap_dev > 0.008 and mom_score < 0.35 and stoch_k < 40:\n        return \"skip\"\n    if vwap_dev < -0.008 and mom_score > 0.65 and stoch_k > 60:\n        return \"skip\"\n    \n    return prediction",
-  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9c318496e2.py"
-}
