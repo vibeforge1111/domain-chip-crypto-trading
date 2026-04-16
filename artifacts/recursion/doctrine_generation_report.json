@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-16T18:21:53.429172Z",
+  "generated_at": "2026-04-16T18:32:38.380187Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-db8cd744-sparse_signal"
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-7e26d6c0-sparse_signal"
   ],
   "packets_generated": 1,
-  "probes_analyzed": 49,
-  "skipped_duplicate_count": 25,
+  "probes_analyzed": 48,
+  "skipped_duplicate_count": 24,
   "skipped_no_template_count": 23
 }
