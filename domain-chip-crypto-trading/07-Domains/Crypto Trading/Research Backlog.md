@@ -6,8 +6,8 @@ This page tracks source and trader expansion before those ideas become doctrine 
 - trader_candidate_count: `0`
 - ready_for_source_ingest_count: `0`
 - approved_waiting_packet_count: `0`
-- packet_count: `238`
-- card_count: `238`
+- packet_count: `239`
+- card_count: `239`
 - next_to_research_count: `0`
 - regime_intelligence_count: `0`
 
