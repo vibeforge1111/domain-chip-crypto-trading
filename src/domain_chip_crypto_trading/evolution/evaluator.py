@@ -112,9 +112,29 @@ def _load_guard_for_agent(mutations: dict[str, Any]) -> Callable | None:
 
 
 def _extract_fitness(result: dict[str, Any]) -> dict[str, Any]:
-    """Extract standardized fitness dict from raw backtest result."""
+    """Extract standardized fitness dict from raw backtest result.
+
+    The CLI evaluate() does not return win_rate at the top level.
+    It lives inside each walk_forward_stats segment. We compute
+    a trade-weighted average across all segments.
+    """
+    wf_stats = result.get("walk_forward_stats", [])
+
+    # Compute win_rate from walk-forward segments (trade-weighted average)
+    win_rate = result.get("win_rate", 0)
+    if not win_rate and wf_stats:
+        total_trades = 0
+        weighted_wr = 0.0
+        for seg in wf_stats:
+            tc = seg.get("trade_count", 0)
+            wr = seg.get("win_rate", 0)
+            weighted_wr += wr * tc
+            total_trades += tc
+        if total_trades > 0:
+            win_rate = weighted_wr / total_trades
+
     fitness = {
-        "win_rate": result.get("win_rate", 0),
+        "win_rate": win_rate,
         "wealth_factor": result.get("walk_forward_consistency", 0),
         "max_drawdown": result.get("max_drawdown", 1.0),
         "sharpe_ratio": result.get("sharpe_ratio", 0),
@@ -124,7 +144,7 @@ def _extract_fitness(result: dict[str, Any]) -> dict[str, Any]:
         "stress_resilience": result.get("stress_resilience", 0),
         "paper_trade_readiness": result.get("paper_trade_readiness", 0),
         "verdict": result.get("verdict", "unknown"),
-        "walk_forward_stats": result.get("walk_forward_stats", []),
+        "walk_forward_stats": wf_stats,
     }
 
     if "regime_stats" in result:
