@@ -30,8 +30,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `4`
-- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d-holdout_decay, auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b-segment_instability`
-- pending_child_labels: `late_sample_guard=on, paper_gate=balanced | activation_profile=wider, paper_gate=balanced | paper_gate=balanced, session_profile=squeeze_release_window`
+- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal, auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b-segment_instability`
+- pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced | paper_gate=balanced, session_profile=squeeze_release_window`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
 - contradiction_modes: `n/a`
@@ -69,7 +69,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - suggested_child_target_count: `5`
 - suggested_child_targets: `late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter | no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window | execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=strict | activation_profile=adaptive, paper_gate=strict`
 - contradiction_modes: `drawdown_excess, execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870`
+- top_candidate_id: `auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-e9e6feb0b4`
 - top_profitability_score: `0.18`
 - top_recommended_next_step: `run_contradiction_probe`
 
@@ -86,7 +86,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - suggested_child_target_count: `4`
 - suggested_child_targets: `activation_profile=wider, late_sample_guard=on, paper_gate=balanced, session_profile=late_cycle_filter | activation_profile=wider, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window | activation_profile=wider, execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=balanced | activation_profile=adaptive, paper_gate=balanced`
 - contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b`
+- top_candidate_id: `auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-0dd77b3f94`
 - top_profitability_score: `0.0`
 - top_recommended_next_step: `run_contradiction_probe`
 

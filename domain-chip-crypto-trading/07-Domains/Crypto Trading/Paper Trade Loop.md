@@ -2,7 +2,7 @@
 
 This loop owns outer validation on bridge-approved candidates only.
 
-- material_change: `True`
+- material_change: `False`
 - queue_count: `23`
 - executed_candidate_count: `23`
 - pending_data_count: `0`
