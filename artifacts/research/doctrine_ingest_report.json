@@ -1,13 +1,14 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squ-6c1dff25-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-616c2167-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse-32df6b4e-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squ-465397f0-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-pr-c8e02fa6-sparse_signal.json"
   ],
-  "added_count": 2,
-  "eligible_packet_count": 2,
-  "existing_card_count": 401,
+  "added_count": 3,
+  "eligible_packet_count": 3,
+  "existing_card_count": 403,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 403,
+  "packet_count": 406,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
