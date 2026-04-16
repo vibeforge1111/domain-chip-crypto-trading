@@ -1,13 +1,11 @@
 {
-  "card_count": 286,
+  "card_count": 289,
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
-  "packet_count": 286,
+  "packet_count": 289,
   "repair_mode": true,
-  "repaired_cards": [
-    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9da81d6b-segment_instability.json"
-  ],
-  "repaired_count": 1,
+  "repaired_cards": [],
+  "repaired_count": 0,
   "required_source_count_per_mutation": 2,
   "state_consistent": true
 }
