@@ -1,0 +1,8 @@
+{
+  "guard_id": "8e071719f8",
+  "generation": 120,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b189b6ef",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on momentum-divergence and consolidation patterns.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    bb_pos = features.get(\"bb_position\", 0.5)\n    bb_width = features.get(\"bb_width\", 0.02)\n    ema_slope = features.get(\"ema_slope\", 0)\n    trend_strength = features.get(\"trend_strength\", 0.5)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    # Skip if RSI extreme and BB at opposite extreme (reversal trap)\n    if (rsi > 70 or rsi < 30) and ((bb_pos > 0.9 and rsi > 60) or (bb_pos < 0.1 and rsi < 40)):\n        return \"skip\"\n    \n    # Skip if consolidating in high volatility without trend\n    if bb_width > 1.5 and abs(ema_slope) < 0.001 and trend_strength < 0.3:\n        return \"skip\"\n    \n    # Skip if momentum diverges from trend direction\n    if prediction == \"long\" and momentum < -0.3 and ema_slope > 0:\n        return \"skip\"\n    if prediction == \"short\" and momentum > 0.3 and ema_slope < 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8e071719f8.py"
+}

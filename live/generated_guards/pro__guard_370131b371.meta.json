@@ -1,0 +1,8 @@
+{
+  "guard_id": "370131b371",
+  "generation": 1130,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "45aba58c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using RSI-momentum divergence and BB-range interaction.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0)\n    bb_pos = features.get('bb_position', 0.5)\n    range_pct = features.get('range_pct', 0)\n    \n    # Reject long when RSI extremely overbought AND momentum contradicts\n    if prediction == 'long' and rsi > 75 and momentum < -0.2:\n        return 'skip'\n    # Reject short when RSI extremely oversold AND momentum contradicts\n    if prediction == 'short' and rsi < 25 and momentum > 0.2:\n        return 'skip'\n    \n    # Reject when price at BB extreme but range is small (choppy squeeze)\n    if (bb_pos > 0.95 or bb_pos < 0.05) and range_pct < 0.35:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_370131b371.py"
+}

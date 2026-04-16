@@ -1,0 +1,8 @@
+{
+  "guard_id": "34ebc27c6a",
+  "generation": 4025,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a02e9edb",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when volatility compression lacks directional setup.\"\"\"\n    # True compression: low bb_width AND low atr_ratio\n    is_compressed = features['bb_width'] < 0.12 and features['atr_ratio'] < 0.65\n    \n    # Stochastic extreme = exhausted momentum (false compression signal)\n    stoch_extreme = features['stoch_k'] > 85 or features['stoch_k'] < 15\n    \n    # Price too far from VWAP = no clear reference point\n    far_from_vwap = abs(features['vwap_deviation']) > 0.015\n    \n    if is_compressed and (stoch_extreme or far_from_vwap):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_34ebc27c6a.py"
+}

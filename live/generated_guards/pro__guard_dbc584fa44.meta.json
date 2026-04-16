@@ -1,0 +1,8 @@
+{
+  "guard_id": "dbc584fa44",
+  "generation": 2875,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3c98daf8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using ATR, BB, and momentum.\"\"\"\n    bb_width = features.get(\"bb_width\", 0)\n    atr_ratio = features.get(\"atr_ratio\", 1)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # True compression: BB squeezed (low width) + low ATR = potential breakout\n    is_compressed = bb_width < 0.3 and atr_ratio < 0.7\n    \n    # False breakout: compressed but no momentum confirmation\n    if is_compressed:\n        momentum_weak = abs(macd_histogram) < 0.0005 and abs(obv_slope) < 0.01\n        stoch_neutral = 30 < stoch_k < 70\n        if momentum_weak and stoch_neutral:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dbc584fa44.py"
+}

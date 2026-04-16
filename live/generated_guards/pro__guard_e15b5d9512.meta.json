@@ -1,0 +1,8 @@
+{
+  "guard_id": "e15b5d9512",
+  "generation": 485,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ee7109d2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades on candle quality and trend alignment.\"\"\"\n    body_ratio = features.get(\"body_ratio\", 0)\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    ema_slope = features.get(\"ema_slope\", 0)\n    trend_strength = features.get(\"trend_strength\", 0)\n    \n    # Strong body indicates conviction\n    if body_ratio < 0.4:\n        return \"skip\"\n    \n    # For longs: prefer bullish candles + uptrend\n    if prediction == \"long\":\n        if lower_wick > 0.3:  # Reject if too much lower wick\n            return \"skip\"\n        if ema_slope < 0 and trend_strength > 0.5:  # Reject counter-trend\n            return \"skip\"\n    \n    # For shorts: prefer bearish candles + downtrend\n    if prediction == \"short\":\n        if upper_wick > 0.3:  # Reject if too much upper wick\n            return \"skip\"\n        if ema_slope > 0 and trend_strength > 0.5:  # Reject counter-trend\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e15b5d9512.py"
+}

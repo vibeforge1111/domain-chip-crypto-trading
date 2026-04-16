@@ -1,0 +1,8 @@
+{
+  "guard_id": "c408aef0de",
+  "generation": 3745,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "da26a324",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering using Bollinger Band extremes.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    \n    # Only allow trades at BB extremes (<0.05 or >0.95)\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    # Validate momentum alignment with prediction\n    if prediction == \"long\" and macd_histogram < 0:\n        return \"skip\"\n    if prediction == \"short\" and macd_histogram > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c408aef0de.py"
+}

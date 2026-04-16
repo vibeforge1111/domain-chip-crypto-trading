@@ -1,0 +1,8 @@
+{
+  "guard_id": "d711f17261",
+  "generation": 3650,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0c8242b7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Skip longs when broader trend (rsi_2h) is weak OR price at lower band extremes\n    if prediction == \"long\" and (rsi_2h < 38 or bb_pct_b < 0.12):\n        return \"skip\"\n    # Skip shorts when broader trend (rsi_2h) is strong OR price at upper band extremes\n    if prediction == \"short\" and (rsi_2h > 62 or bb_pct_b > 0.88):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d711f17261.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "786847a960",
+  "generation": 2205,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "56e9d32e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard: filter signals not at bb_pct_b extremes (<0.05 or >0.95).\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # Long signals only valid at extreme low (oversold near lower band)\n    if prediction == \"long\" and bb_pct_b >= 0.05:\n        return \"skip\"\n    # Short signals only valid at extreme high (overbought near upper band)\n    if prediction == \"short\" and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_786847a960.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "6d688e5c59",
+  "generation": 2770,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "586bcb91",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect false compression - low BB width but high ATR ratio signals breakout risk.\"\"\"\n    bb_width = features.get(\"bb_width\", 0)\n    atr_ratio = features.get(\"atr_ratio\", 1)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # False compression: tight bands but volatility expanding (about to explode)\n    false_compression = bb_width < 0.025 and atr_ratio > 1.4\n    \n    # Also skip if near band edge during compression (likely mean reversion trap)\n    near_extreme = bb_pct_b < 0.08 or bb_pct_b > 0.92\n    \n    if false_compression or near_extreme:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6d688e5c59.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "1c522d87c4",
+  "generation": 505,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "474ef5c1",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals when wick bias contradicts the trade direction.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body_ratio = features.get(\"body_ratio\", 0)\n    range_pct = features.get(\"range_pct\", 0)\n    volume_ratio = features.get(\"volume_ratio\", 1)\n    \n    # Reject small-range candles (potential noise)\n    if range_pct < 0.3:\n        return \"skip\"\n    \n    # Reject low-volume signals (lack of conviction)\n    if volume_ratio < 0.7:\n        return \"skip\"\n    \n    # Reject when wicks dominate body (doji-like indecision)\n    if (upper_wick + lower_wick) > 0.6:\n        return \"skip\"\n    \n    # Wick bias alignment check\n    wick_balance = lower_wick - upper_wick\n    \n    # Long signals need bullish wick bias\n    if prediction == \"long\" and wick_balance < -0.1:\n        return \"skip\"\n    \n    # Short signals need bearish wick bias\n    if prediction == \"short\" and wick_balance > 0.1:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1c522d87c4.py"
+}

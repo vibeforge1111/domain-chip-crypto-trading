@@ -1,0 +1,8 @@
+{
+  "guard_id": "5b8e1b1505",
+  "generation": 2390,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3f44d4c4",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Momentum deceleration guard using macd_histogram and confirmations.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Skip if momentum is decelerating (macd near zero)\n    if abs(macd) < 0.0001:\n        return \"skip\"\n    \n    # Momentum direction must align with prediction\n    if prediction == \"long\" and macd < 0:\n        return \"skip\"\n    if prediction == \"short\" and macd > 0:\n        return \"skip\"\n    \n    # Entry alignment with VWAP (avoid entries too far from VWAP)\n    if prediction == \"long\" and vwap_dev < -0.003:\n        return \"skip\"\n    if prediction == \"short\" and vwap_dev > 0.003:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5b8e1b1505.py"
+}

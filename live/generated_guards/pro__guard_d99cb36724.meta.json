@@ -1,0 +1,8 @@
+{
+  "guard_id": "d99cb36724",
+  "generation": 2965,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7f5c9d7b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect false compression: high volatility expansion but bands not actually compressing.\"\"\"\n    # False compression: high atr_ratio but bb_width remains elevated\n    if features['atr_ratio'] > 1.4 and features['bb_width'] > 0.6:\n        return \"skip\"\n    # Skip extreme stochastic readings\n    if features['stoch_k'] > 85 or features['stoch_k'] < 15:\n        return \"skip\"\n    # Skip when far from VWAP (mean reversion risk)\n    if abs(features['vwap_deviation']) > 0.015:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d99cb36724.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "ac6e13cf57",
+  "generation": 4365,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "885e5284",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi_14 = features.get(\"rsi_14\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    stoch_k = features.get(\"stoch_k\", 50)\n    macd = features.get(\"macd_histogram\", 0)\n    vwap = features.get(\"vwap_deviation\", 0)\n    \n    long_count = sum([\n        rsi_14 < 40,\n        rsi_2h < 45,\n        stoch_k < 30,\n        macd > 0,\n        vwap > 0\n    ])\n    \n    short_count = sum([\n        rsi_14 > 60,\n        rsi_2h > 55,\n        stoch_k > 70,\n        macd < 0,\n        vwap < 0\n    ])\n    \n    if prediction == \"long\" and long_count >= 2:\n        return prediction\n    if prediction == \"short\" and short_count >= 2:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ac6e13cf57.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "ac3f7a3017",
+  "generation": 25,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3b55922c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals on weak candles in high-vol environments with poor volume.\"\"\"\n    if features['body_ratio'] < 0.25:\n        return \"skip\"\n    if features['volatility_regime'] > 1.5 and features['volume_ratio'] < 0.8:\n        return \"skip\"\n    if features['bb_position'] > 0.9 or features['bb_position'] < 0.1:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ac3f7a3017.py"
+}

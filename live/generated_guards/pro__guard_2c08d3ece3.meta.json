@@ -1,0 +1,8 @@
+{
+  "guard_id": "2c08d3ece3",
+  "generation": 2935,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cf1861b2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression breaks using multiple signals\n    in_compression = features['bb_width'] < 0.18 and features['atr_ratio'] < 0.85\n    \n    if in_compression:\n        # False break: price extended from VWAP but momentum diverges\n        price_extended = abs(features['vwap_deviation']) > 0.008\n        momentum_weak = features['macd_histogram'] < 0 and features['obv_slope'] < 0\n        stoch_divergent = features['stoch_k'] < 25 or features['stoch_k'] > 75\n        rsi_conflict = abs(features['rsi_14'] - features['rsi_2h']) > 15\n        \n        if price_extended and momentum_weak and stoch_divergent and rsi_conflict:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2c08d3ece3.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "32b86c8430",
+  "generation": 4690,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c8ecabe0",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard using bb_pct_b extremes for high-confidence entries.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # High-confidence entry zones: BB extremes\n    if bb_pct_b < 0.05:\n        # Lower band extreme: reject if not oversold or too far below VWAP\n        if stoch_k > 30 or vwap_dev < -0.01:\n            return \"skip\"\n        return prediction\n    elif bb_pct_b > 0.95:\n        # Upper band extreme: reject if not overbought or too far above VWAP\n        if stoch_k < 70 or vwap_dev > 0.01:\n            return \"skip\"\n        return prediction\n    \n    # Reject trades not at BB extremes\n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_32b86c8430.py"
+}

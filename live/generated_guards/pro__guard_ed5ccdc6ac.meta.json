@@ -1,0 +1,8 @@
+{
+  "guard_id": "ed5ccdc6ac",
+  "generation": 3550,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "aa078108",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Only trade at extreme BB positions (<0.05 or >0.95)\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    # Long entries: require price below VWAP, positive momentum, and positive volume trend\n    if prediction == \"long\" and bb_pct_b < 0.05:\n        if vwap_deviation >= 0 or macd_histogram <= 0 or obv_slope <= 0:\n            return \"skip\"\n    \n    # Short entries: require price above VWAP, negative momentum, and negative volume trend\n    if prediction == \"short\" and bb_pct_b > 0.95:\n        if vwap_deviation <= 0 or macd_histogram >= 0 or obv_slope >= 0:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ed5ccdc6ac.py"
+}

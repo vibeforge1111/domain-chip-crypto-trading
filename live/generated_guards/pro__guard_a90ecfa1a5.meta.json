@@ -1,0 +1,8 @@
+{
+  "guard_id": "a90ecfa1a5",
+  "generation": 2455,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "92b9319b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Stochastic crossover momentum filter - avoid entries against weakening momentum.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Reject longs when overbought but K crossing below D (momentum fading)\n    if prediction == \"long\" and stoch_k > 80 and stoch_k < stoch_d:\n        return \"skip\"\n    \n    # Reject shorts when oversold but K crossing above D (bounce likely)\n    if prediction == \"short\" and stoch_k < 20 and stoch_k > stoch_d:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a90ecfa1a5.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "19759d94e7",
+  "generation": 385,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b6a4da07",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if strong wick imbalance in weak trend (potential reversal trap)\n    wick_imbalance = abs(features['upper_wick_ratio'] - features['lower_wick_ratio'])\n    if wick_imbalance > 0.55 and features['trend_strength'] < 0.35:\n        return \"skip\"\n    \n    # Skip if candle is mostly wick (doji/exhaustion pattern)\n    if features['body_ratio'] < 0.25:\n        return \"skip\"\n    \n    # Skip if low volume confirms large range (low conviction move)\n    if features['volume_ratio'] < 0.6 and features['range_pct'] > 1.5:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_19759d94e7.py"
+}

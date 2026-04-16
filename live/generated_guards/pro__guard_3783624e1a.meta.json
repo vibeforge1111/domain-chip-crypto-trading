@@ -1,0 +1,8 @@
+{
+  "guard_id": "3783624e1a",
+  "generation": 5440,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "fb8dde82",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals during false compression vs true consolidation.\"\"\"\n    # True compression: BB narrow + price near middle + moderate ATR\n    true_compression = features['bb_pct_b'] > 0.25 and features['bb_pct_b'] < 0.75\n    \n    # False compression signals: stochastic extremes, far from VWAP, momentum divergence\n    if true_compression:\n        if features['stoch_k'] > 85 or features['stoch_k'] < 15:\n            return \"skip\"\n        if abs(features['vwap_deviation']) > 0.015:\n            return \"skip\"\n        if features['rsi_2h'] > 70 or features['rsi_2h'] < 30:\n            return \"skip\"\n        if features['macd_histogram'] * features['obv_slope'] < 0:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3783624e1a.py"
+}

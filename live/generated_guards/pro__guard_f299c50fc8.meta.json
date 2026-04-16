@@ -1,0 +1,8 @@
+{
+  "guard_id": "f299c50fc8",
+  "generation": 1975,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "75f2eb23",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    # Detect momentum deceleration: macd_histogram positive but weakening (low value)\n    # This suggests bullish momentum is fading, bad for longs\n    if prediction == \"long\" and features.get(\"macd_histogram\", 0) < 0.0005:\n        return \"skip\"\n    \n    # For shorts: macd_histogram negative but strengthening (high/less negative value)\n    if prediction == \"short\" and features.get(\"macd_histogram\", 0) > -0.0005:\n        return \"skip\"\n    \n    # Additional momentum check: RSI 2h overbought/oversold divergence\n    if features.get(\"rsi_2h\", 50) > 70 and prediction == \"long\":\n        return \"skip\"\n    if features.get(\"rsi_2h\", 50) < 30 and prediction == \"short\":\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f299c50fc8.py"
+}

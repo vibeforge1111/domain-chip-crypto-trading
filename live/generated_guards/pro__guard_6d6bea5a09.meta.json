@@ -1,0 +1,8 @@
+{
+  "guard_id": "6d6bea5a09",
+  "generation": 475,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bdd99d0d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with poor momentum alignment or weak candle structure.\"\"\"\n    # Reject if momentum strongly contradicts prediction direction\n    if prediction == \"long\" and features['momentum_score'] < -0.25:\n        return \"skip\"\n    if prediction == \"short\" and features['momentum_score'] > 0.25:\n        return \"skip\"\n    \n    # Reject if candle is mostly wick (low quality setup)\n    total_wick = features['upper_wick_ratio'] + features['lower_wick_ratio']\n    if total_wick > 0.7:\n        return \"skip\"\n    \n    # Reject if volume is too low (weak conviction)\n    if features['volume_ratio'] < 0.75:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6d6bea5a09.py"
+}

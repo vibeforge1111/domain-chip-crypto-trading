@@ -1,0 +1,8 @@
+{
+  "guard_id": "cc6c4d5f14",
+  "generation": 1770,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "014cd463",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where momentum diverges across timeframes.\"\"\"\n    rsi_14 = features.get('rsi_14', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    stoch_k = features.get('stoch_k', 50)\n    bb_position = features.get('bb_position', 0.5)\n    \n    # Large RSI divergence between timeframes suggests momentum is unstable\n    rsi_div = abs(rsi_14 - rsi_2h)\n    if rsi_div > 25:\n        return \"skip\"\n    \n    # Reject long if RSI already overbought and near upper BB\n    if prediction == \"long\" and rsi_14 > 65 and bb_position > 0.85:\n        return \"skip\"\n    \n    # Reject short if RSI already oversold and near lower BB\n    if prediction == \"short\" and rsi_14 < 35 and bb_position < 0.15:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cc6c4d5f14.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "b028115e91",
+  "generation": 2860,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b7b6ddff",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    obv_slope = features.get('obv_slope', 0)\n    \n    if prediction == \"long\" and (stoch_k <= stoch_d or obv_slope <= 0):\n        return \"skip\"\n    if prediction == \"short\" and (stoch_k >= stoch_d or obv_slope >= 0):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b028115e91.py"
+}

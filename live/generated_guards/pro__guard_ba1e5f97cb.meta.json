@@ -1,0 +1,8 @@
+{
+  "guard_id": "ba1e5f97cb",
+  "generation": 490,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "fdec8d62",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals using RSI and Bollinger Band position interaction.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    bb_pos = features.get('bb_position', 0.5)\n    \n    # Skip longs at overbought levels near upper BB\n    if prediction == \"long\" and rsi > 70 and bb_pos > 0.8:\n        return \"skip\"\n    # Skip shorts at oversold levels near lower BB\n    if prediction == \"short\" and rsi < 30 and bb_pos < 0.2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ba1e5f97cb.py"
+}

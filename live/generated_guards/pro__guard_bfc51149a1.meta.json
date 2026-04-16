@@ -1,0 +1,8 @@
+{
+  "guard_id": "bfc51149a1",
+  "generation": 1495,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "195729b8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals during Bollinger Band squeeze breakouts at extremes.\"\"\"\n    bb_width = features.get('bb_width', 0.05)\n    bb_position = features.get('bb_position', 0.5)\n    \n    # BB squeeze: narrow bands indicate compression\n    is_squeeze = bb_width < 0.02\n    \n    # Price at band extremes (breakout-prone zones)\n    at_extreme = bb_position > 0.92 or bb_position < 0.08\n    \n    # Skip breakout trades during squeeze conditions\n    if is_squeeze and at_extreme:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bfc51149a1.py"
+}

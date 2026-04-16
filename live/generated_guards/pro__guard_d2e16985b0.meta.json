@@ -1,0 +1,8 @@
+{
+  "guard_id": "d2e16985b0",
+  "generation": 1915,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7afb262f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip when stochastics and momentum are diverging (unstable setup)\n    if prediction == \"long\":\n        if features['stoch_k'] < 25 and features['momentum_score'] > 0.3:\n            return \"skip\"\n    elif prediction == \"short\":\n        if features['stoch_k'] > 75 and features['momentum_score'] < -0.3:\n            return \"skip\"\n    \n    # Skip when BB width is very tight but momentum is weak (low conviction)\n    if features['bb_width'] < 0.015 and abs(features['momentum_score']) < 0.25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d2e16985b0.py"
+}

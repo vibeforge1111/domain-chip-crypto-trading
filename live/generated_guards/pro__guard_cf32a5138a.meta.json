@@ -1,0 +1,8 @@
+{
+  "guard_id": "cf32a5138a",
+  "generation": 5015,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "14b004c6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression setups using ATR, BB width, and momentum indicators.\"\"\"\n    bb_width = features.get(\"bb_width\", 0.02)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Detect compression: both BB width and ATR below thresholds\n    is_compressed = bb_width < 0.015 and atr_ratio < 0.7\n    \n    if is_compressed:\n        # False compression: stoch at extremes (exhausted momentum)\n        stoch_exhausted = (stoch_k < 20 and stoch_d < 25) or (stoch_k > 80 and stoch_d > 75)\n        \n        # False compression: price too far from VWAP during compression\n        vwap_unstable = abs(vwap_dev) > 0.015\n        \n        # False compression: compressed at band edge (not healthy consolidation)\n        edge_compression = bb_pct_b < 0.15 or bb_pct_b > 0.85\n        \n        if stoch_exhausted or vwap_unstable or edge_compression:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cf32a5138a.py"
+}

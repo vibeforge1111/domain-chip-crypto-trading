@@ -1,0 +1,8 @@
+{
+  "guard_id": "d1e257b069",
+  "generation": 985,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ce0dd3b4",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip when RSI extreme AND wick confirms reversal pressure\n    if features['rsi_14'] > 70 and features['upper_wick_ratio'] > 0.3:\n        return \"skip\"\n    if features['rsi_14'] < 30 and features['lower_wick_ratio'] > 0.3:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d1e257b069.py"
+}

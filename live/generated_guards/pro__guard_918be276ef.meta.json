@@ -1,0 +1,8 @@
+{
+  "guard_id": "918be276ef",
+  "generation": 4820,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "65ddfd39",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Stochastic crossover timing guard with multiple confirmations.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Stochastic crossover zone: k above d for longs, k below d for shorts\n    # Both should be in 20-80 range (avoiding overbought/oversold extremes)\n    stoch_valid = 20 <= stoch_k <= 80 and 20 <= stoch_d <= 80\n    \n    if prediction == \"long\":\n        # Bullish crossover: stoch_k above stoch_d\n        if stoch_k <= stoch_d and stoch_valid:\n            return \"skip\"\n        # Confirm price not too far below VWAP\n        if vwap_dev < -0.005:\n            return \"skip\"\n        # Confirm OBV not strongly negative\n        if obv_slope < -1:\n            return \"skip\"\n            \n    elif prediction == \"short\":\n        # Bearish crossover: stoch_k below stoch_d\n        if stoch_k >= stoch_d and stoch_valid:\n            return \"skip\"\n        # Confirm price not too far above VWAP\n        if vwap_dev > 0.005:\n            return \"skip\"\n        # Confirm not in strong accumulation\n        if obv_slope > 2:\n            return \"skip\"\n            \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_918be276ef.py"
+}

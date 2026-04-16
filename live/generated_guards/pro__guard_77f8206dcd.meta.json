@@ -1,0 +1,8 @@
+{
+  "guard_id": "77f8206dcd",
+  "generation": 175,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d366bc1d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades on doji patterns, BB squeeze without momentum, or RSI/EMA divergence.\"\"\"\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    bb_width = features.get(\"bb_width\", 0.02)\n    momentum = features.get(\"momentum_score\", 0)\n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    \n    # Doji/pin bar: small body, large wicks\n    if body_ratio < 0.15 and (upper_wick + lower_wick) > 0.7:\n        return \"skip\"\n    \n    # BB squeeze without momentum confirmation\n    if bb_width < 0.015 and abs(momentum) < 0.3:\n        return \"skip\"\n    \n    # RSI/EMA divergence: RSI extreme in opposite direction of trend\n    if rsi > 70 and ema_slope < 0:\n        return \"skip\"\n    if rsi < 30 and ema_slope > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_77f8206dcd.py"
+}

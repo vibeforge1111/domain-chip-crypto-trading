@@ -1,0 +1,8 @@
+{
+  "guard_id": "144de31f2a",
+  "generation": 4100,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4db8434c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    if prediction == \"long\":\n        # Reject long if stochastic shows bearish alignment (k below d)\n        if stoch_k < stoch_d:\n            return \"skip\"\n        # Reject long if overbought (high chance of reversal)\n        if stoch_k > 80:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Reject short if stochastic shows bullish alignment (k above d)\n        if stoch_k > stoch_d:\n            return \"skip\"\n        # Reject short if oversold (high chance of bounce)\n        if stoch_k < 20:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_144de31f2a.py"
+}

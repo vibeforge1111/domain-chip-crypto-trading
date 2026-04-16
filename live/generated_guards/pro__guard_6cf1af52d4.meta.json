@@ -1,0 +1,8 @@
+{
+  "guard_id": "6cf1af52d4",
+  "generation": 1865,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f8941997",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with extreme VWAP deviation + overbought/oversold RSI.\"\"\"\n    vwap_dev = abs(features.get(\"vwap_deviation\", 0))\n    rsi = features.get(\"rsi_14\", 50)\n    vol_regime = features.get(\"volatility_regime\", 0.5)\n    \n    # Reject if price far from VWAP (>1%) AND RSI extreme\n    if vwap_dev > 0.01 and (rsi > 70 or rsi < 30):\n        return \"skip\"\n    \n    # Also reject in high volatility with conflicting signals\n    if vol_regime > 0.7 and vwap_dev > 0.005 and rsi > 65:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6cf1af52d4.py"
+}

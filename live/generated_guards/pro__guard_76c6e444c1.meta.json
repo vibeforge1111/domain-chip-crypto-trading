@@ -1,0 +1,8 @@
+{
+  "guard_id": "76c6e444c1",
+  "generation": 1790,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ca6b4248",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against trades with extreme wicks indicating rejection.\"\"\"\n    if prediction == \"long\" and features.get(\"upper_wick_ratio\", 0) > 0.4:\n        return \"skip\"\n    if prediction == \"short\" and features.get(\"lower_wick_ratio\", 0) > 0.4:\n        return \"skip\"\n    if prediction == \"long\" and features.get(\"ema_slope\", 0) < 0:\n        return \"skip\"\n    if prediction == \"short\" and features.get(\"ema_slope\", 0) > 0:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_76c6e444c1.py"
+}

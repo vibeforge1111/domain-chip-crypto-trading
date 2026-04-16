@@ -1,0 +1,8 @@
+{
+  "guard_id": "944dc9085e",
+  "generation": 3070,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b90cff57",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during false compressions using ATR/Bollinger combo.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 0.1)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = abs(features.get(\"vwap_deviation\", 0))\n    \n    # True compression: low volatility + tight bands\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.8\n    \n    if is_compressed:\n        # False compression: price at extremes or far from VWAP\n        at_extreme = bb_pct_b < 0.2 or bb_pct_b > 0.8\n        far_from_vwap = vwap_dev > 0.005\n        \n        if at_extreme or far_from_vwap:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_944dc9085e.py"
+}

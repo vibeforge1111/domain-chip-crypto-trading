@@ -1,0 +1,8 @@
+{
+  "guard_id": "2c215e8391",
+  "generation": 2060,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b15ad904",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where compression forms but momentum fails to confirm.\"\"\"\n    # True compression: low BB width + elevated ATR (active tightening)\n    is_compressed = features['bb_width'] < 0.1 and features['atr_ratio'] > 0.15\n    \n    if is_compressed:\n        # Skip if stochastic is in extreme zone opposite to prediction\n        if prediction == 'long' and features['stoch_k'] > 85:\n            return 'skip'\n        if prediction == 'short' and features['stoch_k'] < 15:\n            return 'skip'\n        \n        # Skip if MACD histogram contradicts direction\n        if prediction == 'long' and features['macd_histogram'] < -0.0001:\n            return 'skip'\n        if prediction == 'short' and features['macd_histogram'] > 0.0001:\n            return 'skip'\n        \n        # Skip if OBV slope diverges (weak participation)\n        if prediction == 'long' and features['obv_slope'] < 0:\n            return 'skip'\n        if prediction == 'short' and features['obv_slope'] > 0:\n            return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2c215e8391.py"
+}

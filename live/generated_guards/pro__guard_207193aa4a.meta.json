@@ -1,0 +1,8 @@
+{
+  "guard_id": "207193aa4a",
+  "generation": 3680,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "26e36bf4",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect false compression using volatility and momentum divergence.\"\"\"\n    # True compression: low ATR ratio AND narrow BB width\n    is_compression = features.get('atr_ratio', 1) < 0.7 and features.get('bb_width', 1) < 0.35\n    \n    if is_compression and prediction != \"skip\":\n        # False compression signals\n        stoch_exhausted = features.get('stoch_k', 50) > 85 or features.get('stoch_k', 50) < 15\n        vwap_drift = abs(features.get('vwap_deviation', 0)) > 0.015\n        volume_diverging = features.get('obv_slope', 0) < 0\n        \n        if stoch_exhausted or vwap_drift or volume_diverging:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_207193aa4a.py"
+}

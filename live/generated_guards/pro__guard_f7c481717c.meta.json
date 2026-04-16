@@ -1,0 +1,8 @@
+{
+  "guard_id": "f7c481717c",
+  "generation": 2915,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5b8db1da",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression to filter bad breakouts.\"\"\"\n    # Compression: low volatility AND narrow bands\n    is_compressed = features['bb_width'] < 0.5 and features['atr_ratio'] < 0.7\n    \n    # Extreme BB position signals potential false compression\n    at_extreme = features['bb_pct_b'] < 0.15 or features['bb_pct_b'] > 0.85\n    \n    # Stochastic divergence during compression\n    stoch_divergent = abs(features['stoch_k'] - features['stoch_d']) > 20\n    \n    # False compression: compressed but at extremes or divergent\n    if is_compressed and (at_extreme or stoch_divergent):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f7c481717c.py"
+}

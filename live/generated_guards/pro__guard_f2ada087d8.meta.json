@@ -1,0 +1,8 @@
+{
+  "guard_id": "f2ada087d8",
+  "generation": 2740,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bcad8598",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum deceleration opposes the signal direction.\"\"\"\n    macd_hist = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Momentum deceleration thresholds (macd_histogram normalized by price)\n    NEGATIVE_THRESHOLD = -0.0003\n    POSITIVE_THRESHOLD = 0.0003\n    \n    # Stochastic confirmation for momentum validity\n    if prediction == \"long\":\n        # Reject long if bearish momentum (negative histogram) and overbought stochastic\n        if macd_hist < NEGATIVE_THRESHOLD and stoch_k > 70:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Reject short if bullish momentum (positive histogram) and oversold stochastic\n        if macd_hist > POSITIVE_THRESHOLD and stoch_k < 30:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f2ada087d8.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "9a2ef20f12",
+  "generation": 3075,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f5f4574b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR and Bollinger Band width.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 0.5)\n    \n    # True compression: both metrics are low (calm, tight bands)\n    # False compression: tight bands but high actual volatility\n    is_tight_bands = bb_width < 0.5\n    is_high_atr = atr_ratio > 0.75\n    \n    # Skip false compression: tight BB bands with elevated ATR (hidden volatility)\n    if is_tight_bands and is_high_atr:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9a2ef20f12.py"
+}

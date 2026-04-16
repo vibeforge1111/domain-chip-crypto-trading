@@ -1,0 +1,8 @@
+{
+  "guard_id": "850d8f1190",
+  "generation": 3130,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9e0e7b81",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades against volume flow direction (OBV slope).\"\"\"\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Skip long signals when OBV shows distribution (selling pressure)\n    if prediction == \"long\" and obv_slope < -0.1:\n        return \"skip\"\n    \n    # Skip short signals when OBV shows accumulation (buying pressure)\n    if prediction == \"short\" and obv_slope > 0.1:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_850d8f1190.py"
+}

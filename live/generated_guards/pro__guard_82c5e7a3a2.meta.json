@@ -1,0 +1,8 @@
+{
+  "guard_id": "82c5e7a3a2",
+  "generation": 4885,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "18f566db",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR ratio and BB width.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    vwap_dev = features.get('vwap_deviation', 0.0)\n    \n    # True compression: tight BB width + moderate ATR ratio\n    is_compressed = bb_width < 0.15 and 0.4 < atr_ratio < 1.2\n    \n    # False compression: large VWAP deviation (far from value)\n    false_compression = abs(vwap_dev) > 0.015\n    \n    if is_compressed and false_compression:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_82c5e7a3a2.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "3817ed5eab",
+  "generation": 5380,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b5836524",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals during compression with momentum confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_width = features.get(\"bb_width\", 1.0)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    \n    # Detect compression: low bb_width and low atr_ratio\n    is_compressed = bb_width < 0.5 and atr_ratio < 0.7\n    \n    if is_compressed:\n        # False compression: extreme oscillators without momentum\n        stoch_extreme = (stoch_k > 80 and stoch_d > 80) or (stoch_k < 20 and stoch_d < 20)\n        no_momentum = obv_slope <= 0 and macd_histogram <= 0\n        \n        if stoch_extreme and no_momentum:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3817ed5eab.py"
+}

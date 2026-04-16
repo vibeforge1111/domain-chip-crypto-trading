@@ -1,0 +1,8 @@
+{
+  "guard_id": "7dcc83cd0d",
+  "generation": 3530,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "aa672cee",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades when MACD histogram shows momentum deceleration against direction.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    # Long trades fail when MACD histogram is negative (bearish momentum)\n    if prediction == \"long\" and macd < 0:\n        return \"skip\"\n    # Short trades fail when MACD histogram is positive (bullish momentum)\n    if prediction == \"short\" and macd > 0:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7dcc83cd0d.py"
+}

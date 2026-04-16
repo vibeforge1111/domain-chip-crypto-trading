@@ -1,0 +1,8 @@
+{
+  "guard_id": "1dc2306f61",
+  "generation": 2725,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "93887a76",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    if prediction == \"long\":\n        bullish = sum([\n            features.get(\"rsi_14\", 50) < 70,\n            features.get(\"stoch_k\", 50) < 75,\n            features.get(\"vwap_deviation\", 0) > 0,\n            features.get(\"macd_histogram\", 0) > 0,\n            features.get(\"obv_slope\", 0) > 0,\n            features.get(\"rsi_2h\", 50) < 65\n        ])\n        return prediction if bullish >= 2 else \"skip\"\n    \n    if prediction == \"short\":\n        bearish = sum([\n            features.get(\"rsi_14\", 50) > 30,\n            features.get(\"stoch_k\", 50) > 25,\n            features.get(\"vwap_deviation\", 0) < 0,\n            features.get(\"macd_histogram\", 0) < 0,\n            features.get(\"obv_slope\", 0) < 0,\n            features.get(\"rsi_2h\", 50) > 35\n        ])\n        return prediction if bearish >= 2 else \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1dc2306f61.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "3e859d90da",
+  "generation": 5250,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5d4711b3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return \"skip\"\n    \n    macd = features.get(\"macd_histogram\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # For longs: require bullish macd and positive obv slope\n    if prediction == \"long\" and (macd <= 0 or obv_slope < 0):\n        return \"skip\"\n    \n    # For shorts: require bearish macd and negative obv slope\n    if prediction == \"short\" and (macd >= 0 or obv_slope > 0):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3e859d90da.py"
+}

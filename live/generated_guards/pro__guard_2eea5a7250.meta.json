@@ -1,0 +1,8 @@
+{
+  "guard_id": "2eea5a7250",
+  "generation": 4070,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d48b3539",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where momentum contradicts direction or is weakening.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    stoch = features.get(\"stoch_k\", 50)\n    \n    if prediction == \"long\" and (macd < 0 or stoch > 80):\n        return \"skip\"\n    if prediction == \"short\" and (macd > 0 or stoch < 20):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2eea5a7250.py"
+}

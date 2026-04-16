@@ -1,0 +1,8 @@
+{
+  "guard_id": "b5e0058bfc",
+  "generation": 2555,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ffad0777",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    pos_count = 0\n    neg_count = 0\n    \n    # VWAP alignment\n    if features['vwap_deviation'] > 0:\n        pos_count += 1\n    elif features['vwap_deviation'] < 0:\n        neg_count += 1\n    \n    # Stochastic confirmation\n    if features['stoch_k'] > 30 and features['stoch_d'] > 30:\n        pos_count += 1\n    elif features['stoch_k'] < 70 and features['stoch_d'] < 70:\n        neg_count += 1\n    \n    # OBV momentum\n    if features['obv_slope'] > 0:\n        pos_count += 1\n    elif features['obv_slope'] < 0:\n        neg_count += 1\n    \n    # MACD direction\n    if features['macd_histogram'] > 0:\n        pos_count += 1\n    elif features['macd_histogram'] < 0:\n        neg_count += 1\n    \n    # BB position\n    if features['bb_pct_b'] > 0.3:\n        pos_count += 1\n    elif features['bb_pct_b'] < 0.7:\n        neg_count += 1\n    \n    # 2h RSI context\n    if features['rsi_2h'] < 70:\n        pos_count += 1\n    elif features['rsi_2h'] > 30:\n        neg_count += 1\n    \n    if prediction == \"long\" and pos_count >= 2:\n        return prediction\n    if prediction == \"short\" and neg_count >= 2:\n        return prediction\n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b5e0058bfc.py"
+}

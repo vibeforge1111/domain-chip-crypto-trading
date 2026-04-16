@@ -1,0 +1,8 @@
+{
+  "guard_id": "a963ceb051",
+  "generation": 1385,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d7859a94",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject if large candle but weak volume (institutional disinterest)\n    if features['range_pct'] > 1.0 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    # Reject if price at extreme BB position with strong trend (reversal risk)\n    if features['bb_position'] > 0.9 and features['trend_strength'] > 0.6:\n        return \"skip\"\n    if features['bb_position'] < 0.1 and features['trend_strength'] > 0.6:\n        return \"skip\"\n    \n    # Reject if RSI diverges from trend direction\n    if prediction == \"long\" and features['rsi_14'] < 40:\n        return \"skip\"\n    if prediction == \"short\" and features['rsi_14'] > 60:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a963ceb051.py"
+}

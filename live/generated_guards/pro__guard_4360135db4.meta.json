@@ -1,0 +1,8 @@
+{
+  "guard_id": "4360135db4",
+  "generation": 4855,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b5a0f729",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # Compression: both volatility measures are low\n    is_compression = bb_width < 0.15 and atr_ratio < 0.8\n    \n    if not is_compression:\n        return prediction\n    \n    # False compression: price at BB edge with weak momentum/volume\n    near_edge = bb_pct_b < 0.15 or bb_pct_b > 0.85\n    weak_momentum = macd_histogram < 0\n    weak_volume = obv_slope <= 0\n    \n    if near_edge and (weak_momentum or weak_volume):\n        return \"skip\"\n    \n    # True compression: price centered with confirming signals\n    centered = abs(bb_pct_b - 0.5) < 0.2\n    near_vwap = abs(vwap_deviation) < 0.005\n    good_momentum = macd_histogram > 0\n    \n    # Only accept compression setups with multiple confirming signals\n    confirm_count = (centered and near_vwap) + good_momentum + (obv_slope > 0)\n    if is_compression and confirm_count < 2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4360135db4.py"
+}

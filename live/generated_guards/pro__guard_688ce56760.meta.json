@@ -1,0 +1,8 @@
+{
+  "guard_id": "688ce56760",
+  "generation": 5330,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2b6b2a2e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades too close to fair value without momentum confirmation.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    bb_pct = features.get('bb_pct_b', 0.5)\n    \n    # Too close to fair value with weak momentum\n    if abs(vwap_dev) < 0.002:\n        # Long needs oversold or lower band proximity\n        if prediction == \"long\" and stoch_k > 35 and bb_pct > 0.3:\n            return \"skip\"\n        # Short needs overbought or upper band proximity\n        if prediction == \"short\" and stoch_k < 65 and bb_pct < 0.7:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_688ce56760.py"
+}

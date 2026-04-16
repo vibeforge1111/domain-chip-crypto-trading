@@ -1,0 +1,8 @@
+{
+  "guard_id": "fe1e634834",
+  "generation": 1400,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2713847a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with divergent candle body strength and momentum indicators.\"\"\"\n    body_ratio = features.get('body_ratio', 0.5)\n    momentum_score = features.get('momentum_score', 0.5)\n    bb_position = features.get('bb_position', 0.5)\n    \n    # Body-momentum alignment check\n    if prediction == 'long':\n        # Strong body but momentum near zero = false strength\n        if body_ratio > 0.65 and momentum_score < 0.25:\n            return \"skip\"\n        # Body near extremes of Bollinger Band with weak body\n        if bb_position > 0.9 and body_ratio < 0.35:\n            return \"skip\"\n    \n    elif prediction == 'short':\n        # Strong bearish body but momentum still positive = reversal risk\n        if body_ratio > 0.65 and momentum_score > 0.75:\n            return \"skip\"\n        if bb_position < 0.1 and body_ratio < 0.35:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fe1e634834.py"
+}

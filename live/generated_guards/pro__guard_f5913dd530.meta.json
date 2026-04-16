@@ -1,0 +1,8 @@
+{
+  "guard_id": "f5913dd530",
+  "generation": 1640,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ea4e50b7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if weak trend combined with high momentum (likely reversal trap)\n    if features['trend_strength'] < 0.3 and features['momentum_score'] > 0.6:\n        return \"skip\"\n    # Skip if Bollinger Band squeeze with extreme RSI (volatility expansion likely)\n    if features['bb_width'] < 0.5 and (features['rsi_14'] < 30 or features['rsi_14'] > 70):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f5913dd530.py"
+}

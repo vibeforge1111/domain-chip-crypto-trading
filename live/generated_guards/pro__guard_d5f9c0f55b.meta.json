@@ -1,0 +1,8 @@
+{
+  "guard_id": "d5f9c0f55b",
+  "generation": 4600,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "94510d4e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like bb_pct_b, stoch_k, stoch_d, vwap_deviation, obv_slope, macd_histogram, rsi_2h\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Skip long signals at extreme overbought with price above VWAP and weakening volume\n    if prediction == \"long\" and bb_pct > 0.85 and stoch_k > 80 and vwap_dev > 0.005 and obv_slope < 0:\n        return \"skip\"\n    \n    # Skip short signals at extreme oversold with price below VWAP and strengthening volume\n    if prediction == \"short\" and bb_pct < 0.15 and stoch_k < 20 and vwap_dev < -0.005 and obv_slope > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d5f9c0f55b.py"
+}

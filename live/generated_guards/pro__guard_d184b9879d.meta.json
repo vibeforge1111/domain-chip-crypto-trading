@@ -1,0 +1,8 @@
+{
+  "guard_id": "d184b9879d",
+  "generation": 3445,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4b83028a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip on VWAP-momentum disagreement or RSI divergence.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    rsi_14 = features.get('rsi_14', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # VWAP and momentum disagreement: skip if conflicting signals\n    if (vwap_dev > 0.005 and momentum < -0.15) or (vwap_dev < -0.005 and momentum > 0.15):\n        return \"skip\"\n    \n    # Short vs longer RSI divergence: skip on strong disagreement\n    if abs(rsi_14 - rsi_2h) > 25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d184b9879d.py"
+}

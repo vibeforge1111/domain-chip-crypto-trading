@@ -1,0 +1,8 @@
+{
+  "guard_id": "d90701d88a",
+  "generation": 5355,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "729c07df",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # True compression: low BB width AND low ATR (genuine squeeze)\n    true_compression = bb_width < 0.75 and atr_ratio < 0.85\n    \n    # False compression flags\n    stoch_extreme = stoch_k < 20 or stoch_k > 80 or stoch_d < 20 or stoch_d > 80\n    far_from_vwap = abs(vwap_deviation) > 0.015\n    \n    # Skip if compressed but has false signals\n    if true_compression and (stoch_extreme or far_from_vwap):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d90701d88a.py"
+}

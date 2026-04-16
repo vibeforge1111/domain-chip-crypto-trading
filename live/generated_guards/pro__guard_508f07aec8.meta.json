@@ -1,0 +1,8 @@
+{
+  "guard_id": "508f07aec8",
+  "generation": 810,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5af7caab",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filters trades where momentum and trend are misaligned.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    momentum = features.get(\"momentum_score\", 0)\n    trend = features.get(\"trend_strength\", 0)\n    \n    # Longs need both positive; shorts need both negative\n    if prediction == \"long\" and (momentum < 0 or trend < 0):\n        return \"skip\"\n    elif prediction == \"short\" and (momentum > 0 or trend > 0):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_508f07aec8.py"
+}

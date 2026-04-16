@@ -1,0 +1,8 @@
+{
+  "guard_id": "6f1f1412e0",
+  "generation": 4505,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b7f329e7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades by detecting true vs false compression using ATR and Bollinger width.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    \n    # True compression: both compressed simultaneously (reliable)\n    # False compression: only one compressed (unreliable setup)\n    both_compressed = atr_ratio < 0.85 and bb_width < 0.18\n    one_compressed = (atr_ratio < 0.85) != (bb_width < 0.18)\n    \n    if one_compressed:\n        return \"skip\"\n    \n    if both_compressed:\n        # In true compression, require momentum confirmation\n        if features.get(\"momentum_score\", 0) < 0.25:\n            return \"skip\"\n        # Avoid overbought/oversold extremes in compression setups\n        if features.get(\"stoch_k\", 50) > 85 or features.get(\"stoch_k\", 50) < 15:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6f1f1412e0.py"
+}

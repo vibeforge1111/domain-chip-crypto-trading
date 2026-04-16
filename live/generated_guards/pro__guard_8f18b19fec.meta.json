@@ -1,0 +1,8 @@
+{
+  "guard_id": "8f18b19fec",
+  "generation": 3445,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b415d6f2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Skip longs when overbought (both BB upper + stochastic high)\n    if prediction == 'long' and bb_pct_b > 0.88 and stoch_k > 78:\n        return 'skip'\n    \n    # Skip shorts when oversold (both BB lower + stochastic low)\n    if prediction == 'short' and bb_pct_b < 0.12 and stoch_k < 22:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8f18b19fec.py"
+}

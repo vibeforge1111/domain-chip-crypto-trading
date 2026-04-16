@@ -1,0 +1,8 @@
+{
+  "guard_id": "14b1cd0a7c",
+  "generation": 3105,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0e29dd8f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using stochastic crossover alignment.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # For longs, require bullish crossover (k crosses above d)\n    if prediction == \"long\" and stoch_k <= stoch_d:\n        return \"skip\"\n    \n    # For shorts, require bearish crossover (k crosses below d)\n    if prediction == \"short\" and stoch_k >= stoch_d:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_14b1cd0a7c.py"
+}

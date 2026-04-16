@@ -1,0 +1,8 @@
+{
+  "guard_id": "377967a891",
+  "generation": 4980,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9195dabd",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_deviation = features.get('vwap_deviation', 0)\n    # Skip trades too close to fair value (within 0.2% of price)\n    if abs(vwap_deviation) < 0.002:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_377967a891.py"
+}

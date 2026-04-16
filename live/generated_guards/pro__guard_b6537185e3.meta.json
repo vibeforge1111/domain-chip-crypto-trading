@@ -1,0 +1,8 @@
+{
+  "guard_id": "b6537185e3",
+  "generation": 3500,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a4744c63",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals during false compression patterns.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    \n    # False compression: tight BB but elevated ATR indicates noisy chop\n    false_compression = bb_width < 0.15 and atr_ratio > 1.3\n    \n    # Price too far from VWAP suggests weak conviction\n    vwap_extreme = abs(features.get('vwap_deviation', 0)) > 0.02\n    \n    # RSI divergence between timeframes weakens the signal\n    rsi_div = abs(features.get('rsi_14', 50) - features.get('rsi_2h', 50))\n    rsi_divergent = rsi_div > 25\n    \n    if false_compression or vwap_extreme or rsi_divergent:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b6537185e3.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "f58228599a",
+  "generation": 990,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "68fdfe52",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter volatility expansions without volume confirmation (false breakouts)\n    if features['atr_ratio'] > 1.5 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    # Filter counter-trend trades at Bollinger extremes without trend support\n    if prediction == \"long\" and features['bb_position'] > 0.85 and features['trend_strength'] < 0.35:\n        return \"skip\"\n    if prediction == \"short\" and features['bb_position'] < 0.15 and features['trend_strength'] < 0.35:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f58228599a.py"
+}

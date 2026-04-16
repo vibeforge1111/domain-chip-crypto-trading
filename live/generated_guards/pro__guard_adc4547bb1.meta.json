@@ -1,0 +1,8 @@
+{
+  "guard_id": "adc4547bb1",
+  "generation": 2630,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "01f31088",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on MACD momentum alignment and strength.\"\"\"\n    macd = features.get('macd_histogram', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Momentum must align with prediction direction\n    if prediction == \"long\" and macd < 0:\n        return \"skip\"\n    if prediction == \"short\" and macd > 0:\n        return \"skip\"\n    \n    # Reject weak momentum signals\n    if abs(macd) < 0.0001:\n        return \"skip\"\n    \n    # Additional filter: avoid entries against 2h trend\n    if prediction == \"long\" and rsi_2h < 35:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h > 65:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_adc4547bb1.py"
+}

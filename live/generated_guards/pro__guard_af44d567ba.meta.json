@@ -1,0 +1,8 @@
+{
+  "guard_id": "af44d567ba",
+  "generation": 3100,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "dd20772c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum lacks conviction (macd_histogram near zero).\"\"\"\n    macd = features.get('macd_histogram', 0)\n    if abs(macd) < 0.0001:  # Momentum signal too weak\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_af44d567ba.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "f19a46131d",
+  "generation": 1365,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a22c5e97",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip momentum divergence: RSI overbought in uptrend or oversold in downtrend\n    if prediction == \"long\" and features.get(\"rsi_14\", 50) > 68 and features.get(\"ema_slope\", 0) > 0:\n        return \"skip\"\n    if prediction == \"short\" and features.get(\"rsi_14\", 50) < 32 and features.get(\"ema_slope\", 0) < 0:\n        return \"skip\"\n    \n    # Skip reversal wicks: large upper wick on long signal or lower wick on short signal\n    if prediction == \"long\" and features.get(\"upper_wick_ratio\", 0) > 0.5:\n        return \"skip\"\n    if prediction == \"short\" and features.get(\"lower_wick_ratio\", 0) > 0.5:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f19a46131d.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "a2de809d21",
+  "generation": 1390,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "651a676a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against trades with unfavorable wick imbalance.\n\n    For longs: reject if upper wick dominates (resistance pressure)\n    For shorts: reject if lower wick dominates (support pressure)\n    \"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    upper = features.get(\"upper_wick_ratio\", 0)\n    lower = features.get(\"lower_wick_ratio\", 0)\n    body = features.get(\"body_ratio\", 0)\n    \n    # Reject if candle has very small body (indecision) with wick imbalance\n    if body < 0.2 and abs(upper - lower) > 0.15:\n        return \"skip\"\n    \n    # Wick dominance check for longs\n    if prediction == \"long\" and upper > lower * 1.4:\n        return \"skip\"\n    \n    # Wick dominance check for shorts\n    if prediction == \"short\" and lower > upper * 1.4:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a2de809d21.py"
+}

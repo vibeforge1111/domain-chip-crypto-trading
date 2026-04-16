@@ -1,0 +1,8 @@
+{
+  "guard_id": "e262c9cc28",
+  "generation": 3910,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9924c5a8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    stoch_k = features.get('stoch_k', 50)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Long with bearish vwap/momentum disagreement\n    if prediction == \"long\" and vwap_dev < -0.01 and momentum < -0.3:\n        return \"skip\"\n    \n    # Short with bullish vwap/momentum disagreement\n    if prediction == \"short\" and vwap_dev > 0.01 and momentum > 0.3:\n        return \"skip\"\n    \n    # Momentum trap: strong momentum but extreme Bollinger position\n    if prediction == \"long\" and momentum > 0.5 and bb_pct_b > 0.85:\n        return \"skip\"\n    \n    if prediction == \"short\" and momentum < -0.5 and bb_pct_b < 0.15:\n        return \"skip\"\n    \n    # Stoch/Bollinger disagreement (overbought at lower band or vice versa)\n    if prediction == \"long\" and stoch_k > 70 and bb_pct_b < 0.3:\n        return \"skip\"\n    \n    if prediction == \"short\" and stoch_k < 30 and bb_pct_b > 0.7:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e262c9cc28.py"
+}

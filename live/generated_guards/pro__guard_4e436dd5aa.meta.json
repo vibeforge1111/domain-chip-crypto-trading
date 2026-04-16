@@ -1,0 +1,8 @@
+{
+  "guard_id": "4e436dd5aa",
+  "generation": 1070,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "976b5c20",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    rsi_14 = features.get('rsi_14', 50)\n    momentum_score = features.get('momentum_score', 0)\n    bb_width = features.get('bb_width', 0)\n    volume_ratio = features.get('volume_ratio', 1)\n    \n    # Momentum divergence: skip when RSI extreme but momentum contradicts direction\n    if prediction == \"long\" and rsi_14 > 70 and momentum_score < -0.2:\n        return \"skip\"\n    if prediction == \"short\" and rsi_14 < 30 and momentum_score > 0.2:\n        return \"skip\"\n    \n    # Low volatility squeeze with high volume: potential false breakout, skip\n    if bb_width < 0.15 and volume_ratio > 1.8:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4e436dd5aa.py"
+}

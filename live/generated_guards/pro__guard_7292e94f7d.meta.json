@@ -1,0 +1,8 @@
+{
+  "guard_id": "7292e94f7d",
+  "generation": 4935,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "258ac50f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like upper_wick_ratio, lower_wick_ratio, body_ratio, range_pct, volume_ratio, atr_ratio, rsi_14, ema_slope\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    if momentum > 0.3 and vwap_dev < -0.008:\n        return \"skip\"\n    if momentum < -0.3 and vwap_dev > 0.008:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7292e94f7d.py"
+}

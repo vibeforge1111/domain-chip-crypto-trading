@@ -1,0 +1,8 @@
+{
+  "guard_id": "08d6ea7abe",
+  "generation": 550,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a40f0788",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with squeeze conditions or weak momentum alignment.\"\"\"\n    bb_width = features.get(\"bb_width\", 0)\n    atr_ratio = features.get(\"atr_ratio\", 1)\n    volume_ratio = features.get(\"volume_ratio\", 1)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    momentum_score = features.get(\"momentum_score\", 0)\n    \n    # Low volatility squeeze + low volume = potential fakeout\n    if bb_width < 0.5 and atr_ratio < 0.8 and volume_ratio < 0.8:\n        return \"skip\"\n    \n    # Weak momentum zone - skip if RSI neutral and momentum near zero\n    if 40 <= rsi_14 <= 60 and abs(momentum_score) < 0.2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_08d6ea7abe.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "b63455c21f",
+  "generation": 3925,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "be0a3ee1",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    confirmations = 0\n    \n    if prediction == \"long\":\n        if features.get('rsi_14', 50) < 70: confirmations += 1\n        if features.get('rsi_2h', 50) < 70: confirmations += 1\n        if features.get('stoch_k', 50) < 80: confirmations += 1\n        if features.get('vwap_deviation', 0) > 0: confirmations += 1\n        if features.get('macd_histogram', 0) > 0: confirmations += 1\n        if features.get('obv_slope', 0) > 0: confirmations += 1\n        if features.get('bb_pct_b', 0.5) > 0.5: confirmations += 1\n    elif prediction == \"short\":\n        if features.get('rsi_14', 50) > 30: confirmations += 1\n        if features.get('rsi_2h', 50) > 30: confirmations += 1\n        if features.get('stoch_k', 50) > 20: confirmations += 1\n        if features.get('vwap_deviation', 0) < 0: confirmations += 1\n        if features.get('macd_histogram', 0) < 0: confirmations += 1\n        if features.get('obv_slope', 0) < 0: confirmations += 1\n        if features.get('bb_pct_b', 0.5) < 0.5: confirmations += 1\n    \n    return \"skip\" if confirmations < 2 else prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b63455c21f.py"
+}

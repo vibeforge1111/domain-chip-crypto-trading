@@ -1,0 +1,8 @@
+{
+  "guard_id": "c7bc9dc9f5",
+  "generation": 1055,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ac57c0b9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals where RSI extreme conflicts with EMA trend direction.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    ema_slope = features.get('ema_slope', 0)\n    \n    # Long: skip if RSI overbought AND EMA not bullish\n    if prediction == 'long' and rsi > 70 and ema_slope < 0.001:\n        return 'skip'\n    \n    # Short: skip if RSI oversold AND EMA not bearish\n    if prediction == 'short' and rsi < 30 and ema_slope > -0.001:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c7bc9dc9f5.py"
+}

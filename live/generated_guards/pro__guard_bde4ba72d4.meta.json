@@ -1,0 +1,8 @@
+{
+  "guard_id": "bde4ba72d4",
+  "generation": 3415,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d6f463fe",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on stochastic crossover timing.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Detect crossover: stoch_k crossing above/below stoch_d\n    # Using threshold spread to identify crossover conditions\n    crossover_gap = stoch_k - stoch_d\n    \n    if prediction == \"long\":\n        # Long valid when stoch_k crosses above stoch_d in oversold\n        if crossover_gap < 5 or stoch_k > 30:\n            return \"skip\"\n        # Reject if wider timeframe is overbought\n        if rsi_2h > 65:\n            return \"skip\"\n            \n    elif prediction == \"short\":\n        # Short valid when stoch_k crosses below stoch_d in overbought\n        if crossover_gap > -5 or stoch_k < 70:\n            return \"skip\"\n        # Reject if wider timeframe is oversold\n        if rsi_2h < 35:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bde4ba72d4.py"
+}

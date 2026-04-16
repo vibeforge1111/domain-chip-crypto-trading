@@ -1,0 +1,8 @@
+{
+  "guard_id": "be96aa7065",
+  "generation": 45,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1490c352",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter: skip if volatility is compressed AND price at extreme BB position\n    if features['bb_width'] < 0.012 and (features['bb_position'] > 0.92 or features['bb_position'] < 0.08):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_be96aa7065.py"
+}

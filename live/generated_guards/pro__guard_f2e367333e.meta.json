@@ -1,0 +1,8 @@
+{
+  "guard_id": "f2e367333e",
+  "generation": 4525,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0050e8fc",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when macd_histogram contradicts direction (momentum deceleration).\"\"\"\n    hist = features.get(\"macd_histogram\", 0)\n    if prediction == \"long\" and hist < -0.00005:\n        return \"skip\"\n    if prediction == \"short\" and hist > 0.00005:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f2e367333e.py"
+}

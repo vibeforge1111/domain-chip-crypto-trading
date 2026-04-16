@@ -1,0 +1,8 @@
+{
+  "guard_id": "7d24f54205",
+  "generation": 4625,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c97d231e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against false compression - only accept trades when compression is genuine.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1)\n    bb_width = features.get('bb_width', 1)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # True compression detected when both indicators show compression\n    is_compressed = atr_ratio < 0.75 and bb_width < 0.18\n    \n    # False compression: compressed but price at extreme BB position\n    extreme_position = bb_pct_b > 0.88 or bb_pct_b < 0.12\n    \n    # False compression: compressed but stoch overbought/oversold\n    stoch_extreme = stoch_k > 80 or stoch_k < 20\n    \n    # Weak accumulation/distribution during compression (potential fakeout)\n    weak_momentum = is_compressed and abs(obv_slope) < 0.1\n    \n    if is_compressed and (extreme_position or stoch_extreme or weak_momentum):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7d24f54205.py"
+}

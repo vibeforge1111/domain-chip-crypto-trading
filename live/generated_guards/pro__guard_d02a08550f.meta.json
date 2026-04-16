@@ -1,0 +1,8 @@
+{
+  "guard_id": "d02a08550f",
+  "generation": 2885,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a4e6f188",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when Bollinger Band position contradicts the trade direction.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # Price at lower band extremes - reject shorts\n    if bb_pct_b < 0.05 and prediction == 'short':\n        return 'skip'\n    \n    # Price at upper band extremes - reject longs\n    if bb_pct_b > 0.95 and prediction == 'long':\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d02a08550f.py"
+}

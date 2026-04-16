@@ -1,0 +1,9 @@
+{
+  "guard_id": "b9c05b4419",
+  "generation": 5535,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "79d3462f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter based on volatility regime context.\"\"\"\n    # Focus on productive volatility regime\n    if features['volatility_regime'] != 'event_driven,range':\n        return \"skip\"\n    # Skip extreme ATR conditions (compressed or expanded)\n    if features['atr_ratio'] < 0.5 or features['atr_ratio'] > 2.0:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b9c05b4419.py",
+  "synergy_mode": true
+}

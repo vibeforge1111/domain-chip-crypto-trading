@@ -1,0 +1,8 @@
+{
+  "guard_id": "12dd91433c",
+  "generation": 4300,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d477ca07",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when momentum shows deceleration (macd_histogram near zero).\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd_hist = features.get(\"macd_histogram\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Momentum deceleration: macd_histogram near zero indicates weakening momentum\n    if abs(macd_hist) < 0.0002:\n        return \"skip\"\n    \n    # Long entries need positive momentum and price above VWAP\n    if prediction == \"long\" and (macd_hist <= 0 or vwap_dev < 0):\n        return \"skip\"\n    \n    # Short entries need negative momentum and price below VWAP\n    if prediction == \"short\" and (macd_hist >= 0 or vwap_dev > 0):\n        return \"skip\"\n    \n    # Avoid entries against extended 2h RSI\n    if prediction == \"long\" and rsi_2h > 70:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h < 30:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_12dd91433c.py"
+}

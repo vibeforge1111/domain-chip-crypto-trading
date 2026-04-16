@@ -1,0 +1,8 @@
+{
+  "guard_id": "f6878d8532",
+  "generation": 605,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "190c0848",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on momentum-trend alignment and volatility regime.\"\"\"\n    # Skip if volatility regime is too extreme\n    if features['volatility_regime'] > 0.85 or features['volatility_regime'] < 0.15:\n        return \"skip\"\n    \n    # Skip if momentum contradicts the trade direction\n    if prediction == \"long\" and features['momentum_score'] < -0.15:\n        return \"skip\"\n    if prediction == \"short\" and features['momentum_score'] > 0.15:\n        return \"skip\"\n    \n    # Skip if trend strength is weak AND momentum is neutral\n    if abs(features['trend_strength']) < 0.3 and abs(features['momentum_score']) < 0.2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f6878d8532.py"
+}

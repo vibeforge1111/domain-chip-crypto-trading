@@ -1,0 +1,8 @@
+{
+  "guard_id": "d142d315ba",
+  "generation": 2685,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9e6c67d3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Long only when near lower band with confirmation\n    if bb_pct_b < 0.05 and prediction == \"long\":\n        if vwap_dev < -0.005 and stoch_k < 20 and obv_slope > 0:\n            return prediction\n        return \"skip\"\n    # Short only when near upper band with confirmation\n    elif bb_pct_b > 0.95 and prediction == \"short\":\n        if vwap_dev > 0.005 and stoch_k > 80 and obv_slope < 0:\n            return prediction\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d142d315ba.py"
+}

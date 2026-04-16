@@ -1,0 +1,8 @@
+{
+  "guard_id": "129b8b6080",
+  "generation": 1595,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ec3cac2b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when RSI is extreme and market conditions are unfavorable.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    volatility = features.get('volatility_regime', 0.5)\n    trend_strength = features.get('trend_strength', 0)\n    \n    # Skip if overbought/oversold AND (weak trend OR high volatility)\n    if (rsi > 70 or rsi < 30) and (trend_strength < 0.3 or volatility > 0.7):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_129b8b6080.py"
+}

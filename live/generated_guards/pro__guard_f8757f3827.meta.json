@@ -1,0 +1,8 @@
+{
+  "guard_id": "f8757f3827",
+  "generation": 3750,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b548f360",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    confirmation_count = 0\n    \n    # Stochastics not overbought/oversold\n    if 20 < features.get(\"stoch_k\", 50) < 80 and 20 < features.get(\"stoch_d\", 50) < 80:\n        confirmation_count += 1\n    \n    # VWAP not too far from price\n    if -0.015 < features.get(\"vwap_deviation\", 0) < 0.01:\n        confirmation_count += 1\n    \n    # OBV showing accumulation/distribution\n    if features.get(\"obv_slope\", 0) > 0:\n        confirmation_count += 1\n    \n    # MACD histogram aligned with prediction\n    if prediction == \"long\" and features.get(\"macd_histogram\", 0) > 0:\n        confirmation_count += 1\n    elif prediction == \"short\" and features.get(\"macd_histogram\", 0) < 0:\n        confirmation_count += 1\n    \n    # BB position in middle range\n    if 0.2 < features.get(\"bb_pct_b\", 0.5) < 0.8:\n        confirmation_count += 1\n    \n    # 2-hour RSI confirming direction\n    if prediction == \"long\" and features.get(\"rsi_2h\", 50) < 70:\n        confirmation_count += 1\n    elif prediction == \"short\" and features.get(\"rsi_2h\", 50) > 30:\n        confirmation_count += 1\n    \n    return prediction if confirmation_count >= 2 else \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f8757f3827.py"
+}

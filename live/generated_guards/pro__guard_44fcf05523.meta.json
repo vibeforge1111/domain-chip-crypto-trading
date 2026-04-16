@@ -1,0 +1,8 @@
+{
+  "guard_id": "44fcf05523",
+  "generation": 80,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "36a9968f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on volume-momentum divergence and extreme RSI with candle confirmation.\"\"\"\n    if features.get('volume_ratio', 1) < 0.7 and features.get('momentum_score', 0) < 0.3:\n        return \"skip\"\n    \n    if features.get('rsi_14', 50) > 75 and features.get('upper_wick_ratio', 0) > 0.4 and prediction == \"long\":\n        return \"skip\"\n    \n    if features.get('rsi_14', 50) < 25 and features.get('lower_wick_ratio', 0) > 0.4 and prediction == \"short\":\n        return \"skip\"\n    \n    if features.get('bb_width', 0) < 0.3 and features.get('volume_ratio', 1) > 1.8 and features.get('range_pct', 0) < 0.5:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_44fcf05523.py"
+}

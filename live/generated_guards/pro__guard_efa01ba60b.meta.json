@@ -1,0 +1,8 @@
+{
+  "guard_id": "efa01ba60b",
+  "generation": 4565,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1d42cd20",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Require clear crossover: stoch_k must be on opposite side of stoch_d\n    if abs(stoch_k - stoch_d) < 5:\n        return \"skip\"\n    \n    # Long signals need stoch_k below stoch_d (bullish crossover setup) and oversold\n    if prediction == \"long\":\n        if stoch_k >= stoch_d:\n            return \"skip\"\n        if stoch_k > 30:  # Not oversold enough\n            return \"skip\"\n        if rsi_2h < 40:  # Wider timeframe confirming oversold\n            return \"skip\"\n    \n    # Short signals need stoch_k above stoch_d (bearish crossover setup) and overbought\n    if prediction == \"short\":\n        if stoch_k <= stoch_d:\n            return \"skip\"\n        if stoch_k < 70:  # Not overbought enough\n            return \"skip\"\n        if rsi_2h > 60:  # Wider timeframe confirming overbought\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_efa01ba60b.py"
+}

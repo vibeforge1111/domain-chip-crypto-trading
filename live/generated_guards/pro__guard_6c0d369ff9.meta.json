@@ -1,0 +1,8 @@
+{
+  "guard_id": "6c0d369ff9",
+  "generation": 5425,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3c39a7ee",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bullish_count = 0\n    bearish_count = 0\n    \n    # RSI confirmation\n    if features.get('rsi_14', 50) >= 50:\n        bullish_count += 1\n    else:\n        bearish_count += 1\n    \n    # Stochastic momentum\n    if features.get('stoch_k', 50) > features.get('stoch_d', 50):\n        bullish_count += 1\n    else:\n        bearish_count += 1\n    \n    # OBV trend confirmation\n    if features.get('obv_slope', 0) > 0:\n        bullish_count += 1\n    else:\n        bearish_count += 1\n    \n    # Validate against prediction direction\n    if prediction == \"long\" and bullish_count >= 2:\n        return prediction\n    if prediction == \"short\" and bearish_count >= 2:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6c0d369ff9.py"
+}

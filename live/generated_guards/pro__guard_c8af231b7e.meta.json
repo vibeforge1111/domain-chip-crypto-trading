@@ -1,0 +1,8 @@
+{
+  "guard_id": "c8af231b7e",
+  "generation": 2585,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d8ea5ea2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using BB extremes and momentum confirmation.\"\"\"\n    bb = features.get('bb_pct_b', 0.5)\n    stoch = features.get('stoch_k', 50)\n    vwap = features.get('vwap_deviation', 0)\n    \n    # Long: near lower band OR oversold with VWAP confirmation\n    if prediction == 'long' and (bb < 0.05 or (stoch < 25 and vwap < 0)):\n        return prediction\n    \n    # Short: near upper band OR overbought with VWAP confirmation\n    if prediction == 'short' and (bb > 0.95 or (stoch > 75 and vwap > 0)):\n        return prediction\n    \n    return 'skip'",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c8af231b7e.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "b55184d5a5",
+  "generation": 5015,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "419d8607",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades against volume flow using obv_slope and vwap_deviation.\"\"\"\n    obv_slope = features.get('obv_slope', 0)\n    vwap_dev = features.get('vwap_deviation', 0)\n    \n    # Skip longs if OBV declining (distribution) or price far below VWAP\n    if prediction == 'long' and (obv_slope < -0.005 or vwap_dev < -0.015):\n        return 'skip'\n    \n    # Skip shorts if OBV rising (accumulation) or price far above VWAP\n    if prediction == 'short' and (obv_slope > 0.005 or vwap_dev > 0.015):\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b55184d5a5.py"
+}

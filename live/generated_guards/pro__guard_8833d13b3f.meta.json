@@ -1,0 +1,8 @@
+{
+  "guard_id": "8833d13b3f",
+  "generation": 3715,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cf493bf2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard using Bollinger Band extremes and confirmation filters.\"\"\"\n    bb = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Only trade in high-confidence BB extreme zones\n    if bb >= 0.05 and bb <= 0.95:\n        return \"skip\"\n    \n    # Reject long when stoch confirms oversold (wait for bounce)\n    if prediction == \"long\" and stoch_k < 20:\n        return \"skip\"\n    \n    # Reject short when stoch confirms overbought (wait for dump)\n    if prediction == \"short\" and stoch_k > 80:\n        return \"skip\"\n    \n    # Additional vwap confirmation for entries\n    if prediction == \"long\" and vwap_dev < -0.005:\n        return \"skip\"\n    if prediction == \"short\" and vwap_dev > 0.005:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8833d13b3f.py"
+}

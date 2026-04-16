@@ -1,0 +1,8 @@
+{
+  "guard_id": "a1f5c9150c",
+  "generation": 3125,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b67a5490",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_dev = features.get('vwap_deviation', 0)\n    \n    # Only allow trades at extreme BB positions with VWAP alignment\n    if bb_pct_b < 0.05 and vwap_dev < -0.005 and prediction == \"short\":\n        return prediction\n    if bb_pct_b > 0.95 and vwap_dev > 0.005 and prediction == \"long\":\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a1f5c9150c.py"
+}

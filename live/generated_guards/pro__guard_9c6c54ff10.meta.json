@@ -1,0 +1,8 @@
+{
+  "guard_id": "9c6c54ff10",
+  "generation": 5260,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "682d87fe",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when bb_pct_b and stoch_k show aligned extremes.\"\"\"\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    stoch = features.get(\"stoch_k\", 50)\n    \n    if prediction == \"long\":\n        # Skip longs when both indicate overbought (BB upper + stochastic >80)\n        if bb_pct > 0.88 and stoch > 80:\n            return \"skip\"\n        # Also skip extreme overbought on stochastic alone\n        if stoch > 92:\n            return \"skip\"\n    \n    if prediction == \"short\":\n        # Skip shorts when both indicate oversold (BB lower + stochastic <20)\n        if bb_pct < 0.12 and stoch < 20:\n            return \"skip\"\n        # Also skip extreme oversold on stochastic alone\n        if stoch < 8:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9c6c54ff10.py"
+}

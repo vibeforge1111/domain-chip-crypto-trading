@@ -1,0 +1,8 @@
+{
+  "guard_id": "b62816a396",
+  "generation": 2350,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cfa94e45",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using atr_ratio, bb_width, and new features.\"\"\"\n    is_compressed = features['atr_ratio'] < 0.7 and features['bb_width'] < 0.3\n    \n    if is_compressed and prediction != \"skip\":\n        # False compression signals: BB at extremes, far from VWAP, overbought/oversold\n        bb_extreme = features['bb_pct_b'] < 0.15 or features['bb_pct_b'] > 0.85\n        vwap_far = abs(features['vwap_deviation']) > 0.01\n        stoch_extreme = features['stoch_k'] > 80 or features['stoch_k'] < 20\n        \n        # Skip if multiple false compression indicators present\n        if sum([bb_extreme, vwap_far, stoch_extreme]) >= 2:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b62816a396.py"
+}

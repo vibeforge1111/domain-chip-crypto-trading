@@ -1,0 +1,8 @@
+{
+  "guard_id": "e89bdac5e0",
+  "generation": 450,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f67cb1b3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades when low volume coincides with high ATR (choppy market).\"\"\"\n    # Low volume + high volatility = unreliable signals\n    if features['volume_ratio'] < 0.6 and features['atr_ratio'] > 1.4:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e89bdac5e0.py"
+}

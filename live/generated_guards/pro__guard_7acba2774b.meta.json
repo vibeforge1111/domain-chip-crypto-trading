@@ -1,0 +1,8 @@
+{
+  "guard_id": "7acba2774b",
+  "generation": 190,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "097e3423",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals with suspicious candle structure or momentum divergence.\"\"\"\n    # Reject weak signals: small body + low volume = indecision\n    if features['body_ratio'] < 0.2 and features['volume_ratio'] < 0.8:\n        return \"skip\"\n    \n    # Reject long setups with dominant upper wick (selling pressure)\n    if prediction == \"long\" and features['upper_wick_ratio'] > 0.6:\n        return \"skip\"\n    \n    # Reject short setups with dominant lower wick (buying pressure)\n    if prediction == \"short\" and features['lower_wick_ratio'] > 0.6:\n        return \"skip\"\n    \n    # Skip if momentum contradicts trend direction\n    if prediction == \"long\" and features['momentum_score'] < -0.3:\n        return \"skip\"\n    if prediction == \"short\" and features['momentum_score'] > 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7acba2774b.py"
+}

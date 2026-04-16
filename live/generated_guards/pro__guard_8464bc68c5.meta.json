@@ -1,0 +1,8 @@
+{
+  "guard_id": "8464bc68c5",
+  "generation": 2290,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "e28efd30",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression: high ATR but narrow BBs signals pending volatility expansion\n    if features.get('atr_ratio', 0) > 1.2 and features.get('bb_width', 1) < 0.55:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8464bc68c5.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "8349f00f94",
+  "generation": 170,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1fd863ec",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals at Bollinger Band extremes with weak momentum and low volatility.\"\"\"\n    bb_pos = features.get('bb_position', 0.5)\n    momentum = features.get('momentum_score', 0.5)\n    volatility = features.get('volatility_regime', 0.5)\n    \n    # Skip when price is at band extremes but lacks momentum and volatility confirmation\n    if (bb_pos > 0.92 or bb_pos < 0.08) and momentum < 0.35 and volatility < 0.4:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8349f00f94.py"
+}

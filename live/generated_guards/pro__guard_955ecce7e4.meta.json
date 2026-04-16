@@ -1,0 +1,8 @@
+{
+  "guard_id": "955ecce7e4",
+  "generation": 3820,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "e4bb17cb",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using ATR, BB width, and BB position.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # True compression: low atr_ratio AND low bb_width\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.8\n    \n    # If compressed, price should be near middle of bands for valid breakout\n    if is_compressed and (bb_pct_b < 0.15 or bb_pct_b > 0.85):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_955ecce7e4.py"
+}

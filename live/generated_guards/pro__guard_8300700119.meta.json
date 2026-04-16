@@ -1,0 +1,8 @@
+{
+  "guard_id": "8300700119",
+  "generation": 1630,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "19baa86a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with conflicting momentum and candle structure signals.\"\"\"\n    \n    # Reject long if RSI overbought and candle shows reversal candle (upper wick)\n    if prediction == \"long\" and features['rsi_14'] > 68:\n        if features['upper_wick_ratio'] > 0.25:\n            return \"skip\"\n    \n    # Reject short if RSI oversold and candle shows reversal candle (lower wick)\n    if prediction == \"short\" and features['rsi_14'] < 32:\n        if features['lower_wick_ratio'] > 0.25:\n            return \"skip\"\n    \n    # Reject trades with low body + low volume (no conviction)\n    if features['body_ratio'] < 0.15 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8300700119.py"
+}

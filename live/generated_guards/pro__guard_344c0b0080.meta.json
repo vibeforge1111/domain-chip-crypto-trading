@@ -1,0 +1,8 @@
+{
+  "guard_id": "344c0b0080",
+  "generation": 1035,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "6891dfc9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during low-volume Bollinger Band compression.\"\"\"\n    bb_width = features.get(\"bb_width\", 0)\n    volume_ratio = features.get(\"volume_ratio\", 1)\n    \n    # Skip when BB is narrow (compressed) and volume is low - potential breakout trap\n    if bb_width < 0.15 and volume_ratio < 0.7:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_344c0b0080.py"
+}

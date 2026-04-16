@@ -1,0 +1,8 @@
+{
+  "guard_id": "554c4c6bd1",
+  "generation": 4640,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f60d11a9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades against OBV volume flow direction.\"\"\"\n    obv_slope = features.get(\"obv_slope\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Skip longs when OBV shows distribution (smart money selling)\n    if prediction == \"long\" and obv_slope < -0.005:\n        return \"skip\"\n    \n    # Skip shorts when OBV shows accumulation (smart money buying)\n    if prediction == \"short\" and obv_slope > 0.005:\n        return \"skip\"\n    \n    # Additional filter: overbought/oversold extreme with bad OBV alignment\n    if prediction == \"long\" and stoch_k > 75 and obv_slope < 0:\n        return \"skip\"\n    \n    if prediction == \"short\" and stoch_k < 25 and obv_slope > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_554c4c6bd1.py"
+}

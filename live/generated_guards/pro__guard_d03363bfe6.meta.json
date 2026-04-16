@@ -1,0 +1,8 @@
+{
+  "guard_id": "d03363bfe6",
+  "generation": 4135,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0d584500",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return \"skip\"\n    \n    confirmations = 0\n    \n    # VWAP alignment\n    vwap_dev = features.get('vwap_deviation', 0)\n    if prediction == \"long\" and vwap_dev > -0.01:\n        confirmations += 1\n    if prediction == \"short\" and vwap_dev < 0.01:\n        confirmations += 1\n    \n    # Stochastic confirmation\n    stoch_k = features.get('stoch_k', 50)\n    if prediction == \"long\" and stoch_k < 80:\n        confirmations += 1\n    if prediction == \"short\" and stoch_k > 20:\n        confirmations += 1\n    \n    # RSI confirmation\n    rsi = features.get('rsi_14', 50)\n    if prediction == \"long\" and rsi < 70:\n        confirmations += 1\n    if prediction == \"short\" and rsi > 30:\n        confirmations += 1\n    \n    # OBV slope confirmation\n    if features.get('obv_slope', 0) > 0:\n        confirmations += 1\n    \n    # Bollinger Band position confirmation\n    bb_pos = features.get('bb_pct_b', 0.5)\n    if prediction == \"long\" and bb_pos > 0.2:\n        confirmations += 1\n    if prediction == \"short\" and bb_pos < 0.8:\n        confirmations += 1\n    \n    if confirmations < 2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d03363bfe6.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "cb93cdba36",
+  "generation": 3690,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8a5cb6cc",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi_14 = features.get(\"rsi_14\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    stoch_k = features.get(\"stoch_k\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5) * 100\n    macd_hist = features.get(\"macd_histogram\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    confirmations = 0\n    \n    if prediction == \"long\":\n        if rsi_14 > 50: confirmations += 1\n        if rsi_2h > 50: confirmations += 1\n        if stoch_k < 80: confirmations += 1\n        if macd_hist > 0: confirmations += 1\n        if vwap_dev > 0: confirmations += 1\n        if obv_slope > 0: confirmations += 1\n    elif prediction == \"short\":\n        if rsi_14 < 50: confirmations += 1\n        if rsi_2h < 50: confirmations += 1\n        if stoch_k > 20: confirmations += 1\n        if macd_hist < 0: confirmations += 1\n        if vwap_dev < 0: confirmations += 1\n        if obv_slope < 0: confirmations += 1\n    \n    return prediction if confirmations >= 3 else \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cb93cdba36.py"
+}

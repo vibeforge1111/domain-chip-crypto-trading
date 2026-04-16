@@ -1,0 +1,8 @@
+{
+  "guard_id": "307aea031e",
+  "generation": 2550,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "82dfa2c7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using bb_width, atr_ratio, and oscillators.\"\"\"\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    stoch_k = features.get('stoch_k', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    macd_hist = features.get('macd_histogram', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: narrowing bands + low volatility\n    is_compression = bb_width < 0.75 and atr_ratio < 0.85\n    \n    if is_compression and prediction != \"skip\":\n        # False compression flags\n        stoch_extreme = stoch_k > 85 or stoch_k < 15\n        vwap_far = abs(vwap_dev) > 0.015\n        weak_momentum = abs(macd_hist) < 0.0003\n        rsi_divergent = rsi_2h > 70 or rsi_2h < 30\n        \n        # Reject if multiple false signals present\n        false_flags = sum([stoch_extreme, vwap_far, weak_momentum, rsi_divergent])\n        if false_flags >= 2:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_307aea031e.py"
+}

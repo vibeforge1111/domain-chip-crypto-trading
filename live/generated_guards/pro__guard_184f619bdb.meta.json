@@ -1,0 +1,8 @@
+{
+  "guard_id": "184f619bdb",
+  "generation": 5230,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "aae1fc0e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using BB extremes and momentum confirmation.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    volume_ratio = features.get('volume_ratio', 1.0)\n    \n    if prediction == \"long\":\n        # High-confidence long: extreme lower band OR pullback with momentum\n        if bb_pct_b < 0.05 or (bb_pct_b < 0.15 and stoch_k < 25 and volume_ratio > 0.8):\n            return prediction\n        return \"skip\"\n    \n    elif prediction == \"short\":\n        # High-confidence short: extreme upper band OR rally with momentum\n        if bb_pct_b > 0.95 or (bb_pct_b > 0.85 and stoch_k > 75 and volume_ratio > 0.8):\n            return prediction\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_184f619bdb.py"
+}

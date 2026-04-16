@@ -1,0 +1,8 @@
+{
+  "guard_id": "304bb95367",
+  "generation": 1930,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "32beaa8c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip when RSI extremes conflict with momentum direction (divergence).\"\"\"\n    rsi_14 = features.get('rsi_14', 50)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    momentum_score = features.get('momentum_score', 0)\n    \n    # Long: price at upper band but momentum diverging bearish\n    if prediction == \"long\" and rsi_14 > 70 and bb_pct_b > 0.85 and momentum_score < 0:\n        return \"skip\"\n    \n    # Short: price at lower band but momentum diverging bullish\n    if prediction == \"short\" and rsi_14 < 30 and bb_pct_b < 0.15 and momentum_score > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_304bb95367.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "35c84b0302",
+  "generation": 2880,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3999c6d3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades to only allow entries in extreme bb_pct_b zones.\"\"\"\n    bb = features.get('bb_pct_b', 0.5)\n    # Long only near lower band, short only near upper band\n    if prediction == \"long\" and bb >= 0.05:\n        return \"skip\"\n    if prediction == \"short\" and bb <= 0.95:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_35c84b0302.py"
+}

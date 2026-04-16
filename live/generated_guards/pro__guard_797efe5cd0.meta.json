@@ -1,0 +1,8 @@
+{
+  "guard_id": "797efe5cd0",
+  "generation": 195,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3e7463b8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where momentum and RSI disagree (divergence signal).\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    # Bullish divergence: RSI oversold but momentum still negative\n    if rsi < 35 and momentum < -0.1:\n        return \"skip\"\n    \n    # Bearish divergence: RSI overbought but momentum still positive\n    if rsi > 65 and momentum > 0.1:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_797efe5cd0.py"
+}

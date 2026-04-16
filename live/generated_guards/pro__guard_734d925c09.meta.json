@@ -1,0 +1,8 @@
+{
+  "guard_id": "734d925c09",
+  "generation": 4070,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0f9bd538",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject entries where momentum is decelerating (histogram near zero).\"\"\"\n    macd_histogram = features.get('macd_histogram', 0)\n    stoch_k = features.get('stoch_k', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # Skip longs when macd_histogram is near zero (exhausted upward momentum)\n    if prediction == \"long\" and abs(macd_histogram) < 0.001:\n        return \"skip\"\n    \n    # Skip shorts when macd_histogram is near zero (exhausted downward momentum)\n    if prediction == \"short\" and abs(macd_histogram) < 0.001:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_734d925c09.py"
+}

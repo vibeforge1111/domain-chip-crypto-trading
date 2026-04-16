@@ -1,0 +1,8 @@
+{
+  "guard_id": "40b16ed17e",
+  "generation": 445,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "33108df9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when wick imbalance contradicts direction in trending conditions.\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    trend_strength = features.get('trend_strength', 0.5)\n    \n    if trend_strength > 0.6:\n        if prediction == 'long' and upper_wick > 0.4:\n            return 'skip'\n        if prediction == 'short' and lower_wick > 0.4:\n            return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_40b16ed17e.py"
+}

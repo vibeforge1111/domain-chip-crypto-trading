@@ -1,0 +1,8 @@
+{
+  "guard_id": "a53e6b3901",
+  "generation": 210,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0cedd474",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when volume spikes with tight range and heavy wicks (distribution/accumulation).\"\"\"\n    if prediction != \"skip\":\n        high_volume = features['volume_ratio'] > 1.5\n        tight_range = features['range_pct'] < features.get('atr_ratio', 0.5) * 0.7\n        wick_heavy = (features['upper_wick_ratio'] + features['lower_wick_ratio']) > 0.65\n        \n        if high_volume and tight_range and wick_heavy:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a53e6b3901.py"
+}

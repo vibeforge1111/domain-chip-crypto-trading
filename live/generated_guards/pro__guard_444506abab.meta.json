@@ -1,0 +1,8 @@
+{
+  "guard_id": "444506abab",
+  "generation": 3970,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bd8a4ae3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    macd_hist = features.get(\"macd_histogram\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    bullish_count = 0\n    bearish_count = 0\n    \n    # Stochastic momentum\n    if stoch_k > 30:\n        bullish_count += 1\n    if stoch_k < 70:\n        bearish_count += 1\n    \n    # VWAP deviation\n    if vwap_dev > -0.015:\n        bullish_count += 1\n    if vwap_dev < 0.015:\n        bearish_count += 1\n    \n    # OBV slope\n    if obv_slope > 0:\n        bullish_count += 1\n    if obv_slope < 0:\n        bearish_count += 1\n    \n    # MACD histogram\n    if macd_hist > 0:\n        bullish_count += 1\n    if macd_hist < 0:\n        bearish_count += 1\n    \n    # RSI 2h context\n    if rsi_2h < 60:\n        bullish_count += 1\n    if rsi_2h > 40:\n        bearish_count += 1\n    \n    if prediction == \"long\" and bearish_count >= 3:\n        return \"skip\"\n    if prediction == \"short\" and bullish_count >= 3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_444506abab.py"
+}

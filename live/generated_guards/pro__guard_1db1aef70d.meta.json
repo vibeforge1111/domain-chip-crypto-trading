@@ -1,0 +1,9 @@
+{
+  "guard_id": "1db1aef70d",
+  "generation": 5540,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1db02b66",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band extremes and momentum confirmation.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    stoch_k = features.get('stoch_k', 50)\n    momentum_score = features.get('momentum_score', 0)\n    \n    # Extreme lower band - potential long setup\n    is_lower_extreme = bb_pct_b < 0.05\n    # Extreme upper band - potential short setup\n    is_upper_extreme = bb_pct_b > 0.95\n    \n    # Skip if not at an extreme\n    if not is_lower_extreme and not is_upper_extreme:\n        return \"skip\"\n    \n    # For lower extreme, confirm RSI not oversold too long and momentum not deeply negative\n    if is_lower_extreme:\n        if rsi_14 < 20 or momentum_score < -0.3:\n            return \"skip\"\n        # Accept long signals at lower band with decent RSI\n        if prediction == \"long\":\n            return prediction\n        return \"skip\"\n    \n    # For upper extreme, confirm not overbought and momentum not too positive\n    if is_upper_extreme:\n        if rsi_14 > 80 or momentum_score > 0.3:\n            return \"skip\"\n        # Accept short signals at upper band with decent RSI\n        if prediction == \"short\":\n            return prediction\n        return \"skip\"\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1db1aef70d.py",
+  "synergy_mode": false
+}

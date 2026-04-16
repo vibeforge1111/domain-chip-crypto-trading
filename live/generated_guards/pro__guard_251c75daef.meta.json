@@ -1,0 +1,8 @@
+{
+  "guard_id": "251c75daef",
+  "generation": 895,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "59ee788a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when RSI contradicts the predicted direction.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    \n    if prediction == \"long\" and rsi < 45:\n        return \"skip\"\n    if prediction == \"short\" and rsi > 55:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_251c75daef.py"
+}

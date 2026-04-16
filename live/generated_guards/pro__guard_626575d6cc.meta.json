@@ -1,0 +1,8 @@
+{
+  "guard_id": "626575d6cc",
+  "generation": 1025,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "23010867",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with conflicting momentum and Bollinger Band position.\"\"\"\n    if features['bb_position'] > 0.9 and features['momentum_score'] < -0.2:\n        return \"skip\"\n    if features['bb_position'] < 0.1 and features['momentum_score'] > 0.2:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_626575d6cc.py"
+}

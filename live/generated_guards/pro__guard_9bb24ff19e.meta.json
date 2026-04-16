@@ -1,0 +1,8 @@
+{
+  "guard_id": "9bb24ff19e",
+  "generation": 5135,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4b1023c2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when momentum contradicts entry direction.\"\"\"\n    macd = features.get('macd_histogram', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Detect momentum-direction mismatch: entering long without upward momentum\n    if prediction == 'long' and macd < 0 and rsi_2h < 70:\n        return \"skip\"\n    \n    # Entering short without downward momentum\n    if prediction == 'short' and macd > 0 and rsi_2h > 30:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9bb24ff19e.py"
+}

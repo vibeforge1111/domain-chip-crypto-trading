@@ -1,0 +1,8 @@
+{
+  "guard_id": "a902a42b68",
+  "generation": 765,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c867436d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum-trend divergence, weak volume, or extreme volatility.\"\"\"\n    # Skip if momentum contradicts trend direction\n    momentum_dir = 1 if features['momentum_score'] > 0.3 else (-1 if features['momentum_score'] < -0.3 else 0)\n    trend_dir = 1 if features['ema_slope'] > 0 else (-1 if features['ema_slope'] < 0 else 0)\n    if momentum_dir != 0 and momentum_dir != trend_dir:\n        return \"skip\"\n    \n    # Skip if candle is wick-dominant (low body ratio, high wicks)\n    if features['body_ratio'] < 0.35 and (features['upper_wick_ratio'] + features['lower_wick_ratio']) > 0.45:\n        return \"skip\"\n    \n    # Skip if volume is weak\n    if features['volume_ratio'] < 0.8:\n        return \"skip\"\n    \n    # Skip if extreme momentum with extreme volatility (whipsaw risk)\n    if abs(features['momentum_score']) > 0.75 and features['volatility_regime'] > 0.75:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a902a42b68.py"
+}

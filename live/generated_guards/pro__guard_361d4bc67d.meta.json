@@ -1,0 +1,8 @@
+{
+  "guard_id": "361d4bc67d",
+  "generation": 4665,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2f4a9c3a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when both BB position and Stochastic show extreme conditions.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Reject when overbought (both indicators confirm)\n    if bb_pct_b > 0.90 and stoch_k > 80 and prediction == \"long\":\n        return \"skip\"\n    \n    # Reject when oversold (both indicators confirm)\n    if bb_pct_b < 0.10 and stoch_k < 20 and prediction == \"short\":\n        return \"skip\"\n    \n    # Additional filter: reject trades too far from VWAP\n    if abs(vwap_dev) > 0.02:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_361d4bc67d.py"
+}

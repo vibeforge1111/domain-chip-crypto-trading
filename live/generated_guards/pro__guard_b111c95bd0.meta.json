@@ -1,0 +1,8 @@
+{
+  "guard_id": "b111c95bd0",
+  "generation": 5430,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c88fde2a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    # Count confirmations using NEW features (bb_pct_b, vwap_deviation, stoch_k, stoch_d, obv_slope, macd_histogram, rsi_2h)\n    bullish = sum([\n        features.get(\"stoch_k\", 50) < 25,\n        features.get(\"stoch_d\", 50) < 25,\n        features.get(\"vwap_deviation\", 0) > 0.005,\n        features.get(\"obv_slope\", 0) > 0,\n        features.get(\"macd_histogram\", 0) > 0,\n        features.get(\"bb_pct_b\", 0.5) < 0.25,\n        features.get(\"rsi_2h\", 50) < 45,\n    ])\n    \n    bearish = sum([\n        features.get(\"stoch_k\", 50) > 75,\n        features.get(\"stoch_d\", 50) > 75,\n        features.get(\"vwap_deviation\", 0) < -0.005,\n        features.get(\"obv_slope\", 0) < 0,\n        features.get(\"macd_histogram\", 0) < 0,\n        features.get(\"bb_pct_b\", 0.5) > 0.75,\n        features.get(\"rsi_2h\", 50) > 55,\n    ])\n    \n    if prediction == \"long\" and bullish >= 2:\n        return \"long\"\n    elif prediction == \"short\" and bearish >= 2:\n        return \"short\"\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b111c95bd0.py"
+}

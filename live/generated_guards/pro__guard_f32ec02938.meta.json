@@ -1,0 +1,8 @@
+{
+  "guard_id": "f32ec02938",
+  "generation": 1280,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "64909efd",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades during low volatility consolidation phases.\"\"\"\n    bb_width = features.get('bb_width', 0)\n    volatility_regime = features.get('volatility_regime', 0)\n    \n    # Skip if BB is tight AND volatility is low - market is choppy\n    if bb_width < 0.15 and volatility_regime < 0.4:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f32ec02938.py"
+}

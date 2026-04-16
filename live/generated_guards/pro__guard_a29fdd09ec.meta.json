@@ -1,0 +1,8 @@
+{
+  "guard_id": "a29fdd09ec",
+  "generation": 5045,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c22081db",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # High-confidence entry: extreme bb position (<0.05 or >0.95)\n    in_extreme_bb = bb_pct_b < 0.05 or bb_pct_b > 0.95\n    \n    # Stochastic confirmation: oversold for longs, overbought for shorts\n    if prediction == \"long\":\n        stoch_confirm = stoch_k < 25\n    else:\n        stoch_confirm = stoch_k > 75\n    \n    if in_extreme_bb and stoch_confirm:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a29fdd09ec.py"
+}

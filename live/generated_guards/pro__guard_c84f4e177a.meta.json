@@ -1,0 +1,8 @@
+{
+  "guard_id": "c84f4e177a",
+  "generation": 2555,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "30f4b79a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using BB extreme zones (<0.05 or >0.95) as high-confidence entries.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Only allow trades at BB extremes for high confidence\n    if not (bb_pct_b < 0.05 or bb_pct_b > 0.95):\n        return \"skip\"\n    \n    # Validate with VWAP alignment\n    if prediction == \"long\" and vwap_deviation < -0.01:\n        return \"skip\"\n    if prediction == \"short\" and vwap_deviation > 0.01:\n        return \"skip\"\n    \n    # Stochastic confirmation - avoid overbought/oversold exhaustion\n    if prediction == \"long\" and stoch_k > 85:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 15:\n        return \"skip\"\n    \n    # Filter with 2h RSI for trend context\n    if prediction == \"long\" and rsi_2h > 75:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h < 25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c84f4e177a.py"
+}

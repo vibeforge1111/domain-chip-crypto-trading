@@ -1,0 +1,8 @@
+{
+  "guard_id": "ff2b886a2b",
+  "generation": 1810,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "977c3670",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Momentum-volume divergence: reject if momentum is strong but volume is weak (fakeout)\n    if features['momentum_score'] > 0.4 and features['volume_ratio'] < 0.6:\n        return \"skip\"\n    if features['momentum_score'] < -0.4 and features['volume_ratio'] < 0.6:\n        return \"skip\"\n    \n    # Wick-body imbalance: reject if large wick on opposite side of prediction\n    if prediction == \"long\" and features['lower_wick_ratio'] > features['body_ratio'] * 1.5:\n        return \"skip\"\n    if prediction == \"short\" and features['upper_wick_ratio'] > features['body_ratio'] * 1.5:\n        return \"skip\"\n    \n    # Stochastic exhaustion: reject if both stochastic and RSI are extreme together\n    if features['stoch_k'] > 85 and features['rsi_14'] > 70:\n        return \"skip\"\n    if features['stoch_k'] < 15 and features['rsi_14'] < 30:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ff2b886a2b.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "ced8e1699a",
+  "generation": 155,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3b766aae",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades in low-volatility, neutral-momentum conditions (choppy market).\"\"\"\n    # Reject when ATR is very low (choppy) AND RSI is neutral (no clear direction)\n    if features.get('atr_ratio', 1.0) < 0.5 and 40 < features.get('rsi_14', 50) < 60:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ced8e1699a.py"
+}

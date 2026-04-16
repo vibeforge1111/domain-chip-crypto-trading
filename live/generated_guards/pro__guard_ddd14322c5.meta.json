@@ -1,0 +1,8 @@
+{
+  "guard_id": "ddd14322c5",
+  "generation": 1795,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b7b49e9b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if momentum is strong but volume is weak (potential false signal)\n    if abs(features['momentum_score']) > 0.6 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ddd14322c5.py"
+}

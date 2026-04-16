@@ -1,0 +1,8 @@
+{
+  "guard_id": "24bcc91c1e",
+  "generation": 1320,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a8b91fb3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where momentum diverges from trend direction or RSI is extreme.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    ema_slope = features.get(\"ema_slope\", 0)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    if prediction == \"long\":\n        if ema_slope <= 0:\n            return \"skip\"\n        if rsi_14 >= 70:\n            return \"skip\"\n        if momentum < 0:\n            return \"skip\"\n    \n    elif prediction == \"short\":\n        if ema_slope >= 0:\n            return \"skip\"\n        if rsi_14 <= 30:\n            return \"skip\"\n        if momentum > 0:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_24bcc91c1e.py"
+}

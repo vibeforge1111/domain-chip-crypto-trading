@@ -1,0 +1,8 @@
+{
+  "guard_id": "e1b0434033",
+  "generation": 1730,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "95999ed6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Reject extended price with exhausted momentum (mean reversion trap)\n    # When price reaches extreme BB position AND RSI is overbought/oversold,\n    # the signal is likely to reverse rather than continue\n    bb_pos = features.get('bb_position', 0.5)\n    rsi = features.get('rsi_14', 50)\n    \n    if prediction == 'long' and bb_pos > 0.92 and rsi > 72:\n        return \"skip\"\n    if prediction == 'short' and bb_pos < 0.08 and rsi < 28:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e1b0434033.py"
+}

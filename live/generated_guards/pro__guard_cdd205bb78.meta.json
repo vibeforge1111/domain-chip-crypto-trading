@@ -1,0 +1,8 @@
+{
+  "guard_id": "cdd205bb78",
+  "generation": 2000,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "e785181d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    rsi_14 = features.get('rsi_14', 50)\n    \n    # Stochastic crossover strength\n    stoch_diff = stoch_k - stoch_d\n    \n    # For longs: require bullish crossover (stoch_k > stoch_d) with momentum\n    if prediction == 'long':\n        if stoch_k <= stoch_d:\n            return \"skip\"\n        if abs(stoch_diff) < 3:\n            return \"skip\"\n        if rsi_14 < 40:\n            return \"skip\"\n    \n    # For shorts: require bearish crossover (stoch_k < stoch_d) with momentum\n    elif prediction == 'short':\n        if stoch_k >= stoch_d:\n            return \"skip\"\n        if abs(stoch_diff) < 3:\n            return \"skip\"\n        if rsi_14 > 60:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cdd205bb78.py"
+}

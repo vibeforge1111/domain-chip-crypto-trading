@@ -1,0 +1,8 @@
+{
+  "guard_id": "bb3e80e60f",
+  "generation": 5110,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a46a4f02",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    agree_count = 0\n    \n    # RSI alignment (14 and 2h)\n    if features['rsi_14'] > 55 and features['rsi_2h'] > 52:\n        agree_count += 1\n    elif features['rsi_14'] < 45 and features['rsi_2h'] < 48:\n        agree_count += 1\n    \n    # Stochastic alignment\n    if features['stoch_k'] > 60 and features['stoch_d'] > 55:\n        agree_count += 1\n    elif features['stoch_k'] < 40 and features['stoch_d'] < 45:\n        agree_count += 1\n    \n    # Bollinger position\n    if features['bb_pct_b'] > 0.75:\n        agree_count += 1\n    elif features['bb_pct_b'] < 0.25:\n        agree_count += 1\n    \n    # VWAP deviation (price above VWAP for longs)\n    if features['vwap_deviation'] > 0.003:\n        agree_count += 1\n    elif features['vwap_deviation'] < -0.003:\n        agree_count += 1\n    \n    # MACD histogram direction\n    if features['macd_histogram'] > 0.0005:\n        agree_count += 1\n    elif features['macd_histogram'] < -0.0005:\n        agree_count += 1\n    \n    return prediction if agree_count >= 2 else \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bb3e80e60f.py"
+}

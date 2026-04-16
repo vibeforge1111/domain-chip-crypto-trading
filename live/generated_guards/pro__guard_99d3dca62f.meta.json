@@ -1,0 +1,8 @@
+{
+  "guard_id": "99d3dca62f",
+  "generation": 740,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "63234363",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals based on volatility expansion and RSI-candle divergence.\"\"\"\n    # Skip if high volume but narrow BBs (potential liquidity grab)\n    if features['volume_ratio'] > 1.8 and features['bb_width'] < 0.35:\n        return \"skip\"\n    \n    # Skip long when RSI overbought with large upper wick (weak rejection)\n    if prediction == \"long\" and features['rsi_14'] > 68 and features['upper_wick_ratio'] > 0.25:\n        return \"skip\"\n    \n    # Skip short when RSI oversold with large lower wick\n    if prediction == \"short\" and features['rsi_14'] < 32 and features['lower_wick_ratio'] > 0.25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_99d3dca62f.py"
+}

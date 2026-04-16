@@ -1,0 +1,8 @@
+{
+  "guard_id": "204cc88f8c",
+  "generation": 2220,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7f135b5b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    obv_slope = features.get('obv_slope', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip if OBV flow and 2h RSI disagree with prediction direction\n    if obv_slope < 0 and rsi_2h < 50 and prediction == 'long':\n        return 'skip'\n    if obv_slope > 0 and rsi_2h > 50 and prediction == 'short':\n        return 'skip'\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_204cc88f8c.py"
+}

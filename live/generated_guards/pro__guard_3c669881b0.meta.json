@@ -1,0 +1,8 @@
+{
+  "guard_id": "3c669881b0",
+  "generation": 5145,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "393ca765",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    \n    # Only allow entries at extreme BB positions (<0.05 or >0.95) with RSI confirmation\n    if prediction == 'long' and bb_pct_b < 0.05 and rsi_14 < 35:\n        return prediction\n    if prediction == 'short' and bb_pct_b > 0.95 and rsi_14 > 65:\n        return prediction\n    \n    return 'skip'",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3c669881b0.py"
+}

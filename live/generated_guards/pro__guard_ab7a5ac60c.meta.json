@@ -1,0 +1,8 @@
+{
+  "guard_id": "ab7a5ac60c",
+  "generation": 3480,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "32b1c8f4",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Filter longs: need bullish stochastic alignment and favorable wider context\n    if prediction == \"long\":\n        # Reject if stochastic showing bearish alignment\n        if stoch_k < stoch_d:\n            return \"skip\"\n        # Reject if overbought and near upper BB\n        if stoch_k > 75 and bb_pct_b > 0.85:\n            return \"skip\"\n        # Reject if 2h RSI shows bearish divergence\n        if rsi_2h < 40 and stoch_k < 40:\n            return \"skip\"\n    \n    # Filter shorts: need bearish stochastic alignment\n    elif prediction == \"short\":\n        if stoch_k > stoch_d:\n            return \"skip\"\n        if stoch_k < 25 and bb_pct_b < 0.15:\n            return \"skip\"\n        if rsi_2h > 60 and stoch_k > 60:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ab7a5ac60c.py"
+}

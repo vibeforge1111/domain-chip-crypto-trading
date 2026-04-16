@@ -1,0 +1,8 @@
+{
+  "guard_id": "1dd4199129",
+  "generation": 4870,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b7010cef",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during compression breakouts - reject false breakouts at BB extremes.\"\"\"\n    bb_width = features.get(\"bb_width\", 1.0)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # True compression: both bb_width and atr_ratio are low\n    is_compression = bb_width < 0.7 and atr_ratio < 0.8\n    \n    if is_compression and prediction != \"skip\":\n        # False breakout risk: price at BB extremes during compression\n        at_extreme = bb_pct_b < 0.15 or bb_pct_b > 0.85\n        stoch_extreme = stoch_k < 20 or stoch_k > 80\n        \n        if at_extreme or stoch_extreme:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1dd4199129.py"
+}

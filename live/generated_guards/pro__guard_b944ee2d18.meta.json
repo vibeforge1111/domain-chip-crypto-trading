@@ -1,0 +1,8 @@
+{
+  "guard_id": "b944ee2d18",
+  "generation": 4170,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2f13248d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_2h = features.get('rsi_2h', 50)\n    volume_ratio = features.get('volume_ratio', 1.0)\n    \n    # High-confidence entries: extreme BB position + aligned RSI context\n    if prediction == \"long\":\n        if bb_pct_b < 0.05 and rsi_2h > 35:\n            return prediction\n    elif prediction == \"short\":\n        if bb_pct_b > 0.95 and rsi_2h < 65:\n            return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b944ee2d18.py"
+}

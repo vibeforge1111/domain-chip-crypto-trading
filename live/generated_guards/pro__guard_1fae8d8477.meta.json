@@ -1,0 +1,8 @@
+{
+  "guard_id": "1fae8d8477",
+  "generation": 1625,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ee766b09",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades in low-momentum, low-volume environments.\"\"\"\n    vol_regime = features.get('volatility_regime', 0.5)\n    momentum = features.get('momentum_score', 0.5)\n    vol_ratio = features.get('volume_ratio', 1.0)\n    \n    # Reject if: moderate volatility + weak momentum + low volume (choppy market)\n    if 0.3 < vol_regime < 0.6 and momentum < 0.4 and vol_ratio < 0.8:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1fae8d8477.py"
+}

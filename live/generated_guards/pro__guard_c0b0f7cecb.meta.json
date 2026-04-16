@@ -1,0 +1,8 @@
+{
+  "guard_id": "c0b0f7cecb",
+  "generation": 840,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7418cfd6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip when momentum diverges from candle strength (weak body with strong momentum)\n    if features['momentum_score'] > 65 and features['body_ratio'] < 0.25:\n        return \"skip\"\n    if features['momentum_score'] < 35 and features['body_ratio'] < 0.25:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c0b0f7cecb.py"
+}

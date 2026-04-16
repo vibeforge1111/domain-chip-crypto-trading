@@ -1,0 +1,8 @@
+{
+  "guard_id": "8968b1f9e3",
+  "generation": 1555,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8afd1b72",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter out momentum divergence with extreme band position.\"\"\"\n    if (features['rsi_14'] > 70 and features['bb_position'] > 0.9) or (features['rsi_14'] < 30 and features['bb_position'] < 0.1):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8968b1f9e3.py"
+}

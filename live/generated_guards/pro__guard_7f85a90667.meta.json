@@ -1,0 +1,8 @@
+{
+  "guard_id": "7f85a90667",
+  "generation": 3875,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bee005bf",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard using Bollinger Band extremes for high-confidence entries.\"\"\"\n    bb = features.get(\"bb_pct_b\", 0.5)\n    \n    # Skip longs unless at extreme lower band (bb_pct_b < 0.05)\n    if prediction == \"long\" and bb >= 0.05:\n        return \"skip\"\n    # Skip shorts unless at extreme upper band (bb_pct_b > 0.95)\n    if prediction == \"short\" and bb <= 0.95:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7f85a90667.py"
+}

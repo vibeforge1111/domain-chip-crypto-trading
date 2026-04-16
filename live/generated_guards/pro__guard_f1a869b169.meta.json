@@ -1,0 +1,8 @@
+{
+  "guard_id": "f1a869b169",
+  "generation": 3525,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ba04f1d8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using BB extremes as high-confidence zones with RSI_2H confirmation.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Only accept trades in extreme BB zones (<0.1 or >0.9)\n    if bb_pct_b < 0.1 or bb_pct_b > 0.9:\n        # Confirm with RSI_2H: longs need bullish (rsi_2h > 40), shorts need bearish (rsi_2h < 60)\n        if prediction == \"long\" and rsi_2h <= 40:\n            return \"skip\"\n        if prediction == \"short\" and rsi_2h >= 60:\n            return \"skip\"\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f1a869b169.py"
+}

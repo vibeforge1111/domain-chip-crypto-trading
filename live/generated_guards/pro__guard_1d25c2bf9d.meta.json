@@ -1,0 +1,8 @@
+{
+  "guard_id": "1d25c2bf9d",
+  "generation": 3090,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f90bd836",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades against OBV momentum flow direction.\"\"\"\n    obv_slope = features.get('obv_slope', 0)\n    macd_histogram = features.get('macd_histogram', 0)\n    \n    # Reject longs if OBV is falling or MACD histogram is negative\n    if prediction == \"long\" and (obv_slope < 0 or macd_histogram < 0):\n        return \"skip\"\n    \n    # Reject shorts if OBV is rising or MACD histogram is positive\n    if prediction == \"short\" and (obv_slope > 0 or macd_histogram > 0):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1d25c2bf9d.py"
+}

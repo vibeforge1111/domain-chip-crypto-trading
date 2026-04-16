@@ -1,0 +1,8 @@
+{
+  "guard_id": "6364c8a592",
+  "generation": 140,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "79a34a98",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades when momentum and candle structure conflict, suggesting reversal risk.\"\"\"\n    \n    rsi = features.get(\"rsi_14\", 50)\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body = features.get(\"body_ratio\", 0)\n    \n    # Long with bearish candle structure (small body, large upper wick) at overbought\n    if prediction == \"long\" and rsi > 70 and upper_wick > 0.25 and body < 0.3:\n        return \"skip\"\n    \n    # Short with bullish candle structure (small body, large lower wick) at oversold\n    if prediction == \"short\" and rsi < 30 and lower_wick > 0.25 and body < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6364c8a592.py"
+}

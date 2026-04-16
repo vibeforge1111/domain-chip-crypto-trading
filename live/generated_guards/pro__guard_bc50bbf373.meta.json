@@ -1,0 +1,8 @@
+{
+  "guard_id": "bc50bbf373",
+  "generation": 4830,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c0b91f88",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    \n    # True compression: both ATR and BB compressed\n    is_compressed = atr_ratio < 0.75 and bb_width < 0.35\n    \n    if is_compressed:\n        # False compression often has price away from VWAP\n        vwap_deviation = features.get(\"vwap_deviation\", 0)\n        if abs(vwap_deviation) > 0.008:\n            return \"skip\"\n        \n        # Check RSI divergence between timeframes\n        rsi_14 = features.get(\"rsi_14\", 50)\n        rsi_2h = features.get(\"rsi_2h\", 50)\n        if abs(rsi_14 - rsi_2h) > 25:\n            return \"skip\"\n        \n        # Momentum should be building in true compression\n        macd_histogram = features.get(\"macd_histogram\", 0)\n        if abs(macd_histogram) < 0.0002:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bc50bbf373.py"
+}

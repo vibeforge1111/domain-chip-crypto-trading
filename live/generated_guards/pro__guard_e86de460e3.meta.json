@@ -1,0 +1,8 @@
+{
+  "guard_id": "e86de460e3",
+  "generation": 2435,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "349948e2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when MACD histogram indicates momentum deceleration.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd_hist = features.get(\"macd_histogram\", 0)\n    abs_hist = abs(macd_hist)\n    \n    # Skip if momentum is negligible (histogram near zero)\n    if abs_hist < 0.0001:\n        return \"skip\"\n    \n    # For long: histogram should be positive and meaningful\n    if prediction == \"long\" and macd_hist < 0.0002:\n        return \"skip\"\n    \n    # For short: histogram should be negative and meaningful\n    if prediction == \"short\" and macd_hist > -0.0002:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e86de460e3.py"
+}

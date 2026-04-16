@@ -1,0 +1,8 @@
+{
+  "guard_id": "2083c7b6d5",
+  "generation": 525,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "04cdc140",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when high volatility meets weak momentum.\"\"\"\n    vol_regime = features.get('volatility_regime', 0.5)\n    momentum = features.get('momentum_score', 0)\n    \n    # Reject when high volatility but weak momentum (choppy/fading moves)\n    if vol_regime > 0.7 and momentum < 0.3:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2083c7b6d5.py"
+}

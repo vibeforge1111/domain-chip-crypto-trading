@@ -1,0 +1,8 @@
+{
+  "guard_id": "6bfc238089",
+  "generation": 870,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "014945e9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals in volatile chop with weak momentum.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    vol_spike = features.get('atr_ratio', 1.0) > 1.4\n    weak_body = features.get('body_ratio', 0.5) < 0.35\n    no_trend = abs(features.get('ema_slope', 0)) < 0.001\n    high_vol = features.get('volume_ratio', 1.0) > 1.5\n    \n    if vol_spike and weak_body and (no_trend or high_vol):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6bfc238089.py"
+}

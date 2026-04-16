@@ -1,0 +1,8 @@
+{
+  "guard_id": "db3bee95d3",
+  "generation": 1720,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "78e6ac6f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where momentum fires in high volatility with weak volume (likely false signal).\"\"\"\n    high_vol = features.get(\"volatility_regime\", 0) > 0.6\n    weak_vol = features.get(\"volume_ratio\", 1) < 0.9\n    momentum_signal = features.get(\"momentum_score\", 0) > 0.5\n    \n    if high_vol and weak_vol and momentum_signal:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_db3bee95d3.py"
+}

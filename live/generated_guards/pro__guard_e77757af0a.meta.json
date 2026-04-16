@@ -1,0 +1,8 @@
+{
+  "guard_id": "e77757af0a",
+  "generation": 2385,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cfcb2c41",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using multiple timeframe confirmation.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # True compression: low bb_width AND low atr_ratio (genuine squeeze)\n    true_compression = (bb_width < 0.5 and atr_ratio < 0.8)\n    \n    # False compression: tight bands but high volatility (deceptive setup)\n    false_compression = (bb_width < 0.4 and atr_ratio > 1.1)\n    \n    if false_compression:\n        return \"skip\"\n    \n    if true_compression:\n        # Stochastic alignment (not extreme)\n        if not (20 < stoch_k < 80 and 20 < stoch_d < 80):\n            return \"skip\"\n        # MACD histogram not bearish for longs, not bullish for shorts\n        if prediction == \"long\" and macd_histogram < -0.0005:\n            return \"skip\"\n        if prediction == \"short\" and macd_histogram > 0.0005:\n            return \"skip\"\n        # RSI 2H in valid range (not extreme)\n        if not (25 < rsi_2h < 75):\n            return \"skip\"\n        # VWAP within reasonable range\n        if abs(vwap_deviation) > 0.015:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e77757af0a.py"
+}

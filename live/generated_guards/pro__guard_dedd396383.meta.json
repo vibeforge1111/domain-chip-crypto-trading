@@ -1,0 +1,8 @@
+{
+  "guard_id": "dedd396383",
+  "generation": 925,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1750ff93",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when price is overextended at BB extremes with extreme RSI.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    bb_pos = features.get(\"bb_position\", 0.5)\n    if prediction == \"long\" and rsi > 70 and bb_pos > 0.85:\n        return \"skip\"\n    if prediction == \"short\" and rsi < 30 and bb_pos < 0.15:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dedd396383.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "de17e98686",
+  "generation": 1000,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9c6e5a93",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades in choppy/volatile conditions with weak trend.\"\"\"\n    if features['atr_ratio'] > 1.3 and features['trend_strength'] < 0.4 and features['volume_ratio'] > 1.5:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_de17e98686.py"
+}

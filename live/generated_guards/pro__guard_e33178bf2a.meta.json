@@ -1,0 +1,8 @@
+{
+  "guard_id": "e33178bf2a",
+  "generation": 1260,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "149d772f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filters trades on weak/consolidation candles or wick-exhaustion patterns.\"\"\"\n    body_ratio = features.get(\"body_ratio\", 0)\n    upper_wick_ratio = features.get(\"upper_wick_ratio\", 0)\n    lower_wick_ratio = features.get(\"lower_wick_ratio\", 0)\n    range_pct = features.get(\"range_pct\", 0)\n    trend_strength = features.get(\"trend_strength\", 0)\n    \n    # Skip if candle is a doji/consolidation (small body, small range)\n    if body_ratio < 0.15 and range_pct < 0.5:\n        return \"skip\"\n    \n    # Skip long trades with upper wick exhaustion (>60% upper wick, small body)\n    if prediction == \"long\" and upper_wick_ratio > 0.6 and body_ratio < 0.3:\n        return \"skip\"\n    \n    # Skip short trades with lower wick exhaustion (>60% lower wick, small body)\n    if prediction == \"short\" and lower_wick_ratio > 0.6 and body_ratio < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e33178bf2a.py"
+}

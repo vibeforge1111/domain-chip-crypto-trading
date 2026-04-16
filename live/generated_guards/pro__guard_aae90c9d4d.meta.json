@@ -1,0 +1,8 @@
+{
+  "guard_id": "aae90c9d4d",
+  "generation": 4995,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "6f32b048",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter based on vwap_deviation AND momentum_score disagreement.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    \n    # Momentum-VWAP disagreement (core logic)\n    if vwap_dev > 0.01 and momentum < -0.1:\n        return \"skip\"\n    if vwap_dev < -0.01 and momentum > 0.1:\n        return \"skip\"\n    \n    # Stochastic divergence from momentum at extremes\n    if prediction == \"long\" and stoch_k > 80 and momentum < 0:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k < 20 and momentum > 0:\n        return \"skip\"\n    \n    # Stochastic %K/%D crossover conflict with VWAP direction\n    if vwap_dev > 0.005 and stoch_k < stoch_d - 10:\n        return \"skip\"\n    if vwap_dev < -0.005 and stoch_k > stoch_d + 10:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_aae90c9d4d.py"
+}

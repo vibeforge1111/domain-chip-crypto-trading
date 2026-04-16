@@ -1,0 +1,8 @@
+{
+  "guard_id": "ab81e8bc4f",
+  "generation": 4750,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5d265c2f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: low ATR + tight BB \u2192 allow if momentum aligned\n    if features['atr_ratio'] < 0.7 and features['bb_width'] < 0.15:\n        # Check momentum alignment with prediction\n        if prediction == \"long\" and features['macd_histogram'] < 0:\n            return \"skip\"\n        if prediction == \"short\" and features['macd_histogram'] > 0:\n            return \"skip\"\n        return prediction\n    # False compression: low ATR but wide BB (fake squeeze) \u2192 skip\n    if features['atr_ratio'] < 0.7 and features['bb_width'] > 0.22:\n        return \"skip\"\n    # Check for extreme stoch position during compression\n    if features['bb_width'] < 0.12 and (features['stoch_k'] < 15 or features['stoch_k'] > 85):\n        if features['rsi_2h'] > 65 or features['rsi_2h'] < 35:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ab81e8bc4f.py"
+}

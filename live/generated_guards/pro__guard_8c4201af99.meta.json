@@ -1,0 +1,8 @@
+{
+  "guard_id": "8c4201af99",
+  "generation": 2850,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4aedeb44",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades against volume flow direction detected by OBV slope.\"\"\"\n    obv = features.get(\"obv_slope\", 0)\n    rsi = features.get(\"rsi_14\", 50)\n    \n    # Skip long if volume flowing out (negative OBV) while RSI at resistance\n    if prediction == \"long\" and obv < -0.3 and rsi > 60:\n        return \"skip\"\n    # Skip short if volume flowing in (positive OBV) while RSI at support\n    if prediction == \"short\" and obv > 0.3 and rsi < 40:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8c4201af99.py"
+}

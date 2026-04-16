@@ -1,0 +1,8 @@
+{
+  "guard_id": "c595b2a97f",
+  "generation": 3190,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "eb0aba33",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR, BB width, VWAP and momentum.\"\"\"\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: narrow bands + low ATR\n    is_compressed = bb_width < 0.12 and atr_ratio < 0.65\n    \n    # Price near VWAP confirms true compression\n    near_vwap = abs(vwap_dev) < 0.003\n    \n    # Momentum stretched, ready for reversal\n    momentum_extreme = stoch_k < 25 or stoch_k > 75\n    \n    # 2h context neutral (not diverging against trade)\n    neutral_2h = 35 < rsi_2h < 65\n    \n    if is_compressed and near_vwap and momentum_extreme and neutral_2h:\n        return prediction\n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c595b2a97f.py"
+}

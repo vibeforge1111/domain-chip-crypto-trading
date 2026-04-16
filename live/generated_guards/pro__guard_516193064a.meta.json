@@ -1,0 +1,8 @@
+{
+  "guard_id": "516193064a",
+  "generation": 2420,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "07eb7c34",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi_2h = features.get(\"rsi_2h\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    \n    # Align with broader trend: longs need bullish 2h RSI, shorts need bearish 2h RSI\n    if prediction == \"long\" and rsi_2h < 40:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h > 60:\n        return \"skip\"\n    \n    # Additional momentum alignment check using EMA slope\n    if prediction == \"long\" and ema_slope < 0:\n        return \"skip\"\n    if prediction == \"short\" and ema_slope > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_516193064a.py"
+}

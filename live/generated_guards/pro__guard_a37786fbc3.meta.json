@@ -1,0 +1,8 @@
+{
+  "guard_id": "a37786fbc3",
+  "generation": 2005,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "068ce8c6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for filtering false compression breakouts.\n\n    Detects true vs false compression using atr_ratio, bb_width, and new features\n    to identify when narrowing bands are likely to produce failed breakouts.\n    \"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 0.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Detect compression: both atr_ratio and bb_width are low\n    in_compression = atr_ratio < 0.7 and bb_width < 0.15\n    \n    if in_compression:\n        # False compression signals to reject:\n        # 1. Price at BB extremes (reversal likely)\n        at_extreme = bb_pct_b < 0.15 or bb_pct_b > 0.85\n        # 2. Stochastic divergence during compression\n        stoch_diverging = abs(stoch_k - stoch_d) > 20\n        # 3. Volume declining during compression\n        volume_drying = obv_slope < -0.1\n        # 4. RSI in wrong context for prediction direction\n        rsi_conflict = (prediction == \"long\" and rsi_2h < 35) or (prediction == \"short\" and rsi_2h > 65)\n        \n        if at_extreme or stoch_diverging or volume_drying or rsi_conflict:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a37786fbc3.py"
+}

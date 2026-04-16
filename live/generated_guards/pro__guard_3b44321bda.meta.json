@@ -1,0 +1,8 @@
+{
+  "guard_id": "3b44321bda",
+  "generation": 3900,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "db8d068c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compressions using ATR, BB, and momentum indicators.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # True compression: low volatility AND tight bands\n    in_compression = atr_ratio < 0.7 and bb_width < 0.8\n    \n    if in_compression:\n        # False compression signals: extreme BB position AND divergent stochastics\n        extreme_bb = bb_pct_b < 0.15 or bb_pct_b > 0.85\n        stoch_divergent = abs(stoch_k - stoch_d) > 15\n        \n        if extreme_bb and stoch_divergent:\n            return \"skip\"\n        \n        # False compression: broader timeframe RSI contradicts direction\n        if prediction == \"long\" and rsi_2h < 35:\n            return \"skip\"\n        if prediction == \"short\" and rsi_2h > 65:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3b44321bda.py"
+}

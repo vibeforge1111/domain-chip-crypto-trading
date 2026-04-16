@@ -1,0 +1,8 @@
+{
+  "guard_id": "d5cc555f98",
+  "generation": 1060,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2dfabc07",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with high volatility but weak volume confirmation.\"\"\"\n    if features['atr_ratio'] > 1.5 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d5cc555f98.py"
+}

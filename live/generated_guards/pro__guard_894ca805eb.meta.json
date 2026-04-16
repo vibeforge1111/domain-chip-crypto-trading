@@ -1,0 +1,8 @@
+{
+  "guard_id": "894ca805eb",
+  "generation": 3675,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "07d2aadf",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for BB extreme zone filtering.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Only trade in extreme BB positions with confirming signals\n    if bb_pct_b < 0.05:\n        # Lower band - potential long with oversold confirmation\n        if rsi_14 < 40 or stoch_k < 30:\n            return prediction\n    elif bb_pct_b > 0.95:\n        # Upper band - potential short with overbought confirmation\n        if rsi_14 > 60 or stoch_k > 70:\n            return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_894ca805eb.py"
+}

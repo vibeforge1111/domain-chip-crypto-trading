@@ -1,0 +1,8 @@
+{
+  "guard_id": "0ef8ee7a1f",
+  "generation": 5170,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "10f3f9da",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during compression to avoid false breakouts.\"\"\"\n    # True compression: both low ATR and low BB width\n    in_compression = features['atr_ratio'] < 0.7 and features['bb_width'] < 0.6\n    \n    if in_compression and prediction != \"skip\":\n        # During compression, reject if stoch is at extremes (likely reversal)\n        if features['stoch_k'] > 80 or features['stoch_k'] < 20:\n            return \"skip\"\n        # During compression, require aligned momentum\n        if features['macd_histogram'] < 0 and prediction == \"long\":\n            return \"skip\"\n        if features['macd_histogram'] > 0 and prediction == \"short\":\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0ef8ee7a1f.py"
+}

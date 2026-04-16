@@ -1,0 +1,8 @@
+{
+  "guard_id": "8f31023b4c",
+  "generation": 3755,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9452d813",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if macd_histogram indicates momentum deceleration (near zero)\n    if abs(features.get('macd_histogram', 0)) < 0.0001:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8f31023b4c.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "5e29e6b5c8",
+  "generation": 275,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1b5dfa5e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with large wicks (indecision) AND weak trend alignment.\"\"\"\n    total_wick = features.get('upper_wick_ratio', 0) + features.get('lower_wick_ratio', 0)\n    if total_wick > 0.6:\n        return \"skip\"\n    \n    if features.get('trend_strength', 0) < 0.25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5e29e6b5c8.py"
+}

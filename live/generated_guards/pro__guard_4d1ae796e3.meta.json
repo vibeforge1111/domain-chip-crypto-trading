@@ -1,0 +1,8 @@
+{
+  "guard_id": "4d1ae796e3",
+  "generation": 890,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3572750c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter out longs when momentum contradicts BB upper position\n    if prediction == \"long\" and features['momentum_score'] < -0.3 and features['bb_position'] > 0.85:\n        return \"skip\"\n    # Filter out shorts when momentum contradicts BB lower position\n    if prediction == \"short\" and features['momentum_score'] > 0.3 and features['bb_position'] < 0.15:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4d1ae796e3.py"
+}

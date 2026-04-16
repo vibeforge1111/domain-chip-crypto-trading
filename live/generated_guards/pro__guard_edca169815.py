@@ -1,0 +1,22 @@
+def guard(features: dict, prediction: str) -> str:
+    """Custom guard function for trading signal filtering.
+
+    Args:
+        features: Dict with keys like stoch_k, stoch_d, bb_pct_b, vwap_deviation, etc.
+        prediction: Current prediction ("long", "short", or "skip")
+
+    Returns:
+        "skip" to reject this trade, or the original prediction to keep it.
+    """
+    stoch_k = features.get("stoch_k", 50)
+    stoch_d = features.get("stoch_d", 50)
+    
+    # Stochastic crossover timing filter
+    # For longs: require stoch_k above stoch_d (bullish momentum)
+    # For shorts: require stoch_k below stoch_d (bearish momentum)
+    if prediction == "long" and stoch_k <= stoch_d:
+        return "skip"
+    if prediction == "short" and stoch_k >= stoch_d:
+        return "skip"
+    
+    return prediction

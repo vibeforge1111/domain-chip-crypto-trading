@@ -1,0 +1,8 @@
+{
+  "guard_id": "8734f052aa",
+  "generation": 105,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8728279a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades at extreme Bollinger positions with weak trend confirmation.\"\"\"\n    bb_extreme = features['bb_position'] < 0.1 or features['bb_position'] > 0.9\n    weak_trend = features['trend_strength'] < 0.3 and abs(features['ema_slope']) < 0.001\n    \n    if bb_extreme and weak_trend:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8734f052aa.py"
+}

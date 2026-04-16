@@ -1,0 +1,8 @@
+{
+  "guard_id": "9c82bcb2d9",
+  "generation": 2005,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7863730e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    # Skip trades too close to fair value (low conviction)\n    if abs(features.get('vwap_deviation', 0)) < 0.002:\n        return \"skip\"\n    \n    # Skip counter-trend trades at stochastic extremes\n    stoch_k = features.get('stoch_k', 50)\n    macd = features.get('macd_histogram', 0)\n    if stoch_k > 80 and macd < 0:\n        return \"skip\"\n    if stoch_k < 20 and macd > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9c82bcb2d9.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "f64eb0ebe2",
+  "generation": 4595,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ce723678",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    volume_ratio = features.get('volume_ratio', 1)\n    \n    if prediction == \"long\":\n        if bb_pct_b < 0.05 and vwap_deviation < 0 and rsi_2h < 70 and volume_ratio >= 0.8:\n            return prediction\n        return \"skip\"\n    elif prediction == \"short\":\n        if bb_pct_b > 0.95 and vwap_deviation > 0 and rsi_2h > 30 and volume_ratio >= 0.8:\n            return prediction\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f64eb0ebe2.py"
+}

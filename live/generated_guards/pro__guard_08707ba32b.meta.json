@@ -1,0 +1,8 @@
+{
+  "guard_id": "08707ba32b",
+  "generation": 410,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "59a47a03",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when candle body is small (doji) and momentum is weak.\"\"\"\n    body_ratio = features.get(\"body_ratio\", 1.0)\n    momentum_score = features.get(\"momentum_score\", 0.5)\n    \n    # Skip if doji-like candle (small body) AND weak momentum\n    if body_ratio < 0.2 and momentum_score < 0.4:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_08707ba32b.py"
+}

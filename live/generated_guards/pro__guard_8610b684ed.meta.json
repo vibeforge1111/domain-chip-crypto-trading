@@ -1,0 +1,8 @@
+{
+  "guard_id": "8610b684ed",
+  "generation": 580,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d82a8d42",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where candle wicks suggest reversal, not continuation.\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body_ratio = features.get(\"body_ratio\", 0)\n    rsi = features.get(\"rsi_14\", 50)\n    trend = features.get(\"trend_strength\", 0.5)\n    \n    # Large wick + small body = rejection candle (weak conviction)\n    if body_ratio < 0.3 and (upper_wick > 0.4 or lower_wick > 0.4):\n        return \"skip\"\n    \n    # Long signal with large upper wick = likely bearish rejection\n    if prediction == \"long\" and upper_wick > 0.5:\n        return \"skip\"\n    \n    # Short signal with large lower wick = likely bullish rejection  \n    if prediction == \"short\" and lower_wick > 0.5:\n        return \"skip\"\n    \n    # RSI extreme + weak trend = low probability\n    if rsi > 75 and trend < 0.3:\n        return \"skip\"\n    if rsi < 25 and trend < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8610b684ed.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "2c57785531",
+  "generation": 685,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5e4a6e5c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals where price is at extreme BB position with overbought/oversold RSI.\"\"\"\n    bb_pos = features.get('bb_position', 0.5)\n    rsi = features.get('rsi_14', 50)\n    if bb_pos > 0.92 and rsi > 75:\n        return \"skip\"\n    if bb_pos < 0.08 and rsi < 25:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2c57785531.py"
+}

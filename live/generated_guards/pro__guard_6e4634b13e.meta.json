@@ -1,0 +1,8 @@
+{
+  "guard_id": "6e4634b13e",
+  "generation": 135,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bf046c28",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against extreme BB position + RSI conditions indicating potential reversals.\"\"\"\n    bb_pos = features.get(\"bb_position\", 0.5)\n    rsi = features.get(\"rsi_14\", 50)\n    bb_width = features.get(\"bb_width\", 0)\n    \n    # Skip if price at extreme BB position AND overbought/oversold\n    if (bb_pos > 0.92 and rsi > 70) or (bb_pos < 0.08 and rsi < 30):\n        return \"skip\"\n    \n    # Also skip if BB is extremely compressed (low bb_width) with extreme position\n    if bb_width < 0.5 and (bb_pos > 0.95 or bb_pos < 0.05):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6e4634b13e.py"
+}

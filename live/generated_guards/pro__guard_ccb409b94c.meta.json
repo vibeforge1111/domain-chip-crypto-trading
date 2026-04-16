@@ -1,0 +1,8 @@
+{
+  "guard_id": "ccb409b94c",
+  "generation": 4885,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "fc076216",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades by detecting true vs false compression patterns.\"\"\"\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: tight BB with building volatility\n    is_compressed = bb_width < 0.15\n    \n    if is_compressed:\n        # False compression: tight bands but no energy building\n        if atr_ratio < 0.7:\n            return \"skip\"\n        \n        # Extreme BB position during compression (reversal risk)\n        if bb_pct_b < 0.15 or bb_pct_b > 0.85:\n            return \"skip\"\n    \n    # Extended from VWAP with weak 2h RSI context\n    if abs(vwap_deviation) > 0.02 and rsi_2h < 35:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ccb409b94c.py"
+}

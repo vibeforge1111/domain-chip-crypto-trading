@@ -1,0 +1,8 @@
+{
+  "guard_id": "5d0e0a6a50",
+  "generation": 3640,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cea70a88",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression signals using ATR, Bollinger width, and momentum.\"\"\"\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 0.0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    macd_histogram = features.get(\"macd_histogram\", 0.0)\n    obv_slope = features.get(\"obv_slope\", 0.0)\n    \n    # Detect compression: both low ATR and narrow BB\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.02\n    \n    if is_compressed:\n        # Momentum divergence check: stoch extremes or flat macd\n        weak_momentum = (stoch_k < 20 or stoch_k > 80) and abs(macd_histogram) < 0.0005\n        # Weak volume confirmation\n        weak_volume = obv_slope < 0 and prediction == \"long\"\n        weak_volume_rev = obv_slope > 0 and prediction == \"short\"\n        \n        if weak_momentum or weak_volume or weak_volume_rev:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5d0e0a6a50.py"
+}

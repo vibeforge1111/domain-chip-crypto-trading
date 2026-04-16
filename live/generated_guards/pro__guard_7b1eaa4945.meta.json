@@ -1,0 +1,8 @@
+{
+  "guard_id": "7b1eaa4945",
+  "generation": 2000,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3eda3e57",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with conflicting momentum signals.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    stoch = features.get(\"stoch_k\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Momentum deceleration check - reject longs with bearish MACD + overbought\n    if prediction == \"long\" and macd < -0.0002 and stoch > 75:\n        return \"skip\"\n    \n    # Momentum deceleration check - reject shorts with bullish MACD + oversold\n    if prediction == \"short\" and macd > 0.0002 and stoch < 25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7b1eaa4945.py"
+}

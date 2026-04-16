@@ -1,0 +1,8 @@
+{
+  "guard_id": "540703bcab",
+  "generation": 5345,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d728787e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades too close to VWAP fair value.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    rsi_14 = features.get('rsi_14', 50)\n    \n    # Skip if too close to VWAP (< 0.3% deviation from fair value)\n    if abs(vwap_dev) < 0.003:\n        return \"skip\"\n    \n    # Reject longs in overbought or shorts in oversold\n    if prediction == \"long\" and rsi_14 > 70:\n        return \"skip\"\n    if prediction == \"short\" and rsi_14 < 30:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_540703bcab.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "771caf6bde",
+  "generation": 3550,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bf34e44b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Filter trades too close to fair value (VWAP) - no directional edge\n    if abs(features.get('vwap_deviation', 0)) < 0.003:\n        return \"skip\"\n    # Skip if overbought/oversold without momentum alignment\n    stoch_k = features.get('stoch_k', 50)\n    momentum = features.get('momentum_score', 0)\n    if stoch_k > 80 and momentum < 0:\n        return \"skip\"\n    if stoch_k < 20 and momentum > 0:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_771caf6bde.py"
+}

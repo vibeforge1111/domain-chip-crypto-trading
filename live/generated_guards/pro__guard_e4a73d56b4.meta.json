@@ -1,0 +1,8 @@
+{
+  "guard_id": "e4a73d56b4",
+  "generation": 2960,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "6b17ef65",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    obv_slope = features.get(\"obv_slope\", 0)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    bullish_signals = 0\n    bearish_signals = 0\n    \n    if bb_pct_b < 0.25:\n        bullish_signals += 1\n    elif bb_pct_b > 0.75:\n        bearish_signals += 1\n    \n    if vwap_deviation < 0:\n        bullish_signals += 1\n    elif vwap_deviation > 0:\n        bearish_signals += 1\n    \n    if stoch_k < 25 and stoch_d < 25:\n        bullish_signals += 1\n    elif stoch_k > 75 and stoch_d > 75:\n        bearish_signals += 1\n    \n    if obv_slope > 0:\n        bullish_signals += 1\n    elif obv_slope < 0:\n        bearish_signals += 1\n    \n    if macd_histogram > 0:\n        bullish_signals += 1\n    elif macd_histogram < 0:\n        bearish_signals += 1\n    \n    if rsi_2h < 40:\n        bullish_signals += 1\n    elif rsi_2h > 60:\n        bearish_signals += 1\n    \n    if prediction == \"long\" and bullish_signals >= 2:\n        return prediction\n    elif prediction == \"short\" and bearish_signals >= 2:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e4a73d56b4.py"
+}

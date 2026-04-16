@@ -1,0 +1,8 @@
+{
+  "guard_id": "11651976a3",
+  "generation": 2930,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c624c8f6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades too close to VWAP with weak momentum.\"\"\"\n    vwap_dev = abs(features['vwap_deviation'])\n    if vwap_dev < 0.005 and features['momentum_score'] < 0:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_11651976a3.py"
+}

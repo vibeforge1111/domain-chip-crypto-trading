@@ -1,0 +1,8 @@
+{
+  "guard_id": "4f6e24a957",
+  "generation": 3455,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bed27cc4",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during false compression patterns.\"\"\"\n    bb_width = features.get('bb_width', 0.2)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: low bb_width + low atr_ratio\n    is_compression = bb_width < 0.15 and atr_ratio < 0.8\n    \n    # False compression: middle range during compression\n    is_middle_range = 0.35 < bb_pct_b < 0.65\n    \n    # Weak momentum divergence\n    has_weak_momentum = abs(stoch_k - stoch_d) > 10\n    \n    # Price away from fair value\n    price_off_vwap = abs(vwap_deviation) > 0.015\n    \n    # Skip if compression with mixed signals (false breakout risk)\n    if is_compression and is_middle_range and has_weak_momentum and price_off_vwap:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4f6e24a957.py"
+}

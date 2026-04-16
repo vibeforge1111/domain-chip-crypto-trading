@@ -1,0 +1,8 @@
+{
+  "guard_id": "f89ba75ca5",
+  "generation": 4155,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5617338b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on stochastic crossover timing and momentum confirmation.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Calculate stochastic alignment (positive = bullish, negative = bearish)\n    sto_diff = stoch_k - stoch_d\n    \n    # For LONG entries: require bullish stochastic crossover + not overbought\n    if prediction == \"long\":\n        if sto_diff <= 0:\n            return \"skip\"  # No bullish crossover\n        if stoch_k > 80:\n            return \"skip\"  # Already overbought, likely reversal risk\n    \n    # For SHORT entries: require bearish stochastic crossover + not oversold\n    if prediction == \"short\":\n        if sto_diff >= 0:\n            return \"skip\"  # No bearish crossover\n        if stoch_k < 20:\n            return \"skip\"  # Already oversold, likely reversal risk\n    \n    # Additional context: avoid counter-trend trades in wider timeframe\n    if prediction == \"long\" and rsi_2h > 70:\n        return \"skip\"  # Wider timeframe overbought, headwind\n    if prediction == \"short\" and rsi_2h < 30:\n        return \"skip\"  # Wider timeframe oversold, headwind\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f89ba75ca5.py"
+}

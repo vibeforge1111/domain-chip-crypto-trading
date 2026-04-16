@@ -1,0 +1,8 @@
+{
+  "guard_id": "fc4d4b8912",
+  "generation": 340,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "04bc4af2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals with high volatility but weak momentum alignment.\"\"\"\n    if features['volatility_regime'] > 1.5 and features['momentum_score'] < 0.3:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fc4d4b8912.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "a059bbe956",
+  "generation": 3170,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8e035724",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # False compression: tight BB but elevated ATR (breakout trap)\n    if features['bb_width'] < 0.02 and features['atr_ratio'] > 1.2:\n        return \"skip\"\n    \n    # Stochastic divergence during compression signals weak move\n    if features['bb_width'] < 0.025 and abs(features['stoch_k'] - features['stoch_d']) > 15:\n        return \"skip\"\n    \n    # Wide RSI conflict with tight positioning warns of reversal\n    if abs(features['rsi_2h'] - features['rsi_14']) > 25 and features['bb_pct_b'] > 0.85:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a059bbe956.py"
+}

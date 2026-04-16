@@ -1,0 +1,8 @@
+{
+  "guard_id": "f04e2785c2",
+  "generation": 5000,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5b6dacd3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect true compression: both ATR and BB tight\n    is_compressed = features.get('atr_ratio', 1.0) < 0.7 and features.get('bb_width', 0.5) < 0.5\n    \n    # For compression setups, require structural alignment\n    if is_compressed:\n        bb_pos = features.get('bb_pct_b', 0.5)\n        vwap_dev = features.get('vwap_deviation', 0)\n        \n        # Long only if price near bottom of BB and above/slightly below VWAP\n        if prediction == 'long' and (bb_pos < 0.2 or vwap_dev < -0.015):\n            return \"skip\"\n        # Short only if price near top of BB and above VWAP\n        if prediction == 'short' and (bb_pos > 0.8 or vwap_dev > 0.015):\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f04e2785c2.py"
+}

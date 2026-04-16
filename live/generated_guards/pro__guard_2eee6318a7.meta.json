@@ -1,0 +1,8 @@
+{
+  "guard_id": "2eee6318a7",
+  "generation": 2375,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "83e23ad2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    sk = features.get(\"stoch_k\", 50)\n    sd = features.get(\"stoch_d\", 50)\n    \n    # For long: require stoch_k above stoch_d with D in oversold zone\n    if prediction == \"long\" and not (sk > sd and sd < 30):\n        return \"skip\"\n    # For short: require stoch_k below stoch_d with K in overbought zone\n    if prediction == \"short\" and not (sk < sd and sk > 70):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2eee6318a7.py"
+}

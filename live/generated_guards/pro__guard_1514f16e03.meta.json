@@ -1,0 +1,8 @@
+{
+  "guard_id": "1514f16e03",
+  "generation": 4705,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b040776f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Detect false compression: BB squeeze without volatility confirmation\n    bb_width = features.get('bb_width', 1)\n    atr_ratio = features.get('atr_ratio', 1)\n    vwap_dev = features.get('vwap_deviation', 0)\n    \n    # False compression: tight BB but no volatility expansion\n    if bb_width < 0.35 and atr_ratio < 0.75:\n        return \"skip\"\n    \n    # Weak momentum without trend confirmation\n    if features.get('momentum_score', 0.5) < 0.35 and abs(vwap_dev) < 0.005:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1514f16e03.py"
+}

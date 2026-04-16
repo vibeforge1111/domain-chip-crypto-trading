@@ -1,0 +1,8 @@
+{
+  "guard_id": "bdf8583775",
+  "generation": 2980,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d335d47e",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum deceleration or misaligned indicators.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd_hist = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Skip longs when momentum is bearish or weakening\n    if prediction == \"long\":\n        if macd_hist < -0.0001:\n            return \"skip\"\n        if stoch_k > 80 and rsi_14 > 65:\n            return \"skip\"\n        if vwap_dev < -0.005:\n            return \"skip\"\n        if obv_slope < -0.01:\n            return \"skip\"\n    \n    # Skip shorts when momentum is bullish or weakening\n    if prediction == \"short\":\n        if macd_hist > 0.0001:\n            return \"skip\"\n        if stoch_k < 20 and rsi_14 < 35:\n            return \"skip\"\n        if vwap_dev > 0.005:\n            return \"skip\"\n        if obv_slope > 0.01:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bdf8583775.py"
+}

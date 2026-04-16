@@ -1,0 +1,8 @@
+{
+  "guard_id": "4a01d0b58a",
+  "generation": 4265,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "75aaee87",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades against the broader 2-hour trend.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Reject longs when 2-hour RSI is above 60 (overbought broader context)\n    if prediction == \"long\" and rsi_2h > 60:\n        return \"skip\"\n    \n    # Reject shorts when 2-hour RSI is below 40 (oversold broader context)\n    if prediction == \"short\" and rsi_2h < 40:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4a01d0b58a.py"
+}

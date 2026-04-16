@@ -1,0 +1,8 @@
+{
+  "guard_id": "20b5beb079",
+  "generation": 3455,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "22e3da22",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: low bb_width + low atr_ratio indicates squeeze\n    # False compression: compressed but without momentum confirmation\n    is_compressed = features['bb_width'] < 0.03 and features['atr_ratio'] < 0.7\n    \n    if is_compressed and prediction != \"skip\":\n        # Check momentum divergence for compression signals\n        weak_momentum = features['macd_histogram'] < 0.0004\n        stoch_weak = features['stoch_k'] < 35 and features['stoch_d'] < 40\n        # False compression: compressed with weak momentum and OBV not confirming\n        if weak_momentum and stoch_weak and features['obv_slope'] < 0:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_20b5beb079.py"
+}

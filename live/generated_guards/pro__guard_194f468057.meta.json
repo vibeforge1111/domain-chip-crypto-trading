@@ -1,0 +1,8 @@
+{
+  "guard_id": "194f468057",
+  "generation": 5425,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d926646f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    rsi = features.get(\"rsi_14\", 50)\n    stoch = features.get(\"stoch_k\", 50)\n    \n    # High-confidence entry zones: bb_pct_b at extremes with momentum confirmation\n    if bb_pct < 0.05 and prediction == \"long\" and rsi > 25 and stoch < 85:\n        return prediction\n    if bb_pct > 0.95 and prediction == \"short\" and rsi < 75 and stoch > 15:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_194f468057.py"
+}

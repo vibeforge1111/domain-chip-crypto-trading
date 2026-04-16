@@ -1,0 +1,8 @@
+{
+  "guard_id": "cf195b68bb",
+  "generation": 2500,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "287fd2c8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like bb_pct_b, stoch_k, stoch_d, etc.\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # Reject longs when both Bollinger Bands AND Stochastic are in overbought territory\n    if prediction == \"long\" and bb_pct_b > 0.88 and stoch_k > 80:\n        return \"skip\"\n    \n    # Reject shorts when both Bollinger Bands AND Stochastic are in oversold territory\n    if prediction == \"short\" and bb_pct_b < 0.12 and stoch_k < 20:\n        return \"skip\"\n    \n    # Additional filter: reject when stochastic is diverging from BB position\n    if prediction == \"long\" and stoch_k < 30 and bb_pct_b > 0.7:\n        return \"skip\"\n    \n    if prediction == \"short\" and stoch_k > 70 and bb_pct_b < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cf195b68bb.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "0b2d50ab5a",
+  "generation": 115,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a66fab04",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with weak candle structure conflicting with trend/momentum.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Reject if candle has weak structure (large wicks, small body)\n    candle_quality = features.get(\"body_ratio\", 0) - features.get(\"upper_wick_ratio\", 0) - features.get(\"lower_wick_ratio\", 0)\n    weak_candle = candle_quality < 0.1\n    \n    # Check trend/momentum alignment\n    trend_ok = features.get(\"trend_strength\", 0) > 0.3 and features.get(\"momentum_score\", 0) > 0\n    volume_ok = features.get(\"volume_ratio\", 0) > 0.7\n    \n    # Reject if weak candle AND no trend/volume support\n    if weak_candle and not (trend_ok and volume_ok):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0b2d50ab5a.py"
+}

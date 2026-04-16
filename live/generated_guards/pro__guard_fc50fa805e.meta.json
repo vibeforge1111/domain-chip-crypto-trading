@@ -1,0 +1,8 @@
+{
+  "guard_id": "fc50fa805e",
+  "generation": 2810,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "887daf76",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    confirmations = 0\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    macd_hist = features.get(\"macd_histogram\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    if prediction == \"long\":\n        if stoch_k < 35:\n            confirmations += 1\n        if vwap_dev < -0.001:\n            confirmations += 1\n        if obv_slope > 0:\n            confirmations += 1\n        if macd_hist > 0:\n            confirmations += 1\n        if rsi_2h < 60:\n            confirmations += 1\n        if bb_pct_b < 0.3:\n            confirmations += 1\n    \n    elif prediction == \"short\":\n        if stoch_k > 65:\n            confirmations += 1\n        if vwap_dev > 0.001:\n            confirmations += 1\n        if obv_slope < 0:\n            confirmations += 1\n        if macd_hist < 0:\n            confirmations += 1\n        if rsi_2h > 40:\n            confirmations += 1\n        if bb_pct_b > 0.7:\n            confirmations += 1\n    \n    return prediction if confirmations >= 2 else \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fc50fa805e.py"
+}

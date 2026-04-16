@@ -1,0 +1,8 @@
+{
+  "guard_id": "a87bf67bd9",
+  "generation": 1450,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "6d2e3a17",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filters signals in low-volume volatility spikes and tight BB ranges.\"\"\"\n    volume_ratio = features.get('volume_ratio', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.05)\n    \n    # Skip if volatility spikes without volume confirmation (potential fakeout)\n    if atr_ratio > 1.5 and volume_ratio < 0.8:\n        return \"skip\"\n    \n    # Skip if BBs are compressed (chop zone, breakout direction uncertain)\n    if bb_width < 0.015:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a87bf67bd9.py"
+}

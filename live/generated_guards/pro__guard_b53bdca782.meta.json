@@ -1,0 +1,8 @@
+{
+  "guard_id": "b53bdca782",
+  "generation": 2930,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b0e3bdf8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression breakouts using multi-indicator validation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Detect true compression: low BB width AND low ATR ratio\n    is_compression = features.get('bb_width', 1) < 0.12 and features.get('atr_ratio', 1) < 0.65\n    \n    if is_compression:\n        # Position within bands (middle = true compression)\n        bb_pct = features.get('bb_pct_b', 0.5)\n        in_middle = 0.35 < bb_pct < 0.65\n        \n        # Direction validation using 2h RSI and stochastics\n        stoch = features.get('stoch_k', 50)\n        rsi_2h = features.get('rsi_2h', 50)\n        \n        if prediction == \"long\":\n            valid_direction = stoch > 40 and rsi_2h > 45\n            vwap_ok = features.get('vwap_deviation', 0) >= -0.002\n        else:\n            valid_direction = stoch < 60 and rsi_2h < 55\n            vwap_ok = features.get('vwap_deviation', 0) <= 0.002\n        \n        # Require momentum alignment via MACD\n        macd_ok = features.get('macd_histogram', 0) > 0 if prediction == \"long\" else features.get('macd_histogram', 0) < 0\n        \n        # Reject if compression but not in middle, or momentum disagrees\n        if not in_middle or not valid_direction or not vwap_ok or not macd_ok:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b53bdca782.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "aa3996d0f8",
+  "generation": 1465,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cf9beb72",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with RSI-trend divergence or Bollinger squeeze without momentum.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    momentum = features.get(\"momentum_score\", 0)\n    bb_width = features.get(\"bb_width\", 0.1)\n    \n    # Filter: RSI overbought but price still falling (for longs), or vice versa\n    if rsi > 65 and ema_slope < 0 and prediction == \"long\":\n        return \"skip\"\n    if rsi < 35 and ema_slope > 0 and prediction == \"short\":\n        return \"skip\"\n    \n    # Filter: Bollinger squeeze (low bb_width) without momentum confirmation\n    if bb_width < 0.05 and abs(momentum) < 0.2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_aa3996d0f8.py"
+}

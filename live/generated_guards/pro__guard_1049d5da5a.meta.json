@@ -1,0 +1,8 @@
+{
+  "guard_id": "1049d5da5a",
+  "generation": 2355,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ebd1eca5",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when momentum shows deceleration via macd_histogram.\"\"\"\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # Reject if macd_histogram indicates strong negative momentum (deceleration)\n    if macd_histogram < -0.0005:\n        return \"skip\"\n    \n    # Reject if volume momentum contradicts price momentum (divergence)\n    if obv_slope < 0 and macd_histogram > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1049d5da5a.py"
+}

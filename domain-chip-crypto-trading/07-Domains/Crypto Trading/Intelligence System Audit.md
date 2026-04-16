@@ -20,9 +20,9 @@ The intended path is:
 - pattern_count: `0`
 - classified_event_candidates: `0`
 - regime_mismatch_count: `0`
-- benchmark_top_candidate: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572`
-- benchmark_top_profitability: `0.4467`
-- benchmark_top_readiness: `0.072`
+- benchmark_top_candidate: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-2201808298`
+- benchmark_top_profitability: `0.5356`
+- benchmark_top_readiness: `0.3252`
 - benchmark_top_drawdown: `0.99`
 
 ## Where The System Is Actually Intelligent

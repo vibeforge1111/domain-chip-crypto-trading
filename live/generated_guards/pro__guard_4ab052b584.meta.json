@@ -1,0 +1,8 @@
+{
+  "guard_id": "4ab052b584",
+  "generation": 4460,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bc7f94bb",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during false compression signals.\"\"\"\n    bb_width = features.get(\"bb_width\", 0.02)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Detect compression: both bb_width and atr_ratio are low\n    is_compressed = bb_width < 0.015 and atr_ratio < 0.7\n    \n    # Check for weak momentum during compression\n    momentum_weak = abs(stoch_k - 50) < 15 and abs(stoch_d - 50) < 15\n    momentum_weak = momentum_weak and abs(macd_histogram) < 0.0002\n    momentum_weak = momentum_weak and abs(obv_slope) < 0.1\n    \n    # Skip if compressed but momentum is weak (false compression)\n    if is_compressed and momentum_weak:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4ab052b584.py"
+}

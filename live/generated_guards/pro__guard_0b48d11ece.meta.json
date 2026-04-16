@@ -1,0 +1,8 @@
+{
+  "guard_id": "0b48d11ece",
+  "generation": 5005,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "17122827",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like bb_pct_b, vwap_deviation, stoch_k, stoch_d, obv_slope, macd_histogram, rsi_2h\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    \n    # Extreme lower band - potential long setup\n    if bb_pct_b < 0.05 and prediction == \"long\":\n        if stoch_k < 20 and vwap_deviation < 0:\n            return prediction\n        return \"skip\"\n    \n    # Extreme upper band - potential short setup\n    if bb_pct_b > 0.95 and prediction == \"short\":\n        if stoch_k > 80 and vwap_deviation > 0:\n            return prediction\n        return \"skip\"\n    \n    # Non-extreme bb_pct_b - require strong confirmation\n    if prediction != \"skip\":\n        if bb_pct_b < 0.15 or bb_pct_b > 0.85:\n            if stoch_k < 15 or stoch_k > 85:\n                return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0b48d11ece.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "c85815bc84",
+  "generation": 1075,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2f1a3b25",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when candle structure shows indecision with weak volume confirmation.\"\"\"\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    body = features.get('body_ratio', 0)\n    volume = features.get('volume_ratio', 1)\n    \n    wick_sum = upper_wick + lower_wick\n    # Doji-like candle (high wicks, low body)\n    if wick_sum > 0.65 and body < 0.35:\n        return \"skip\"\n    \n    # Dominant upper wick with low volume = rejection\n    if upper_wick > 0.45 and volume < 0.8:\n        return \"skip\"\n    \n    # Dominant lower wick with low volume = rejection\n    if lower_wick > 0.45 and volume < 0.8:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c85815bc84.py"
+}

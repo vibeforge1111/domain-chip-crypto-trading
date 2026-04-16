@@ -1,0 +1,8 @@
+{
+  "guard_id": "e1b32423d7",
+  "generation": 3650,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5c0ff2e6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: tight BB + low ATR, good for breakout\n    # False compression: tight BB + price at extremes + divergent momentum\n    if features['bb_width'] < 0.12 and features['atr_ratio'] < 0.75:\n        # Check for false compression: price at BB extremes\n        if features['bb_pct_b'] < 0.15 or features['bb_pct_b'] > 0.85:\n            return \"skip\"\n        # Check for divergent momentum\n        if features['obv_slope'] < 0 and features['macd_histogram'] > 0:\n            return \"skip\"\n        if features['obv_slope'] > 0 and features['macd_histogram'] < 0:\n            return \"skip\"\n        # Check for VWAP deviation during compression\n        if abs(features['vwap_deviation']) > 0.008:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e1b32423d7.py"
+}

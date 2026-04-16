@@ -1,0 +1,8 @@
+{
+  "guard_id": "fb87c14cca",
+  "generation": 125,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "55979b12",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with weak candle conviction and momentum misalignment.\"\"\"\n    body_ratio = features.get(\"body_ratio\", 0)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    bb_position = features.get(\"bb_position\", 0.5)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    \n    # Reject if candle is a doji (weak body) AND low volume\n    if body_ratio < 0.15 and volume_ratio < 0.8:\n        return \"skip\"\n    \n    # Reject long signals when RSI overbought (potential reversal)\n    if prediction == \"long\" and rsi_14 > 75:\n        return \"skip\"\n    \n    # Reject short signals when RSI oversold (potential bounce)\n    if prediction == \"short\" and rsi_14 < 25:\n        return \"skip\"\n    \n    # Reject when at band extremes with low volume (exhaustion risk)\n    if (bb_position > 0.92 or bb_position < 0.08) and volume_ratio < 0.7:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fb87c14cca.py"
+}

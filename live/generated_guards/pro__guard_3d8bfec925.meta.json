@@ -1,0 +1,8 @@
+{
+  "guard_id": "3d8bfec925",
+  "generation": 2875,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "caea9bf3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard: bb_pct_b extreme zones for high-confidence entries.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # High-confidence long: price near lower BB (< 5th percentile)\n    if prediction == \"long\" and bb_pct_b < 0.05:\n        return prediction\n    \n    # High-confidence short: price near upper BB (> 95th percentile)\n    if prediction == \"short\" and bb_pct_b > 0.95:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3d8bfec925.py"
+}

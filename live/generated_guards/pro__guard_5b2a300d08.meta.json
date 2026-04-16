@@ -1,0 +1,8 @@
+{
+  "guard_id": "5b2a300d08",
+  "generation": 3805,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8776e872",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression detected when bb_width is low\n    if features.get('bb_width', 1) > 0.18:\n        return prediction\n    \n    # False compression: in tight bands but at extreme BB position (likely breakout)\n    bb_pos = features.get('bb_pct_b', 0.5)\n    if bb_pos < 0.12 or bb_pos > 0.88:\n        return \"skip\"\n    \n    # False compression: strong directional momentum in compression\n    if abs(features.get('macd_histogram', 0)) > 0.004:\n        return \"skip\"\n    \n    # False compression: stoch at extremes during compression (exhaustion)\n    stoch = features.get('stoch_k', 50)\n    if stoch < 15 or stoch > 85:\n        return \"skip\"\n    \n    # ATR check: avoid when volatility is abnormally compressed\n    if features.get('atr_ratio', 1.0) < 0.6:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5b2a300d08.py"
+}

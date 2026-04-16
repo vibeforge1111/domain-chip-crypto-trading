@@ -1,0 +1,8 @@
+{
+  "guard_id": "7d5868e92d",
+  "generation": 3795,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ab733b20",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    \n    # Count confirming signals for the trade direction\n    confirmations = 0\n    \n    if prediction == \"long\":\n        if features.get(\"rsi_14\", 50) < 70: confirmations += 1\n        if features.get(\"stoch_k\", 50) < 80: confirmations += 1\n        if features.get(\"vwap_deviation\", 0) > 0: confirmations += 1\n        if features.get(\"macd_histogram\", 0) > 0: confirmations += 1\n        if features.get(\"obv_slope\", 0) > 0: confirmations += 1\n        if features.get(\"rsi_2h\", 50) < 70: confirmations += 1\n    else:\n        if features.get(\"rsi_14\", 50) > 30: confirmations += 1\n        if features.get(\"stoch_k\", 50) > 20: confirmations += 1\n        if features.get(\"vwap_deviation\", 0) < 0: confirmations += 1\n        if features.get(\"macd_histogram\", 0) < 0: confirmations += 1\n        if features.get(\"obv_slope\", 0) < 0: confirmations += 1\n        if features.get(\"rsi_2h\", 50) > 30: confirmations += 1\n    \n    return prediction if confirmations >= 2 else \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7d5868e92d.py"
+}

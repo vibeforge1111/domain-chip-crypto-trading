@@ -1,0 +1,8 @@
+{
+  "guard_id": "5b88967dd6",
+  "generation": 4635,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b0ead463",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bullish = 0\n    bearish = 0\n    \n    if features.get('rsi_14', 50) > 55:\n        bullish += 1\n    elif features.get('rsi_14', 50) < 45:\n        bearish += 1\n    \n    if features.get('stoch_k', 50) > 60:\n        bullish += 1\n    elif features.get('stoch_k', 50) < 40:\n        bearish += 1\n    \n    if features.get('vwap_deviation', 0) > 0.002:\n        bullish += 1\n    elif features.get('vwap_deviation', 0) < -0.002:\n        bearish += 1\n    \n    if features.get('macd_histogram', 0) > 0:\n        bullish += 1\n    elif features.get('macd_histogram', 0) < 0:\n        bearish += 1\n    \n    if features.get('obv_slope', 0) > 0:\n        bullish += 1\n    elif features.get('obv_slope', 0) < 0:\n        bearish += 1\n    \n    if prediction == \"long\" and bearish > 1:\n        return \"skip\"\n    if prediction == \"short\" and bullish > 1:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5b88967dd6.py"
+}

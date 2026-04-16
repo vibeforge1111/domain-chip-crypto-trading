@@ -1,0 +1,8 @@
+{
+  "guard_id": "be457ef0df",
+  "generation": 290,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "74791029",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Volatility-adjusted momentum filter - skip stretched RSI in high volatility with weak trend.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    vol_regime = features.get('volatility_regime', 0.5)\n    trend = features.get('trend_strength', 0.5)\n    bb_width = features.get('bb_width', 0.02)\n    \n    # Skip stretched RSI during high volatility unless strong trend and wide bands\n    if vol_regime > 0.6:\n        if (rsi > 70 or rsi < 30) and trend < 0.45 and bb_width < 0.03:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_be457ef0df.py"
+}

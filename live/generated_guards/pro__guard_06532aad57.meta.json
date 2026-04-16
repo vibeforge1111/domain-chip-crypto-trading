@@ -1,0 +1,8 @@
+{
+  "guard_id": "06532aad57",
+  "generation": 2655,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7e60c44c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect squeeze compression and skip extreme positions prone to false breakouts.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.02)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # True squeeze: low ATR + narrow BB\n    squeeze = atr_ratio < 0.8 and bb_width < 0.015\n    \n    if squeeze:\n        # Price at extreme + overbought/oversold = likely false compression\n        if (bb_pct_b < 0.15 or bb_pct_b > 0.85) and (stoch_k < 20 or stoch_k > 80):\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_06532aad57.py"
+}

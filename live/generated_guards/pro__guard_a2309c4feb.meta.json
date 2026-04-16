@@ -1,0 +1,8 @@
+{
+  "guard_id": "a2309c4feb",
+  "generation": 2940,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "347b5ac5",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Reject longs when price extended above VWAP but momentum contradicts (weak upside)\n    if prediction == 'long' and vwap_dev > 0.008 and momentum < 0:\n        return 'skip'\n    \n    # Reject shorts when price dropped below VWAP but momentum contradicts (weak downside)\n    if prediction == 'short' and vwap_dev < -0.008 and momentum > 0:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a2309c4feb.py"
+}

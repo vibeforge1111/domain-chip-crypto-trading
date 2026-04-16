@@ -1,0 +1,8 @@
+{
+  "guard_id": "f508ca3631",
+  "generation": 420,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3ae31188",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on candle rejection patterns and momentum divergence.\"\"\"\n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body_ratio = features.get(\"body_ratio\", 1)\n    rsi = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    \n    if prediction == \"long\":\n        # Reject if candle shows rejection from above (large upper wick)\n        if upper_wick > 0.45 and body_ratio < 0.35:\n            return \"skip\"\n        # Reject if overbought AND momentum diverging from price\n        if rsi > 72 and momentum < 0:\n            return \"skip\"\n    \n    if prediction == \"short\":\n        # Reject if candle shows rejection from below (large lower wick)\n        if lower_wick > 0.45 and body_ratio < 0.35:\n            return \"skip\"\n        # Reject if oversold AND momentum diverging from price\n        if rsi < 28 and momentum > 0:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f508ca3631.py"
+}

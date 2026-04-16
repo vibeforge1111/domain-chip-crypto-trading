@@ -1,0 +1,8 @@
+{
+  "guard_id": "a99b1e7e19",
+  "generation": 4575,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "97c22bdf",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like upper_wick_ratio, lower_wick_ratio, body_ratio, range_pct, volume_ratio, atr_ratio, rsi_14, ema_slope\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Skip long trades when MACD histogram is negative (momentum decelerating)\n    if prediction == \"long\" and macd_histogram < -0.0001:\n        return \"skip\"\n    \n    # Skip short trades when MACD histogram is positive (momentum accelerating against short)\n    if prediction == \"short\" and macd_histogram > 0.0001:\n        return \"skip\"\n    \n    # Additional filter: skip if price is far from VWAP in direction opposite to trade\n    if prediction == \"long\" and vwap_deviation < -0.005:\n        return \"skip\"\n    if prediction == \"short\" and vwap_deviation > 0.005:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a99b1e7e19.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "14defa59b9",
+  "generation": 1410,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cf2365ed",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with indecisive candles during high volatility.\n    \n    Reject when candle has weak body (high wicks = indecision) AND \n    volatility is elevated (whipsaw risk).\n    \"\"\"\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    volume_ratio = features.get(\"volume_ratio\", 1.0)\n    \n    # Weak candle + high volatility = reject\n    if body_ratio < 0.3 and atr_ratio > 1.3:\n        return \"skip\"\n    \n    # Very weak candle even with normal volatility\n    if body_ratio < 0.2:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_14defa59b9.py"
+}

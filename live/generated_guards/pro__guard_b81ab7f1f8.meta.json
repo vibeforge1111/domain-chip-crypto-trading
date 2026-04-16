@@ -1,0 +1,8 @@
+{
+  "guard_id": "b81ab7f1f8",
+  "generation": 750,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3057e4c2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with extreme BB position + RSI divergence (potential reversal zones).\"\"\"\n    bb_pos = features.get(\"bb_position\", 0.5)\n    rsi = features.get(\"rsi_14\", 50)\n    \n    # Price at upper band with overbought RSI = risky for longs\n    if bb_pos > 0.9 and rsi > 70 and prediction == \"long\":\n        return \"skip\"\n    \n    # Price at lower band with oversold RSI = risky for shorts\n    if bb_pos < 0.1 and rsi < 30 and prediction == \"short\":\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b81ab7f1f8.py"
+}

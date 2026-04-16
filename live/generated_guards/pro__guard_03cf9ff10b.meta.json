@@ -1,0 +1,8 @@
+{
+  "guard_id": "03cf9ff10b",
+  "generation": 2310,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bfb332a5",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: both atr_ratio and bb_width indicate low volatility\n    low_atr = features.get('atr_ratio', 1.0) < 0.75\n    narrow_bb = features.get('bb_width', 1.0) < 0.35\n    \n    # Skip trades during true compression (false breakouts likely)\n    if low_atr and narrow_bb:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_03cf9ff10b.py"
+}

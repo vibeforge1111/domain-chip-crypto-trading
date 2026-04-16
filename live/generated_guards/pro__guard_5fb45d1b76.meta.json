@@ -1,0 +1,8 @@
+{
+  "guard_id": "5fb45d1b76",
+  "generation": 1645,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "067e85c8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum-volume divergence.\"\"\"\n    momentum = features.get('momentum_score', 0)\n    volume = features.get('volume_ratio', 1)\n    \n    # Strong momentum without volume confirmation suggests weak signal\n    if abs(momentum) > 0.4 and volume < 0.6:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5fb45d1b76.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "a824ee0d18",
+  "generation": 4210,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9e4efa3c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where VWAP deviation and momentum disagree, or extreme stoch.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Disagreement: price above VWAP but weak momentum, or below VWAP but strong momentum\n    disagreement = (vwap_dev > 0 and momentum < -0.1) or (vwap_dev < 0 and momentum > 0.1)\n    \n    # Reject if disagreement or extreme overbought/oversold\n    if disagreement or stoch_k > 85 or stoch_k < 15:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a824ee0d18.py"
+}

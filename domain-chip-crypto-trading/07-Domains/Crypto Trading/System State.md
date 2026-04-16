@@ -12,7 +12,7 @@ This page is the shortest honest read on the current crypto trading system.
 ## What Is Real Now
 
 - active benchmark candidate count: `9`
-- current top benchmark candidate: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-2201808298`
+- current top benchmark candidate: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572`
 - validated regime families: `n/a` / `n/a`
 - classified event candidates: `n/a` / `n/a`
 - contradiction, mutation, and self-edit lanes are operational

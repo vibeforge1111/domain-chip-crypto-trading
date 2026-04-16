@@ -1,0 +1,8 @@
+{
+  "guard_id": "cb6bfa7f52",
+  "generation": 1115,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "796098bf",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when momentum contradicts trend direction.\"\"\"\n    # Skip when strong trend but weak/bearish momentum\n    if features['trend_strength'] > 0.7 and features['momentum_score'] < 0:\n        return \"skip\"\n    # Skip when weak trend but strong momentum (low conviction)\n    if features['trend_strength'] < 0.4 and features['momentum_score'] > 0.5:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cb6bfa7f52.py"
+}

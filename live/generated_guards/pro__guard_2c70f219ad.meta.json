@@ -1,0 +1,8 @@
+{
+  "guard_id": "2c70f219ad",
+  "generation": 2095,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "889def31",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    \n    # Only allow trades at BB extremes (<0.05 or >0.95)\n    if bb_pct_b >= 0.05 and bb_pct_b <= 0.95:\n        return \"skip\"\n    \n    # For longs at lower band, require oversold confirmation\n    if prediction == \"long\" and bb_pct_b < 0.05:\n        if stoch_k > 25 or rsi_2h > 40:\n            return \"skip\"\n    \n    # For shorts at upper band, require overbought confirmation\n    if prediction == \"short\" and bb_pct_b > 0.95:\n        if stoch_k < 75 or rsi_2h < 60:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2c70f219ad.py"
+}

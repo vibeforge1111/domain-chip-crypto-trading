@@ -1,0 +1,8 @@
+{
+  "guard_id": "12d24ee297",
+  "generation": 2535,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f9b3ec15",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    obv = features.get(\"obv_slope\", 0)\n    \n    # Momentum deceleration check: longs need bullish macd and reasonable stoch\n    if prediction == \"long\":\n        if macd < 0 or stoch_k > 88 or obv < 0:\n            return \"skip\"\n    \n    # Momentum deceleration check: shorts need bearish macd and reasonable stoch\n    if prediction == \"short\":\n        if macd > 0 or stoch_k < 12 or obv > 0:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_12d24ee297.py"
+}

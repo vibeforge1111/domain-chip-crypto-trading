@@ -1,0 +1,8 @@
+{
+  "guard_id": "ef2c8e85f0",
+  "generation": 1780,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4175b506",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades lacking momentum alignment across indicators.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    stoch = features.get(\"stoch_k\", 50)\n    macd = features.get(\"macd_histogram\", 0)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    if prediction == \"short\":\n        if rsi > 40 and stoch > 40 and macd > 0:\n            return \"skip\"\n    elif prediction == \"long\":\n        if rsi < 60 and stoch < 60 and macd < 0:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ef2c8e85f0.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "fa51c0d897",
+  "generation": 4165,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "e54c5dba",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like upper_wick_ratio, lower_wick_ratio, body_ratio, range_pct, volume_ratio, atr_ratio, rsi_14, ema_slope\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Detect momentum deceleration using macd_histogram\n    # For longs: skip if momentum has turned negative or stoch overbought\n    if prediction == \"long\" and (macd_histogram < -0.0001 or stoch_k > 80):\n        return \"skip\"\n    \n    # For shorts: skip if momentum has turned positive or stoch oversold\n    if prediction == \"short\" and (macd_histogram > 0.0001 or stoch_k < 20):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_fa51c0d897.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "6b498cdc99",
+  "generation": 970,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "c5dc7dd6",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum diverges from trend or when entering at BB extremes with weak momentum.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Filter: momentum vs trend divergence\n    momentum_trend_conflict = (features[\"momentum_score\"] > 0.5 and features[\"trend_strength\"] < -0.3) or \\\n                              (features[\"momentum_score\"] < -0.5 and features[\"trend_strength\"] > 0.3)\n    \n    # Filter: extreme BB position with insufficient momentum confirmation\n    bb_extreme_no_confirm = (features[\"bb_position\"] > 0.95 and features[\"momentum_score\"] < 0.2) or \\\n                            (features[\"bb_position\"] < 0.05 and features[\"momentum_score\"] > -0.2)\n    \n    # Filter: high ATR but low momentum (volatile move without conviction)\n    volatile_no_momentum = features[\"atr_ratio\"] > 1.5 and abs(features[\"momentum_score\"]) < 0.3\n    \n    if momentum_trend_conflict or bb_extreme_no_confirm or volatile_no_momentum:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6b498cdc99.py"
+}

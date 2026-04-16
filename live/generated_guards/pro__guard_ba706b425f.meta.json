@@ -1,0 +1,8 @@
+{
+  "guard_id": "ba706b425f",
+  "generation": 595,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f4949cde",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when momentum diverges from trend or BB position lacks confirmation.\"\"\"\n    momentum = features.get('momentum_score', 0)\n    trend = features.get('trend_strength', 0)\n    bb_pos = features.get('bb_position', 0.5)\n    ema_slope = features.get('ema_slope', 0)\n    \n    # Filter 1: Weak momentum in strong trend (likely exhaustion)\n    if momentum < 0.2 and trend > 0.6:\n        return \"skip\"\n    \n    # Filter 2: BB extreme without momentum confirmation\n    if (bb_pos > 0.9 or bb_pos < 0.1) and abs(momentum) < 0.3:\n        return \"skip\"\n    \n    # Filter 3: EMA direction contradicts prediction in strong trend\n    if trend > 0.7 and ema_slope * (1 if prediction == \"long\" else -1) < 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ba706b425f.py"
+}

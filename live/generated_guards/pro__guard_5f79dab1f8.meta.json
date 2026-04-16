@@ -1,0 +1,8 @@
+{
+  "guard_id": "5f79dab1f8",
+  "generation": 4605,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ba18ab51",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression detection: both ATR and BB compressed\n    is_compressed = features['atr_ratio'] < 0.8 and features['bb_width'] < 0.9\n    \n    # False compression indicator: compressed but no directional confirmation\n    has_neutral_momentum = abs(features['momentum_score']) < 0.15\n    has_neutral_stoch = 40 < features['stoch_k'] < 60 and 40 < features['stoch_d'] < 60\n    has_low_vwap_dev = abs(features['vwap_deviation']) < 0.005\n    \n    if is_compressed and has_neutral_momentum and has_neutral_stoch and has_low_vwap_dev:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5f79dab1f8.py"
+}

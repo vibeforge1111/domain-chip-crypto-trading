@@ -1,0 +1,8 @@
+{
+  "guard_id": "25acd5c8f7",
+  "generation": 640,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "36f3880d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when RSI is extreme at band extremes - reversal signals.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    bb_pos = features.get(\"bb_position\", 0.5)\n    \n    # Skip longs when overbought at upper band (potential reversal)\n    if prediction == \"long\" and rsi > 70 and bb_pos > 0.85:\n        return \"skip\"\n    \n    # Skip shorts when oversold at lower band (potential reversal)\n    if prediction == \"short\" and rsi < 30 and bb_pos < 0.15:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_25acd5c8f7.py"
+}

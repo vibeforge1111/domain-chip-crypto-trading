@@ -1,0 +1,13 @@
+def guard(features: dict, prediction: str) -> str:
+    """Filter trades against the broader 2-hour trend."""
+    rsi_2h = features.get("rsi_2h", 50)
+    
+    # Skip longs when broader trend is bearish (2h RSI very low)
+    if prediction == "long" and rsi_2h < 35:
+        return "skip"
+    
+    # Skip shorts when broader trend is bullish (2h RSI very high)
+    if prediction == "short" and rsi_2h > 65:
+        return "skip"
+    
+    return prediction

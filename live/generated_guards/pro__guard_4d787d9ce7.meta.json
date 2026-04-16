@@ -1,0 +1,8 @@
+{
+  "guard_id": "4d787d9ce7",
+  "generation": 5070,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1b5d3dfa",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using BB extreme zones with confirming indicators.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # High-confidence zones: BB extremes with confirming indicators\n    if bb_pct_b < 0.05 and stoch_k < 25:\n        return prediction\n    if bb_pct_b > 0.95 and stoch_k > 75:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4d787d9ce7.py"
+}

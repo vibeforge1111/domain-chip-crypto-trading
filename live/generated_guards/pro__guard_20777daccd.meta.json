@@ -1,0 +1,8 @@
+{
+  "guard_id": "20777daccd",
+  "generation": 3385,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bcdc53d2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression setups using bb_width, atr_ratio, and new features.\"\"\"\n    bb_width = features.get('bb_width', 0.5)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    vwap_dev = features.get('vwap_deviation', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: both indicators show low volatility\n    is_compressed = bb_width < 0.12 and atr_ratio < 0.75\n    \n    if is_compressed and prediction != 'skip':\n        # False compression signals: near band extremes with weak momentum\n        near_extreme = bb_pct_b < 0.1 or bb_pct_b > 0.9\n        weak_momentum = stoch_k < 30 or stoch_k > 70\n        off_vwap = abs(vwap_dev) > 0.006\n        rsi_extreme = rsi_2h < 35 or rsi_2h > 65\n        \n        # Reject if 3+ false compression signals present\n        false_signals = sum([near_extreme, weak_momentum, off_vwap, rsi_extreme])\n        if false_signals >= 3:\n            return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_20777daccd.py"
+}

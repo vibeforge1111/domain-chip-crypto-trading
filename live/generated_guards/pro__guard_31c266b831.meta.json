@@ -1,0 +1,8 @@
+{
+  "guard_id": "31c266b831",
+  "generation": 755,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "39abe24a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades in low momentum + high volatility (choppy market) or weak candles.\"\"\"\n    momentum = features.get('momentum_score', 0.5)\n    volatility = features.get('volatility_regime', 0.5)\n    body = features.get('body_ratio', 0.5)\n    trend_strength = features.get('trend_strength', 0.5)\n    \n    # Skip if momentum is weak and volatility is high (choppy market)\n    if momentum < 0.35 and volatility > 0.65:\n        return \"skip\"\n    \n    # Skip if candle has tiny body in high volatility (potential whipsaw)\n    if body < 0.25 and volatility > 0.7:\n        return \"skip\"\n    \n    # Skip if trend strength is weak despite having a prediction (no conviction)\n    if trend_strength < 0.25 and prediction != \"skip\":\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_31c266b831.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "0ab64f248f",
+  "generation": 515,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7f6009bc",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades with momentum/trend divergence.\"\"\"\n    # Skip long if downtrend but momentum positive\n    if prediction == \"long\" and features['trend_strength'] < -0.3 and features['momentum_score'] > 0.2:\n        return \"skip\"\n    # Skip short if uptrend but momentum negative\n    if prediction == \"short\" and features['trend_strength'] > 0.3 and features['momentum_score'] < -0.2:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0ab64f248f.py"
+}

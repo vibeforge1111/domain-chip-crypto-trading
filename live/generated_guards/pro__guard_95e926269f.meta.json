@@ -1,0 +1,8 @@
+{
+  "guard_id": "95e926269f",
+  "generation": 2265,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "e1d20f84",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using Bollinger position and Stochastic extremes with 2h RSI confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Long: reject if overbought on BB, Stoch, AND 2h RSI\n    if prediction == \"long\":\n        if bb_pct > 0.85 and stoch_k > 80 and rsi_2h > 65:\n            return \"skip\"\n    \n    # Short: reject if oversold on BB, Stoch, AND 2h RSI\n    if prediction == \"short\":\n        if bb_pct < 0.15 and stoch_k < 20 and rsi_2h < 35:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_95e926269f.py"
+}

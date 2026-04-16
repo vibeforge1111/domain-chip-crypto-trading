@@ -1,0 +1,8 @@
+{
+  "guard_id": "e55f32e1fb",
+  "generation": 4680,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "28dc739d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression to filter unreliable signals.\"\"\"\n    # True compression: low volatility + no directional setup\n    is_squeeze = features['atr_ratio'] < 0.7 and features['bb_width'] < 0.15\n    bb_mid = 0.3 < features['bb_pct_b'] < 0.7\n    vwap_near = abs(features['vwap_deviation']) < 0.005\n    stoch_neutral = 25 < features['stoch_k'] < 75 and 25 < features['stoch_d'] < 75\n    weak_momentum = abs(features['macd_histogram']) < 0.0003\n    obv_flat = abs(features['obv_slope']) < 0.01\n    \n    if is_squeeze and bb_mid and vwap_near and stoch_neutral and weak_momentum and obv_flat:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_e55f32e1fb.py"
+}

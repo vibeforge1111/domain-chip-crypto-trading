@@ -1,0 +1,8 @@
+{
+  "guard_id": "d89de753e4",
+  "generation": 3380,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "13555676",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip false compression breakouts: tight BB + ATR squeeze + extreme position + overbought/oversold\n    tight_bb = features.get('bb_width', 0.2) < 0.15\n    atr_squeeze = features.get('atr_ratio', 1.0) < 0.7\n    extreme_bb_pos = features.get('bb_pct_b', 0.5) > 0.92 or features.get('bb_pct_b', 0.5) < 0.08\n    stoch_extreme = features.get('stoch_k', 50) > 85 or features.get('stoch_k', 50) < 15\n    vwap_extended = abs(features.get('vwap_deviation', 0)) > 0.006\n    \n    if tight_bb and atr_squeeze and extreme_bb_pos and stoch_extreme and vwap_extended:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d89de753e4.py"
+}

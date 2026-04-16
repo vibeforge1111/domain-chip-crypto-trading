@@ -1,0 +1,9 @@
+{
+  "guard_id": "0592647abe",
+  "generation": 5540,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9bcaf6d8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Mean-reversion timing guard for crypto 15-min reversal entries.\"\"\"\n    rsi_14 = features.get(\"rsi_14\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    if prediction == \"long\":\n        # Long reversal: require oversold extremes\n        oversold = rsi_14 < 32 or stoch_k < 28\n        wide_oversold = rsi_2h < 40\n        if not (oversold or wide_oversold):\n            return \"skip\"\n    elif prediction == \"short\":\n        # Short reversal: require overbought extremes\n        overbought = rsi_14 > 68 or stoch_k > 72\n        wide_overbought = rsi_2h > 60\n        if not (overbought or wide_overbought):\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0592647abe.py",
+  "synergy_mode": true
+}

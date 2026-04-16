@@ -1,0 +1,8 @@
+{
+  "guard_id": "9f7f1648ed",
+  "generation": 4025,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "bca03b17",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip when both Bollinger Bands and Stochastic are in extreme territory.\"\"\"\n    if features['bb_pct_b'] > 0.9 and features['stoch_k'] > 80:\n        return \"skip\"\n    if features['bb_pct_b'] < 0.1 and features['stoch_k'] < 20:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9f7f1648ed.py"
+}

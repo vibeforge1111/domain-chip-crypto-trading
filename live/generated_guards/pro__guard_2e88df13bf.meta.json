@@ -1,0 +1,8 @@
+{
+  "guard_id": "2e88df13bf",
+  "generation": 1745,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "62c03438",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals with momentum divergence or extreme volatility conditions.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    stoch = features.get('stoch_k', 50)\n    macd = features.get('macd_histogram', 0)\n    obv = features.get('obv_slope', 0)\n    \n    # Bearish divergence: RSI overbought but momentum fading (low MACD, declining OBV)\n    if rsi > 68 and macd < -0.0003 and obv < 0:\n        return \"skip\"\n    \n    # Bullish divergence: RSI oversold but momentum building (high MACD, rising OBV)\n    if rsi < 32 and macd > 0.0003 and obv > 0:\n        return \"skip\"\n    \n    # Choppy market: RSI neutral but conflicting momentum signals\n    if 40 <= rsi <= 60 and macd * obv < 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2e88df13bf.py"
+}

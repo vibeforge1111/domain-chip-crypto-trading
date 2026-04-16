@@ -1,0 +1,8 @@
+{
+  "guard_id": "c823d588ff",
+  "generation": 2310,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "721e8e0f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Skip trades when macd_histogram shows momentum deceleration against direction.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd = features.get(\"macd_histogram\", 0)\n    obv = features.get(\"obv_slope\", 0)\n    \n    # Skip long if momentum weakening (neg macd) AND volume diverging (neg obv)\n    if prediction == \"long\" and macd < -0.0002 and obv < 0:\n        return \"skip\"\n    \n    # Skip short if momentum strengthening (pos macd) AND volume diverging (pos obv)\n    if prediction == \"short\" and macd > 0.0002 and obv > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c823d588ff.py"
+}

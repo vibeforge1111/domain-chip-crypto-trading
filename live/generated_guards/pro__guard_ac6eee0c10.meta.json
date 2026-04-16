@@ -1,0 +1,8 @@
+{
+  "guard_id": "ac6eee0c10",
+  "generation": 3305,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "585f4e0d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades when VWAP deviation and momentum score disagree.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    \n    # Skip if strong disagreement: price far below VWAP but momentum positive, or vice versa\n    if vwap_dev < -0.015 and momentum > 0.4:\n        return \"skip\"\n    if vwap_dev > 0.015 and momentum < -0.4:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ac6eee0c10.py"
+}

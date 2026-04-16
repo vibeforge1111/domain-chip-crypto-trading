@@ -1,0 +1,8 @@
+{
+  "guard_id": "d3294e17e4",
+  "generation": 3425,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3223376f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using bb_pct_b extremes as high-confidence entry zones.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    rsi_14 = features.get(\"rsi_14\", 50)\n    \n    # Only allow trades at extreme BB positions (<0.05 or >0.95)\n    is_extreme_bb = bb_pct_b < 0.05 or bb_pct_b > 0.95\n    \n    # Reject if not at extreme BB position\n    if not is_extreme_bb:\n        return \"skip\"\n    \n    # Additional filter: avoid overbought/oversold exhaustion\n    if prediction == \"long\" and rsi_14 > 75:\n        return \"skip\"\n    if prediction == \"short\" and rsi_14 < 25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d3294e17e4.py"
+}

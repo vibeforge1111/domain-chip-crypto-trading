@@ -1,0 +1,8 @@
+{
+  "guard_id": "19834e1e23",
+  "generation": 1875,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8b334d1d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where price reaches band extremes without momentum confirmation.\"\"\"\n    bb_pos = features.get('bb_position', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    rsi = features.get('rsi_14', 50)\n    momentum = features.get('momentum_score', 0)\n    \n    # Long signal: reject if overextended at upper band without momentum\n    if prediction == \"long\" and bb_pos > 0.9 and rsi > 70 and momentum < 0.3:\n        return \"skip\"\n    \n    # Short signal: reject if oversold at lower band without negative momentum\n    if prediction == \"short\" and bb_pos < 0.1 and rsi < 30 and momentum > -0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_19834e1e23.py"
+}

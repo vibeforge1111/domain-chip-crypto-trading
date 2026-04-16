@@ -1,0 +1,8 @@
+{
+  "guard_id": "7178f493a9",
+  "generation": 1380,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "8d579c06",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where momentum disagrees with candle structure.\"\"\"\n    momentum = features.get('momentum_score', 0)\n    upper_wick = features.get('upper_wick_ratio', 0)\n    lower_wick = features.get('lower_wick_ratio', 0)\n    body_ratio = features.get('body_ratio', 0)\n    bb_width = features.get('bb_width', 0)\n    \n    # Strong momentum but suspicious candle structure = potential rejection\n    strong_momentum = abs(momentum) > 0.6\n    suspicious_candle = (upper_wick > 0.35 or lower_wick > 0.35) and body_ratio < 0.4\n    \n    if strong_momentum and suspicious_candle and prediction != \"skip\":\n        # Check if wick contradicts momentum direction\n        if momentum > 0 and upper_wick > 0.35:\n            return \"skip\"\n        if momentum < 0 and lower_wick > 0.35:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7178f493a9.py"
+}

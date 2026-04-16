@@ -1,0 +1,8 @@
+{
+  "guard_id": "cd8f0fe5c4",
+  "generation": 2595,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9f39a3c5",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter signals when both Bollinger position and Stochastic show extreme conditions.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Skip if both indicators show overbought (reversal risk)\n    if bb_pct_b > 0.9 and stoch_k > 80:\n        return \"skip\"\n    \n    # Skip if both indicators show oversold (reversal risk)\n    if bb_pct_b < 0.1 and stoch_k < 20:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cd8f0fe5c4.py"
+}

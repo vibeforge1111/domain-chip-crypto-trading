@@ -1,0 +1,8 @@
+{
+  "guard_id": "070cdde0d0",
+  "generation": 3365,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "19bbb1df",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\"\"\"\n    macd_hist = features.get('macd_histogram', 0)\n    \n    # Momentum deceleration filter - skip if MACD histogram near zero (weak/converging momentum)\n    if abs(macd_hist) < 0.0001:\n        return \"skip\"\n    \n    # For longs, require bullish momentum (positive histogram)\n    if prediction == \"long\" and macd_hist < 0:\n        return \"skip\"\n    \n    # For shorts, require bearish momentum (negative histogram)\n    if prediction == \"short\" and macd_hist > 0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_070cdde0d0.py"
+}

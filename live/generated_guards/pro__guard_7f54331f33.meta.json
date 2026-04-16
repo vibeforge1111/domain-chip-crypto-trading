@@ -1,0 +1,8 @@
+{
+  "guard_id": "7f54331f33",
+  "generation": 2420,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "72c3f565",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation guard requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Count bullish confirmations\n    bullish_count = 0\n    bullish_count += features.get(\"vwap_deviation\", 0) < 0  # Price below VWAP\n    bullish_count += features.get(\"stoch_k\", 50) < 30  # Oversold\n    bullish_count += features.get(\"obv_slope\", 0) > 0  # Positive OBV\n    bullish_count += features.get(\"macd_histogram\", 0) > 0  # Bullish MACD\n    \n    # Count bearish confirmations\n    bearish_count = 0\n    bearish_count += features.get(\"vwap_deviation\", 0) > 0  # Price above VWAP\n    bearish_count += features.get(\"stoch_k\", 50) > 70  # Overbought\n    bearish_count += features.get(\"bb_pct_b\", 0.5) > 0.8  # Near upper BB\n    bearish_count += features.get(\"macd_histogram\", 0) < 0  # Bearish MACD\n    \n    if prediction == \"long\" and bullish_count >= 2:\n        return prediction\n    if prediction == \"short\" and bearish_count >= 2:\n        return prediction\n    \n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7f54331f33.py"
+}

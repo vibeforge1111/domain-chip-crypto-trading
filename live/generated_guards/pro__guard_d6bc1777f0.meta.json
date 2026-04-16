@@ -1,0 +1,8 @@
+{
+  "guard_id": "d6bc1777f0",
+  "generation": 4695,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2baf350d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades during compression using atr_ratio, bb_width and momentum confirmation.\"\"\"\n    bb_width = features.get(\"bb_width\", 0.02)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    \n    # Detect compression: both low volatility and narrow bands\n    in_compression = atr_ratio < 0.7 and bb_width < 0.015\n    \n    if in_compression:\n        # Reject if position is at extreme within bands (potential trap)\n        if bb_pct_b < 0.1 or bb_pct_b > 0.9:\n            return \"skip\"\n        # Reject if stochastic divergent (momentum weakening)\n        if abs(stoch_k - stoch_d) > 15:\n            return \"skip\"\n        # Reject if wider timeframe RSI extreme (context divergence)\n        if rsi_2h < 30 or rsi_2h > 70:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_d6bc1777f0.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "48f16c28ea",
+  "generation": 1340,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2858c158",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Rejects trades when momentum/RSI contradict the signal direction.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    momentum = features.get(\"momentum_score\", 0)\n    bb_position = features.get(\"bb_position\", 0.5)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    \n    # For longs: reject if overbought, negative momentum, or near upper band\n    if prediction == \"long\":\n        if rsi > 70 or momentum < -0.2 or bb_position > 0.85 or atr_ratio > 2.0:\n            return \"skip\"\n    \n    # For shorts: reject if oversold, positive momentum, or near lower band\n    if prediction == \"short\":\n        if rsi < 30 or momentum > 0.2 or bb_position < 0.15 or atr_ratio > 2.0:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_48f16c28ea.py"
+}

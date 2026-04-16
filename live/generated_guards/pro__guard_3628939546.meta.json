@@ -1,0 +1,8 @@
+{
+  "guard_id": "3628939546",
+  "generation": 4470,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "aa7889d5",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades to only allow entries at extreme Bollinger Band positions.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Only allow trades when bb_pct_b is in extreme zones with stochastic confirmation\n    if bb_pct_b < 0.05:\n        # Lower band extreme - confirm long entries with stoch exiting oversold\n        if prediction == \"long\" and stoch_k > 20:\n            return prediction\n        return \"skip\"\n    elif bb_pct_b > 0.95:\n        # Upper band extreme - confirm short entries with stoch exiting overbought\n        if prediction == \"short\" and stoch_k < 80:\n            return prediction\n        return \"skip\"\n    \n    # Non-extreme BB position - reject\n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3628939546.py"
+}

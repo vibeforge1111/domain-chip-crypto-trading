@@ -1,0 +1,8 @@
+{
+  "guard_id": "3b7509d906",
+  "generation": 2890,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "43dae8b7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject false compression: tight ATR+BB but weak momentum buildup.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # True compression: low ATR + narrow BBs\n    compressed = atr_ratio < 0.8 and bb_width < 0.4\n    \n    if compressed:\n        # Mid-range BB suggests indecision\n        if 0.25 < bb_pct_b < 0.75:\n            return \"skip\"\n        \n        # Weak momentum on all indicators confirms false compression\n        if abs(macd_histogram) < 0.0001 and obv_slope < 0.05 and abs(rsi_14 - rsi_2h) < 10:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_3b7509d906.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "bc3828dc17",
+  "generation": 1825,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4ed970b9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades where candle structure contradicts the predicted direction.\"\"\"\n    if prediction == \"long\":\n        # Long with dominant upper wick and bearish EMA = rejection candidate\n        if features[\"upper_wick_ratio\"] > 0.4 and features[\"ema_slope\"] < -0.1:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Short with dominant lower wick and bullish EMA = rejection candidate\n        if features[\"lower_wick_ratio\"] > 0.4 and features[\"ema_slope\"] > 0.1:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bc3828dc17.py"
+}

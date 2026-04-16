@@ -1,0 +1,8 @@
+{
+  "guard_id": "0a7daff007",
+  "generation": 510,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d219b234",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on RSI-BB divergence and volatility-range mismatch.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    bb_pos = features.get('bb_position', 0.5)\n    vol_ratio = features.get('volume_ratio', 1.0)\n    vol_regime = features.get('volatility_regime', 0.5)\n    range_pct = features.get('range_pct', 0.5)\n    body_ratio = features.get('body_ratio', 0.5)\n    \n    # Skip: RSI extreme at Bollinger Band edge (reversal risk)\n    if (rsi > 70 or rsi < 30) and (bb_pos > 0.95 or bb_pos < 0.05):\n        return \"skip\"\n    \n    # Skip: high volatility but narrow range (breakout trap)\n    if vol_regime > 0.7 and range_pct < 0.3:\n        return \"skip\"\n    \n    # Skip: weak candle body without volume confirmation\n    if body_ratio < 0.3 and vol_ratio < 0.8:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0a7daff007.py"
+}

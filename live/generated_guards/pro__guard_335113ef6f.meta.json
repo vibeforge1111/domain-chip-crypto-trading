@@ -1,0 +1,8 @@
+{
+  "guard_id": "335113ef6f",
+  "generation": 1500,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5b8d9810",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against momentum divergence and trend weakness trades.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    vol_surge = features.get(\"volume_ratio\", 1.0) > 1.3\n    mom_weak = features.get(\"momentum_score\", 0.5) < 0.4\n    no_trend = features.get(\"trend_strength\", 0.5) < 0.3\n    \n    if vol_surge and mom_weak:\n        return \"skip\"\n    if no_trend and (vol_surge or mom_weak):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_335113ef6f.py"
+}

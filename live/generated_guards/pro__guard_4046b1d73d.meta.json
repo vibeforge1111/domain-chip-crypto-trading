@@ -1,0 +1,8 @@
+{
+  "guard_id": "4046b1d73d",
+  "generation": 1620,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "7f6eb361",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Quality signal filter combining candle structure, volume, and volatility.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    # Reject doji-like candles (weak conviction)\n    if features[\"body_ratio\"] < 0.15:\n        return \"skip\"\n    \n    # Reject low volume signals (potential noise)\n    if features[\"volume_ratio\"] < 0.6:\n        return \"skip\"\n    \n    # Reject extreme volatility environments\n    if features[\"atr_ratio\"] > 2.5 or features[\"atr_ratio\"] < 0.4:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4046b1d73d.py"
+}

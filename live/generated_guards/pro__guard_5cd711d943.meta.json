@@ -1,0 +1,8 @@
+{
+  "guard_id": "5cd711d943",
+  "generation": 160,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "108daf9b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum-volume divergence in high volatility.\"\"\"\n    volume_ratio = features.get('volume_ratio', 1)\n    momentum_score = features.get('momentum_score', 0)\n    volatility_regime = features.get('volatility_regime', 0)\n    atr_ratio = features.get('atr_ratio', 1)\n    \n    # High volatility but weak volume with momentum suggests unstable move\n    high_volatility = volatility_regime > 0.6 or atr_ratio > 1.3\n    weak_volume = volume_ratio < 0.7\n    divergent_momentum = abs(momentum_score) < 0.3\n    \n    if high_volatility and weak_volume and divergent_momentum:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_5cd711d943.py"
+}

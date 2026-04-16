@@ -1,0 +1,8 @@
+{
+  "guard_id": "9c40800e70",
+  "generation": 715,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "513ac1ac",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades where candle range is unusually tight relative to ATR.\"\"\"\n    if features.get('range_pct', 0) < features.get('atr_ratio', 1) * 0.5:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9c40800e70.py"
+}

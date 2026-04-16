@@ -1,0 +1,8 @@
+{
+  "guard_id": "77afdd8b4b",
+  "generation": 795,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "4e8daeb7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb_position = features.get('bb_position', 0.5)\n    rsi_14 = features.get('rsi_14', 50)\n    volatility_regime = features.get('volatility_regime', 0.5)\n    trend_strength = features.get('trend_strength', 0)\n    \n    # Skip if price is in middle of BB range (no clear direction)\n    if 0.35 <= bb_position <= 0.65:\n        return \"skip\"\n    \n    # Skip if market is low volatility and RSI is neutral\n    if volatility_regime < 0.4 and 40 <= rsi_14 <= 60:\n        return \"skip\"\n    \n    # Skip if trend is weak regardless of other signals\n    if trend_strength < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_77afdd8b4b.py"
+}

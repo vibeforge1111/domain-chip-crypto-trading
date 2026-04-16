@@ -1,0 +1,8 @@
+{
+  "guard_id": "1c85a7c3b8",
+  "generation": 2150,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "735d1e0d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    if prediction == 'skip':\n        return prediction\n    \n    # Long: price above VWAP should have positive momentum, short: opposite\n    long_disagree = prediction == 'long' and vwap_dev < -0.01 and momentum < -0.05\n    short_disagree = prediction == 'short' and vwap_dev > 0.01 and momentum > 0.05\n    \n    # Additional filter: RSI divergence from trade direction\n    rsi_diverges = (prediction == 'long' and rsi_2h < 40) or (prediction == 'short' and rsi_2h > 60)\n    \n    if (long_disagree or short_disagree) and rsi_diverges:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1c85a7c3b8.py"
+}

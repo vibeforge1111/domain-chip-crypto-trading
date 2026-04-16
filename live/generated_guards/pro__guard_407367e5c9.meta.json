@@ -1,0 +1,8 @@
+{
+  "guard_id": "407367e5c9",
+  "generation": 1530,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5ba0ff75",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals with extreme RSI contradicting trend direction.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    rsi = features.get(\"rsi_14\", 50)\n    ema_slope = features.get(\"ema_slope\", 0)\n    body_ratio = features.get(\"body_ratio\", 0.5)\n    \n    # Strong RSI divergence from trend is unreliable\n    rsi_extreme = rsi > 68 or rsi < 32\n    if rsi_extreme:\n        if prediction == \"long\" and ema_slope < 0:\n            return \"skip\"\n        if prediction == \"short\" and ema_slope > 0:\n            return \"skip\"\n    \n    # Low body ratio indicates indecision candle\n    if body_ratio < 0.25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_407367e5c9.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "4f19b99884",
+  "generation": 3595,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2f74377b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like stoch_k, stoch_d, bb_pct_b, etc.\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # Reject signals when stochastic is in neutral zone (35-65)\n    # Crossovers in this range often lack momentum conviction\n    if 35 < stoch_k < 65 and 35 < stoch_d < 65:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4f19b99884.py"
+}

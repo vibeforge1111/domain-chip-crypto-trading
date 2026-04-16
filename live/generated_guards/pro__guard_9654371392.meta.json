@@ -1,0 +1,8 @@
+{
+  "guard_id": "9654371392",
+  "generation": 815,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9e4f0bcd",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with momentum divergence or dangerous volatility spikes.\"\"\"\n    rsi = features.get('rsi_14', 50)\n    bb_pos = features.get('bb_position', 0.5)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    momentum = features.get('momentum_score', 0)\n    \n    # Skip if RSI extreme AND price at BB extremes (potential reversal)\n    if (rsi > 70 or rsi < 30) and (bb_pos > 0.9 or bb_pos < 0.1):\n        return \"skip\"\n    \n    # Skip if volatility spike (dangerous)\n    if atr_ratio > 2.0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9654371392.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "698c234bb8",
+  "generation": 2490,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "64dbc7b3",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip in compression when stochastic is extreme (likely reversal, not breakout)\n    if features['atr_ratio'] < 0.75 and features['bb_width'] < 0.2:\n        if features['stoch_k'] > 80 or features['stoch_k'] < 20:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_698c234bb8.py"
+}

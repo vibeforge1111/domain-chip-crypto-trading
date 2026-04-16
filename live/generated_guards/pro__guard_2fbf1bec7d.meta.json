@@ -1,0 +1,8 @@
+{
+  "guard_id": "2fbf1bec7d",
+  "generation": 100,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "25472ed4",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard against trades at Bollinger Band extremes with high volatility - potential reversals.\"\"\"\n    bb_pos = features.get(\"bb_position\", 0.5)\n    atr_ratio = features.get(\"atr_ratio\", 1.0)\n    bb_width = features.get(\"bb_width\", 0.0)\n    \n    # Reject trades when price is at extreme BB position AND volatility is elevated\n    # This catches potential reversal setups rather than continuation trades\n    at_extreme = bb_pos > 0.92 or bb_pos < 0.08\n    high_volatility = atr_ratio > 1.3\n    \n    if at_extreme and high_volatility:\n        return \"skip\"\n    \n    # Also reject when BB is contracted (low width) with extreme position - consolidation break trap\n    contracted = bb_width < 0.5\n    if at_extreme and contracted:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_2fbf1bec7d.py"
+}

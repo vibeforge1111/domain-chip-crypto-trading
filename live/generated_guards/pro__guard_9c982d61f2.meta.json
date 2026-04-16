@@ -1,0 +1,8 @@
+{
+  "guard_id": "9c982d61f2",
+  "generation": 3975,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f640a7a7",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Guard using BB extremes with VWAP and momentum confirmation.\"\"\"\n    bb_pct = features.get('bb_pct_b', 0.5)\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    \n    # Only allow trades in extreme BB zones with aligned confirmation\n    in_extreme_zone = bb_pct < 0.05 or bb_pct > 0.95\n    near_vwap = abs(vwap_dev) < 0.015\n    not_overextended = stoch_k < 85\n    \n    if in_extreme_zone and near_vwap and not_overextended:\n        return prediction\n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9c982d61f2.py"
+}

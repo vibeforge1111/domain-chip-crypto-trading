@@ -1,0 +1,8 @@
+{
+  "guard_id": "1abddec8fa",
+  "generation": 665,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ad09ee7f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filters trades where momentum lacks volume confirmation or volatility is unstable.\"\"\"\n    # Skip if high range but low volume (weak conviction move)\n    if features['range_pct'] > 0.015 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    # Skip if volatility spike (ATR up) but range stays compressed (unstable)\n    if features['atr_ratio'] > 1.4 and features['bb_width'] < 0.8:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1abddec8fa.py"
+}

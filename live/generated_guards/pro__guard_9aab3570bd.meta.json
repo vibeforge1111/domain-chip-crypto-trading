@@ -1,0 +1,8 @@
+{
+  "guard_id": "9aab3570bd",
+  "generation": 3585,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "ebdf8f92",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using Bollinger Band extreme positions.\"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    \n    # Only allow entries at extreme BB positions\n    extreme_bb = bb_pct_b < 0.05 or bb_pct_b > 0.95\n    \n    if not extreme_bb:\n        return \"skip\"\n    \n    # For long signals at lower band, check oversold stochastic confirmation\n    if prediction == \"long\" and bb_pct_b < 0.05:\n        if stoch_k > 20:  # Stochastic already leaving oversold\n            return \"skip\"\n    \n    # For short signals at upper band, check overbought stochastic confirmation\n    if prediction == \"short\" and bb_pct_b > 0.95:\n        if stoch_k < 80:  # Stochastic not yet in overbought\n            return \"skip\"\n    \n    # Ensure wider RSI context aligns with direction\n    if prediction == \"long\" and rsi_2h > 70:\n        return \"skip\"\n    if prediction == \"short\" and rsi_2h < 30:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9aab3570bd.py"
+}

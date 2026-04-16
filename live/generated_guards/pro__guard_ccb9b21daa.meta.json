@@ -1,0 +1,8 @@
+{
+  "guard_id": "ccb9b21daa",
+  "generation": 4980,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a3f5bffe",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression signals using BB width, ATR ratio, and momentum.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    macd_histogram = features.get('macd_histogram', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: BB width and ATR ratio both low (they agree)\n    is_compressed = bb_width < 0.15 and atr_ratio < 0.85\n    \n    if is_compressed:\n        # Skip long when overbought with bearish momentum\n        if stoch_k > 80 and macd_histogram < 0 and prediction == \"long\":\n            return \"skip\"\n        # Skip short when oversold with bullish momentum\n        if stoch_k < 20 and macd_histogram > 0 and prediction == \"short\":\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ccb9b21daa.py"
+}

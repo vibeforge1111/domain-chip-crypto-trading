@@ -1,0 +1,8 @@
+{
+  "guard_id": "0f904953b5",
+  "generation": 4945,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b5271435",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Momentum deceleration guard using MACD histogram and new features.\"\"\"\n    macd = features.get(\"macd_histogram\", 0)\n    vwap = features.get(\"vwap_deviation\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    stoch_k = features.get(\"stoch_k\", 50)\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    \n    # For longs: require positive momentum, price above VWAP, not overbought in wider context\n    if prediction == \"long\":\n        if macd < 0:\n            return \"skip\"\n        if vwap < -0.003:\n            return \"skip\"\n        if rsi_2h > 72 and stoch_k > 80:\n            return \"skip\"\n        if bb_pct > 0.92:\n            return \"skip\"\n    \n    # For shorts: require negative momentum, price below VWAP, not oversold in wider context\n    if prediction == \"short\":\n        if macd > 0:\n            return \"skip\"\n        if vwap > 0.003:\n            return \"skip\"\n        if rsi_2h < 28 and stoch_k < 20:\n            return \"skip\"\n        if bb_pct < 0.08:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0f904953b5.py"
+}

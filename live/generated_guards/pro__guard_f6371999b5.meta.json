@@ -1,0 +1,8 @@
+{
+  "guard_id": "f6371999b5",
+  "generation": 2150,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "f9d2c8f8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # True compression: narrow bands + low volatility\n    in_compression = features['bb_width'] < 0.25 and features['atr_ratio'] < 0.65\n    \n    # Price stretched from fair value (false move warning)\n    stretched_from_vwap = abs(features['vwap_deviation']) > 0.008\n    \n    # Stochastic exhaustion at compression boundaries\n    exhaustion = features['stoch_k'] > 82 or features['stoch_k'] < 18\n    \n    # Momentum divergence in compression\n    momentum_diverging = features['macd_histogram'] * features['ema_slope'] < 0\n    \n    # Skip if compression + stretched + exhaustion or divergence (false breakout)\n    if in_compression and stretched_from_vwap and (exhaustion or momentum_diverging):\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_f6371999b5.py"
+}

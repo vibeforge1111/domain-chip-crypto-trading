@@ -1,0 +1,8 @@
+{
+  "guard_id": "83adf231af",
+  "generation": 5375,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0116f6dd",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for stochastic crossover timing.\"\"\"\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # Bullish: stoch_k crosses above stoch_d in oversold territory\n    if prediction == \"long\":\n        if not (stoch_k > stoch_d and stoch_k < 30):\n            return \"skip\"\n        # Confirm wider timeframe not overbought\n        if rsi_2h > 70:\n            return \"skip\"\n        # Ensure not at upper band (check for room to run)\n        if bb_pct_b > 0.85:\n            return \"skip\"\n    \n    # Bearish: stoch_k crosses below stoch_d in overbought territory\n    elif prediction == \"short\":\n        if not (stoch_k < stoch_d and stoch_k > 70):\n            return \"skip\"\n        # Confirm wider timeframe not oversold\n        if rsi_2h < 30:\n            return \"skip\"\n        # Ensure not at lower band\n        if bb_pct_b < 0.15:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_83adf231af.py"
+}

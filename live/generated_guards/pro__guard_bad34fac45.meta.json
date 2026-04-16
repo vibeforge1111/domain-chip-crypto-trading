@@ -1,0 +1,8 @@
+{
+  "guard_id": "bad34fac45",
+  "generation": 530,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2a413e1f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on RSI extremes and trend strength.\"\"\"\n    rsi = features.get(\"rsi_14\", 50)\n    trend = features.get(\"trend_strength\", 0.5)\n    momentum = features.get(\"momentum_score\", 0.5)\n    \n    # Skip long signals when RSI overbought AND weak trend\n    if prediction == \"long\" and rsi > 70 and trend < 0.4:\n        return \"skip\"\n    \n    # Skip short signals when RSI oversold AND weak trend\n    if prediction == \"short\" and rsi < 30 and trend < 0.4:\n        return \"skip\"\n    \n    # Skip trades with low momentum\n    if momentum < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_bad34fac45.py"
+}

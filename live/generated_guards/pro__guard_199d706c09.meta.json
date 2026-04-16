@@ -1,0 +1,8 @@
+{
+  "guard_id": "199d706c09",
+  "generation": 4370,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "87f62cd8",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    momentum = features.get(\"momentum_score\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    \n    # Skip if VWAP and momentum disagree (price position contradicts direction)\n    long_disagree = prediction == \"long\" and vwap_dev < -0.002 and momentum < -0.1\n    short_disagree = prediction == \"short\" and vwap_dev > 0.002 and momentum > 0.1\n    \n    # Additional filter: extreme stochastic against prediction\n    long_overbought = prediction == \"long\" and stoch_k > 80\n    short_oversold = prediction == \"short\" and stoch_k < 20\n    \n    if long_disagree or short_disagree or long_overbought or short_oversold:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_199d706c09.py"
+}

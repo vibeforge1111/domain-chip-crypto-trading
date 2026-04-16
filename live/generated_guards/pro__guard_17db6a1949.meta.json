@@ -1,0 +1,8 @@
+{
+  "guard_id": "17db6a1949",
+  "generation": 1195,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a624c00d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades during volatility compression squeeze with extended price.\"\"\"\n    bb_width = features.get('bb_width', 1.0)\n    volatility_regime = features.get('volatility_regime', 0.5)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_position = features.get('bb_position', 0.5)\n    \n    # Volatility compression detected\n    is_squeeze = bb_width < 0.5 or (volatility_regime < 0.3 and atr_ratio < 0.8)\n    \n    # Price extended from center (near extremes)\n    is_extended = bb_position > 0.85 or bb_position < 0.15\n    \n    # Reject breakout attempts during squeeze\n    if is_squeeze and is_extended:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_17db6a1949.py"
+}

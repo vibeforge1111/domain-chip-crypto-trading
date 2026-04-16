@@ -1,0 +1,8 @@
+{
+  "guard_id": "4cf27444d9",
+  "generation": 3285,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "6d4cc240",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter false compression setups using BB width, ATR ratio, and divergence signals.\"\"\"\n    bb_width = features.get('bb_width', 0.2)\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    obv_slope = features.get('obv_slope', 0)\n    \n    # True compression: both BB width and ATR compressed\n    bb_compressed = bb_width < 0.15\n    atr_compressed = atr_ratio < 0.8\n    is_true_compression = bb_compressed and atr_compressed\n    \n    # False signal flags\n    # 1. Price at extreme BB position (reversal risk)\n    extreme_bb = bb_pct_b < 0.15 or bb_pct_b > 0.85\n    # 2. Stochastic divergence\n    stoch_divergence = abs(stoch_k - stoch_d) > 12\n    # 3. No volume confirmation (OBV flat)\n    no_volume = abs(obv_slope) < 0.001\n    \n    # Skip if true compression but multiple false signal indicators present\n    if is_true_compression:\n        if sum([extreme_bb, stoch_divergence, no_volume]) >= 2:\n            return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4cf27444d9.py"
+}

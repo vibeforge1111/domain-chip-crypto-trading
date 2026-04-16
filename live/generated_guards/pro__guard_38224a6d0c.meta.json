@@ -1,0 +1,8 @@
+{
+  "guard_id": "38224a6d0c",
+  "generation": 2765,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "b1017441",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Multi-indicator confirmation requiring 2+ signals to agree.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    agree_count = 0\n    \n    if prediction == \"long\":\n        if features.get(\"rsi_14\", 50) < 70:\n            agree_count += 1\n        if features.get(\"stoch_k\", 50) < 80:\n            agree_count += 1\n        if features.get(\"vwap_deviation\", 0) > -0.005:\n            agree_count += 1\n        if features.get(\"bb_pct_b\", 0.5) < 0.85:\n            agree_count += 1\n        if features.get(\"obv_slope\", 0) > 0:\n            agree_count += 1\n        if features.get(\"macd_histogram\", 0) > 0:\n            agree_count += 1\n    elif prediction == \"short\":\n        if features.get(\"rsi_14\", 50) > 30:\n            agree_count += 1\n        if features.get(\"stoch_k\", 50) > 20:\n            agree_count += 1\n        if features.get(\"vwap_deviation\", 0) < 0.005:\n            agree_count += 1\n        if features.get(\"bb_pct_b\", 0.5) > 0.15:\n            agree_count += 1\n        if features.get(\"obv_slope\", 0) < 0:\n            agree_count += 1\n        if features.get(\"macd_histogram\", 0) < 0:\n            agree_count += 1\n    \n    return \"skip\" if agree_count < 2 else prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_38224a6d0c.py"
+}

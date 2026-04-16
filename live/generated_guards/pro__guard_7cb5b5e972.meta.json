@@ -1,0 +1,8 @@
+{
+  "guard_id": "7cb5b5e972",
+  "generation": 5420,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "aea9d08c",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if prediction == \"skip\":\n        return prediction\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    if (prediction == \"long\" and bb_pct_b >= 0.05) or (prediction == \"short\" and bb_pct_b <= 0.95):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_7cb5b5e972.py"
+}

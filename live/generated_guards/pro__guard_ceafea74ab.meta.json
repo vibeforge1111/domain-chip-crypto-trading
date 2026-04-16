@@ -1,0 +1,8 @@
+{
+  "guard_id": "ceafea74ab",
+  "generation": 2885,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "efd11575",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades when BB position and Stochastic align on extremes.\"\"\"\n    bb_pct = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Overbought: BB near upper band + stoch overbought + 2h also overbought\n    if prediction == \"long\" and bb_pct > 0.90 and stoch_k > 80 and rsi_2h > 65:\n        return \"skip\"\n    \n    # Oversold: BB near lower band + stoch oversold + 2h also oversold\n    if prediction == \"short\" and bb_pct < 0.10 and stoch_k < 20 and rsi_2h < 35:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ceafea74ab.py"
+}

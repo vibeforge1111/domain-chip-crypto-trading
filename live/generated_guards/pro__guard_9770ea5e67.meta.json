@@ -1,0 +1,8 @@
+{
+  "guard_id": "9770ea5e67",
+  "generation": 4035,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "320c19cb",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using ATR/Bollinger compression detection with RSI divergence.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.02)\n    stoch_k = features.get('stoch_k', 50)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    rsi_14 = features.get('rsi_14', 50)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # True compression: low volatility + narrow bands\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.015\n    \n    # Skip if compressed but stochastic is extreme (false signal)\n    if is_compressed and (stoch_k > 80 or stoch_k < 20):\n        return \"skip\"\n    \n    # Skip if compressed but price far from VWAP (unstable)\n    if is_compressed and abs(vwap_deviation) > 0.01:\n        return \"skip\"\n    \n    # Skip on RSI divergence between timeframes\n    if rsi_14 > 70 and rsi_2h < 40:\n        return \"skip\"\n    if rsi_14 < 30 and rsi_2h > 60:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_9770ea5e67.py"
+}

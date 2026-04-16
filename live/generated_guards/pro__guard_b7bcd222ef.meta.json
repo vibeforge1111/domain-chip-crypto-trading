@@ -1,0 +1,8 @@
+{
+  "guard_id": "b7bcd222ef",
+  "generation": 2140,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "19c95b51",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function using BB extremes and momentum oscillators.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    stoch_k = features.get(\"stoch_k\", 50)\n    vwap_deviation = features.get(\"vwap_deviation\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n    \n    # Long: BB at bottom extreme + oversold stoch + below VWAP\n    if prediction == \"long\":\n        if bb_pct_b < 0.05 and stoch_k < 20 and vwap_deviation < 0:\n            return prediction\n        return \"skip\"\n    \n    # Short: BB at top extreme + overbought stoch + above VWAP\n    if prediction == \"short\":\n        if bb_pct_b > 0.95 and stoch_k > 80 and vwap_deviation > 0:\n            return prediction\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b7bcd222ef.py"
+}

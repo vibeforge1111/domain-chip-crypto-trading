@@ -1,0 +1,8 @@
+{
+  "guard_id": "1935fed92b",
+  "generation": 2160,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0a9cb521",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject trades at extreme overbought/oversold conditions using BB and Stoch.\"\"\"\n    bb = features.get('bb_pct_b', 0.5)\n    stoch = features.get('stoch_k', 50)\n    \n    # Long trades: reject if overbought (BB upper band + Stoch >80)\n    if prediction == \"long\" and bb > 0.85 and stoch > 80:\n        return \"skip\"\n    \n    # Short trades: reject if oversold (BB lower band + Stoch <20)\n    if prediction == \"short\" and bb < 0.15 and stoch < 20:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1935fed92b.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "879071fdfe",
+  "generation": 99,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "9f056ca9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject signals when candle shows rejection (large wick) with weak momentum.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    upper_wick = features.get(\"upper_wick_ratio\", 0)\n    lower_wick = features.get(\"lower_wick_ratio\", 0)\n    body = features.get(\"body_ratio\", 1)\n    momentum = features.get(\"momentum_score\", 0.5)\n    \n    # Longs: skip if upper wick dominates AND momentum is weak\n    if prediction == \"long\" and upper_wick > 0.3 and momentum < 0.45:\n        return \"skip\"\n    \n    # Shorts: skip if lower wick dominates AND momentum is weak\n    if prediction == \"short\" and lower_wick > 0.3 and momentum < 0.45:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_879071fdfe.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "12ffdfd648",
+  "generation": 4760,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "75e3752b",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using stochastic crossover timing with momentum confirmation.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    macd_hist = features.get('macd_histogram', 0)\n    \n    if prediction == 'long':\n        # Accept bullish crossover only in oversold with lower band proximity\n        if stoch_k > stoch_d and stoch_d < 25 and bb_pct_b < 0.2:\n            if macd_hist > 0:\n                return prediction\n        return 'skip'\n    \n    elif prediction == 'short':\n        # Accept bearish crossover only in overbought with upper band proximity\n        if stoch_k < stoch_d and stoch_d > 75 and bb_pct_b > 0.8:\n            if macd_hist < 0:\n                return prediction\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_12ffdfd648.py"
+}

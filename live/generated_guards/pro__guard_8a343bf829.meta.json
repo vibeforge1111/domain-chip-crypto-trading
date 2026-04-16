@@ -1,0 +1,8 @@
+{
+  "guard_id": "8a343bf829",
+  "generation": 285,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "6ce2756d",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Reject candles dominated by wicks (uncertain price action).\"\"\"\n    # High wick dominance with small range suggests failed moves\n    total_wick = features['upper_wick_ratio'] + features['lower_wick_ratio']\n    if total_wick > 0.7 and features['range_pct'] < 0.5:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_8a343bf829.py"
+}

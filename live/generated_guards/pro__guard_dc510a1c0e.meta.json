@@ -1,0 +1,8 @@
+{
+  "guard_id": "dc510a1c0e",
+  "generation": 5315,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "781f7089",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # False compression: low volatility but wide bands = likely failed squeeze\n    if features['atr_ratio'] < 0.75 and features['bb_width'] > 0.6:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_dc510a1c0e.py"
+}

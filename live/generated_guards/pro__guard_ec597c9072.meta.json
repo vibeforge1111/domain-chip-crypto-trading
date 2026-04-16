@@ -1,0 +1,8 @@
+{
+  "guard_id": "ec597c9072",
+  "generation": 2755,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "97624321",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades too close to VWAP fair value with momentum confirmation.\"\"\"\n    vwap_dev = features.get('vwap_deviation', 0)\n    stoch_k = features.get('stoch_k', 50)\n    macd_hist = features.get('macd_histogram', 0)\n    \n    # Skip if too close to fair value (< 0.15%) AND momentum exhausted\n    if abs(vwap_dev) < 0.0015 and (stoch_k > 80 or stoch_k < 20 or macd_hist * vwap_dev < 0):\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ec597c9072.py"
+}

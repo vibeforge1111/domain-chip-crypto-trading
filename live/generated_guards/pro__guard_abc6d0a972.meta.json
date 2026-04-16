@@ -1,0 +1,8 @@
+{
+  "guard_id": "abc6d0a972",
+  "generation": 1570,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "aee56ed2",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    # Skip if price at BB extreme with diverging momentum\n    if (features['bb_position'] > 0.9 or features['bb_position'] < 0.1) and \\\n       features['momentum_score'] * (1 - features['bb_position']) < 0:\n        return \"skip\"\n    \n    # Skip if extreme RSI but weak trend confirmation\n    if (features['rsi_14'] > 75 or features['rsi_14'] < 25) and \\\n       features['trend_strength'] < 0.3:\n        return \"skip\"\n    \n    # Skip if volume spike without volatility expansion (possible noise)\n    if features['volume_ratio'] > 2.5 and features['atr_ratio'] < 1.0:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_abc6d0a972.py"
+}

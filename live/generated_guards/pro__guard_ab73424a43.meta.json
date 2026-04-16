@@ -1,0 +1,8 @@
+{
+  "guard_id": "ab73424a43",
+  "generation": 5315,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "af2916a5",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    obv = features['obv_slope']\n    stoch = features['stoch_k']\n    macd = features['macd_histogram']\n    # Skip longs when OBV shows distribution (selling pressure)\n    if obv < -0.05 and prediction == 'long':\n        return 'skip'\n    # Skip shorts when OBV shows accumulation (buying pressure)\n    if obv > 0.05 and prediction == 'short':\n        return 'skip'\n    # Skip longs when stoch overbought (reversal likely)\n    if stoch > 75 and prediction == 'long':\n        return 'skip'\n    # Skip shorts when stoch oversold (bounce likely)\n    if stoch < 25 and prediction == 'short':\n        return 'skip'\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_ab73424a43.py"
+}

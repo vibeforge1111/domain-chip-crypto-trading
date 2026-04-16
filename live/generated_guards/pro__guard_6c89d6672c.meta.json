@@ -1,0 +1,8 @@
+{
+  "guard_id": "6c89d6672c",
+  "generation": 2525,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "3848d6cb",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like bb_pct_b, stoch_k, stoch_d, etc.\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    bb_pct_b = features.get(\"bb_pct_b\", 0.5)\n    \n    # High-confidence entry zones: bb_pct_b at extremes (<0.05 or >0.95)\n    if prediction == \"long\" and bb_pct_b > 0.05:\n        return \"skip\"\n    if prediction == \"short\" and bb_pct_b < 0.95:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_6c89d6672c.py"
+}

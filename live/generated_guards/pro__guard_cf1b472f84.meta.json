@@ -1,0 +1,8 @@
+{
+  "guard_id": "cf1b472f84",
+  "generation": 2990,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "cbc69484",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    bb = features.get('bb_pct_b', 0.5)\n    vwap = features.get('vwap_deviation', 0)\n    stoch = features.get('stoch_k', 50)\n    # High-confidence entries only at BB extremes with confirmation\n    if bb < 0.05 and vwap < 0 and stoch < 30:\n        return prediction\n    if bb > 0.95 and vwap > 0 and stoch > 70:\n        return prediction\n    return \"skip\"",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_cf1b472f84.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "c8502be8f8",
+  "generation": 215,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2c624efc",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with RSI extremes + large opposing wicks (reversal pattern).\"\"\"\n    if prediction == \"long\":\n        if features['rsi_14'] > 70 and features['lower_wick_ratio'] > 0.5:\n            return \"skip\"\n    elif prediction == \"short\":\n        if features['rsi_14'] < 30 and features['upper_wick_ratio'] > 0.5:\n            return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_c8502be8f8.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "0194474fd1",
+  "generation": 2525,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "0fc44b15",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using Bollinger Band position and Stochastic %K extremes.\"\"\"\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    \n    if prediction == 'long':\n        if bb_pct_b > 0.80 and stoch_k > 80:\n            return 'skip'\n    elif prediction == 'short':\n        if bb_pct_b < 0.20 and stoch_k < 20:\n            return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_0194474fd1.py"
+}

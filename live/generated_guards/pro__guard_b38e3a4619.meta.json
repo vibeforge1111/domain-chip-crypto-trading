@@ -1,0 +1,8 @@
+{
+  "guard_id": "b38e3a4619",
+  "generation": 325,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "239eb56f",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with conflicting signals or high uncertainty candles.\"\"\"\n    # Reject if RSI and BB position disagree significantly\n    if features['rsi_14'] > 70 and features['bb_position'] < 0.7:\n        return \"skip\"\n    if features['rsi_14'] < 30 and features['bb_position'] > 0.3:\n        return \"skip\"\n    \n    # Reject low volume trades in high volatility\n    if features['volatility_regime'] > 0.6 and features['volume_ratio'] < 0.7:\n        return \"skip\"\n    \n    # Reject high wick candles (uncertainty)\n    if features['upper_wick_ratio'] > 0.6 or features['lower_wick_ratio'] > 0.6:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b38e3a4619.py"
+}

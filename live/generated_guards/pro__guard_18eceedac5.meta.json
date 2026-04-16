@@ -1,0 +1,8 @@
+{
+  "guard_id": "18eceedac5",
+  "generation": 1345,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "e1c08664",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on wick dominance and BB squeeze interaction.\"\"\"\n    # Skip if candle is wick-dominated (uncertainty/indecision)\n    total_wick = features.get('upper_wick_ratio', 0) + features.get('lower_wick_ratio', 0)\n    body = features.get('body_ratio', 0)\n    \n    if body > 0 and total_wick / body > 1.5:\n        return \"skip\"\n    \n    # Skip if BB squeeze forming AND low momentum (consolidation trap)\n    bb_width = features.get('bb_width', 1)\n    volatility_regime = features.get('volatility_regime', 1)\n    momentum = features.get('momentum_score', 0)\n    \n    if bb_width < 0.7 * volatility_regime and abs(momentum) < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_18eceedac5.py"
+}

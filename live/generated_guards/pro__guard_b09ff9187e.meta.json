@@ -1,0 +1,8 @@
+{
+  "guard_id": "b09ff9187e",
+  "generation": 3805,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "a2445037",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades using stochastic crossover timing with confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    vwap_dev = features.get(\"vwap_deviation\", 0)\n    obv_slope = features.get(\"obv_slope\", 0)\n    rsi_2h = features.get(\"rsi_2h\", 50)\n\n    if prediction == \"long\":\n        # Stochastic bullish alignment: K above D\n        if stoch_k <= stoch_d:\n            return \"skip\"\n        # Require price above VWAP for longs\n        if vwap_dev < 0:\n            return \"skip\"\n        # Reject if 2h RSI is overbought\n        if rsi_2h > 70:\n            return \"skip\"\n    elif prediction == \"short\":\n        # Stochastic bearish alignment: K below D\n        if stoch_k >= stoch_d:\n            return \"skip\"\n        # Require price below VWAP for shorts\n        if vwap_dev > 0:\n            return \"skip\"\n        # Reject if 2h RSI is oversold\n        if rsi_2h < 30:\n            return \"skip\"\n\n    # Volume confirmation via OBV slope\n    if obv_slope < 0 and prediction == \"long\":\n        return \"skip\"\n    if obv_slope > 0 and prediction == \"short\":\n        return \"skip\"\n\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b09ff9187e.py"
+}

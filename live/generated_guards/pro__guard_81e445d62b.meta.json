@@ -1,0 +1,8 @@
+{
+  "guard_id": "81e445d62b",
+  "generation": 5355,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "07b13ef0",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect true vs false compression using ATR, BB width, and momentum.\"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 0.5)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    obv_slope = features.get('obv_slope', 0)\n    macd_histogram = features.get('macd_histogram', 0)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    \n    # True compression: low ATR + low BB width\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.35\n    \n    if is_compressed:\n        # False compression: weak momentum and neutral stochastics\n        no_momentum = abs(obv_slope) < 0.02 and abs(macd_histogram) < 0.002\n        neutral_stoch = 35 < stoch_k < 65 and 35 < stoch_d < 65\n        \n        if no_momentum and neutral_stoch:\n            return \"skip\"\n    \n    # Skip extended prices in compression (likely false setup)\n    if is_compressed and abs(vwap_deviation) > 0.015:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_81e445d62b.py"
+}

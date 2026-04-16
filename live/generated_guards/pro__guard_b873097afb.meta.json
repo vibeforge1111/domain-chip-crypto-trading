@@ -1,0 +1,8 @@
+{
+  "guard_id": "b873097afb",
+  "generation": 2750,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "26d839e9",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n\n    Args:\n        features: Dict with keys like obv_slope, macd_histogram, stoch_k, stoch_d\n        prediction: Current prediction (\"long\", \"short\", or \"skip\")\n\n    Returns:\n        \"skip\" to reject this trade, or the original prediction to keep it.\n    \"\"\"\n    obv_slope = features.get(\"obv_slope\", 0)\n    macd_histogram = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    stoch_d = features.get(\"stoch_d\", 50)\n    \n    # Skip if prediction contradicts volume flow direction\n    if prediction == \"long\" and obv_slope < -0.05:\n        return \"skip\"\n    if prediction == \"short\" and obv_slope > 0.05:\n        return \"skip\"\n    \n    # Skip if stochastic shows weak momentum alignment\n    if prediction == \"long\" and stoch_k < 30:\n        return \"skip\"\n    if prediction == \"short\" and stoch_k > 70:\n        return \"skip\"\n    \n    # Skip if MACD histogram contradicts direction\n    if prediction == \"long\" and macd_histogram < -0.00005:\n        return \"skip\"\n    if prediction == \"short\" and macd_histogram > 0.00005:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_b873097afb.py"
+}

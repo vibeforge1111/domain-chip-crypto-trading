@@ -1,0 +1,8 @@
+{
+  "guard_id": "1df629d378",
+  "generation": 2250,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1450d9fd",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Detect momentum deceleration using macd_histogram with confirmation.\"\"\"\n    if prediction == \"skip\":\n        return prediction\n    \n    macd = features.get(\"macd_histogram\", 0)\n    stoch_k = features.get(\"stoch_k\", 50)\n    bb_pos = features.get(\"bb_pct_b\", 0.5)\n    \n    # Momentum deceleration with stochastic confirmation at band extremes\n    if prediction == \"long\" and macd < -0.0002 and stoch_k < 30 and bb_pos > 0.75:\n        return \"skip\"\n    if prediction == \"short\" and macd > 0.0002 and stoch_k > 70 and bb_pos < 0.25:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_1df629d378.py"
+}

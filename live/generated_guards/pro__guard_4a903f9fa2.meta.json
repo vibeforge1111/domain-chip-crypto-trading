@@ -1,0 +1,8 @@
+{
+  "guard_id": "4a903f9fa2",
+  "generation": 2945,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "1dedb87a",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    vwap_dev = features.get('vwap_deviation', 0)\n    momentum = features.get('momentum_score', 0)\n    rsi_2h = features.get('rsi_2h', 50)\n    \n    # Skip longs when both momentum and VWAP agree on bearishness\n    if prediction == 'long' and momentum < -0.1 and vwap_dev < -0.005:\n        return 'skip'\n    \n    # Skip shorts when both momentum and VWAP agree on bullishness\n    if prediction == 'short' and momentum > 0.1 and vwap_dev > 0.005:\n        return 'skip'\n    \n    # Additional filter: reject longs when 2h RSI is oversold AND below VWAP\n    if prediction == 'long' and rsi_2h < 35 and vwap_dev < -0.003:\n        return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_4a903f9fa2.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "568910e508",
+  "generation": 1765,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "d715d780",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades based on RSI-Momentum divergence and volume confirmation.\"\"\"\n    # Skip if volume is too low (insufficient market participation)\n    if features['volume_ratio'] < 0.5:\n        return \"skip\"\n    \n    # Detect divergence: when RSI and momentum strongly disagree\n    rsi_centered = abs(features['rsi_14'] - 50)\n    momentum_centered = abs(features['momentum_score'] * 100 - 50)\n    \n    # Skip if significant divergence (>25 points apart from center)\n    if abs(rsi_centered - momentum_centered) > 25:\n        return \"skip\"\n    \n    # Skip if at extreme BB position with weak momentum\n    if features['bb_pct_b'] > 0.88 and features['momentum_score'] < 0.3:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_568910e508.py"
+}

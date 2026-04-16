@@ -1,0 +1,8 @@
+{
+  "guard_id": "75ca8aa8fc",
+  "generation": 4240,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "228f7123",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Custom guard function for trading signal filtering.\n    Detects true vs false compression using ATR ratio, BB width, and momentum indicators.\n    \"\"\"\n    atr_ratio = features.get('atr_ratio', 1.0)\n    bb_width = features.get('bb_width', 1.0)\n    stoch_k = features.get('stoch_k', 50)\n    stoch_d = features.get('stoch_d', 50)\n    obv_slope = features.get('obv_slope', 0)\n    vwap_deviation = features.get('vwap_deviation', 0)\n    bb_pct_b = features.get('bb_pct_b', 0.5)\n    \n    # True compression: both ATR and BB are contracted\n    is_compressed = atr_ratio < 0.7 and bb_width < 0.2\n    \n    if is_compressed:\n        # False compression filter: check momentum alignment\n        if prediction == 'long':\n            # Reject if momentum is bearish (stoch falling, OBV negative, below VWAP)\n            if stoch_k < stoch_d or obv_slope < 0 or vwap_deviation < -0.002:\n                return 'skip'\n        elif prediction == 'short':\n            # Reject if momentum is bullish (stoch rising, OBV positive, above VWAP)\n            if stoch_k > stoch_d or obv_slope > 0 or vwap_deviation > 0.002:\n                return 'skip'\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_75ca8aa8fc.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "82bfecb87a",
+  "generation": 1685,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "2f8af444",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with conflicting momentum and volatility signals.\"\"\"\n    stoch_k = features.get('stoch_k', 50)\n    rsi_14 = features.get('rsi_14', 50)\n    bb_width = features.get('bb_width', 0)\n    volatility_regime = features.get('volatility_regime', 0.5)\n    \n    # Skip if stoch extreme but RSI neutral (divergence warning)\n    if (stoch_k > 80 or stoch_k < 20) and 40 < rsi_14 < 60:\n        return \"skip\"\n    \n    # Skip if high volatility regime with narrow BB (chop/confusion)\n    if volatility_regime > 0.7 and bb_width < 0.02:\n        return \"skip\"\n    \n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_82bfecb87a.py"
+}

@@ -1,0 +1,8 @@
+{
+  "guard_id": "a7e0c5ea9f",
+  "generation": 725,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "73e33863",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    \"\"\"Filter trades with weak volume confirmation or conflicting signals.\"\"\"\n    # Filter if volume doesn't confirm the move\n    if features[\"volume_ratio\"] < 0.7:\n        return \"skip\"\n    # Filter if EMA slope contradicts prediction direction\n    if prediction == \"long\" and features[\"ema_slope\"] < 0:\n        return \"skip\"\n    if prediction == \"short\" and features[\"ema_slope\"] > 0:\n        return \"skip\"\n    # Filter if RSI overbought/oversold contradicts direction\n    if prediction == \"long\" and features[\"rsi_14\"] < 40:\n        return \"skip\"\n    if prediction == \"short\" and features[\"rsi_14\"] > 60:\n        return \"skip\"\n    # Filter if strong trend but low momentum alignment\n    if features[\"trend_strength\"] > 0.7 and features[\"momentum_score\"] < 30:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_a7e0c5ea9f.py"
+}

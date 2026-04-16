@@ -1,0 +1,8 @@
+{
+  "guard_id": "daefe28f85",
+  "generation": 2855,
+  "model": "MiniMax-M2.7",
+  "prompt_hash": "5ddbd395",
+  "code": "def guard(features: dict, prediction: str) -> str:\n    if abs(features['vwap_deviation']) < 0.005:\n        return \"skip\"\n    return prediction",
+  "file_path": "C:\\Users\\USER\\Desktop\\domain-chip-trading-crypto-evolution\\generated_guards\\guard_daefe28f85.py"
+}
