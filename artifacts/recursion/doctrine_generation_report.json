@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-16T10:17:37.336826Z",
+  "generated_at": "2026-04-16T10:25:22.669158Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--0d853ea1-sparse_signal",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-c64b9c62-segment_instability"
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--3f92a872-sparse_signal",
+    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-f5d9ddfd-segment_instability"
   ],
   "packets_generated": 2,
-  "probes_analyzed": 9,
-  "skipped_duplicate_count": 7,
+  "probes_analyzed": 8,
+  "skipped_duplicate_count": 6,
   "skipped_no_template_count": 0
 }

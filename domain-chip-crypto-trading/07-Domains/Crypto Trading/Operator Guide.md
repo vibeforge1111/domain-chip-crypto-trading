@@ -17,7 +17,7 @@
 
 ## Current Practical Read
 
-- current benchmark leader: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572`
+- current benchmark leader: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-88db59d40f`
 - current backtest loop bias: `n/a`
 - current paper-trade queue: `0`
 
