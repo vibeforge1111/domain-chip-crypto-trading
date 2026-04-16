@@ -1,13 +1,15 @@
 {
-  "card_count": 339,
+  "card_count": 345,
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
-  "packet_count": 339,
+  "packet_count": 345,
   "repair_mode": true,
   "repaired_cards": [
-    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-03ef56c5-holdout_decay.json"
+    "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-62b0fc63-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-e8ddecc5-sparse_signal.json",
+    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9e723a78-holdout_decay.json"
   ],
-  "repaired_count": 1,
+  "repaired_count": 3,
   "required_source_count_per_mutation": 2,
   "state_consistent": true
 }

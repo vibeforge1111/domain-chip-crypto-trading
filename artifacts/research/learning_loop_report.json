@@ -1,31 +1,33 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-899c1e58-sparse_signal.json",
-      "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-8e544720-sparse_signal.json",
-      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-89c78f93-sparse_signal.json"
+      "dc-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-63d7cc59-sparse_signal.json",
+      "dc-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=-b420dd47-sparse_signal.json",
+      "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-5218cbfe-sparse_signal.json"
     ],
     "added_count": 3,
     "approved_waiting_packet_count": 0,
-    "card_count": 339,
+    "card_count": 345,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
     "reconciliation_repaired_cards": [
-      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-03ef56c5-holdout_decay.json"
+      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-62b0fc63-sparse_signal.json",
+      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-e8ddecc5-sparse_signal.json",
+      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9e723a78-holdout_decay.json"
     ],
-    "reconciliation_repaired_count": 1,
+    "reconciliation_repaired_count": 3,
     "state_consistent": true
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 335,
-    "doctrine_packets_generated": 4,
-    "pending_packet_count": 4,
+    "card_count": 339,
+    "doctrine_packets_generated": 6,
+    "pending_packet_count": 6,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.447,
-  "finished_at": "2026-04-16T11:41:06.085779Z",
+  "duration_seconds": 4.291,
+  "finished_at": "2026-04-16T13:08:45.651424Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
@@ -35,17 +37,19 @@
     "reconciliation_repaired_count"
   ],
   "reconciliation": {
-    "card_count": 339,
+    "card_count": 345,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 339,
+    "packet_count": 345,
     "repair_mode": true,
     "repaired_cards": [
-      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-03ef56c5-holdout_decay.json"
+      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-62b0fc63-sparse_signal.json",
+      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-e8ddecc5-sparse_signal.json",
+      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9e723a78-holdout_decay.json"
     ],
-    "repaired_count": 1,
+    "repaired_count": 3,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T11:41:02.638348Z"
+  "started_at": "2026-04-16T13:08:41.360636Z"
 }

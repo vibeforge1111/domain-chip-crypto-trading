@@ -20,7 +20,7 @@ The intended path is:
 - pattern_count: `0`
 - classified_event_candidates: `0`
 - regime_mismatch_count: `0`
-- benchmark_top_candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- benchmark_top_candidate: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal`
 - benchmark_top_profitability: `0.58`
 - benchmark_top_readiness: `0.5993`
 - benchmark_top_drawdown: `0.7143`

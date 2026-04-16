@@ -4,7 +4,7 @@ This loop owns heavy benchmark evaluation, contradiction extraction, mutation ge
 
 - material_change: `True`
 - candidate_count: `9`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- top_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal`
 - top_recommended_next_step: `hold_for_more_backtest_evidence`
 - approved_self_edits: `0`
 
