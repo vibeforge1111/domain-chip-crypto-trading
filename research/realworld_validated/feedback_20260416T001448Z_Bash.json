@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "jq '.champions | length' \"C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\artifacts\\forge\\proven_champions.json\" 2>/dev/null || echo \"jq not available\"",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-16T00:14:48.278516+00:00",
+  "source": "claude_code_hook"
+}
