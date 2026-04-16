@@ -1,13 +1,12 @@
 {
-  "generated_at": "2026-04-16T09:20:01.393047Z",
+  "generated_at": "2026-04-16T09:27:44.194176Z",
   "generated_packet_ids": [
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--ed060144-sparse_signal",
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--0eb540a3-sparse_signal",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-0bfae55d-holdout_decay",
-    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-12da288b-segment_instability"
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--1ca3fd25-sparse_signal",
+    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--043ff10e-sparse_signal",
+    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-be2da2c8-segment_instability"
   ],
-  "packets_generated": 4,
-  "probes_analyzed": 9,
+  "packets_generated": 3,
+  "probes_analyzed": 8,
   "skipped_duplicate_count": 5,
   "skipped_no_template_count": 0
 }

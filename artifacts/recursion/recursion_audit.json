@@ -19,8 +19,8 @@
     {
       "evidence": [
         "High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h",
-        "Walk-forward consistency stays weak for: baseline, auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-a4c8480507, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter",
-        "Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572, baseline, auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-a4c8480507"
+        "Walk-forward consistency stays weak for: auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45, baseline, auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal",
+        "Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin-491eee90bf, auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45, baseline"
       ],
       "severity": "warn",
       "status": "contained",
@@ -30,9 +30,9 @@
   "benchmark_summary": {
     "candidate_count": 9,
     "contract_family": "btc_up_down_15m",
-    "top_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572",
-    "top_stress_resilience": 0.0,
-    "top_walk_forward_consistency": 0.6
+    "top_candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-7514c5acb3",
+    "top_stress_resilience": 0.6667,
+    "top_walk_forward_consistency": 0.4
   },
   "decision": "defer",
   "guardrail_status": {
