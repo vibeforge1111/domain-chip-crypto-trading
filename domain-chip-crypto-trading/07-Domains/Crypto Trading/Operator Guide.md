@@ -17,7 +17,7 @@
 
 ## Current Practical Read
 
-- current benchmark leader: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b`
+- current benchmark leader: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191`
 - current backtest loop bias: `n/a`
 - current paper-trade queue: `0`
 
