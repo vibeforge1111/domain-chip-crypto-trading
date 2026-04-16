@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `282`
+- doctrine_card_count: `286`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09
 
@@ -29,6 +29,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-c0a2b175b7
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--32ad9094-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-c0a2b175b7-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-d037627da1
 
@@ -159,6 +172,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The risk_first_asymmetric_capture doctrine with funding_mean_revert strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "risk_first_asymmetric_capture", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "funding_mean_revert", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-14c5a5792e
+
+- card_id: `dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--678ed318-sparse_signal`
+- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-14c5a5792e-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psychology_no-6652aacdec
 
@@ -1252,6 +1278,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
+## Auto-generated: segment_instability fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b
+
+- card_id: `dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-4b48ae5b-segment_instability`
+- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b-segment_instability`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-d2310cb7de
 
 - card_id: `dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-4bd7f345-sparse_signal`
@@ -1295,6 +1334,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 
 - card_id: `dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-7d987d15-segment_instability`
 - proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation-segment_instability`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572
+
+- card_id: `dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-9da81d6b-segment_instability`
+- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572-segment_instability`
 - doctrine_family: `trend_regime_following`
 - strategy_family: `ema_trend_continuation`
 - benchmark_priority: `medium`

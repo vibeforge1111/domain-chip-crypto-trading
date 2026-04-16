@@ -49,7 +49,7 @@
       "weakest_trade_count": 0
     },
     {
-      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b",
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-2b883eb130",
       "candidate_market_regime": "trend",
       "claimed_regime_id": "trend_continuation_greed",
       "diagnosis": "no_overlap_evidence",
@@ -70,6 +70,29 @@
       "weakest_profitability_score": 0.18,
       "weakest_segment_id": "wf-3",
       "weakest_trade_count": 5
+    },
+    {
+      "candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0",
+      "candidate_market_regime": "range",
+      "claimed_regime_id": "range_chop_mean_reversion",
+      "diagnosis": "no_overlap_evidence",
+      "overlap_candidates": [],
+      "recommended_action": "design a dedicated timeline pack before mutating this failure further.",
+      "segment_end": "2026-01-15T04:15",
+      "segment_end_contract_id": "kxbtc15m-20260115-0415",
+      "segment_start": "2025-11-30T19:00",
+      "segment_start_contract_id": "kxbtc15m-20251130-1900",
+      "strongest_overlap_pack_id": null,
+      "strongest_overlap_predicted_regime_id": null,
+      "strongest_overlap_predicted_regime_score": null,
+      "strongest_overlap_ratio": null,
+      "strongest_overlap_regime_id": null,
+      "strongest_overlap_validation_status": null,
+      "validated_regime_support": false,
+      "weakest_avg_return": -0.1511,
+      "weakest_profitability_score": 0.4244,
+      "weakest_segment_id": "wf-3",
+      "weakest_trade_count": 9
     },
     {
       "candidate_id": "baseline",
@@ -95,7 +118,7 @@
       "weakest_trade_count": 0
     },
     {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-14c5a5792e",
+      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8610bf593b",
       "candidate_market_regime": "high_vol",
       "claimed_regime_id": "fear_shock_high_alert",
       "diagnosis": "no_overlap_evidence",
@@ -141,32 +164,9 @@
       "weakest_trade_count": 0
     },
     {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-c0a2b175b7",
+      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e",
       "candidate_market_regime": "high_vol",
       "claimed_regime_id": "fear_shock_high_alert",
-      "diagnosis": "no_overlap_evidence",
-      "overlap_candidates": [],
-      "recommended_action": "design a dedicated timeline pack before mutating this failure further.",
-      "segment_end": "2025-10-16T09:15",
-      "segment_end_contract_id": "kxbtc15m-20251016-0915",
-      "segment_start": "2025-09-01T00:00",
-      "segment_start_contract_id": "kxbtc15m-20250901-0000",
-      "strongest_overlap_pack_id": null,
-      "strongest_overlap_predicted_regime_id": null,
-      "strongest_overlap_predicted_regime_score": null,
-      "strongest_overlap_ratio": null,
-      "strongest_overlap_regime_id": null,
-      "strongest_overlap_validation_status": null,
-      "validated_regime_support": false,
-      "weakest_avg_return": 0.0,
-      "weakest_profitability_score": 0.0,
-      "weakest_segment_id": "wf-1",
-      "weakest_trade_count": 0
-    },
-    {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7",
-      "candidate_market_regime": "trend",
-      "claimed_regime_id": "trend_continuation_greed",
       "diagnosis": "no_overlap_evidence",
       "overlap_candidates": [],
       "recommended_action": "design a dedicated timeline pack before mutating this failure further.",

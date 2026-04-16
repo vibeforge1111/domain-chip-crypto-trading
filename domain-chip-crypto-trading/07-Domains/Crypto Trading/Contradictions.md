@@ -27,7 +27,7 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-14c5a5792e
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8610bf593b
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
@@ -73,7 +73,7 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-c0a2b175b7
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
@@ -119,15 +119,15 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough
+## auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0
 
-- doctrine_id: `risk_first_asymmetric_capture`
-- strategy_id: `funding_mean_revert`
-- priority: `0.99`
-- holdout_profitability_score: `0.0`
+- doctrine_id: `mean_reversion_liquidity_reclaim`
+- strategy_id: `wedge_exhaustion_reversal`
+- priority: `0.8854`
+- holdout_profitability_score: `0.48`
 - walk_forward_consistency: `0.0`
 - stress_resilience: `0.0`
-- max_drawdown: `0.0`
+- max_drawdown: `0.4417`
 - contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
 ### Failure Modes
@@ -136,11 +136,12 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - holdout_decay: The final holdout slice drops below break-even profitability after fees.
 - segment_instability: Walk-forward consistency is too low across chronological splits.
 - execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
 
 ### Weakest Segments
 
-- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
-- wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
+- wf-3: profitability=`0.4244` avg_return=`-0.1511` trades=`9`
+- wf-5: profitability=`0.48` avg_return=`-0.04` trades=`6`
 
 ## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572
 
@@ -164,7 +165,7 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-3: profitability=`0.23` avg_return=`-0.54` trades=`8`
 - wf-1: profitability=`0.48` avg_return=`-0.04` trades=`2`
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b
+## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-2b883eb130
 
 - doctrine_id: `trend_regime_following`
 - strategy_id: `ema_pullback_long`
