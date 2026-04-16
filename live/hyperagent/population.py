@@ -108,13 +108,33 @@ class PopulationArchive:
         return self._population
 
     def load_latest(self) -> tuple[int, list[Agent]]:
-        """Load the most recent generation."""
+        """Load the most recent generation + any premium agent packs."""
         gen_files = sorted(self.generations_path.glob("gen_*.json"))
-        if not gen_files:
+        pro_files = sorted(self.generations_path.glob("pro__gen_*.json"))
+        if not gen_files and not pro_files:
             return 0, []
-        latest = gen_files[-1]
-        gen_num = int(latest.stem.split("_")[1])
-        return gen_num, self.load_generation(gen_num)
+
+        # Load standard latest generation
+        gen_num = 0
+        if gen_files:
+            latest = gen_files[-1]
+            gen_num = int(latest.stem.split("_")[1])
+            self.load_generation(gen_num)
+
+        # Merge premium agents (non-destructive, tagged)
+        for pf in pro_files:
+            try:
+                data = json.loads(pf.read_text(encoding="utf-8"))
+                for ad in data.get("agents", []):
+                    ad.setdefault("_source", "premium")
+                    agent = Agent.from_dict(ad)
+                    if agent.agent_id not in self._all_tested:
+                        self._population.append(agent)
+                        self._all_tested[agent.agent_id] = agent
+            except Exception:
+                pass  # skip malformed premium files
+
+        return gen_num, self._population
 
     # ── Population Management ──────────────────────────────────
 

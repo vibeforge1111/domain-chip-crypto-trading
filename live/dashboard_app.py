@@ -585,6 +585,61 @@ def api_cycle_feed(n: int = Query(50, le=100)):
     return {"entries": entries}
 
 
+# ── Premium Pack Status ───────────────────────────────────────────────────
+
+@app.get("/api/pack-status")
+def api_pack_status():
+    """Return installed premium packs and asset counts."""
+    try:
+        from domain_chip_crypto_trading.pack_manager import PackManager
+        pm = PackManager(repo_root=REPO_ROOT)
+        return pm.status()
+    except Exception:
+        return {"packs_installed": 0, "packs": [], "assets": {}}
+
+
+@app.get("/api/premium-insights")
+def api_premium_insights():
+    """Return synthesized insights from premium insights pack."""
+    packs_dir = REPO_ROOT / "packs"
+    insights_dir = packs_dir / "pro-insights-v1"
+    result = {"available": False, "insights": [], "dead_ends": {}, "strategy_effectiveness": {}}
+
+    if not insights_dir.exists():
+        return result
+
+    result["available"] = True
+
+    insights_file = insights_dir / "synthesized_insights.json"
+    if insights_file.exists():
+        try:
+            all_insights = json.loads(insights_file.read_text(encoding="utf-8"))
+            # Return top 20 most actionable
+            actionable = [i for i in all_insights if i.get("actionable")]
+            result["insights"] = sorted(
+                actionable, key=lambda x: x.get("times_validated", 0), reverse=True
+            )[:20]
+            result["total_insights"] = len(all_insights)
+        except Exception:
+            pass
+
+    dead_end_file = insights_dir / "dead_end_blacklist.json"
+    if dead_end_file.exists():
+        try:
+            result["dead_ends"] = json.loads(dead_end_file.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
+    strat_file = insights_dir / "strategy_effectiveness.json"
+    if strat_file.exists():
+        try:
+            result["strategy_effectiveness"] = json.loads(strat_file.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
+    return result
+
+
 # ── HTML dashboard ───────────────────────────────────────────────────────
 @app.get("/", response_class=HTMLResponse)
 def dashboard_html():
@@ -737,6 +792,14 @@ tailwind.config = {
   </div>
 </div>
 
+<!-- PREMIUM PACK BADGE -->
+<div id="pro-badge-container" class="mb-3" style="display:none">
+  <div class="flex items-center gap-3 flex-wrap">
+    <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:9999px;background:linear-gradient(135deg,#D4AF37 0%,#F4D03F 50%,#D4AF37 100%);color:#1A1A2E;font-size:0.7rem;font-weight:700;letter-spacing:0.5px">PRO</span>
+    <span id="pro-badge-detail" class="text-xs" style="color:#D4AF37"></span>
+  </div>
+</div>
+
 <!-- TOP STAT CARDS -->
 <div class="grid grid-cols-6 gap-3 mb-6" id="top-stats">
   <div class="card p-4">
@@ -811,6 +874,27 @@ tailwind.config = {
     <div class="card p-5">
       <div class="section-title">Researcher Health</div>
       <div id="researcher-health" class="space-y-2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PREMIUM INSIGHTS (shown only when pro-insights pack is installed) -->
+<div id="pro-insights-section" class="mb-4" style="display:none">
+  <div class="card p-5" style="border:1px solid #D4AF3730">
+    <div class="flex items-center gap-2 mb-3">
+      <span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:9999px;background:#D4AF3720;color:#D4AF37;font-size:0.6rem;font-weight:700">PRO</span>
+      <div class="section-title mb-0">Evolution Insights</div>
+      <span id="pro-insights-count" class="text-xs" style="color:#6A7080"></span>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <div class="text-xs mb-2" style="color:#8890B0;font-weight:500">Top Guard Effectiveness</div>
+        <div id="pro-guard-rankings" class="space-y-1"></div>
+      </div>
+      <div>
+        <div class="text-xs mb-2" style="color:#8890B0;font-weight:500">Dead-End Blacklist</div>
+        <div id="pro-dead-ends" class="space-y-1"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -1760,8 +1844,61 @@ function renderRegimeDistribution(data) {
 }
 
 // ── Main Loop ─────────────────────────────────────
+// ── Premium Pack Rendering ────────────────────────
+function renderPackStatus(data) {
+  const badge = document.getElementById('pro-badge-container');
+  if (!data || data.packs_installed === 0) { badge.style.display = 'none'; return; }
+  badge.style.display = '';
+  const detail = document.getElementById('pro-badge-detail');
+  const parts = data.packs.map(p => p.type + ' (' + p.assets + ')');
+  detail.textContent = data.packs_installed + ' pack' + (data.packs_installed > 1 ? 's' : '') + ': ' + parts.join(', ');
+}
+
+function renderPremiumInsights(data) {
+  const section = document.getElementById('pro-insights-section');
+  if (!data || !data.available) { section.style.display = 'none'; return; }
+  section.style.display = '';
+  document.getElementById('pro-insights-count').textContent = '(' + (data.total_insights || 0) + ' total insights)';
+
+  // Guard rankings
+  const guardsEl = document.getElementById('pro-guard-rankings');
+  const guardInsights = (data.insights || []).filter(i => i.type === 'guard_effectiveness').slice(0, 8);
+  if (guardInsights.length === 0) {
+    guardsEl.innerHTML = '<div class="text-xs" style="color:#6A7080">No guard insights</div>';
+  } else {
+    guardsEl.innerHTML = guardInsights.map(i => {
+      const delta = i.evidence ? (i.evidence.delta || 0) : 0;
+      const color = delta > 0 ? '#2FCA94' : delta < -0.05 ? '#E08878' : '#6A7080';
+      const validated = i.times_validated || 0;
+      return '<div class="flex items-center justify-between" style="font-size:0.7rem;padding:3px 0;border-bottom:1px solid #1E2230">' +
+        '<span style="color:#C0C4D4;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + (i.insight || '').substring(0, 60) + '</span>' +
+        '<span style="color:' + color + ';font-weight:600;font-family:DM Mono,monospace">' + (delta > 0 ? '+' : '') + (delta * 100).toFixed(1) + '%</span>' +
+        '<span style="color:#6A7080">' + validated + 'x</span>' +
+      '</div>';
+    }).join('');
+  }
+
+  // Dead ends
+  const deadEl = document.getElementById('pro-dead-ends');
+  const deadEnds = data.dead_ends || {};
+  const entries = Object.entries(deadEnds);
+  if (entries.length === 0) {
+    deadEl.innerHTML = '<div class="text-xs" style="color:#6A7080">No dead ends identified</div>';
+  } else {
+    deadEl.innerHTML = entries.slice(0, 6).map(([name, info]) => {
+      return '<div style="font-size:0.7rem;padding:3px 0;border-bottom:1px solid #1E2230">' +
+        '<div class="flex items-center justify-between">' +
+          '<span style="color:#E08878">' + name.replace(/_/g, ' ') + '</span>' +
+          '<span style="color:#6A7080;font-family:DM Mono,monospace">' + ((info.improvement_rate || 0) * 100).toFixed(1) + '% hit</span>' +
+        '</div>' +
+        '<div style="color:#6A7080;font-size:0.6rem">' + (info.attempts || 0) + ' attempts \u2192 ' + info.recommendation + '</div>' +
+      '</div>';
+    }).join('');
+  }
+}
+
 async function refresh() {
-  const [autoloop, cycleFeed, candidateHistory, stratDiversity, researcherHealth, livePt, regimeDist] = await Promise.all([
+  const [autoloop, cycleFeed, candidateHistory, stratDiversity, researcherHealth, livePt, regimeDist, packStatus, premiumInsights] = await Promise.all([
     fetchJSON('/api/autoloop-status'),
     fetchJSON('/api/cycle-feed'),
     fetchJSON('/api/candidate-history'),
@@ -1769,10 +1906,16 @@ async function refresh() {
     fetchJSON('/api/researcher-health'),
     fetchJSON('/api/live-pt'),
     fetchJSON('/api/regime-distribution'),
+    fetchJSON('/api/pack-status'),
+    fetchJSON('/api/premium-insights'),
   ]);
 
   _autoloopData = autoloop;
   _cycleFeedData = cycleFeed;
+
+  // Premium pack indicators
+  renderPackStatus(packStatus);
+  renderPremiumInsights(premiumInsights);
 
   if (autoloop) {
     renderTopStats(autoloop);

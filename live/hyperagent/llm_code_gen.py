@@ -387,6 +387,9 @@ class LLMCodeGenerator:
         """Dynamically load a guard function from its file."""
         file_path = GUARDS_DIR / f"guard_{guard_id}.py"
         if not file_path.exists():
+            # Fallback to premium pack guard (pro__ prefix)
+            file_path = GUARDS_DIR / f"pro__guard_{guard_id}.py"
+        if not file_path.exists():
             return None
 
         try:
@@ -403,9 +406,12 @@ class LLMCodeGenerator:
             return None
 
     def list_guards(self) -> list[dict]:
-        """List all generated guards with metadata."""
+        """List all generated guards with metadata (including premium packs)."""
         guards = []
-        for meta_path in sorted(GUARDS_DIR.glob("guard_*.meta.json")):
+        for meta_path in sorted(
+            list(GUARDS_DIR.glob("guard_*.meta.json"))
+            + list(GUARDS_DIR.glob("pro__guard_*.meta.json"))
+        ):
             try:
                 meta = json.loads(meta_path.read_text(encoding="utf-8"))
                 guards.append(meta)
