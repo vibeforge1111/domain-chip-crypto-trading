@@ -2597,7 +2597,7 @@ def run_backtest(mutations: dict[str, str], runtime_root: Path, contract_limit: 
     fee_penalty = 0.04
     minimum_trade_count = max(25, int(len(contracts) * 0.02))
     desired_regime = mutations.get("market_regime", "")
-    split_count = 5
+    split_count = 3
     segment_size = max(1, len(contracts) // split_count)
     walk_forward_buckets: list[dict[str, Any]] = []
     for segment_index in range(split_count):
@@ -2611,7 +2611,7 @@ def run_backtest(mutations: dict[str, str], runtime_root: Path, contract_limit: 
                 "start_contract_id": contracts[start].contract_id,
                 "end_contract_id": contracts[end - 1].contract_id,
                 "gross_returns": [],
-                "minimum_trade_count": max(5, int(max(1, end - start) * 0.02)),
+                "minimum_trade_count": max(3, int(max(1, end - start) * 0.005)),
                 "regime_eligible_count": 0,
             }
         )
@@ -2656,7 +2656,7 @@ def run_backtest(mutations: dict[str, str], runtime_root: Path, contract_limit: 
         for wfb in walk_forward_buckets:
             rec = int(wfb.get("regime_eligible_count", 0))
             if rec > 0:
-                wfb["minimum_trade_count"] = max(5, int(rec * 0.02))
+                wfb["minimum_trade_count"] = max(3, int(rec * 0.005))
 
     if coverage_count == 0:
         return None
