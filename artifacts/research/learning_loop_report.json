@@ -1,11 +1,12 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--7c8c512c-sparse_signal.json"
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--3bc7e960-sparse_signal.json",
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--f58fc071-sparse_signal.json"
     ],
-    "added_count": 1,
+    "added_count": 2,
     "approved_waiting_packet_count": 0,
-    "card_count": 242,
+    "card_count": 244,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
@@ -15,13 +16,13 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 241,
-    "doctrine_packets_generated": 1,
-    "pending_packet_count": 1,
+    "card_count": 242,
+    "doctrine_packets_generated": 2,
+    "pending_packet_count": 2,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.014,
-  "finished_at": "2026-04-16T02:22:09.372358Z",
+  "duration_seconds": 3.064,
+  "finished_at": "2026-04-16T02:29:40.347838Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
@@ -30,15 +31,15 @@
     "added_count"
   ],
   "reconciliation": {
-    "card_count": 242,
+    "card_count": 244,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 242,
+    "packet_count": 244,
     "repair_mode": true,
     "repaired_cards": [],
     "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T02:22:06.358598Z"
+  "started_at": "2026-04-16T02:29:37.284183Z"
 }

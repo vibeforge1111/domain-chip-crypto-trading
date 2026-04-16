@@ -1,0 +1,46 @@
+{
+  "benchmark_priority": "medium",
+  "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--3bc7e960-sparse_signal",
+  "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+  "doctrine_family": "breakout_volatility_expansion",
+  "generated_at": "2026-04-16T02:29:37.325100Z",
+  "generation_source": "build_doctrine_from_contradictions",
+  "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+  "ingest_priority": 100,
+  "lineage_failures": [
+    "sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
+    "holdout_decay: The final holdout slice drops below break-even profitability after fees.",
+    "segment_instability: Walk-forward consistency is too low across chronological splits.",
+    "execution_fragility: Edge does not survive elevated fees and slippage cleanly."
+  ],
+  "mechanism": "Generated from contradiction probe on btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-3e562877ec targeting sparse_signal failure surface.",
+  "mutation_template": {
+    "activation_profile": "wider",
+    "asset_universe": "BTC",
+    "doctrine_id": "breakout_volatility_expansion",
+    "market_regime": "high_vol",
+    "paper_gate": "balanced",
+    "strategy_id": "breakout_open_interest_confirmation",
+    "timeframe": "15m",
+    "venue": "kalshi"
+  },
+  "no_trade_boundaries": [
+    "Skip conditions identified by the sparse_signal probe as contributing to poor performance."
+  ],
+  "packet_id": "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--3bc7e960-sparse_signal",
+  "packet_status": "ready_for_card_ingest",
+  "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-3e562877ec-sparse_signal",
+  "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+  "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+  "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+  "setup_definition": "Apply sparse_signal-targeted mutation overrides to btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-3e562877ec signal logic and benchmark.",
+  "source_ids": [
+    "autoloop_contradiction_probe",
+    "john-bollinger-bands"
+  ],
+  "source_urls": [],
+  "strategy_family": "breakout_expansion_confirmation",
+  "target_contract_family": "btc_up_down_15m",
+  "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-3e562877ec",
+  "trader": "recursive_flywheel"
+}
