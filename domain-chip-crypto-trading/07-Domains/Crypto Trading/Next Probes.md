@@ -2,9 +2,9 @@
 
 This page turns the seeded catalog into an actionable next frontier.
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-43ff44a21d-sparse_signal
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-sparse_signal
 
-- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-43ff44a21d`
+- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45`
 - doctrine: `breakout_volatility_expansion`
 - strategy: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
@@ -35,9 +35,9 @@ This page turns the seeded catalog into an actionable next frontier.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-1b843d5c44-sparse_signal
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-e2b0edf047-sparse_signal
 
-- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-1b843d5c44`
+- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-e2b0edf047`
 - doctrine: `breakout_volatility_expansion`
 - strategy: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
@@ -83,13 +83,13 @@ This page turns the seeded catalog into an actionable next frontier.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700-sparse_signal
+## auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0-sparse_signal
 
-- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700`
-- doctrine: `risk_first_asymmetric_capture`
-- strategy: `funding_mean_revert`
-- market_regime: `event_driven`
-- priority: `0.99`
+- candidate_id: `auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0`
+- doctrine: `mean_reversion_liquidity_reclaim`
+- strategy: `wedge_exhaustion_reversal`
+- market_regime: `range`
+- priority: `0.8854`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
 ### Probe Actions
@@ -98,6 +98,7 @@ This page turns the seeded catalog into an actionable next frontier.
 - holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
+- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
 ## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572-segment_instability
 
@@ -114,9 +115,9 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-ffa2348bb0-segment_instability
+## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-044fc241ff-segment_instability
 
-- candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-ffa2348bb0`
+- candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-044fc241ff`
 - doctrine: `trend_regime_following`
 - strategy: `ema_pullback_long`
 - market_regime: `trend`

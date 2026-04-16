@@ -1,12 +1,8 @@
 {
-  "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--769bbba7-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--d0b5b1fc-sparse_signal.json",
-    "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-aeccac07-segment_instability.json"
-  ],
-  "added_count": 3,
-  "eligible_packet_count": 3,
-  "existing_card_count": 305,
+  "added_cards": [],
+  "added_count": 0,
+  "eligible_packet_count": 0,
+  "existing_card_count": 308,
   "max_new_mutations_per_cycle": 3,
   "packet_count": 308,
   "remaining_packet_count": 0,
