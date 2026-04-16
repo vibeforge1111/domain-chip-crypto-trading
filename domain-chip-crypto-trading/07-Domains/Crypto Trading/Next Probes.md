@@ -101,12 +101,12 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## baseline-sparse_signal
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43-sparse_signal
 
-- candidate_id: `baseline`
-- doctrine: `n/a`
-- strategy: `n/a`
-- market_regime: `n/a`
+- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43`
+- doctrine: `breakout_volatility_expansion`
+- strategy: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
@@ -116,13 +116,14 @@ This page turns the seeded catalog into an actionable next frontier.
 - holdout_decay: Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
+- drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover-sparse_signal
+## baseline-sparse_signal
 
-- candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover`
-- doctrine: `breakout_volatility_expansion`
-- strategy: `bollinger_squeeze_breakout`
-- market_regime: `high_vol`
+- candidate_id: `baseline`
+- doctrine: `n/a`
+- strategy: `n/a`
+- market_regime: `n/a`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 

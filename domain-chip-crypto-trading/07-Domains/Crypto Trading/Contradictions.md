@@ -145,15 +145,15 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-3: profitability=`0.0` avg_return=`-1.04` trades=`2`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## baseline
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43
 
-- doctrine_id: `n/a`
-- strategy_id: `n/a`
+- doctrine_id: `breakout_volatility_expansion`
+- strategy_id: `bollinger_squeeze_breakout`
 - priority: `0.99`
 - holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
 - stress_resilience: `0.0`
-- max_drawdown: `0.0`
+- max_drawdown: `0.99`
 - contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
 ### Failure Modes
@@ -162,16 +162,17 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - holdout_decay: The final holdout slice drops below break-even profitability after fees.
 - segment_instability: Walk-forward consistency is too low across chronological splits.
 - execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
 
 ### Weakest Segments
 
-- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
-- wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
+- wf-2: profitability=`0.0` avg_return=`-1.04` trades=`1`
+- wf-3: profitability=`0.0` avg_return=`-1.04` trades=`3`
 
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover
+## baseline
 
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `bollinger_squeeze_breakout`
+- doctrine_id: `n/a`
+- strategy_id: `n/a`
 - priority: `0.99`
 - holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`

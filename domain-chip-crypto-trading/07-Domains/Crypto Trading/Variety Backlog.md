@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `55`
-- pending_family_count: `31`
+- family_count: `54`
+- pending_family_count: `30`
 
 ## mean_reversion_liquidity_reclaim -> range_reclaim_rotation
 
@@ -66,11 +66,11 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - pending_proposal_count: `1`
 - pending_proposal_ids: `btc-15m-volatility-compression-breakout`
 - pending_child_labels: `paper_gate=strict`
-- suggested_child_target_count: `4`
+- suggested_child_target_count: `5`
 - suggested_child_targets: `late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter | no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window | execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=strict | activation_profile=adaptive, paper_gate=strict`
-- contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover`
-- top_profitability_score: `0.0`
+- contradiction_modes: `drawdown_excess, execution_fragility, holdout_decay, segment_instability, sparse_signal`
+- top_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squee-6cb7125f43`
+- top_profitability_score: `0.18`
 - top_recommended_next_step: `run_contradiction_probe`
 
 ## trend_regime_following -> pullback_then_continuation
