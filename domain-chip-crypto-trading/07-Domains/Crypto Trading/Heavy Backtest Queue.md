@@ -106,14 +106,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: sparse_signal fix for auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal
+## Volatility compression breakout
 
-- proposal_id: `auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-sparse_signal`
-- benchmark_priority: `medium`
-- surprise_score: `0.69`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "None", "regime": "None", "strategy": "None"}`
-- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
-- variety_child_label: `activation_profile=wider, paper_gate=balanced`
+- proposal_id: `btc-15m-volatility-compression-breakout`
+- benchmark_priority: `high`
+- surprise_score: `0.81`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "bollinger_squeeze_breakout"}`
+- variety_child_id: `{"paper_gate": "strict"}`
+- variety_child_label: `paper_gate=strict`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -123,14 +123,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Volatility compression breakout
+## Auto-generated: sparse_signal fix for auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec
 
-- proposal_id: `btc-15m-volatility-compression-breakout`
-- benchmark_priority: `high`
-- surprise_score: `0.81`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "high_vol", "strategy": "bollinger_squeeze_breakout"}`
-- variety_child_id: `{"paper_gate": "strict"}`
-- variety_child_label: `paper_gate=strict`
+- proposal_id: `auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec-sparse_signal`
+- benchmark_priority: `medium`
+- surprise_score: `0.69`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "None", "regime": "None", "strategy": "None"}`
+- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
+- variety_child_label: `activation_profile=wider, paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`

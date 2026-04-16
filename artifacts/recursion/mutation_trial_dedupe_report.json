@@ -44,38 +44,46 @@
       "proposal_origin": "contradiction_probe"
     }
   ],
-  "gated_count": 47,
+  "gated_count": 48,
   "gated_trials": [
     {
-      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-6ae7b4b9f1",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"ema_pullback_long\"}",
-      "gate_reason": "family_budget_exhausted",
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"strategy_id\": \"ema_pullback_long\"}",
+      "gate_reason": "candidate_already_benchmarked",
       "proposal_origin": "contradiction_probe",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\"}",
       "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
     },
     {
-      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"compression_profile\": \"tight_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"all\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin-491eee90bf",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"strategy_id\": \"ema_pullback_long\"}",
       "gate_reason": "candidate_already_benchmarked",
       "proposal_origin": "contradiction_probe",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"compression_profile\": \"tight_squeeze\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"all\"}",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\"}",
+      "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
+    },
+    {
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter-b926fdadd0",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"compression_profile\": \"tight_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+      "gate_reason": "family_budget_exhausted",
+      "proposal_origin": "contradiction_probe",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"compression_profile\": \"tight_squeeze\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
     },
     {
-      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"compression_profile\": \"tight_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
-      "gate_reason": "candidate_already_benchmarked",
-      "proposal_origin": "contradiction_probe",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"compression_profile\": \"tight_squeeze\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
-      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
-    },
-    {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-30c0aed35f",
+      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-581d302c22",
       "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "effective_mutation_already_benchmarked",
+      "gate_reason": "probe_lane_exhausted",
       "proposal_origin": "contradiction_probe",
       "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\"}",
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+    },
+    {
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-probe-sparse_signal",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "gate_reason": "probe_lane_exhausted",
+      "proposal_origin": "contradiction_probe",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"strict\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
     },
     {
@@ -111,59 +119,59 @@
       "variety_family_id": "{\"contract\": \"bybit:1h\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_scalp\"}"
     },
     {
-      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8d9d2f7b0d",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"ema_pullback_long\"}",
-      "gate_reason": "family_budget_exhausted",
-      "proposal_origin": "variety_backlog",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
-      "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
-    },
-    {
-      "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-ab685ea7df",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"trend_regime_following\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"ema_pullback_long\"}",
-      "gate_reason": "family_budget_exhausted",
-      "proposal_origin": "variety_backlog",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
-      "variety_family_id": "{\"contract\": \"binance:4h\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
-    },
-    {
-      "candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-1f3bcd9334",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"None\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"None\"}",
+      "candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-f338b89753",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"market_regime\": \"None\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"None\"}",
       "gate_reason": "effective_mutation_already_benchmarked",
       "proposal_origin": "variety_backlog",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"execution_buffer\": \"high\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"None\", \"regime\": \"None\", \"strategy\": \"None\"}"
     },
     {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-daac31230d",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "variety_lane_exhausted",
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7",
+      "effective_mutation_fingerprint": "{\"compression_profile\": \"tight_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+      "gate_reason": "family_budget_exhausted",
       "proposal_origin": "variety_backlog",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
-      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+      "variety_child_id": "{\"compression_profile\": \"tight_squeeze\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"late_cycle_filter\"}",
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
     },
     {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-e4bc5c1e17",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "variety_lane_exhausted",
+      "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-sess-14d082c6fd",
+      "effective_mutation_fingerprint": "{\"compression_profile\": \"tight_squeeze\", \"doctrine_id\": \"breakout_volatility_expansion\", \"late_sample_guard\": \"off\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+      "gate_reason": "effective_mutation_already_benchmarked",
       "proposal_origin": "variety_backlog",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
-      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+      "variety_child_id": "{\"compression_profile\": \"tight_squeeze\", \"late_sample_guard\": \"off\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"balanced\", \"session_profile\": \"stability_window\"}",
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
     },
     {
-      "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase-variety-late-sample-guard-plus-session-filter",
-      "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter",
+      "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
       "gate_reason": "variety_lane_exhausted",
       "proposal_origin": "variety_backlog",
       "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\"}",
-      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
     },
     {
-      "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase-variety-session-stability-filter",
-      "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter",
+      "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"high_vol\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
       "gate_reason": "variety_lane_exhausted",
       "proposal_origin": "variety_backlog",
       "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\"}",
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+    },
+    {
+      "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase-probe-sparse_signal-variety-late-sample-guard-plus-se-409ca95fff",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "gate_reason": "variety_lane_exhausted",
+      "proposal_origin": "variety_backlog",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_dead_zone\", \"paper_gate\": \"strict\", \"session_profile\": \"late_cycle_filter\"}",
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+    },
+    {
+      "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase-probe-sparse_signal-variety-session-stability-filter",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "gate_reason": "variety_lane_exhausted",
+      "proposal_origin": "variety_backlog",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"execution_buffer\": \"high\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"no_trade_window\": \"avoid_transition_window\", \"paper_gate\": \"strict\", \"session_profile\": \"stability_window\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
     },
     {
@@ -191,25 +199,25 @@
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
     },
     {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e",
-      "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45",
+      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
       "gate_reason": "candidate_already_benchmarked",
       "proposal_origin": "psychology_pattern_map",
-      "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
+      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"balanced\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
     },
     {
-      "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7",
-      "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "psychology_lane_exhausted",
+      "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase",
+      "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+      "gate_reason": "candidate_already_benchmarked",
       "proposal_origin": "psychology_pattern_map",
-      "variety_child_id": "{\"activation_profile\": \"wider\", \"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"balanced\"}",
-      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
+      "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"strict\"}",
+      "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
     },
     {
       "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase",
       "effective_mutation_fingerprint": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"doctrine_id\": \"breakout_volatility_expansion\", \"follow_through_profile\": \"delayed_confirmation\", \"market_regime\": \"trend\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "candidate_already_benchmarked",
+      "gate_reason": "psychology_lane_exhausted",
       "proposal_origin": "psychology_pattern_map",
       "variety_child_id": "{\"chase_policy\": \"no_chase_after_crowded_good_news\", \"follow_through_profile\": \"delayed_confirmation\", \"paper_gate\": \"strict\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"trend\", \"strategy\": \"breakout_open_interest_confirmation\"}"
@@ -271,9 +279,9 @@
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_pullback_long\"}"
     },
     {
-      "candidate_id": "auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-sparse_signal",
+      "candidate_id": "auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec-sparse_signal",
       "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-      "gate_reason": "cycle_budget_exhausted",
+      "gate_reason": "family_budget_exhausted",
       "proposal_origin": "mutation_backlog",
       "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"None\", \"regime\": \"None\", \"strategy\": \"None\"}"
@@ -305,7 +313,7 @@
     {
       "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal",
       "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "family_budget_exhausted",
+      "gate_reason": "cycle_budget_exhausted",
       "proposal_origin": "mutation_backlog",
       "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
@@ -313,7 +321,7 @@
     {
       "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-8c9080d89d-holdout_decay",
       "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"late_sample_guard\": \"on\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "family_budget_exhausted",
+      "gate_reason": "cycle_budget_exhausted",
       "proposal_origin": "mutation_backlog",
       "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"
@@ -321,7 +329,7 @@
     {
       "candidate_id": "btc-15m-volatility-compression-breakout",
       "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-      "gate_reason": "family_budget_exhausted",
+      "gate_reason": "cycle_budget_exhausted",
       "proposal_origin": "mutation_backlog",
       "variety_child_id": "{\"paper_gate\": \"strict\"}",
       "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_open_interest_confirmation\"}"

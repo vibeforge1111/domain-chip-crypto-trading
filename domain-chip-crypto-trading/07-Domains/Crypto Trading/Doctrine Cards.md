@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `332`
+- doctrine_card_count: `333`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
@@ -1056,6 +1056,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for breakout_open_interest_confirmation.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "late_sample_guard": "on", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
+
+## Auto-generated: sparse_signal fix for auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec
+
+- card_id: `dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-2f8dd026-sparse_signal`
+- proposal_id: `auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec-sparse_signal`
+- doctrine_family: `None`
+- strategy_family: `None`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The None doctrine with None strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "None", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "None", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal
 
