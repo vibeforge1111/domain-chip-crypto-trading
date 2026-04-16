@@ -1,51 +1,44 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-b403e157-segment_instability.json",
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--06875e47-sparse_signal.json",
-      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--c0afae1c-sparse_signal.json"
+      "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--3c630515-sparse_signal.json"
     ],
-    "added_count": 3,
+    "added_count": 1,
     "approved_waiting_packet_count": 0,
-    "card_count": 255,
+    "card_count": 256,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
-    "reconciliation_repaired_cards": [
-      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-69caff29-holdout_decay.json"
-    ],
-    "reconciliation_repaired_count": 1,
+    "reconciliation_repaired_cards": [],
+    "reconciliation_repaired_count": 0,
     "state_consistent": true
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 251,
-    "doctrine_packets_generated": 4,
-    "pending_packet_count": 4,
+    "card_count": 255,
+    "doctrine_packets_generated": 1,
+    "pending_packet_count": 1,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.463,
-  "finished_at": "2026-04-16T03:15:06.576640Z",
+  "duration_seconds": 3.611,
+  "finished_at": "2026-04-16T03:22:43.216185Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
     "card_count",
     "pending_packet_count",
-    "added_count",
-    "reconciliation_repaired_count"
+    "added_count"
   ],
   "reconciliation": {
-    "card_count": 255,
+    "card_count": 256,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 255,
+    "packet_count": 256,
     "repair_mode": true,
-    "repaired_cards": [
-      "dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-69caff29-holdout_decay.json"
-    ],
-    "repaired_count": 1,
+    "repaired_cards": [],
+    "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T03:15:03.113996Z"
+  "started_at": "2026-04-16T03:22:39.605425Z"
 }
