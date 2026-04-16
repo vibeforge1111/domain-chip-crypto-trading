@@ -1,12 +1,14 @@
 {
-  "generated_at": "2026-04-16T10:57:10.403680Z",
+  "generated_at": "2026-04-16T11:04:52.223033Z",
   "generated_packet_ids": [
-    "dp-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal",
-    "dp-auto-auto-breakout-impulse-squeeze-compression_profile=tight_sque-e9f491d8-sparse_signal",
-    "dp-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--dcb05919-sparse_signal"
+    "dp-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moder-7f07e094-sparse_signal",
+    "dp-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--047715b5-sparse_signal",
+    "dp-auto-auto-baseline-sparse_signal-probe-sparse_signal-variety-late-4943fd47-sparse_signal",
+    "dp-auto-btc-15m-momentum-breakout-structure-psychology_no_chase-prob-505ce66c-sparse_signal",
+    "dp-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-fa5fc8ae-segment_instability"
   ],
-  "packets_generated": 3,
-  "probes_analyzed": 9,
-  "skipped_duplicate_count": 6,
+  "packets_generated": 5,
+  "probes_analyzed": 8,
+  "skipped_duplicate_count": 3,
   "skipped_no_template_count": 0
 }
