@@ -580,6 +580,7 @@ def _dedupe_trials(trials: list[dict]) -> tuple[list[dict], list[dict]]:
     priority = {
         "contradiction_probe": 0,
         "pro_insights": 1,
+        "pro_crossover": 1,
         "psychology_pattern_map": 2,
         "variety_backlog": 3,
         "mutation_backlog": 4,
@@ -631,8 +632,11 @@ def _filter_tested_trials(trials: list[dict], benchmark_summary: dict, policy: d
     # Pro insights lane: proven guard seeding from evolution system
     pro_trial_count = sum(1 for t in trials if str(t.get("proposal_origin", "")) == "pro_insights")
     reserved_pro_slots = min(2, pro_trial_count) if pro_trial_count > 0 else 0
+    # Pro crossover lane: elite agent direct seeding + guard cross-pollination
+    crossover_trial_count = sum(1 for t in trials if str(t.get("proposal_origin", "")) == "pro_crossover")
+    reserved_crossover_slots = min(2, crossover_trial_count) if crossover_trial_count > 0 else 0
     # Per-origin caps to ensure diversity across lanes
-    max_probe_slots = max_total - reserved_variety_slots - reserved_psychology_slots - reserved_pro_slots
+    max_probe_slots = max_total - reserved_variety_slots - reserved_psychology_slots - reserved_pro_slots - reserved_crossover_slots
 
     gated: list[dict] = []
     kept: list[dict] = []
@@ -644,6 +648,7 @@ def _filter_tested_trials(trials: list[dict], benchmark_summary: dict, policy: d
             {
                 "contradiction_probe": 0,
                 "pro_insights": 1,
+                "pro_crossover": 1,
                 "variety_backlog": 2,
                 "psychology_pattern_map": 3,
                 "mutation_backlog": 4,
@@ -674,6 +679,8 @@ def _filter_tested_trials(trials: list[dict], benchmark_summary: dict, policy: d
             gate_reason = "variety_lane_exhausted"
         elif proposal_origin == "pro_insights" and origin_counts.get("pro_insights", 0) >= reserved_pro_slots:
             gate_reason = "pro_insights_lane_exhausted"
+        elif proposal_origin == "pro_crossover" and origin_counts.get("pro_crossover", 0) >= reserved_crossover_slots:
+            gate_reason = "pro_crossover_lane_exhausted"
         elif proposal_origin == "psychology_pattern_map" and origin_counts.get("psychology_pattern_map", 0) >= reserved_psychology_slots:
             gate_reason = "psychology_lane_exhausted"
         elif len(kept) >= max_total:
