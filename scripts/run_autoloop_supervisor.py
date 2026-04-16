@@ -281,7 +281,7 @@ def _stage_paths(paths: list[str]) -> None:
     batch_size = 40
     for i in range(0, len(paths), batch_size):
         batch = paths[i : i + batch_size]
-        subprocess.run(["git", "add", "-f", "--", *batch], cwd=REPO_ROOT, check=True)
+        subprocess.run(["git", "add", "--", *batch], cwd=REPO_ROOT, check=True)
 
 
 def _commit_message(cycle_number: int, loop_reports: dict[str, dict[str, Any]]) -> str:
