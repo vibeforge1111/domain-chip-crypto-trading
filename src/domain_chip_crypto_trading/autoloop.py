@@ -299,6 +299,24 @@ def build_parser() -> argparse.ArgumentParser:
     run_once_parser.add_argument("--disable-backtest", action="store_true", help="Skip the backtest lane.")
     run_once_parser.add_argument("--disable-paper-trade", action="store_true", help="Skip the paper-trade lane.")
 
+    # ── Premium Pack Management ───────────────────────────────
+    pack_parser = subparsers.add_parser("pack", help="Manage premium asset packs.")
+    pack_sub = pack_parser.add_subparsers(dest="pack_command", required=True)
+
+    install_parser = pack_sub.add_parser("install", help="Install a premium .cpak pack.")
+    install_parser.add_argument("cpak_file", help="Path to the .cpak file.")
+    install_parser.add_argument("--key", required=True, help="License key (Fernet key) for decryption.")
+
+    pack_sub.add_parser("list", help="List installed premium packs.")
+
+    verify_parser = pack_sub.add_parser("verify", help="Verify checksum integrity of installed packs.")
+    verify_parser.add_argument("--pack-id", default=None, help="Verify a specific pack (default: all).")
+
+    remove_parser = pack_sub.add_parser("remove", help="Uninstall a premium pack.")
+    remove_parser.add_argument("pack_id", help="Pack ID to remove.")
+
+    pack_sub.add_parser("status", help="Show free vs pro asset counts.")
+
     return parser
 
 
@@ -331,7 +349,74 @@ def main(argv: list[str] | None = None) -> int:
         return _run_supervisor_from_args(args, once=False)
     if args.command == "run-once":
         return _run_supervisor_from_args(args, once=True)
+    if args.command == "pack":
+        return _run_pack(args)
     parser.error(f"Unsupported command: {args.command}")
+    return 2
+
+
+def _run_pack(args: argparse.Namespace) -> int:
+    """Handle all pack subcommands."""
+    from domain_chip_crypto_trading.pack_manager import PackManager
+
+    pm = PackManager()
+
+    if args.pack_command == "install":
+        from pathlib import Path as P
+        try:
+            manifest = pm.install(P(args.cpak_file), args.key)
+            print(f"Installed: {manifest.pack_id} v{manifest.version}")
+            print(f"  Type:   {manifest.pack_type}")
+            print(f"  Assets: {manifest.asset_count}")
+            print(f"  Merged: {len(manifest.merged_paths)} files")
+            return 0
+        except (ValueError, RuntimeError, FileNotFoundError) as exc:
+            print(f"Error: {exc}")
+            return 1
+
+    if args.pack_command == "list":
+        packs = pm.list_installed()
+        if not packs:
+            print("No premium packs installed.")
+            return 0
+        for p in packs:
+            print(f"  {p.pack_id:30s}  v{p.version:8s}  {p.pack_type:12s}  {p.asset_count} assets")
+        return 0
+
+    if args.pack_command == "verify":
+        results = pm.verify(args.pack_id)
+        ok = True
+        for pid, result in results.items():
+            status = result["status"]
+            icon = "OK" if status == "ok" else "FAIL"
+            print(f"  [{icon}] {pid}: {status}")
+            if result.get("failures"):
+                ok = False
+                for f in result["failures"]:
+                    print(f"       {f['file']}: {f['error']}")
+        return 0 if ok else 1
+
+    if args.pack_command == "remove":
+        if pm.remove(args.pack_id):
+            print(f"Removed: {args.pack_id}")
+            return 0
+        print(f"Pack not found: {args.pack_id}")
+        return 1
+
+    if args.pack_command == "status":
+        status = pm.status()
+        print(f"Premium packs installed: {status['packs_installed']}")
+        for p in status["packs"]:
+            print(f"  {p['id']:30s}  {p['type']:12s}  {p['assets']} assets")
+        print()
+        a = status["assets"]
+        print(f"Doctrine cards:  {a['doctrine_cards']['user']} user + {a['doctrine_cards']['pro']} pro")
+        print(f"Generations:     {a['generations']['user']} user + {a['generations']['pro']} pro")
+        print(f"Guards:          {a['guards']['user']} user + {a['guards']['pro']} pro")
+        print(f"Insights pack:   {'installed' if a['insights'] else 'not installed'}")
+        print(f"Calibration:     {'installed' if a['calibration'] else 'not installed'}")
+        return 0
+
     return 2
 
 

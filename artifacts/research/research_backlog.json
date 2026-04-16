@@ -2,10 +2,10 @@
   "approved_source_count": 38,
   "approved_waiting_packet_count": 0,
   "candidate_rows": [],
-  "card_count": 299,
+  "card_count": 302,
   "futurelog_rows": [],
   "next_to_research_count": 0,
-  "packet_count": 299,
+  "packet_count": 302,
   "ready_for_source_ingest_count": 0,
   "regime_intelligence_count": 0,
   "regime_rows": [],
@@ -159,16 +159,16 @@
     },
     {
       "approved_source_count": 1,
-      "card_count": 299,
+      "card_count": 302,
       "coverage_status": "covered",
-      "packet_count": 299,
+      "packet_count": 302,
       "style_family": "recursive_self_improvement"
     },
     {
       "approved_source_count": 1,
-      "card_count": 232,
+      "card_count": 234,
       "coverage_status": "covered",
-      "packet_count": 232,
+      "packet_count": 234,
       "style_family": "volatility_analysis"
     },
     {
@@ -180,9 +180,9 @@
     },
     {
       "approved_source_count": 3,
-      "card_count": 31,
+      "card_count": 32,
       "coverage_status": "covered",
-      "packet_count": 31,
+      "packet_count": 32,
       "style_family": "trend_following"
     }
   ],
