@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `318`
+- doctrine_card_count: `319`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
@@ -1446,6 +1446,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The mean_reversion_liquidity_reclaim doctrine with range_reclaim_scalp strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "range_reclaim_scalp", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-088f621a05
+
+- card_id: `dc-auto-auto-trend-volume-filtered-activation_profile=wider-no_trade-007ae0e7-segment_instability`
+- proposal_id: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-088f621a05-segment_instability`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: sparse_signal fix for auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation
 

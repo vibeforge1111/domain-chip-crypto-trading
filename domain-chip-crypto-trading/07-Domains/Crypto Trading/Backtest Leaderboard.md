@@ -6,43 +6,43 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - contract_family: `btc_up_down_15m`
 - candidate_count: `9`
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-088f621a05
+## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-6b92847572
 
 - doctrine_id: `trend_regime_following`
 - strategy_id: `ema_pullback_long`
 - market_regime: `trend`
-- profitability_score: `0.5356`
-- sharpe_ratio: `0.3718`
+- profitability_score: `0.4467`
+- sharpe_ratio: `-0.7171`
 - max_drawdown: `0.99`
-- paper_trade_readiness: `0.3252`
+- paper_trade_readiness: `0.072`
 - contract_count: `5448`
 - covered_contract_count: `5447`
-- trade_count: `27`
+- trade_count: `45`
 - minimum_trade_count: `25`
 - trade_count_gate_pass: `True`
-- holdout_profitability_score: `0.73`
-- walk_forward_consistency: `0.4`
-- stress_resilience: `0.6667`
+- holdout_profitability_score: `0.58`
+- walk_forward_consistency: `0.6`
+- stress_resilience: `0.0`
 - data_mode: `contract_window_backtest`
 - recommended_next_step: `run_contradiction_probe`
 
 ### Regime Segments
 
-- trend: trades=`27` win_rate=`0.5556` avg_return=`0.0711`
+- trend: trades=`45` win_rate=`0.4667` avg_return=`-0.1067`
 
 ### Walk-Forward Segments
 
 - wf-1: trades=`2` profitability=`0.48` win_rate=`0.5` gate=`False`
-- wf-2: trades=`8` profitability=`0.48` win_rate=`0.5` gate=`True`
-- wf-3: trades=`5` profitability=`0.18` win_rate=`0.2` gate=`True`
-- wf-4: trades=`8` profitability=`0.73` win_rate=`0.75` gate=`True`
-- wf-5: trades=`4` profitability=`0.73` win_rate=`0.75` gate=`False`
+- wf-2: trades=`12` profitability=`0.48` win_rate=`0.5` gate=`True`
+- wf-3: trades=`8` profitability=`0.23` win_rate=`0.25` gate=`True`
+- wf-4: trades=`18` profitability=`0.48` win_rate=`0.5` gate=`True`
+- wf-5: trades=`5` profitability=`0.58` win_rate=`0.6` gate=`True`
 
 ### Stress Scenarios
 
-- base: trades=`27` profitability=`0.5356` avg_return=`0.0711` gate=`True`
-- elevated_fees: trades=`27` profitability=`0.5156` avg_return=`0.0311` gate=`True`
-- fee_and_slippage: trades=`27` profitability=`0.4956` avg_return=`-0.0089` gate=`True`
+- base: trades=`45` profitability=`0.4467` avg_return=`-0.1067` gate=`True`
+- elevated_fees: trades=`45` profitability=`0.4267` avg_return=`-0.1467` gate=`True`
+- fee_and_slippage: trades=`45` profitability=`0.4067` avg_return=`-0.1867` gate=`True`
 
 ## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin-491eee90bf
 
@@ -82,21 +82,21 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - elevated_fees: trades=`32` profitability=`0.46` avg_return=`-0.08` gate=`True`
 - fee_and_slippage: trades=`32` profitability=`0.44` avg_return=`-0.12` gate=`True`
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-6a52e1cc14
+## btc-15m-volatility-compression-breakout-psychology_no_chase
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
-- profitability_score: `0.18`
-- sharpe_ratio: `-1.7889`
+- profitability_score: `0.3133`
+- sharpe_ratio: `-0.6859`
 - max_drawdown: `0.99`
 - paper_trade_readiness: `0.0`
 - contract_count: `21792`
 - covered_contract_count: `21791`
-- trade_count: `5`
+- trade_count: `3`
 - minimum_trade_count: `25`
 - trade_count_gate_pass: `False`
-- holdout_profitability_score: `0.0`
+- holdout_profitability_score: `0.3133`
 - walk_forward_consistency: `0.0`
 - stress_resilience: `0.0`
 - data_mode: `contract_window_backtest`
@@ -104,27 +104,61 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 
 ### Regime Segments
 
-- high_vol: trades=`5` win_rate=`0.2` avg_return=`-0.64`
+- high_vol: trades=`3` win_rate=`0.3333` avg_return=`-0.3733`
 
 ### Walk-Forward Segments
 
 - wf-1: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
 - wf-2: trades=`1` profitability=`0.98` win_rate=`1.0` gate=`False`
-- wf-3: trades=`1` profitability=`0.0` win_rate=`0.0` gate=`False`
+- wf-3: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
 - wf-4: trades=`2` profitability=`0.0` win_rate=`0.0` gate=`False`
-- wf-5: trades=`1` profitability=`0.0` win_rate=`0.0` gate=`False`
+- wf-5: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
 
 ### Stress Scenarios
 
-- base: trades=`5` profitability=`0.18` avg_return=`-0.64` gate=`False`
-- elevated_fees: trades=`5` profitability=`0.16` avg_return=`-0.68` gate=`False`
-- fee_and_slippage: trades=`5` profitability=`0.14` avg_return=`-0.72` gate=`False`
+- base: trades=`3` profitability=`0.3133` avg_return=`-0.3733` gate=`False`
+- elevated_fees: trades=`3` profitability=`0.2933` avg_return=`-0.4133` gate=`False`
+- fee_and_slippage: trades=`3` profitability=`0.2733` avg_return=`-0.4533` gate=`False`
 
 ## baseline
 
 - doctrine_id: `n/a`
 - strategy_id: `n/a`
 - market_regime: `n/a`
+- profitability_score: `0.0`
+- sharpe_ratio: `0.0`
+- max_drawdown: `0.0`
+- paper_trade_readiness: `0.17`
+- contract_count: `21792`
+- covered_contract_count: `21791`
+- trade_count: `0`
+- minimum_trade_count: `435`
+- trade_count_gate_pass: `False`
+- holdout_profitability_score: `0.0`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- data_mode: `contract_window_backtest`
+- recommended_next_step: `run_contradiction_probe`
+
+### Walk-Forward Segments
+
+- wf-1: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
+- wf-2: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
+- wf-3: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
+- wf-4: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
+- wf-5: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
+
+### Stress Scenarios
+
+- base: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
+- elevated_fees: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
+- fee_and_slippage: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
+
+## auto-baseline-sparse_signal-probe-sparse_signal
+
+- doctrine_id: `None`
+- strategy_id: `None`
+- market_regime: `None`
 - profitability_score: `0.0`
 - sharpe_ratio: `0.0`
 - max_drawdown: `0.0`
@@ -188,7 +222,7 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - elevated_fees: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
 - fee_and_slippage: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
 
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f
+## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal-vari-2ae27ad0f9
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `bollinger_squeeze_breakout`
@@ -222,45 +256,11 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - elevated_fees: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
 - fee_and_slippage: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-16cf8025af
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-30c0aed35f
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
-- profitability_score: `0.0`
-- sharpe_ratio: `0.0`
-- max_drawdown: `0.0`
-- paper_trade_readiness: `0.17`
-- contract_count: `21792`
-- covered_contract_count: `21791`
-- trade_count: `0`
-- minimum_trade_count: `25`
-- trade_count_gate_pass: `False`
-- holdout_profitability_score: `0.0`
-- walk_forward_consistency: `0.0`
-- stress_resilience: `0.0`
-- data_mode: `contract_window_backtest`
-- recommended_next_step: `run_contradiction_probe`
-
-### Walk-Forward Segments
-
-- wf-1: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
-- wf-2: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
-- wf-3: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
-- wf-4: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
-- wf-5: trades=`0` profitability=`0.0` win_rate=`0.0` gate=`False`
-
-### Stress Scenarios
-
-- base: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
-- elevated_fees: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
-- fee_and_slippage: trades=`0` profitability=`0.0` avg_return=`0.0` gate=`False`
-
-## btc-15m-regime-shift-no-trade-filter-psychology_wait_followthrough
-
-- doctrine_id: `risk_first_asymmetric_capture`
-- strategy_id: `funding_mean_revert`
-- market_regime: `event_driven`
 - profitability_score: `0.0`
 - sharpe_ratio: `0.0`
 - max_drawdown: `0.0`

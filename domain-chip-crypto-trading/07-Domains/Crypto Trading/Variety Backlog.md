@@ -2,8 +2,8 @@
 
 This page tracks doctrine -> strategy families and the uncovered child varieties still worth testing.
 
-- family_count: `17`
-- pending_family_count: `17`
+- family_count: `16`
+- pending_family_count: `16`
 
 ## breakout_volatility_expansion -> breakout_expansion_confirmation
 
@@ -30,8 +30,8 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `3`
-- pending_proposal_ids: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-sparse_signal, auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin-491eee90bf-holdout_decay, auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-47aa842e1d-segment_instability`
-- pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced | paper_gate=balanced, session_profile=squeeze_release_window`
+- pending_proposal_ids: `auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-088f621a05-segment_instability, auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-sparse_signal, auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin-491eee90bf-holdout_decay`
+- pending_child_labels: `paper_gate=balanced, session_profile=squeeze_release_window | activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
 - contradiction_modes: `n/a`
@@ -55,6 +55,23 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - top_candidate_id: `n/a`
 - top_profitability_score: `n/a`
 - top_recommended_next_step: `n/a`
+
+## None -> None
+
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "None", "regime": "None", "strategy": "None"}`
+- target_contract_family: `btc_up_down_15m`
+- status: `uncovered_variety_pending`
+- tested_child_count: `1`
+- benchmarked_candidate_count: `1`
+- pending_proposal_count: `1`
+- pending_proposal_ids: `auto-baseline-sparse_signal`
+- pending_child_labels: `activation_profile=wider, paper_gate=balanced`
+- suggested_child_target_count: `4`
+- suggested_child_targets: `activation_profile=wider, late_sample_guard=on, paper_gate=balanced, session_profile=late_cycle_filter | activation_profile=wider, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window | activation_profile=wider, execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=balanced | activation_profile=adaptive, paper_gate=balanced`
+- contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
+- top_candidate_id: `auto-baseline-sparse_signal-probe-sparse_signal`
+- top_profitability_score: `0.0`
+- top_recommended_next_step: `run_contradiction_probe`
 
 ## breakout_volatility_expansion -> bollinger_squeeze_breakout
 
@@ -151,23 +168,6 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - pending_proposal_count: `1`
 - pending_proposal_ids: `btc-15m-sizing-overlay`
 - pending_child_labels: `paper_gate=strict`
-- suggested_child_target_count: `0`
-- suggested_child_targets: `n/a`
-- contradiction_modes: `n/a`
-- top_candidate_id: `n/a`
-- top_profitability_score: `n/a`
-- top_recommended_next_step: `n/a`
-
-## breakout_volatility_expansion -> breakout_expansion_confirmation
-
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "breakout_volatility_expansion", "regime": "trend", "strategy": "breakout_expansion_confirmation"}`
-- target_contract_family: `btc_up_down_15m`
-- status: `uncovered_variety_pending`
-- tested_child_count: `0`
-- benchmarked_candidate_count: `0`
-- pending_proposal_count: `1`
-- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal`
-- pending_child_labels: `activation_profile=wider, paper_gate=balanced`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
 - contradiction_modes: `n/a`

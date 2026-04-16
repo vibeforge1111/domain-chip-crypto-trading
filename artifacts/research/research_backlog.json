@@ -2,10 +2,10 @@
   "approved_source_count": 38,
   "approved_waiting_packet_count": 0,
   "candidate_rows": [],
-  "card_count": 318,
+  "card_count": 319,
   "futurelog_rows": [],
   "next_to_research_count": 0,
-  "packet_count": 318,
+  "packet_count": 319,
   "ready_for_source_ingest_count": 0,
   "regime_intelligence_count": 0,
   "regime_rows": [],
@@ -159,9 +159,9 @@
     },
     {
       "approved_source_count": 1,
-      "card_count": 318,
+      "card_count": 319,
       "coverage_status": "covered",
-      "packet_count": 318,
+      "packet_count": 319,
       "style_family": "recursive_self_improvement"
     },
     {
@@ -180,9 +180,9 @@
     },
     {
       "approved_source_count": 3,
-      "card_count": 39,
+      "card_count": 40,
       "coverage_status": "covered",
-      "packet_count": 39,
+      "packet_count": 40,
       "style_family": "trend_following"
     }
   ],
