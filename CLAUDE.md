@@ -9,9 +9,11 @@ A crypto trading domain chip with three autoloops for autonomous edge discovery:
 
 This is a **clean fork** — no prior wins, no accumulated strategy data. Intelligence builds from zero through autoloop operation.
 
+4. **Evolution Engine** — population-based strategy discovery with staged evaluation, meta-strategy self-modification, and parallel workers (DGM-H inspired)
+
 ## Running the Full Stack
 
-Four processes run together. Start them in this order.
+Five processes run together. Start them in this order.
 
 ### 1. Install dependencies (once)
 ```bash
@@ -48,7 +50,25 @@ python live/live_paper_trader.py
 - Loads viable+elite agents from `live/archive/generations/`
 - Logs to `artifacts/paper_trade/` and `live/archive/live_pt_state.json`
 
-### 5. Start the Dashboard (monitoring)
+### 5. Start the Evolution Engine (strategy discovery)
+Population-based evolution of trading strategies with staged evaluation and meta-strategy self-modification.
+```bash
+# Standard run: 10 generations, 4 parallel workers
+python scripts/run_evolution.py -g 10 -w 4
+
+# Seed from proven agents first, then evolve 20 generations
+python scripts/run_evolution.py --seed -g 20 -w 4
+
+# Check current status
+python scripts/run_evolution.py --status
+```
+- Staged evaluation: 2K -> 8K -> full contracts (saves ~3x compute)
+- 6 meta-strategies: perturbation, crossover, feature_guided, regime_transfer, dead_end_avoidance, random_exploration
+- Meta-strategies self-modify parameters every 3 generations based on performance
+- Insights synthesized every 3 generations, dead-end patterns auto-detected
+- Archives to `live/archive/generations/` (same as paper trader reads)
+
+### 6. Start the Dashboard (monitoring)
 ```bash
 python live/dashboard_app.py
 ```
@@ -62,6 +82,7 @@ python live/dashboard_app.py
 | Autoloop supervisor | `python scripts/run_autoloop_supervisor.py --max-cycles 9999` | Continuous |
 | Researcher loop | `python scripts/run_researcher_loop.py` | Continuous (triggers on frontier drain) |
 | Live paper trader | `python live/live_paper_trader.py` | Continuous (polls Binance) |
+| Evolution engine | `python scripts/run_evolution.py -g 10 -w 4` | Per-run (10 gens default) |
 | Dashboard | `python live/dashboard_app.py` | Continuous (serves :8502) |
 
 ### Individual Lane Commands (debugging)
@@ -120,6 +141,12 @@ Dashboard (http://localhost:8502)
 | `src/.../backtest.py` | 36-feature engine, 5-regime detection, walk-forward |
 | `src/.../cli.py` | Deterministic evaluator, doctrine scoring |
 | `src/.../autoloop.py` | Tri-loop orchestrator CLI |
+| `scripts/run_evolution.py` | Evolution engine CLI (population-based strategy discovery) |
+| `src/.../evolution/engine.py` | Evolution loop (staged eval, parallel workers, seeding) |
+| `src/.../evolution/meta_agent.py` | 6 meta-strategies, 59 guards, 18 profiles, self-modification |
+| `src/.../evolution/evaluator.py` | Staged eval (2K->8K->full), guard adapter, parallel worker |
+| `src/.../evolution/population.py` | Population archive with niche preservation + diversity |
+| `src/.../evolution/performance_tracker.py` | Meta-learning + InsightSynthesizer |
 | `spark-researcher.project.json` | Spark Researcher config (baseline-only, no mutable_parameters) |
 | `spark-chip.json` | Chip contract definition |
 
@@ -134,6 +161,17 @@ Backtest Loop → walk-forward test candidates (WF>=0.8 gate)
 Paper Trade Loop → outer validation on held-out data
     ↓
 (repeat)
+```
+
+### Evolution Engine (DGM-H)
+```
+Meta-Agent (6 strategies, self-modifying params)
+  → Generate N candidate mutation dicts
+  → Staged Eval: Quick (2K) → Medium (8K) → Full (all contracts)
+  → Population Archive (elite/viable/diverse, niche preservation)
+  → Performance Tracker (dead-end detection, insight synthesis)
+  → Meta-evolution every 3 gens (strategy params self-modify)
+  → Archives to live/archive/generations/ (paper trader reads these)
 ```
 
 ### Live Paper Trader (Observer Pattern)
