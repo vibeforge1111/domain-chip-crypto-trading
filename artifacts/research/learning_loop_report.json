@@ -1,51 +1,45 @@
 {
   "after": {
     "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-breakout-i-a10d144d-sparse_signal.json",
-      "dc-auto-evo-2c7f7e468e9b-variety-late-sample-guard-plus-session-filter-sparse_signal.json",
-      "dc-auto-evo-2c7f7e468e9b-variety-session-stability-filter-sparse_signal.json"
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--83299266-sparse_signal.json",
+      "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--899cf4c0-sparse_signal.json"
     ],
-    "added_count": 3,
+    "added_count": 2,
     "approved_waiting_packet_count": 0,
-    "card_count": 461,
+    "card_count": 463,
     "eligible_missing_card_count": 0,
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0,
-    "reconciliation_repaired_cards": [
-      "dc-auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-sk-41872276-segment_instability.json"
-    ],
-    "reconciliation_repaired_count": 1,
+    "reconciliation_repaired_cards": [],
+    "reconciliation_repaired_count": 0,
     "state_consistent": true
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 457,
-    "doctrine_packets_generated": 4,
-    "pending_packet_count": 4,
+    "card_count": 461,
+    "doctrine_packets_generated": 2,
+    "pending_packet_count": 2,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.957,
-  "finished_at": "2026-04-16T23:44:04.839209Z",
+  "duration_seconds": 3.661,
+  "finished_at": "2026-04-16T23:52:49.244733Z",
   "loop_kind": "learning",
   "material_change": true,
   "material_reasons": [
     "card_count",
     "pending_packet_count",
-    "added_count",
-    "reconciliation_repaired_count"
+    "added_count"
   ],
   "reconciliation": {
-    "card_count": 461,
+    "card_count": 463,
     "eligible_missing_card_count": 0,
     "eligible_missing_cards": [],
-    "packet_count": 461,
+    "packet_count": 463,
     "repair_mode": true,
-    "repaired_cards": [
-      "dc-auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-sk-41872276-segment_instability.json"
-    ],
-    "repaired_count": 1,
+    "repaired_cards": [],
+    "repaired_count": 0,
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T23:44:00.881987Z"
+  "started_at": "2026-04-16T23:52:45.583776Z"
 }

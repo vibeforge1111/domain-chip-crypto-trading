@@ -1,13 +1,11 @@
 {
-  "card_count": 461,
+  "card_count": 463,
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
-  "packet_count": 461,
+  "packet_count": 463,
   "repair_mode": true,
-  "repaired_cards": [
-    "dc-auto-evo-4680319e88c6-variety-execution-buffer-plus-transition-sk-41872276-segment_instability.json"
-  ],
-  "repaired_count": 1,
+  "repaired_cards": [],
+  "repaired_count": 0,
   "required_source_count_per_mutation": 2,
   "state_consistent": true
 }
