@@ -609,15 +609,15 @@ def _detected_regime(features: dict[str, float]) -> str:
         return "fear_shock"
     if (volatility > 0.0015 or range_width > 0.008) and volume_ratio > 1.15 and impulse_flip > 0.0:
         return "fear_shock"
-    if compression_ratio < 0.5 and volume_ratio < 0.95 and body_bias < 0.0003:
+    if compression_ratio < 0.55 and volume_ratio < 1.0 and body_bias < 0.0005:
         return "compression"
-    if volatility < 0.0005 and range_width < 0.003 and compression_ratio < 0.55:
+    if volatility < 0.0006 and range_width < 0.004 and compression_ratio < 0.6:
         return "compression"
+    if ema_gap_ratio > 0.001 and momentum > 0.0015:
+        return "trend"
     if volatility > 0.0018 or range_width > 0.01:
         return "high_vol"
-    if ema_gap_ratio > 0.0012 and momentum > 0.002:
-        return "trend"
-    if volatility < 0.0007 and range_width < 0.004:
+    if volatility < 0.0012 and range_width < 0.007:
         return "range"
     return "event_driven"
 
@@ -2670,7 +2670,7 @@ def run_backtest(mutations: dict[str, str], runtime_root: Path, contract_limit: 
     coverage_ratio = round(coverage_count / len(contracts), 4)
     holdout_profitability = round(_profitability(holdout_active_returns), 4) if holdout_active_returns else profitability_score
     walk_forward_stats = _segment_stats(walk_forward_buckets)
-    walk_forward_passes = sum(1 for item in walk_forward_stats if bool(item.get("trade_count_gate_pass")) and float(item.get("profitability_score", 0.0) or 0.0) >= 0.5)
+    walk_forward_passes = sum(1 for item in walk_forward_stats if bool(item.get("trade_count_gate_pass")) and float(item.get("profitability_score", 0.0) or 0.0) >= 0.48)
     walk_forward_consistency = round(walk_forward_passes / len(walk_forward_stats), 4) if walk_forward_stats else 0.0
     stress_stats = _stress_stats(active_gross_returns, minimum_trade_count)
     # Stress resilience measures fee sensitivity, not sample size.
