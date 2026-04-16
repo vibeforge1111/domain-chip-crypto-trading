@@ -11,16 +11,16 @@ This page is the shortest honest read on the current crypto trading system.
 
 ## What Is Real Now
 
-- active benchmark candidate count: `0`
-- current top benchmark candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- active benchmark candidate count: `61`
+- current top benchmark candidate: `evo-2215db84ffa5`
 - validated regime families: `n/a` / `n/a`
 - classified event candidates: `n/a` / `n/a`
 - contradiction, mutation, and self-edit lanes are operational
 
 ## What Is Not Yet Strong Enough
 
-- paper-trade queue count: `0`
-- executed paper-trade candidates: `0`
+- paper-trade queue count: `23`
+- executed paper-trade candidates: `23`
 - event transition logic is still weaker than trend/range/fear/compression
 - psychology mutations still preserve too little trade density
 - timeline-pack truth is still materially incomplete

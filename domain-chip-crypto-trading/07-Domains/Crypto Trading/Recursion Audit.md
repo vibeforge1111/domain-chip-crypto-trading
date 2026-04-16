@@ -8,8 +8,8 @@ This page mirrors the recursive-evolution guardrail packet.
 
 ## Benchmark Summary
 
-- candidate_count: `9`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- candidate_count: `61`
+- top_candidate_id: `evo-2215db84ffa5`
 - contract_family: `btc_up_down_15m`
 
 ## Self Edit Summary
@@ -40,13 +40,13 @@ This page mirrors the recursive-evolution guardrail packet.
 
 - severity: `warn`
 - status: `contained`
-- evidence: `Heavy-backtest summary currently covers 9 candidates; this must keep shifting toward BTC-specific mutation trials.`
+- evidence: `Heavy-backtest summary currently covers 61 candidates; this must keep shifting toward BTC-specific mutation trials.`
 
 ### golden_demo_collapse
 
 - severity: `warn`
 - status: `contained`
-- evidence: `High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h | Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f, auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3 | Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f, auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3`
+- evidence: `High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h | Walk-forward consistency stays weak for: auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-pro-crossover, evo-2c7f7e468e9b, evo-4c38dbff5283 | Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-5d7170b7b6, evo-4680319e88c6, auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-pro-crossover`
 
 ## Required Fixes
 

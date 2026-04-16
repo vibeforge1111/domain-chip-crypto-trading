@@ -1,66 +1,5 @@
 [
   {
-    "candidate_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3133,
-    "market_regime": "range",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 160,
-    "priority": 0.99,
-    "probe_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "wedge_exhaustion_reversal",
-    "stress_resilience": 0.3333,
-    "trade_count": 86,
-    "walk_forward_consistency": 1.0,
-    "weakest_segments": [
-      {
-        "avg_return": -0.04,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.48,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 32,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5
-      },
-      {
-        "avg_return": 0.0188,
-        "end_contract_id": "kxbtc15m-20260415-2345",
-        "profitability_score": 0.5094,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 17,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5294
-      }
-    ]
-  },
-  {
     "candidate_id": "evo-4c38dbff5283",
     "doctrine_id": "mean_reversion_liquidity_reclaim",
     "failure_modes": [
@@ -189,138 +128,6 @@
         "trade_count": 12,
         "trade_count_gate_pass": true,
         "win_rate": 0.5833
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window",
-    "doctrine_id": "breakout_volatility_expansion",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.48,
-    "market_regime": "high_vol",
-    "max_drawdown": 0.8833,
-    "minimum_trade_count": 25,
-    "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "bollinger_squeeze_breakout",
-    "stress_resilience": 0.0,
-    "trade_count": 12,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": -0.29,
-        "end_contract_id": "kxbtc15m-20260415-2345",
-        "profitability_score": 0.355,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 8,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.375
-      },
-      {
-        "avg_return": 0.96,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.98,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 2,
-        "trade_count_gate_pass": false,
-        "win_rate": 1.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window",
-    "doctrine_id": "breakout_volatility_expansion",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.48,
-    "market_regime": "high_vol",
-    "max_drawdown": 0.8833,
-    "minimum_trade_count": 25,
-    "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "bollinger_squeeze_breakout",
-    "stress_resilience": 0.0,
-    "trade_count": 12,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": -0.29,
-        "end_contract_id": "kxbtc15m-20260415-2345",
-        "profitability_score": 0.355,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 8,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.375
-      },
-      {
-        "avg_return": 0.96,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.98,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 2,
-        "trade_count_gate_pass": false,
-        "win_rate": 1.0
       }
     ]
   },
@@ -508,7 +315,7 @@
     ]
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3",
+    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -542,11 +349,11 @@
     "max_drawdown": 0.99,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3-sparse_signal",
+    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
-    "strategy_id": "bollinger_squeeze_breakout",
+    "strategy_id": "breakout_open_interest_confirmation",
     "stress_resilience": 0.0,
     "trade_count": 5,
     "walk_forward_consistency": 0.0,
@@ -635,7 +442,7 @@
     ]
   },
   {
-    "candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "doctrine_id": "None",
     "failure_modes": [
       {
@@ -664,7 +471,7 @@
     "max_drawdown": 0.0,
     "minimum_trade_count": 435,
     "priority": 0.99,
-    "probe_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3-sparse_signal",
+    "probe_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
@@ -696,7 +503,7 @@
     ]
   },
   {
-    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter",
+    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -725,7 +532,68 @@
     "max_drawdown": 0.0,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-sparse_signal",
+    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7-sparse_signal",
+    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "backtest",
+    "strategy_id": "bollinger_squeeze_breakout",
+    "stress_resilience": 0.0,
+    "trade_count": 0,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20251115-1545",
+        "profitability_score": 0.0,
+        "segment_id": "wf-1",
+        "start_contract_id": "kxbtc15m-20250901-0000",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260130-0745",
+        "profitability_score": 0.0,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc15m-20251115-1600",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  {
+    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-var-37174bae7e",
+    "doctrine_id": "breakout_volatility_expansion",
+    "failure_modes": [
+      {
+        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
+        "mode": "sparse_signal",
+        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
+      },
+      {
+        "evidence": "The final holdout slice drops below break-even profitability after fees.",
+        "mode": "holdout_decay",
+        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
+      },
+      {
+        "evidence": "Walk-forward consistency is too low across chronological splits.",
+        "mode": "segment_instability",
+        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
+      },
+      {
+        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
+        "mode": "execution_fragility",
+        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
+      }
+    ],
+    "holdout_profitability_score": 0.0,
+    "market_regime": "high_vol",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 25,
+    "priority": 0.99,
+    "probe_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-var-37174bae7e-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
@@ -757,7 +625,7 @@
     ]
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e",
+    "candidate_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_windo-afa35a9cfb",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -786,190 +654,7 @@
     "max_drawdown": 0.0,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "breakout_open_interest_confirmation",
-    "stress_resilience": 0.0,
-    "trade_count": 0,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "range",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 34,
-    "priority": 0.99,
-    "probe_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "range_reclaim_scalp",
-    "stress_resilience": 0.0,
-    "trade_count": 0,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "range",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 34,
-    "priority": 0.99,
-    "probe_id": "auto-range-session-wick-reversal_confirmation=wick_reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "range_reclaim_scalp",
-    "stress_resilience": 0.0,
-    "trade_count": 0,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
-    "doctrine_id": "breakout_volatility_expansion",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "high_vol",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 25,
-    "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_release_window-sparse_signal",
+    "probe_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_windo-afa35a9cfb-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
@@ -1001,8 +686,8 @@
     ]
   },
   {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on",
-    "doctrine_id": "breakout_volatility_expansion",
+    "candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "doctrine_id": "None",
     "failure_modes": [
       {
         "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
@@ -1026,15 +711,15 @@
       }
     ],
     "holdout_profitability_score": 0.0,
-    "market_regime": "high_vol",
+    "market_regime": "None",
     "max_drawdown": 0.0,
-    "minimum_trade_count": 25,
+    "minimum_trade_count": 435,
     "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-sparse_signal",
+    "probe_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
-    "strategy_id": "bollinger_squeeze_breakout",
+    "strategy_id": "None",
     "stress_resilience": 0.0,
     "trade_count": 0,
     "walk_forward_consistency": 0.0,
@@ -1055,194 +740,6 @@
         "profitability_score": 0.0,
         "segment_id": "wf-2",
         "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window",
-    "doctrine_id": "breakout_volatility_expansion",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "high_vol",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 25,
-    "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-session_profile=squeeze_release_window-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "bollinger_squeeze_breakout",
-    "stress_resilience": 0.0,
-    "trade_count": 0,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on",
-    "doctrine_id": "breakout_volatility_expansion",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "high_vol",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 25,
-    "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "bollinger_squeeze_breakout",
-    "stress_resilience": 0.0,
-    "trade_count": 0,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal",
-    "doctrine_id": "breakout_volatility_expansion",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.99,
-    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "breakout_open_interest_confirmation",
-    "stress_resilience": 0.0,
-    "trade_count": 1,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": -1.04,
-        "end_contract_id": "kxbtc15m-20260415-2345",
-        "profitability_score": 0.0,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 1,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
         "trade_count": 0,
         "trade_count_gate_pass": false,
         "win_rate": 0.0
@@ -1316,7 +813,7 @@
     ]
   },
   {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e",
+    "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-pro-crossover",
     "doctrine_id": "trend_regime_following",
     "failure_modes": [
       {
@@ -1345,68 +842,7 @@
     "max_drawdown": 0.99,
     "minimum_trade_count": 25,
     "priority": 0.9592,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 33,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.24,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.38,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 10,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4
-      },
-      {
-        "avg_return": -0.1067,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4467,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 15,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4667
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3133,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9592,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f-holdout_decay",
+    "probe_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-pro-crossover-holdout_decay",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
@@ -1434,311 +870,6 @@
         "trade_count": 14,
         "trade_count_gate_pass": true,
         "win_rate": 0.4286
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3133,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9592,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 54,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.29,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.355,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 16,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.375
-      },
-      {
-        "avg_return": -0.1938,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4031,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 26,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4231
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3133,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9592,
-    "probe_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 54,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.29,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.355,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 16,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.375
-      },
-      {
-        "avg_return": -0.1938,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4031,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 26,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4231
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.355,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9267,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 63,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.3733,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.3133,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 18,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.3333
-      },
-      {
-        "avg_return": -0.0745,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4628,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 29,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4828
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.355,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9267,
-    "probe_id": "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 63,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.3733,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.3133,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 18,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.3333
-      },
-      {
-        "avg_return": -0.0745,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4628,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 29,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4828
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3329,
-    "market_regime": "range",
-    "max_drawdown": 0.877,
-    "minimum_trade_count": 160,
-    "priority": 0.9142,
-    "probe_id": "auto-wedge-guarded-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "wedge_exhaustion_reversal",
-    "stress_resilience": 0.6667,
-    "trade_count": 98,
-    "walk_forward_consistency": 1.0,
-    "weakest_segments": [
-      {
-        "avg_return": -0.0,
-        "end_contract_id": "kxbtc15m-20260415-2345",
-        "profitability_score": 0.5,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 25,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.52
-      },
-      {
-        "avg_return": 0.0457,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.5229,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 35,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5429
       }
     ]
   },
@@ -1875,184 +1006,6 @@
     ]
   },
   {
-    "candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.48,
-    "market_regime": "range",
-    "max_drawdown": 0.5408,
-    "minimum_trade_count": 160,
-    "priority": 0.8269,
-    "probe_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=strict_participation-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "wedge_exhaustion_reversal",
-    "stress_resilience": 0.0,
-    "trade_count": 33,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.04,
-        "end_contract_id": "kxbtc15m-20260415-2345",
-        "profitability_score": 0.48,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 4,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.5
-      },
-      {
-        "avg_return": 0.1365,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.5682,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 17,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5882
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.98,
-    "market_regime": "range",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 34,
-    "priority": 0.8,
-    "probe_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "range_reclaim_scalp",
-    "stress_resilience": 0.0,
-    "trade_count": 1,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.0,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.98,
-    "market_regime": "range",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 34,
-    "priority": 0.8,
-    "probe_id": "auto-range-session-wick-reversal_confirmation=reclaim_close-session_profile=opening_range_failure-wick_profile=rejection_confirm-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "range_reclaim_scalp",
-    "stress_resilience": 0.0,
-    "trade_count": 1,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.0,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
     "candidate_id": "evo-f4531b3f21d4",
     "doctrine_id": "extreme_reversion",
     "failure_modes": [
@@ -2175,14 +1128,9 @@
     ]
   },
   {
-    "candidate_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm",
-    "doctrine_id": "mean_reversion_liquidity_reclaim",
+    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-5d7170b7b6",
+    "doctrine_id": "trend_regime_following",
     "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
       {
         "evidence": "The final holdout slice drops below break-even profitability after fees.",
         "mode": "holdout_decay",
@@ -2205,150 +1153,38 @@
       }
     ],
     "holdout_profitability_score": 0.48,
-    "market_regime": "range",
-    "max_drawdown": 0.4417,
-    "minimum_trade_count": 160,
-    "priority": 0.7188,
-    "probe_id": "auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-wick_profile=rejection_confirm-sparse_signal",
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 25,
+    "priority": 0.6558,
+    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-5d7170b7b6-holdout_decay",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
-    "strategy_id": "wedge_exhaustion_reversal",
+    "strategy_id": "ema_pullback_long",
     "stress_resilience": 0.0,
-    "trade_count": 36,
+    "trade_count": 31,
     "walk_forward_consistency": 0.6667,
     "weakest_segments": [
+      {
+        "avg_return": -0.1511,
+        "end_contract_id": "kxbtc1h-20260130-0700",
+        "profitability_score": 0.4244,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc1h-20251115-1600",
+        "trade_count": 9,
+        "trade_count_gate_pass": true,
+        "win_rate": 0.4444
+      },
       {
         "avg_return": -0.04,
-        "end_contract_id": "kxbtc15m-20260415-2345",
+        "end_contract_id": "kxbtc1h-20260415-2300",
         "profitability_score": 0.48,
         "segment_id": "wf-3",
-        "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 6,
-        "trade_count_gate_pass": false,
+        "start_contract_id": "kxbtc1h-20260130-0800",
+        "trade_count": 14,
+        "trade_count_gate_pass": true,
         "win_rate": 0.5
-      },
-      {
-        "avg_return": 0.1365,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.5682,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 17,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5882
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.73,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.6258,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation-segment_instability",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 46,
-    "walk_forward_consistency": 0.6667,
-    "weakest_segments": [
-      {
-        "avg_return": -0.3733,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.3133,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 12,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.3333
-      },
-      {
-        "avg_return": 0.0369,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.5185,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 13,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5385
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.73,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.6258,
-    "probe_id": "auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation-segment_instability",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 46,
-    "walk_forward_consistency": 0.6667,
-    "weakest_segments": [
-      {
-        "avg_return": -0.3733,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.3133,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 12,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.3333
-      },
-      {
-        "avg_return": 0.0369,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.5185,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 13,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5385
       }
     ]
   },
@@ -2405,118 +1241,6 @@
         "trade_count": 10,
         "trade_count_gate_pass": true,
         "win_rate": 0.6
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.58,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.6258,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-segment_instability",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 45,
-    "walk_forward_consistency": 0.6667,
-    "weakest_segments": [
-      {
-        "avg_return": -0.3733,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.3133,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 12,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.3333
-      },
-      {
-        "avg_return": -0.04,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.48,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 12,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.58,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.6258,
-    "probe_id": "auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-segment_instability",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 45,
-    "walk_forward_consistency": 0.6667,
-    "weakest_segments": [
-      {
-        "avg_return": -0.3733,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.3133,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 12,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.3333
-      },
-      {
-        "avg_return": -0.04,
-        "end_contract_id": "kxbtc1h-20251115-1500",
-        "profitability_score": 0.48,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc1h-20250901-0000",
-        "trade_count": 12,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.5
       }
     ]
   },

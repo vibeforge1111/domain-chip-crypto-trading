@@ -2,7 +2,7 @@
 
 These are the tracked research-to-doctrine cards waiting to earn or lose credibility through the benchmark loop.
 
-- doctrine_card_count: `362`
+- doctrine_card_count: `382`
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d
 
@@ -1577,6 +1577,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
 
+## Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window
+
+- card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-a6726e41-sparse_signal`
+- proposal_id: `auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-sparse_signal`
+- doctrine_family: `breakout_volatility_expansion`
+- strategy_family: `breakout_expansion_confirmation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, john-bollinger-bands`
+- status: `candidate_card`
+- thesis: The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "bollinger_squeeze_breakout", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: holdout_decay fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window
 
 - card_id: `dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-fdf15e8e-holdout_decay`
@@ -2357,6 +2370,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "late_sample_guard": "on", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi", "volume_context_guard": "thin_filter"}`
 
+## Auto-generated: segment_instability fix for auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation
+
+- card_id: `dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-72cb9768-segment_instability`
+- proposal_id: `auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-segment_instability`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
+
 ## Auto-generated: sparse_signal fix for auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=thin_filter-probe-holdout_decay
 
 - card_id: `dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-81f1bf20-sparse_signal`
@@ -2382,6 +2408,19 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The trend_regime_following doctrine with ema_pullback_long strategy produces too few trades in trend regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation
+
+- card_id: `dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_d-7747cf35-segment_instability`
+- proposal_id: `auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation-segment_instability`
+- doctrine_family: `trend_regime_following`
+- strategy_family: `ema_trend_continuation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, ed-seykota-principles-of-great-traders`
+- status: `candidate_card`
+- thesis: The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "trend_regime_following", "market_regime": "trend", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "ema_pullback_long", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: holdout_decay fix for auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter
 
@@ -4449,6 +4488,227 @@ These are the tracked research-to-doctrine cards waiting to earn or lose credibi
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 - rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
 - mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "breakout_volatility_expansion", "market_regime": "high_vol", "paper_gate": "balanced", "strategy_id": "breakout_open_interest_confirmation", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-02bbf9ddefb6
+
+- card_id: `dc-auto-evo-02bbf9ddefb6-segment_instability`
+- proposal_id: `auto-evo-02bbf9ddefb6-segment_instability`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "contrarian_overextension_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-0f0be032a2d5
+
+- card_id: `dc-auto-evo-0f0be032a2d5-segment_instability`
+- proposal_id: `auto-evo-0f0be032a2d5-segment_instability`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "climax_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-23422729ffe6
+
+- card_id: `dc-auto-evo-23422729ffe6-sparse_signal`
+- proposal_id: `auto-evo-23422729ffe6-sparse_signal`
+- doctrine_family: `event_momentum`
+- strategy_family: `channel_breakout_fade`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-2c7f7e468e9b
+
+- card_id: `dc-auto-evo-2c7f7e468e9b-sparse_signal`
+- proposal_id: `auto-evo-2c7f7e468e9b-sparse_signal`
+- doctrine_family: `event_momentum`
+- strategy_family: `channel_breakout_fade`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-4680319e88c6
+
+- card_id: `dc-auto-evo-4680319e88c6-segment_instability`
+- proposal_id: `auto-evo-4680319e88c6-segment_instability`
+- doctrine_family: `intermarket_regime_confirmation`
+- strategy_family: `intermarket_context_gate`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The intermarket_regime_confirmation doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "intermarket_regime_confirmation", "market_regime": "event_driven", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "intermarket_context_gate", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-4c38dbff5283
+
+- card_id: `dc-auto-evo-4c38dbff5283-sparse_signal`
+- proposal_id: `auto-evo-4c38dbff5283-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with event_fade strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "event_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-7633e503c1b0
+
+- card_id: `dc-auto-evo-7633e503c1b0-segment_instability`
+- proposal_id: `auto-evo-7633e503c1b0-segment_instability`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "range_extreme_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-7b515aab8fbd
+
+- card_id: `dc-auto-evo-7b515aab8fbd-sparse_signal`
+- proposal_id: `auto-evo-7b515aab8fbd-sparse_signal`
+- doctrine_family: `wedge_guarded`
+- strategy_family: `volume_exhaustion_reversal`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The wedge_guarded doctrine with volume_exhaustion_reversal strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "wedge_guarded", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "volume_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-8710260504a1
+
+- card_id: `dc-auto-evo-8710260504a1-sparse_signal`
+- proposal_id: `auto-evo-8710260504a1-sparse_signal`
+- doctrine_family: `extreme_reversion`
+- strategy_family: `intermarket_context_gate`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The extreme_reversion doctrine with intermarket_context_gate strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "extreme_reversion", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "intermarket_context_gate", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-9204d5ebe91a
+
+- card_id: `dc-auto-evo-9204d5ebe91a-segment_instability`
+- proposal_id: `auto-evo-9204d5ebe91a-segment_instability`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "contrarian_overextension_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-a3766d74ba07
+
+- card_id: `dc-auto-evo-a3766d74ba07-sparse_signal`
+- proposal_id: `auto-evo-a3766d74ba07-sparse_signal`
+- doctrine_family: `event_momentum`
+- strategy_family: `channel_breakout_fade`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "event_momentum", "market_regime": "event_driven", "paper_gate": "balanced", "strategy_id": "channel_breakout_fade", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-a4b9dff257b0
+
+- card_id: `dc-auto-evo-a4b9dff257b0-sparse_signal`
+- proposal_id: `auto-evo-a4b9dff257b0-sparse_signal`
+- doctrine_family: `wedge_guarded`
+- strategy_family: `volume_exhaustion_reversal`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The wedge_guarded doctrine with volume_exhaustion_reversal strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "wedge_guarded", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "volume_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-a86ccc4f88a9
+
+- card_id: `dc-auto-evo-a86ccc4f88a9-sparse_signal`
+- proposal_id: `auto-evo-a86ccc4f88a9-sparse_signal`
+- doctrine_family: `wedge_guarded`
+- strategy_family: `volume_exhaustion_reversal`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The wedge_guarded doctrine with volume_exhaustion_reversal strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "wedge_guarded", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "volume_exhaustion_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: segment_instability fix for evo-bcb710af5b17
+
+- card_id: `dc-auto-evo-bcb710af5b17-segment_instability`
+- proposal_id: `auto-evo-bcb710af5b17-segment_instability`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "session_profile": "squeeze_release_window", "strategy_id": "climax_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-c12d7d9ea947
+
+- card_id: `dc-auto-evo-c12d7d9ea947-sparse_signal`
+- proposal_id: `auto-evo-c12d7d9ea947-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with keltner_mean_reversion strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "keltner_mean_reversion", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-ec1fefe30b2a
+
+- card_id: `dc-auto-evo-ec1fefe30b2a-sparse_signal`
+- proposal_id: `auto-evo-ec1fefe30b2a-sparse_signal`
+- doctrine_family: `mean_reversion_liquidity_reclaim`
+- strategy_family: `range_reclaim_rotation`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, wyckoff-springs-upthrusts`
+- status: `candidate_card`
+- thesis: The mean_reversion_liquidity_reclaim doctrine with wick_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "mean_reversion_liquidity_reclaim", "market_regime": "range", "paper_gate": "balanced", "strategy_id": "wick_reversal", "timeframe": "15m", "venue": "kalshi"}`
+
+## Auto-generated: sparse_signal fix for evo-f4531b3f21d4
+
+- card_id: `dc-auto-evo-f4531b3f21d4-sparse_signal`
+- proposal_id: `auto-evo-f4531b3f21d4-sparse_signal`
+- doctrine_family: `extreme_reversion`
+- strategy_family: `intermarket_context_gate`
+- benchmark_priority: `medium`
+- source_ids: `autoloop_contradiction_probe, autoloop_contradiction_probe`
+- status: `candidate_card`
+- thesis: The extreme_reversion doctrine with intermarket_context_gate strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
+- rollback_condition: Rollback if profitability drops below parent or if the fix introduces a new failure mode.
+- mutations: `{"activation_profile": "wider", "asset_universe": "BTC", "doctrine_id": "extreme_reversion", "market_regime": "None", "paper_gate": "balanced", "strategy_id": "intermarket_context_gate", "timeframe": "15m", "venue": "kalshi"}`
 
 ## Auto-generated: holdout_decay fix for mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0
 

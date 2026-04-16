@@ -17,9 +17,9 @@
 
 ## Current Practical Read
 
-- current benchmark leader: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- current benchmark leader: `evo-2215db84ffa5`
 - current backtest loop bias: `n/a`
-- current paper-trade queue: `0`
+- current paper-trade queue: `23`
 
 ## Where To Look For Weakness
 

@@ -4,10 +4,127 @@ This page is the trading equivalent of a `why it lost` surface.
 
 Track failure shapes here when a combination looks exciting but should not be promoted.
 
-## auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3
+## evo-4c38dbff5283
+
+- doctrine_id: `mean_reversion_liquidity_reclaim`
+- strategy_id: `event_fade`
+- priority: `0.99`
+- holdout_profitability_score: `0.0`
+- walk_forward_consistency: `0.3333`
+- stress_resilience: `0.0`
+- max_drawdown: `0.7`
+- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Failure Modes
+
+- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
+- holdout_decay: The final holdout slice drops below break-even profitability after fees.
+- segment_instability: Walk-forward consistency is too low across chronological splits.
+- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
+
+### Weakest Segments
+
+- wf-3: profitability=`0.0` avg_return=`-1.04` trades=`1`
+- wf-1: profitability=`0.5633` avg_return=`0.1267` trades=`12`
+
+## evo-ec1fefe30b2a
+
+- doctrine_id: `mean_reversion_liquidity_reclaim`
+- strategy_id: `wick_reversal`
+- priority: `0.99`
+- holdout_profitability_score: `0.0`
+- walk_forward_consistency: `0.3333`
+- stress_resilience: `0.0`
+- max_drawdown: `0.7`
+- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Failure Modes
+
+- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
+- holdout_decay: The final holdout slice drops below break-even profitability after fees.
+- segment_instability: Walk-forward consistency is too low across chronological splits.
+- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
+
+### Weakest Segments
+
+- wf-3: profitability=`0.0` avg_return=`-1.04` trades=`1`
+- wf-1: profitability=`0.5633` avg_return=`0.1267` trades=`12`
+
+## evo-a86ccc4f88a9
+
+- doctrine_id: `wedge_guarded`
+- strategy_id: `volume_exhaustion_reversal`
+- priority: `0.99`
+- holdout_profitability_score: `0.98`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- max_drawdown: `0.99`
+- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Failure Modes
+
+- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
+- segment_instability: Walk-forward consistency is too low across chronological splits.
+- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
+
+### Weakest Segments
+
+- wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
+- wf-1: profitability=`0.3436` avg_return=`-0.3127` trades=`11`
+
+## evo-a4b9dff257b0
+
+- doctrine_id: `wedge_guarded`
+- strategy_id: `volume_exhaustion_reversal`
+- priority: `0.99`
+- holdout_profitability_score: `0.98`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- max_drawdown: `0.99`
+- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Failure Modes
+
+- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
+- segment_instability: Walk-forward consistency is too low across chronological splits.
+- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
+
+### Weakest Segments
+
+- wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
+- wf-1: profitability=`0.3436` avg_return=`-0.3127` trades=`11`
+
+## evo-7b515aab8fbd
+
+- doctrine_id: `wedge_guarded`
+- strategy_id: `volume_exhaustion_reversal`
+- priority: `0.99`
+- holdout_profitability_score: `0.98`
+- walk_forward_consistency: `0.0`
+- stress_resilience: `0.0`
+- max_drawdown: `0.99`
+- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
+
+### Failure Modes
+
+- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
+- segment_instability: Walk-forward consistency is too low across chronological splits.
+- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
+- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
+
+### Weakest Segments
+
+- wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
+- wf-1: profitability=`0.3436` avg_return=`-0.3127` trades=`11`
+
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45
 
 - doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `bollinger_squeeze_breakout`
+- strategy_id: `breakout_open_interest_confirmation`
 - priority: `0.99`
 - holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
@@ -51,7 +168,7 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3
+## auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09
 
 - doctrine_id: `None`
 - strategy_id: `None`
@@ -73,122 +190,6 @@ Track failure shapes here when a combination looks exciting but should not be pr
 
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
-
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `breakout_open_interest_confirmation`
-- priority: `0.99`
-- holdout_profitability_score: `0.0`
-- walk_forward_consistency: `0.0`
-- stress_resilience: `0.0`
-- max_drawdown: `0.0`
-- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Failure Modes
-
-- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
-- holdout_decay: The final holdout slice drops below break-even profitability after fees.
-- segment_instability: Walk-forward consistency is too low across chronological splits.
-- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
-
-### Weakest Segments
-
-- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
-- wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
-
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `breakout_open_interest_confirmation`
-- priority: `0.99`
-- holdout_profitability_score: `0.0`
-- walk_forward_consistency: `0.0`
-- stress_resilience: `0.0`
-- max_drawdown: `0.0`
-- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Failure Modes
-
-- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
-- holdout_decay: The final holdout slice drops below break-even profitability after fees.
-- segment_instability: Walk-forward consistency is too low across chronological splits.
-- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
-
-### Weakest Segments
-
-- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
-- wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
-
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal
-
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `breakout_open_interest_confirmation`
-- priority: `0.99`
-- holdout_profitability_score: `0.0`
-- walk_forward_consistency: `0.0`
-- stress_resilience: `0.0`
-- max_drawdown: `0.99`
-- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Failure Modes
-
-- sparse_signal: Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.
-- holdout_decay: The final holdout slice drops below break-even profitability after fees.
-- segment_instability: Walk-forward consistency is too low across chronological splits.
-- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
-- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
-
-### Weakest Segments
-
-- wf-3: profitability=`0.0` avg_return=`-1.04` trades=`1`
-- wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
-
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e
-
-- doctrine_id: `trend_regime_following`
-- strategy_id: `ema_pullback_long`
-- priority: `0.9592`
-- holdout_profitability_score: `0.3133`
-- walk_forward_consistency: `0.3333`
-- stress_resilience: `0.0`
-- max_drawdown: `0.99`
-- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Failure Modes
-
-- holdout_decay: The final holdout slice drops below break-even profitability after fees.
-- segment_instability: Walk-forward consistency is too low across chronological splits.
-- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
-- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
-
-### Weakest Segments
-
-- wf-2: profitability=`0.38` avg_return=`-0.24` trades=`10`
-- wf-3: profitability=`0.4467` avg_return=`-0.1067` trades=`15`
-
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f
-
-- doctrine_id: `trend_regime_following`
-- strategy_id: `ema_pullback_long`
-- priority: `0.9592`
-- holdout_profitability_score: `0.3133`
-- walk_forward_consistency: `0.3333`
-- stress_resilience: `0.0`
-- max_drawdown: `0.99`
-- contradiction: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
-
-### Failure Modes
-
-- holdout_decay: The final holdout slice drops below break-even profitability after fees.
-- segment_instability: Walk-forward consistency is too low across chronological splits.
-- execution_fragility: Edge does not survive elevated fees and slippage cleanly.
-- drawdown_excess: Drawdown remains above the promotion boundary even when trade count is adequate.
-
-### Weakest Segments
-
-- wf-2: profitability=`0.38` avg_return=`-0.24` trades=`10`
-- wf-3: profitability=`0.4086` avg_return=`-0.1829` trades=`14`
 
 ## Anti-Patterns
 

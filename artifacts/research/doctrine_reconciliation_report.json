@@ -1,11 +1,29 @@
 {
-  "card_count": 362,
+  "card_count": 382,
   "eligible_missing_card_count": 0,
   "eligible_missing_cards": [],
-  "packet_count": 362,
+  "packet_count": 382,
   "repair_mode": true,
-  "repaired_cards": [],
-  "repaired_count": 0,
+  "repaired_cards": [
+    "dc-auto-evo-02bbf9ddefb6-segment_instability.json",
+    "dc-auto-evo-0f0be032a2d5-segment_instability.json",
+    "dc-auto-evo-23422729ffe6-sparse_signal.json",
+    "dc-auto-evo-2c7f7e468e9b-sparse_signal.json",
+    "dc-auto-evo-4680319e88c6-segment_instability.json",
+    "dc-auto-evo-4c38dbff5283-sparse_signal.json",
+    "dc-auto-evo-7633e503c1b0-segment_instability.json",
+    "dc-auto-evo-7b515aab8fbd-sparse_signal.json",
+    "dc-auto-evo-8710260504a1-sparse_signal.json",
+    "dc-auto-evo-9204d5ebe91a-segment_instability.json",
+    "dc-auto-evo-a3766d74ba07-sparse_signal.json",
+    "dc-auto-evo-a4b9dff257b0-sparse_signal.json",
+    "dc-auto-evo-a86ccc4f88a9-sparse_signal.json",
+    "dc-auto-evo-bcb710af5b17-segment_instability.json",
+    "dc-auto-evo-c12d7d9ea947-sparse_signal.json",
+    "dc-auto-evo-ec1fefe30b2a-sparse_signal.json",
+    "dc-auto-evo-f4531b3f21d4-sparse_signal.json"
+  ],
+  "repaired_count": 17,
   "required_source_count_per_mutation": 2,
   "state_consistent": true
 }

@@ -20,10 +20,10 @@ The intended path is:
 - pattern_count: `0`
 - classified_event_candidates: `0`
 - regime_mismatch_count: `0`
-- benchmark_top_candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
-- benchmark_top_profitability: `0.58`
-- benchmark_top_readiness: `0.5993`
-- benchmark_top_drawdown: `0.7143`
+- benchmark_top_candidate: `evo-2215db84ffa5`
+- benchmark_top_profitability: `0.7447`
+- benchmark_top_readiness: `0.9292`
+- benchmark_top_drawdown: `0.1971`
 
 ## Where The System Is Actually Intelligent
 

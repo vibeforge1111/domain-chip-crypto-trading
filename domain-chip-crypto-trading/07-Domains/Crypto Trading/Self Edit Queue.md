@@ -7,10 +7,10 @@ This queue holds bounded benchmark-driven self-edits.
 - deferred_count: `0`
 - rejected_count: `0`
 
-## self-edit-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3-sparse_signal
+## self-edit-evo-4c38dbff5283-sparse_signal
 
-- parent_candidate_id: `auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3`
-- child_candidate_id: `auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3-probe-sparse_signal`
+- parent_candidate_id: `evo-4c38dbff5283`
+- child_candidate_id: `evo-4c38dbff5283-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -19,10 +19,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-baseline-sparse_signal
+## self-edit-evo-ec1fefe30b2a-sparse_signal
 
-- parent_candidate_id: `baseline`
-- child_candidate_id: `baseline-probe-sparse_signal`
+- parent_candidate_id: `evo-ec1fefe30b2a`
+- child_candidate_id: `evo-ec1fefe30b2a-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -31,48 +31,48 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-sparse_signal
+## self-edit-evo-a86ccc4f88a9-sparse_signal
 
-- parent_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter`
-- child_candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-probe-sparse_signal`
+- parent_candidate_id: `evo-a86ccc4f88a9`
+- child_candidate_id: `evo-a86ccc4f88a9-probe-sparse_signal`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `activation_profile.wider, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e-sparse_signal
+## self-edit-evo-a4b9dff257b0-sparse_signal
 
-- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e`
-- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e-probe-sparse_signal`
+- parent_candidate_id: `evo-a4b9dff257b0`
+- child_candidate_id: `evo-a4b9dff257b0-probe-sparse_signal`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `activation_profile.wider, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal-sparse_signal
+## self-edit-evo-7b515aab8fbd-sparse_signal
 
-- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal`
-- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal-probe-sparse_signal`
+- parent_candidate_id: `evo-7b515aab8fbd`
+- child_candidate_id: `evo-7b515aab8fbd-probe-sparse_signal`
 - priority: `0.99`
-- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
+- allowed_edits: `activation_profile.wider, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e-holdout_decay
+## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-sparse_signal
 
-- parent_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e`
-- child_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e-probe-holdout_decay`
-- priority: `0.9592`
-- allowed_edits: `late_sample_guard.on, execution_buffer.high`
+- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45`
+- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-probe-sparse_signal`
+- priority: `0.99`
+- allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
 - child_profitability_score: `n/a`

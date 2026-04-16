@@ -9,33 +9,16 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - needs_review_count: `0`
 - no_overlap_count: `8`
 - top_overlap_regime_id: `n/a`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- top_candidate_id: `evo-2215db84ffa5`
 
-## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter / wf-3
+## evo-2215db84ffa5 / wf-3
 
-- claimed_regime_id: `fear_shock_high_alert`
-- candidate_market_regime: `high_vol`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.5094`
-- weakest_avg_return: `0.0188`
-- weakest_trade_count: `17`
-- segment_start: `2026-01-30T08:00`
-- segment_end: `2026-04-15T23:45`
-- strongest_overlap_pack_id: `n/a`
-- strongest_overlap_regime_id: `n/a`
-- strongest_overlap_validation_status: `n/a`
-- strongest_overlap_ratio: `n/a`
-- diagnosis: `no_overlap_evidence`
-- recommended_action: design a dedicated timeline pack before mutating this failure further.
-
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e / wf-2
-
-- claimed_regime_id: `trend_continuation_greed`
-- candidate_market_regime: `trend`
-- validated_regime_support: `False`
-- weakest_profitability_score: `0.38`
-- weakest_avg_return: `-0.24`
-- weakest_trade_count: `10`
+- weakest_profitability_score: `0.6164`
+- weakest_avg_return: `0.2327`
+- weakest_trade_count: `11`
 - segment_start: `n/a`
 - segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
@@ -45,14 +28,14 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f / wf-2
+## evo-b9e50a49482a / wf-3
 
-- claimed_regime_id: `trend_continuation_greed`
-- candidate_market_regime: `trend`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.38`
-- weakest_avg_return: `-0.24`
-- weakest_trade_count: `10`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
 - segment_start: `n/a`
 - segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
@@ -62,16 +45,16 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3 / wf-2
+## evo-39f616d7578a / wf-3
 
-- claimed_regime_id: `fear_shock_high_alert`
-- candidate_market_regime: `high_vol`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.0`
-- weakest_avg_return: `-1.04`
-- weakest_trade_count: `1`
-- segment_start: `2025-11-15T16:00`
-- segment_end: `2026-01-30T07:45`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
+- segment_start: `n/a`
+- segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
 - strongest_overlap_regime_id: `n/a`
 - strongest_overlap_validation_status: `n/a`
@@ -79,16 +62,16 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## baseline / wf-1
+## evo-0b50e57fc788 / wf-3
 
-- claimed_regime_id: `n/a`
-- candidate_market_regime: `n/a`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.0`
-- weakest_avg_return: `0.0`
-- weakest_trade_count: `0`
-- segment_start: `2025-09-01T00:00`
-- segment_end: `2025-11-15T15:45`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
+- segment_start: `n/a`
+- segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
 - strongest_overlap_regime_id: `n/a`
 - strongest_overlap_validation_status: `n/a`
@@ -96,16 +79,16 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3 / wf-1
+## evo-c2a6f9889332 / wf-3
 
-- claimed_regime_id: `None`
-- candidate_market_regime: `None`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.0`
-- weakest_avg_return: `0.0`
-- weakest_trade_count: `0`
-- segment_start: `2025-09-01T00:00`
-- segment_end: `2025-11-15T15:45`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
+- segment_start: `n/a`
+- segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
 - strongest_overlap_regime_id: `n/a`
 - strongest_overlap_validation_status: `n/a`
@@ -113,16 +96,16 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter / wf-1
+## evo-631b6131cc0e / wf-3
 
-- claimed_regime_id: `fear_shock_high_alert`
-- candidate_market_regime: `high_vol`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.0`
-- weakest_avg_return: `0.0`
-- weakest_trade_count: `0`
-- segment_start: `2025-09-01T00:00`
-- segment_end: `2025-11-15T15:45`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
+- segment_start: `n/a`
+- segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
 - strongest_overlap_regime_id: `n/a`
 - strongest_overlap_validation_status: `n/a`
@@ -130,16 +113,33 @@ This page checks whether each top benchmark row is failing inside its claimed ma
 - diagnosis: `no_overlap_evidence`
 - recommended_action: design a dedicated timeline pack before mutating this failure further.
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e / wf-1
+## evo-03404ed9a2fd / wf-3
 
-- claimed_regime_id: `fear_shock_high_alert`
-- candidate_market_regime: `high_vol`
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
 - validated_regime_support: `False`
-- weakest_profitability_score: `0.0`
-- weakest_avg_return: `0.0`
-- weakest_trade_count: `0`
-- segment_start: `2025-09-01T00:00`
-- segment_end: `2025-11-15T15:45`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
+- segment_start: `n/a`
+- segment_end: `n/a`
+- strongest_overlap_pack_id: `n/a`
+- strongest_overlap_regime_id: `n/a`
+- strongest_overlap_validation_status: `n/a`
+- strongest_overlap_ratio: `n/a`
+- diagnosis: `no_overlap_evidence`
+- recommended_action: design a dedicated timeline pack before mutating this failure further.
+
+## evo-db8c569c5718 / wf-3
+
+- claimed_regime_id: `range_chop_mean_reversion`
+- candidate_market_regime: `range`
+- validated_regime_support: `False`
+- weakest_profitability_score: `0.5954`
+- weakest_avg_return: `0.1908`
+- weakest_trade_count: `13`
+- segment_start: `n/a`
+- segment_end: `n/a`
 - strongest_overlap_pack_id: `n/a`
 - strongest_overlap_regime_id: `n/a`
 - strongest_overlap_validation_status: `n/a`

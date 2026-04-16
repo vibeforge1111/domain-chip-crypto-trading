@@ -282,8 +282,8 @@
     "counterfactual": "Without this mutation, the loop stays trapped in seeded generic doctrine combinations and never pressure-tests richer trader teachings.",
     "doctrine_family": "breakout_volatility_expansion",
     "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
-    "family_tested_child_count": 10,
-    "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
       "baseline",
@@ -549,105 +549,9 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
   },
   {
-    "benchmark_metrics": {
-      "max_drawdown": 0.99,
-      "paper_trade_readiness": 0.0,
-      "profitability_score": 0.0,
-      "sharpe_ratio": 0.0,
-      "verdict_confidence": 0.501,
-      "win_rate": 0.0
-    },
+    "benchmark_metrics": {},
     "benchmark_priority": "medium",
-    "benchmark_result": {
-      "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
-      "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
-      "contract_count": 21792,
-      "covered_contract_count": 21791,
-      "data_fallback_reason": "",
-      "data_mode": "contract_window_backtest",
-      "evaluated_asset": "BTC",
-      "evaluated_timeframe": "15m",
-      "evidence_lane": "backtest_benchmark",
-      "holdout_profitability_score": 0.0,
-      "mechanism": "Backtested on 1 active BTC 15m contract decisions across 21791 covered windows.",
-      "minimum_trade_count": 25,
-      "recommended_next_step": "run_contradiction_probe",
-      "regime_stats": {
-        "trend": {
-          "avg_return": -1.04,
-          "trade_count": 1,
-          "win_rate": 0.0
-        }
-      },
-      "regime_validation": {
-        "dataset_ready_count": 0,
-        "market_regime": "trend",
-        "mismatch_review_count": 0,
-        "mixed_proxy_count": 0,
-        "regime_id": "trend_continuation_greed",
-        "validated_match_count": 0,
-        "validated_regime_support": false
-      },
-      "requested_asset_universe": "BTC",
-      "requested_timeframe": "15m",
-      "stress_resilience": 0.0,
-      "stress_stats": {
-        "base": {
-          "avg_return": -1.04,
-          "profitability_score": 0.0,
-          "trade_count": 1,
-          "trade_count_gate_pass": false
-        },
-        "elevated_fees": {
-          "avg_return": -1.08,
-          "profitability_score": 0.0,
-          "trade_count": 1,
-          "trade_count_gate_pass": false
-        },
-        "fee_and_slippage": {
-          "avg_return": -1.12,
-          "profitability_score": 0.0,
-          "trade_count": 1,
-          "trade_count_gate_pass": false
-        }
-      },
-      "trade_count": 1,
-      "trade_count_gate_pass": false,
-      "verdict": "reject",
-      "walk_forward_consistency": 0.0,
-      "walk_forward_stats": [
-        {
-          "avg_return": 0.0,
-          "end_contract_id": "kxbtc15m-20251115-1545",
-          "profitability_score": 0.0,
-          "segment_id": "wf-1",
-          "start_contract_id": "kxbtc15m-20250901-0000",
-          "trade_count": 0,
-          "trade_count_gate_pass": false,
-          "win_rate": 0.0
-        },
-        {
-          "avg_return": 0.0,
-          "end_contract_id": "kxbtc15m-20260130-0745",
-          "profitability_score": 0.0,
-          "segment_id": "wf-2",
-          "start_contract_id": "kxbtc15m-20251115-1600",
-          "trade_count": 0,
-          "trade_count_gate_pass": false,
-          "win_rate": 0.0
-        },
-        {
-          "avg_return": -1.04,
-          "end_contract_id": "kxbtc15m-20260415-2345",
-          "profitability_score": 0.0,
-          "segment_id": "wf-3",
-          "start_contract_id": "kxbtc15m-20260130-0800",
-          "trade_count": 1,
-          "trade_count_gate_pass": false,
-          "win_rate": 0.0
-        }
-      ]
-    },
+    "benchmark_result": {},
     "card_id": "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--110b4bcd-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "breakout_volatility_expansion",
@@ -689,7 +593,7 @@
       "Recursive Flywheel",
       "John Bollinger"
     ],
-    "status": "benchmarked_run_contradiction_probe",
+    "status": "research_seeded_backtest_required",
     "strategy_family": "breakout_expansion_confirmation",
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
@@ -5986,6 +5890,61 @@
   },
   {
     "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-a6726e41-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"bollinger_squeeze_breakout\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "bollinger_squeeze_breakout",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with bollinger_squeeze_breakout strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
     "benchmark_priority": "high",
     "benchmark_result": {},
     "card_id": "dc-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_s-fdf15e8e-holdout_decay",
@@ -9299,6 +9258,61 @@
     "benchmark_metrics": {},
     "benchmark_priority": "medium",
     "benchmark_result": {},
+    "card_id": "dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-72cb9768-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "trend_regime_following",
+    "duplicate_of_proposal_id": "auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-088f621a05-segment_instability",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"trend_regime_following\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"ema_pullback_long\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "trend_regime_following",
+      "market_regime": "trend",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "ema_pullback_long",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "ed-seykota-principles-of-great-traders"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Ed Seykota"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "ema_trend_continuation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_trend_continuation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
     "card_id": "dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-81f1bf20-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "trend_regime_following",
@@ -9403,6 +9417,61 @@
     "title": "Auto-generated: sparse_signal fix for auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_trend_continuation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_d-7747cf35-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "trend_regime_following",
+    "duplicate_of_proposal_id": "auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-088f621a05-segment_instability",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"trend_regime_following\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"ema_pullback_long\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "trend_regime_following",
+      "market_regime": "trend",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "ema_pullback_long",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The trend_regime_following doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "ed-seykota-principles-of-great-traders"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Ed Seykota"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "ema_trend_continuation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_trend_continuation\"}"
   },
   {
@@ -18097,6 +18166,931 @@
   },
   {
     "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-02bbf9ddefb6-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"contrarian_overextension_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "contrarian_overextension_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-02bbf9ddefb6-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for evo-02bbf9ddefb6",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-0f0be032a2d5-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"climax_reversal\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "climax_reversal",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-0f0be032a2d5-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for evo-0f0be032a2d5",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-23422729ffe6-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "event_momentum",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"event_momentum\", \"market_regime\": \"event_driven\", \"paper_gate\": \"balanced\", \"strategy_id\": \"channel_breakout_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "event_momentum",
+      "market_regime": "event_driven",
+      "paper_gate": "balanced",
+      "strategy_id": "channel_breakout_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-23422729ffe6-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "channel_breakout_fade",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-23422729ffe6",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"event_momentum\", \"regime\": \"event_driven\", \"strategy\": \"channel_breakout_fade\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-2c7f7e468e9b-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "event_momentum",
+    "duplicate_of_proposal_id": "auto-evo-23422729ffe6-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"event_momentum\", \"market_regime\": \"event_driven\", \"paper_gate\": \"balanced\", \"strategy_id\": \"channel_breakout_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "event_momentum",
+      "market_regime": "event_driven",
+      "paper_gate": "balanced",
+      "strategy_id": "channel_breakout_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-2c7f7e468e9b-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "channel_breakout_fade",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-2c7f7e468e9b",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"event_momentum\", \"regime\": \"event_driven\", \"strategy\": \"channel_breakout_fade\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-4680319e88c6-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "intermarket_regime_confirmation",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"intermarket_regime_confirmation\", \"market_regime\": \"event_driven\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"intermarket_context_gate\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "intermarket_regime_confirmation",
+      "market_regime": "event_driven",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "intermarket_context_gate",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-4680319e88c6-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The intermarket_regime_confirmation doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "intermarket_context_gate",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for evo-4680319e88c6",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"intermarket_regime_confirmation\", \"regime\": \"event_driven\", \"strategy\": \"intermarket_context_gate\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-4c38dbff5283-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"strategy_id\": \"event_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "strategy_id": "event_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-4c38dbff5283-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine with event_fade strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-4c38dbff5283",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-7633e503c1b0-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"range_extreme_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "range_extreme_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-7633e503c1b0-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for evo-7633e503c1b0",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-7b515aab8fbd-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "wedge_guarded",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"wedge_guarded\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"volume_exhaustion_reversal\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "wedge_guarded",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "volume_exhaustion_reversal",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-7b515aab8fbd-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The wedge_guarded doctrine with volume_exhaustion_reversal strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "volume_exhaustion_reversal",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-7b515aab8fbd",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"wedge_guarded\", \"regime\": \"None\", \"strategy\": \"volume_exhaustion_reversal\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-8710260504a1-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "extreme_reversion",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"extreme_reversion\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"intermarket_context_gate\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "extreme_reversion",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "intermarket_context_gate",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-8710260504a1-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The extreme_reversion doctrine with intermarket_context_gate strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "intermarket_context_gate",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-8710260504a1",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"extreme_reversion\", \"regime\": \"None\", \"strategy\": \"intermarket_context_gate\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-9204d5ebe91a-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "duplicate_of_proposal_id": "auto-evo-02bbf9ddefb6-segment_instability",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"contrarian_overextension_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "contrarian_overextension_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-9204d5ebe91a-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for evo-9204d5ebe91a",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-a3766d74ba07-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "event_momentum",
+    "duplicate_of_proposal_id": "auto-evo-23422729ffe6-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"event_momentum\", \"market_regime\": \"event_driven\", \"paper_gate\": \"balanced\", \"strategy_id\": \"channel_breakout_fade\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "event_momentum",
+      "market_regime": "event_driven",
+      "paper_gate": "balanced",
+      "strategy_id": "channel_breakout_fade",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-a3766d74ba07-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The event_momentum doctrine with channel_breakout_fade strategy produces too few trades in event_driven regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "channel_breakout_fade",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-a3766d74ba07",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"event_momentum\", \"regime\": \"event_driven\", \"strategy\": \"channel_breakout_fade\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-a4b9dff257b0-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "wedge_guarded",
+    "duplicate_of_proposal_id": "auto-evo-7b515aab8fbd-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"wedge_guarded\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"volume_exhaustion_reversal\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "wedge_guarded",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "volume_exhaustion_reversal",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-a4b9dff257b0-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The wedge_guarded doctrine with volume_exhaustion_reversal strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "volume_exhaustion_reversal",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-a4b9dff257b0",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"wedge_guarded\", \"regime\": \"None\", \"strategy\": \"volume_exhaustion_reversal\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-a86ccc4f88a9-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "wedge_guarded",
+    "duplicate_of_proposal_id": "auto-evo-7b515aab8fbd-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"wedge_guarded\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"volume_exhaustion_reversal\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "wedge_guarded",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "volume_exhaustion_reversal",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-a86ccc4f88a9-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The wedge_guarded doctrine with volume_exhaustion_reversal strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "volume_exhaustion_reversal",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-a86ccc4f88a9",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"wedge_guarded\", \"regime\": \"None\", \"strategy\": \"volume_exhaustion_reversal\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-bcb710af5b17-segment_instability",
+    "counterfactual": "Without addressing segment_instability, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "duplicate_of_proposal_id": "auto-evo-0f0be032a2d5-segment_instability",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\", \"strategy_id\": \"climax_reversal\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the segment_instability metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "session_profile": "squeeze_release_window",
+      "strategy_id": "climax_reversal",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-bcb710af5b17-segment_instability",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine shows inconsistent walk-forward performance. Some segments are profitable while others collapse. Regime-conditional entry thresholds should improve consistency.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Segment instability means the edge is regime-dependent but the entry logic is regime-blind. Add regime detection or session filters.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: segment_instability fix for evo-bcb710af5b17",
+    "variety_child_id": "{\"paper_gate\": \"balanced\", \"session_profile\": \"squeeze_release_window\"}",
+    "variety_child_label": "paper_gate=balanced, session_profile=squeeze_release_window",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-c12d7d9ea947-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"strategy_id\": \"keltner_mean_reversion\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "strategy_id": "keltner_mean_reversion",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-c12d7d9ea947-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine with keltner_mean_reversion strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-c12d7d9ea947",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-ec1fefe30b2a-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "mean_reversion_liquidity_reclaim",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"mean_reversion_liquidity_reclaim\", \"market_regime\": \"range\", \"paper_gate\": \"balanced\", \"strategy_id\": \"wick_reversal\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "mean_reversion_liquidity_reclaim",
+      "market_regime": "range",
+      "paper_gate": "balanced",
+      "strategy_id": "wick_reversal",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-ec1fefe30b2a-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The mean_reversion_liquidity_reclaim doctrine with wick_reversal strategy produces too few trades in range regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "wyckoff-springs-upthrusts"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Wyckoff Analytics"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "range_reclaim_rotation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-ec1fefe30b2a",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-evo-f4531b3f21d4-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "extreme_reversion",
+    "duplicate_of_proposal_id": "auto-evo-8710260504a1-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"extreme_reversion\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"intermarket_context_gate\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "extreme_reversion",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "intermarket_context_gate",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-evo-f4531b3f21d4-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The extreme_reversion doctrine with intermarket_context_gate strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "intermarket_context_gate",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for evo-f4531b3f21d4",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"extreme_reversion\", \"regime\": \"None\", \"strategy\": \"intermarket_context_gate\"}"
+  },
+  {
+    "benchmark_metrics": {},
     "benchmark_priority": "high",
     "benchmark_result": {},
     "card_id": "dc-auto-mut-ablate-auto-breakout-impulse-squeeze-compressio-115ff0-holdout_decay",
@@ -19208,15 +20202,105 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
   },
   {
-    "benchmark_metrics": {},
+    "benchmark_metrics": {
+      "max_drawdown": 0.0,
+      "paper_trade_readiness": 0.17,
+      "profitability_score": 0.0,
+      "sharpe_ratio": 0.0,
+      "verdict_confidence": 0.6,
+      "win_rate": 0.0
+    },
     "benchmark_priority": "medium",
-    "benchmark_result": {},
+    "benchmark_result": {
+      "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
+      "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
+      "contract_count": 21792,
+      "covered_contract_count": 21791,
+      "data_fallback_reason": "",
+      "data_mode": "contract_window_backtest",
+      "evaluated_asset": "BTC",
+      "evaluated_timeframe": "15m",
+      "evidence_lane": "backtest_benchmark",
+      "holdout_profitability_score": 0.0,
+      "mechanism": "Backtested on 0 active BTC 15m contract decisions across 21791 covered windows.",
+      "minimum_trade_count": 435,
+      "recommended_next_step": "run_contradiction_probe",
+      "regime_stats": {},
+      "regime_validation": {
+        "dataset_ready_count": 0,
+        "market_regime": "None",
+        "mismatch_review_count": 0,
+        "mixed_proxy_count": 0,
+        "regime_id": "None",
+        "validated_match_count": 0,
+        "validated_regime_support": false
+      },
+      "requested_asset_universe": "BTC",
+      "requested_timeframe": "15m",
+      "stress_resilience": 0.0,
+      "stress_stats": {
+        "base": {
+          "avg_return": 0.0,
+          "profitability_score": 0.0,
+          "trade_count": 0,
+          "trade_count_gate_pass": false
+        },
+        "elevated_fees": {
+          "avg_return": 0.0,
+          "profitability_score": 0.0,
+          "trade_count": 0,
+          "trade_count_gate_pass": false
+        },
+        "fee_and_slippage": {
+          "avg_return": 0.0,
+          "profitability_score": 0.0,
+          "trade_count": 0,
+          "trade_count_gate_pass": false
+        }
+      },
+      "trade_count": 0,
+      "trade_count_gate_pass": false,
+      "verdict": "reject",
+      "walk_forward_consistency": 0.0,
+      "walk_forward_stats": [
+        {
+          "avg_return": 0.0,
+          "end_contract_id": "kxbtc15m-20251115-1545",
+          "profitability_score": 0.0,
+          "segment_id": "wf-1",
+          "start_contract_id": "kxbtc15m-20250901-0000",
+          "trade_count": 0,
+          "trade_count_gate_pass": false,
+          "win_rate": 0.0
+        },
+        {
+          "avg_return": 0.0,
+          "end_contract_id": "kxbtc15m-20260130-0745",
+          "profitability_score": 0.0,
+          "segment_id": "wf-2",
+          "start_contract_id": "kxbtc15m-20251115-1600",
+          "trade_count": 0,
+          "trade_count_gate_pass": false,
+          "win_rate": 0.0
+        },
+        {
+          "avg_return": 0.0,
+          "end_contract_id": "kxbtc15m-20260415-2345",
+          "profitability_score": 0.0,
+          "segment_id": "wf-3",
+          "start_contract_id": "kxbtc15m-20260130-0800",
+          "trade_count": 0,
+          "trade_count_gate_pass": false,
+          "win_rate": 0.0
+        }
+      ]
+    },
     "card_id": "dc-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse-01c0ccfe-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19252,7 +20336,7 @@
       "Recursive Flywheel",
       "Recursive Flywheel"
     ],
-    "status": "research_seeded_backtest_required",
+    "status": "benchmarked_run_contradiction_probe",
     "strategy_family": "None",
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
@@ -19270,8 +20354,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19325,8 +20409,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19380,8 +20464,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19435,8 +20519,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19490,8 +20574,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19545,8 +20629,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19600,8 +20684,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19655,8 +20739,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19710,8 +20794,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19765,8 +20849,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19820,8 +20904,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19875,8 +20959,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19930,8 +21014,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -19985,8 +21069,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20040,8 +21124,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20095,8 +21179,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20150,8 +21234,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20205,8 +21289,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20260,8 +21344,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20315,8 +21399,8 @@
     "doctrine_family": "None",
     "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
-    "family_tested_child_count": 1,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-18a3cf4db3",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
