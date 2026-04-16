@@ -2,8 +2,8 @@
 
 This loop owns doctrine packet ingestion, doctrine card creation, and learning-surface refreshes.
 
-- material_change: `True`
-- added_count: `1`
+- material_change: `False`
+- added_count: `0`
 - card_count: `262`
 - pending_packet_count: `0`
 

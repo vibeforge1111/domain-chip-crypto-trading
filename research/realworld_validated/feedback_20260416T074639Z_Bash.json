@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "crypto-autoloop --help 2>&1 | head -10",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-16T07:46:39.368180+00:00",
+  "source": "claude_code_hook"
+}

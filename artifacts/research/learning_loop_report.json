@@ -18,8 +18,8 @@
     "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 3.567,
-  "finished_at": "2026-04-16T07:47:13.589700Z",
+  "duration_seconds": 3.155,
+  "finished_at": "2026-04-16T07:48:48.954852Z",
   "loop_kind": "learning",
   "material_change": false,
   "material_reasons": [],
@@ -34,5 +34,5 @@
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T07:47:10.022729Z"
+  "started_at": "2026-04-16T07:48:45.800235Z"
 }
