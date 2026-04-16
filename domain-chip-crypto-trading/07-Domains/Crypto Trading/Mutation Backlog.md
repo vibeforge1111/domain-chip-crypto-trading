@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `320`
+- proposal_count: `322`
 
 ## Trend continuation with pullback confirmation
 
