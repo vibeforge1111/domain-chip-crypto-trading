@@ -121,10 +121,10 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
 - wf-1: profitability=`0.3436` avg_return=`-0.3127` trades=`11`
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45
+## auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870
 
 - doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `breakout_open_interest_confirmation`
+- strategy_id: `bollinger_squeeze_breakout`
 - priority: `0.99`
 - holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
@@ -168,7 +168,7 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09
+## auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b
 
 - doctrine_id: `None`
 - strategy_id: `None`

@@ -12,7 +12,7 @@ This page mirrors the startup chip standard: one loop, one current state, one ne
 - backtest_loop_status: `active`
 - contradiction_probe_status: `active`
 - paper_trade_loop_status: `active`
-- paper_trade_queue_status: `empty`
+- paper_trade_queue_status: `non_empty`
 
 ## What Should Happen Next
 

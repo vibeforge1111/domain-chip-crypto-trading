@@ -283,7 +283,7 @@
     "doctrine_family": "breakout_volatility_expansion",
     "effective_mutation_fingerprint": "{\"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"strict\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard-39e83a4870",
     "ghost_improvement_check": "Do not accept higher profitability_score alone. Require holdout robustness, drawdown containment, and promotion readiness under the heavy-backtest policy.",
     "lineage_failures": [
       "baseline",
@@ -330,9 +330,105 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"bollinger_squeeze_breakout\"}"
   },
   {
-    "benchmark_metrics": {},
+    "benchmark_metrics": {
+      "max_drawdown": 0.7143,
+      "paper_trade_readiness": 0.5993,
+      "profitability_score": 0.58,
+      "sharpe_ratio": 0.8165,
+      "verdict_confidence": 0.7636,
+      "win_rate": 0.6
+    },
     "benchmark_priority": "medium",
-    "benchmark_result": {},
+    "benchmark_result": {
+      "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
+      "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
+      "contract_count": 21792,
+      "covered_contract_count": 21791,
+      "data_fallback_reason": "",
+      "data_mode": "contract_window_backtest",
+      "evaluated_asset": "BTC",
+      "evaluated_timeframe": "15m",
+      "evidence_lane": "backtest_benchmark",
+      "holdout_profitability_score": 0.6467,
+      "mechanism": "Backtested on 25 active BTC 15m contract decisions across 21791 covered windows.",
+      "minimum_trade_count": 25,
+      "recommended_next_step": "hold_for_more_backtest_evidence",
+      "regime_stats": {
+        "high_vol": {
+          "avg_return": 0.16,
+          "trade_count": 25,
+          "win_rate": 0.6
+        }
+      },
+      "regime_validation": {
+        "dataset_ready_count": 0,
+        "market_regime": "high_vol",
+        "mismatch_review_count": 0,
+        "mixed_proxy_count": 0,
+        "regime_id": "compression_pre_breakout",
+        "validated_match_count": 0,
+        "validated_regime_support": false
+      },
+      "requested_asset_universe": "BTC",
+      "requested_timeframe": "15m",
+      "stress_resilience": 1.0,
+      "stress_stats": {
+        "base": {
+          "avg_return": 0.16,
+          "profitability_score": 0.58,
+          "trade_count": 25,
+          "trade_count_gate_pass": true
+        },
+        "elevated_fees": {
+          "avg_return": 0.12,
+          "profitability_score": 0.56,
+          "trade_count": 25,
+          "trade_count_gate_pass": true
+        },
+        "fee_and_slippage": {
+          "avg_return": 0.08,
+          "profitability_score": 0.54,
+          "trade_count": 25,
+          "trade_count_gate_pass": true
+        }
+      },
+      "trade_count": 25,
+      "trade_count_gate_pass": true,
+      "verdict": "defer",
+      "walk_forward_consistency": 1.0,
+      "walk_forward_stats": [
+        {
+          "avg_return": 0.46,
+          "end_contract_id": "kxbtc15m-20251115-1545",
+          "profitability_score": 0.73,
+          "segment_id": "wf-1",
+          "start_contract_id": "kxbtc15m-20250901-0000",
+          "trade_count": 4,
+          "trade_count_gate_pass": true,
+          "win_rate": 0.75
+        },
+        {
+          "avg_return": 0.46,
+          "end_contract_id": "kxbtc15m-20260130-0745",
+          "profitability_score": 0.73,
+          "segment_id": "wf-2",
+          "start_contract_id": "kxbtc15m-20251115-1600",
+          "trade_count": 4,
+          "trade_count_gate_pass": true,
+          "win_rate": 0.75
+        },
+        {
+          "avg_return": 0.0188,
+          "end_contract_id": "kxbtc15m-20260415-2345",
+          "profitability_score": 0.5094,
+          "segment_id": "wf-3",
+          "start_contract_id": "kxbtc15m-20260130-0800",
+          "trade_count": 17,
+          "trade_count_gate_pass": true,
+          "win_rate": 0.5294
+        }
+      ]
+    },
     "card_id": "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--043ff10e-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "breakout_volatility_expansion",
@@ -374,7 +470,7 @@
       "Recursive Flywheel",
       "John Bollinger"
     ],
-    "status": "research_seeded_backtest_required",
+    "status": "benchmarked_hold_for_more_backtest_evidence",
     "strategy_family": "breakout_expansion_confirmation",
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
@@ -9311,6 +9407,62 @@
   },
   {
     "benchmark_metrics": {},
+    "benchmark_priority": "high",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-7ef90f0e-holdout_decay",
+    "counterfactual": "Without addressing holdout_decay, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "trend_regime_following",
+    "duplicate_of_proposal_id": "auto-auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f-holdout_decay",
+    "effective_mutation_fingerprint": "{\"doctrine_id\": \"trend_regime_following\", \"late_sample_guard\": \"on\", \"market_regime\": \"trend\", \"paper_gate\": \"balanced\", \"strategy_id\": \"ema_pullback_long\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the holdout_decay metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "asset_universe": "BTC",
+      "doctrine_id": "trend_regime_following",
+      "late_sample_guard": "on",
+      "market_regime": "trend",
+      "paper_gate": "balanced",
+      "strategy_id": "ema_pullback_long",
+      "timeframe": "15m",
+      "venue": "kalshi",
+      "volume_context_guard": "thin_filter"
+    },
+    "proposal_id": "auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-pro-crossover-holdout_decay",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The trend_regime_following doctrine loses edge in the most recent data segment. Late-sample guards or regime-adaptive thresholds should stabilize holdout performance for ema_pullback_long.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Holdout decay signals regime drift. The fix is not curve-fitting the latest segment but adding guards that skip unstable conditions.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "ed-seykota-principles-of-great-traders"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Ed Seykota"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "ema_trend_continuation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: holdout_decay fix for auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-volume_context_guard=strict_participation-pro-crossover",
+    "variety_child_id": "{\"late_sample_guard\": \"on\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "late_sample_guard=on, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"trend_regime_following\", \"regime\": \"trend\", \"strategy\": \"ema_trend_continuation\"}"
+  },
+  {
+    "benchmark_metrics": {},
     "benchmark_priority": "medium",
     "benchmark_result": {},
     "card_id": "dc-auto-auto-trend-volume-filtered-no_trade_window=avoid_dead_zone-v-81f1bf20-sparse_signal",
@@ -11780,6 +11932,61 @@
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
     "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-session-stability-filter-variety-executio-d082858612",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-btc-15m-volatility-compression-breakout-psychology_no_chase--31c77b17-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "breakout_volatility_expansion",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-bre-638dc4d18d-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"breakout_volatility_expansion\", \"market_regime\": \"high_vol\", \"paper_gate\": \"balanced\", \"strategy_id\": \"breakout_open_interest_confirmation\"}",
+    "family_tested_child_count": 0,
+    "family_top_candidate_id": "",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "breakout_volatility_expansion",
+      "market_regime": "high_vol",
+      "paper_gate": "balanced",
+      "strategy_id": "breakout_open_interest_confirmation",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-var-37174bae7e-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "john-bollinger-bands"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "John Bollinger"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "breakout_expansion_confirmation",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for btc-15m-volatility-compression-breakout-psychology_no_chase-variety-late-sample-guard-plus-session-filter-var-37174bae7e",
     "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
     "variety_child_label": "activation_profile=wider, paper_gate=balanced",
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"breakout_volatility_expansion\", \"regime\": \"high_vol\", \"strategy\": \"breakout_expansion_confirmation\"}"
@@ -20202,105 +20409,70 @@
     "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"mean_reversion_liquidity_reclaim\", \"regime\": \"range\", \"strategy\": \"range_reclaim_rotation\"}"
   },
   {
-    "benchmark_metrics": {
-      "max_drawdown": 0.0,
-      "paper_trade_readiness": 0.17,
-      "profitability_score": 0.0,
-      "sharpe_ratio": 0.0,
-      "verdict_confidence": 0.6,
-      "win_rate": 0.0
-    },
+    "benchmark_metrics": {},
     "benchmark_priority": "medium",
-    "benchmark_result": {
-      "boundary": "Insufficient heavy-backtest breadth or unstable returns still block promotion.",
-      "claim": "Backtest profitability must be judged with drawdown, regime fit, and paper-trade readiness.",
-      "contract_count": 21792,
-      "covered_contract_count": 21791,
-      "data_fallback_reason": "",
-      "data_mode": "contract_window_backtest",
-      "evaluated_asset": "BTC",
-      "evaluated_timeframe": "15m",
-      "evidence_lane": "backtest_benchmark",
-      "holdout_profitability_score": 0.0,
-      "mechanism": "Backtested on 0 active BTC 15m contract decisions across 21791 covered windows.",
-      "minimum_trade_count": 435,
-      "recommended_next_step": "run_contradiction_probe",
-      "regime_stats": {},
-      "regime_validation": {
-        "dataset_ready_count": 0,
-        "market_regime": "None",
-        "mismatch_review_count": 0,
-        "mixed_proxy_count": 0,
-        "regime_id": "None",
-        "validated_match_count": 0,
-        "validated_regime_support": false
-      },
-      "requested_asset_universe": "BTC",
-      "requested_timeframe": "15m",
-      "stress_resilience": 0.0,
-      "stress_stats": {
-        "base": {
-          "avg_return": 0.0,
-          "profitability_score": 0.0,
-          "trade_count": 0,
-          "trade_count_gate_pass": false
-        },
-        "elevated_fees": {
-          "avg_return": 0.0,
-          "profitability_score": 0.0,
-          "trade_count": 0,
-          "trade_count_gate_pass": false
-        },
-        "fee_and_slippage": {
-          "avg_return": 0.0,
-          "profitability_score": 0.0,
-          "trade_count": 0,
-          "trade_count_gate_pass": false
-        }
-      },
-      "trade_count": 0,
-      "trade_count_gate_pass": false,
-      "verdict": "reject",
-      "walk_forward_consistency": 0.0,
-      "walk_forward_stats": [
-        {
-          "avg_return": 0.0,
-          "end_contract_id": "kxbtc15m-20251115-1545",
-          "profitability_score": 0.0,
-          "segment_id": "wf-1",
-          "start_contract_id": "kxbtc15m-20250901-0000",
-          "trade_count": 0,
-          "trade_count_gate_pass": false,
-          "win_rate": 0.0
-        },
-        {
-          "avg_return": 0.0,
-          "end_contract_id": "kxbtc15m-20260130-0745",
-          "profitability_score": 0.0,
-          "segment_id": "wf-2",
-          "start_contract_id": "kxbtc15m-20251115-1600",
-          "trade_count": 0,
-          "trade_count_gate_pass": false,
-          "win_rate": 0.0
-        },
-        {
-          "avg_return": 0.0,
-          "end_contract_id": "kxbtc15m-20260415-2345",
-          "profitability_score": 0.0,
-          "segment_id": "wf-3",
-          "start_contract_id": "kxbtc15m-20260130-0800",
-          "trade_count": 0,
-          "trade_count_gate_pass": false,
-          "win_rate": 0.0
-        }
-      ]
-    },
-    "card_id": "dc-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse-01c0ccfe-sparse_signal",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-s-052a4973-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "None",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "None",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The None doctrine with None strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "research_seeded_backtest_required",
+    "strategy_family": "None",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"None\", \"regime\": \"None\", \"strategy\": \"None\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
+    "card_id": "dc-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse-01c0ccfe-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "None",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20336,7 +20508,7 @@
       "Recursive Flywheel",
       "Recursive Flywheel"
     ],
-    "status": "benchmarked_run_contradiction_probe",
+    "status": "duplicate_effective_mutation",
     "strategy_family": "None",
     "surprise_score": 0.69,
     "target_contract_family": "btc_up_down_15m",
@@ -20352,10 +20524,10 @@
     "card_id": "dc-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sign-efd55272-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20407,10 +20579,10 @@
     "card_id": "dc-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-63d7cc59-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20462,10 +20634,10 @@
     "card_id": "dc-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-816400bb-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20517,10 +20689,10 @@
     "card_id": "dc-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sp-899c1e58-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20569,13 +20741,68 @@
     "benchmark_metrics": {},
     "benchmark_priority": "medium",
     "benchmark_result": {},
+    "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-0d291ed8-sparse_signal",
+    "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
+    "doctrine_family": "None",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
+    "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
+    "family_tested_child_count": 2,
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
+    "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
+    "lineage_failures": [
+      "baseline",
+      "bollinger-highvol-hyperliquid-1h",
+      "None"
+    ],
+    "lineage_ready": true,
+    "mutations": {
+      "activation_profile": "wider",
+      "asset_universe": "BTC",
+      "doctrine_id": "None",
+      "market_regime": "None",
+      "paper_gate": "balanced",
+      "strategy_id": "None",
+      "timeframe": "15m",
+      "venue": "kalshi"
+    },
+    "proposal_id": "auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09-sparse_signal",
+    "required_backtest": {
+      "holdout_policy": "final_20_percent",
+      "min_contract_windows": 500,
+      "mode": "heavy_backtest",
+      "walk_forward_splits": 6
+    },
+    "research_thesis": "The None doctrine with None strategy produces too few trades in None regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.",
+    "rollback_condition": "Rollback if profitability drops below parent or if the fix introduces a new failure mode.",
+    "root_lesson": "Sparse signal means the entry logic is too restrictive or misaligned with the regime. Wider activation must be paired with quality filters to avoid diluting the edge.",
+    "source_ids": [
+      "autoloop_contradiction_probe",
+      "autoloop_contradiction_probe"
+    ],
+    "source_names": [
+      "Recursive Flywheel",
+      "Recursive Flywheel"
+    ],
+    "status": "duplicate_effective_mutation",
+    "strategy_family": "None",
+    "surprise_score": 0.69,
+    "target_contract_family": "btc_up_down_15m",
+    "title": "Auto-generated: sparse_signal fix for auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "variety_child_id": "{\"activation_profile\": \"wider\", \"paper_gate\": \"balanced\"}",
+    "variety_child_label": "activation_profile=wider, paper_gate=balanced",
+    "variety_family_id": "{\"contract\": \"btc_up_down_15m\", \"doctrine\": \"None\", \"regime\": \"None\", \"strategy\": \"None\"}"
+  },
+  {
+    "benchmark_metrics": {},
+    "benchmark_priority": "medium",
+    "benchmark_result": {},
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-2f8dd026-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20627,10 +20854,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-4886bd61-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20682,10 +20909,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-5218cbfe-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20737,10 +20964,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-745c5df8-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20792,10 +21019,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-8e544720-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20847,10 +21074,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-8fa92866-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20902,10 +21129,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-98936770-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -20957,10 +21184,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-a7de311d-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21012,10 +21239,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-c777a64e-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21067,10 +21294,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-cfbf8512-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21122,10 +21349,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-d7bd460d-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21177,10 +21404,10 @@
     "card_id": "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-e482f418-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21232,10 +21459,10 @@
     "card_id": "dc-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21287,10 +21514,10 @@
     "card_id": "dc-auto-auto-baseline-sparse_signal-probe-sparse_signal-variety-late-4943fd47-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21342,10 +21569,10 @@
     "card_id": "dc-auto-auto-baseline-sparse_signal-probe-sparse_signal-variety-late-8ab46614-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
@@ -21397,10 +21624,10 @@
     "card_id": "dc-auto-baseline-sparse_signal",
     "counterfactual": "Without addressing sparse_signal, this candidate family will remain stuck at the current benchmark quality.",
     "doctrine_family": "None",
-    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal",
+    "duplicate_of_proposal_id": "auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-samp-c05f1ad400-sparse_signal-sparse_signal-sparse_signal-sparse_signal",
     "effective_mutation_fingerprint": "{\"activation_profile\": \"wider\", \"doctrine_id\": \"None\", \"market_regime\": \"None\", \"paper_gate\": \"balanced\", \"strategy_id\": \"None\"}",
     "family_tested_child_count": 2,
-    "family_top_candidate_id": "auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-9c618f2d09",
+    "family_top_candidate_id": "auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-va-eaf0968a8b",
     "ghost_improvement_check": "Reject if the mutation does not materially improve the sparse_signal metric while maintaining profitability.",
     "lineage_failures": [
       "baseline",
