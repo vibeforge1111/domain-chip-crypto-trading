@@ -7,10 +7,10 @@ This queue holds bounded benchmark-driven self-edits.
 - deferred_count: `0`
 - rejected_count: `0`
 
-## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-sparse_signal
+## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-5ab89f2c52-sparse_signal
 
-- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45`
-- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-probe-sparse_signal`
+- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-5ab89f2c52`
+- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-5ab89f2c52-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -31,10 +31,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-e2b0edf047-sparse_signal
+## self-edit-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f-sparse_signal
 
-- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-e2b0edf047`
-- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-e2b0edf047-probe-sparse_signal`
+- parent_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f`
+- child_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-session_profile=squeeze_-d9bf53dd3f-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -43,10 +43,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter-sparse_signal
+## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-8cb2a13b86-sparse_signal
 
-- parent_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter`
-- child_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter-probe-sparse_signal`
+- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-8cb2a13b86`
+- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-8cb2a13b86-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -55,10 +55,10 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7-sparse_signal
+## self-edit-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700-sparse_signal
 
-- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7`
-- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psy-dc69343ca7-probe-sparse_signal`
+- parent_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700`
+- child_candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-regime-shift-no-trade-filter-psychol-697743a700-probe-sparse_signal`
 - priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
@@ -67,11 +67,11 @@ This queue holds bounded benchmark-driven self-edits.
 - child_holdout_profitability_score: `n/a`
 - child_trade_count: `n/a`
 
-## self-edit-auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0-sparse_signal
+## self-edit-btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal
 
-- parent_candidate_id: `auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0`
-- child_candidate_id: `auto-wedge-guarded-drawdown_guard=high-reversal_confirmation=reclaim_close-volume_context_guard=thin_filter-w-1fccb6d1f0-probe-sparse_signal`
-- priority: `0.8854`
+- parent_candidate_id: `btc-15m-momentum-breakout-structure-psychology_no_chase`
+- child_candidate_id: `btc-15m-momentum-breakout-structure-psychology_no_chase-probe-sparse_signal`
+- priority: `0.99`
 - allowed_edits: `activation_profile.wider, late_sample_guard.on, execution_buffer.high`
 - decision: `n/a`
 - target_improved: `n/a`
