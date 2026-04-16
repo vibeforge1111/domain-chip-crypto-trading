@@ -13,7 +13,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - tested_child_count: `0`
 - benchmarked_candidate_count: `0`
 - pending_proposal_count: `5`
-- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psycholog-3747b0671a-sparse_signal, auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b-segment_instability`
+- pending_proposal_ids: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-de03826d09-sparse_signal, auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compression-breakout-psyc-6cd5a6abdb-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-sparse_signal, auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_window-holdout_decay, auto-auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-session_profile=squeeze_release_window-probe--821460728b-segment_instability`
 - pending_child_labels: `activation_profile=wider, paper_gate=balanced | late_sample_guard=on, paper_gate=balanced | paper_gate=balanced, session_profile=squeeze_release_window`
 - suggested_child_target_count: `0`
 - suggested_child_targets: `n/a`
@@ -69,7 +69,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - suggested_child_target_count: `4`
 - suggested_child_targets: `late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter | no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window | execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=strict | activation_profile=adaptive, paper_gate=strict`
 - contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-probe-sparse_signal`
+- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal`
 - top_profitability_score: `0.0`
 - top_recommended_next_step: `run_contradiction_probe`
 
