@@ -11,7 +11,7 @@ This page is the shortest honest read on the current crypto trading system.
 
 ## What Is Real Now
 
-- active benchmark candidate count: `9`
+- active benchmark candidate count: `0`
 - current top benchmark candidate: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
 - validated regime families: `n/a` / `n/a`
 - classified event candidates: `n/a` / `n/a`

@@ -1,10 +1,7 @@
 {
   "after": {
-    "added_cards": [
-      "dc-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compressio-a996d5a3-sparse_signal.json",
-      "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-8fa92866-sparse_signal.json"
-    ],
-    "added_count": 2,
+    "added_cards": [],
+    "added_count": 0,
     "approved_waiting_packet_count": 0,
     "card_count": 362,
     "eligible_missing_card_count": 0,
@@ -16,20 +13,16 @@
   },
   "before": {
     "approved_waiting_packet_count": 0,
-    "card_count": 360,
-    "doctrine_packets_generated": 2,
-    "pending_packet_count": 2,
+    "card_count": 362,
+    "doctrine_packets_generated": 0,
+    "pending_packet_count": 0,
     "ready_for_source_ingest_count": 0
   },
-  "duration_seconds": 7.727,
-  "finished_at": "2026-04-16T13:43:18.691993Z",
+  "duration_seconds": 7.947,
+  "finished_at": "2026-04-16T13:45:47.894023Z",
   "loop_kind": "learning",
-  "material_change": true,
-  "material_reasons": [
-    "card_count",
-    "pending_packet_count",
-    "added_count"
-  ],
+  "material_change": false,
+  "material_reasons": [],
   "reconciliation": {
     "card_count": 362,
     "eligible_missing_card_count": 0,
@@ -41,5 +34,5 @@
     "required_source_count_per_mutation": 2,
     "state_consistent": true
   },
-  "started_at": "2026-04-16T13:43:10.964594Z"
+  "started_at": "2026-04-16T13:45:39.946985Z"
 }

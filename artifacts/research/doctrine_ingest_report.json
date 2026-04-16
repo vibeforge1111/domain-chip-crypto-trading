@@ -1,11 +1,8 @@
 {
-  "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-breakout-impulse-squeeze-compressio-a996d5a3-sparse_signal.json",
-    "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-8fa92866-sparse_signal.json"
-  ],
-  "added_count": 2,
-  "eligible_packet_count": 2,
-  "existing_card_count": 360,
+  "added_cards": [],
+  "added_count": 0,
+  "eligible_packet_count": 0,
+  "existing_card_count": 362,
   "max_new_mutations_per_cycle": 3,
   "packet_count": 362,
   "remaining_packet_count": 0,

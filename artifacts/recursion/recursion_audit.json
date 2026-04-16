@@ -10,7 +10,7 @@
     },
     {
       "evidence": [
-        "Heavy-backtest summary currently covers 9 candidates; this must keep shifting toward BTC-specific mutation trials."
+        "Heavy-backtest summary currently covers 85 candidates; this must keep shifting toward BTC-specific mutation trials."
       ],
       "severity": "warn",
       "status": "contained",
@@ -19,8 +19,8 @@
     {
       "evidence": [
         "High-drawdown seeded candidates remain unresolved: bollinger-highvol-hyperliquid-1h, range-funding-ethsol-1h",
-        "Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f, auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3",
-        "Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f, auto-auto-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-late_sample_guard=on-s-24c83905d3"
+        "Walk-forward consistency stays weak for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f, auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=thin_filter",
+        "Stress resilience remains below threshold for: auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation, auto-trend-volume-filtered-no_trade_window=avoid_post_open_drift-volume_context_guard=strict_participation, evo-4680319e88c6"
       ],
       "severity": "warn",
       "status": "contained",
@@ -28,9 +28,9 @@
     }
   ],
   "benchmark_summary": {
-    "candidate_count": 9,
+    "candidate_count": 85,
     "contract_family": "btc_up_down_15m",
-    "top_candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter",
+    "top_candidate_id": "evo-2215db84ffa5",
     "top_stress_resilience": 1.0,
     "top_walk_forward_consistency": 1.0
   },
