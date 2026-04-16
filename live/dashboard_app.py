@@ -1000,12 +1000,46 @@ tailwind.config = {
       <div class="card p-3" style="background:#141820"><div class="stat-label">Win Rate</div><div class="stat-value text-sm" id="live-accuracy">--</div></div>
       <div class="card p-3" style="background:#141820"><div class="stat-label">Agents / Strats</div><div class="stat-value text-sm" id="live-agents-strats">--</div></div>
     </div>
+    <!-- Regime History Strip -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Regime History <span id="regime-strip-label" style="color:#6A7080"></span></div>
+      <div id="regime-strip" style="display:flex;height:24px;border-radius:6px;overflow:hidden;background:#141820;gap:1px"></div>
+      <div id="regime-legend" class="flex items-center gap-3 mt-2 flex-wrap"></div>
+    </div>
+    <!-- Active Contracts -->
     <div class="mb-4">
       <div class="text-xs font-medium mb-2" style="color:#8890B0">Active Contracts</div>
       <div id="live-contracts" class="grid gap-2" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
         <div style="padding:12px;text-align:center;color:#6A7080;font-size:0.8rem">Start: <span style="font-family:'DM Mono',monospace;color:#8890B0">python live_paper_trader.py --assets BTC --per-strategy 3</span></div>
       </div>
     </div>
+    <!-- Per-Agent Performance Table -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Agent Performance <span style="color:#6A7080">(Backtest vs Live)</span></div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs" id="agent-perf-table">
+          <thead>
+            <tr style="color:#6A7080;border-bottom:1px solid #222430">
+              <th class="pb-2 pr-2 text-left font-medium">Agent</th>
+              <th class="pb-2 pr-2 text-left font-medium">Strategy</th>
+              <th class="pb-2 pr-2 text-right font-medium">BT WR</th>
+              <th class="pb-2 pr-2 text-right font-medium">Live WR</th>
+              <th class="pb-2 pr-2 text-right font-medium">Delta</th>
+              <th class="pb-2 pr-2 text-right font-medium">Trades</th>
+              <th class="pb-2 pr-2 text-right font-medium">Wins</th>
+              <th class="pb-2 text-right font-medium">Skips</th>
+            </tr>
+          </thead>
+          <tbody id="agent-perf-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Strategy Breakdown in Live -->
+    <div class="mb-4">
+      <div class="text-xs font-medium mb-2" style="color:#8890B0">Live Strategy Breakdown</div>
+      <div id="live-strategy-breakdown" class="grid gap-2" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))"></div>
+    </div>
+    <!-- Recent Settlements -->
     <div class="mb-4">
       <div class="text-xs font-medium mb-2" style="color:#8890B0">Recent Settlements</div>
       <div id="live-settlements-list" style="max-height:200px;overflow-y:auto;"></div>
@@ -1481,7 +1515,101 @@ function renderAutoloopLanes(data) {
 }
 
 // ── Live Trading ──────────────────────────────────
-const REGIME_COLORS = { compression:'#68A8D8', range:'#68A8D8', trend:'#D8C868', event_driven:'#f43f5e', high_vol:'#f97316', fear_shock:'#E08878' };
+const REGIME_COLORS = { compression:'#68A8D8', range:'#a78bfa', trend:'#D8C868', event_driven:'#f43f5e', high_vol:'#f97316', fear_shock:'#E08878' };
+
+function renderRegimeStrip(regimeHistory) {
+  const strip = document.getElementById('regime-strip');
+  const legend = document.getElementById('regime-legend');
+  const label = document.getElementById('regime-strip-label');
+  if (!regimeHistory || regimeHistory.length === 0) {
+    strip.innerHTML = '<div style="flex:1;display:flex;align-items:center;justify-content:center;color:#6A7080;font-size:0.7rem">No regime data yet</div>';
+    legend.innerHTML = '';
+    return;
+  }
+  label.textContent = '(' + regimeHistory.length + ' observations)';
+  const seen = new Set();
+  strip.innerHTML = regimeHistory.map(r => {
+    const regime = r.regime || r || 'unknown';
+    const color = REGIME_COLORS[regime] || '#6A7080';
+    seen.add(regime);
+    let ts = '';
+    try { if (r.ts) ts = new Date(r.ts).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); } catch {}
+    return '<div style="flex:1;background:' + color + ';opacity:0.8;min-width:4px" title="' + regime + (ts ? ' @ ' + ts : '') + '"></div>';
+  }).join('');
+  legend.innerHTML = [...seen].map(r => {
+    const c = REGIME_COLORS[r] || '#6A7080';
+    return '<div class="flex items-center gap-1"><span style="width:8px;height:8px;border-radius:2px;background:' + c + ';display:inline-block"></span><span style="font-size:0.65rem;color:#8890B0">' + r.replace(/_/g,' ') + '</span></div>';
+  }).join('');
+}
+
+function renderAgentPerformance(agentStats, periodStats) {
+  const tbody = document.getElementById('agent-perf-body');
+  if (!agentStats || Object.keys(agentStats).length === 0) {
+    tbody.innerHTML = '<tr><td colspan="8" style="padding:8px;color:#6A7080;text-align:center">No agent data yet</td></tr>';
+    return;
+  }
+  const rows = Object.entries(agentStats).map(([aid, a]) => {
+    const btWr = a.backtest_wr || 0;
+    const trades = (a.wins || 0) + (a.losses || 0);
+    const liveWr = trades > 0 ? (a.wins || 0) / trades : 0;
+    const delta = trades > 0 ? liveWr - btWr : null;
+    return { aid, strategy: a.strategy || '?', btWr, liveWr, delta, trades, wins: a.wins || 0, skips: a.skips || 0 };
+  }).sort((a, b) => b.trades - a.trades);
+
+  tbody.innerHTML = rows.map(r => {
+    const deltaStr = r.delta !== null ? ((r.delta >= 0 ? '+' : '') + (r.delta * 100).toFixed(1) + '%') : '--';
+    const deltaColor = r.delta === null ? '#6A7080' : r.delta >= 0 ? '#2FCA94' : '#E08878';
+    const wrColor = r.liveWr >= 0.55 ? '#2FCA94' : r.liveWr >= 0.5 ? '#68A8D8' : (r.trades > 0 ? '#E08878' : '#6A7080');
+    const p = 'padding:5px 6px 5px 0;';
+    return '<tr style="border-bottom:1px solid #1E2230">' +
+      '<td style="' + p + 'font-family:DM Mono,monospace;color:#8890B0">' + r.aid.substring(0, 12) + '</td>' +
+      '<td style="' + p + '">' + r.strategy.replace(/_/g,' ') + '</td>' +
+      '<td style="' + p + 'text-align:right;color:#6A7080">' + (r.btWr * 100).toFixed(1) + '%</td>' +
+      '<td style="' + p + 'text-align:right;color:' + wrColor + ';font-weight:600">' + (r.trades > 0 ? (r.liveWr * 100).toFixed(1) + '%' : '--') + '</td>' +
+      '<td style="' + p + 'text-align:right;color:' + deltaColor + '">' + deltaStr + '</td>' +
+      '<td style="' + p + 'text-align:right">' + r.trades + '</td>' +
+      '<td style="' + p + 'text-align:right;color:#2FCA94">' + r.wins + '</td>' +
+      '<td style="' + p + 'text-align:right;color:#6A7080">' + r.skips + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+function renderLiveStrategyBreakdown(periodStats) {
+  const el = document.getElementById('live-strategy-breakdown');
+  const stats = periodStats ? periodStats.strategy_stats : null;
+  if (!stats || Object.keys(stats).length === 0) {
+    el.innerHTML = '<div style="padding:8px;color:#6A7080;font-size:0.75rem">No strategy data yet</div>';
+    return;
+  }
+  const sorted = Object.entries(stats).sort((a, b) => b[1].trades - a[1].trades);
+  el.innerHTML = sorted.map(([name, s]) => {
+    const wr = s.trades > 0 ? (s.wins / s.trades * 100).toFixed(1) : '0.0';
+    const wrNum = s.trades > 0 ? s.wins / s.trades : 0;
+    const color = STRAT_COLORS[name] || '#6A7080';
+    const wrColor = wrNum >= 0.55 ? '#2FCA94' : wrNum >= 0.5 ? '#68A8D8' : (s.trades > 0 ? '#E08878' : '#6A7080');
+    return '<div class="card p-3" style="background:#141820">' +
+      '<div class="flex items-center gap-2 mb-2">' +
+        '<span style="width:8px;height:8px;border-radius:50%;background:' + color + ';display:inline-block"></span>' +
+        '<span class="text-xs font-semibold">' + name.replace(/_/g,' ') + '</span>' +
+      '</div>' +
+      '<div class="flex items-center justify-between">' +
+        '<div>' +
+          '<div class="text-xs" style="color:#6A7080">WR</div>' +
+          '<div class="text-sm font-bold" style="color:' + wrColor + '">' + wr + '%</div>' +
+        '</div>' +
+        '<div class="text-right">' +
+          '<div class="text-xs" style="color:#6A7080">Trades</div>' +
+          '<div class="text-sm font-mono">' + s.trades + '</div>' +
+        '</div>' +
+        '<div class="text-right">' +
+          '<div class="text-xs" style="color:#6A7080">W/L</div>' +
+          '<div class="text-sm font-mono"><span style="color:#2FCA94">' + s.wins + '</span>/<span style="color:#E08878">' + (s.trades - s.wins) + '</span></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="progress-bar mt-2"><div class="progress-fill" style="width:' + Math.min(wrNum * 150, 100) + '%;background:' + wrColor + '"></div></div>' +
+    '</div>';
+  }).join('');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.getElementById('live-period-tabs');
