@@ -82,6 +82,42 @@ TRIAL_MAP = {
         "asset_universe": "BTC,ETH,SOL",
         "paper_gate": "balanced",
     },
+    "rsi-extreme-reversion-1h": {
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "strategy_id": "rsi_extreme_reversion",
+        "market_regime": "range",
+        "timeframe": "1h",
+        "venue": "kalshi",
+        "asset_universe": "BTC,ETH,SOL",
+        "paper_gate": "balanced",
+    },
+    "compression-bounce-4h": {
+        "doctrine_id": "breakout_volatility_expansion",
+        "strategy_id": "compression_range_bounce",
+        "market_regime": "compression",
+        "timeframe": "4h",
+        "venue": "kalshi",
+        "asset_universe": "BTC",
+        "paper_gate": "strict",
+    },
+    "ema-pullback-4h": {
+        "doctrine_id": "trend_regime_following",
+        "strategy_id": "ema_pullback_long",
+        "market_regime": "trend",
+        "timeframe": "4h",
+        "venue": "kalshi",
+        "asset_universe": "BTC,ETH",
+        "paper_gate": "strict",
+    },
+    "multi-confirm-bounce-1h": {
+        "doctrine_id": "mean_reversion_liquidity_reclaim",
+        "strategy_id": "multi_confirm_bounce",
+        "market_regime": "range",
+        "timeframe": "1h",
+        "venue": "kalshi",
+        "asset_universe": "BTC,ETH,SOL",
+        "paper_gate": "balanced",
+    },
 }
 
 
