@@ -186,9 +186,9 @@ def api_live_pt():
     log_path = ARCHIVE / "live_pt_log.jsonl"
     all_settlements = _jsonl_tail(log_path, 500)
 
-    now = datetime.utcnow().isoformat()
-    day_ago = (datetime.utcnow() - timedelta(hours=24)).isoformat()
-    week_ago = (datetime.utcnow() - timedelta(days=7)).isoformat()
+    now = datetime.now(timezone.utc).isoformat()
+    day_ago = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+    week_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
 
     def _compute_stats(entries):
         trades = 0; wins = 0; skips = 0
