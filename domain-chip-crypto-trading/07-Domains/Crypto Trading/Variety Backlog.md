@@ -69,7 +69,7 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - suggested_child_target_count: `4`
 - suggested_child_targets: `activation_profile=wider, late_sample_guard=on, paper_gate=balanced, session_profile=late_cycle_filter | activation_profile=wider, no_trade_window=avoid_transition_window, paper_gate=balanced, session_profile=stability_window | activation_profile=wider, execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=balanced | activation_profile=adaptive, paper_gate=balanced`
 - contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-e7ab73bb0b`
+- top_candidate_id: `auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_signal-variety-late-sample-gu-2bc78501ec`
 - top_profitability_score: `0.0`
 - top_recommended_next_step: `run_contradiction_probe`
 
@@ -86,9 +86,9 @@ This page tracks doctrine -> strategy families and the uncovered child varieties
 - suggested_child_target_count: `4`
 - suggested_child_targets: `late_sample_guard=on, paper_gate=strict, session_profile=late_cycle_filter | no_trade_window=avoid_transition_window, paper_gate=strict, session_profile=stability_window | execution_buffer=high, no_trade_window=avoid_transition_window, paper_gate=strict | activation_profile=adaptive, paper_gate=strict`
 - contradiction_modes: `execution_fragility, holdout_decay, segment_instability, sparse_signal`
-- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-probe-sparse_signal`
-- top_profitability_score: `0.0`
-- top_recommended_next_step: `run_contradiction_probe`
+- top_candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter`
+- top_profitability_score: `0.58`
+- top_recommended_next_step: `hold_for_more_backtest_evidence`
 
 ## trend_regime_following -> pullback_then_continuation
 

@@ -1,14 +1,12 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-c777a64e-sparse_signal.json",
-    "dc-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moder-26cd011c-sparse_signal.json",
-    "dc-auto-auto-auto-breakout-impulse-squeeze-compression_profile=moder-379a1056-sparse_signal.json"
+    "dc-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_-cfbf8512-sparse_signal.json"
   ],
-  "added_count": 3,
-  "eligible_packet_count": 4,
-  "existing_card_count": 327,
+  "added_count": 1,
+  "eligible_packet_count": 1,
+  "existing_card_count": 331,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 331,
-  "remaining_packet_count": 1,
+  "packet_count": 332,
+  "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
