@@ -4,7 +4,7 @@ This loop owns heavy benchmark evaluation, contradiction extraction, mutation ge
 
 - material_change: `True`
 - candidate_count: `9`
-- top_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8400e6c02b`
+- top_candidate_id: `auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191`
 - top_recommended_next_step: `run_contradiction_probe`
 - approved_self_edits: `0`
 
