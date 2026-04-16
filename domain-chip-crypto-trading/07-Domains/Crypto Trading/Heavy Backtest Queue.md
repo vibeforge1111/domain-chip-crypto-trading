@@ -123,14 +123,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_sign-19eba0c7a1-sparse_signal-sparse_signal
+## Trend continuation with pullback confirmation
 
-- proposal_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_sign-19eba0c7a1-sparse_signal-sparse_signal-sparse_signal`
-- benchmark_priority: `medium`
-- surprise_score: `0.69`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "None", "regime": "None", "strategy": "None"}`
-- variety_child_id: `{"activation_profile": "wider", "paper_gate": "balanced"}`
-- variety_child_label: `activation_profile=wider, paper_gate=balanced`
+- proposal_id: `btc-15m-trend-continuation`
+- benchmark_priority: `high`
+- surprise_score: `0.81`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "pullback_then_continuation"}`
+- variety_child_id: `{"paper_gate": "strict"}`
+- variety_child_label: `paper_gate=strict`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
@@ -140,14 +140,14 @@ This queue is the benchmark gate for recursive improvement.
 - max_drawdown_max: `n/a`
 - paper_trade_readiness_min: `n/a`
 
-## Trend continuation with pullback confirmation
+## Exhaustion mean reversion after impulse
 
-- proposal_id: `btc-15m-trend-continuation`
+- proposal_id: `btc-15m-exhaustion-mean-reversion`
 - benchmark_priority: `high`
 - surprise_score: `0.81`
-- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "trend_regime_following", "regime": "trend", "strategy": "pullback_then_continuation"}`
-- variety_child_id: `{"paper_gate": "strict"}`
-- variety_child_label: `paper_gate=strict`
+- variety_family_id: `{"contract": "btc_up_down_15m", "doctrine": "mean_reversion_liquidity_reclaim", "regime": "range", "strategy": "rsi_exhaustion_reclaim"}`
+- variety_child_id: `{"paper_gate": "balanced"}`
+- variety_child_label: `paper_gate=balanced`
 - status: `queued_for_heavy_backtest`
 - min_contract_windows: `500`
 - walk_forward_splits: `6`
