@@ -84,9 +84,9 @@ This page turns the seeded catalog into an actionable next frontier.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 - drawdown_excess: Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation.
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-sparse_signal
+## btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal
 
-- candidate_id: `auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45`
+- candidate_id: `btc-15m-volatility-compression-breakout-psychology_no_chase`
 - doctrine: `breakout_volatility_expansion`
 - strategy: `breakout_open_interest_confirmation`
 - market_regime: `high_vol`
@@ -117,12 +117,12 @@ This page turns the seeded catalog into an actionable next frontier.
 - segment_instability: Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample.
 - execution_fragility: Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction.
 
-## auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_sign-db871feead-sparse_signal
+## auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover-sparse_signal
 
-- candidate_id: `auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_signal-sparse_signal-probe-sparse_sign-db871feead`
-- doctrine: `None`
-- strategy: `None`
-- market_regime: `None`
+- candidate_id: `auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover`
+- doctrine: `breakout_volatility_expansion`
+- strategy: `bollinger_squeeze_breakout`
+- market_regime: `high_vol`
 - priority: `0.99`
 - why: Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.
 
