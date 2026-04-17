@@ -121,12 +121,12 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-3: profitability=`0.23` avg_return=`-0.54` trades=`4`
 - wf-1: profitability=`0.3436` avg_return=`-0.3127` trades=`11`
 
-## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45
+## btc-15m-volatility-compression-breakout-psychology_no_chase
 
 - doctrine_id: `breakout_volatility_expansion`
 - strategy_id: `breakout_open_interest_confirmation`
 - priority: `0.99`
-- holdout_profitability_score: `0.0`
+- holdout_profitability_score: `0.3133`
 - walk_forward_consistency: `0.0`
 - stress_resilience: `0.0`
 - max_drawdown: `0.99`
@@ -142,8 +142,8 @@ Track failure shapes here when a combination looks exciting but should not be pr
 
 ### Weakest Segments
 
-- wf-2: profitability=`0.0` avg_return=`-1.04` trades=`1`
-- wf-3: profitability=`0.0` avg_return=`-1.04` trades=`3`
+- wf-3: profitability=`0.0` avg_return=`-1.04` trades=`2`
+- wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
 ## baseline
 
@@ -168,10 +168,10 @@ Track failure shapes here when a combination looks exciting but should not be pr
 - wf-1: profitability=`0.0` avg_return=`0.0` trades=`0`
 - wf-2: profitability=`0.0` avg_return=`0.0` trades=`0`
 
-## auto-auto-breakout-impulse-squeeze-compression_profile=moderate_squeeze-session_profile=squeeze_release_windo-cb857460ce
+## auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-4f407293fc
 
-- doctrine_id: `breakout_volatility_expansion`
-- strategy_id: `bollinger_squeeze_breakout`
+- doctrine_id: `None`
+- strategy_id: `None`
 - priority: `0.99`
 - holdout_profitability_score: `0.0`
 - walk_forward_consistency: `0.0`
