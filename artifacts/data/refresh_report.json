@@ -1,49 +1,58 @@
 {
-  "material_change": false,
-  "refreshed_at": "2026-04-17T01:38:09.392416Z",
+  "material_change": true,
+  "refreshed_at": "2026-04-17T03:27:54.153812Z",
   "symbol_reports": [
     {
-      "contract_counts": {},
-      "days_failed": 1,
-      "days_fetched": 0,
+      "contract_counts": {
+        "15m": 21888,
+        "1h": 5472
+      },
+      "days_failed": 0,
+      "days_fetched": 1,
       "days_requested": 1,
-      "failed_days": [
+      "failed_days": [],
+      "fetched_days": [
         "2026-04-16"
       ],
-      "fetched_days": [],
       "last_existing_date": "2026-04-15",
-      "material_change": false,
-      "new_candle_count": 0,
+      "material_change": true,
+      "new_candle_count": 1440,
       "slug": "btc",
       "symbol": "BTCUSDT"
     },
     {
-      "contract_counts": {},
-      "days_failed": 1,
-      "days_fetched": 0,
+      "contract_counts": {
+        "15m": 21888,
+        "1h": 5472
+      },
+      "days_failed": 0,
+      "days_fetched": 1,
       "days_requested": 1,
-      "failed_days": [
+      "failed_days": [],
+      "fetched_days": [
         "2026-04-16"
       ],
-      "fetched_days": [],
       "last_existing_date": "2026-04-15",
-      "material_change": false,
-      "new_candle_count": 0,
+      "material_change": true,
+      "new_candle_count": 1440,
       "slug": "eth",
       "symbol": "ETHUSDT"
     },
     {
-      "contract_counts": {},
-      "days_failed": 1,
-      "days_fetched": 0,
+      "contract_counts": {
+        "15m": 21888,
+        "1h": 5472
+      },
+      "days_failed": 0,
+      "days_fetched": 1,
       "days_requested": 1,
-      "failed_days": [
+      "failed_days": [],
+      "fetched_days": [
         "2026-04-16"
       ],
-      "fetched_days": [],
       "last_existing_date": "2026-04-15",
-      "material_change": false,
-      "new_candle_count": 0,
+      "material_change": true,
+      "new_candle_count": 1440,
       "slug": "sol",
       "symbol": "SOLUSDT"
     }
@@ -53,5 +62,5 @@
     "eth",
     "sol"
   ],
-  "total_new_candles": 0
+  "total_new_candles": 4320
 }
