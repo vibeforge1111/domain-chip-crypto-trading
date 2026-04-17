@@ -163,7 +163,7 @@ def _ledger_summary(all_entries: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def run_paper_trade_cycle(repo_root: Path) -> Path:
+def run_paper_trade_cycle(repo_root: Path, max_candidates_per_cycle: int = 50) -> Path:
     queue_path = build_paper_trade_queue(repo_root)
     queue_payload = _load_json(queue_path, {})
     queue_payload = queue_payload if isinstance(queue_payload, dict) else {}
@@ -177,6 +177,26 @@ def run_paper_trade_cycle(repo_root: Path) -> Path:
     runs_root.mkdir(parents=True, exist_ok=True)
     for path in runs_root.glob("*.json"):
         path.unlink()
+
+    # Rotate through queue: prioritize candidates with fewest ledger trades,
+    # so new candidates get evaluated while established ones accumulate slower
+    rotation_path = paper_root / "rotation_offset.json"
+    rotation_state = _load_json(rotation_path, {})
+    rotation_state = rotation_state if isinstance(rotation_state, dict) else {}
+    offset = int(rotation_state.get("offset", 0) or 0)
+
+    if len(queue_rows) > max_candidates_per_cycle:
+        # Sort by ledger trade count (ascending) so under-evaluated candidates go first
+        for row in queue_rows:
+            cid = str(row.get("candidate_id", "")).strip()
+            ledger_file = ledger_root / f"{cid}.jsonl"
+            row["_ledger_trades"] = sum(1 for _ in open(ledger_file, encoding="utf-8")) if ledger_file.exists() else 0
+        queue_rows.sort(key=lambda r: r.get("_ledger_trades", 0))
+        # Apply rotation offset for diversity across cycles
+        rotated = queue_rows[offset:] + queue_rows[:offset]
+        queue_rows = rotated[:max_candidates_per_cycle]
+        next_offset = (offset + max_candidates_per_cycle) % max(1, len(rotated))
+        safe_write_json(rotation_path, {"offset": next_offset, "total": len(rotated)})
 
     summary_rows: list[dict[str, Any]] = []
     for row in queue_rows:

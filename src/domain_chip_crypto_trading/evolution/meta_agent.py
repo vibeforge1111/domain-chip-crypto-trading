@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any
 
 from .population import Agent, PopulationArchive
-from .performance_tracker import PerformanceTracker
+from .performance_tracker import InsightSynthesizer, PerformanceTracker
 
 # -- Known mutation space (from domain knowledge) -----------------------
 
@@ -207,12 +207,26 @@ class MetaStrategyParams:
     exploitation_weight: float = 0.2  # 20% exploit, 80% explore
     temperature: float = 1.0  # selection temperature (higher = more random)
 
-    def mutate_self(self, learning_rate: float = 0.05) -> MetaStrategyParams:
-        """Self-modify: small random perturbations to meta-parameters.
+    def mutate_self(
+        self, learning_rate: float = 0.05, improvement_rate: float = 0.0,
+    ) -> MetaStrategyParams:
+        """Self-modify with directional adaptation based on performance.
 
-        This is the metacognitive self-modification from DGM-H.
+        If improvement_rate is low: reduce randomness (lower mutation_rate,
+        temperature). If high: keep current direction, small perturbation.
         """
         new_params = copy.deepcopy(self)
+
+        if improvement_rate < 0.1:
+            # Failing: directionally reduce exploration
+            new_params.mutation_rate = max(0.05, new_params.mutation_rate - 0.03)
+            new_params.temperature = max(0.5, new_params.temperature - 0.1)
+            new_params.guard_add_prob = min(0.6, new_params.guard_add_prob + 0.02)
+        elif improvement_rate > 0.4:
+            # Succeeding: small perturbation, keep direction
+            learning_rate = 0.02
+        # else: moderate — use default learning_rate
+
         for attr in [
             "mutation_rate", "crossover_rate", "guard_add_prob",
             "guard_remove_prob", "regime_extend_prob", "diversity_weight",
@@ -247,9 +261,11 @@ class MetaAgent:
         self,
         population: PopulationArchive,
         tracker: PerformanceTracker,
+        synthesizer: InsightSynthesizer | None = None,
     ):
         self.population = population
         self.tracker = tracker
+        self.synthesizer = synthesizer
 
         # Each meta-strategy has its own evolvable parameters
         self.strategy_params: dict[str, MetaStrategyParams] = {
@@ -542,19 +558,37 @@ class MetaAgent:
         else:
             mutations = copy.deepcopy(parent.mutations)
 
-        # Feature-guided: prefer adding gentle removal guards
-        # 30% of the time, specifically pick a new confirmation guard
+        # Feature-guided: use synthesized insights to bias guard selection
         _NEW_CONFIRM_GUARDS = [
             "cr_atr_guard", "cr_bb_confirm", "cr_bb_squeeze",
             "cr_vwap_confirm", "cr_stoch_confirm", "cr_obv_confirm",
             "cr_macd_confirm", "cr_rsi_2h_confirm", "cr_fib_confirm",
         ]
 
+        # Build insight-biased guard lists
+        preferred_guards: list[str] = list(_NEW_CONFIRM_GUARDS)
+        suppressed_guards: set[str] = set()
+        if self.synthesizer:
+            for insight in self.synthesizer.get_actionable_insights(min_confidence=0.5):
+                text = insight.get("insight", "")
+                evidence = insight.get("evidence", {})
+                # Insights about guards that help → prefer them
+                if "improves" in text.lower() or "helps" in text.lower():
+                    guard_name = evidence.get("guard", "")
+                    if guard_name and guard_name in GUARD_MUTATIONS:
+                        preferred_guards.append(guard_name)
+                # Insights about guards that hurt → suppress them
+                elif "hurts" in text.lower() or "reduces" in text.lower():
+                    guard_name = evidence.get("guard", "")
+                    if guard_name:
+                        suppressed_guards.add(guard_name)
+
         if random.random() < params.guard_add_prob:
-            if random.random() < 0.30:
-                guard = random.choice(_NEW_CONFIRM_GUARDS)
+            if preferred_guards and random.random() < 0.40:
+                guard = random.choice(preferred_guards)
             else:
-                guard = random.choice(list(GUARD_MUTATIONS.keys()))
+                candidates = [g for g in GUARD_MUTATIONS if g not in suppressed_guards]
+                guard = random.choice(candidates or list(GUARD_MUTATIONS.keys()))
             options = [o for o in GUARD_MUTATIONS[guard] if o]  # exclude empty
             if options:
                 mutations[guard] = random.choice(options)
@@ -857,16 +891,13 @@ class MetaAgent:
                 rate = stats["improvement_rate"]
 
                 if rate > 0.3:
-                    # Successful strategy: fine-tune (small perturbation)
-                    new_params = params.mutate_self(learning_rate=0.02)
+                    new_params = params.mutate_self(learning_rate=0.02, improvement_rate=rate)
                     changes[name] = {"action": "fine_tune", "rate": rate}
                 elif rate < 0.1:
-                    # Failing strategy: big perturbation to escape local optima
-                    new_params = params.mutate_self(learning_rate=0.15)
+                    new_params = params.mutate_self(learning_rate=0.15, improvement_rate=rate)
                     changes[name] = {"action": "escape_local_optima", "rate": rate}
                 else:
-                    # Moderate: standard self-modification
-                    new_params = params.mutate_self(learning_rate=0.05)
+                    new_params = params.mutate_self(learning_rate=0.05, improvement_rate=rate)
                     changes[name] = {"action": "standard_evolve", "rate": rate}
 
                 self.strategy_params[name] = new_params

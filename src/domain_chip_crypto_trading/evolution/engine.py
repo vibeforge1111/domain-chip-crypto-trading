@@ -50,8 +50,8 @@ class EvolutionEngine:
             max_archive_size=max(200, population_size * 10),
         )
         self.tracker = PerformanceTracker(archive_root=self.archive_root)
-        self.meta_agent = MetaAgent(self.population, self.tracker)
         self.synthesizer = InsightSynthesizer(self.tracker)
+        self.meta_agent = MetaAgent(self.population, self.tracker, self.synthesizer)
 
         # State
         self.current_generation = 0

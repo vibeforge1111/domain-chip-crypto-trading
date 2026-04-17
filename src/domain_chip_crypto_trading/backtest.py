@@ -12,6 +12,10 @@ from typing import Any
 SUPPORTED_BACKTEST_ASSETS = ("btc", "eth", "sol")
 SUPPORTED_BACKTEST_TIMEFRAMES = ("4h", "1h", "15m")
 
+# Holdout cutoff: backtest training excludes contracts on or after this date.
+# Paper trade validation data starts 2026-03-18, so we stop training at 2026-03-17.
+HOLDOUT_CUTOFF = datetime(2026, 3, 18, 0, 0, 0, tzinfo=timezone.utc)
+
 
 def _parse_ts(raw: str) -> datetime:
     return datetime.fromisoformat(raw.replace("Z", "+00:00")).astimezone(timezone.utc)
@@ -807,7 +811,9 @@ def _signal(mutations: dict[str, str], features: dict[str, float]) -> str:
         return "skip"
     if detected_regime == "fear_shock" and desired_regime != "fear_shock":
         return "skip"
-    if desired_regime and desired_regime != detected_regime:
+    # Skip top-level regime gate when extend_regimes is set — defer to per-strategy logic
+    has_extend_regimes = bool(mutations.get("extend_regimes", ""))
+    if desired_regime and desired_regime != detected_regime and not has_extend_regimes:
         if not (desired_regime == "event_driven" and detected_regime == "high_vol"):
             if not (desired_regime == "fear_shock" and detected_regime == "high_vol"):
                 return "skip"
@@ -2577,6 +2583,10 @@ def run_backtest(mutations: dict[str, str], runtime_root: Path, contract_limit: 
     candles = _candles(candle_path)
     contracts = _contracts(contract_path)
     if not candles or not contracts:
+        return None
+    # Holdout boundary: exclude contracts that overlap with paper trade data
+    contracts = [c for c in contracts if c.open_ts < HOLDOUT_CUTOFF]
+    if not contracts:
         return None
     # Staged evaluation support: limit contracts for quick/medium screening
     if contract_limit is not None and contract_limit > 0:

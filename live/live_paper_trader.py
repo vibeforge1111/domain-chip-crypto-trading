@@ -104,7 +104,7 @@ class BinanceFeed:
 # ═══════════════════════════════════════════════════════════════════════════
 
 class CandleBuffer:
-    def __init__(self, max_size: int = 200):
+    def __init__(self, max_size: int = 300):
         self._candles: deque[Candle] = deque(maxlen=max_size)
         self._seen_ts: set[float] = set()
 
@@ -603,13 +603,19 @@ class LivePaperTrader:
         contract: ContractWindow = pending["contract"]
         predictions: dict[str, dict[str, Any]] = pending["predictions"]
 
-        # Get actual settlement from current price vs contract open
+        # Get actual settlement from boundary-aligned price vs contract open
         candles = self.buffers[asset].get_candles()
         if not candles:
             logger.warning("%s: no candles for settlement", asset)
             return
 
-        current_price = candles[-1].close
+        # Use the candle closest to the settlement boundary (now) rather than
+        # blindly taking the latest buffer entry, which may overshoot by 1-2min
+        boundary_ts = now.timestamp()
+        tail = candles[-10:] if len(candles) >= 10 else candles
+        settle_candle = min(tail, key=lambda c: abs(c.ts.timestamp() - boundary_ts))
+        current_price = settle_candle.close
+        settle_drift_sec = abs(settle_candle.ts.timestamp() - boundary_ts)
         open_price = contract.reference_price_open
         actual_direction = "up" if current_price > open_price else "down"
 
@@ -646,6 +652,8 @@ class LivePaperTrader:
             "contract_id": contract.contract_id,
             "open_price": open_price,
             "close_price": current_price,
+            "settle_candle_ts": settle_candle.ts.isoformat(),
+            "settle_drift_sec": round(settle_drift_sec, 1),
             "direction": actual_direction,
             "regime": pending.get("regime", "unknown"),
             "strategies_invoked": pending.get("strategies_matched", []),
