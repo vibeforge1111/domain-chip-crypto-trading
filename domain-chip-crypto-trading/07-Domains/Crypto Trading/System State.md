@@ -19,8 +19,8 @@ This page is the shortest honest read on the current crypto trading system.
 
 ## What Is Not Yet Strong Enough
 
-- paper-trade queue count: `1362`
-- executed paper-trade candidates: `1362`
+- paper-trade queue count: `1532`
+- executed paper-trade candidates: `1532`
 - event transition logic is still weaker than trend/range/fear/compression
 - psychology mutations still preserve too little trade density
 - timeline-pack truth is still materially incomplete

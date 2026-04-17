@@ -17,8 +17,8 @@ Default queue source:
 
 ## Current Queue
 
-- queue_count: `1362`
-- executed_candidate_count: `1362`
+- queue_count: `1532`
+- executed_candidate_count: `1532`
 - pending_data_count: `0`
 
 ### evo-00f2af5bc818
@@ -384,6 +384,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-00e222db83f0.json`
 
+### evo-0101b94870ed
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-0101b94870ed.json`
+
 ### evo-01576dd4157d
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -438,6 +449,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-01e0a7f375ea.json`
+
+### evo-01f4c9e18ba1
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-01f4c9e18ba1.json`
 
 ### evo-0215d6fe9358
 
@@ -713,6 +735,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-04bbbe95a1fb.json`
+
+### evo-04d0b0e36e77
+
+- doctrine_id: `n/a`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-04d0b0e36e77.json`
 
 ### evo-04e7e83f0b53
 
@@ -1209,6 +1242,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-0da7b5f7e2d6.json`
 
+### evo-0dbdb1faedc8
+
+- doctrine_id: `n/a`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-0dbdb1faedc8.json`
+
 ### evo-0e3c322a70ec
 
 - doctrine_id: `range_session_reclaim`
@@ -1230,6 +1274,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-0e52e7d2702f.json`
+
+### evo-0e53f3d26f9e
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-0e53f3d26f9e.json`
 
 ### evo-0e94bf65dbc2
 
@@ -1318,6 +1373,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-0fd8c052b3fb.json`
+
+### evo-10325fdd8eb3
+
+- doctrine_id: `n/a`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-10325fdd8eb3.json`
 
 ### evo-1051f8c62686
 
@@ -1649,6 +1715,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-15e8e17bed80.json`
 
+### evo-1640a592e40f
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-1640a592e40f.json`
+
 ### evo-16620b7c881f
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -1803,6 +1880,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-1890db019b9b.json`
 
+### evo-18a35f129bf3
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-18a35f129bf3.json`
+
 ### evo-18a7ad77b6b9
 
 - doctrine_id: `volatility_breakout_fade`
@@ -1935,6 +2023,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-19e8fa101927.json`
 
+### evo-1a0ee869288e
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `compression_range_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-1a0ee869288e.json`
+
 ### evo-1a1a1ec7a6d7
 
 - doctrine_id: `range_session_reclaim`
@@ -2023,6 +2122,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-1ad88c87139d.json`
 
+### evo-1b69d22c14f6
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-1b69d22c14f6.json`
+
 ### evo-1b7f34985300
 
 - doctrine_id: `volatility_breakout_fade`
@@ -2033,6 +2143,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-1b7f34985300.json`
+
+### evo-1bcc0f676ecb
+
+- doctrine_id: `n/a`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-1bcc0f676ecb.json`
 
 ### evo-1c139262e0b6
 
@@ -2221,6 +2342,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-1e65f5df91f8.json`
 
+### evo-1e999d9facae
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-1e999d9facae.json`
+
+### evo-1ecc55d37c96
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-1ecc55d37c96.json`
+
 ### evo-1f0057cd98b5
 
 - doctrine_id: `compression_mean_reversion`
@@ -2320,6 +2463,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-208a7a8996b4.json`
 
+### evo-2097397e01b1
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-2097397e01b1.json`
+
 ### evo-209e6305d92c
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -2330,6 +2484,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-209e6305d92c.json`
+
+### evo-218953063ddf
+
+- doctrine_id: `n/a`
+- strategy_id: `range_reclaim_scalp`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-218953063ddf.json`
 
 ### evo-22099ed0ceef
 
@@ -3046,6 +3211,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-2cb24d957eba.json`
 
+### evo-2cec1cf427cb
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-2cec1cf427cb.json`
+
 ### evo-2d2d00dfd07f
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -3134,6 +3310,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-2ed07ddd1f5c.json`
 
+### evo-2eeec637481a
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-2eeec637481a.json`
+
 ### evo-2f609b9fa161
 
 - doctrine_id: `volatility_breakout_fade`
@@ -3166,6 +3353,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-2f8a931a5b36.json`
+
+### evo-2f9f105d4f65
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-2f9f105d4f65.json`
+
+### evo-30002c101272
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-30002c101272.json`
 
 ### evo-3018fd1ae45f
 
@@ -3211,6 +3420,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-30d79b493cbd.json`
 
+### evo-30dc984456e3
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-30dc984456e3.json`
+
+### evo-313fb342dc39
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-313fb342dc39.json`
+
 ### evo-3141b7c254be
 
 - doctrine_id: `volatility_breakout_fade`
@@ -3232,6 +3463,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-31a897c69721.json`
+
+### evo-321520768c3c
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-321520768c3c.json`
 
 ### evo-32479698a886
 
@@ -3386,6 +3628,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-34aa40d146d2.json`
+
+### evo-34d31e9314db
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-34d31e9314db.json`
 
 ### evo-34d9de1bf3d3
 
@@ -3585,6 +3838,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-37f5fa7bbb78.json`
 
+### evo-381c05f005f9
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-381c05f005f9.json`
+
 ### evo-383dcc5a722a
 
 - doctrine_id: `volatility_breakout_fade`
@@ -3607,6 +3871,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-395541b2f516.json`
 
+### evo-395b3420821c
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-395b3420821c.json`
+
 ### evo-39a3354ef7b6
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -3617,6 +3892,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-39a3354ef7b6.json`
+
+### evo-39b6a95d4561
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-39b6a95d4561.json`
 
 ### evo-39e5f9aaad88
 
@@ -3662,6 +3948,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-3a42ff962077.json`
 
+### evo-3a5e1a0e6c1b
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-3a5e1a0e6c1b.json`
+
 ### evo-3a8993dfdb11
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -3694,6 +3991,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-3ae72fddef41.json`
+
+### evo-3ae7c5ee0bee
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-3ae7c5ee0bee.json`
 
 ### evo-3b20fc528b18
 
@@ -3783,6 +4091,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-3c5db39b0daf.json`
 
+### evo-3c8da17762b4
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-3c8da17762b4.json`
+
 ### evo-3cf504f2f8b7
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -3793,6 +4112,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-3cf504f2f8b7.json`
+
+### evo-3d2eba2167dd
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-3d2eba2167dd.json`
 
 ### evo-3d3bd4d93e00
 
@@ -4014,6 +4344,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-40a59734339b.json`
 
+### evo-40ad733054db
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-40ad733054db.json`
+
 ### evo-40f97666430b
 
 - doctrine_id: `compression_mean_reversion`
@@ -4233,6 +4574,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-455bc2d07e9c.json`
+
+### evo-455cb9da9ed0
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-455cb9da9ed0.json`
 
 ### evo-45626a61d434
 
@@ -4454,6 +4806,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-46baabd4b343.json`
 
+### evo-46cf83e15940
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-46cf83e15940.json`
+
 ### evo-46da874fac77
 
 - doctrine_id: `range_session_reclaim`
@@ -4475,6 +4838,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-473d3a1c7045.json`
+
+### evo-47560440b174
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-47560440b174.json`
 
 ### evo-4779fdee47b6
 
@@ -4619,6 +4993,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-49161726f077.json`
 
+### evo-496d2b947d12
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-496d2b947d12.json`
+
 ### evo-49773cd183b3
 
 - doctrine_id: `extreme_reversion`
@@ -4629,6 +5014,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-49773cd183b3.json`
+
+### evo-4a0e497b127e
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-4a0e497b127e.json`
 
 ### evo-4a1d01d4d370
 
@@ -4739,6 +5135,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-4c4ce826e27b.json`
+
+### evo-4c953050a783
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-4c953050a783.json`
 
 ### evo-4cc364035677
 
@@ -5037,6 +5444,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-51390f2ad943.json`
 
+### evo-5139393b11ec
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-5139393b11ec.json`
+
 ### evo-513f699e0848
 
 - doctrine_id: `range_session_reclaim`
@@ -5091,6 +5509,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-519c7b0e2120.json`
+
+### evo-51aad6c994a3
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-51aad6c994a3.json`
 
 ### evo-51c2bad61bea
 
@@ -5179,6 +5608,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-52d37240e371.json`
+
+### evo-52dc8dea3b36
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-52dc8dea3b36.json`
 
 ### evo-5300af9b94ff
 
@@ -5279,6 +5719,39 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-53d20a0e67fb.json`
 
+### evo-53dc712dce83
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-53dc712dce83.json`
+
+### evo-53e79ab1f6fd
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `compression_range_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-53e79ab1f6fd.json`
+
+### evo-53fe5a5a3b2b
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-53fe5a5a3b2b.json`
+
 ### evo-544aea2e79a0
 
 - doctrine_id: `range_session_reclaim`
@@ -5289,6 +5762,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-544aea2e79a0.json`
+
+### evo-545f04fff9be
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-545f04fff9be.json`
 
 ### evo-54cb638279dc
 
@@ -5344,6 +5828,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-556e56d5eb48.json`
+
+### evo-55820ce3b577
+
+- doctrine_id: `n/a`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-55820ce3b577.json`
 
 ### evo-559412c7edcc
 
@@ -5410,6 +5905,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-5611ce7574ac.json`
+
+### evo-5624040da519
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-5624040da519.json`
 
 ### evo-562a2a3df832
 
@@ -5532,6 +6038,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-58e68e9e4513.json`
 
+### evo-5927a968815b
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-5927a968815b.json`
+
 ### evo-5951eff0c0ea
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -5642,6 +6159,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-5ace111b5ecd.json`
 
+### evo-5ad02494da0f
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-5ad02494da0f.json`
+
 ### evo-5b0451148452
 
 - doctrine_id: `volatility_breakout_fade`
@@ -5729,6 +6257,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-5d1ced23214b.json`
+
+### evo-5d22e82860de
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-5d22e82860de.json`
 
 ### evo-5d2a8ca021c0
 
@@ -5917,6 +6456,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-601b1ce96aa4.json`
 
+### evo-6039c0feff13
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-6039c0feff13.json`
+
 ### evo-603baccf1417
 
 - doctrine_id: `compression_mean_reversion`
@@ -5960,6 +6510,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-60add03ed13e.json`
+
+### evo-612337c4ba8b
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-612337c4ba8b.json`
 
 ### evo-61262e3b6977
 
@@ -6071,6 +6632,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-628b402ccf67.json`
 
+### evo-628b5d02bd74
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-628b5d02bd74.json`
+
 ### evo-6297494e5d34
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -6181,6 +6753,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-6455af6a5bce.json`
 
+### evo-645d488da061
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-645d488da061.json`
+
 ### evo-64977e574420
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -6236,6 +6819,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-65427d09bb5d.json`
 
+### evo-658665cb227f
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-658665cb227f.json`
+
 ### evo-658cb5183744
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -6246,6 +6840,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-658cb5183744.json`
+
+### evo-65a59b977ecb
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-65a59b977ecb.json`
 
 ### evo-65c3ab6d3001
 
@@ -6445,6 +7050,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-686e93eda850.json`
 
+### evo-69353e60249f
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-69353e60249f.json`
+
 ### evo-695b0c97786c
 
 - doctrine_id: `n/a`
@@ -6510,6 +7126,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-6a274205d5b5.json`
+
+### evo-6a2763666931
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-6a2763666931.json`
 
 ### evo-6a39957266ff
 
@@ -6632,6 +7259,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-6cb05a78aace.json`
 
+### evo-6d37017a1ca4
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-6d37017a1ca4.json`
+
 ### evo-6d4153b40239
 
 - doctrine_id: `range_session_reclaim`
@@ -6753,6 +7391,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-6e7b725be482.json`
 
+### evo-6ea56a87d6e9
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-6ea56a87d6e9.json`
+
 ### evo-6ecf2656f9b7
 
 - doctrine_id: `range_session_reclaim`
@@ -6796,6 +7445,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-6f31198d7518.json`
+
+### evo-6f3df6bef84d
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `ema_crossover_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-6f3df6bef84d.json`
 
 ### evo-6fb16d2cf19e
 
@@ -7039,6 +7699,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-73b1643f38bd.json`
 
+### evo-73c10c3bcedb
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-73c10c3bcedb.json`
+
 ### evo-74135dd73c79
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -7193,6 +7864,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-75ae787c290d.json`
 
+### evo-75bb9afeac25
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-75bb9afeac25.json`
+
+### evo-75c4a79e48f8
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-75c4a79e48f8.json`
+
 ### evo-75cbd983b157
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -7281,6 +7974,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-771498634994.json`
 
+### evo-773372d5826c
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `keltner_mean_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-773372d5826c.json`
+
+### evo-77380e6daacd
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-77380e6daacd.json`
+
 ### evo-774f9d5f338e
 
 - doctrine_id: `range_session_reclaim`
@@ -7325,6 +8040,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-780c9d89044a.json`
 
+### evo-781cd96d1485
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-781cd96d1485.json`
+
+### evo-783e11d89f91
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-783e11d89f91.json`
+
 ### evo-784f2bb7df9c
 
 - doctrine_id: `n/a`
@@ -7357,6 +8094,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-7862bd46933e.json`
+
+### evo-787d412b3177
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-787d412b3177.json`
 
 ### evo-78d4e6b91c42
 
@@ -7468,6 +8216,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-7a01505fe110.json`
 
+### evo-7a1eb84dbfb3
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7a1eb84dbfb3.json`
+
 ### evo-7a5322e73303
 
 - doctrine_id: `n/a`
@@ -7567,6 +8326,39 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-7bb97cf92593.json`
 
+### evo-7bc207ec3bdd
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7bc207ec3bdd.json`
+
+### evo-7bed77ea8a59
+
+- doctrine_id: `n/a`
+- strategy_id: `compression_range_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7bed77ea8a59.json`
+
+### evo-7c0ade8a0f2e
+
+- doctrine_id: `n/a`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7c0ade8a0f2e.json`
+
 ### evo-7c429d172976
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -7577,6 +8369,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-7c429d172976.json`
+
+### evo-7c76867569ef
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7c76867569ef.json`
+
+### evo-7c7d46f32654
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7c7d46f32654.json`
 
 ### evo-7c83e9d03e79
 
@@ -7677,6 +8491,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-7ce7a988a6a8.json`
 
+### evo-7d92d2337f0f
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7d92d2337f0f.json`
+
 ### evo-7dac1c9f0920
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -7720,6 +8545,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-7e2a6e27b1a9.json`
+
+### evo-7e5926d44921
+
+- doctrine_id: `n/a`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-7e5926d44921.json`
 
 ### evo-7e8082fa7a57
 
@@ -7875,6 +8711,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-80b7116f251f.json`
 
+### evo-80e4ef807ed2
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-80e4ef807ed2.json`
+
 ### evo-810f40c5cc8d
 
 - doctrine_id: `n/a`
@@ -7886,6 +8733,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-810f40c5cc8d.json`
 
+### evo-81222f44cc84
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-81222f44cc84.json`
+
 ### evo-812777b71cb9
 
 - doctrine_id: `n/a`
@@ -7896,6 +8754,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-812777b71cb9.json`
+
+### evo-81482089f340
+
+- doctrine_id: `n/a`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-81482089f340.json`
 
 ### evo-81856b92687a
 
@@ -7941,6 +8810,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-821cc93db301.json`
 
+### evo-8281b5863bba
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8281b5863bba.json`
+
 ### evo-82a620879293
 
 - doctrine_id: `range_session_reclaim`
@@ -7951,6 +8831,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-82a620879293.json`
+
+### evo-82b34544e934
+
+- doctrine_id: `n/a`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-82b34544e934.json`
 
 ### evo-82ddc775143d
 
@@ -8018,6 +8909,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-830764e0db9e.json`
 
+### evo-8399c7912495
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8399c7912495.json`
+
 ### evo-83a09551d58b
 
 - doctrine_id: `volatility_breakout_fade`
@@ -8050,6 +8952,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-83f23434ee7f.json`
+
+### evo-84020d99e32b
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-84020d99e32b.json`
 
 ### evo-842cdd757a65
 
@@ -8094,6 +9007,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-848145c0bd0c.json`
+
+### evo-84859a9096b1
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-84859a9096b1.json`
 
 ### evo-84874a027d1d
 
@@ -8172,6 +9096,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-84e2f8cbdd5f.json`
 
+### evo-85285b70a68d
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-85285b70a68d.json`
+
 ### evo-85319b9cd42c
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -8193,6 +9128,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-853994e32aeb.json`
+
+### evo-853a7a8697ab
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `range_extreme_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-853a7a8697ab.json`
 
 ### evo-85602d5cd9a3
 
@@ -8293,6 +9239,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8697134349ab.json`
 
+### evo-86a41d85aee0
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-86a41d85aee0.json`
+
 ### evo-86ae3668b2d4
 
 - doctrine_id: `extreme_reversion`
@@ -8337,6 +9294,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-872c16fef5a5.json`
 
+### evo-874120f7e07c
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-874120f7e07c.json`
+
 ### evo-8742356616b1
 
 - doctrine_id: `volatility_breakout_fade`
@@ -8347,6 +9315,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8742356616b1.json`
+
+### evo-874daaa5195f
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-874daaa5195f.json`
+
+### evo-87740967c06e
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-87740967c06e.json`
 
 ### evo-8774c729cb13
 
@@ -8402,6 +9392,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-87dc11b9603d.json`
+
+### evo-8850a5a6445f
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8850a5a6445f.json`
 
 ### evo-88c4c7b75430
 
@@ -8568,6 +9569,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8aac869cbd47.json`
 
+### evo-8ad3315fd0c8
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8ad3315fd0c8.json`
+
 ### evo-8ae7c2039d19
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -8623,6 +9635,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8c1f077c6f8e.json`
 
+### evo-8c35ae689309
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8c35ae689309.json`
+
+### evo-8cb515d577e8
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8cb515d577e8.json`
+
 ### evo-8cb51b143c60
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -8656,6 +9690,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8de64f3e6071.json`
 
+### evo-8debc38dce61
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8debc38dce61.json`
+
 ### evo-8e2bfa14e1f3
 
 - doctrine_id: `volatility_breakout_fade`
@@ -8677,6 +9722,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8e448ec0b8a6.json`
+
+### evo-8e7ad249b27c
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8e7ad249b27c.json`
 
 ### evo-8ed33cb4ab00
 
@@ -8722,6 +9778,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-8f169cfea172.json`
 
+### evo-8f7eef1a4a67
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `ema_crossover_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-8f7eef1a4a67.json`
+
 ### evo-902b23999273
 
 - doctrine_id: `range_session_reclaim`
@@ -8743,6 +9810,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-913a68e29167.json`
+
+### evo-915b1c0d3155
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-915b1c0d3155.json`
 
 ### evo-91923951b7dd
 
@@ -8832,6 +9910,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-93cacc3ef7a6.json`
 
+### evo-946108a15d8a
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-946108a15d8a.json`
+
 ### evo-952796d24bf7
 
 - doctrine_id: `range_session_reclaim`
@@ -8853,6 +9942,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-9530666f18a6.json`
+
+### evo-956697159c55
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-956697159c55.json`
 
 ### evo-957432f7108e
 
@@ -8908,6 +10008,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-95d24abd1a51.json`
+
+### evo-95d3a3b233bb
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-95d3a3b233bb.json`
 
 ### evo-95d5a0f02426
 
@@ -9129,6 +10240,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-99322f143337.json`
 
+### evo-9935590708da
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-9935590708da.json`
+
 ### evo-993e3ce16f7d
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -9260,6 +10382,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-9aca741ebfc1.json`
+
+### evo-9aeb9cd51650
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-9aeb9cd51650.json`
 
 ### evo-9af8f925a1b6
 
@@ -9613,6 +10746,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-9ff0293b7828.json`
 
+### evo-a00e1c2def12
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a00e1c2def12.json`
+
 ### evo-a036f49b21d1
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -9668,6 +10812,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a0d753fcb69a.json`
 
+### evo-a0d834b135c4
+
+- doctrine_id: `n/a`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a0d834b135c4.json`
+
 ### evo-a0d945a88716
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -9722,6 +10877,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a15513c3f5f1.json`
+
+### evo-a17e32a72d17
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `range_extreme_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a17e32a72d17.json`
 
 ### evo-a19144984acf
 
@@ -9987,6 +11153,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a45f67f263cf.json`
 
+### evo-a4acce13106c
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a4acce13106c.json`
+
 ### evo-a4c2e122db14
 
 - doctrine_id: `volatility_breakout_fade`
@@ -10130,6 +11307,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a58984c630e8.json`
 
+### evo-a5a76477fe41
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a5a76477fe41.json`
+
 ### evo-a5c87ad27ee2
 
 - doctrine_id: `volatility_breakout_fade`
@@ -10174,6 +11362,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a6664fc572e7.json`
 
+### evo-a67414cd5411
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a67414cd5411.json`
+
 ### evo-a681b9cb3f72
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -10195,6 +11394,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a6fd1690b0f4.json`
+
+### evo-a70c5c922eb0
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a70c5c922eb0.json`
 
 ### evo-a71454959a06
 
@@ -10262,6 +11472,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a89503c1ee89.json`
 
+### evo-a89deed33100
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a89deed33100.json`
+
 ### evo-a8edd1e9bb25
 
 - doctrine_id: `extreme_reversion`
@@ -10272,6 +11493,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a8edd1e9bb25.json`
+
+### evo-a8f3ec7219e2
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a8f3ec7219e2.json`
+
+### evo-a907a3fe8eb8
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `volume_exhaustion_reversal`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a907a3fe8eb8.json`
 
 ### evo-a91177ef8a8f
 
@@ -10317,6 +11560,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-a99bbfd3e544.json`
 
+### evo-a9af53325dc1
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-a9af53325dc1.json`
+
 ### evo-a9cb584189d4
 
 - doctrine_id: `volatility_breakout_fade`
@@ -10360,6 +11614,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-aa1ea67c9aff.json`
+
+### evo-aa2a6f5571ee
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-aa2a6f5571ee.json`
 
 ### evo-aa4b2f8483d6
 
@@ -10592,6 +11857,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-ae6041f78981.json`
 
+### evo-af13fef47f07
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-af13fef47f07.json`
+
 ### evo-af37625d4d16
 
 - doctrine_id: `extreme_reversion`
@@ -10779,6 +12055,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-b1f04229fb82.json`
 
+### evo-b207e60712c2
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-b207e60712c2.json`
+
 ### evo-b27fcb50a5fa
 
 - doctrine_id: `compression_mean_reversion`
@@ -10789,6 +12076,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-b27fcb50a5fa.json`
+
+### evo-b297e769274c
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-b297e769274c.json`
 
 ### evo-b346c6497912
 
@@ -10966,6 +12264,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-b67e382fe408.json`
 
+### evo-b68da35f7cb3
+
+- doctrine_id: `n/a`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-b68da35f7cb3.json`
+
 ### evo-b69de10e66d2
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -10987,6 +12296,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-b6d438099c6e.json`
+
+### evo-b7199121c34f
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-b7199121c34f.json`
 
 ### evo-b789370c0e08
 
@@ -11175,6 +12495,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-ba8c8c63593b.json`
 
+### evo-bad4458b5112
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-bad4458b5112.json`
+
 ### evo-bb33b8e1dbc3
 
 - doctrine_id: `volatility_breakout_fade`
@@ -11207,6 +12538,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-bb5fdeef05d7.json`
+
+### evo-bb62f616d2c2
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-bb62f616d2c2.json`
 
 ### evo-bb740790d634
 
@@ -11329,6 +12671,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-bd075e904a82.json`
 
+### evo-bd2c02b72f85
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-bd2c02b72f85.json`
+
 ### evo-bd499de67830
 
 - doctrine_id: `volatility_breakout_fade`
@@ -11450,6 +12803,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-be6593737b8e.json`
 
+### evo-be69cd2d6824
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-be69cd2d6824.json`
+
 ### evo-beb05ed42229
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -11460,6 +12824,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-beb05ed42229.json`
+
+### evo-beb6c75392bb
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `range_extreme_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-beb6c75392bb.json`
 
 ### evo-bee18933f57b
 
@@ -11538,6 +12913,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-c176e7cd688c.json`
 
+### evo-c17cb770d26c
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-c17cb770d26c.json`
+
 ### evo-c1e27585ee2e
 
 - doctrine_id: `n/a`
@@ -11592,6 +12978,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-c26577a9ea9a.json`
+
+### evo-c26f23b0895f
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-c26f23b0895f.json`
 
 ### evo-c26f3988dfdc
 
@@ -11791,6 +13188,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-c5b532aa815c.json`
 
+### evo-c6132ea6cd86
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-c6132ea6cd86.json`
+
 ### evo-c632dff9b3da
 
 - doctrine_id: `volatility_breakout_fade`
@@ -11846,6 +13254,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-c71e971751f5.json`
 
+### evo-c72019e17d34
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-c72019e17d34.json`
+
 ### evo-c72b9b97d371
 
 - doctrine_id: `volatility_breakout_fade`
@@ -11856,6 +13275,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-c72b9b97d371.json`
+
+### evo-c72cbc3e558a
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-c72cbc3e558a.json`
 
 ### evo-c7443192d6eb
 
@@ -11978,6 +13408,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-c962f8f9520a.json`
 
+### evo-c997ebf519e0
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-c997ebf519e0.json`
+
 ### evo-c99903294c59
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -12066,6 +13507,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-cb05c430df6a.json`
 
+### evo-cb1c5b03719b
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-cb1c5b03719b.json`
+
 ### evo-cb2e94c01796
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -12142,6 +13594,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-cbeb314fb858.json`
+
+### evo-cbece622b20c
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-cbece622b20c.json`
 
 ### evo-cc08b49aa33c
 
@@ -12385,6 +13848,28 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-cfdfa51f5d7c.json`
 
+### evo-d03ced899059
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d03ced899059.json`
+
+### evo-d0487c0a8b6c
+
+- doctrine_id: `n/a`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d0487c0a8b6c.json`
+
 ### evo-d056feb3fa1f
 
 - doctrine_id: `range_session_reclaim`
@@ -12517,6 +14002,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-d21d9b1e8c12.json`
 
+### evo-d25afb96be61
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d25afb96be61.json`
+
 ### evo-d26187a7b5ec
 
 - doctrine_id: `volatility_breakout_fade`
@@ -12571,6 +14067,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-d3d6fd7869e1.json`
+
+### evo-d3eaab4122d9
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d3eaab4122d9.json`
 
 ### evo-d3eb4799f2eb
 
@@ -12726,6 +14233,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-d6880ba4e8d8.json`
 
+### evo-d6ca1d428f95
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d6ca1d428f95.json`
+
 ### evo-d6dcc58d24fc
 
 - doctrine_id: `range_session_reclaim`
@@ -12747,6 +14265,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-d707ceeaffe1.json`
+
+### evo-d7338cb7bfc3
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d7338cb7bfc3.json`
 
 ### evo-d73db9002827
 
@@ -12924,6 +14453,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-d9bbff885d7b.json`
 
+### evo-d9bd5e5cf3e5
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-d9bd5e5cf3e5.json`
+
 ### evo-d9d30d3039d7
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -12968,6 +14508,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-da49a8e5346d.json`
 
+### evo-da91fe27a50a
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-da91fe27a50a.json`
+
 ### evo-da9a1d7594fa
 
 - doctrine_id: `volatility_breakout_fade`
@@ -13000,6 +14551,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-db446eb813af.json`
+
+### evo-db4e2c591e72
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-db4e2c591e72.json`
 
 ### evo-db6d0e18c244
 
@@ -13034,6 +14596,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-dbede60b5433.json`
 
+### evo-dc029bbe7961
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-dc029bbe7961.json`
+
 ### evo-dc30cb3ca120
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -13055,6 +14628,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-dc62d805649a.json`
+
+### evo-dce2279cfafb
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-dce2279cfafb.json`
 
 ### evo-dcec694ca6d0
 
@@ -13287,6 +14871,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-df8840e47ce3.json`
 
+### evo-df948415fcb1
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-df948415fcb1.json`
+
 ### evo-dff80ba061c1
 
 - doctrine_id: `range_session_reclaim`
@@ -13397,6 +14992,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e12849d6db31.json`
 
+### evo-e12ac538e980
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e12ac538e980.json`
+
 ### evo-e12d6a6fd586
 
 - doctrine_id: `n/a`
@@ -13430,6 +15036,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e1881908608f.json`
 
+### evo-e19ecbc1bfaa
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e19ecbc1bfaa.json`
+
 ### evo-e1c829b12411
 
 - doctrine_id: `volatility_breakout_fade`
@@ -13451,6 +15068,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e1df5f15ec1b.json`
+
+### evo-e1ece946d0d3
+
+- doctrine_id: `extreme_reversion`
+- strategy_id: `ema_pullback_long`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e1ece946d0d3.json`
+
+### evo-e2ac0a030e87
+
+- doctrine_id: `compression_mean_reversion`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e2ac0a030e87.json`
 
 ### evo-e2e44673cc5e
 
@@ -13495,6 +15134,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e3caa76b45af.json`
+
+### evo-e42251eca8e0
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e42251eca8e0.json`
 
 ### evo-e4226261a271
 
@@ -13573,6 +15223,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e4e61e6a9de4.json`
 
+### evo-e53aa46f4adf
+
+- doctrine_id: `n/a`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e53aa46f4adf.json`
+
 ### evo-e5606390bdda
 
 - doctrine_id: `volatility_breakout_fade`
@@ -13583,6 +15244,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e5606390bdda.json`
+
+### evo-e56238a0bee9
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e56238a0bee9.json`
 
 ### evo-e579193b2284
 
@@ -13671,6 +15343,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e67a7c09ce66.json`
+
+### evo-e6b157678c33
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e6b157678c33.json`
 
 ### evo-e6b6c8a7922b
 
@@ -13803,6 +15486,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-e8ce45beb330.json`
+
+### evo-e8e6027a7d0d
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-e8e6027a7d0d.json`
+
+### evo-ea2ef4092d51
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-ea2ef4092d51.json`
 
 ### evo-ea3263c836c4
 
@@ -13991,6 +15696,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-ecc9a28329e6.json`
 
+### evo-eccecb9b47d2
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-eccecb9b47d2.json`
+
 ### evo-ecf1a4806d5b
 
 - doctrine_id: `volatility_breakout_fade`
@@ -14001,6 +15717,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-ecf1a4806d5b.json`
+
+### evo-ed1ce72a7983
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-ed1ce72a7983.json`
 
 ### evo-ed1f51db5184
 
@@ -14023,6 +15750,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-ed89f8b8da94.json`
+
+### evo-ed95353e6395
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-ed95353e6395.json`
 
 ### evo-edb48c4e780c
 
@@ -14134,6 +15872,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f0461df762b9.json`
 
+### evo-f0564b859491
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `range_extreme_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f0564b859491.json`
+
 ### evo-f076394ab45a
 
 - doctrine_id: `n/a`
@@ -14244,6 +15993,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f1edd3c9b840.json`
 
+### evo-f1f984d6b323
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `momentum_fade`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f1f984d6b323.json`
+
 ### evo-f22125fd3555
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -14254,6 +16014,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f22125fd3555.json`
+
+### evo-f23158d234d5
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f23158d234d5.json`
+
+### evo-f238ed684db5
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f238ed684db5.json`
 
 ### evo-f23a1cb1bdfe
 
@@ -14310,6 +16092,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f38f436bd621.json`
 
+### evo-f3b7195b2587
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f3b7195b2587.json`
+
 ### evo-f3c43fcc768e
 
 - doctrine_id: `compression_mean_reversion`
@@ -14320,6 +16113,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f3c43fcc768e.json`
+
+### evo-f40b64c3040e
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f40b64c3040e.json`
 
 ### evo-f412753f1418
 
@@ -14419,6 +16223,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f5da13d99e45.json`
+
+### evo-f5fb1f929b17
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f5fb1f929b17.json`
 
 ### evo-f60b65278af5
 
@@ -14607,6 +16422,17 @@ Default queue source:
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f90601da13a3.json`
 
+### evo-f97ad2b8edc4
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `intermarket_context_gate`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f97ad2b8edc4.json`
+
 ### evo-f97f9bc93632
 
 - doctrine_id: `breakout_impulse_squeeze`
@@ -14628,6 +16454,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-f982aa2cdbe6.json`
+
+### evo-f9b60f98614c
+
+- doctrine_id: `volatility_breakout_fade`
+- strategy_id: `vwap_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-f9b60f98614c.json`
 
 ### evo-f9b6e7d40ee4
 
@@ -14694,6 +16531,28 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-facfe9d762d1.json`
+
+### evo-fae048ce792f
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `rsi_extreme_reversion`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-fae048ce792f.json`
+
+### evo-fb136728a848
+
+- doctrine_id: `breakout_impulse_squeeze`
+- strategy_id: `participation_gate_overlay`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-fb136728a848.json`
 
 ### evo-fb21e70aef1a
 
@@ -14980,6 +16839,17 @@ Default queue source:
 - queue_status: `queued`
 - queue_origin: `evolution`
 - bridge_packet_path: `artifacts\bridge_packets\evo-ff7211d3f644.json`
+
+### evo-ff7a428a03fe
+
+- doctrine_id: `range_session_reclaim`
+- strategy_id: `multi_confirm_bounce`
+- paper_trade_readiness: `0`
+- max_drawdown: `1.0`
+- eligibility_status: `eligible_for_paper_trade`
+- queue_status: `queued`
+- queue_origin: `evolution`
+- bridge_packet_path: `artifacts\bridge_packets\evo-ff7a428a03fe.json`
 
 ### evo-ff93e8060fae
 
