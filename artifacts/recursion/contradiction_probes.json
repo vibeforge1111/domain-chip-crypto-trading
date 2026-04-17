@@ -315,7 +315,7 @@
     ]
   },
   {
-    "candidate_id": "btc-15m-volatility-compression-breakout-psychology_no_chase",
+    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -344,38 +344,38 @@
         "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
       }
     ],
-    "holdout_profitability_score": 0.3133,
+    "holdout_profitability_score": 0.0,
     "market_regime": "high_vol",
     "max_drawdown": 0.99,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "btc-15m-volatility-compression-breakout-psychology_no_chase-sparse_signal",
+    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-17198cff45-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
     "strategy_id": "breakout_open_interest_confirmation",
     "stress_resilience": 0.0,
-    "trade_count": 3,
+    "trade_count": 5,
     "walk_forward_consistency": 0.0,
     "weakest_segments": [
+      {
+        "avg_return": -1.04,
+        "end_contract_id": "kxbtc15m-20260130-0745",
+        "profitability_score": 0.0,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc15m-20251115-1600",
+        "trade_count": 1,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
       {
         "avg_return": -1.04,
         "end_contract_id": "kxbtc15m-20260415-2345",
         "profitability_score": 0.0,
         "segment_id": "wf-3",
         "start_contract_id": "kxbtc15m-20260130-0800",
-        "trade_count": 2,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
+        "trade_count": 3,
+        "trade_count_gate_pass": true,
         "win_rate": 0.0
       }
     ]
@@ -442,68 +442,7 @@
     ]
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-85e681c330",
-    "doctrine_id": "None",
-    "failure_modes": [
-      {
-        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
-        "mode": "sparse_signal",
-        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
-      },
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      }
-    ],
-    "holdout_profitability_score": 0.0,
-    "market_regime": "None",
-    "max_drawdown": 0.0,
-    "minimum_trade_count": 435,
-    "priority": 0.99,
-    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-85e681c330-sparse_signal",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "None",
-    "stress_resilience": 0.0,
-    "trade_count": 0,
-    "walk_forward_consistency": 0.0,
-    "weakest_segments": [
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20260130-0745",
-        "profitability_score": 0.0,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc15m-20251115-1600",
-        "trade_count": 0,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter",
+    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -532,7 +471,7 @@
     "max_drawdown": 0.0,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-late-sample-guard-plus-session-filter-sparse_signal",
+    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-late_sample_guard=on-pro-crossover-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
@@ -564,7 +503,68 @@
     ]
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e",
+    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-6636121cd9",
+    "doctrine_id": "None",
+    "failure_modes": [
+      {
+        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
+        "mode": "sparse_signal",
+        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
+      },
+      {
+        "evidence": "The final holdout slice drops below break-even profitability after fees.",
+        "mode": "holdout_decay",
+        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
+      },
+      {
+        "evidence": "Walk-forward consistency is too low across chronological splits.",
+        "mode": "segment_instability",
+        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
+      },
+      {
+        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
+        "mode": "execution_fragility",
+        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
+      }
+    ],
+    "holdout_profitability_score": 0.0,
+    "market_regime": "None",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 435,
+    "priority": 0.99,
+    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-6636121cd9-sparse_signal",
+    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "backtest",
+    "strategy_id": "None",
+    "stress_resilience": 0.0,
+    "trade_count": 0,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20251115-1545",
+        "profitability_score": 0.0,
+        "segment_id": "wf-1",
+        "start_contract_id": "kxbtc15m-20250901-0000",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260130-0745",
+        "profitability_score": 0.0,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc15m-20251115-1600",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  {
+    "candidate_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -593,11 +593,11 @@
     "max_drawdown": 0.0,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-f3947c981e-sparse_signal",
+    "probe_id": "auto-breakout-impulse-squeeze-compression_profile=tight_squeeze-variety-session-stability-filter-variety-late-0b0a6348a7-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
-    "strategy_id": "breakout_open_interest_confirmation",
+    "strategy_id": "bollinger_squeeze_breakout",
     "stress_resilience": 0.0,
     "trade_count": 0,
     "walk_forward_consistency": 0.0,
@@ -625,7 +625,68 @@
     ]
   },
   {
-    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal",
+    "candidate_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-4f407293fc-sparse_signal",
+    "doctrine_id": "None",
+    "failure_modes": [
+      {
+        "evidence": "Trade count stays below the minimum gate, so the candidate may be a local curve rather than a repeatable contract edge.",
+        "mode": "sparse_signal",
+        "probe": "Tighten no-trade boundaries or widen the activation logic, then re-run on the same dataset to see whether trade count can rise without collapsing profitability."
+      },
+      {
+        "evidence": "The final holdout slice drops below break-even profitability after fees.",
+        "mode": "holdout_decay",
+        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
+      },
+      {
+        "evidence": "Walk-forward consistency is too low across chronological splits.",
+        "mode": "segment_instability",
+        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
+      },
+      {
+        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
+        "mode": "execution_fragility",
+        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
+      }
+    ],
+    "holdout_profitability_score": 0.0,
+    "market_regime": "None",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 435,
+    "priority": 0.99,
+    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-baseline-sparse_signal-probe-sparse_sig-4f407293fc-sparse_signal-sparse_signal",
+    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "backtest",
+    "strategy_id": "None",
+    "stress_resilience": 0.0,
+    "trade_count": 0,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20251115-1545",
+        "profitability_score": 0.0,
+        "segment_id": "wf-1",
+        "start_contract_id": "kxbtc15m-20250901-0000",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260130-0745",
+        "profitability_score": 0.0,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc15m-20251115-1600",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  {
+    "candidate_id": "btc-15m-momentum-breakout-structure-psychology_no_chase",
     "doctrine_id": "breakout_volatility_expansion",
     "failure_modes": [
       {
@@ -659,15 +720,25 @@
     "max_drawdown": 0.99,
     "minimum_trade_count": 25,
     "priority": 0.99,
-    "probe_id": "auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-momentum-breakout-structure-psycholo-191ba0e40c-sparse_signal-sparse_signal",
+    "probe_id": "btc-15m-momentum-breakout-structure-psychology_no_chase-sparse_signal",
     "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "backtest",
     "strategy_id": "breakout_open_interest_confirmation",
     "stress_resilience": 0.0,
-    "trade_count": 1,
+    "trade_count": 2,
     "walk_forward_consistency": 0.0,
     "weakest_segments": [
+      {
+        "avg_return": -1.04,
+        "end_contract_id": "kxbtc15m-20260130-0745",
+        "profitability_score": 0.0,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc15m-20251115-1600",
+        "trade_count": 1,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      },
       {
         "avg_return": -1.04,
         "end_contract_id": "kxbtc15m-20260415-2345",
@@ -675,16 +746,6 @@
         "segment_id": "wf-3",
         "start_contract_id": "kxbtc15m-20260130-0800",
         "trade_count": 1,
-        "trade_count_gate_pass": false,
-        "win_rate": 0.0
-      },
-      {
-        "avg_return": 0.0,
-        "end_contract_id": "kxbtc15m-20251115-1545",
-        "profitability_score": 0.0,
-        "segment_id": "wf-1",
-        "start_contract_id": "kxbtc15m-20250901-0000",
-        "trade_count": 0,
         "trade_count_gate_pass": false,
         "win_rate": 0.0
       }
@@ -733,6 +794,52 @@
         "trade_count": 1,
         "trade_count_gate_pass": false,
         "win_rate": 0.0
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-01e0a7f375ea",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.23,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 139,
+    "priority": 0.99,
+    "probe_id": "evo-01e0a7f375ea-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "intermarket_context_gate",
+    "stress_resilience": 0.0,
+    "trade_count": 8,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.23,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.23,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 8,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.25
       }
     ]
   },
@@ -1979,6 +2086,52 @@
     ]
   },
   {
+    "candidate_id": "evo-6a39957266ff",
+    "doctrine_id": "extreme_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.18,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 450,
+    "priority": 0.99,
+    "probe_id": "evo-6a39957266ff-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "ema_pullback_long",
+    "stress_resilience": 0.0,
+    "trade_count": 5,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.18,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.18,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 5,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.2
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-70028543e25e",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -2481,6 +2634,52 @@
         "trade_count": 8,
         "trade_count_gate_pass": false,
         "win_rate": 0.25
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-9fbe30ec87fd",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.3729,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.99,
+    "probe_id": "evo-9fbe30ec87fd-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 28,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.3729,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.3729,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 28,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.3929
       }
     ]
   },
@@ -3037,6 +3236,52 @@
     ]
   },
   {
+    "candidate_id": "evo-c71e971751f5",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.0,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.99,
+    "probe_id": "evo-c71e971751f5-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 1,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.0,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 1,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-c873e2dfb310",
     "doctrine_id": "range_session_reclaim",
     "failure_modes": [
@@ -3497,6 +3742,52 @@
     ]
   },
   {
+    "candidate_id": "evo-f63623f6a1aa",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.0,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.99,
+    "probe_id": "evo-f63623f6a1aa-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 1,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.0,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 1,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-f6b34f07f7d8",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -3885,128 +4176,6 @@
     ]
   },
   {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3133,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9592,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-c969a92d4e-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 33,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.24,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.38,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 10,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4
-      },
-      {
-        "avg_return": -0.1067,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4467,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 15,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4667
-      }
-    ]
-  },
-  {
-    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f",
-    "doctrine_id": "trend_regime_following",
-    "failure_modes": [
-      {
-        "evidence": "The final holdout slice drops below break-even profitability after fees.",
-        "mode": "holdout_decay",
-        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
-      },
-      {
-        "evidence": "Walk-forward consistency is too low across chronological splits.",
-        "mode": "segment_instability",
-        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
-      },
-      {
-        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
-        "mode": "execution_fragility",
-        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
-      },
-      {
-        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
-        "mode": "drawdown_excess",
-        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
-      }
-    ],
-    "holdout_profitability_score": 0.3133,
-    "market_regime": "trend",
-    "max_drawdown": 0.99,
-    "minimum_trade_count": 25,
-    "priority": 0.9592,
-    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_dead_zone-volume_context_guard=stri-a6c463789f-holdout_decay",
-    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
-    "recommended_next_step": "run_contradiction_probe",
-    "source_lane": "backtest",
-    "strategy_id": "ema_pullback_long",
-    "stress_resilience": 0.0,
-    "trade_count": 31,
-    "walk_forward_consistency": 0.3333,
-    "weakest_segments": [
-      {
-        "avg_return": -0.24,
-        "end_contract_id": "kxbtc1h-20260130-0700",
-        "profitability_score": 0.38,
-        "segment_id": "wf-2",
-        "start_contract_id": "kxbtc1h-20251115-1600",
-        "trade_count": 10,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4
-      },
-      {
-        "avg_return": -0.1829,
-        "end_contract_id": "kxbtc1h-20260415-2300",
-        "profitability_score": 0.4086,
-        "segment_id": "wf-3",
-        "start_contract_id": "kxbtc1h-20260130-0800",
-        "trade_count": 14,
-        "trade_count_gate_pass": true,
-        "win_rate": 0.4286
-      }
-    ]
-  },
-  {
     "candidate_id": "evo-513f699e0848",
     "doctrine_id": "range_session_reclaim",
     "failure_modes": [
@@ -4095,6 +4264,52 @@
         "trade_count": 35,
         "trade_count_gate_pass": false,
         "win_rate": 0.4286
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-0b1dbf5805e9",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4175,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 300,
+    "priority": 0.9238,
+    "probe_id": "evo-0b1dbf5805e9-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4175,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.4175,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.4375
       }
     ]
   },
@@ -4789,6 +5004,52 @@
     ]
   },
   {
+    "candidate_id": "evo-e61430d19542",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4175,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.9238,
+    "probe_id": "evo-e61430d19542-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 32,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4175,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.4175,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 32,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.4375
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-17863549b7d4",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -4814,6 +5075,52 @@
     "minimum_trade_count": 208,
     "priority": 0.9134,
     "probe_id": "evo-17863549b7d4-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "intermarket_context_gate",
+    "stress_resilience": 0.0,
+    "trade_count": 9,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4244,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.4244,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 9,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.4444
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-41aaf0f8155a",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4244,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 208,
+    "priority": 0.9134,
+    "probe_id": "evo-41aaf0f8155a-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -6347,6 +6654,52 @@
     ]
   },
   {
+    "candidate_id": "evo-407bb7bd74f4",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.83,
+    "probe_id": "evo-407bb7bd74f4-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 18,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.48,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.48,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 18,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-455bc2d07e9c",
     "doctrine_id": "",
     "failure_modes": [
@@ -6387,6 +6740,52 @@
         "segment_id": "paper-trade-shadow",
         "start_contract_id": "kxbtc15m-20260331-0900",
         "trade_count": 6,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-46baabd4b343",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 69,
+    "priority": 0.83,
+    "probe_id": "evo-46baabd4b343-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "compression_range_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 24,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.48,
+        "end_contract_id": "kxbtc1h-20260415-2300",
+        "profitability_score": 0.48,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 24,
         "trade_count_gate_pass": false,
         "win_rate": 0.5
       }
@@ -6669,6 +7068,52 @@
     ]
   },
   {
+    "candidate_id": "evo-7f19ac7a32bb",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.83,
+    "probe_id": "evo-7f19ac7a32bb-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 12,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.48,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.48,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 12,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-8774c729cb13",
     "doctrine_id": "volatility_breakout_fade",
     "failure_modes": [
@@ -6893,6 +7338,52 @@
         "segment_id": "paper-trade-shadow",
         "start_contract_id": "kxbtc1h-20260318-0100",
         "trade_count": 2,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-bddd83c720eb",
+    "doctrine_id": "extreme_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.83,
+    "probe_id": "evo-bddd83c720eb-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 14,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.48,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.48,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 14,
         "trade_count_gate_pass": false,
         "win_rate": 0.5
       }
@@ -7451,6 +7942,98 @@
     ]
   },
   {
+    "candidate_id": "evo-fc6439738f92",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "event_driven",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 450,
+    "priority": 0.83,
+    "probe_id": "evo-fc6439738f92-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 14,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.48,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.48,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 14,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-fdedf37aebfd",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.83,
+    "probe_id": "evo-fdedf37aebfd-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 24,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.48,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.48,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 24,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-ffd750cd55e0",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -7865,6 +8448,52 @@
     ]
   },
   {
+    "candidate_id": "evo-151e2e2921ab",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4935,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8097,
+    "probe_id": "evo-151e2e2921ab-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 37,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4935,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.4935,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 37,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5135
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-1764572b862f",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -7936,6 +8565,52 @@
     "minimum_trade_count": 150,
     "priority": 0.8097,
     "probe_id": "evo-240a8e5488b9-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 37,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4935,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.4935,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 37,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5135
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-24b4cafeed14",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4935,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8097,
+    "probe_id": "evo-24b4cafeed14-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -8212,6 +8887,98 @@
     "minimum_trade_count": 150,
     "priority": 0.8097,
     "probe_id": "evo-2f8a931a5b36-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 37,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4935,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.4935,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 37,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5135
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-3630b86e2ecc",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4935,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8097,
+    "probe_id": "evo-3630b86e2ecc-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 37,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4935,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.4935,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 37,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5135
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-3c0994c8b4d3",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4935,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8097,
+    "probe_id": "evo-3c0994c8b4d3-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -9454,6 +10221,52 @@
     "minimum_trade_count": 150,
     "priority": 0.8097,
     "probe_id": "evo-7cdf961d3d3f-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 37,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.4935,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.4935,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 37,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5135
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-85602d5cd9a3",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.4935,
+    "market_regime": "",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8097,
+    "probe_id": "evo-85602d5cd9a3-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -11916,6 +12729,47 @@
     ]
   },
   {
+    "candidate_id": "evo-24d09c693e0e",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6467,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8,
+    "probe_id": "evo-24d09c693e0e-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 3,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6467,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6467,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 3,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6667
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-2c1bb0e173b0",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -12244,6 +13098,47 @@
     ]
   },
   {
+    "candidate_id": "evo-57c203b687de",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The candidate failed outer validation and was demoted back to benchmark refinement.",
+        "mode": "paper_trade_demotion",
+        "probe": "Use the shadow slice as a direct contradiction packet and mutate the candidate around live-like execution, abstention, and session timing instead of relying on the older blended benchmark alone."
+      }
+    ],
+    "holdout_profitability_score": 0.0,
+    "market_regime": "trend",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 150,
+    "priority": 0.8,
+    "probe_id": "evo-57c203b687de-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 0,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.0,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.0,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 0,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.0
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-6224ea440e99",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -12490,6 +13385,47 @@
     ]
   },
   {
+    "candidate_id": "evo-7a01505fe110",
+    "doctrine_id": "extreme_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5356,
+    "market_regime": "event_driven",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 300,
+    "priority": 0.8,
+    "probe_id": "evo-7a01505fe110-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 9,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5356,
+        "end_contract_id": "kxeth15m-20260415-2345",
+        "profitability_score": 0.5356,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 9,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5556
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-7dcb068a24c1",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -12650,6 +13586,47 @@
         "trade_count": 3,
         "trade_count_gate_pass": false,
         "win_rate": 0.6667
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-977f65f8782b",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5217,
+    "market_regime": "trend",
+    "max_drawdown": 0.9706,
+    "minimum_trade_count": 150,
+    "priority": 0.8,
+    "probe_id": "evo-977f65f8782b-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 24,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5217,
+        "end_contract_id": "kxeth15m-20260415-2345",
+        "profitability_score": 0.5217,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxeth15m-20260331-0900",
+        "trade_count": 24,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5417
       }
     ]
   },
@@ -13105,6 +14082,47 @@
     ]
   },
   {
+    "candidate_id": "evo-c81c860c2254",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6467,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8,
+    "probe_id": "evo-c81c860c2254-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 3,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6467,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6467,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 3,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6667
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-c93083498e01",
     "doctrine_id": "compression_mean_reversion",
     "failure_modes": [
@@ -13187,6 +14205,47 @@
     ]
   },
   {
+    "candidate_id": "evo-d6dcc58d24fc",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6271,
+    "market_regime": "",
+    "max_drawdown": 0.9815,
+    "minimum_trade_count": 300,
+    "priority": 0.8,
+    "probe_id": "evo-d6dcc58d24fc-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "compression_range_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 17,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6271,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.6271,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 17,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6471
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-d9fff18fe971",
     "doctrine_id": "compression_mean_reversion",
     "failure_modes": [
@@ -13224,6 +14283,47 @@
         "trade_count": 9,
         "trade_count_gate_pass": false,
         "win_rate": 0.5556
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-e80e570d54bc",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5094,
+    "market_regime": "trend",
+    "max_drawdown": 0.963,
+    "minimum_trade_count": 208,
+    "priority": 0.8,
+    "probe_id": "evo-e80e570d54bc-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 17,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5094,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.5094,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 17,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5294
       }
     ]
   },
@@ -13388,6 +14488,47 @@
         "trade_count": 53,
         "trade_count_gate_pass": false,
         "win_rate": 0.5472
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-f81ecff5d1bc",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5133,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 150,
+    "priority": 0.8,
+    "probe_id": "evo-f81ecff5d1bc-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 15,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5133,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.5133,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 15,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5333
       }
     ]
   },
@@ -13699,6 +14840,47 @@
     "minimum_trade_count": 150,
     "priority": 0.7957,
     "probe_id": "evo-d0ebb4945742-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 42,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5276,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.5276,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 42,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5476
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-eb138c4a79c5",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5276,
+    "market_regime": "",
+    "max_drawdown": 0.9219,
+    "minimum_trade_count": 150,
+    "priority": 0.7957,
+    "probe_id": "evo-eb138c4a79c5-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -14249,6 +15431,47 @@
         "trade_count": 40,
         "trade_count_gate_pass": false,
         "win_rate": 0.6
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-55e0a6603579",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5235,
+    "market_regime": "",
+    "max_drawdown": 0.8529,
+    "minimum_trade_count": 300,
+    "priority": 0.7715,
+    "probe_id": "evo-55e0a6603579-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "compression_range_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 46,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5235,
+        "end_contract_id": "kxeth15m-20260415-2345",
+        "profitability_score": 0.5235,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 46,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5435
       }
     ]
   },
@@ -15442,6 +16665,47 @@
     ]
   },
   {
+    "candidate_id": "evo-1fbfe242ee8f",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "trend",
+    "max_drawdown": 0.7429,
+    "minimum_trade_count": 139,
+    "priority": 0.733,
+    "probe_id": "evo-1fbfe242ee8f-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-467cab59924f",
     "doctrine_id": "volatility_breakout_fade",
     "failure_modes": [
@@ -15688,6 +16952,88 @@
     ]
   },
   {
+    "candidate_id": "evo-a9cb584189d4",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "trend",
+    "max_drawdown": 0.7429,
+    "minimum_trade_count": 139,
+    "priority": 0.733,
+    "probe_id": "evo-a9cb584189d4-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-cb460db65e66",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "trend",
+    "max_drawdown": 0.7429,
+    "minimum_trade_count": 139,
+    "priority": 0.733,
+    "probe_id": "evo-cb460db65e66-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-cd9f609a1704",
     "doctrine_id": "volatility_breakout_fade",
     "failure_modes": [
@@ -15770,6 +17116,88 @@
     ]
   },
   {
+    "candidate_id": "evo-d26187a7b5ec",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "trend",
+    "max_drawdown": 0.7429,
+    "minimum_trade_count": 139,
+    "priority": 0.733,
+    "probe_id": "evo-d26187a7b5ec-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-d550cb98d320",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "trend",
+    "max_drawdown": 0.7429,
+    "minimum_trade_count": 139,
+    "priority": 0.733,
+    "probe_id": "evo-d550cb98d320-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-f1b92f01cbe7",
     "doctrine_id": "volatility_breakout_fade",
     "failure_modes": [
@@ -15807,6 +17235,88 @@
         "trade_count": 16,
         "trade_count_gate_pass": false,
         "win_rate": 0.625
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-fe87eafcd8b8",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "trend",
+    "max_drawdown": 0.7429,
+    "minimum_trade_count": 139,
+    "priority": 0.733,
+    "probe_id": "evo-fe87eafcd8b8-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 16,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 16,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-2b4830e89c0a",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5871,
+    "market_regime": "trend",
+    "max_drawdown": 0.7333,
+    "minimum_trade_count": 208,
+    "priority": 0.7297,
+    "probe_id": "evo-2b4830e89c0a-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 56,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5871,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.5871,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 56,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6071
       }
     ]
   },
@@ -16138,6 +17648,47 @@
     ]
   },
   {
+    "candidate_id": "evo-35a61b6334ca",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6229,
+    "market_regime": "",
+    "max_drawdown": 0.7143,
+    "minimum_trade_count": 150,
+    "priority": 0.723,
+    "probe_id": "evo-35a61b6334ca-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 14,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6229,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6229,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 14,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6429
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-fa993d208506",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -16216,6 +17767,47 @@
         "trade_count": 19,
         "trade_count_gate_pass": false,
         "win_rate": 0.5789
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-79a3b5f4ace2",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.548,
+    "market_regime": "",
+    "max_drawdown": 0.6935,
+    "minimum_trade_count": 300,
+    "priority": 0.7157,
+    "probe_id": "evo-79a3b5f4ace2-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "compression_range_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 125,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.548,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.548,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 125,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.568
       }
     ]
   },
@@ -16380,6 +17972,47 @@
         "trade_count": 30,
         "trade_count_gate_pass": false,
         "win_rate": 0.6667
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-f0461df762b9",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.5682,
+    "market_regime": "",
+    "max_drawdown": 0.6512,
+    "minimum_trade_count": 450,
+    "priority": 0.7009,
+    "probe_id": "evo-f0461df762b9-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 34,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.5682,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.5682,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 34,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.5882
       }
     ]
   },
@@ -16999,6 +18632,47 @@
     ]
   },
   {
+    "candidate_id": "evo-82e72e74689e",
+    "doctrine_id": "extreme_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.58,
+    "market_regime": "trend",
+    "max_drawdown": 0.6131,
+    "minimum_trade_count": 139,
+    "priority": 0.6876,
+    "probe_id": "evo-82e72e74689e-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 55,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.58,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.58,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 55,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-506252e2c4ad",
     "doctrine_id": "",
     "failure_modes": [
@@ -17036,6 +18710,47 @@
         "trade_count": 27,
         "trade_count_gate_pass": false,
         "win_rate": 0.5926
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-866785f98371",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.68,
+    "market_regime": "",
+    "max_drawdown": 0.6,
+    "minimum_trade_count": 300,
+    "priority": 0.683,
+    "probe_id": "evo-866785f98371-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "volume_exhaustion_reversal",
+    "stress_resilience": 0.0,
+    "trade_count": 10,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.68,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.68,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 10,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.7
       }
     ]
   },
@@ -17200,6 +18915,211 @@
         "trade_count": 22,
         "trade_count_gate_pass": false,
         "win_rate": 0.5909
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-350d6295e34c",
+    "doctrine_id": "extreme_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.5652,
+    "minimum_trade_count": 139,
+    "priority": 0.6708,
+    "probe_id": "evo-350d6295e34c-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-86397d7c80b9",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.58,
+    "market_regime": "",
+    "max_drawdown": 0.5652,
+    "minimum_trade_count": 150,
+    "priority": 0.6708,
+    "probe_id": "evo-86397d7c80b9-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "volume_exhaustion_reversal",
+    "stress_resilience": 0.0,
+    "trade_count": 10,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.58,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.58,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 10,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-8ef488495d98",
+    "doctrine_id": "extreme_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "",
+    "max_drawdown": 0.5612,
+    "minimum_trade_count": 450,
+    "priority": 0.6694,
+    "probe_id": "evo-8ef488495d98-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "rsi_extreme_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 32,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 32,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-3d3bd4d93e00",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.68,
+    "market_regime": "trend",
+    "max_drawdown": 0.5532,
+    "minimum_trade_count": 139,
+    "priority": 0.6666,
+    "probe_id": "evo-3d3bd4d93e00-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 10,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.68,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.68,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 10,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.7
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-42cfb7dc637a",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6723,
+    "market_regime": "trend",
+    "max_drawdown": 0.5493,
+    "minimum_trade_count": 139,
+    "priority": 0.6653,
+    "probe_id": "evo-42cfb7dc637a-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 13,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6723,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.6723,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 13,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6923
       }
     ]
   },
@@ -18598,6 +20518,47 @@
     ]
   },
   {
+    "candidate_id": "evo-415778be75fa",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-415778be75fa-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-45626a61d434",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -19332,6 +21293,47 @@
         "trade_count": 4,
         "trade_count_gate_pass": false,
         "win_rate": 0.75
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-65c3ab6d3001",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6467,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 208,
+    "priority": 0.6626,
+    "probe_id": "evo-65c3ab6d3001-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 6,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6467,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.6467,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 6,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6667
       }
     ]
   },
@@ -20115,6 +22117,47 @@
     ]
   },
   {
+    "candidate_id": "evo-95a6b0ade52d",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-95a6b0ade52d-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-97812e9d906e",
     "doctrine_id": "range_session_reclaim",
     "failure_modes": [
@@ -20398,6 +22441,47 @@
         "trade_count": 4,
         "trade_count_gate_pass": false,
         "win_rate": 0.75
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-9e2732c31bc6",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6467,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-9e2732c31bc6-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 3,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6467,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6467,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 3,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6667
       }
     ]
   },
@@ -21058,6 +23142,47 @@
     ]
   },
   {
+    "candidate_id": "evo-c26f3988dfdc",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-c26f3988dfdc-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-c31f056bda65",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -21216,6 +23341,47 @@
         "segment_id": "paper-trade-shadow",
         "start_contract_id": "kxbtc1h-20260318-0100",
         "trade_count": 9,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6667
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-c99903294c59",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6467,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-c99903294c59-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 3,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6467,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6467,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 3,
         "trade_count_gate_pass": false,
         "win_rate": 0.6667
       }
@@ -21529,6 +23695,88 @@
     "minimum_trade_count": 150,
     "priority": 0.6626,
     "probe_id": "evo-e0eb05c721f5-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 3,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6467,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6467,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 3,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6667
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-e0f4cdbdd003",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-e0f4cdbdd003-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-e4226261a271",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6467,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-e4226261a271-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -22083,6 +24331,47 @@
     ]
   },
   {
+    "candidate_id": "evo-f2ab1925f01a",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.5417,
+    "minimum_trade_count": 150,
+    "priority": 0.6626,
+    "probe_id": "evo-f2ab1925f01a-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-f5da13d99e45",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -22452,6 +24741,67 @@
     ]
   },
   {
+    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-5d7170b7b6",
+    "doctrine_id": "trend_regime_following",
+    "failure_modes": [
+      {
+        "evidence": "The final holdout slice drops below break-even profitability after fees.",
+        "mode": "holdout_decay",
+        "probe": "Inspect the last walk-forward segment and add regime filters that explicitly block the failing late-sample conditions."
+      },
+      {
+        "evidence": "Walk-forward consistency is too low across chronological splits.",
+        "mode": "segment_instability",
+        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
+      },
+      {
+        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
+        "mode": "execution_fragility",
+        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
+      },
+      {
+        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
+        "mode": "drawdown_excess",
+        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
+      }
+    ],
+    "holdout_profitability_score": 0.48,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 25,
+    "priority": 0.6558,
+    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-5d7170b7b6-holdout_decay",
+    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "backtest",
+    "strategy_id": "ema_pullback_long",
+    "stress_resilience": 0.0,
+    "trade_count": 31,
+    "walk_forward_consistency": 0.6667,
+    "weakest_segments": [
+      {
+        "avg_return": -0.1511,
+        "end_contract_id": "kxbtc1h-20260130-0700",
+        "profitability_score": 0.4244,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc1h-20251115-1600",
+        "trade_count": 9,
+        "trade_count_gate_pass": true,
+        "win_rate": 0.4444
+      },
+      {
+        "avg_return": -0.04,
+        "end_contract_id": "kxbtc1h-20260415-2300",
+        "profitability_score": 0.48,
+        "segment_id": "wf-3",
+        "start_contract_id": "kxbtc1h-20260130-0800",
+        "trade_count": 14,
+        "trade_count_gate_pass": true,
+        "win_rate": 0.5
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-2c730802e42d",
     "doctrine_id": "compression_mean_reversion",
     "failure_modes": [
@@ -22571,6 +24921,88 @@
         "trade_count": 39,
         "trade_count_gate_pass": false,
         "win_rate": 0.6154
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-80a9cde06f76",
+    "doctrine_id": "compression_mean_reversion",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.605,
+    "market_regime": "",
+    "max_drawdown": 0.4672,
+    "minimum_trade_count": 300,
+    "priority": 0.6365,
+    "probe_id": "evo-80a9cde06f76-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "compression_range_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 72,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.605,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.605,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 72,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.625
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-1e65f5df91f8",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.68,
+    "market_regime": "trend",
+    "max_drawdown": 0.45,
+    "minimum_trade_count": 300,
+    "priority": 0.6305,
+    "probe_id": "evo-1e65f5df91f8-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 10,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.68,
+        "end_contract_id": "kxeth15m-20260415-2345",
+        "profitability_score": 0.68,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 10,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.7
       }
     ]
   },
@@ -22996,6 +25428,62 @@
         "trade_count": 10,
         "trade_count_gate_pass": true,
         "win_rate": 0.6
+      }
+    ]
+  },
+  {
+    "candidate_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191",
+    "doctrine_id": "trend_regime_following",
+    "failure_modes": [
+      {
+        "evidence": "Walk-forward consistency is too low across chronological splits.",
+        "mode": "segment_instability",
+        "probe": "Split the weakest chronological segment into its own contradiction lane and mutate around the regime that failed there instead of averaging across the full sample."
+      },
+      {
+        "evidence": "Edge does not survive elevated fees and slippage cleanly.",
+        "mode": "execution_fragility",
+        "probe": "Bias new mutations toward higher expected move thresholds or fewer trades so the setup can absorb venue friction."
+      },
+      {
+        "evidence": "Drawdown remains above the promotion boundary even when trade count is adequate.",
+        "mode": "drawdown_excess",
+        "probe": "Add stricter risk-first filters or no-trade doctrine boundaries before touching sizing or paper-trade escalation."
+      }
+    ],
+    "holdout_profitability_score": 0.58,
+    "market_regime": "trend",
+    "max_drawdown": 0.99,
+    "minimum_trade_count": 25,
+    "priority": 0.6258,
+    "probe_id": "auto-trend-volume-filtered-activation_profile=wider-no_trade_window=avoid_post_open_drift-volume_context_guar-8f1ca8f191-segment_instability",
+    "probe_thesis": "Use the benchmark failure surface itself as the next mutation source instead of adding a fresh doctrine blindly.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "backtest",
+    "strategy_id": "ema_pullback_long",
+    "stress_resilience": 0.0,
+    "trade_count": 48,
+    "walk_forward_consistency": 0.6667,
+    "weakest_segments": [
+      {
+        "avg_return": -0.4246,
+        "end_contract_id": "kxbtc1h-20260130-0700",
+        "profitability_score": 0.2877,
+        "segment_id": "wf-2",
+        "start_contract_id": "kxbtc1h-20251115-1600",
+        "trade_count": 13,
+        "trade_count_gate_pass": true,
+        "win_rate": 0.3077
+      },
+      {
+        "avg_return": 0.0369,
+        "end_contract_id": "kxbtc1h-20251115-1500",
+        "profitability_score": 0.5185,
+        "segment_id": "wf-1",
+        "start_contract_id": "kxbtc1h-20250901-0000",
+        "trade_count": 13,
+        "trade_count_gate_pass": true,
+        "win_rate": 0.5385
       }
     ]
   },
@@ -23984,6 +26472,47 @@
     ]
   },
   {
+    "candidate_id": "evo-fd75ba512a85",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.3611,
+    "minimum_trade_count": 69,
+    "priority": 0.5994,
+    "probe_id": "evo-fd75ba512a85-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 4,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxeth1h-20260318-0100",
+        "trade_count": 4,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-a9445bfde416",
     "doctrine_id": "extreme_reversion",
     "failure_modes": [
@@ -24066,6 +26595,47 @@
     ]
   },
   {
+    "candidate_id": "evo-1720f8b56416",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.7,
+    "market_regime": "trend",
+    "max_drawdown": 0.312,
+    "minimum_trade_count": 139,
+    "priority": 0.5822,
+    "probe_id": "evo-1720f8b56416-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 25,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.7,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.7,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 25,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.72
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-30d79b493cbd",
     "doctrine_id": "range_session_reclaim",
     "failure_modes": [
@@ -24127,6 +26697,47 @@
     "minimum_trade_count": 139,
     "priority": 0.5822,
     "probe_id": "evo-3ae72fddef41-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 25,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.7,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.7,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 25,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.72
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-3ec2e909f0c3",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.7,
+    "market_regime": "trend",
+    "max_drawdown": 0.312,
+    "minimum_trade_count": 139,
+    "priority": 0.5822,
+    "probe_id": "evo-3ec2e909f0c3-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -24312,6 +26923,88 @@
     ]
   },
   {
+    "candidate_id": "evo-d9bbff885d7b",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.7,
+    "market_regime": "trend",
+    "max_drawdown": 0.312,
+    "minimum_trade_count": 139,
+    "priority": 0.5822,
+    "probe_id": "evo-d9bbff885d7b-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "multi_confirm_bounce",
+    "stress_resilience": 0.0,
+    "trade_count": 25,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.7,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.7,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 25,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.72
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-47877f636a8c",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      },
+      {
+        "evidence": "The shadow paper-trade slice experienced live-like drawdown far beyond the bridge comfort zone.",
+        "mode": "shadow_drawdown_excess",
+        "probe": "Bias new mutations toward stricter drawdown guards, edge-only participation, and stronger reversal confirmation before trying to widen trade count again."
+      }
+    ],
+    "holdout_profitability_score": 0.6164,
+    "market_regime": "",
+    "max_drawdown": 0.3043,
+    "minimum_trade_count": 139,
+    "priority": 0.5795,
+    "probe_id": "evo-47877f636a8c-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 11,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6164,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.6164,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 11,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6364
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-0f5e5d144779",
     "doctrine_id": "",
     "failure_modes": [
@@ -24420,6 +27113,78 @@
     ]
   },
   {
+    "candidate_id": "evo-5cb861d94e88",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.6642,
+    "market_regime": "trend",
+    "max_drawdown": 0.2967,
+    "minimum_trade_count": 139,
+    "priority": 0.5768,
+    "probe_id": "evo-5cb861d94e88-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 19,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6642,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.6642,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 19,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6842
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-d1438e078493",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.6642,
+    "market_regime": "trend",
+    "max_drawdown": 0.2967,
+    "minimum_trade_count": 139,
+    "priority": 0.5768,
+    "probe_id": "evo-d1438e078493-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 19,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6642,
+        "end_contract_id": "kxsol1h-20260415-2300",
+        "profitability_score": 0.6642,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 19,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6842
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-0574047a3a77",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -24452,6 +27217,78 @@
         "trade_count": 84,
         "trade_count_gate_pass": false,
         "win_rate": 0.5952
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-457a39c4ae59",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.6642,
+    "market_regime": "",
+    "max_drawdown": 0.2826,
+    "minimum_trade_count": 150,
+    "priority": 0.5719,
+    "probe_id": "evo-457a39c4ae59-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "range_extreme_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 38,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6642,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6642,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 38,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6842
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-c89dac0e235d",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.6642,
+    "market_regime": "",
+    "max_drawdown": 0.2826,
+    "minimum_trade_count": 150,
+    "priority": 0.5719,
+    "probe_id": "evo-c89dac0e235d-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "range_extreme_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 38,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6642,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.6642,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 38,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.6842
       }
     ]
   },
@@ -24543,6 +27380,42 @@
     "minimum_trade_count": 450,
     "priority": 0.5597,
     "probe_id": "evo-156638cced91-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "momentum_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 17,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.6859,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.6859,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 17,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.7059
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-75ae787c290d",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.6859,
+    "market_regime": "trend",
+    "max_drawdown": 0.2476,
+    "minimum_trade_count": 450,
+    "priority": 0.5597,
+    "probe_id": "evo-75ae787c290d-shadow_participation_sparse-paper-trade",
     "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
     "recommended_next_step": "run_contradiction_probe",
     "source_lane": "paper_trade",
@@ -24780,6 +27653,42 @@
     ]
   },
   {
+    "candidate_id": "evo-a2f3803f207d",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.7612,
+    "market_regime": "",
+    "max_drawdown": 0.2213,
+    "minimum_trade_count": 450,
+    "priority": 0.5505,
+    "probe_id": "evo-a2f3803f207d-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "volume_exhaustion_reversal",
+    "stress_resilience": 0.0,
+    "trade_count": 32,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.7612,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.7612,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 32,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.7812
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-00b83cce68d4",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -24924,6 +27833,42 @@
     ]
   },
   {
+    "candidate_id": "evo-04ad86d0384d",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.98,
+    "market_regime": "trend",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 150,
+    "priority": 0.55,
+    "probe_id": "evo-04ad86d0384d-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 2,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.98,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.98,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 2,
+        "trade_count_gate_pass": false,
+        "win_rate": 1.0
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-10c60f18611f",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -25064,6 +28009,42 @@
         "trade_count": 10,
         "trade_count_gate_pass": false,
         "win_rate": 0.8
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-18b8b470c89c",
+    "doctrine_id": "",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.74,
+    "market_regime": "",
+    "max_drawdown": 0.1687,
+    "minimum_trade_count": 150,
+    "priority": 0.55,
+    "probe_id": "evo-18b8b470c89c-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "range_extreme_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 25,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.74,
+        "end_contract_id": "kxbtc15m-20260415-2345",
+        "profitability_score": 0.74,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc15m-20260331-0900",
+        "trade_count": 25,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.76
       }
     ]
   },
@@ -25500,6 +28481,42 @@
     ]
   },
   {
+    "candidate_id": "evo-5d8c022e9a85",
+    "doctrine_id": "range_session_reclaim",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.98,
+    "market_regime": "trend",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 150,
+    "priority": 0.55,
+    "probe_id": "evo-5d8c022e9a85-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "ema_crossover_fade",
+    "stress_resilience": 0.0,
+    "trade_count": 2,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.98,
+        "end_contract_id": "kxsol15m-20260415-2345",
+        "profitability_score": 0.98,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxsol15m-20260331-0900",
+        "trade_count": 2,
+        "trade_count_gate_pass": false,
+        "win_rate": 1.0
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-6287dca81d2e",
     "doctrine_id": "range_session_reclaim",
     "failure_modes": [
@@ -25752,6 +28769,42 @@
     ]
   },
   {
+    "candidate_id": "evo-798d07cf2e9c",
+    "doctrine_id": "volatility_breakout_fade",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.98,
+    "market_regime": "trend",
+    "max_drawdown": 0.0,
+    "minimum_trade_count": 69,
+    "priority": 0.55,
+    "probe_id": "evo-798d07cf2e9c-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "vwap_reversion",
+    "stress_resilience": 0.0,
+    "trade_count": 6,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.98,
+        "end_contract_id": "kxbtc1h-20260415-2300",
+        "profitability_score": 0.98,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 6,
+        "trade_count_gate_pass": false,
+        "win_rate": 1.0
+      }
+    ]
+  },
+  {
     "candidate_id": "evo-7e003e255047",
     "doctrine_id": "breakout_impulse_squeeze",
     "failure_modes": [
@@ -26000,6 +29053,42 @@
         "trade_count": 2,
         "trade_count_gate_pass": false,
         "win_rate": 1.0
+      }
+    ]
+  },
+  {
+    "candidate_id": "evo-a0dff59b1905",
+    "doctrine_id": "breakout_impulse_squeeze",
+    "failure_modes": [
+      {
+        "evidence": "The paper-trade slice produced too few live-like decisions, so the candidate may only look good when benchmark participation is averaged across a much larger sample.",
+        "mode": "shadow_participation_sparse",
+        "probe": "Tighten entry quality around the exact paper-trade shadow windows and add session or reclaim filters that reduce skip-heavy drift without opening the floodgates."
+      }
+    ],
+    "holdout_profitability_score": 0.73,
+    "market_regime": "trend",
+    "max_drawdown": 0.1884,
+    "minimum_trade_count": 139,
+    "priority": 0.55,
+    "probe_id": "evo-a0dff59b1905-shadow_participation_sparse-paper-trade",
+    "probe_thesis": "Use the paper-trade demotion itself as a contradiction packet so the next mutation learns from live-like failure instead of only blended backtest residue.",
+    "recommended_next_step": "run_contradiction_probe",
+    "source_lane": "paper_trade",
+    "strategy_id": "participation_gate_overlay",
+    "stress_resilience": 0.0,
+    "trade_count": 12,
+    "walk_forward_consistency": 0.0,
+    "weakest_segments": [
+      {
+        "avg_return": 0.73,
+        "end_contract_id": "kxeth1h-20260415-2300",
+        "profitability_score": 0.73,
+        "segment_id": "paper-trade-shadow",
+        "start_contract_id": "kxbtc1h-20260318-0100",
+        "trade_count": 12,
+        "trade_count_gate_pass": false,
+        "win_rate": 0.75
       }
     ]
   },
