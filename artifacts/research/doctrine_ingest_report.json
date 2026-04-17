@@ -1,14 +1,13 @@
 {
   "added_cards": [
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--1248a413-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--4c561d77-sparse_signal.json",
-    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--928d5a88-sparse_signal.json"
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--8d82e147-sparse_signal.json",
+    "dc-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto--c6cee5f7-sparse_signal.json"
   ],
-  "added_count": 3,
-  "eligible_packet_count": 3,
-  "existing_card_count": 469,
+  "added_count": 2,
+  "eligible_packet_count": 2,
+  "existing_card_count": 472,
   "max_new_mutations_per_cycle": 3,
-  "packet_count": 472,
+  "packet_count": 474,
   "remaining_packet_count": 0,
   "required_source_count_per_mutation": 2
 }
