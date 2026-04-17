@@ -29,9 +29,9 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 QUICK_CONTRACT_LIMIT = 2000
 MEDIUM_CONTRACT_LIMIT = 8000
 QUICK_WR_THRESHOLD = 0.50
-QUICK_MIN_TRADES = 10  # was 5 -- too many trivial agents slipping through
+QUICK_MIN_TRADES = 25  # raised from 10 -- filter out noise agents with tiny samples
 MEDIUM_WR_THRESHOLD = 0.54
-MEDIUM_MIN_TRADES = 15
+MEDIUM_MIN_TRADES = 40  # raised from 15 -- need statistical significance
 
 # Feature key mapping: guard expects -> backtest provides
 _GUARD_FEATURE_MAP = {

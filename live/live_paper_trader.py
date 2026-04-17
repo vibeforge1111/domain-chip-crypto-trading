@@ -676,20 +676,24 @@ class LivePaperTrader:
                 "predictions": preds,
             }
 
-        # Build agent stats with BT comparison
+        # Build agent stats with BT comparison -- include historical agents from log
         agent_stats = {}
-        for agent_cfg in self.pool.all_agents:
-            aid = agent_cfg["agent_id"]
+        # Current pool agents
+        pool_lookup = {cfg["agent_id"]: cfg for cfg in self.pool.all_agents}
+        # Merge: all agents from stats (log) + all from current pool
+        all_agent_ids = set(stats.keys()) | set(pool_lookup.keys())
+        for aid in all_agent_ids:
             s = stats.get(aid, {})
+            cfg = pool_lookup.get(aid)
             agent_stats[aid] = {
-                "bt_wr": round(agent_cfg["bt_wr"], 4),
+                "bt_wr": round((cfg["bt_wr"] if cfg else s.get("bt_wr", 0)), 4),
                 "live_wr": round(s.get("live_wr", 0), 4),
                 "live_trades": s.get("live_trades", 0),
                 "live_wins": s.get("live_wins", 0),
                 "skips": s.get("skips", 0),
                 "delta": round(s.get("delta", 0), 4),
-                "strategy": agent_cfg["strategy"],
-                "timeframe": agent_cfg.get("timeframe", "15m"),
+                "strategy": cfg["strategy"] if cfg else "unknown",
+                "timeframe": cfg.get("timeframe", "15m") if cfg else "15m",
             }
 
         # Strategy summary

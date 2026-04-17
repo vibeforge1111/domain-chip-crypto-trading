@@ -130,9 +130,41 @@ class PopulationArchive:
     def _prune(self) -> None:
         """Prune population keeping elite, viable, and diverse agents.
 
-        Niche preservation: minority strategies (non-dominant strategy_id)
-        are protected from pruning to maintain diversity for crossover.
+        Two-phase: first deduplicate exact fitness clones, then apply
+        capacity pruning with niche preservation.
+
+        Conservative dedup: only removes agents with identical
+        (strategy_id, win_rate rounded to 3 decimals, trade_count).
+        Mutations that nudge WR even slightly are kept as stepping stones.
         """
+        # Phase 1: conservative dedup -- remove exact fitness clones
+        # Keep the one with the most mutations (richest config) per signature
+        seen_sigs: dict[tuple, Agent] = {}
+        deduped: list[Agent] = []
+        for a in self._population:
+            sig = (
+                a.mutations.get("strategy_id", ""),
+                round(a.win_rate, 3),
+                a.fitness.get("trade_count", 0),
+            )
+            if sig in seen_sigs:
+                existing = seen_sigs[sig]
+                # Keep the one with more mutation keys (richer config)
+                if len(a.mutations) > len(existing.mutations):
+                    deduped.remove(existing)
+                    deduped.append(a)
+                    seen_sigs[sig] = a
+                # else: skip this duplicate
+            else:
+                seen_sigs[sig] = a
+                deduped.append(a)
+
+        self._population = deduped
+
+        # Phase 2: capacity pruning (only if still over max)
+        if len(self._population) <= self.max_archive_size:
+            return
+
         elite = [a for a in self._population if a.is_elite]
         viable = [a for a in self._population if a.is_viable and not a.is_elite]
         rest = [a for a in self._population if not a.is_viable]
