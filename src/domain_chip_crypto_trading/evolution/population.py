@@ -50,14 +50,18 @@ class Agent:
         return self.fitness.get("wealth_factor", 0.0)
 
     @property
+    def trade_count(self) -> int:
+        return int(self.fitness.get("trade_count", 0))
+
+    @property
     def is_viable(self) -> bool:
         """Agent passes minimum viability gates."""
-        return self.wealth_factor >= 0.8 and self.win_rate > 0.52
+        return self.wealth_factor >= 0.8 and self.win_rate > 0.52 and self.trade_count >= 30
 
     @property
     def is_elite(self) -> bool:
         """Agent passes strict promotion gates."""
-        return self.wealth_factor >= 1.0 and self.win_rate >= 0.58
+        return self.wealth_factor >= 1.0 and self.win_rate >= 0.58 and self.trade_count >= 50
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -130,14 +134,19 @@ class PopulationArchive:
     def _prune(self) -> None:
         """Prune population keeping elite, viable, and diverse agents.
 
-        Two-phase: first deduplicate exact fitness clones, then apply
-        capacity pruning with niche preservation.
-
-        Conservative dedup: only removes agents with identical
-        (strategy_id, win_rate rounded to 3 decimals, trade_count).
-        Mutations that nudge WR even slightly are kept as stepping stones.
+        Three-phase:
+          1. Remove rejected agents (quick_reject/medium_reject with WF=0)
+          2. Deduplicate exact fitness clones (conservative)
+          3. Capacity pruning with niche preservation
         """
-        # Phase 1: conservative dedup -- remove exact fitness clones
+        # Phase 1: remove rejected agents that have no walk-forward value
+        self._population = [
+            a for a in self._population
+            if a.fitness.get("eval_stage") not in ("quick_reject", "medium_reject")
+            or a.wealth_factor > 0
+        ]
+
+        # Phase 2: conservative dedup -- remove exact fitness clones
         # Keep the one with the most mutations (richest config) per signature
         seen_sigs: dict[tuple, Agent] = {}
         deduped: list[Agent] = []
@@ -149,19 +158,17 @@ class PopulationArchive:
             )
             if sig in seen_sigs:
                 existing = seen_sigs[sig]
-                # Keep the one with more mutation keys (richer config)
                 if len(a.mutations) > len(existing.mutations):
                     deduped.remove(existing)
                     deduped.append(a)
                     seen_sigs[sig] = a
-                # else: skip this duplicate
             else:
                 seen_sigs[sig] = a
                 deduped.append(a)
 
         self._population = deduped
 
-        # Phase 2: capacity pruning (only if still over max)
+        # Phase 3: capacity pruning (only if still over max)
         if len(self._population) <= self.max_archive_size:
             return
 
@@ -169,7 +176,6 @@ class PopulationArchive:
         viable = [a for a in self._population if a.is_viable and not a.is_elite]
         rest = [a for a in self._population if not a.is_viable]
 
-        # Keep all elite, top viable, and some diverse rest
         viable.sort(key=lambda a: a.win_rate, reverse=True)
         rest.sort(key=lambda a: a.win_rate, reverse=True)
 
@@ -180,21 +186,22 @@ class PopulationArchive:
         kept = elite + keep_viable + keep_rest
 
         # Niche preservation: ensure minority strategies survive pruning
-        # 50 = enough genetic diversity for crossover to find viable combos
-        MIN_NICHE_SIZE = 50
+        # 5 per strategy = enough genetic material for crossover without blowing cap
+        MIN_NICHE_SIZE = 5
         kept_ids = {a.agent_id for a in kept}
         strategy_counts: dict[str, int] = {}
         for a in kept:
             sid = a.mutations.get("strategy_id", "unknown")
             strategy_counts[sid] = strategy_counts.get(sid, 0) + 1
 
-        # Find agents from minority strategies not yet in kept
-        for a in self._population:
+        # Only add niche agents that are at least viable or have decent trade count
+        for a in sorted(self._population, key=lambda x: x.win_rate, reverse=True):
             sid = a.mutations.get("strategy_id", "unknown")
             if a.agent_id not in kept_ids and strategy_counts.get(sid, 0) < MIN_NICHE_SIZE:
-                kept.append(a)
-                kept_ids.add(a.agent_id)
-                strategy_counts[sid] = strategy_counts.get(sid, 0) + 1
+                if a.trade_count >= 30:
+                    kept.append(a)
+                    kept_ids.add(a.agent_id)
+                    strategy_counts[sid] = strategy_counts.get(sid, 0) + 1
 
         self._population = kept
 

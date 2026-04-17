@@ -80,6 +80,11 @@ class EvolutionEngine:
         for agent in agents:
             if not agent.is_elite:
                 continue
+            # Only export agents that passed full evaluation with enough trades
+            if agent.fitness.get("eval_stage") != "full":
+                continue
+            if agent.trade_count < 50:
+                continue
             packet_path = bridge_dir / f"evo-{agent.agent_id}.json"
             if packet_path.exists():
                 continue  # already exported in a prior generation
