@@ -307,10 +307,53 @@ class MetaAgent:
         agents = []
         dead_ends = {p["pattern"] for p in self.tracker.dead_end_patterns()}
 
-        # Reserve 80% of slots for minority-strategy foraging.
+        # -- Phase 0: Timeframe + regime diversity slots --
+        # Reserve slots to force exploration of underrepresented niches
+        diversity_slots = max(2, count // 4)  # 25% of budget for diversity
+        remaining = count - diversity_slots
+
+        # Detect gaps: which timeframes and regimes are underrepresented in elite
+        elite_tfs: dict[str, int] = {}
+        elite_regimes: dict[str, int] = {}
+        for a in self.population.elite:
+            tf = a.mutations.get("timeframe", "15m")
+            reg = a.mutations.get("market_regime", "") or "any"
+            elite_tfs[tf] = elite_tfs.get(tf, 0) + 1
+            elite_regimes[reg] = elite_regimes.get(reg, 0) + 1
+
+        # Timeframes with < 10% of elite get forced exploration
+        total_elite = max(1, sum(elite_tfs.values()))
+        underrep_tfs = [tf for tf in ["1h", "4h"] if elite_tfs.get(tf, 0) / total_elite < 0.1]
+        underrep_regimes = [
+            r for r in ["compression", "trend", "range", "event_driven", "high_vol"]
+            if elite_regimes.get(r, 0) / total_elite < 0.05
+        ]
+
+        for i in range(diversity_slots):
+            strategy_name = self._select_strategy()
+            params = self.strategy_params[strategy_name]
+            new_mutations = self._random_exploration(params, dead_ends)
+            # Force underrepresented timeframe
+            if underrep_tfs and i % 2 == 0:
+                new_mutations["timeframe"] = random.choice(underrep_tfs)
+            elif underrep_tfs:
+                new_mutations["timeframe"] = random.choice(underrep_tfs)
+            # Force underrepresented regime
+            if underrep_regimes:
+                new_mutations["market_regime"] = random.choice(underrep_regimes)
+            if not self.population.is_duplicate(new_mutations):
+                agent = Agent(
+                    agent_id="",
+                    mutations=new_mutations,
+                    meta_strategy=f"{strategy_name}_diversity",
+                    generation=generation,
+                )
+                agents.append(agent)
+
+        # Reserve 80% of remaining slots for minority-strategy foraging.
         # Only 20% of compute goes to refining dominant strategies.
-        minority_slots = max(2, count * 8 // 10)
-        normal_slots = count - minority_slots
+        minority_slots = max(2, remaining * 8 // 10)
+        normal_slots = remaining - minority_slots
 
         # -- Phase 1: minority-reserved slots --
         pop = self.population.population

@@ -54,14 +54,38 @@ class Agent:
         return int(self.fitness.get("trade_count", 0))
 
     @property
+    def _min_viable_trades(self) -> int:
+        """Minimum trades for viability, scaled by timeframe and regime specificity.
+
+        1h has ~4x fewer contracts than 15m, 4h has ~16x fewer.
+        Regime-specific agents only fire in their target regime.
+        """
+        tf = self.mutations.get("timeframe", "15m")
+        has_regime = bool(self.mutations.get("market_regime", ""))
+        base = {"15m": 30, "1h": 18, "4h": 12}.get(tf, 30)
+        if has_regime:
+            base = max(8, int(base * 0.7))
+        return base
+
+    @property
+    def _min_elite_trades(self) -> int:
+        """Minimum trades for elite, scaled by timeframe and regime specificity."""
+        tf = self.mutations.get("timeframe", "15m")
+        has_regime = bool(self.mutations.get("market_regime", ""))
+        base = {"15m": 50, "1h": 30, "4h": 20}.get(tf, 50)
+        if has_regime:
+            base = max(12, int(base * 0.7))
+        return base
+
+    @property
     def is_viable(self) -> bool:
         """Agent passes minimum viability gates."""
-        return self.wealth_factor >= 0.8 and self.win_rate > 0.52 and self.trade_count >= 30
+        return self.wealth_factor >= 0.8 and self.win_rate > 0.52 and self.trade_count >= self._min_viable_trades
 
     @property
     def is_elite(self) -> bool:
         """Agent passes strict promotion gates."""
-        return self.wealth_factor >= 1.0 and self.win_rate >= 0.58 and self.trade_count >= 50
+        return self.wealth_factor >= 1.0 and self.win_rate >= 0.58 and self.trade_count >= self._min_elite_trades
 
     def to_dict(self) -> dict:
         return asdict(self)
