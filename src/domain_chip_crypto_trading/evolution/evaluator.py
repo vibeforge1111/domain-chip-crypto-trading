@@ -226,6 +226,14 @@ def staged_evaluate(
     root = runtime_root or REPO_ROOT
     stages_passed = []
 
+    # Scale trade floors by timeframe (1h/4h have fewer contracts)
+    tf = str(mutations.get("timeframe", "15m"))
+    tf_scale = {"15m": 1.0, "1h": 0.5, "4h": 0.25}.get(tf, 1.0)
+    has_regime = bool(mutations.get("market_regime", ""))
+    regime_scale = 0.7 if has_regime else 1.0
+    scaled_quick_min = max(5, int(QUICK_MIN_TRADES * tf_scale * regime_scale))
+    scaled_medium_min = max(8, int(MEDIUM_MIN_TRADES * tf_scale * regime_scale))
+
     # -- Stage 1: Quick screen (2,000 contracts) --------------------
     quick_result = evaluate_agent(
         mutations, root, contract_limit=QUICK_CONTRACT_LIMIT,
@@ -234,12 +242,12 @@ def staged_evaluate(
     quick_wr = quick_result.get("win_rate", 0)
     quick_trades = quick_result.get("trade_count", 0)
 
-    if quick_wr < quick_wr_threshold or quick_trades < QUICK_MIN_TRADES:
+    if quick_wr < quick_wr_threshold or quick_trades < scaled_quick_min:
         quick_result["eval_stage"] = "quick_reject"
         quick_result["stages_passed"] = []
         quick_result["rejection_reason"] = (
             f"Quick screen failed: WR={quick_wr:.3f} (need {quick_wr_threshold}), "
-            f"trades={quick_trades} (need {QUICK_MIN_TRADES})"
+            f"trades={quick_trades} (need {scaled_quick_min})"
         )
         logger.debug(
             "Quick reject: WR=%.3f trades=%d", quick_wr, quick_trades,
@@ -257,12 +265,12 @@ def staged_evaluate(
     medium_wr = medium_result.get("win_rate", 0)
     medium_trades = medium_result.get("trade_count", 0)
 
-    if medium_wr < medium_wr_threshold or medium_trades < MEDIUM_MIN_TRADES:
+    if medium_wr < medium_wr_threshold or medium_trades < scaled_medium_min:
         medium_result["eval_stage"] = "medium_reject"
         medium_result["stages_passed"] = stages_passed
         medium_result["rejection_reason"] = (
             f"Medium screen failed: WR={medium_wr:.3f} (need {medium_wr_threshold}), "
-            f"trades={medium_trades} (need {MEDIUM_MIN_TRADES})"
+            f"trades={medium_trades} (need {scaled_medium_min})"
         )
         logger.debug(
             "Medium reject: WR=%.3f trades=%d", medium_wr, medium_trades,

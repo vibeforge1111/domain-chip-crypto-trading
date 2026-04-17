@@ -29,6 +29,7 @@ SYMBOLS = [
 CONTRACT_TIMEFRAMES = [
     {"minutes": 15, "label": "15m", "min_candles": 15},
     {"minutes": 60, "label": "1h", "min_candles": 55},
+    {"minutes": 240, "label": "4h", "min_candles": 220},
 ]
 
 
@@ -144,6 +145,10 @@ def _extract_and_append(zip_path: Path, candle_path: Path) -> int:
 
 
 def _bucket_start(ts: datetime, minutes: int = 15) -> datetime:
+    if minutes >= 60:
+        hours = minutes // 60
+        hour = (ts.hour // hours) * hours
+        return ts.replace(hour=hour, minute=0, second=0, microsecond=0)
     minute = (ts.minute // minutes) * minutes
     return ts.replace(minute=minute, second=0, microsecond=0)
 
