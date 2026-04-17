@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check the REAL elite quality -- ignore quick_reject agents in population\n# These are agents that passed ALL 3 stages\nlatest = json.loads(sorted(Path('live/archive/generations').glob('gen_*.json'))[-1].read_text())\nagents = latest['agents']\nfull_eval",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:08:30.818339+00:00",
+  "source": "claude_code_hook"
+}

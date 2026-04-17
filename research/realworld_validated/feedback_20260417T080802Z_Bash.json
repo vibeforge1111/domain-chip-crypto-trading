@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Let's look at the REAL log structure\nlog = Path('live/archive/live_pt_log.jsonl')\nlines = log.read_text().strip().split('\\n')\n# Print raw last 5 entries to see actual format\nfor l in lines[-5:]:\n    d = json.loads(l)\n    print(json.dumps(d, indent=2",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:08:02.048819+00:00",
+  "source": "claude_code_hook"
+}

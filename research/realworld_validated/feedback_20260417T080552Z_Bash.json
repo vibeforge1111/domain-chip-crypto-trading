@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check paper trade queue\nq = Path('artifacts/paper_trade/paper_trade_queue.json')\nif q.exists():\n    data = json.loads(q.read_text())\n    rows = data.get('rows', [])\n    print(f'Queue size: {len(rows)}')\n    origins = {}\n    for r in rows:\n        o ",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:05:52.060468+00:00",
+  "source": "claude_code_hook"
+}

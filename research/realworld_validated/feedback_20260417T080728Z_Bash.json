@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check the attribution fix -- are 'unknown' strategy agents the old ones?\npt_state = json.loads(Path('live/archive/live_pt_state.json').read_text())\nagents = pt_state.get('agent_stats', {})\nunknowns = {k:v for k,v in agents.items() if v.get('strategy",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:07:28.510731+00:00",
+  "source": "claude_code_hook"
+}

@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python live/live_paper_trader.py > /dev/null 2>&1 &",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T07:41:43.296518+00:00",
+  "source": "claude_code_hook"
+}

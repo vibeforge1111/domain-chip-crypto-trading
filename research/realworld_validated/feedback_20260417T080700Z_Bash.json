@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check live paper trade log for actual signal quality\nlog = Path('live/archive/live_pt_log.jsonl')\nif log.exists():\n    lines = log.read_text().strip().split('\\n')\n    print(f'Total log entries: {len(lines)}')\n    # Last 20 entries\n    recent = [json",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:07:00.501990+00:00",
+  "source": "claude_code_hook"
+}

@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\ngens = sorted(Path('live/archive/generations').glob('gen_*.json'))\nif gens:\n    latest = json.loads(gens[-1].read_text())\n    print(f'Latest generation: {latest[\\\"generation\\\"]}')\n    print(f'Population size: {latest[\\\"population_size\\\"]}')\n    print(",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:04:57.210498+00:00",
+  "source": "claude_code_hook"
+}

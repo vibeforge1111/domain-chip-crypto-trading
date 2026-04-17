@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check paper trade state\npt_state = Path('live/archive/live_pt_state.json')\nif pt_state.exists():\n    state = json.loads(pt_state.read_text())\n    agents = state.get('agent_stats', {})\n    print(f'Paper trade agents tracked: {len(agents)}')\n    activ",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:05:24.264402+00:00",
+  "source": "claude_code_hook"
+}

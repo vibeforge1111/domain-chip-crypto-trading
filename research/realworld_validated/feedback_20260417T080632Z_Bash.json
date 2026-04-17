@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check the WR=1.0 agents -- how many trades do they actually have?\nlatest = json.loads(sorted(Path('live/archive/generations').glob('gen_*.json'))[-1].read_text())\nagents = latest['agents']\nperfect = [a for a in agents if a['fitness'].get('win_rate',",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:06:32.390682+00:00",
+  "source": "claude_code_hook"
+}
