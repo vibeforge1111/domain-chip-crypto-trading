@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "WMIC PROCESS WHERE \"CommandLine LIKE '%live_paper_trader%' AND Name='python.exe'\" GET ProcessId,CommandLine 2>/dev/null | head -5",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T11:39:32.136206+00:00",
+  "source": "claude_code_hook"
+}

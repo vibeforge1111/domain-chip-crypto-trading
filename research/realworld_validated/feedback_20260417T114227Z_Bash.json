@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "for pid in 2484 44904 44536 46452; do cmd.exe //c \"taskkill /PID $pid /F\" 2>&1; done",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T11:42:27.968819+00:00",
+  "source": "claude_code_hook"
+}

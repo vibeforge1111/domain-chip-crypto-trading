@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "sleep 30 && tail -20 \"C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\live\\archive\\live_pt_log.jsonl\" 2>/dev/null | python -c \"\nimport sys, json\nlines = sys.stdin.readlines()\nfor line in lines[-3:]:\n    d = json.loads(line)\n    print(f\\\"{d.get('ts','?')[:19]} | {d.get('asset','?')}/{d.get('timefram",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T11:46:53.422637+00:00",
+  "source": "claude_code_hook"
+}

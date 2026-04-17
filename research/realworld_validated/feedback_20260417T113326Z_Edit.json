@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "Modified C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\src\\domain_chip_crypto_trading\\backtest.py",
+  "tool_name": "Edit",
+  "result_summary": "",
+  "timestamp": "2026-04-17T11:33:26.753980+00:00",
+  "source": "claude_code_hook"
+}

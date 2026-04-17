@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "WMIC PROCESS WHERE \"CommandLine LIKE '%run_evolution%' AND Name='python.exe'\" GET ProcessId,CommandLine 2>/dev/null | head -5",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T11:37:40.188031+00:00",
+  "source": "claude_code_hook"
+}

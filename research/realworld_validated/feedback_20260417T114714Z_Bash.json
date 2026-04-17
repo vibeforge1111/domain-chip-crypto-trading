@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "sleep 45 && ls -lt \"C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\\live\\archive\\generations\" 2>/dev/null | head -5",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T11:47:14.346292+00:00",
+  "source": "claude_code_hook"
+}
