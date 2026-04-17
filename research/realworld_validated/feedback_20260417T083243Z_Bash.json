@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python scripts/run_evolution.py -g 9999 -w 4 -c 15 > /dev/null 2>&1 &",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:32:43.496259+00:00",
+  "source": "claude_code_hook"
+}

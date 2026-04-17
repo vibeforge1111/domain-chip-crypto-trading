@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Compare before (gen 609 = last old code) vs after (620 = new code)\nfor g in [609, 615, 618, 619, 620]:\n    gf = Path(f'live/archive/generations/gen_{g:04d}.json')\n    if gf.exists():\n        d = json.loads(gf.read_text())\n        agents = d['agents'",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:26:06.575179+00:00",
+  "source": "claude_code_hook"
+}

@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "python -c \"\nimport json\nfrom pathlib import Path\n# Check how many agents are in the pool and what strategies they use\npt_state = json.loads(Path('live/archive/live_pt_state.json').read_text())\n# Check pool composition\nagents = pt_state.get('agent_stats', {})\nstrat_counts = {}\nfor aid, s in agents.it",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:13:44.991676+00:00",
+  "source": "claude_code_hook"
+}

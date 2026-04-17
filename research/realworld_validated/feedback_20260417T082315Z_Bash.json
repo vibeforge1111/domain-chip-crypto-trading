@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "WMIC PROCESS WHERE \"Name='python.exe' AND CommandLine LIKE '%spawn_main%parent_pid=13596%'\" GET ProcessId 2>/dev/null | grep -o '[0-9]\\+'",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:23:15.369751+00:00",
+  "source": "claude_code_hook"
+}

@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "sleep 180 && python -c \"\nimport json\nfrom pathlib import Path\ngens = sorted(Path('live/archive/generations').glob('gen_*.json'))\nif gens:\n    latest = json.loads(gens[-1].read_text())\n    gen = latest['generation']\n    agents = latest['agents']\n    rejected = sum(1 for a in agents if a['fitness'].ge",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T08:33:13.990023+00:00",
+  "source": "claude_code_hook"
+}
