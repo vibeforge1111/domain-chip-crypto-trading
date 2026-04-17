@@ -1,0 +1,9 @@
+{
+  "packet_kind": "realworld_feedback",
+  "evidence_lane": "realworld_validated",
+  "action": "sleep 120 && cd \"C:\\Users\\USER\\Desktop\\domain-chip-crypto-trading\" && python -c \"\nimport json, glob\nfrom pathlib import Path\n\ngen_latest = sorted(glob.glob('live/archive/generations/gen_*.json'))[-1]\ngen_num = Path(gen_latest).stem.split('_')[1]\npop = json.loads(Path(gen_latest).read_text(encoding='",
+  "tool_name": "Bash",
+  "result_summary": "",
+  "timestamp": "2026-04-17T16:38:54.557104+00:00",
+  "source": "claude_code_hook"
+}
