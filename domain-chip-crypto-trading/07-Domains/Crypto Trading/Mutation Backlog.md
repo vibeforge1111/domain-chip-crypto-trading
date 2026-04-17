@@ -2,7 +2,7 @@
 
 These are the current source-grounded mutation proposals.
 
-- proposal_count: `475`
+- proposal_count: `478`
 
 ## Trend continuation with pullback confirmation
 
@@ -182,15 +182,15 @@ These are the current source-grounded mutation proposals.
 - duplicate_of_proposal_id: `n/a`
 - source_names: `Recursive Flywheel, John Bollinger`
 - lineage_ready: `True`
-- status: `benchmarked_hold_for_more_backtest_evidence`
-- benchmark_profitability_score: `0.58`
-- benchmark_paper_trade_readiness: `0.5993`
-- benchmark_next_step: `hold_for_more_backtest_evidence`
-- benchmark_trade_count: `25`
-- benchmark_minimum_trade_count: `25`
-- benchmark_trade_count_gate_pass: `True`
-- benchmark_walk_forward_consistency: `1.0`
-- benchmark_stress_resilience: `1.0`
+- status: `research_seeded_backtest_required`
+- benchmark_profitability_score: `n/a`
+- benchmark_paper_trade_readiness: `n/a`
+- benchmark_next_step: `n/a`
+- benchmark_trade_count: `n/a`
+- benchmark_minimum_trade_count: `n/a`
+- benchmark_trade_count_gate_pass: `n/a`
+- benchmark_walk_forward_consistency: `n/a`
+- benchmark_stress_resilience: `n/a`
 - thesis: The breakout_volatility_expansion doctrine with breakout_open_interest_confirmation strategy produces too few trades in high_vol regime. Wider activation or a different feature combination is needed to capture more valid setups without destroying edge quality.
 
 ## Auto-generated: sparse_signal fix for auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-auto-btc-15m-volatility-compressio-8cb2a13b86
