@@ -413,7 +413,7 @@ class LivePaperTrader:
     # 4h boundary hours (UTC)
     _4H_HOURS = {0, 4, 8, 12, 16, 20}
 
-    def __init__(self, assets: list[str], per_strategy: int = 5, include_viable: bool = True):
+    def __init__(self, assets: list[str], per_strategy: int = 10, include_viable: bool = True):
         self.assets = [a.upper() for a in assets]
         self.feed = BinanceFeed()
         # 300 candles = 5 hours of 1m data (enough for 4h contracts + lookback)
@@ -429,6 +429,7 @@ class LivePaperTrader:
         self.total_settlements = 0
         self.regime_history: list[str] = []
         self._last_eval_minute: int | None = None  # prevent double-eval
+        self._last_reload_hour: int | None = None  # hourly agent reload
 
     def warmup(self) -> None:
         logger.info("Warming up candle buffers (300 x 1m candles per asset)...")
@@ -467,6 +468,14 @@ class LivePaperTrader:
 
     def _tick(self) -> None:
         now = datetime.now(timezone.utc)
+
+        # 0. Hourly agent reload — pick up new agents from evolution
+        if now.minute == 0 and self._last_reload_hour != now.hour:
+            self._last_reload_hour = now.hour
+            old_count = len(self.pool.all_agents)
+            new_count = self.pool.load_agents()
+            if new_count != old_count:
+                logger.info("Agent reload: %d -> %d agents", old_count, new_count)
 
         # 1. Fetch latest candles
         for asset in self.assets:
@@ -728,7 +737,7 @@ class LivePaperTrader:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Live Paper Trader - observer pattern with regime detection")
     parser.add_argument("--assets", default="BTC,ETH,SOL", help="Comma-separated assets (default: BTC,ETH,SOL)")
-    parser.add_argument("--per-strategy", type=int, default=5, help="Top N agents per strategy:tf combo (default: 5)")
+    parser.add_argument("--per-strategy", type=int, default=10, help="Top N agents per strategy:tf combo (default: 10)")
     parser.add_argument("--daemon", action="store_true", help="Run as daemon (same as default, for clarity)")
     parser.add_argument(
         "--include-viable", action="store_true", default=True,
@@ -746,7 +755,7 @@ def main() -> None:
         print(f"No valid assets. Choose from: {list(BinanceFeed.SYMBOLS.keys())}")
         sys.exit(1)
 
-    per_strategy = getattr(args, "per_strategy", 5)
+    per_strategy = getattr(args, "per_strategy", 10)
     include_viable = not args.elite_only
     pool_label = "viable+elite" if include_viable else "elite only"
 
