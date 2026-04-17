@@ -3,8 +3,8 @@
 This loop owns outer validation on bridge-approved candidates only.
 
 - material_change: `True`
-- queue_count: `320`
-- executed_candidate_count: `320`
+- queue_count: `356`
+- executed_candidate_count: `356`
 - pending_data_count: `0`
 - top_recommendation: `collect_more_paper_data`
 
