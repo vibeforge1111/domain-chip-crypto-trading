@@ -3,8 +3,8 @@
 This page is the slower outer-validation surface. It should confirm or demote bridge-approved candidates without rewriting the benchmark record.
 Pilot rows may appear here too, but they remain manual shadow evidence rather than proof of bridge approval.
 
-- queue_count: `2849`
-- executed_candidate_count: `2849`
+- queue_count: `2979`
+- executed_candidate_count: `2979`
 - pending_data_count: `0`
 
 ## Outcome Rules
@@ -170,17 +170,6 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.561`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
-### evo-58d7a55335f3
-
-- status: `executed`
-- paper_trade_recommendation: `collect_more_paper_data`
-- sample_contract_count: `1500`
-- trade_count: `82`
-- profitability_score: `0.541`
-- max_drawdown: `0.8779`
-- win_rate: `0.561`
-- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
-
 ### evo-e0ecd6a04f2c
 
 - status: `executed`
@@ -190,6 +179,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.555`
 - max_drawdown: `0.99`
 - win_rate: `0.575`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-58d7a55335f3
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `82`
+- profitability_score: `0.541`
+- max_drawdown: `0.8779`
+- win_rate: `0.561`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-6efb2e0aa167
@@ -214,17 +214,6 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6122`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
-### evo-bc1914c60ccc
-
-- status: `executed`
-- paper_trade_recommendation: `collect_more_paper_data`
-- sample_contract_count: `3000`
-- trade_count: `70`
-- profitability_score: `0.4943`
-- max_drawdown: `0.99`
-- win_rate: `0.5143`
-- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
-
 ### evo-2f66a192b6c5
 
 - status: `executed`
@@ -234,6 +223,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5388`
 - max_drawdown: `0.99`
 - win_rate: `0.5588`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-bc1914c60ccc
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `70`
+- profitability_score: `0.4943`
+- max_drawdown: `0.99`
+- win_rate: `0.5143`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-ffd750cd55e0
@@ -346,6 +346,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5714`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-005fe5f8d3f1
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1438`
+- trade_count: `22`
+- profitability_score: `0.6164`
+- max_drawdown: `0.2889`
+- win_rate: `0.6364`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-00622b24cc25
 
 - status: `executed`
@@ -444,6 +455,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.3939`
 - win_rate: `0.6667`
 - boundary: Paper-trade slice supports live-readiness review.
+
+### evo-011ef70e40aa
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `15`
+- profitability_score: `0.5133`
+- max_drawdown: `0.99`
+- win_rate: `0.5333`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-0127143b0195
 
@@ -1248,6 +1270,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5769`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-079b6cb934a1
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `33`
+- profitability_score: `0.3739`
+- max_drawdown: `0.99`
+- win_rate: `0.3939`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-07c895cfdc47
 
 - status: `executed`
@@ -1402,6 +1435,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6667`
 - boundary: Paper-trade slice supports live-readiness review.
 
+### evo-08eaafe02090
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `53`
+- profitability_score: `0.4706`
+- max_drawdown: `0.99`
+- win_rate: `0.4906`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-08f765ab852d
 
 - status: `executed`
@@ -1422,6 +1466,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-092ebf5cd0ba
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `20`
+- profitability_score: `0.53`
+- max_drawdown: `0.99`
+- win_rate: `0.55`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-09398f1a6322
@@ -1556,6 +1611,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-0a0e841718a7
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `19`
+- profitability_score: `0.5063`
+- max_drawdown: `0.99`
+- win_rate: `0.5263`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-0a185a4dedf5
 
 - status: `executed`
@@ -1631,6 +1697,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.605`
 - max_drawdown: `0.7429`
 - win_rate: `0.625`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-0ad950ed89d5
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `37`
+- profitability_score: `0.5205`
+- max_drawdown: `0.9012`
+- win_rate: `0.5405`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-0adddd041ab2
@@ -1950,6 +2027,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-0d89932f0776
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `58`
+- profitability_score: `0.5145`
+- max_drawdown: `0.99`
+- win_rate: `0.5345`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-0d938a7a89ac
@@ -2458,6 +2546,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-112e8cde6fa3
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `719`
+- trade_count: `3`
+- profitability_score: `0.6467`
+- max_drawdown: `0.99`
+- win_rate: `0.6667`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-115f4736bccc
 
 - status: `executed`
@@ -2500,6 +2599,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5308`
 - max_drawdown: `0.6744`
 - win_rate: `0.5508`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-119dd477bf81
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `18`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-11d365a5bc3b
@@ -2555,6 +2665,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.98`
 - max_drawdown: `0.0`
 - win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-121f4b6d3e3f
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `10`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-123228b0b610
@@ -3129,6 +3250,28 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-161cbecf9f30
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.0`
+- max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-162ce6558d26
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `4500`
+- trade_count: `87`
+- profitability_score: `0.5432`
+- max_drawdown: `0.5785`
+- win_rate: `0.5632`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-163f8ae8215c
 
 - status: `executed`
@@ -3349,6 +3492,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4423`
 - boundary: Paper-trade slice failed to confirm the bridge candidate.
 
+### evo-17f2eb42ed81
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `2`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-185e441e2d43
 
 - status: `executed`
@@ -3556,6 +3710,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.6229`
 - max_drawdown: `0.1731`
 - win_rate: `0.6429`
+- boundary: Paper-trade slice supports live-readiness review.
+
+### evo-192aea18b883
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `28`
+- profitability_score: `0.6943`
+- max_drawdown: `0.1912`
+- win_rate: `0.7143`
 - boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-195500987139
@@ -4062,6 +4227,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5356`
 - max_drawdown: `0.99`
 - win_rate: `0.5556`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-1cb39c5d3e76
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `37`
+- profitability_score: `0.5205`
+- max_drawdown: `0.9012`
+- win_rate: `0.5405`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-1cf72367b6f3
@@ -4680,6 +4856,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.46`
 - boundary: Paper-trade slice failed to confirm the bridge candidate.
 
+### evo-22c8713a5871
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `1`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-22d5ee21d3ac
 
 - status: `executed`
@@ -4920,6 +5107,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5356`
 - max_drawdown: `0.99`
 - win_rate: `0.5556`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-24f80decbd57
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `15`
+- profitability_score: `0.5133`
+- max_drawdown: `0.99`
+- win_rate: `0.5333`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-2507d7411948
@@ -5439,6 +5637,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4167`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-29eb605feaf5
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `19`
+- profitability_score: `0.4537`
+- max_drawdown: `0.99`
+- win_rate: `0.4737`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-29ef96c267ea
 
 - status: `executed`
@@ -5901,6 +6110,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-2c9c82258b94
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `2`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-2caabd9cb476
 
 - status: `executed`
@@ -6044,6 +6264,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5484`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-2da9c13f8d5d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `0`
+- profitability_score: `0.0`
+- max_drawdown: `0.0`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-2dc3a2c84f3f
 
 - status: `executed`
@@ -6075,6 +6306,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-2e0934db3382
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `1`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-2e0f8ab3efa8
@@ -6484,6 +6726,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-312de591c013
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `16`
+- profitability_score: `0.5425`
+- max_drawdown: `0.99`
+- win_rate: `0.5625`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-313435a02fa3
 
 - status: `executed`
@@ -6516,6 +6769,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.2941`
 - win_rate: `0.6897`
 - boundary: Paper-trade slice supports live-readiness review.
+
+### evo-317d2e2070d2
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `10`
+- profitability_score: `0.58`
+- max_drawdown: `0.99`
+- win_rate: `0.6`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-31a897c69721
 
@@ -7012,6 +7276,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6364`
 - boundary: Paper-trade slice supports live-readiness review.
 
+### evo-3677554218da
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `16`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-369ad1b1196d
 
 - status: `executed`
@@ -7430,6 +7705,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-39ee92ba0c0f
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.0`
+- max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-39fd3245816b
 
 - status: `executed`
@@ -7439,6 +7725,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.4086`
 - max_drawdown: `0.99`
 - win_rate: `0.4286`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-3a14544e33cf
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `38`
+- profitability_score: `0.5063`
+- max_drawdown: `0.99`
+- win_rate: `0.5263`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-3a1649620202
@@ -8233,6 +8530,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-414fa76025e7
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `4500`
+- trade_count: `64`
+- profitability_score: `0.6206`
+- max_drawdown: `0.1914`
+- win_rate: `0.6406`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-415778be75fa
 
 - status: `executed`
@@ -8541,6 +8849,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-441bc6a7bc27
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `4500`
+- trade_count: `37`
+- profitability_score: `0.5476`
+- max_drawdown: `0.4884`
+- win_rate: `0.5676`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-442cb88593b5
 
 - status: `executed`
@@ -8693,6 +9012,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-456ddd10a835
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `70`
+- profitability_score: `0.4943`
+- max_drawdown: `0.99`
+- win_rate: `0.5143`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-457a39c4ae59
@@ -8959,6 +9289,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-46aa283b01f3
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `23`
+- profitability_score: `0.4148`
+- max_drawdown: `0.99`
+- win_rate: `0.4348`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-46aca684d31b
 
 - status: `executed`
@@ -9013,6 +9354,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.312`
 - win_rate: `0.72`
 - boundary: Paper-trade slice supports live-readiness review.
+
+### evo-471c2c1e9352
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `0`
+- profitability_score: `0.0`
+- max_drawdown: `0.0`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-4733139f13bd
 
@@ -9311,6 +9663,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-497ad5038239
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `3000`
+- trade_count: `37`
+- profitability_score: `0.5476`
+- max_drawdown: `0.7719`
+- win_rate: `0.5676`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-497f3c2c7e55
 
 - status: `executed`
@@ -9331,6 +9694,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5407`
 - max_drawdown: `0.6061`
 - win_rate: `0.5607`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-49d522968bc7
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `13`
+- profitability_score: `0.5185`
+- max_drawdown: `0.99`
+- win_rate: `0.5385`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-49dbdb60a16c
@@ -9388,6 +9762,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6667`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-4a57f800d87c
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `35`
+- profitability_score: `0.4086`
+- max_drawdown: `0.99`
+- win_rate: `0.4286`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-4a59a6c0aecc
 
 - status: `executed`
@@ -9421,6 +9806,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-4aaaa8e6e9fa
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `62`
+- profitability_score: `0.4477`
+- max_drawdown: `0.99`
+- win_rate: `0.4677`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-4acf051523f2
 
 - status: `executed`
@@ -9453,6 +9849,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5294`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-4b4657195470
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `37`
+- profitability_score: `0.5476`
+- max_drawdown: `0.4762`
+- win_rate: `0.5676`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-4bc284e3431a
 
@@ -9542,6 +9949,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-4d12e893bf3c
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `52`
+- profitability_score: `0.4608`
+- max_drawdown: `0.99`
+- win_rate: `0.4808`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-4d75e034365e
 
 - status: `executed`
@@ -9628,6 +10046,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.98`
 - max_drawdown: `0.0`
 - win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-4e1be0ce9a2b
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `4500`
+- trade_count: `83`
+- profitability_score: `0.5583`
+- max_drawdown: `0.7143`
+- win_rate: `0.5783`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-4e2cce3ae416
@@ -10279,6 +10708,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-524f2cbc810a
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `53`
+- profitability_score: `0.5838`
+- max_drawdown: `0.4382`
+- win_rate: `0.6038`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-529c76688873
 
 - status: `executed`
@@ -10606,6 +11046,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - trade_count: `1`
 - profitability_score: `0.0`
 - max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-54d5e7b6826d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `0`
+- profitability_score: `0.0`
+- max_drawdown: `0.0`
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
@@ -10950,6 +11401,28 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-578dd0975e85
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `39`
+- profitability_score: `0.4928`
+- max_drawdown: `0.99`
+- win_rate: `0.5128`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-579dbe14b896
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `47`
+- profitability_score: `0.4694`
+- max_drawdown: `0.99`
+- win_rate: `0.4894`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-57c203b687de
 
 - status: `executed`
@@ -11115,6 +11588,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-596959e43706
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `23`
+- profitability_score: `0.4148`
+- max_drawdown: `0.99`
+- win_rate: `0.4348`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-5969ab530e46
 
 - status: `executed`
@@ -11223,6 +11707,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.6467`
 - max_drawdown: `0.99`
 - win_rate: `0.6667`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-5a9e210c64d8
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `18`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-5aa237e8000b
@@ -11709,6 +12204,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-5e554cba0779
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `52`
+- profitability_score: `0.4608`
+- max_drawdown: `0.99`
+- win_rate: `0.4808`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-5e6c26033aef
 
 - status: `executed`
@@ -11806,6 +12312,28 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.23`
 - max_drawdown: `0.99`
 - win_rate: `0.25`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-5f3140a798d1
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `106`
+- profitability_score: `0.5177`
+- max_drawdown: `0.99`
+- win_rate: `0.5377`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-5f5a9e10b203
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `10`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-5f5c3a90aea3
@@ -12270,6 +12798,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6076`
 - boundary: Paper-trade slice supports live-readiness review.
 
+### evo-62b8a1e9bb0a
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `63`
+- profitability_score: `0.5038`
+- max_drawdown: `0.99`
+- win_rate: `0.5238`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-62bbd4cbdf24
 
 - status: `executed`
@@ -12279,6 +12818,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.4506`
 - max_drawdown: `0.99`
 - win_rate: `0.4706`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-62e3b1ec4f06
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `2`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-6323deeb2d5a
@@ -12512,6 +13062,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4848`
 - boundary: Paper-trade slice failed to confirm the bridge candidate.
 
+### evo-651684c4e82e
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `24`
+- profitability_score: `0.3967`
+- max_drawdown: `0.99`
+- win_rate: `0.4167`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-652c90d00cf6
 
 - status: `executed`
@@ -12600,6 +13161,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-6589911095b2
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `4500`
+- trade_count: `40`
+- profitability_score: `0.43`
+- max_drawdown: `0.99`
+- win_rate: `0.45`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-658cb5183744
 
 - status: `executed`
@@ -12620,6 +13192,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.58`
 - max_drawdown: `0.99`
 - win_rate: `0.6`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-65bf42de7529
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `19`
+- profitability_score: `0.5589`
+- max_drawdown: `0.99`
+- win_rate: `0.5789`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-65c3ab6d3001
@@ -13017,6 +13600,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.7465`
 - win_rate: `0.619`
 - boundary: Paper-trade slice supports live-readiness review.
+
+### evo-68667debf6bb
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `30`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-686e93eda850
 
@@ -13887,6 +14481,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-70978e1139ad
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `4500`
+- trade_count: `17`
+- profitability_score: `0.6271`
+- max_drawdown: `0.5821`
+- win_rate: `0.6471`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-70a92cb14eb8
 
 - status: `executed`
@@ -14206,6 +14811,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.3333`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-72e9b60bc5b3
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `719`
+- trade_count: `3`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-72ee7fc51a3f
 
 - status: `executed`
@@ -14448,6 +15064,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-74d39bc784ab
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `36`
+- profitability_score: `0.6467`
+- max_drawdown: `0.2889`
+- win_rate: `0.6667`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-74de4fc322db
 
 - status: `executed`
@@ -14547,6 +15174,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-759ea407498d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `49`
+- profitability_score: `0.5106`
+- max_drawdown: `0.99`
+- win_rate: `0.5306`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-75a8bd3c7762
 
 - status: `executed`
@@ -14556,6 +15194,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-75acfd76edb3
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `18`
+- profitability_score: `0.3133`
+- max_drawdown: `0.99`
+- win_rate: `0.3333`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-75ae787c290d
@@ -14690,6 +15339,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.569`
 - boundary: Paper-trade slice supports live-readiness review.
 
+### evo-76830c05211c
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `2`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-76a3477e84e9
 
 - status: `executed`
@@ -14810,6 +15470,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.5753`
 - win_rate: `0.5634`
 - boundary: Paper-trade slice supports live-readiness review.
+
+### evo-7768ba5ff202
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `2`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-776907c3495e
 
@@ -14965,6 +15636,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4783`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-788d6eff5b2d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.0`
+- max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-789f0420aed5
 
 - status: `executed`
@@ -15008,6 +15690,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-78f3fa9d0cc6
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `45`
+- profitability_score: `0.58`
+- max_drawdown: `0.3832`
+- win_rate: `0.6`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-7943f6d69d51
 
@@ -15328,6 +16021,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-7ba60fa5494e
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `9`
+- profitability_score: `0.4244`
+- max_drawdown: `0.99`
+- win_rate: `0.4444`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-7bb97cf92593
 
 - status: `executed`
@@ -15414,6 +16118,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5185`
 - max_drawdown: `0.99`
 - win_rate: `0.5385`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-7c19aab64913
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `8`
+- profitability_score: `0.23`
+- max_drawdown: `0.99`
+- win_rate: `0.25`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-7c429d172976
@@ -15757,6 +16472,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-7f5da67e527d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `15`
+- profitability_score: `0.5133`
+- max_drawdown: `0.99`
+- win_rate: `0.5333`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-7f6d73f80c02
 
 - status: `executed`
@@ -15944,6 +16670,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-8115e593a8f0
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `5`
+- profitability_score: `0.58`
+- max_drawdown: `0.5652`
+- win_rate: `0.6`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-81222f44cc84
 
 - status: `executed`
@@ -15999,6 +16736,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5294`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-8152971dddb6
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `63`
+- profitability_score: `0.5038`
+- max_drawdown: `0.99`
+- win_rate: `0.5238`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-81856b92687a
 
 - status: `executed`
@@ -16041,6 +16789,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.0`
 - max_drawdown: `0.99`
 - win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-81dd2c27c480
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `109`
+- profitability_score: `0.5305`
+- max_drawdown: `0.7683`
+- win_rate: `0.5505`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-821cc93db301
@@ -16162,6 +16921,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5765`
 - max_drawdown: `0.7333`
 - win_rate: `0.5965`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-82fc01684ec9
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `33`
+- profitability_score: `0.4952`
+- max_drawdown: `0.99`
+- win_rate: `0.5152`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-830464058e51
@@ -17121,6 +17891,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6667`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-89f117e8fdd8
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `6`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-8a02347ae573
 
 - status: `executed`
@@ -17671,6 +18452,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4545`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-8f99cbb7596c
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `15`
+- profitability_score: `0.5133`
+- max_drawdown: `0.99`
+- win_rate: `0.5333`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-8fc592018666
 
 - status: `executed`
@@ -18100,6 +18892,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-94140d515e1a
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `18`
+- profitability_score: `0.4244`
+- max_drawdown: `0.99`
+- win_rate: `0.4444`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-9446198263b6
 
 - status: `executed`
@@ -18331,6 +19134,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6842`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-9603909b478d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.0`
+- max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-9607c528493c
 
 - status: `executed`
@@ -18363,6 +19177,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-9654f799e412
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `56`
+- profitability_score: `0.4443`
+- max_drawdown: `0.99`
+- win_rate: `0.4643`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-96562840dab2
 
@@ -18661,6 +19486,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6667`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-9961e2256f1c
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `53`
+- profitability_score: `0.4517`
+- max_drawdown: `0.99`
+- win_rate: `0.4717`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-99673200025c
 
 - status: `executed`
@@ -18748,6 +19584,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.5417`
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-9a3ae3954a11
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `114`
+- profitability_score: `0.4712`
+- max_drawdown: `0.99`
+- win_rate: `0.4912`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-9a5c5dc9e776
 
@@ -18958,6 +19805,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-9b9f79eb74d6
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `4500`
+- trade_count: `75`
+- profitability_score: `0.5267`
+- max_drawdown: `0.99`
+- win_rate: `0.5467`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-9bc4e3a0b41e
 
 - status: `executed`
@@ -19132,6 +19990,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.6757`
 - max_drawdown: `0.2673`
 - win_rate: `0.6957`
+- boundary: Paper-trade slice supports live-readiness review.
+
+### evo-9d7355404bef
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `48`
+- profitability_score: `0.5842`
+- max_drawdown: `0.3475`
+- win_rate: `0.6042`
 - boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-9d7a67115fa9
@@ -19827,6 +20696,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.8`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-a24af3ef0569
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `13`
+- profitability_score: `0.5185`
+- max_drawdown: `0.99`
+- win_rate: `0.5385`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-a24f65855777
 
 - status: `executed`
@@ -19836,6 +20716,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-a261059dc127
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `21`
+- profitability_score: `0.4086`
+- max_drawdown: `0.99`
+- win_rate: `0.4286`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-a269e2071011
@@ -20795,6 +21686,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.7778`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-a8c52df5b9ce
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `24`
+- profitability_score: `0.3967`
+- max_drawdown: `0.99`
+- win_rate: `0.4167`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-a8cc7accedd6
 
 - status: `executed`
@@ -21246,6 +22148,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-abaf6e2750ea
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `22`
+- profitability_score: `0.6618`
+- max_drawdown: `0.4719`
+- win_rate: `0.6818`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-abed737d95ce
 
 - status: `executed`
@@ -21300,6 +22213,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.48`
 - boundary: Paper-trade slice failed to confirm the bridge candidate.
+
+### evo-ac99dfba23c8
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `22`
+- profitability_score: `0.6618`
+- max_drawdown: `0.4719`
+- win_rate: `0.6818`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-acc4e76c81cf
 
@@ -22181,6 +23105,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5581`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-b3db9ded43a6
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `10`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-b3e2b1d52d45
 
 - status: `executed`
@@ -22543,6 +23478,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-b6c7c6d324b3
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `62`
+- profitability_score: `0.4477`
+- max_drawdown: `0.99`
+- win_rate: `0.4677`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-b6d438099c6e
 
@@ -23237,6 +24183,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-bbed4de3013c
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `9`
+- profitability_score: `0.4244`
+- max_drawdown: `0.99`
+- win_rate: `0.4444`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-bbedbb110b83
 
 - status: `executed`
@@ -23279,6 +24236,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.38`
 - max_drawdown: `0.99`
 - win_rate: `0.4`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-bc867edcb5ad
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `30`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-bca2f865a217
@@ -23633,6 +24601,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4444`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-be94ce7ab8d4
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `4`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-be971d9a6a78
 
 - status: `executed`
@@ -23787,6 +24766,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-c0323726a822
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `41`
+- profitability_score: `0.6629`
+- max_drawdown: `0.2335`
+- win_rate: `0.6829`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-c03b6653f0fe
 
 - status: `executed`
@@ -23853,6 +24843,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-c1460d519850
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `20`
+- profitability_score: `0.53`
+- max_drawdown: `0.99`
+- win_rate: `0.55`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-c174dd2aac8f
 
 - status: `executed`
@@ -23907,6 +24908,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.1831`
 - win_rate: `0.875`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-c1b15e3a91b8
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `47`
+- profitability_score: `0.4694`
+- max_drawdown: `0.99`
+- win_rate: `0.4894`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-c1d205d15dbb
 
@@ -24049,6 +25061,28 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-c29bf462a193
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `23`
+- profitability_score: `0.4148`
+- max_drawdown: `0.99`
+- win_rate: `0.4348`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-c2adb675a933
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `83`
+- profitability_score: `0.486`
+- max_drawdown: `0.99`
+- win_rate: `0.506`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-c2f8dccfacf9
@@ -24315,6 +25349,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-c4c477edeee2
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-c4d0bb48b12f
 
 - status: `executed`
@@ -24403,6 +25448,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-c5c8e463ef5c
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `30`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-c6132ea6cd86
 
 - status: `executed`
@@ -24489,6 +25545,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.7578`
 - max_drawdown: `0.1831`
 - win_rate: `0.7778`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-c6b3651a7ba5
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `2`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-c6c834b784f6
@@ -24611,6 +25678,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5455`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-c7d6fa56b185
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `26`
+- profitability_score: `0.6723`
+- max_drawdown: `0.1884`
+- win_rate: `0.6923`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-c7d78f1a2ecf
 
@@ -24755,6 +25833,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-c8b4f67ef953
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `1`
+- profitability_score: `0.0`
+- max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-c8bdc81d148a
 
 - status: `executed`
@@ -24776,6 +25865,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5385`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-c91f49572141
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `3000`
+- trade_count: `42`
+- profitability_score: `0.5514`
+- max_drawdown: `0.5437`
+- win_rate: `0.5714`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-c922e1907339
 
@@ -24997,6 +26097,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5333`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-caa38c00dddf
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.0`
+- max_drawdown: `0.99`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-caa8e6eb880a
 
 - status: `executed`
@@ -25161,6 +26272,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.5714`
 - win_rate: `0.5652`
 - boundary: Paper-trade slice supports live-readiness review.
+
+### evo-cba48b617de7
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `4`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-cbaf83aa0789
 
@@ -25668,6 +26790,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-cfdc492a26d9
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `37`
+- profitability_score: `0.5476`
+- max_drawdown: `0.4762`
+- win_rate: `0.5676`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-cfdd20b60098
 
 - status: `executed`
@@ -25788,6 +26921,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-d0e05067bd2f
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `3000`
+- trade_count: `35`
+- profitability_score: `0.6943`
+- max_drawdown: `0.2254`
+- win_rate: `0.7143`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-d0e90c3978c1
 
@@ -26623,6 +27767,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.48`
 - max_drawdown: `0.99`
 - win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-d89a1ac1b595
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-d8ad373d098b
@@ -27483,6 +28638,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.6429`
 - boundary: Paper-trade slice supports live-readiness review.
 
+### evo-df7ead0ab8e2
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `0`
+- profitability_score: `0.0`
+- max_drawdown: `0.0`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-df8840e47ce3
 
 - status: `executed`
@@ -27614,6 +28780,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.58`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-e0ea2b5be2d5
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `45`
+- profitability_score: `0.4689`
+- max_drawdown: `0.99`
+- win_rate: `0.4889`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-e0eb05c721f5
 
@@ -27890,6 +29067,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-e2a025377a6d
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `14`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-e2ac0a030e87
 
 - status: `executed`
@@ -28109,6 +29297,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.5417`
 - win_rate: `0.6667`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-e4d0bf644fc9
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `72`
+- profitability_score: `0.5633`
+- max_drawdown: `0.3736`
+- win_rate: `0.5833`
+- boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-e4d5380ab86e
 
@@ -28528,6 +29727,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.75`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-e869d1d54592
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `4500`
+- trade_count: `52`
+- profitability_score: `0.4223`
+- max_drawdown: `0.99`
+- win_rate: `0.4423`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-e87053de939a
 
 - status: `executed`
@@ -28538,6 +29748,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.0`
 - win_rate: `1.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-e89bce834c10
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `52`
+- profitability_score: `0.4608`
+- max_drawdown: `0.99`
+- win_rate: `0.4808`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-e8ce45beb330
 
@@ -28616,6 +29837,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.8333`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-e960e6c95a1a
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `45`
+- profitability_score: `0.4689`
+- max_drawdown: `0.99`
+- win_rate: `0.4889`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
+
 ### evo-e9bee5e2746c
 
 - status: `executed`
@@ -28691,6 +29923,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.73`
 - max_drawdown: `0.5417`
 - win_rate: `0.75`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-ea39f80bb982
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `53`
+- profitability_score: `0.4894`
+- max_drawdown: `0.99`
+- win_rate: `0.5094`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-ea41e4eb87c8
@@ -28867,6 +30110,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.98`
 - max_drawdown: `0.0`
 - win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-eb86e6a94d54
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `51`
+- profitability_score: `0.4898`
+- max_drawdown: `0.99`
+- win_rate: `0.5098`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-eb90328e080d
@@ -29155,6 +30409,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-edc28e387fab
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `9`
+- profitability_score: `0.4244`
+- max_drawdown: `0.99`
+- win_rate: `0.4444`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-edcd2475e25e
 
 - status: `executed`
@@ -29219,6 +30484,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.6837`
 - max_drawdown: `0.292`
 - win_rate: `0.7037`
+- boundary: Paper-trade slice supports live-readiness review.
+
+### evo-ee37a2ec943a
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `3000`
+- trade_count: `58`
+- profitability_score: `0.549`
+- max_drawdown: `0.4914`
+- win_rate: `0.569`
 - boundary: Paper-trade slice supports live-readiness review.
 
 ### evo-ee5f4c1caadb
@@ -29353,6 +30629,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.7`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-efb9203d8b58
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `0`
+- profitability_score: `0.0`
+- max_drawdown: `0.0`
+- win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-efdce33950fe
 
 - status: `executed`
@@ -29396,6 +30683,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - max_drawdown: `0.99`
 - win_rate: `0.6667`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-f05c5114b8a0
+
+- status: `executed`
+- paper_trade_recommendation: `demote_to_benchmark`
+- sample_contract_count: `3000`
+- trade_count: `51`
+- profitability_score: `0.3918`
+- max_drawdown: `0.99`
+- win_rate: `0.4118`
+- boundary: Paper-trade slice failed to confirm the bridge candidate.
 
 ### evo-f076394ab45a
 
@@ -29683,6 +30981,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-f20f3e3a4777
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `3000`
+- trade_count: `30`
+- profitability_score: `0.58`
+- max_drawdown: `0.5789`
+- win_rate: `0.6`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-f20faf45c333
 
 - status: `executed`
@@ -29802,6 +31111,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5217`
 - max_drawdown: `0.99`
 - win_rate: `0.5417`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-f30221b180cc
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `4500`
+- trade_count: `63`
+- profitability_score: `0.5038`
+- max_drawdown: `0.99`
+- win_rate: `0.5238`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-f305a19601b1
@@ -30068,6 +31388,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5536`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-f53fd6587bb8
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `4500`
+- trade_count: `85`
+- profitability_score: `0.58`
+- max_drawdown: `0.3457`
+- win_rate: `0.6`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-f54b07bc7672
 
 - status: `executed`
@@ -30178,6 +31509,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.8`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-f68ae50e2daf
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `1`
+- profitability_score: `0.98`
+- max_drawdown: `0.0`
+- win_rate: `1.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-f69b6e19a789
 
 - status: `executed`
@@ -30244,6 +31586,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.4286`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-f7155a21e485
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `38`
+- profitability_score: `0.5063`
+- max_drawdown: `0.99`
+- win_rate: `0.5263`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-f71d5b387622
 
 - status: `executed`
@@ -30297,6 +31650,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.0`
 - max_drawdown: `0.99`
 - win_rate: `0.0`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-f79fff0632df
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `55`
+- profitability_score: `0.5436`
+- max_drawdown: `0.973`
+- win_rate: `0.5636`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-f7ec76c1c1fc
@@ -30519,6 +31883,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.25`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-f929dd76c504
+
+- status: `executed`
+- paper_trade_recommendation: `advance_toward_live_readiness`
+- sample_contract_count: `1500`
+- trade_count: `49`
+- profitability_score: `0.5718`
+- max_drawdown: `0.4789`
+- win_rate: `0.5918`
+- boundary: Paper-trade slice supports live-readiness review.
+
 ### evo-f94df69f271a
 
 - status: `executed`
@@ -30528,6 +31903,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.5255`
 - max_drawdown: `0.99`
 - win_rate: `0.5455`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-f96e8ae805ac
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `0`
+- profitability_score: `0.0`
+- max_drawdown: `0.0`
+- win_rate: `0.0`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-f97ad2b8edc4
@@ -30772,6 +32158,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5714`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-fb682dc8492f
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `58`
+- profitability_score: `0.5145`
+- max_drawdown: `0.99`
+- win_rate: `0.5345`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-fb80693e26ee
 
 - status: `executed`
@@ -30814,6 +32211,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.4943`
 - max_drawdown: `0.99`
 - win_rate: `0.5143`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-fbaeb04ccfcd
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `3000`
+- trade_count: `18`
+- profitability_score: `0.48`
+- max_drawdown: `0.99`
+- win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-fbc6fc083487
@@ -31113,6 +32521,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - win_rate: `0.5`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
+### evo-fdf7f1c5314a
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `11`
+- profitability_score: `0.4345`
+- max_drawdown: `0.99`
+- win_rate: `0.4545`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
 ### evo-fdf91f8866ad
 
 - status: `executed`
@@ -31265,6 +32684,17 @@ Pilot rows may appear here too, but they remain manual shadow evidence rather th
 - profitability_score: `0.68`
 - max_drawdown: `0.65`
 - win_rate: `0.7`
+- boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
+
+### evo-fefe94a6f046
+
+- status: `executed`
+- paper_trade_recommendation: `collect_more_paper_data`
+- sample_contract_count: `1500`
+- trade_count: `43`
+- profitability_score: `0.5381`
+- max_drawdown: `0.9219`
+- win_rate: `0.5581`
 - boundary: Paper-trade slice is still thin or unstable; do not treat it as live-ready.
 
 ### evo-ff3176407809

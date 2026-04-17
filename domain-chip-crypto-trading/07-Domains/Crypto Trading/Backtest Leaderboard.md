@@ -15,8 +15,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `3.3638`
 - max_drawdown: `0.1971`
 - paper_trade_readiness: `0.9292`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `34`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -51,8 +51,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -87,8 +87,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -123,8 +123,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -159,8 +159,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -195,8 +195,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -231,8 +231,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
@@ -267,8 +267,8 @@ This page is the benchmark-facing surface for current doctrine and strategy comb
 - sharpe_ratio: `2.9375`
 - max_drawdown: `0.1898`
 - paper_trade_readiness: `0.9063`
-- contract_count: `5448`
-- covered_contract_count: `5447`
+- contract_count: `5472`
+- covered_contract_count: `5471`
 - trade_count: `43`
 - minimum_trade_count: `34`
 - trade_count_gate_pass: `True`
