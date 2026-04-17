@@ -47,7 +47,7 @@ class EvolutionEngine:
 
         self.population = PopulationArchive(
             archive_root=self.archive_root,
-            max_archive_size=population_size * 5,
+            max_archive_size=max(200, population_size * 10),
         )
         self.tracker = PerformanceTracker(archive_root=self.archive_root)
         self.meta_agent = MetaAgent(self.population, self.tracker)

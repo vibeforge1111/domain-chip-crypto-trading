@@ -176,10 +176,15 @@ class PopulationArchive:
         viable = [a for a in self._population if a.is_viable and not a.is_elite]
         rest = [a for a in self._population if not a.is_viable]
 
+        # Cap elite to 60% of archive -- sort by quality (WR * trade_count)
+        max_elite = int(self.max_archive_size * 0.6)
+        elite.sort(key=lambda a: a.win_rate * min(a.trade_count, 500), reverse=True)
+        elite = elite[:max_elite]
+
         viable.sort(key=lambda a: a.win_rate, reverse=True)
         rest.sort(key=lambda a: a.win_rate, reverse=True)
 
-        keep_viable = viable[: self.max_archive_size // 2]
+        keep_viable = viable[: self.max_archive_size // 4]
         remaining_slots = self.max_archive_size - len(elite) - len(keep_viable)
         keep_rest = rest[:max(0, remaining_slots)]
 
