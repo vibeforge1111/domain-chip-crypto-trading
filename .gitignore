@@ -44,6 +44,7 @@ artifacts/paper_trade/
 artifacts/promotion/
 artifacts/targeted_mutations/
 artifacts/recursion/mutation_trials.json
+artifacts/recursion/mutation_backlog.json
 artifacts/recursion/heavy_backtest_queue.json
 artifacts/recursion/signal_mutation_report.json
 artifacts/runs/
